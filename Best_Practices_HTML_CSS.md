@@ -4,13 +4,13 @@ Les bonnes pratiques, quel que soit votre langage de développement, vous permet
 
 ## Indentation
 
-Aujourd'hui, l'indentation standard tend à se faire avec 2 espaces, parfois avec 4 espaces.  Pourquoi ? Pour avoir une hiérarchie claire dans le code, sans avoir de lignes démesurément longue. Ce standard est surtout poussé par les développeurs Javascript.
+Aujourd'hui, l'indentation standard tend à se faire avec 2 espaces, parfois avec 4 espaces.  L'idée est de garder une indentation claire, sans avoir de lignes trop longues.
 
-Le nombre d'espaces, ou le fait de mettre des tabulations à la place des espaces, dépend de chacun. L'important est de définir un standard à chaque début de projet, et de s'y tenir.
+Le nombre d'espaces dépend de chacun. L'important est de définir un standard à chaque début de projet, et de s'y tenir.
 
 ## Nombre de caractères par lignes
 
-Généralement, le nombre conseillé de caractères maximum par ligne est de 120, ce qui permet de garder un code lisible. Comme pour l'indentation, chacun ses préférences, il faut juste le définir en début de projet et s'y tenir tout au long.
+Généralement, la taille maximum conseillée d'une ligne est de 120 caractères. Comme pour l'indentation, chacun ses préférences, il faut juste le définir en début de projet et s'y tenir tout au long.
 
 ## Commentaires
 
@@ -34,7 +34,8 @@ Vous pouvez mettre des commentaires dès que vous le jugez utile. Par exemple, s
 
 ```html
 <!---
-Hack for IE from https://stackoverflow.com/questions/28417056/how-to-target-only-ie-any-version-within-a-stylesheet
+Hack for IE from 
+https://stackoverflow.com/questions/28417056/how-to-target-only-ie-any-version-within-a-stylesheet
 --->
 ```
 
@@ -50,8 +51,8 @@ Hack for IE from https://stackoverflow.com/questions/28417056/how-to-target-only
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Morbi</strong> quis arcu vitae odio laoreet ullamcorper. Phasellus <a href="www.google.fr">feugiat vitae</a> odio sit amet aliquam.
       <ul>
-  	   <li>Premier élément</li>
-         <li>Deuxième élément</li>
+        <li>Premier élément</li>
+        <li>Deuxième élément</li>
       </ul>
     </p>
   </section>
@@ -169,6 +170,7 @@ Eventuellement, dans le cas de balises avec beaucoup d'attributs, vous pouvez sa
   @import "global.css";
   @import "header.css";
   @import "article.css";
+
   /**
     * Global => global.css
     * Header de la home => header.css
@@ -184,7 +186,7 @@ Eventuellement, dans le cas de balises avec beaucoup d'attributs, vous pouvez sa
   }
   ```
 
-* Pour le nommage des classes, il faut essayer d'avoir une vision globale et penser à la réutilisation. Par exemple, `.badge` ou `.alert`. Le framework CSS Bootstrap est un bon exemple pour le nommage des classes.
+* Pour le nommage des classes, il faut essayer d'avoir une vision globale et penser à la réutilisation. Par exemple, `.badge` ou `.alert`.
 
 * Il vaut mieux écrire un sélecteur par ligne
 
@@ -230,13 +232,8 @@ Eventuellement, dans le cas de balises avec beaucoup d'attributs, vous pouvez sa
   </p>
   ```
 
-* Si possible, évitez de faire des `!important`. Trop d'`important` rend inefficace le système de cascade du CSS, puisque tous les sélecteurs qui auront la propriété `important` seront au même niveau d'importance... Généralement, devoir utiliser `important` signifie que quelque chose n'est pas à sa place dans le code.
+* Si possible, évitez de faire des `!important`. Trop d'`important` rend inefficace le système de cascade du CSS, puisque tous les sélecteurs qui auront la propriété `important` seront au même niveau d'importance... Généralement, utiliser `important` signifie que quelque chose n'est pas à sa place dans le code.
 
   Exception : dans le cas d'utilisation de framework comme Bootstrap ou MaterialUI, qui nécessite parfois de surcharger leurs classes.
-
-***
-
-Il est conseillé de mettre les attributs par ordre alphabétique, même si ce n'est pas obligatoire.
-
-***
-
+  
+* Il est conseillé de mettre les attributs par ordre alphabétique, même si ce n'est pas obligatoire.
