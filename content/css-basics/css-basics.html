@@ -1,0 +1,1281 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width initial-scale=1">
+<title>css-basics.md</title>
+<style type="text/css">
+.content {
+  padding: 84px 80px
+}
+</style>
+<style type="text/css">
+.content {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 700px; /* 700px is the width of the post in Medium */
+}
+
+/* hide TOC(table of contents). it's height is calculated from the original container */
+.content--buffer .table-of-contents {
+  height: 0;
+}
+
+.content > :first-child,
+.content > :first-child > * /* nested blocks */ {
+  margin-top: 0;
+}
+
+.content > :last-child,
+.content > :last-child > * /* nested blocks */ {
+  margin-bottom: 0;
+}
+
+.mermaid {
+  margin-bottom: 24px;
+}
+
+.page-break {
+  page-break-before: always;
+}
+
+@media print {
+  /* fix | code blocks in PDF export are trimmed */
+  .content pre {
+    white-space: pre-wrap;
+  }
+}
+</style>
+<style type="text/css">
+
+
+
+/*
+ * Read-only
+ *
+ * To add a theme:
+ *   1. Add a .css file to the same folder.
+ *   2. Restart the app.
+ *
+ * Taken from https://github.com/sindresorhus/github-markdown-css */
+
+
+
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+:root {
+  background: #fff;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.content {
+  max-width: 890px;
+}
+
+.katex-display {
+  padding: 0.6rem 0;
+  overflow-x: auto;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+strong {
+  font-weight: inherit;
+}
+
+strong {
+  font-weight: bolder;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+code,
+kbd,
+.content > pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+input {
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  overflow: visible;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+hr::before {
+  display: table;
+  content: "";
+}
+
+hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 21px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 11px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-roman;
+}
+
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+dd {
+  margin-left: 0;
+}
+
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.content > pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+.pl-1 {
+  padding-left: 3px !important;
+}
+
+.pl-2 {
+  padding-left: 6px !important;
+}
+
+.pl-3 {
+  padding-left: 12px !important;
+}
+
+.pl-4 {
+  padding-left: 24px !important;
+}
+
+.pl-5 {
+  padding-left: 36px !important;
+}
+
+.pl-6 {
+  padding-left: 48px !important;
+}
+
+.form-select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.anchor:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+  text-decoration: none;
+}
+
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+h1 .anchor {
+  line-height: 1;
+}
+
+h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+h2 .anchor {
+  line-height: 1;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+h3 .anchor {
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h4 .anchor {
+  line-height: 1.2;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h5 .anchor {
+  line-height: 1.1;
+}
+
+h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+h6 .anchor {
+  line-height: 1.1;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+.content > pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+ul,
+ol {
+  padding-left: 2em;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li>p {
+  margin-top: 16px;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+blockquote>:first-child {
+  margin-top: 0;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+code:before,
+code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.highlight {
+  margin-bottom: 16px;
+}
+
+.highlight pre,
+.content > pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.content > pre {
+  word-wrap: normal;
+}
+
+pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+pre code:before,
+pre code:after {
+  content: normal;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.pl-c {
+  color: #969896;
+}
+
+.pl-c1,
+.pl-s .pl-v {
+  color: #0086b3;
+}
+
+.pl-e,
+.pl-en {
+  color: #795da3;
+}
+
+.pl-s .pl-s1,
+.pl-smi {
+  color: #333;
+}
+
+.pl-ent {
+  color: #63a35c;
+}
+
+.pl-k {
+  color: #a71d5d;
+}
+
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+  color: #183691;
+}
+
+.pl-v {
+  color: #ed6a43;
+}
+
+.pl-id {
+  color: #b52a1d;
+}
+
+.pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.pl-ml {
+  color: #693a17;
+}
+
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.pl-mq {
+  color: #008080;
+}
+
+.pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.pl-mo {
+  color: #1d3e81;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.full-commit .btn-outline:not(:disabled):hover {
+  color: #4078c0;
+  border: 1px solid #4078c0;
+}
+
+:checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #4078c0;
+}
+
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+hr {
+  border-bottom-color: #eee;
+}
+
+/* Code
+   ---------------- */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #aaa;
+}
+
+.token.operator,
+.token.punctuation {
+  color: #888;
+}
+
+.token.selector,
+.token.attr-name,
+.token.entity,
+.token.url {
+  color: #987;
+}
+
+.token.tag,
+.token.constant,
+.token.keyword {
+  color: #a7a;
+}
+
+.token.function,
+.token.attr-value {
+  color: #68a;
+}
+
+.token.number,
+.token.boolean,
+.token.regex,
+.token.string {
+  color: #6a8;
+}
+
+.token.variable,
+.token.property,
+.token.key {
+  color: #a66;
+}
+
+</style>
+</head>
+<body>
+<h1 id="permier-pas-avec-les-feuilles-de-styles-css">Permier pas avec les feuilles de styles (CSS)</h1>
+<p>Dans le cours sur le HTML vous avez vu comment il était possibe d'utiliser des balises pour aider le navigateur à comprendre quelle était la structure de votre page web. Vous l'avez certainement remarqué mais en ouvrant un fichier ne contenant que du <code>HTML</code> dans un navigateur le résultat n'est pas vraiment joli et attractif.</p>
+<p>En effet, le but du <code>HTML</code> est d'apporter de  la structure à la page mais nous avons besoin d'un autre language  pour y apporter un peu plus de style et de couleur.</p>
+<p>Ce language est appelé le <code>Cascading Style Sheet</code> (en abbrégé : CSS) que l'on pourrait traduire littéralement par <em>Feuille de style en cascade</em></p>
+<h2 id="pourquoi-un-second-language">Pourquoi un second language ?</h2>
+<p>Le HTML et le CSS ont deux objectifs bien disctints. Le HTML  va structurer  le contenu de la page ( <em>le fond</em> ) tandis que le CSS va nous permettre de définir la manière dont la page va être présenté aux utilisateurs ( <em>la forme</em> ) de la page . Cette disctinction entre la fond et la forme est un concept central dans le web actuel.</p>
+<p>Le but du css est de dire au navigateur par exemple :  " Je voudrais que mon titre <code>H1</code> ait une  taille de 16px et soit vert kaki" (les goûts et les couleurs, vous savez ... <span class="emoji emoji-smiley">😃</span> ) ou encore "Je souhaite que mon menu de navigation reste tout le temps en haut de la page".</p>
+<p>Comme indiqué le CSS est un vrai language avec son lot de mot-clé à retenir et ces particularité. Le but de la leçon n'est pas de vous faire retenir par coeur toutes les propriétés du CSS mais plus de vous montrer comment le CSS et le HTML intéragisse entre eux et de vous aider à comprendre quel est le rôle de chacun.</p>
+<h3 id="mise-en-place-de-l-exercice">Mise en place de l'exercice</h3>
+<p>Pour commencer, créez un nouveau dossier sur votre ordinateur que vous allez nommé <code>CSS-101</code>.</p>
+<p><strong>CSS 101 ?</strong></p>
+<p><em>Sur le web anglophone, beaucoup de tutoriels aidant à faire ses premiers pas avec un language, une technique, ... termine par le chiffre <code>101</code> que l'on pronnonce "one O one".  Ici nous alons faire nos premiers pas avec le CSS donc ce sera notre permier tutoriel 101</em></p>
+<p>Une fois que le dossier <code>CSS-101</code> est créé, ouvrez le avec votre éditeur de texte préféré. Ici que ce soit <code>VsCode</code>, <code>Sublime text</code>, ou un autre éditeur exotique cela a peu d'importance. Le principal c'est que vous ayez un environement de travail avec lequel vous serez le plus à l'aise.</p>
+<p>A la racine du dossier créer un fichier <code>index.html</code>.</p>
+<p>Dans ce fichier copier-coller cettre structure  :</p>
+<pre><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>CSS 101<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>titre-principal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Bonjour CSS!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>paragraphe<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      Ensemble nous allons styliser les élements HTML de cette page. Nous avons
+      aussi <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page1.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>une autre page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> que nous allons rendre un
+      peu plus présentable
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Une liste à bulle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>paragraphe<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      Juste en dessous une liste liste à bulle non-ordonnée
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>disques<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>cercle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>carrés<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Et son alter-ego : la liste ordonnée<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Chos à faire 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Chose à faire 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Encore d'autres choses à faire<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>(et encore plein d'autres!)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+
+
+</code></pre>
+<p>En plus de notre <code>index.html</code> nous allons avoir besoin d'une seconde page histoire de bien comprendre comment nous pouvons styliser plusieures pages HTML <strong>avec la même feuille de style</strong></p>
+<p>Pour se faire, nous allons créer un second fichier appelé <code>page1.html</code> juste à coté (dans le même dossier <code>CSS101</code>, au même niveau que le fichier <code>index.html</code>) et y coller cettre autre structure HTML</p>
+<pre><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Deuxième Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Ma deuxième page HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+      Cette page avec pas grand chose, permet juste de démontrer comment nous
+      pouvons styliser une seconde page avec la même feuille de style
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Go back<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+      Oups ce <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lien-desactive<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nowhere.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ce lien <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> est
+      obsolète. Ca serait bien de le désactiver
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+
+</code></pre>
+<h3 id="but-du-jeu">But du jeu</h3>
+<p>Maintenant que nous avons la structure de notre site web, nous allons pouvoir commencer à le styliser. Ici la seule règle, sera d'essayer de modifier l'apparence du site en ne modifiant pas la structure du HTML.</p>
+<h3 id="le-navigateur-un-outil-pour-vous-aider-a-mieux-developper">Le navigateur, un outil pour vous aider à mieux développer</h3>
+<p>Le navigateur est l'outil principal pour afficher une page web mais en réalité il renferme des outils qui peuvent vraiment faciliter la vie du développeur en cas de bug ou même pour directement tester des nouvelles choses sans devoir passer par un éditeur de texte.</p>
+<p>Ces outils sont appelé les <code>developer tools</code> et sont assez semblable que l'on utilise Firefox ou Chrome.</p>
+<p>Par exemple, avec ses outils nous pouvons directement modifier notre site web. Pour commencer avec les <code>developpeur tools</code>, ouvrez votre navigateur préféré, faites un clic-droit et cliquez sur <code>inspecter l'élement</code></p>
+<p>Pour la suite du cours, n'hésitez pas à bricoler avec ces outils, mais n'oubliez pas que ces changement ne sont que temporaire. Si vous rafrechissez votre page, le changement disparaitrons <span class="emoji emoji-frowning">😦</span></p>
+<p>Voici un petite exemple video :</p>
+<p><img src="dev-tools.gif" alt="dev-tools"></p>
+<h2 id="la-feuille-de-style">La feuille de style</h2>
+<p>Une feuille de style est en réalité un simple document texte (comme le fichier HTML) mais ayant une extension particulière <code>.css</code>. Pour commencer, à coté des fichiers HTML créés précedement, nous allons créer un fichier <code>styles.css</code>. C'est dans ce fichier que nous allons écrire toutes le css dont nous allons avoir besoin dans ce chapitre.</p>
+<p>Donc à l'intérieur de ce fichier, allons y pour créer nos premières lignes de CSS. Dans le jargon, nous appelons ça une "<em>règle CSS</em>" .</p>
+<p>Copiez-collez dans el fichier <code>styles.css</code>cette règle :</p>
+<pre><code class="language-css"><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #FF0000<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="decorticons-un-peu-cette-regle">Décorticons un peu cette règle</h4>
+<p>Une règle CSS possède à chaque fois la même structure :</p>
+<pre><code class="language-css"><span class="token selector">selecteur</span> <span class="token punctuation">{</span>
+  <span class="token property">propriété-css</span> <span class="token punctuation">:</span> valeur
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Pour la règle css haut, le <code>selecteur</code> est la balise HTML <code>body</code>, la <code>propriété-css</code> est <code>color</code> et la <code>valeur</code> est <code>#FF0000</code> qui est le code hexadecimal permettant d'avoir un rouge vif.</p>
+<p><strong>Revenons deux secondes à la propriété css <code>color</code> :</strong></p>
+<p><code>color</code> est une propriété <code>built-in</code> du language CSS. C'est a dire qu'elle est reconnue naturellement  par le CSS. Ici c'est propriété permet de dire : "Je veux que tout les textes contenu dans la balise <code>body</code> ait la couleur rouge <code>#FF0000</code>"</p>
+<p>Des propriété <code>built-in</code> le css en possède énormement. Pas de panique, je vous expliquerais au fur et à mesure de nos recontres avec d'autres propriétés à quoi elles servent.</p>
+<h3 id="creer-le-lien-avec-une-feuille-de-style">Créer le lien avec une feuille de style</h3>
+<p>Actuellement, même en ayant ajouté à votre feuille de style la règle css, les textes sont toujours impeccablement noir. Tristesse ... Mais pourquoi ?</p>
+<p>En réalité, ce comportement est tout à fait normal. Pour le moment, le HTML n'a aucune conscience de l'exitsence d'une feuille de style ajoutée par nos soins. De ce fait, le HTML continue à être rendu en prenant en compte la <strong>feuille de style fournié par défaut</strong> par votre navigateur.</p>
+<p>Alors comment dire à mon fichier HTML qu'il doit utiliser notre feuille de style ?</p>
+<p>Pour ce faire, nous devons <code>lier</code> (link, en anglais) notre fichier css au html en utilisant la balise <code>&lt;link&gt;</code>.</p>
+<p>Dans votre fichier <code>index.html</code>, remplacer la balise <code>head</code> et son contenu par</p>
+<pre><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>UTF-8<span class="token punctuation">'</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>CSS 101<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>styles.css<span class="token punctuation">'</span></span><span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre>
+<p>Rafrechissez la page de votre navigateur  et vous devriez avoir ce rendu :</p>
+<p><img src="./red-text.png" alt="red-text"></p>
+<h4 id="decorticons-cette-balise">Décorticons cette balise <code>&lt;link&gt;</code></h4>
+<p><code>&lt;link&gt;</code> fonctionne un peu comme la balise HTML <code>&lt;a&gt;</code> car elle permet de lier deux fichier entre eux. Cependant, <code>&lt;link&gt;</code> ne peut être utilisé qu'à l'intérieur des balises <code>&lt;head&gt; &lt;/head&gt;</code>.</p>
+<p>Remarquez <code>&lt;link&gt;</code> est une balise dite orpheline car il n'est pas possible de mettre du contenu à l'intérieur et nous n'avons donc pas besoin de balise de fermeture (à l'inverse de <code>&lt;a&gt;</code> qui fonctionne par pair avec <code>&lt;/a&gt;</code>)</p>
+<p><code>&lt;link&gt;</code> prend deux attribut :</p>
+<ul>
+<li>
+<p><code>rel</code> qui définit la relation (ici ce sera une relatuion avec une stylesheet - rappellez-vous, CSS vient de  cascading <em>style sheet</em>).  <code>rel</code> peut prendre d'autres valeur mais <code>stylesheet</code> est de loin la plus commune.</p>
+</li>
+<li>
+<p><code>href</code>quant à lui indique le _chemin _ pour accéder à la feuille de style depuis le fichier <code>index.html</code>. En lisant le chemin, on se rend compte que c'est un chemin <code>relatif</code> et que  le fichier CSS se trouve à coté du fichier <code>index.html</code>. C'est exacetement de cette manière que nous avons organisé notre site web. Elle est pas belle la vie ? <span class="emoji emoji-smile">😄</span></p>
+</li>
+</ul>
+<p><strong>Petite note</strong>  :</p>
+<p>Il n'y a pas de connection directe entre le <code>CSS</code> et le navigateur. Tout comme pour les images ou même les  fichiers <code>javascript</code>, nous devons référencer dans un fichier HTML pour que le navigateur les prennes en compte.</p>
+<h3 id="les-commentaires">Les commentaires</h3>
+<p>Tout comme pour le HTML, un fichier CSS peut contenir des commentaires. Ce qui est assez pratique pour mieux aider comprehension d'une feuille de style contenant des centaines de règles (généralement on esaye de l'éviter, mais cela peut arriver <span class="emoji emoji-unamused">😒</span>).</p>
+<p>La syntaxe du commentaire est différente de celle pour les commentaires HTML.</p>
+<p>Les commentaires s'écrivent entre <code>/*</code> et <code>*/.</code></p>
+<p>Par exemple :</p>
+<pre><code class="language-css"><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #414141<span class="token punctuation">;</span>    <span class="token comment">/* Ceci est un commentaire sur une ligne  */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Ceci est 
+  un commentaire
+  sur plusieures lignes
+*/</span>
+</code></pre>
+<h3 id="modifier-plusieures-proprietes">Modifier plusieures propriétés</h3>
+<p>Dans un fichier <code>.css</code>, l'on peut écrire autant de propriété que l'on souhaite à l'intérieur d'un bloc de déclaration.</p>
+<p>Par exemple, maintenant que nous avons réussi à changer la couleur de tout le texte contenu dans la balise <code>&lt;body&gt;</code>, nous souhaitons que l'arrière plan de tout notre site web soit de couleur <code>#CCCCCC</code> (gris clair neutre).</p>
+<p>Pour ce faire, retournons dans notre fichier <code>style.css</code> à l'endroit où nous avons défini notre première règle css pour le <code>body</code>.</p>
+<p>Dans le même bloc de déclaration, en dessous de la propriété <code>color</code> nous pouvons rajouter une nouvelle propriété <code>background-color</code> et lui donner comme valeur <code>#CCCCCC</code> ainsi nous obtenons :</p>
+<pre><code class="language-css"><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #ff0000<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #cccccc<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>Remarquez que chaque délaration de propriété se termine par un <code>;</code>. C'est très important de ne jamais l'oublier, sinon le navigateur  ne comprendra pas votre règle. Donc faites vraiment attention aux point-virgules !</p>
+<p>Pour résumer, ici nous avons utiliser la propriété css <code>background-color</code> qui permet de définir la couleur d'arrière plan d'une balise HTML (ici la totalité du <code>body</code>) et comme couleur nous lui avons assigné la couleur ayant comme code hexadécimal <code>#EEEEEE</code></p>
+<p>Tant qu'a faire, rendu notre site web un tout petit peu plus plaisir au regard et changeons ce rouge flashy par quelque chose d'un peu plus sobre mais plus plaisant à regarder.</p>
+<p>Pour ce faire, je vous laise changer la coleur actuelle du texte par la couleur ayant pour code hexadecimal : <code>#414141;</code></p>
+<p>Rappellez-vous, ici la propriété css qui nous intéresse est <code>color</code></p>
+<p>A ce stade-ci notre site web devrait ressembler à ceci :</p>
+<p><img src="grey-background2.png" alt="grey-background"></p>
+<p><strong>Pourquoi ne pas juste avoir laisser le site en noir et blanc?</strong></p>
+<p>Quand nous construisons un site, nous devons aussi penser au confort de l'utilisateur. Si nous avions garder le texte en noir  et le fond du site en blanc, les contrastes entre le texte et le fond seraient trop important et fatiguerait à la longue l'oeil de la personne lisant votre site web. Utiliser des nuances de gris permet donc de réduire les contrastes et offrir un meilleur confort de lecture.</p>
+<p>Cependant, attention à ne pas chosir des couleurs qui soient trop rapprochées car il deviendrait difficile de distinguer vos textes par rapport au fond. Ces problématiques de contrastes, de couleurs, ... font partie d'un domaine en développement web que l'on appelle <em>l'accessibilité</em> (accessibility en anglais). Ce domaine est un sujet à part entière que nous ne pouvons pas couvrir dans ce cours-ci.</p>
+<p>A ce stade-ci, nous devons juste retenir qu'il est toujours important de fournir le plus possible de confort à l'utiliseur parcourrant notre site.</p>
+<h3 id="selectionner-differents-elements">Selectionner différents éléments</h3>
+<p>Evidement, le CSS nous permet plus que simplement styliser le body. En réalité, il est techniquement possible de styliser individuellement quasiment chaque balise HTML pouvant s'écrire dans le <code>body</code> de la page.</p>
+<p>Par exemple tentons maintenant de modifier la taille de la police de chaque titre <code>h1</code> de la page.</p>
+<p>Pour ce faire nous pouvons rajouter une nouvelle règle à notre fichier css.</p>
+<p>Juste après la règle pour le <code>body</code>, nous devons ajouter :</p>
+<pre><code class="language-css"><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="decorticons-un-peu-cette-regle-2">Décorticons un peu cette règle</h4>
+<p>Ici nous demandons au navigateur : "Je souhaite que chaque balise <code>h1</code>  aient une taille de police (font-size, en anglais) de <code>36px</code>".</p>
+<p>Ajouter cette règle, n'oubliez pas de sauvegarder, rafréchissez votre page et admirez le résulat.</p>
+<p>Normalement vous devirez constater que le texte <code>Bonjour CSS!</code>doit être significativement plus grand.</p>
+<p><em>Petit bonus spécialement pour vous :</em></p>
+<p>Maintenant nous souhaitons que tous les titres <code>h2</code> aient une taille de police de <code>28px</code>.</p>
+<p>Pour ce faire, je vous laisse essayer tout seul.  En cas de besoin, n'hésitez pas à relire les quelques lignes juste au-dessus car le principe reste globalement le même.</p>
+<p>.... on attend 3 minutes que vous finissiez ....</p>
+<p>Je vous ait pas menti la solution est assez simple et très similaire au cas du <code>h1</code> car nous devions juste rajoute dans notre fichier css  cette règle :</p>
+<pre><code class="language-css"><span class="token selector">h2</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 28px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>Petite Note:</strong></p>
+<p>Je pense que vous le remarquez, en CSS il est tout a fait possible de faire en sorte que les titres <code>h1</code> paraissent plus petit que les titres <code>h2</code>. Oui c'est tout à fait possible ce n'est pas une bonne pratique car visuellement ce serait donner plus d'importante à un titre <code>h2</code>  alors que sémantiquement au niveau du HTML c'est le <code>h1</code> le plus important. Cela créera donc une inchohérence entre la fond (le HTML) et la forme (le CSS), ce que nous souhaitons éviter.</p>
+<h3 id="les-unites-de-mesure">Les unités de mesure</h3>
+<p>Beaucoup de propriété en CSS (telle que <code>font-size</code>) requiert l'utilisation d'unité de mesure. En CSS, il y en a beaucoup mais nous utilisons généralement souvent les mêmes à savoir le pixel (<code>px</code>) et le <code>em</code> (à pronnoncer comme la lettre <code>m</code>).</p>
+<p>La différence entre le <code>px</code> et le <code>em</code> est que <code>px</code> correspond globalement au pixel de notre écran tandis que le <code>em</code> est une unité de mesure qui est relative à la taille de police par défaut de notre navigateur.</p>
+<p>Ainsi si notre navigateur à <code>12px</code> comme taille de police par défaut alors <code>1em</code> équivaudra à <code>12px</code> , <code>2em</code> à <code>24px</code> , ...</p>
+<p>De la même manière si le navigateur à comme taille de police par défaut <code>16px</code> alors <code>1em</code> équivaudra à <code>16px</code> , <code>2em</code> à <code>32px</code> , ...</p>
+<p>L'avantage du <code>em</code> par rapport au <code>px</code> est qu'il laisse plus d'autonomie à l'utilisateur de choisir comment il souhaite visionner notre site web. Imaginez un utilisateur ayant des problèmes de vision, si vous utilisez des <code>em</code> comme unité de mesure, il lui suffira de changer les paremètres de son navigateur pour augmenter la taille de la police par défaut et ainsi tout le texte de notre site s'affichera plus grand.</p>
+<p>Encore une fois, cette problématique est lié à l'accessibilité d'un site web.</p>
+<h3 id="selectionner-plusieurs-elements">Séléctionner plusieurs éléments</h3>
+<p>Ok, maintenant nous savons comment styliser individuellement chaque balise HTML mais imaginions que nous souhaitons modifier la police de caractères de tous nos titres.</p>
+<p>A priori, l'on pourrait rajouter cette ligne <code>font-family: "Helvetica", "Arial", sans-serif;</code> à nos règles pour les <code>h2</code> et <code>h1</code></p>
+<p>ainsi on obtiendrait quelque chose comme ceci :</p>
+<pre><code class="language-css"><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+  `<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h2</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 28px<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>Ici ça pourrait aller car nous n'avons que 2 type de titres (<code>h1</code>, <code>h2</code>) mais imaginons que la structure de notre HTML soit plus complexe que nous ayons aussi des <code>h3</code>, <code>h4</code>, <code>h5</code>, ...</p>
+<p>Alors dans ce cas nous devrions rajouter toutes ces lignes en plus à notre fichier css :</p>
+<pre><code class="language-css"><span class="token selector">h3</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h4</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* etc etc etc */</span>
+
+</code></pre>
+<p>Pas très pratique, surtout si au fil du temps on nous demande de modifier la police ce qui impliquerait que l'on doive parcourir tout le fichier css pour modifier la police pour chaque type de balise.</p>
+<p>La qualité première d'un développeur c'est de trouver des astuces pour se rendre la vie plus facile. Donc peut-être qu'il serait possile de trouver une astuce pour dire : <em>Je veux que tout les titres utilisent la police <code>Helvetica</code></em></p>
+<p>Pour ce faire le CSS prévoit une astuce, il est possible de définir une même règle qui ira s'applique à plusieur type de balise.</p>
+<p>Pour se faire il suffit donc juste d'écrire :</p>
+<pre><code class="language-css"><span class="token selector">h1,h2,h3,h4</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Cela permet de <em>factoriser</em> (rassembler ce qui est commun à plusieures choses) et donc de faire la même chose en moins de ligne de code. Cette envie de factoriser du code, est quelque chose de très important en informatique.  A tenter de faire sans modération donc <span class="emoji emoji-wink">😉</span></p>
+<h4 id="decorticons-un-peu-cette-regle-3">Décorticons un peu cette règle</h4>
+<p>Avec ceci :</p>
+<pre><code class="language-css"><span class="token selector">h1,h2,h3,h4</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Nous avons donc demander en utilisat la propriété <code>font-family</code> (police de caractère, en français) que chaque titre de <code>h1</code> à <code>h4</code> utilise la police <code>Helvetica</code>.</p>
+<p><em>Pourquoi rajouter Arial et sans-serif après Helvetica ?</em></p>
+<p>Helvetica et Arial sont des nom de police (font en anglais) et en lisant l'instruction <code>font-family</code> le navigateur va partir à la recherche sur le disque dur de la personne visitant votre site du fichier contenant cette police. Il va prioritairement partir à la recherche du fichier contenant <code>Helvetica</code> si il le trouve, alors génial il va l'utiliser et donc bien afficher les textes en <code>Helvetica</code>.</p>
+<p>Si malheureusement,  le fichier <code>Helvetica</code>n'est pas présent, il va faire le même travail et partir à la recherche d'<code>Arial</code>. Pareil, si <code>Arial</code> est présent sur le disque dur le navigateur  va l'utiliser.</p>
+<p>Maintenant imaginons que ni <code>Helvetica</code> ni  <code>Arial</code> sont présent dans ce cas nous avons indiquer au navigateur d'utiliser n'importe quelle police de type <code>sans-serif</code> disponnible sur le disque dur de l'utilisateur.</p>
+<p><strong>En résumé :</strong></p>
+<p>Le navigateur va tenter de trouver la police en suivant un ordre de priorité  : d'abord la premère déclarée et puis, au besoin,  ira chercher les autres pour enfin finir, si nécessaire,  par une police par défaut</p>
+<p>Tout comme pour l'accessibilité, la typographie en web est un sujet vaste et dense qui mériterait un cours à part entière.</p>
+<p>Pour en revenir à notre feuille de style, à l'heure actuelle, elle devait ressembler à ceci :</p>
+<pre><code class="language-css"><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #414141<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #eeeeee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h2</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 28px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h1,
+h2,
+h3,
+h4</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>Et notre site devrait ressembler quant à lui à ceci :</p>
+<p><img src="site-with-helvetica.png" alt="site-with-helvetica"></p>
+<h3 id="reutiliser-une-feuille-de-style-pour-plusieures-page-html">Réutiliser une feuille de style pour plusieures page HTML</h3>
+<p>Bon jusqu'ici nous avons travailler avec une seule page HTML mais beaucoup de site web ne sont pas constituer d'une seule page mais peut-être de centaines et de centaines et de centaines de pages (houla je m'emballe). Cela voudrait dire que nous devons créer pour chaque page une feuille de style ? Que nenni !</p>
+<p>Rappelez-vous en tant que développeur votre grande ambition est de vous rendre la vie plus facile. Alors imaginons : ça serait peut-être sympas si tous les  fichiers HTML étaient liés à la même feuille de style. Ca serait génial car comme ça tous mes <code>h1</code> auraient le même style peut importe sur quelle page je me trouve.</p>
+<p>Pour rien vous cacher, ce doux souhait c'est exactement ce que nous pouvons faire en CSS.</p>
+<p>Vous vous rappelez du ficher <code>page1.html</code> que nous avons aussi rajouter dans le dossier de notre site web?</p>
+<p>Ouvrez le et je vous demanderai juste de rajouter cette ligne dans le <code>head</code> de ce fichier :</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>styles.css<span class="token punctuation">'</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre>
+<p>Si vous ne vous souvenez plus de cette balise <code>link</code> n'hésitez pas à relire la partie <a href="#creer-le-lien-avec-une-feuille-de-style">Créer le lien avec une feuille de style</a></p>
+<p>Ici nous souhaitons simplement que notre fichier <code>page1.html</code> soit lité à la feuille de style nommée <code>styles.css</code></p>
+<p>Pour tester, sauvegardons et rafrechissont notre page. Maintenant, cliquez sur le lien présent sur la page.</p>
+<p>Voilà que votre autre page est aussi au couleurs de la permière !</p>
+<h3 id="un-peu-plus-de-style">Un peu plus de style</h3>
+<p>Dans cette partie, nous allons voir un peu plus en détail comment nous pouvons styliser tout le contenu textuel (les <code>&lt;p&gt;</code>, les <code>&lt;a&gt;</code>) de notre site web.</p>
+<h4 id="les-soulignes">Les soulignés</h4>
+<p>Jusqu'à présent nos liens (balise <code>&lt;a&gt;</code>) possède le style par défaut : couleur de police bleu et un léger soulignement.</p>
+<p>Ce qui serait bien c'est que tout nos liens n'aient plus ce soulignement.</p>
+<p>Pour ce faire, nous pouvons créer une règle css pour ce <code>a</code> qui utilisera la propriété  <code>text-decoration</code>.</p>
+<p>Comme ceci</p>
+<pre><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="decortiquons-cette-regle">Décortiquons cette règle :</h4>
+<p>Ici nous demandons que tous les <code>a</code> ait pour décoration (souligment) la valeur <code>none</code> c'est à dire rien. Donc si on réecrit ceci en un français plus compréhensible, nous voulons que tous les <code>&lt;a&gt;</code> du site n'aient pas de soulignement.</p>
+<p><code>text-decoration</code> peut prendre plusieures valeurs telles que <code>overline</code> ,  <code>line-through</code> et <code>underline</code> .</p>
+<p>N'hésitez pas à tester les différentes valeurs pour avoir un aperçu du rendu.</p>
+<p><strong>Petit challenge :</strong></p>
+<p>Et si je vous disais que <code>text-decoration</code> est aussi une propriété valable pour les règles css s'appliquant au <code>h1</code> ?</p>
+<p>Et bien je ne vous ment pas !</p>
+<p>Le challenge , si vous l'acceptez, serait de faire en sorte que tout les <code>&lt;h1&gt;</code> du site web soient soulignés. Pour ce faire, vous aurez besoin d'utiliser la valeur <code>underline</code>.</p>
+<p>Vous avez réussi ?</p>
+<p>Je suis certains que oui ! <span class="emoji emoji-smiley">😃</span></p>
+<p>Voici ma solution :</p>
+<p>J'ai juste rajouter à la règle css pour le <code>h1</code> qui existe déja dans le fichier <code>styles.css</code> : <code>text-decoration : underline;</code></p>
+<p>Ce qui nous donne :</p>
+<pre><code class="language-css"><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="le-poid-de-la-police-et-les-styles">Le poid de la police et les styles</h3>
+<p>Un peu plus haut dans la parties au l'on a vu comment sélectionner plusieures éléments, je vous ait montré comment définir une police pour tous les titres (h1,h2,h3, ...). Maintenant, ce qu'il me plairait beaucoup c'est d'enlever cet aspect gras des titres. Bref qu'ils aient un poid de police  (<code>font-weight</code>)  plus faible.</p>
+<p>Pour se faire, nous pouvons rajouter à cette règle déja existente :</p>
+<pre><code class="language-css"><span class="token selector">h1,
+h2,
+h3,
+h4</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Helvetica"</span>, <span class="token string">"Arial"</span>, sans-serif<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span>
+</code></pre>
+<p>En rajoutant ceci, notre site web devrait ressembler à ça :</p>
+<p><img src="light-heading.png" alt="light-heading"></p>
+<h4 id="decortiquons-cette-regle-2">Décortiquons cette règle :</h4>
+<p>La propriété <code>font-weight</code> définit le poid de la police ce qui permet d'indiquer si la police doit être plus mise en gras ou le contraire à savoir plus légère.</p>
+<p><code>font-weight</code> peut prendre plusieures valeurs dont les plus communément utilisées : <code>bold</code> (gras), <code>bolder</code> (plus gras), <code>light</code> (lègère) , <code>lighter</code> (plus légère)</p>
+<p>Il est aussi possible de définir si la police doit être italique ou non pour se faire dans la même idée nous pouvons utiliser la propriété <code>font-style</code> qui prendra comme valeur <code>normal</code>, <code>italic</code> ou <code>oblique</code></p>
+<h3 id="d-autres-manieres-de-selectionner-les-elements">D'autres manières de séléctionner les éléments</h3>
+<p>Jusqu'à présent  nous avons vu qu'il était possible de sélectionner un élement on faisait directement appel à son nom de balise, ainsi pour styliser les <code>&lt;p&gt;</code>, nous pouvons créer une règle  css</p>
+<pre><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 12px
+<span class="token punctuation">}</span>
+</code></pre>
+<p>et cette règle s'appliquera pour tous les <code>&lt;p&gt;</code> de notre site web.</p>
+<p>Et si maintenant nous souhaitons styliser d'une manière particulière seulement un  ou plusieurs<code>&lt;p&gt;</code> spécifique(s). Comment pourrions-nous faire ?</p>
+<p>Pour se faire le CSS prévoit aussi de pouvoir sélectionner des élements HTML via leur propriété <code>class</code> ou <code>id</code>.</p>
+<p>Parcourons, nos fichiers HTML présent dans le projet <code>CSS-101</code> que remarquons nous ?</p>
+<p>Certaines balises <code>&lt;p&gt;</code> possèdent l'attribut <code>class="paragraphe"</code> tandis que d'autres non.</p>
+<p>Je parle notament du paragraphe</p>
+<pre><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>paragraphe<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      Ensemble nous allons styliser les élements HTML de cette page. Nous avons
+      aussi <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page1.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>une autre page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> que nous allons rendre un
+      peu plus présentable
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Ici ce que nous voulons faire c'est que tous les paragraphes ayant pour attribut <code>class="paragraphe"</code> aient pour couleur <code>#FF6600</code> (un orange bien orange) et une taille de <code>2em</code>.</p>
+<p>Pour se faire nous pouvont directement écrire une règle en utilisant le nom de la <code>class</code>.</p>
+<p>C'est a dire une règle qui commencerait comme ceci :</p>
+<pre><code class="language-css"><span class="token selector">.paragraphe</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* les propriétées iront ici */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Remarquez ceci : nous avons préfixé le nom de la class par un <code>.</code> ce qui est super important pour indiquer au navigateur que nous alons écrire une règle pour une class et non pour une balise HTML standard.</p>
+<p>Comme <strong>Petit défi</strong>, je vous laisse compléter la règle css. On se retrouve quelques lignes plus loin.</p>
+<p>Pour réusssir ceci, je vous invite à relire la partie sur les unités de mesure en css et sur comment définir la couleur d'un texte.</p>
+<p>Ma solution :</p>
+<pre><code class="language-css"><span class="token selector">.paragraphe</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #FF6600<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Et le résultat en image :
+<img src="ugly-color.png" alt="ugly-color"></p>
+<p>Il y a quelques minutes je vous parlais que l'on pouvait séléctionner une ou plusieures balises HTML en utilisant l'attribut <code>class</code> et bien nous pouvons faire en utilisant l'attribut <code>id</code>.</p>
+<p>Pour rappel, la différence entre <code>class</code> et <code>id</code> réside dans le fait que un id  doit être unique. Par exemple: si j'ai ai une balise ayant comme attribut <code>id="toto"</code>. Nulle part ailleurs, je ne pourrai avoir une balise ayant cette <code>id="toto"</code> comme attribut.</p>
+<p>Sachant tout cela, voici le <strong>dernier petit  défi</strong> pour cette partie.</p>
+<p>Dans le fichier HTML <code>page1.html</code>, il y a un lien '<a>' ayant pour attribut <code>id="lien-desactive"</code> . Je souhaiterais que nous arrivons à indiquer visuellement  à  l'utilisateur que ce lien ne fonctionne plus et est donc désactivé. Une technique assez commune pour montrer qu'un élement est désactivé est le le barré  et de le grisé.</a></p><a>
+<p>Donc, je souhaiterais que l'on barre ce lien et que l'on change sa couleur pour un gris assez sombre (<code>#333333;</code>).</p>
+<p>Pour ce faire nous aurons besoin de créer une règle ayant cette forme :</p>
+<pre><code class="language-css"><span class="token selector">#lien-desactive</span><span class="token punctuation">{</span>
+  <span class="token comment">/*nos propriétées iront ici*/</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</a><p><a>Nous aurons aussi besoin d'utiliser la propriété <code>text-decoration</code>. Pour la valeur à donner à cet propriété, je vous laisse chercher autour de la partie : </a><a href="#un-peu-plus-de-style">Un peu de style</a></p>
+<p>Voici ma solution :</p>
+<pre><code class="language-css"><span class="token selector">#lien-desactive</span><span class="token punctuation">{</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> line-through<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #333333<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="la-cascade">La cascade</h3>
+<p>Au tout début du cours, nous avons vu que CSS pouvait être traduit en français par <code>feuille de style en cascade</code>. Je pense que  vous  aurez compris la partie <code>feuille de style</code> mais pourquoi parles t'on aussi de <code>cascade</code> ?</p>
+<p>Et bien depuis le début de ce cours, nous écrivons notre css dans un fichier bien séparé du HTML. Ecrire son CSS dans un fichier externe est généralement la meilleure solution mais en  réalité ce n'est pas le seul endroit où l'on peut écrire du css.</p>
+<p>Le rendu du site web que nous avons actuellement est en fait le résultat d'une sucession de règles css qui définissent la manière dont la page est affichée.</p>
+<p>Pour être plus précis, il existe une hierarchie dans le feuilles de styles et nous avons la mains sur uniquement certaines d'entre-elles.</p>
+<p>Voici cette hierarchie :</p>
+<ul>
+<li>
+<p>Au départ, il y a la <code>feuille de style par défaut</code> du navigateur. Celle qui donne un aspect par défaut aux éléments par exemple : les liens en bleu, les titres et le texte en noir, le fond de la page en blanc. En tant que développeur, nous ne pouvons pas directement agir sur cette feuille</p>
+</li>
+<li>
+<p>Les feuilles de styles externes (le fichier css que nous avons écrit par exemple)</p>
+</li>
+<li>
+<p>Le style que nous pouvons écrire dans la balise <code>head</code> de chaqe page HTML</p>
+</li>
+<li>
+<p>Le style dit <code>inline</code> que nous pouvons directement écrire dans chaque balise.</p>
+</li>
+</ul>
+<p>Afin de rendre la page, le navigateur va d'abord lire la feuille de style par défaut puis la feuiles de styles externes etc.</p>
+<p>Maintenant imaginons que dans la feuille de style par défaut il y ait cette règle :</p>
+<pre><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span> <span class="token punctuation">:</span> #00000 <span class="token comment">/*noir */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>et que dans une feuille de style externe nous avons cette règle :</p>
+<pre><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span> <span class="token punctuation">:</span> #ff6600 <span class="token comment">/*orange */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Le navigateur prendra en compte uniquement la règle écrite dans le fichier externe. Il réécrira donc la règle contenue dans la feuille de style par défaut. Ce mécanisme est appellé en anglais <code>override</code></p>
+<h4 id="style-specifique-a-une-page">Style spécifique à une page</h4>
+<p>Si nous souhaitons écrire du style spécifique à une page, nous pouvons soit créer une feuille de style spécfique et la référencée via la balise <code>&lt;link&gt;</code> (souvent la meilleure approche) mais il nous est aussi possible d'écrire le css directement dans la balise <code>head</code> du HTML.</p>
+<p>Par exemple nous pouvons modifier notre <code>index.html</code> de cette manière :</p>
+<pre><code class="language-css">  <span class="token selector">&lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;CSS 101&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css" /&gt;
+    &lt;style&gt;
+    body</span> <span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> #0000FF<span class="token punctuation">;</span>    <span class="token comment">/* Blue */</span>
+    <span class="token punctuation">}</span>
+
+    &lt;/style&gt;
+  &lt;/head&gt;
+</code></pre>
+<p>Remplacer le head de votre fichier et raffrechissez votre page, la couleur de fond est devenue bleue.</p>
+<p>La raison est simple :  dans la hierachie des feuilles de styles , le css contenu dans une page HTML est considéré comme plus important que celui contenu dans une feuille de style externe.</p>
+<p>Je le répète encore une fois, écrirer son css directement dans un fichier CSS n'est pas une solution si d'autres existent.</p>
+<h4 id="style-inline">Style inline</h4>
+<p>Un peu dans le même esprit nous pouvons directement ajouter du style à une balise</p>
+<p>Par exemple, nous pouvons styliser notre lien avec l'attribut <code>id=lien-desactive</code> de cette manière</p>
+<pre><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+      Oups
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token style-attr language-css"><span class="token attr-name">
+        <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">color</span><span class="token punctuation">:</span> #990000<span class="token punctuation">;</span> <span class="token property">text-decoration</span><span class="token punctuation">:</span> line-through<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span>
+        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lien-desactive<span class="token punctuation">"</span></span>
+        <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nowhere.html<span class="token punctuation">"</span></span>
+        <span class="token punctuation">&gt;</span></span>ce lien
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+      est obsolète. Ca serait bien de le désactiver
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Encore une fois, l'utilisation du style inline ne doit jamais être la solution par défaut et doit se limiter à des cas d'utilisation bien spécifique.</p>
+<h4 id="feuille-de-style-externe-vs-style-inline-et-css-specifique-a-une-page">Feuille de style externe VS Style Inline et CSS spécifique à une page</h4>
+<p>En tant que développeur, notre objectif est de construire un projet qui doit pouvoir évoluer et être maintenu dans le temps. Utiliser des feuilles de styles externes nous permet de rassembler le style dans un minimum d'endroit différent. Imaginons que nous ayant 1000 fichiers HTML et certains contenant du style dans le <code>header</code> et d'autres avec du style <code>inline</code>. Ce serait un véritable casse tête pour arriver à trouver où se trouve la règle css que je dois modifié ou supprimer. Vous trouvez pas ?</p>
+
+</body>
+</html>
