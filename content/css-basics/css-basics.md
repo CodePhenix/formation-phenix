@@ -1,18 +1,18 @@
-# Permier pas avec les feuilles de styles (CSS)
+# Premiers pas avec les feuilles de styles (CSS)
 
-Dans le cours sur le HTML, vous avez vu comment il était possibe d'utiliser des balises pour aider le navigateur à comprendre quelle était la structure de votre page web. Vous l'avez certainement remarqué mais en ouvrant un fichier ne contenant que du `HTML` dans un navigateur, le résultat n'est pas vraiment joli et attractif.
+Dans le cours sur le HTML, vous avez vu comment il était possible d'utiliser des balises pour aider le navigateur à comprendre quelle était la structure de votre page web. Vous l'avez certainement remarqué mais en ouvrant un fichier ne contenant que du `HTML` dans un navigateur, le résultat n'est pas vraiment joli et attractif.
 
-En effet, le but du `HTML` est d'apporter de la structure sémantique à la page mais nous avons besoin d'un autre language pour y apporter plus de style et de couleur.
+En effet, le but du `HTML` est d'apporter de la structure sémantique à la page, mais nous avons besoin d'un autre language pour y apporter plus de style et de couleur.
 
-Ce language est appelé le `Cascading Style Sheet` (en abbrégé : CSS) que l'on pourrait traduire littéralement par _Feuille de style en cascade_
+Ce language est appelé le `Cascading Style Sheet` (en abbrégé : `CSS`) que l'on pourrait traduire littéralement par _Feuille de style en cascade_.
 
 ## Pourquoi un second language ?
 
-Le HTML et le CSS ont deux objectifs bien disctints. Le HTML va structurer le contenu de la page ( _le fond_ ) tandis que le CSS va nous permettre de définir la manière dont la page va être présentée aux utilisateurs ( _la forme_ ) navigant sur le site web. Cette disctinction entre la fond et la forme est un concept central dans le web actuel.
+Le HTML et le CSS ont deux objectifs bien distincts. Le HTML va structurer le contenu de la page ( _le fond_ ) tandis que le CSS va nous permettre de définir la manière dont la page va être présentée aux utilisateurs ( _la forme_ ) navigant sur le site web. Cette disctinction entre le fond et la forme est un concept central dans le web actuel.
 
-Le but du css est de dire au navigateur par exemple : " Je voudrais que mon titre `H1` ait une taille de 16px et soit vert kaki" (les goûts et les couleurs, vous savez ... :-) ) ou encore "Je souhaite que mon menu de navigation reste tout le temps en haut de la page".
+Le but du css est, par exemple, de dire au navigateur : " Je voudrais que mon titre `H1` ait une taille de 16px et soit vert kaki" (les goûts et les couleurs, vous savez ... :-) ) ou encore "Je souhaite que mon menu de navigation reste tout le temps en haut de la page".
 
-Comme indiqué, le CSS est un vrai language avec son lot de mot-clé à retenir et ces particularités. Le but de la leçon n'est pas de vous faire retenir par coeur toutes les propriétés du CSS mais plus de vous montrer comment le CSS et le HTML intéragissent entre eux et aussi de vous aider à comprendre quel est le rôle de chacun.
+Le CSS est un vrai language, avec son lot de mot-clés à retenir et ses particularités. Le but de la leçon n'est pas de vous faire retenir par coeur toutes les propriétés du CSS, mais plutôt de vous montrer comment le CSS et le HTML intéragissent entre eux et aussi de vous aider à comprendre quel est le rôle de chacun.
 
 ### Mise en place de l'exercice
 
@@ -20,9 +20,9 @@ Pour commencer, nous allons créer un nouveau dossier sur votre ordinateur que n
 
 **CSS 101 ?**
 
-_Sur le web anglophone, beaucoup de tutoriels aidant à faire ses premiers pas avec un language, une technique, ... terminent par le chiffre `101` que l'on prononce "one O one". Ici nous alons faire nos premiers pas avec le CSS donc ce sera notre permier tutoriel 101_
+_Sur le web anglophone, beaucoup de tutoriels aidant à faire ses premiers pas avec un language, une technique, ... terminent par le chiffre `101` que l'on prononce "one O one". Ici, nous allons faire nos premiers pas avec le CSS donc ce sera notre permier tutoriel 101_
 
-Une fois que le dossier `CSS-101` est créé, ouvrez le avec votre éditeur de texte préféré. Ici que ce soit `VsCode`, `Sublime Text`, ou un autre éditeur exotique cela a peu d'importance. Le principal c'est que de travailler dans un environement avec lequel vous serez le plus à l'aise.
+Une fois que le dossier `CSS-101` est créé, ouvrez-le avec votre éditeur de texte préféré. Ici que ce soit `VsCode`, `Sublime Text`, ou un autre éditeur exotique, cela a peu d'importance. Le principal c'est de travailler dans un environnement avec lequel vous serez le plus à l'aise.
 
 Ensuite, à la racine du dossier nous allons créer un fichier `index.html`.
 
@@ -32,7 +32,7 @@ Donc dans ce fichier `index.html`, nous allons copier-coller cettre structure HT
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <title>CSS 101</title>
@@ -50,19 +50,19 @@ Donc dans ce fichier `index.html`, nous allons copier-coller cettre structure HT
     <h2>Une liste à bulle</h2>
 
     <p class="paragraphe">
-      Juste en dessous une liste liste à bulle non-ordonnée
+      Juste en-dessous une liste liste à bulle non-ordonnée
     </p>
 
     <ul>
       <li>disques</li>
-      <li>cercle</li>
+      <li>cercles</li>
       <li>carrés</li>
     </ul>
 
     <p>Et son alter-ego : la liste ordonnée</p>
 
     <ol>
-      <li>Chos à faire 1</li>
+      <li>Chose à faire 1</li>
       <li>Chose à faire 2</li>
       <li>Encore d'autres choses à faire</li>
       <li>(et encore plein d'autres!)</li>
@@ -73,11 +73,11 @@ Donc dans ce fichier `index.html`, nous allons copier-coller cettre structure HT
 
 En plus de notre `index.html` nous allons avoir besoin d'une seconde page afin de bien comprendre comment nous pouvons styliser plusieurs pages HTML **avec la même feuille de style**
 
-Pour se faire, nous allons créer un second fichier appelé `page1.html` juste à coté (dans le même dossier `CSS101`, au même niveau que le fichier `index.html`) et y coller cettre autre structure HTML.
+Pour ce faire, nous allons créer un second fichier appelé `page1.html` juste à côté (dans le même dossier `CSS101`, au même niveau que le fichier `index.html`) et y coller cette autre structure HTML.
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
@@ -87,14 +87,14 @@ Pour se faire, nous allons créer un second fichier appelé `page1.html` juste �
     <h1>Ma deuxième page HTML</h1>
 
     <p>
-      Cette page avec pas grand-chose, permet juste de démontrer comment nous
+      Cette page avec pas grand-chose permet juste de démontrer comment nous
       pouvons styliser une seconde page avec la même feuille de style
       <a href="index.html">Go back</a>.
     </p>
 
     <p>
-      Oups ce <a id="lien-desactive" href="nowhere.html">ce lien </a> est
-      obsolète. Ca serait bien de le désactiver
+      Oups <a id="lien-desactive" href="nowhere.html">ce lien</a> est
+      obsolète. Ce serait bien de le désactiver
     </p>
   </body>
 </html>
@@ -102,15 +102,15 @@ Pour se faire, nous allons créer un second fichier appelé `page1.html` juste �
 
 ### But du jeu
 
-Maintenant que nous avons la structure de notre site web, nous allons pouvoir commencer à le styliser. Ici la seule règle, sera d'essayer de modifier l'apparence du site en ne modifiant pas la structure du HTML.
+Maintenant que nous avons la structure de notre site web, nous allons pouvoir commencer à le styliser. Ici la seule règle sera d'essayer de modifier l'apparence du site en ne modifiant pas la structure du HTML.
 
 ## La feuille de style
 
-Une feuille de style est en réalité un simple document texte (comme le fichier HTML) mais ayant une extension particulière `.css`. Pour commencer, à coté des fichiers HTML créés précedemment, nous allons créer un fichier `styles.css`. C'est dans ce fichier que nous allons écrire tout le css dont nous allons avoir besoin dans ce chapitre.
+Une feuille de style est en réalité un simple document texte (comme le fichier HTML) mais ayant une extension particulière: `.css`. Pour commencer, à côté des fichiers HTML créés précedemment, nous allons créer un fichier `styles.css`. C'est dans ce fichier que nous allons écrire tout le css dont nous allons avoir besoin dans ce chapitre.
 
 Donc à l'intérieur de ce fichier, allons-y pour créer nos premières lignes de CSS. Dans le jargon, nous appelons ça une "_règle CSS_" .
 
-Copiez-collez dans le fichier `styles.css`cette règle :
+Copiez-collez cette règle dans le fichier `styles.css` :
 
 ```css
 body {
@@ -132,9 +132,9 @@ Pour la règle css, le `selecteur` est la balise HTML `body`, la `propriété-cs
 
 **Revenons deux secondes à la propriété css `color` :**
 
-`color` est une propriété `built-in` du language CSS. C'est-à-dire qu'elle est reconnue naturellement par le CSS. Ici cette propriété permet de dire : "Je veux que tous les textes contenu dans la balise `body` aient la couleur rouge ayant comme code hexadecimal`#FF0000`"
+`color` est une propriété `built-in` du language CSS, c'est-à-dire qu'elle est reconnue naturellement par le CSS. Ici cette propriété permet de dire : "Je veux que tous les textes contenus dans la balise `body` aient la couleur rouge ayant comme code hexadecimal`#FF0000`"
 
-Des propriétés `built-in` le css en possède énormement. Pas de panique, je vous expliquerais au fur et à mesure à quoi servent les autres propriétés que nous rencontrerons.
+Des propriétés `built-in`, le css en possède énormement. Pas de panique, je vous expliquerais au fur et à mesure à quoi servent les autres propriétés que nous rencontrerons.
 
 ### Créer le lien avec une feuille de style
 
@@ -144,9 +144,9 @@ En réalité, ce comportement est tout à fait normal. Pour le moment, le HTML n
 
 Alors comment dire à mon fichier HTML qu'il doit utiliser notre feuille de style ?
 
-Pour ce faire, nous devons `lier` (to link, en anglais) notre fichier css au html en utilisant la balise `<link>`.
+Pour ce faire, nous devons `lier` (to link, en anglais) notre fichier css au HTML en utilisant la balise `<link>`.
 
-Dans votre fichier `index.html`, remplacer la balise `head` et son contenu par
+Dans votre fichier `index.html`, remplacez la balise `head` et son contenu par
 
 ```html
 <head>
@@ -162,15 +162,15 @@ Rafraichissez la page de votre navigateur et vous devriez avoir ce rendu :
 
 #### Décortiquons cette balise `<link>`
 
-`<link>` fonctionne comme la balise HTML `<a>` car elle permet de lier deux fichier entre eux. Cependant, `<link>` ne peut être utilisé qu'à l'intérieur des balises `<head> </head>`.
+`<link>` fonctionne comme la balise HTML `<a>` car elle permet de lier deux fichiers entre eux. Cependant, `<link>` ne peut être utilisé qu'à l'intérieur des balises `<head> </head>`.
 
-Remarquez que `<link>` est une balise dite orpheline car il n'est pas possible de mettre du contenu à l'intérieur et nous n'avons donc pas besoin de balise de fermeture (à l'inverse de `<a>` qui fonctionne par pair avec `</a>`)
+Remarquez que `<link>` est une balise dite orpheline car il n'est pas possible de mettre du contenu à l'intérieur et nous n'avons donc pas besoin de balise de fermeture (à l'inverse de `<a>` qui fonctionne par paire avec `</a>`)
 
 `<link>` prend deux attributs :
 
-- `rel` qui défini la relation (ici ce sera une relation avec une stylesheet - rappellez-vous, CSS vient de cascading _style sheet_). `rel` peut prendre d'autres valeur mais `stylesheet` est de loin la plus commune.
+- `rel` qui défini la relation (ici ce sera une relation avec une stylesheet - rappellez-vous, CSS vient de cascading _style sheet_). `rel` peut prendre d'autres valeurs mais `stylesheet` est de loin la plus commune.
 
-- `href`quant à lui indique le _chemin _ pour accéder à la feuille de style depuis le fichier `index.html`. En lisant le chemin, on se rend compte que c'est un chemin `relatif` et que le fichier CSS se trouve à coté du fichier `index.html`. Parfait car c'est exacetement de cette manière que nous avons organisé notre site web. Elle est pas belle la vie ? :-D
+- `href`, quant à lui, indique le _chemin _ pour accéder à la feuille de style depuis le fichier `index.html`. En lisant le chemin, on se rend compte que c'est un chemin `relatif` et que le fichier CSS se trouve à côté du fichier `index.html`. Parfait car c'est exactement de cette manière que nous avons organisé notre site web. Elle est pas belle la vie ? :-D
 
 **Petite note:**
 
@@ -178,7 +178,7 @@ Il n'y a pas de connection directe entre le `CSS` et le navigateur. Tout comme p
 
 ### Le navigateur, un outil pour vous aider à mieux développer
 
-Le navigateur est l'outil principal pour afficher une page web mais en réalité un navigateur c'est bien plus que cela. Il renferme des outils qui peuvent vraiment faciliter la vie du développeur en cas de bug ou même pour directement tester des nouvelles choses sans devoir passer par un éditeur de texte.
+Le navigateur est l'outil principal pour afficher une page web, mais en réalité, un navigateur c'est bien plus que cela. Il renferme des outils qui peuvent vraiment faciliter la vie du développeur en cas de bug ou même pour directement tester des nouvelles choses sans devoir passer par un éditeur de texte.
 
 Ces outils sont appelé les `developer tools` et sont assez semblables que l'on utilise Firefox ou Chrome.
 
@@ -188,7 +188,7 @@ Pour ce faire et pour commencer avec les `developpeur tools`, ouvrez votre navig
 
 Pour la suite du cours, n'hésitez pas à bricoler avec ces outils, mais n'oubliez pas que ces changements ne sont que temporaire. Si vous rafraîchissez votre page, les changements disparaîtront donc une fois que vous êtes satisfait du résultat, n'hésitez pas à les reporter dans votre feuille de style.
 
-Voici un petite exemple:
+Voici un petit exemple:
 
 ![dev-tools](dev-tools.gif)
 
@@ -213,22 +213,22 @@ body {
 */
 ```
 
-### Modifier plusieures propriétés
+### Modifier plusieurs propriétés
 
 Dans un fichier `.css`, on peut écrire autant de propriétés que l'on souhaite à l'intérieur d'un bloc de déclaration.
 
 Prenons un exemple :
 
-Maintenant que nous avons réussi à changer la couleur de tout le texte contenu dans la balise `<body>`, nous souhaitons que l'arrière plan de tout notre site web soit de couleur `#CCCCCC` (gris clair neutre).
+Maintenant que nous avons réussi à changer la couleur de tout le texte contenu dans la balise `<body>`, nous souhaitons que l'arrière plan de tout notre site web soit de couleur `#eeeeee` (gris clair neutre).
 
 Pour ce faire, retournons dans notre fichier `style.css` à l'endroit où nous avons défini notre première règle css pour le `body`.
 
-Dans le même bloc de déclaration, en dessous de la propriété `color` nous pouvons rajouter une nouvelle propriété `background-color` et lui donner comme valeur `#CCCCCC` ainsi nous obtenons :
+Dans le même bloc de déclaration, en-dessous de la propriété `color`, nous pouvons rajouter une nouvelle propriété `background-color` et lui donner comme valeur `#eeeeee`. Nous obtenons :
 
 ```css
 body {
   color: #ff0000;
-  background-color: #cccccc;
+  background-color: #eeeeee;
 }
 ```
 
@@ -236,7 +236,7 @@ Avec ce rajout de propriété, tout le fond du site web a changé de couleur en 
 
 Remarquez que chaque déclaration de propriété se termine par un `;`. C'est très important de ne jamais l'oublier, sinon le navigateur ne comprendra pas votre règle. Donc faites vraiment attention aux point-virgules !
 
-Pour résumer, ici nous avons utiliser la propriété css `background-color` qui permet de définir la couleur d'arrière-plan d'une balise HTML (ici la totalité du `body`) et comme couleur nous lui avons assigné la couleur ayant comme code hexadécimal `#EEEEEE`
+Pour résumer, ici nous avons utilisé la propriété css `background-color` qui permet de définir la couleur d'arrière-plan d'une balise HTML (ici la totalité du `body`) et comme couleur nous lui avons assigné la couleur ayant comme code hexadécimal `#eeeeee`
 
 Tant qu'à faire, rendons notre site web un tout petit peu plus plaisant au regard et changeons ce rouge flashy par quelque chose de plus sobre et de plus regardable.
 
@@ -250,7 +250,7 @@ A ce stade-ci notre site web devrait ressembler à ceci :
 
 **Pourquoi ne pas juste avoir laisser le site en noir et blanc?**
 
-Quand nous construisons un site, nous devons aussi penser au confort de l'utilisateur. Si nous avions garder le texte en noir et le fond du site en blanc, les contrastes entre le texte et le fond seraient trop importants et fatigueraient à la longue l'oeil de la personne lisant votre site web. Utiliser des nuances de gris permet donc de réduire les contrastes et offrir un meilleur confort de lecture.
+Quand nous construisons un site, nous devons aussi penser au confort de l'utilisateur. Si nous avions gardé le texte en noir et le fond du site en blanc, les contrastes entre le texte et le fond seraient trop importants et fatigueraient à la longue l'oeil de la personne lisant votre site web. Utiliser des nuances de gris permet donc de réduire les contrastes et offrir un meilleur confort de lecture.
 
 Cependant, attention à ne pas chosir des couleurs qui soient trop rapprochées car il deviendrait difficile de distinguer vos textes par rapport au fond.
 
@@ -284,7 +284,7 @@ Normalement vous devriez constater que le texte `Bonjour CSS!`doit être signifi
 
 **Premier petit challenge :**
 
-Après avoir styliser les `h1`,nous souhaitons que tous les titres `h2` aient une taille de police de `28px`.
+Après avoir stylisé les `h1`,nous souhaitons que tous les titres `h2` aient une taille de police de `28px`.
 
 Pour ce faire, je vous laisse essayer tout seul. En cas de besoin, n'hésitez pas à relire les quelques lignes juste au-dessus car le principe reste globalement le même.
 
@@ -300,11 +300,11 @@ h2 {
 
 **Petite note:**
 
-Je pense que vous le remarquez, en CSS il est tout à fait possible de faire en sorte que les titres `h1` paraissent plus petits que les titres `h2`. C'est tout à fait possible mais ce n'est pas une bonne pratique car visuellement ce serait donner plus d'importante à un titre `h2` alors que sémantiquement au niveau du HTML c'est le `h1` le plus important. Cela créera donc une incohérence entre la fond (le HTML) et la forme (le CSS), ce que nous souhaitons éviter.
+Je pense que vous le remarquez, en CSS il est tout à fait possible de faire en sorte que les titres `h1` paraissent plus petits que les titres `h2`. C'est tout à fait possible mais ce n'est pas une bonne pratique car visuellement ce serait donner plus d'importante à un titre `h2` alors que sémantiquement au niveau du HTML c'est le `h1` le plus important. Cela créera donc une incohérence entre le fond (le HTML) et la forme (le CSS), ce que nous souhaitons éviter.
 
 ### Les unités de mesure
 
-Beaucoup de propriété en CSS (telle que `font-size`) requièrent l'utilisation d'unité de mesure. En CSS, il y en a beaucoup mais nous n'utilisons généralement souvent les mêmes à savoir le pixel (`px`) et le `em` (à pronnoncer comme la lettre `m`).
+Beaucoup de propriétés en CSS (telles que `font-size`) requièrent l'utilisation d'unité de mesure. En CSS, il y en a beaucoup mais nous utilisons généralement souvent les mêmes à savoir le pixel (`px`) et le `em` (à prononcer comme la lettre `m`).
 
 La différence entre le `px` et le `em` est que `px` correspond globalement au pixel de notre écran tandis que le `em` est une unité de mesure qui est relative à la taille de police par défaut de notre navigateur.
 
@@ -329,7 +329,7 @@ ainsi on obtiendrait quelque chose comme ceci :
 ```css
 h1 {
   font-size: 36px;
-  `font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
 h2 {
@@ -371,7 +371,7 @@ h4 {
 }
 ```
 
-Cela permet de _factoriser_ (rassembler ce qui est commun à plusieurs choses) du code et donc de faire la même chose en moins de ligne. Cette envie de factoriser, est quelque chose de très important en informatique. A tenter de faire sans modération donc ;-)
+Cela permet de _factoriser_ (rassembler ce qui est commun à plusieurs choses) du code et donc de faire la même chose en moins de lignes. Cette envie de factoriser, est quelque chose de très important en informatique. A tenter de faire sans modération donc ;-)
 
 #### Décortiquons cette règle
 
@@ -386,15 +386,15 @@ h4 {
 }
 ```
 
-Nous avons donc demander en utilisant la propriété `font-family` (police de caractère, en français) que chaque titre de `h1` à `h4` utilise la police `Helvetica`.
+Nous avons donc demandé en utilisant la propriété `font-family` (police de caractère, en français) que chaque titre de `h1` à `h4` utilise la police `Helvetica`.
 
 _Pourquoi rajouter Arial et sans-serif après Helvetica ?_
 
-Helvetica et Arial sont des noms de police (_font_ en anglais) et en lisant l'instruction `font-family` le navigateur va partir à la recherche sur le disque dur du fichier contenant cette police. Il va prioritairement partir à la recherche du fichier contenant `Helvetica` s'il le trouve, alors génial il va l'utiliser et donc bien afficher les textes en `Helvetica`.
+Helvetica et Arial sont des noms de police (_font_ en anglais) et en lisant l'instruction `font-family` le navigateur va partir à la recherche du fichier contenant cette police sur le disque dur. Il va prioritairement partir à la recherche du fichier contenant `Helvetica` s'il le trouve, alors génial il va l'utiliser et donc bien afficher les textes en `Helvetica`.
 
 Si malheureusement, le fichier `Helvetica`n'est pas présent, il va faire le même travail et partir à la recherche d'`Arial`. Pareil, si `Arial` est présent sur le disque dur, le navigateur va l'utiliser.
 
-Maintenant imaginons que ni `Helvetica` ni `Arial` soient présents, dans ce cas nous avons indiquer au navigateur d'utiliser n'importe quelle police de type `sans-serif` disponible sur le disque dur de l'utilisateur.
+Maintenant imaginons que ni `Helvetica` ni `Arial` soient présents, dans ce cas nous avons indiqué au navigateur d'utiliser n'importe quelle police de type `sans-serif` disponible sur le disque dur de l'utilisateur.
 
 **En résumé :**
 
@@ -402,7 +402,7 @@ Le navigateur va tenter de trouver la police en suivant un ordre de priorité : 
 
 Tout comme pour l'accessibilité, la typographie en web est un sujet vaste et dense qui mériterait un cours à part entière.
 
-Pour en revenir à notre feuille de style, à l'heure actuelle, elle devait ressembler à ceci :
+Pour en revenir à notre feuille de style, à l'heure actuelle, elle devrait ressembler à ceci :
 
 ```css
 body {
@@ -430,15 +430,15 @@ Et notre site devrait ressembler quant à lui à ceci :
 
 ![site-with-helvetica](site-with-helvetica.png)
 
-### Réutiliser une feuille de style pour plusieures pages HTML
+### Réutiliser une feuille de style pour plusieurs pages HTML
 
-Bon jusqu'ici nous avons travailler avec une seule page HTML mais beaucoup de sites web ne sont pas constitués d'une seule page mais peut-être de centaines et de centaines et de centaines de pages (houla je m'emballe). Cela voudrait dire que nous devrions créer pour chaque page une feuille de style ? Que nenni !
+Jusqu'ici nous avons travaillé avec une seule page HTML mais beaucoup de sites web ne sont pas constitués d'une seule page mais peut-être de centaines et de centaines et de centaines de pages (houla je m'emballe). Cela voudrait dire que nous devrions créer pour chaque page une feuille de style ? Que nenni !
 
-Rappelez-vous en tant que développeur votre grande ambition est de vous rendre la vie plus facile. Alors imaginons : ça serait peut-être sympa si tous les fichiers HTML étaient liés à la même feuille de style. Ca serait génial car comme ça tous nos `h1` auraient le même style peu importe sur quelle page nous nous trouvons.
+Rappelez-vous en tant que développeur votre grande ambition est de vous rendre la vie plus facile. Alors imaginons : ça serait peut-être sympa si tous les fichiers HTML étaient liés à la même feuille de style. Ça serait génial car comme ça tous nos `h1` auraient le même style peu importe sur quelle page nous nous trouvons.
 
 Pour rien vous cacher, ce doux souhait c'est exactement ce que nous pouvons faire en CSS.
 
-Vous vous rappelez du ficher `page1.html` que nous avons aussi rajouter dans le dossier de notre site web ?
+Vous vous rappelez du ficher `page1.html` que nous avons aussi rajouté dans le dossier de notre site web ?
 
 Ouvrez-le et je vous demanderai de rajouter cette ligne dans le `head` de ce fichier :
 
@@ -492,7 +492,7 @@ Le challenge, si vous l'acceptez, serait de faire en sorte que tous les `<h1>` d
 
 Vous avez réussi ?
 
-Je suis certains que oui ! :-)
+Je suis certain que oui ! :-)
 
 Voici ma solution :
 
@@ -511,7 +511,7 @@ h1 {
 
 Un peu plus haut dans la partie où l'on a vu comment sélectionner plusieurs éléments, je vous ai montré comment définir une police pour tous les titres (h1,h2,h3, ...). Maintenant, ce qu'il me plairait beaucoup c'est d'enlever cet aspect gras des titres. Bref qu'ils aient un poids de police (`font-weight`) plus faible.
 
-Pour se faire, nous pouvons rajouter à cette règle déja existante :
+Pour ce faire, nous pouvons rajouter à cette règle déjà existante :
 
 ```css
 h1,
@@ -554,7 +554,7 @@ Parcourons nos fichiers HTML présents dans le projet `CSS-101` que remarquons-n
 
 Certaines balises `<p>` possèdent l'attribut `class="paragraphe"` tandis que d'autres non.
 
-Je parle notament du paragraphe
+Je parle notamment du paragraphe
 
 ```html
 <p class="paragraphe">
@@ -566,7 +566,7 @@ Je parle notament du paragraphe
 
 Ici ce que nous voulons faire c'est que tous les paragraphes ayant pour attribut `class="paragraphe"` aient pour couleur `#FF6600` (un orange bien orange) et une taille de `2em`.
 
-Pour se faire nous pouvont directement écrire une règle en utilisant le nom de la `class`.
+Pour ce faire nous pouvont directement écrire une règle en utilisant le nom de la `class`.
 
 C'est a dire une règle qui commencerait comme ceci :
 
@@ -596,15 +596,15 @@ Ma solution :
 Et le résultat en image :
 ![ugly-color](ugly-color.png)
 
-Il y a quelques minutes, je vous parlais que l'on pouvait séléctionner une ou plusieurs balises HTML en utilisant l'attribut `class` et bien nous pouvons aussi le faire en utilisant l'attribut `id`.
+Il y a quelques minutes, je vous parlais de la possibilité de sélectionner une ou plusieurs balises HTML en utilisant l'attribut `class` et bien nous pouvons aussi le faire en utilisant l'attribut `id`.
 
-Pour rappel, la différence entre `class` et `id` réside dans le fait qu'un id doit être unique. Par exemple: si j'ai une balise ayant comme attribut `id="toto"`. Nulle part ailleurs dans le code, je ne pourrai avoir une balise ayant cette `id="toto"` comme attribut.
+Pour rappel, la différence entre `class` et `id` réside dans le fait qu'un id doit être unique. Par exemple: si j'ai une balise ayant comme attribut `id="toto"`. Nulle part ailleurs dans le code, je ne pourrai avoir une balise ayant cet `id="toto"` comme attribut.
 
 Une autre différence par rapport à la class est que nous devons utiliser un préfixe `#`.
 
 Sachant tout cela, voici le **dernier petit challenge** pour cette partie.
 
-Dans le fichier HTML `page1.html`, il y a un lien '<a>' ayant pour attribut `id="lien-desactive"` . Je souhaiterais que nous arrivons à indiquer visuellement à l'utilisateur que ce lien ne fonctionne plus et est donc désactivé. Une technique assez commune pour montrer qu'un élement est désactivé est de le barrer et de le griser.
+Dans le fichier HTML `page1.html`, il y a un lien '<a>' ayant pour attribut `id="lien-desactive"` . Je souhaiterais que nous arrivions à indiquer visuellement à l'utilisateur que ce lien ne fonctionne plus et est donc désactivé. Une technique assez commune pour montrer qu'un élement est désactivé est de le barrer et de le griser.
 
 Donc, je souhaiterais que l'on barre ce lien et que l'on change sa couleur pour un gris assez sombre (`#333333`).
 
@@ -639,13 +639,13 @@ Et bien depuis le début de ce cours, nous écrivons notre css dans un fichier b
 
 Le rendu du site web que nous avons actuellement est en fait le résultat d'une succession de règles css écrites à différents endroits et qui définissent la manière dont la page est affichée.
 
-Pour être plus précis, il existe une hierarchie dans les feuilles de styles et nous avons la main sur uniquement certaines d'entre-elles.
+Pour être plus précis, il existe une hiérarchie dans les feuilles de style et nous avons la main sur uniquement certaines d'entre-elles.
 
-Voici cette hierarchie :
+Voici cette hiérarchie :
 
 - Au départ, il y a la `feuille de style par défaut` du navigateur. Celle qui donne un aspect par défaut aux éléments par exemple : les liens en bleu, les titres et le texte en noir, le fond de la page en blanc. C'est cette feuille de style qui donne l'aspect par défaut du site web. En tant que développeur, nous ne pouvons pas directement agir sur cette feuille
 
-- Les feuilles de styles externes (le fichier css que nous avons écrit par exemple)
+- Les feuilles de style externes (le fichier css que nous avons écrit par exemple)
 
 - Le style que nous pouvons écrire dans la balise `head` de chaque page HTML
 
@@ -684,7 +684,7 @@ Par exemple nous pouvons modifier notre `index.html` de cette manière :
     <link rel="stylesheet" href="styles.css" />
     <style>
     body {
-      background-color: #0000FF;    /* Un beau bleu */
+      background-color: #0000ff;    /* Un beau bleu */
     }
 
     </style>
@@ -693,9 +693,9 @@ Par exemple nous pouvons modifier notre `index.html` de cette manière :
 
 Remplacer le head de votre fichier et rafraîchissez votre page, la couleur de fond est devenue bleue.
 
-La raison est simple : dans la hierachie des feuilles de styles, le css contenu dans une page HTML est considéré comme plus important que celui contenu dans une feuille de style externe.
+La raison est simple : dans la hierachie des feuilles de style, le css contenu dans une page HTML est considéré comme plus important que celui contenu dans une feuille de style externe.
 
-Je le répète encore une fois, écrirer son css directement dans un fichier CSS n'est pas la solution par défaut si d'autres solutions existent.
+Je le répète encore une fois, écrire son css directement dans un fichier CSS n'est pas la solution par défaut si d'autres solutions existent.
 
 #### Style inline
 
@@ -710,7 +710,8 @@ Par exemple, nous pouvons styliser notre lien ayant l'attribut `id=lien-desactiv
     style="color: #990000; text-decoration: line-through;"
     id="lien-desactive"
     href="nowhere.html"
-    >ce lien
+    >
+      ce lien
   </a>
   est obsolète. Ca serait bien de le désactiver
 </p>
@@ -720,7 +721,7 @@ Encore une fois, l'utilisation du style inline ne doit jamais être la solution 
 
 #### Feuille de style externe VS Style Inline et CSS spécifique à une page
 
-En tant que développeur, notre objectif est de construire un projet qui doit pouvoir évoluer et être maintenu dans le temps. Utiliser des feuilles de styles externes nous permet de rassembler le style dans un minimum d'endroit différent. Imaginons que nous ayons 1000 fichiers HTML et certains contenant du style dans le `header` et d'autres avec du style `inline`. Ce serait un véritable casse-tête pour arriver à trouver où se trouve la règle css que je dois modifier ou supprimer. Vous trouvez pas ?
+En tant que développeur, notre objectif est de construire un projet qui doit pouvoir évoluer et être maintenu dans le temps. Utiliser des feuilles de style externes nous permet de rassembler le style dans un minimum d'endroit différent. Imaginons que nous ayons 1000 fichiers HTML, certains contenant du style dans le `header` et d'autres avec du style `inline`. Ce serait un véritable casse-tête pour arriver à trouver où se trouve la règle css que je dois modifier ou supprimer. Vous ne trouvez pas ?
 
 Et voici que se termine ce cours sur les bases du CSS. Un petit peu plus tard dans votre parcours, vous serez amené à approfondir les techniques qui permettent de mettre en page de manière plus précise un site web.
 
