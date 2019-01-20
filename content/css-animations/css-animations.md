@@ -2,29 +2,29 @@
 
 ## Récapitulons un peu 
 
-A l'heure où vous lisez ce cours, cela fait quelques jours que vous avez mis les mains dans le cambouis et commencer à prendre en main deux élements fondamentaux du web à savoir les languages HTML et CSS. 
+A l'heure où vous lisez ce cours, cela fait quelques jours que vous avez mis les mains dans le cambouis et commencé à prendre en main deux élements fondamentaux du web à savoir les languages HTML et CSS. 
 
-Pour se rafraichir la mémoire, la grande disctinction entre le HTML et le CSS, outre la manière de l'écrire, est la destination de chacun ce ces languages.
+Pour se rafraichir la mémoire, la grande distinction entre le HTML et le CSS, outre la manière de l'écrire, est la destination de chacun de ces languages.
 
-D'un coté, nous avons le HTML dont le but est de structurer la page et d'apporter de la _sémantique_ , le fond (ce bout de texte est mon titre principal, celui là est juste un paragraphe standard, ce mot est un lien etc) tandis que le but du CSS est de mettre tout ceci en page, la forme (je veux que ce titre ait une police de 22 px et soit rose licorne - je vous laisse trouver le code hexadécimal correspondant :-) ). 
+D'un côté, nous avons le HTML dont le but est de structurer la page et d'apporter de la _sémantique_ , de faire un travail de fond (ce bout de texte est mon titre principal, celui là est juste un paragraphe standard, ce mot est un lien etc). De l'autre côté, nous avons le CSS dont le but est de mettre tout ceci en page, d'apporter de la forme et par exemple dire :  je veux que ce titre ait une police de 22 px et soit rose licorne - je vous laisse trouver le code hexadécimal correspondant :-) 
 
-Globalement, tout navigateur digne de ce nom devrait être capable de comprendre ces deux languages. Cependant, encore aujourd'hui et même si cela s'améliore fortement avec le temps, chaque navigateur va avoir une manière un peu différente d'interprété le CSS ou le HTML (ici comprenez le mot `interprété` dans le sens d'afficher, montrer, ...). 
+Globalement, tout navigateur digne de ce nom devrait être capable de comprendre ces deux languages. Cependant, encore aujourd'hui et même si cela s'améliore fortement avec le temps, chaque navigateur va avoir une manière un peu différente d'interpréter  le CSS ou le HTML (ici comprenez le mot `interprété` dans le sens d'afficher, montrer, ...). 
 
 Par exemple, il est possible que pour une même règle CSS comprenant les mêmes propriétés tout se passe bien sur Firefox tandis que sur Internet Explorer ou Safari le rendu de la page web ne soient pas exactement le même ou pire encore : que la règle css ne fonctionne tout simplement pas !
 
 **Pourquoi donc ?**
 
-Simplement pour de sombres questions d'histoire et de concurrence entre les entreprises ayant développé à l'origine ces navigateurs. Pour mieux comprendre, faisont un tout petit point d'histoire du web et plus spécifiquement d'histoire du CSS.
+Simplement pour de sombres questions d'histoire et de concurrence entre les entreprises ayant développé à l'origine ces navigateurs. Pour mieux comprendre, faisons un tout petit point d'histoire du web et plus spécifiquement d'histoire du CSS.
 
 ## Le point histoire
 
-Le HTML est né en 1991 et le CSS un peu plus tard en 1996. Durant cette décénie, le marché du WEB était partagé entre des entreprises telles que Nestcape ou Windows. Chacune de ces entreprises développaient leur navigateur en mettant en avant ses fonctionalitées dans le but d'attirer le plus grand nombre d'utilisateur. 
+Le HTML est né en 1991 et le CSS un peu plus tard en 1996. Durant cette décennie, le marché du WEB était partagé entre des entreprises telles que Nestcape ou Microsoft. Chacune de ces entreprises développait leur navigateur en mettant en avant ses fonctionnalité dans le but d'attirer le plus grand nombre d'utilisateurs. 
 
-Le problème c'est qu'à cette époque ne se souciait réellement d'uniformisé le comportement de ces fonctionalitées. 
+Le problème, c'est qu'à cette époque, personne ne se souciait réellement d'uniformiser le comportement de ces fonctionnalités
 
-En 1994, un organisme appelé le `World Wide Web Consortium` (en abbrégé `W3C`) à été créé dans le but de mettre un peu de ménage là-dedans en essayant de standardiser le comportement de fonctionalités similiares entre navigateur . Par exemple, un des objectif du W3C serait que  pour une page possédant le même marquage HTML et les mêmes règles CSS, cette page soit affichée de la même manière peut importe le navigateur.
+En 1994, un organisme appelé le `World Wide Web Consortium` (en abbrégé `W3C`) a été créé dans de faire un peu de ménage là-dedans en essayant de standardiser le comportement de fonctionnalités similaire entre navigateurs . Par exemple, un des objectifs du W3C serait que  pour une page possédant le même marquage HTML et les mêmes règles CSS, cette page soit affichée de la même manière peu importe le navigateur.
 
-Pour ce faire, le W3C édite régulièrement de nouveaux standards et permet donc d'engendrer de nouvelles version du HTML et du CSS.
+Pour ce faire, le W3C édite régulièrement de nouveaux standards et permet donc d'engendrer de nouvelles versions du HTML et du CSS.
 
  A l'heure actuelle, nous sommes à la 5ème version du HTML (`HTML5`).
 
@@ -38,29 +38,29 @@ Ne soyez donc pas étonné si au cours de votre carrière de développeur et de 
 
 ## CSS3 ?
 
-Comme je le disait plus haut, la version actuelle du CSS est la version 3. 
+Comme je le disais plus haut, la version actuelle du CSS est la version 3. 
 
 Personellement, c'est une version que j'aime particulièrement. 
 
-En effet grâce à elle, nous pouvons apporter du dynamisme à notre page Web en changeant dynamiquement la couleur d'un titre quand la souri passe dessus ou encore modifier facilement la taille d'une image et tout cela sans utiliser aucun autre language que le CSS et le HTML.
+En effet grâce à elle, nous pouvons apporter du dynamisme à notre page Web en changeant dynamiquement la couleur d'un titre quand la souris passe dessus ou encore modifier facilement la taille d'une image et tout cela sans utiliser aucun autre language que le CSS et le HTML.
 
-Ici le but de cette leçon est de voir ensemble des notions plus avancée en CSS introduite par la version 3. 
+Ici le but de cette leçon est de voir ensemble des notions plus avancées introduites en CSS  par la version 3. 
 
 Ces notions sont :
 
-- les transformation 2D : comment agrandir, faire tourner, déplacer un objet de la page tel qu'une image
-- les transitions et animations CSS : comment animer ou appliquer une transformation à un élement de la page (l'agrandir ou le rétraicir progressivement, le faire disparaître)
+- les transformations 2D : comment agrandir, faire tourner, déplacer un objet de la page tel qu'une image.
+- les transitions et animations CSS : comment animer ou appliquer une transformation à un élement de la page (l'agrandir ou le rétrécir progressivement, le faire disparaître)
 
 
 ### Les transformations 2D 
 
 #### Mise en place des exercices
 
-Pour ces exercices vous aurez besoin de créer un dossier nomber `css3-101` (vous vous rappelez pourquoi `101`  ;-) ?)
+Pour ces exercices vous aurez besoin de créer un dossier nommé `css3-101` (vous vous rappelez pourquoi `101`  ;-) ?)
 
 Ouvrez ce dossier avec votre éditeur de texte favori et créez le fichier `index.html`
 
-Copiez-coller la structure HTML suivante :
+Copiez-collez la structure HTML suivante :
 
 ```html
 <!DOCTYPE html>
@@ -77,7 +77,7 @@ Copiez-coller la structure HTML suivante :
 
 </html>
 ```
-Au même niveau que le fichier HTML, nous allons ajouter le fichier nommer `image1.jpg`
+Au même niveau que le fichier HTML, nous allons ajouter le fichier nommé `image1.jpg`
 
 A coté du fichier HTML et de l'image, rajoutons une feuille de style css que nous allons nommer `style.css` et nous allons rajouter à l'intérieur cette règle CSS :
 
@@ -88,7 +88,7 @@ A coté du fichier HTML et de l'image, rajoutons une feuille de style css que no
 }
 ```
 
-Cette règle a juste pour but d'aligner au centre tout les élément contenu dans la `div` ayant une class nomée `container`. Cela permettra d'avoir un peu plus de confort visuel pour la suite de nos experimentations.
+Cette règle a juste pour but d'aligner au centre tous les éléments contenus dans la `div` ayant une class nomée `container`. Cela permettra d'avoir un peu plus de confort visuel pour la suite de nos experimentations.
 
 A ce stade-ci ouvrons notre fichier `index.html` dans notre navigateur pour vérifier que l'image s'affiche bien.
 
@@ -96,7 +96,7 @@ Nous devrions avoir quelque chose comme ceci :
 
 ![building-normal](assets/building-normal.png)
 
-Par la suite rajouter aussi cette règle :
+A la suite rajoutez aussi cette règle :
 
 ```css
 #photo
@@ -109,13 +109,13 @@ Ouvrez votre navigateur et admirez le résulat de la magie surpuissante du CSS3 
 
 ***Décortiquons un peu cette règle***
 
-Ici nous avons juste demander au navigateur d'appliquer une transformation (`transform`) de type rotation (`rotate`) de 10° à l'élement HTML ayant pour id `#photo`. En  bref, nous avons appliquer une rotation de 10 degrés à notre photo. Simple, efficace, propre. :-) 
+Ici nous avons juste demandé au navigateur d'appliquer une transformation (`transform`) de type rotation (`rotate`) de 10° à l'élement HTML ayant pour id `#photo`. En  bref, nous avons appliqué une rotation de 10 degrés à notre photo. Simple, efficace, propre. :-) 
 
-N'hésitez pas à changer la valeur `deg` pour voir comment l'image évolue. Par exemple, modifions la valeur par `180deg` que ce passe-t-il ?
+N'hésitez pas à changer la valeur `deg` pour voir comment l'image évolue. Par exemple, modifions la valeur par `180deg` que se passe-t-il ?
 
 ***Petit bémol :***
 
-Si vous travaillez le navigateur  `Safari` ou `Internet Explorer`, il se peut que le code ci-dessus ne fonctionne pas entièrement faute à des problème de compatibilité (vous vous souvenez l'histoire du web, tout ça tout ça ...). En effet, le CSS3 est pas encore totalement standarisé et il est nécessaire de recourrir parfois à des astuces de chaman pour bien expliquer au navigateur ce qu'il doit faire. Cette astuce consiste à rajouter une règle supplémentaire quasiment identique à la précédente mais ayant un préfixe particulier : `-webkit-`
+Si vous travaillez le navigateur  `Safari` ou `Internet Explorer`, il se peut que le code ci-dessus ne fonctionne pas entièrement faute à des problèmes de compatibilité (vous vous souvenez l'histoire du web, tout ça tout ça ...). En effet, le CSS3 n'est pas encore totalement standarisé et il est nécessaire de recourir parfois à des astuces de chaman pour bien expliquer au navigateur ce qu'il doit faire. Cette astuce consiste à rajouter une règle supplémentaire quasiment identique à la précédente mais ayant un préfixe particulier : `-webkit-`
 
 Ce préfix va permettre aux navigateurs de type 'webkit' dont fait partie `Safari` de comprendre notre règle.
 
@@ -143,7 +143,7 @@ Gardez seulement à l'esprit que parfois si une de vos règles CSS3  ne fonction
 
 #### L'agrandisement 
 
-De la même manière que nous avons fait tourné notre image nous pouvons l'agrandir.
+De la même manière que nous avons fait tourner notre image nous pouvons l'agrandir.
 
 Pour ce faire nous pouvons écrire cette règle :
 
@@ -158,9 +158,9 @@ Pour ce faire nous pouvons écrire cette règle :
 
 Ici nous avons demandé au navigateur d'appliquer une transformation (`transform`) de type agrandissement (`scale`) de 1.3 fois par rapport à la taille intitiale de l'élement HTML ayant pour id `#photo`. En  bref, nous avons agrandi la photo de 1.3 fois par rapport à sa valeur initiale.
 
-Vous avez remarquez que l'aggrandissement et la rotation s'écrive sensiblement de la même manière avec la règle `transform`. 
+Vous avez remarqué que l'aggrandissement et la rotation s'écrive sensiblement de la même manière avec la règle `transform`. 
 
-Seul change l'argument après la règle (`scale`, pour l'agrandissement, `rotate` pour la rotation ). Cet argument est appelé une `fonction` css et la valeur entre les parenthèses est appelé un `paramètre` de la fonction.
+Seul change l'argument après la règle (`scale`, pour l'agrandissement, `rotate` pour la rotation ). Cet argument est appelé une `fonction` css et la valeur entre les parenthèses est appelée un `paramètre` de  fonction.
 
 ***Le petit challenge***
 
@@ -206,13 +206,13 @@ Ici nous travaillons avec une image (balise `<img>`) mais il est techniquement p
 
 **Le point math**
 
-Ici nous avons besoins de nous rappeler une notion fondamentale en géométrie à savoir :  la notion de `repère orthonormé`.
+Ici nous avons besoin de nous rappeler une notion fondamentale en géométrie à savoir :  la notion de `repère orthonormé`.
 
 Voici une définition officielle :
 
 `Un plan orthonormé est un plan possédant deux axes,nommés par convention X et Y, perpendiculaire et ayant la même origine`.
 
-Ici nous pouvons considérer notre image comme un plan orthonormé ou l'axe X serait la largeur de l'image tandis que l'axe Y serait la hauteur.
+Ici nous pouvons considérer notre image comme un plan orthonormé où l'axe X serait la largeur de l'image tandis que l'axe Y serait la hauteur.
 
 Pour se le représenter, voici un schéma :
 
@@ -263,7 +263,7 @@ Avec la valeur 35px pour l'axe X , l'image se déplace de `35px` sur la droite d
 
 Maintenant, je souhaiterais que l'image se déplace de `50px` vers la `gauche` de l'écran et qu'elle `remonte` (se déplace vers le `haut`) de `8px` A votre avis comment je peux faire ?
 
-Petit indiice, il est possible de donner des valeur négatives comme paramètre de la fonction `translate`.
+Petit indice, il est possible de donner des valeur négatives comme paramètre de la fonction `translate`.
 
 A vous de jouer !
 
@@ -283,7 +283,7 @@ Voilà à ce stade-ci vous connaissez les principales manières d'appliquer une 
 
 #### Préparons les exercices
 
-Pour cette lessons nous devons remplacer le contenu de notre `index.html` par ceci
+Pour cette leçon nous devons remplacer le contenu de notre `index.html` par ceci
 
 ```html
 <!DOCTYPE html>
@@ -322,7 +322,7 @@ Ici nous faisons deux choses :
 
 1. Nous stylisons notre div pour qu'elle ait une largeur de 200px et une hauteur de 150px. Aussi nous souhaitons que sa couleur de fond soit rouge.
 
-2. Dans la second temps, nous souhaitons que quand la sourri passe au dessus de la div  (à l'aide de la `pseudo-classe` hover - survol, en anglais) la couleur de fond devienne cyan (un bleu-vert)
+2. Dans la second temps, nous souhaitons que quand la souris passe au dessus de la div  (à l'aide de la `pseudo-classe` hover - survol, en anglais) la couleur de fond devienne cyan (un bleu-vert)
 
 Essayez par vous même en rafraichissant votre navigateur.
 
@@ -330,9 +330,9 @@ Essayez par vous même en rafraichissant votre navigateur.
 
 Depuis l'arrivée du CSS3, il est possible de faire avec un seul language (le CSS) ce qui avant devait se faire en recourrant à un autre language : le `javascript`. Ce qui veut dire qu'en CSS, nous pouvons décider de modifier l'aspect d'un élement HTML quand un évenement se passe (par exemple : changer progressivement  la couleur de fond d'une `div` au survol de la souris).
 
-Je vous le prouverrai d'ici peu.
+Je vous le prouverai d'ici peu.
 
-_Mais quel est la différence entre une transition et une animation ?_
+_Mais quelle est la différence entre une transition et une animation ?_
 
 Une `transition` c'est une animation basique qui fait passer un objet d'un état A à un état B. Par exemple, on peut dire : "Déplace cet objet de la gauche vers la droite de l'écran tout en changeant sa couleur".
 
@@ -340,7 +340,7 @@ Tandis qu'une `animation` est une combinaison de transitions les unes à la suit
 
 #### Les transitions
 
-Depuis que vous faites du CSS, vous avez rencontrez beaucoup de propriétées qui permettent de modifier l'apparence d'un élement HTML comme `background-color`, `color`, `width`, `height`
+Depuis que vous faites du CSS, vous avez rencontrez beaucoup de propriétés qui permettent de modifier l'apparence d'un élement HTML comme `background-color`, `color`, `width`, `height`
 
 Toutes ces propriétés peuvent être la base pour créer une transition CSS.
 
@@ -371,14 +371,14 @@ div {
 
 ***Décortiquons un peu cette règle***
 
-Par rapport à la précédente version de la règle css nous avons rajouter 2 choses :
+Par rapport à la précédente version de la règle css nous avons ajouté 2 choses :
 
 - `transition-property: background-color;` qui nous permet de dire au navigateur d'appliquer une transition sur la propriété `background-color`
--  `transition-duration: 3s;` qui nous permet de faire duré la transition durant 3 secondes
+-  `transition-duration: 3s;` qui nous permet de faire durer la transition durant 3 secondes
 
 Admirez comme la transition est plus fluide par rapport à la version avec un `:hover` simple !
 
-Il est aussi possible d'appliquer une transition à plusieures propriétés en même temps. Pour ce faire il suffit de les énumérées en les espacant par une virgule.
+Il est aussi possible d'appliquer une transition à plusieurs propriétés en même temps. Pour ce faire il suffit de les énumérer en les espacant par une virgule.
 
 Comme ceci :`transition-property: background-color, width, height;`
 
@@ -415,7 +415,7 @@ div:hover {
 
 ```
 
-Raffraîchissez votre navigateur et admirons avec nos yeux ébahis cette transition. Du grand art, n'est-ce pas ?
+Rafraîchissez votre navigateur et admirons avec nos yeux ébahis cette transition. Du grand art, n'est-ce pas ?
 
 ##### Un peu plus de maitrise sur notre transition
 
@@ -432,17 +432,17 @@ div {
   transition-delay: 2sec;
 }
 ```
-Ici nous souhaitons que la transition que nous avons créée précédement se déclanche avec un délai (`delay`, en anglais) de deux secondes.
+Ici nous souhaitons que la transition que nous avons créée précédement se déclenche avec un délai (`delay`, en anglais) de deux secondes.
 
 ***Le challenge***
 
-A ce stade-ci, vous avez eu un aperçu des possibilitées des transitions CSS3. 
+A ce stade-ci, vous avez eu un aperçu des possibilités des transitions CSS3. 
 
-Pour ce challenge, nous allons essayer de mettre ensemble toutes les notions vues depuis le début de cette lesson.
+Pour ce challenge, nous allons essayer de mettre ensemble toutes les notions vues depuis le début de cette leçon.
 
 Voici ce que j'aimerais faire :
 
-Je souhaiterais qu'au passage de la souri sur la div (`hover`), cet élement :
+Je souhaiterais qu'au passage de la souris sur la div (`hover`), cet élement :
 
 - tourne elle même de `15deg`
 - change sa couleur `rouge` initiale pour la couleur ayant pour code hexadécimal `#ff6600`
@@ -452,7 +452,7 @@ Je souhaiterais qu'au passage de la souri sur la div (`hover`), cet élement :
 
 Pour vous aider, n'oubliez pas que `transform` est une propriété css sur laquelle nous pouvons aussi appliquer une transition.
 
-  Si vous ne vous rappelez plus comment fonctionne cette propriété je vous invite à relire la partie sur les [Transformations 2D](#les-transformations-2-d) avant de commencer le challenge.
+Si vous ne vous rappelez plus comment fonctionne cette propriété je vous invite à relire la partie sur les [Transformations 2D](#les-transformations-2-d) avant de commencer le challenge.
   
 --- Barrière anti-spoil  ---
 
@@ -478,11 +478,11 @@ div:hover {
 
 #### Les animations CSS3
 
-Comme je le disait plus haut, on peut considéré qu'une transition pemet de passer progressivement d'un état A à un état B tandis qu'une animation permet de définir une succession d'état par lequel va passer notre élément HTML.
+Comme je le disait plus haut, on peut considérer qu'une transition permet de passer progressivement d'un état A à un état B tandis qu'une animation permet de définir une succession d'états par lequel va passer notre élément HTML.
 
 Par exemple, il est possible de dire au navigateur :
 
-"Je souhaite qu'au début ma `div` change de couleur pour devenir verte kaki, PUIS qu'elle tourne sur elle même, PUIS qu'elle se déplace sur la droite, PUIS qu'elle change de hauteur pour devenir plus petite,...". Vous le comprenez, dans une animation css on peut définir autaut d'étape `successive` que l'on souhaite.
+"Je souhaite qu'au début ma `div` change de couleur pour devenir verte kaki, PUIS qu'elle tourne sur elle même, PUIS qu'elle se déplace sur la droite, PUIS qu'elle change de hauteur pour devenir plus petite,...". Vous le comprenez, dans une animation css on peut définir autant d'étapes `successive` que l'on souhaite.
 
 ##### Les bases de l'animation
 
@@ -521,11 +521,11 @@ La directive commence donc par le mot clé `@keyframes` auquel un ajoute le nom 
 
 Ensuite entre les `{}`, il y a une succession d'instructions commençant par `0%`, `50%` ou `100%`.
 
-Ces instructions permettent de décire la manière dont notre animation va se comporter au fil du temps (`0%`au tout début de l'animation, `50%` à la moitiée, `100%` à la fin). 
+Ces instructions permettent de décrire la manière dont notre animation va se comporter au fil du temps (`0%`au tout début de l'animation, `50%` à la moitiée, `100%` à la fin). 
 
 Il est aussi possible de rajouter des étapes intermédiaires si on souhaite qu'il se passe quelque chose à `75%` ou encore à `30%` par exemple.
 
-C'est donc à l'intérieur de cette directive que nous pouvons écrire quelque chose quit dirait:
+C'est donc à l'intérieur de cette directive que nous pouvons écrire quelque chose qui dirait:
 
  "Je souhaite qu'au début de mon animation la `div` tourne sur elle même de 10 deg, qu'à 50% de l'animation elle change de couleur pour devenir verte et à 100% , la div se déplace de 150 pixels sur la droite"
 
@@ -549,9 +549,9 @@ Actuellement, si vous collez cette directive dans votre fichier css, je dois vou
 
 Oh tristesse mais pourquoi ?
 
-Simplement car nous n'avons pas appliquer cette directive à notre élément (cfr le point 2 [Les bases de l'animation](#les-bases-de-l-animation)).
+Simplement car nous n'avons pas appliqué cette directive à notre élément (cf le point 2 [Les bases de l'animation](#les-bases-de-l-animation)).
 
-Pour se faire il suffit de remplacer la règle css pour la `div:hover` par ceci :
+Pour se faire il suffi de remplacer la règle css pour la `div:hover` par ceci :
 
 ```css
 div:hover {
@@ -563,7 +563,7 @@ div:hover {
 
 ***Decortiquons un peu cette directive***
 
-ici nous disons simplement que au passage de la sourri au dessus de la div (`hover`, toujours) je veux que l'animation nommée `monAnimation` ( déclarée au dessus) se déclanche et dure 2sec.
+ici nous disons simplement  qu'au passage de la souris au dessus de la div (`hover`, toujours) je veux que l'animation nommée `monAnimation` ( déclarée au dessus) se déclenche et dure 2sec.
 
 Allez à votre tour d'essayer ! 
 
@@ -601,7 +601,7 @@ Et là ça devient presque un spectacle !
 
 Vous n'avez besoin que de définir un état de départ et d'arrivée pour votre animation ? 
 
-Vous avez deux possibilitées 
+Vous avez deux possibilités 
 
 1. Définir une directive de ce genre 
 
@@ -657,7 +657,7 @@ et elle s'utilise comme ceci :
 ```css
 animation : nomDeLAnimation duréeAnimation nombreIteration
 ```
-Donc comme **petit challenge**, je souhaiterais créer une animation qui dure `2sec` et qui fasse que ma div change de couleur pour passer de `cyan` à `purple` (mauve en anglais) et ce à l'infini ! (tant que ma sourri est positionée sur la div)
+Donc comme **petit challenge**, je souhaiterais créer une animation qui dure `2sec` et qui fasse que ma div change de couleur pour passer de `cyan` à `purple` (mauve en anglais) et ce à l'infini ! (tant que ma souris est positionée sur la div)
 
 Pensez au `from` et `to` et à la propriété raccourcie `animation`
 
@@ -687,17 +687,17 @@ div:hover {
 
 ```
 
-Et voici qui termine cette introduction aux animation CSS3. 
+Et voici qui termine cette introduction aux animations CSS3. 
 
-Ce sujet est aussi un sujet très large et vaste. Tout les aspects n'ont pas été abordés mais je pense que vous avez suffisament d'outils pour experimenter par vous même.
+Ce sujet est aussi un sujet très large et vaste. Tous les aspects n'ont pas été abordés mais je pense que vous avez suffisament d'outils pour experimenter par vous même.
 
-Comme je vous le disais, ici nous avons travaillez principalement avec des `div` mais tout élement HTML peut être la base pour créer une animation. 
+Comme je vous le disais, ici nous avons travaillé principalement avec des `div` mais tout élement HTML peut être la base pour créer une animation. 
 
 **Pour aller plus loin : **
 
 L'experimentation est une composante essentielle dans le métier de développeur. Parfois c'est en combinant de toutes petites choses qu'on arrive à créer des animations ou des sites web intéressants, créatifs ou juste pour lesquels nous avons pris du plaisir à construire.
 
-Pour continuer sur cette route de l'experimentation, je vous propose  de reprendre votre projet d'introduction au CSS (`CSS101`) et d'experimenté en créant des animations pour les éléments HTML présents dans le projet.
+Pour continuer sur cette route de l'experimentation, je vous propose  de reprendre votre projet d'introduction au CSS (`CSS101`) et d'expérimenter en créantt des animations pour les éléments HTML présents dans le projet.
 
 Comme on dit ici la seule limite c'est votre imagination.
 
