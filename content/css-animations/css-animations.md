@@ -340,13 +340,13 @@ Tandis qu'une `animation` est une combinaison de transitions les unes à la suit
 
 #### Les transitions
 
-Depuis que vous faites du CSS, vous avez rencontrez beaucoup de propriété qui permettent de modifier l'apparence d'un élement HTML comme `background-color`, `color`, `width`, `height`
+Depuis que vous faites du CSS, vous avez rencontrez beaucoup de propriétées qui permettent de modifier l'apparence d'un élement HTML comme `background-color`, `color`, `width`, `height`
 
-Toutes ces propriétées peuvent être la base pour créer une transition CSS.
+Toutes ces propriétés peuvent être la base pour créer une transition CSS.
 
-Pour ceci nous devons déclarer sur quelle propriété nous souhaitons appliquer notre transition. Nous pouvons le faire en utilisant la propriété CSS `transition-property`.
+Pour ceci, nous devons déclarer sur quelle propriété nous souhaitons appliquer notre transition. Nous pouvons le faire en utilisant la propriété CSS `transition-property`.
 
-En plus de choisir sur combien de temps doit se dérouler la transition. Nous pouvons utiliser ici la propriété `transition-duration` (`duration` veut dire durée en anglais)
+En plus nous pouvoir choisir sur combien de temps doit se dérouler la transition. Pour ce faire, nous pouvons utiliser ici la propriété `transition-duration` (`duration` veut dire durée en anglais)
 
 **Mettons ces éléments ensemble**
 
@@ -376,9 +376,9 @@ Par rapport à la précédente version de la règle css nous avons rajouter 2 ch
 - `transition-property: background-color;` qui nous permet de dire au navigateur d'appliquer une transition sur la propriété `background-color`
 -  `transition-duration: 3s;` qui nous permet de faire duré la transition durant 3 secondes
 
-Admirez comme la transition est plus fluide par rapport à la version avec un `:hover` simple !.
+Admirez comme la transition est plus fluide par rapport à la version avec un `:hover` simple !
 
-Il est aussi possible d'appliquer une transition à plusieures propriétées en même temps. Pour ce faire il suffit de les énumérées en les espacant par une virgule.
+Il est aussi possible d'appliquer une transition à plusieures propriétés en même temps. Pour ce faire il suffit de les énumérées en les espacant par une virgule.
 
 Comme ceci :`transition-property: background-color, width, height;`
 
@@ -396,7 +396,7 @@ div:hover {
 }
 ```
 
-et donc  notre fichier `style.css` ressemblera à ceci :
+et donc  notre fichier `style.css` ressemblera à cela :
 
 ```css
 div {
@@ -419,9 +419,9 @@ Raffraîchissez votre navigateur et admirons avec nos yeux ébahis cette transit
 
 ##### Un peu plus de maitrise sur notre transition
 
-Il est aussi possible de décider de retarder l'éxécution d'une transition. Pour ceci, nous n'avons qu'à utiliser la propriété css `transition-delay`
+Il est aussi possible de décider de retarder l'éxécution d'une transition. Pour atteindre notre objectif, nous n'avons qu'à utiliser la propriété css `transition-delay`
 
-Nous pouvons donc enrichir notre règle CSS pour la `div` comme ceci :
+Nous pouvons donc enrichir notre règle CSS pour la `div` comme ça :
 ```css
 div {
   width: 200px;
@@ -432,7 +432,7 @@ div {
   transition-delay: 2sec;
 }
 ```
-Ici nous souhaitons juste que la transition que nous avons créée précédement se déclanche avec un délai (`delay`, en anglais) de deux secondes.
+Ici nous souhaitons que la transition que nous avons créée précédement se déclanche avec un délai (`delay`, en anglais) de deux secondes.
 
 ***Le challenge***
 
@@ -493,7 +493,9 @@ Créer une animation CSS3 se fait en deux étapes :
 
 ###### Définir une animation
 
-Pour définir une animation nous devons utiliser une `directive CSS` nommée `@keyframes` que nous pouvons écrire au début de chaque fichier `css`. 1 Cette directive CSS possède une syntaxe un peu particulière 
+Pour définir une animation nous devons utiliser une `directive CSS` nommée `@keyframes` que nous pouvons écrire au début de chaque fichier `css`. 
+
+Cette directive CSS possède une syntaxe un peu particulière  :
 
 ```css
 @keyframes  leNomDeMonAnimation {
@@ -515,11 +517,17 @@ Pour définir une animation nous devons utiliser une `directive CSS` nommée `@k
 ```
 ***Decortiquons un peu cette directive***
 
-La directive commence donc par le mot clé `@keyframes` auquel un ajoute le nom de l'animation que l'on souhaite créé (ici `leNomDeMonAnimation`). Ensuite entre le `{}`, il y a une succession d'instructions commençant par `0%`, `50%` ou `100%`.
+La directive commence donc par le mot clé `@keyframes` auquel un ajoute le nom de l'animation que l'on souhaite créer (ici `leNomDeMonAnimation`). 
 
-Ces instructions permettent de décire la manière dont notre animation va se comporter au fil du temps (`0%`au tout début de l'animation, `50%` à la moitiée, `100%` à la fin). Il est aussi possible de rajouter des étapes intermédiaires si on souhaite qu'il se passe quelque chose à `75%` ou encore à `30%` par exemple.
+Ensuite entre les `{}`, il y a une succession d'instructions commençant par `0%`, `50%` ou `100%`.
 
-C'est donc à l'intérieur de cette directive que nous pouvons écrire quelque chose quit dirait "Je souhaite qu'au début de mon animation la `div` la div tourne sur elle même de 10 deg, qu'à 50% de l'animation elle change de couleur pour devenir verte et à 100% , la div se déplace de 150 pixel sur la droite"
+Ces instructions permettent de décire la manière dont notre animation va se comporter au fil du temps (`0%`au tout début de l'animation, `50%` à la moitiée, `100%` à la fin). 
+
+Il est aussi possible de rajouter des étapes intermédiaires si on souhaite qu'il se passe quelque chose à `75%` ou encore à `30%` par exemple.
+
+C'est donc à l'intérieur de cette directive que nous pouvons écrire quelque chose quit dirait:
+
+ "Je souhaite qu'au début de mon animation la `div` tourne sur elle même de 10 deg, qu'à 50% de l'animation elle change de couleur pour devenir verte et à 100% , la div se déplace de 150 pixels sur la droite"
 
 Cette même instruction en code donnerait quelque-chose comme ceci :
 ```css
@@ -535,11 +543,15 @@ Cette même instruction en code donnerait quelque-chose comme ceci :
   }
 ```
 
-Avant de vous lancer dans la création d'animation les plus folles, attendez deux secondes car même si vous collez cette directive dans votre fichier css, je dois vous dire rien ne se passera dans votre navigateur. Oh tristesse mais pourquoi ?
+Avant de vous lancer dans la création d'animations les plus folles, attendez deux secondes. 
+
+Actuellement, si vous collez cette directive dans votre fichier css, je dois vous dire rien ne se passera dans votre navigateur.
+
+Oh tristesse mais pourquoi ?
 
 Simplement car nous n'avons pas appliquer cette directive à notre élément (cfr le point 2 [Les bases de l'animation](#les-bases-de-l-animation)).
 
-Pour se faire il suffit de remplacer la règle css pour la `div:hover` par ceci 
+Pour se faire il suffit de remplacer la règle css pour la `div:hover` par ceci :
 
 ```css
 div:hover {
@@ -551,7 +563,7 @@ div:hover {
 
 ***Decortiquons un peu cette directive***
 
-ici nous disons simplement que au passage de la sourri au dessus de la div (`hover`, toujours) je veux que l'animation nommée `monAnimation` et déclarée au dessus se déclanche et dure 2sec.
+ici nous disons simplement que au passage de la sourri au dessus de la div (`hover`, toujours) je veux que l'animation nommée `monAnimation` ( déclarée au dessus) se déclanche et dure 2sec.
 
 Allez à votre tour d'essayer ! 
 
@@ -634,9 +646,9 @@ où `from` est l'état de départ de votre animation et `to` est l'état d'arriv
 
 **Une nouvelle astuce de chaman**
 
-C'est assez long de déclarer chaque propriétée liée à notre animation vous ne trouvez pas ? 
+C'est assez long de déclarer chaque propriété liée à notre animation vous ne trouvez pas ? 
 
-Ca serait assez cool si il y avait une propriété raccourcie qui nous permettrait de définir en une seule ligne la durée de notre animation, son nom, le nombre d'itération etc. 
+Ca serait assez cool si il y avait une propriété raccourcie (un genre de `super-propriété`) qui nous permettrait de définir en une seule ligne la durée de notre animation, son nom, le nombre d'itération etc. 
 
 Ce qui est super cool c'est qu'en effet cette propriété existe et elle s'appelle simplement `animation`
 
@@ -647,7 +659,7 @@ animation : nomDeLAnimation duréeAnimation nombreIteration
 ```
 Donc comme **petit challenge**, je souhaiterais créer une animation qui dure `2sec` et qui fasse que ma div change de couleur pour passer de `cyan` à `purple` (mauve en anglais) et ce à l'infini ! (tant que ma sourri est positionée sur la div)
 
-Pensez au `from` et `to` etla propriété raccourcie `animation`
+Pensez au `from` et `to` et à la propriété raccourcie `animation`
 
 --- Barrière anti-spoil ---
 
@@ -675,7 +687,9 @@ div:hover {
 
 ```
 
-Et voici qui termine cette introduction aux animation CSS3. Vraiment, ce sujet est aussi un sujet très large et vaste. Tout les aspects n'ont pas été abordés mais je pense que vous avez suffisament d'outils pour experimentez par vous même.
+Et voici qui termine cette introduction aux animation CSS3. 
+
+Ce sujet est aussi un sujet très large et vaste. Tout les aspects n'ont pas été abordés mais je pense que vous avez suffisament d'outils pour experimenter par vous même.
 
 Comme je vous le disais, ici nous avons travaillez principalement avec des `div` mais tout élement HTML peut être la base pour créer une animation. 
 
@@ -683,7 +697,7 @@ Comme je vous le disais, ici nous avons travaillez principalement avec des `div`
 
 L'experimentation est une composante essentielle dans le métier de développeur. Parfois c'est en combinant de toutes petites choses qu'on arrive à créer des animations ou des sites web intéressants, créatifs ou juste pour lesquels nous avons pris du plaisir à construire.
 
-Pour continuer sur cette route de l'experimentation, je vous propose  de reprendre votre projet d'introduction au CSS (`CSS101`) et d'experimenté en créer des animations pour les éléments HTML présent dans le projet.
+Pour continuer sur cette route de l'experimentation, je vous propose  de reprendre votre projet d'introduction au CSS (`CSS101`) et d'experimenté en créant des animations pour les éléments HTML présents dans le projet.
 
 Comme on dit ici la seule limite c'est votre imagination.
 
