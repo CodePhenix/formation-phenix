@@ -8,7 +8,7 @@ Pour se rafraichir la mémoire, la grande distinction entre le HTML et le CSS, o
 
 D'un côté, nous avons le HTML dont le but est de structurer la page et d'apporter de la _sémantique_ , de faire un travail de fond (ce bout de texte est mon titre principal, celui là est juste un paragraphe standard, ce mot est un lien etc). De l'autre côté, nous avons le CSS dont le but est de mettre tout ceci en page, d'apporter de la forme et par exemple dire :  je veux que ce titre ait une police de 22 px et soit rose licorne - je vous laisse trouver le code hexadécimal correspondant :-) 
 
-Globalement, tout navigateur digne de ce nom devrait être capable de comprendre ces deux languages. Cependant, encore aujourd'hui et même si cela s'améliore fortement avec le temps, chaque navigateur va avoir une manière un peu différente d'interpréter  le CSS ou le HTML (ici comprenez le mot `interprété` dans le sens d'afficher, montrer, ...). 
+Globalement, tout navigateur digne de ce nom devrait être capable de comprendre ces deux languages. Cependant, encore aujourd'hui et même si cela s'améliore fortement avec le temps, chaque navigateur va avoir une manière un peu différente d'interpréter  le CSS ou le HTML (ici comprenez le mot `interpréter` dans le sens d'afficher, montrer, ...). 
 
 Par exemple, il est possible que pour une même règle CSS comprenant les mêmes propriétés tout se passe bien sur Firefox tandis que sur Internet Explorer ou Safari le rendu de la page web ne soient pas exactement le même ou pire encore : que la règle css ne fonctionne tout simplement pas !
 
@@ -18,11 +18,11 @@ Simplement pour de sombres questions d'histoire et de concurrence entre les entr
 
 ## Le point histoire
 
-Le HTML est né en 1991 et le CSS un peu plus tard en 1996. Durant cette décennie, le marché du WEB était partagé entre des entreprises telles que Nestcape ou Microsoft. Chacune de ces entreprises développait leur navigateur en mettant en avant ses fonctionnalité dans le but d'attirer le plus grand nombre d'utilisateurs. 
+Le HTML est né en 1991 et le CSS un peu plus tard en 1996. Durant cette décennie, le marché du WEB était partagé entre des entreprises telles que Nestcape ou Microsoft. Chacune de ces entreprises développaient leur navigateur en mettant en avant ses fonctionnalitées dans le but d'attirer le plus grand nombre d'utilisateur. 
 
 Le problème, c'est qu'à cette époque, personne ne se souciait réellement d'uniformiser le comportement de ces fonctionnalités
 
-En 1994, un organisme appelé le `World Wide Web Consortium` (en abbrégé `W3C`) a été créé dans de faire un peu de ménage là-dedans en essayant de standardiser le comportement de fonctionnalités similaire entre navigateurs . Par exemple, un des objectifs du W3C serait que  pour une page possédant le même marquage HTML et les mêmes règles CSS, cette page soit affichée de la même manière peu importe le navigateur.
+En 1994, un organisme appelé le `World Wide Web Consortium` (en abbrégé `W3C`) a été créé dans le butt de faire un peu de ménage là-dedans. Principalement, en essayant de standardiser le comportement de fonctionnalités similaire entre navigateurs . Par exemple, un des objectifs du W3C serait que  pour une page possédant le même marquage HTML et les mêmes règles CSS, cette page soit affichée de la même manière peu importe le navigateur.
 
 Pour ce faire, le W3C édite régulièrement de nouveaux standards et permet donc d'engendrer de nouvelles versions du HTML et du CSS.
 
@@ -34,7 +34,7 @@ _Pourquoi raconter tout cela ?_
 
 Simplement, pour vous mettre au courrant que même si un grand travail d'uniformisation à été entrepri, le web actuel conserve encore quelques traces liées à son historique. 
 
-Ne soyez donc pas étonné si au cours de votre carrière de développeur et de vos experimentations , vous découvrez qu'une règle CSS ne possède pas  un comportement identique sur tous les navigateurs. 
+Ne soyez donc pas étonné si au cours de votre carrière de développeur et de vos experimentations, vous découvrez qu'une règle CSS ne possède pas un comportement identique sur tous les navigateurs. 
 
 ## CSS3 ?
 
@@ -117,7 +117,7 @@ N'hésitez pas à changer la valeur `deg` pour voir comment l'image évolue. Par
 
 Si vous travaillez le navigateur  `Safari` ou `Internet Explorer`, il se peut que le code ci-dessus ne fonctionne pas entièrement faute à des problèmes de compatibilité (vous vous souvenez l'histoire du web, tout ça tout ça ...). En effet, le CSS3 n'est pas encore totalement standarisé et il est nécessaire de recourir parfois à des astuces de chaman pour bien expliquer au navigateur ce qu'il doit faire. Cette astuce consiste à rajouter une règle supplémentaire quasiment identique à la précédente mais ayant un préfixe particulier : `-webkit-`
 
-Ce préfix va permettre aux navigateurs de type 'webkit' dont fait partie `Safari` de comprendre notre règle.
+Ce préfix va permettre aux navigateurs de type 'webkit' (dont fait partie `Safari`) de comprendre notre règle.
 
 Ainsi nous pouvons écrire nos règles comme ceci :
 
@@ -170,7 +170,7 @@ Vous le voyez, l'image revient à sa taille initiale. Donc nous pouvons imaginer
 
 Avec `3`, l'image sera 3 fois plus grande et ainsi de suite.
 
-Maintenant, j'aimerai que vous réduisiez l'image pour qu'elle soit `0.5` fois plus petite que sa taille initiale. Quelle règle allez vous écrire ?
+Maintenant, j'aimerais que vous réduisiez l'image pour qu'elle soit `0.5` fois plus petite que sa taille initiale. Quelle règle allez vous écrire ?
 
 ---- Barrière anti-spoil ----
 
@@ -221,7 +221,7 @@ Pour se le représenter, voici un schéma :
 Pour le moment nous avons utilisé la fonction css `scale` en lui passant seulement 1 seul paramètre. En fait, il est aussi possible de passer 2 paramètres à la fonction `scale` et nous pourrions donc l'utiliser de cette manière
 
 ```css
-    transform: scale(valeurEnX.ValeurEnY);
+    transform: scale(valeurEnX,ValeurEnY);
 ```
 
 où `valeurEnX` serait la valeur de modification de la taille en X tandis que `valeurEnY` serait la même chose mais pour la taille en Y.
@@ -263,7 +263,7 @@ Avec la valeur 35px pour l'axe X , l'image se déplace de `35px` sur la droite d
 
 Maintenant, je souhaiterais que l'image se déplace de `50px` vers la `gauche` de l'écran et qu'elle `remonte` (se déplace vers le `haut`) de `8px` A votre avis comment je peux faire ?
 
-Petit indice, il est possible de donner des valeur négatives comme paramètre de la fonction `translate`.
+Petit indice, il est possible de donner des valeurs négatives comme paramètre de la fonction `translate`.
 
 A vous de jouer !
 
