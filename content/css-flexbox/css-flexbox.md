@@ -2,7 +2,7 @@
 
 Il y a peu durant votre parcours avec le CSS et le HTML vous avez vu le `modèle de boîte`.
 
-Pour un peu se rappeler, le modèle de boîte défini la manière dont les éléments HTML vont naturellement se positionner sur la page sans que l'on ne rajoute une ligne de CSS.
+Pour un peu se rappeler, le modèle de boîte définit la manière dont les éléments HTML vont naturellement se positionner sur la page sans que l'on ne rajoute une ligne de CSS.
 
 Dans le modèle de boîte, il va y avoir deux types d'élements : ceux de type
 `block` (un `<p>`, une `<div>`, par exemple). Ces éléments vont agir comme des briques lego et venir naturellement s'empiler les uns sur les autres.
@@ -11,31 +11,31 @@ _Comme sur ce schéma :_
 
 ![box](box.png)
 
-En plus des éléments de type bloc, nous avons les éléments de type inline (`<em>`, `<img>`, `<span>`) qui eux par défaut se placeront dans le flux des éléments c'est à dire qu'ils se placeront à coté et non en dessous des autres éléments.
+En plus des éléments de type bloc, nous avons les éléments de type inline (`<em>`, `<img>`, `<span>`) qui ,eux par défaut, se placeront dans le flux des éléments c'est à dire qu'ils se placeront à coté et non en dessous des autres éléments.
 
 Ce comportement est une bonne base mais il va être assez difficile de créer des mises en page un tant soit peu recherchées en se basant uniquement sur ce positionement "naturel" des élements.
 
-Nous ce que nous souhaitons c'est avoir la maitrise sur le positionement de nos élements. Par exemple, nous voulons décider que tel `<p>` devrait être `à coté` d'un autre pour fomer deux collonnes.
+Nous ce que nous souhaitons plutôt c'est avoir la maitrise sur le positionement de nos élements. Par exemple, nous voulons pouvoir décider que tel `<p>` devrait être `à coté` d'un autre pour fomer deux colonnes par.
 
-Dans cet optique, en plus de fournir des proporiétés pour styliser nos éléments, le CSS possède tout un attirail de possibilitées ayant pour but de nous aider à reprendre la maitrise sur le positionement de nos éléments.
+Dans cette optique, en plus de fournir des proporiétés pour styliser nos éléments, le CSS possède tout un attirail de possibilités ayant pour but de nous aider à reprendre la maitrise sur le positionement de nos éléments.
 
 Aujourd'hui, nous allons voir la technique le plus moderne qui se nomme `CSS Flexible Box Layout Module` ou en abbrégé `Flex Box` (comment traduire ceci ... hum... "Module de mise en page à l'aide de boîtes flexibles" ? 😑 ).
 
-Avant de rentrer dans le vif du sujet, il va être important que nous fassions ensemble un petit point d'histoire du web (cela vous a manqué hein ? :-) ) car `Flex Box` n'est qu'une évolution des techniques ancestrales de positionement êtant venues au fur et à mesure de l'évolution du CSS.
+Avant de rentrer dans le vif du sujet, il va être important que nous fassions ensemble un petit point d'histoire du web car `Flex Box` n'est qu'une évolution des techniques ancestrales de positionement êtant apparues au fur et à mesure de l'évolution du CSS.
 
 ## Le point culture de l'internet :
 
-`FlexBox`et son ensemble de propriétées nous aidant à mettre en page notre site web est arrivé aux alentours de 2006 dans le paysage du web actuel. 2006 cela parraît assez vieux dans l'histoire agitée des internets mais en fait cela reste somme toute assez récent.
+`FlexBox`, et son ensemble de propriétés liées à la mise en page, est arrivé aux alentours de 2006. 2006 cela parraît assez vieux dans l'histoire agitée des internets mais en réalité cela reste somme toute assez récent.
 
-Mais alors comment faisait-il pour mettre en page dans les temps immémoriaux à la préhistoire du web ?
+Mais alors comment faisions-nous pour mettre en page dans les temps immémoriaux de la préhistoire du web ?
 
-Et bien, il faut dire que cela à toujours été un peu de bidouille avec les outils dont on disposaient à l'époque.
+Et bien, il faut dire que cela à toujours été un peu de bidouille avec les outils dont nous disposions à l'époque.
 
 ### La mise en page avec un tableau
 
-Une des premières technique de mise en page recensée par les archéologues du web (dont vous faites peut-être parti ? ;-) ) était appellée la technique du tableau.
+Une des premières technique de mise en page recensée par les archéologues du web était appellée "la technique du tableau".
 
-Cette technique se basait sur les balises HTML que l'on utilisent encore pour mettre en page des données au sein de tableaux (un peu comme avec le logiciel `Excel`).
+Cette technique se basait sur les balises HTML servant encore actuellement à la mise en page des données au sein de tableaux (un peu comme nous pouvons le le faire avec le logiciel `Excel`).
 
 Ces balises pour rappel sont les, sans toutes les nommées, `table`, `th` , `td`, etc ...
 
@@ -60,7 +60,7 @@ Ainsi si l'on voulait faire une mise en page en deux colonnes l'on pouvait recou
 
 Comme vous le remarquez, recourrir à cette technique "pollue" rapidement notre code HTML (prenez le mot `polluer`, dans le sens qui rajoute des éléments HTML peu utiles à la sémantique de notre page web en construction ).
 
-Ici nous avons une mise en page avec deux colonne mais si notre site web necéssite une mise en page plus complexe, nous nous retrouverons vite avec des balises `td` (pour les colonnes) dans tous les sens.
+Ici nous avons une mise en page avec deux colonne mais si notre site web necéssite une mise en page plus complexe, nous nous retrouverons vite avec des balises `td` (utilisées pour créer les colonnes) dans tous les sens.
 
 Juste pour avoir un aperçu essayez d'imaginer la structure HTML en tableau qu'il faudrait pour faire une mise en page de ce type :
 
@@ -68,41 +68,61 @@ Juste pour avoir un aperçu essayez d'imaginer la structure HTML en tableau qu'i
 
 Où chaque carré rouge représente une zone de contenu textuel, contenu dans une balise `<p>` par example.
 
-Nous n'allons pas écrire la structure HTML correspondante. Le but était simplement de vous faire imaginer la complexité au niveau HTML que cela pourrait engendrer.
+Rassurez-vous, nous n'allons pas écrire la structure HTML correspondante.
 
-En dehors du coté "polluant", un autre problème lié à l' utilisation de la technique de mise en page grâce aux tabeaux et qu'elle n'est plus adéquate par rapport au web actuel. En effet, le besoin actuel est que nous devons pouvoir afficher un même site aussi bien sur un écran géant que sur un écran de smartphone.
+Le but était simplement de vous faire imaginer la complexité au niveau HTML que cela pourrait engendrer.
 
-En d'autres terme, la mise en page en tableau ne permet pas de faire du web responsive (ou `responsive web design`).
+En dehors du coté "polluant", un autre problème lié à l' utilisation de la technique de mise en page grâce aux tableaux et qu'elle n'est plus adéquate par rapport au web actuel.
 
-Cette notion de web responsive nous aurons le temps d'en reparler plus tard dans un cours dédié car c'est un élement fondamental à prendre en compte lors de la création d'un site web.
+En effet, le besoin actuel de pouvoir afficher un même site aussi bien sur un écran géant que sur un écran de smartphone.
 
-Pour terminer avec les tableaux, sachez que cela n'a pas encore tout à fait disparu. En effet, cette technique est encore fortement répandue si l'on souhaite créer des emails avec une mise en page un peu recherchée (email marketing, promotionnel, newsletter, ..).
+En d'autres termes, la mise en page en tableau ne permet pas de faire du web responsive (aussi appelé `responsive web design`).
 
-Ceci pour une raison simple : c'est une des seule technique de mise en page supportée à coup sûr par les clients mails les plus utilisés ( Microsoft Outlook, principalement). Donc il se peut que durant votre vie de développeur web vous ayez encore à faire à ce genre de technique venues des ages sombres.
+?ous aurons le temps de reparler plus tard de cette notion dans un cours dédié .
+
+De nos jours, c'est un élement fondamental à prendre en compte lors de la création d'un site web.
+
+Pour terminer avec les tableaux, sachez que cette techniquen n'a pas encore tout à fait disparue.
+
+En effet, ce type de mise en page est encore fortement répandu lorsque l'on souhaite créer des emails avec une mise en page un peu recherchée (email marketing, promotionnel, newsletter, ..).
+
+Ceci pour une raison simple : c'est une des seule technique de mise en page supportée à coup sûr par les clients mail les plus utilisés ( Microsoft Outlook, principalement).
+
+Il se peut que durant votre vie de développeur web vous ayez encore à faire à ce genre de technique venues des ages sombres.
 
 ### La mis en page avec `float`
 
-Quelques temps après l'âge d'or de la mise en page avec les tableaux est venu une autre alternative pour la mise en page. Cette techniquer recourrait massivement à la propriété de positionement `float`.
+Quelques temps après l'âge d'or de la mise en page avec les tableaux est venu une autre alternative.
+
+A savoir la technique de mise en page utilisant la propriété de positionement `float`.
 
 L'utilisation de float est un peu complexe à prendre en main mais permet d'avoir un contrôle plus simple sur le positionement `horizontal` des éléments.
 
-`float` est une technique de mise encore utilsée actuellement car bien supportée par les versions de navigateur les plus répendues dans les entreprises (`Internet Explorer 7/8`) notamment.
+`float` est une technique de mise en page encore utilsée actuellement.
+
+Ceci s'explique car elle est très bien supportée par les versions de navigateur les plus répendues dans les entreprises (`Internet Explorer 7/8`) notamment.
 
 Outre ça complexité apparente, l'utilisation de `float` peut aussi limiter la créativité en matière de mise en page de site internet.
 
-Cette technique était fortement utilisée pour des sites web ayant une mise en page se rapprochant de la celle des journaux ou magasines papier. Par la suite, la volonté était de créer des design web plus créatifs et plus dynamiques. De ce fait l'utilisation de `float` est devenue moins adéquate.
+Cette technique était fortement utilisée pour des sites web ayant une mise en page se rapprochant de la celle des journaux ou magasines papier.
 
-Actuellement, l'utilisation de `float` tend à disparaître et reste cantonnée à des besoins spécifiques de mise en page.
+Actuellement, la volonté est de créer des design web plus créatifs et plus dynamiques. De ce fait l'utilisation de `float` est devenue moins adéquate.
+
+L'utilisation de `float` tend à disparaître et reste cantonnée à des besoins spécifiques de mise en page.
 
 Voici que clôture notre point culture web, ici le but était de vous montrer que le CSS et le HTML actuel (... et aussi l'informatique dans son ensemble) est une succession de modifications et d'introductions de nouveaux élements qui font évoluer la manière dont nous devons construire nos projets.
 
-Un des grand défi en tant que développeur est de toujours rester à l'affût des languages ou techniques faisant leur apparition car certaines peuvent rapidement et drastiquement chambouler notre manière de travailler. Ceci s'appelle faire de la `veille technologique`
+Un des grand défi en tant que développeur est de toujours rester à l'affût des languages ou techniques faisant leur apparition.
+
+Certaines apparitions peuvent rapidement et drastiquement chambouler notre manière de travailler.
+
+C'est ce que l'on appelle faire de la `veille technologique`
 
 ## La mise en page avec Flexbox
 
 Pour revenir à nos moutons, nous disions donc qu'outre le modèle de boîte qui permet naturellement de gérer la mise en page verticale de notre page, nous avons besoin de quelque chose qui puisse nous aider à travailler `facilement` (par rapport aux autres techniques vues précédement, j'insiste ) sur l'horizontalité.
 
-Justement c'est là (mais pas que !) que `FlexBox` s'illustre vraiment bien.
+Justement c'est là que `FlexBox` s'illustre vraiment bien.
 
 ### Préparation du projet.
 
@@ -112,11 +132,15 @@ Au cours de cette leçon, nous allons construire quelque chose qui va ressembler
 
 Pour commencer, nous allons créer un dossier que l'on va nommer `css-flexbox`.
 
-Dans ce dossier nous allons ajouter le dossier `assets`. Si vous ne l'avez pas sous la main ( non ne regardez pas :-), bon ok elle était facile ), n'héistez pas à le demander à votre formateur.
+Dans ce dossier nous allons ajouter le dossier `assets`.
 
-Généralement dans un projet web plus complexe, on aime bien structurer aussi l'organisation des dossiers pour rassembler ce qui va ensemble. Ici `assets` est le dossier qui contient toutes les images dont nous aurons besoin pour ce projet.
+Si vous ne l'avez pas sous la main, n'héistez pas à le demander à votre formateur.
 
-En plus du dossier `assets`, nous allons créer fichier nommer `index.html` qui contiendra cette structure :
+Généralement dans un projet web plus complexe, nous aimons bien structurer aussi l'organisation des dossiers pour rassembler ce qui va ensemble.
+
+Ici `assets` est le dossier contenant toutes les images dont nous aurons besoin pour ce projet.
+
+En plus du dossier `assets`, nous allons créer un fichier nommer `index.html` qui contiendra cette structure :
 
 ```html
 <!DOCTYPE html>
@@ -172,7 +196,7 @@ Nous allons juste un peu nous attarder sur ceci :
 
 Le but de ce bloc est de supprimer le `margin` et le `padding` qui part défaut s'applique sur tous les éléments HTML (vous vous souvenez de la `Feuille de style par défaut` dont nous avons parlé dans le cour CSS 101 ?`).
 
-Ici `*` permet de sélectionner TOUS les éléments de la page web.
+Ici `*` permet de sélectionner TOUS les éléments de la page.
 
 A ce stade-ci votre projet devrait avoir cette structure :
 
@@ -182,26 +206,30 @@ A ce stade-ci votre projet devrait avoir cette structure :
 
 Pour bien comprendre `Flexbox`, il va être nécessaire de bien comprendre deux concepts fondamentaux dont nous n'avons jamais parlé précédement : les notions de `flex-container` et de `flex-item`.
 
-Le rôle d'un `flex-container` et de regrouper un paquet d'élements (`flex-item`) et de définir la manière dont ces éléments vont
+Le rôle d'un `flex-container` et de regrouper un ensemble d'élements (`flex-item`) et de définir la manière dont ils vont
 être positionés.
 
 Vous pouvez voir ce containeur comme un enclos qui encèrcle un troupeau de mouton indisciplinés (les `flex-items`).
 
 ![flex-container](flex-container.png)
 
-Chaque enfant direct d'un `flex-container` est considéré comme une item.
+Chaque enfant **DIRECT** d'un `flex-container` est considéré comme une `flex-item`
 
-Il en va de la responsabilité du `flex-container` de défnir la manière dont seront disposé les `items`. De cette manière, les `item` ne `sont pas` responsable de leur positionement.
+Il en va de la responsabilité du `flex-container` de défnir la manière dont seront disposé ses `flex-items`.
+
+De cette manière, les `flex-items` ne **sont pas** responsable de leur positionement.
 
 ### Les `flex-containers`
 
-La première chose que nous devons faire ici pour utilisr les `FlexBox` est de modifié la caractéristiques d'un containeur (une `div`, par exemple) pour qu'il devienne un `flex-container`.
+La première chose que nous devons faire ici pour utilisr les `FlexBox` est de modifier la caractéristiques d'un containeur (une `div`, par exemple) pour qu'il devienne un `flex-container`.
 
 Pour ce faire nous pouvons ajouter cette propriété css : `display : flex` à l'un des éléments que nous souhaitons transformer en `flex-container`.
 
-Dans notrs fichier HTML remarquez la `<div>` ayant comme class le nom `menu-container`. C'est dans un premier temps, ce containeur là que nous souhaitons rendre `flex`.
+Dans notrs fichier HTML remarquez la `<div>` ayant comme class le nom `menu-container`.
 
-Pour ce faire dans notre fichier `styles.css`, nous pouvons ajouter la propriété `display : flex` à la règle déja existante pour le `.menu-containeur`.
+C'est dans un premier temps, ce containeur là que nous souhaitons rendre `flex`.
+
+Pour se faire, dans notre fichier `styles.css`, nous pouvons ajouter la propriété `display : flex` à la règle déja existante pour le `.menu-containeur`.
 
 Ainsi nous obtenons, cette règle :
 
@@ -214,7 +242,9 @@ Ainsi nous obtenons, cette règle :
 }
 ```
 
-Bon pour le moment l'effet visuel de la modification de la règle n'est pas flagrant... La raison est simple : nous avons juste dit à notre `menu-container` "maintenant je veux que tu devienne un `flex-container`" mais nous n'avons pas encore péciser comment il devait organiser ses élements enfants.
+Bon pour le moment l'effet visuel de la modification de la règle n'est pas flagrant...
+
+La raison est simple : ici nous avons juste dit à notre `menu-container` "maintenant je veux que tu devienne un `flex-container`" mais nous n'avons pas encore péciser comment il devait organiser ses élements enfants.
 
 ### Aligner les élements
 
@@ -230,7 +260,7 @@ Regardez, notre menu en construction se positionne parfaitement au centre de son
 
 Avant de continuer, ayons le bon réflexe et ouvrons les `developpeur tools` de notre navigateur.
 
-Si si rappelez vous ce sont les outils que met à disposition tout navigateur digne de ce nom pour nous aider développer/ débugger notre projet.
+Allez, rappelez vous ce sont les outils que met à disposition tout navigateur digne de ce nom pour nous aider développer/ débugger notre projet.
 
 Vous ne nous rappelez vraiment pas ?
 
@@ -240,9 +270,11 @@ Maintenant que vous avez les `developpeur tools` (dev tools, dans la jargon) ouv
 
 ![dev-tools](dev-tools.jpg)
 
-Ici j'utilise comme navigateur `Firefox Developpeur Edition` mais comme je vous le disais dans le secion consacrée aux dev tools, chaque navigateur possède les mêmes fonctionalitées de base. Le choix de votre navigateur de travail relève plus d'un choix et d'un confort personnel.
+Ici j'utilise comme navigateur `Firefox Developpeur Edition` mais comme je vous le disais dans le secion consacrée aux dev tools, chaque navigateur possède les mêmes fonctionalitées de base.
 
-Tout cela pour vous dire que dans cet écran, il vous est possible d'activer ou non certaines propriété css pour directement voir l'effet.
+Le choix de votre navigateur de travail relève plus d'un choix et d'un confort personnel.
+
+Tout cela pour vous dire que dans cet écran, il vous est possible d'activer ou non certaines propriété css et ainsi voir directement l'effet de celles-ci.
 
 Fin de transmission. Bip.
 
@@ -281,9 +313,9 @@ Au sein de notre fichier `styles.css`, nous allons remplacer la règle déja éx
 
 Sauvegardons et rafraichissons notre navigateur et admirons le paysage.
 
-Que ce passe-t-il ?
+Que se passe-t-il ?
 
-Tout les élements contenu dans notre `.menu` ce sont alignés horizontalement et se sont espacés équitablement à l'intérieur du menu.
+Tout les élements contenu dans notre `.menu` se sont alignés horizontalement et se sont espacés équitablement à l'intérieur du menu.
 
 **_Décortiquons cette règle_**
 
@@ -299,11 +331,13 @@ En réalité, `justify-content` peut aussi prendre une autre valeur : `space-bet
 
 Pour découvrir son effet je vous laisse essayer.
 
-Vous le remarquez, maintenant il y a plus d'espace entre nos éléments dans le menu. Cela tombe bien c'est exactement ce que nous voulons.
+Vous le remarquez, maintenant il y a plus d'espace entre nos éléments dans le menu.
+
+Cela tombe bien c'est exactement ce que nous voulions.
 
 Alors allons y changeons la valeur pour le `justify-content` et utilisons `space-between`
 
-Nous allons aussi en profiter pour enlever la moche bordure blanche autour du menu que nous servait à nous repéré.
+Nous allons aussi en profiter pour enlever la moche bordure blanche autour du menu que nous servait à mieux nous repérer.
 
 Donc votre fichier css devrait actuellement ressembler à ceci :
 
@@ -340,9 +374,9 @@ Un peu comme le montre ce schéma :
 
 ![menu-bar-grouped-items](menu-bar-grouped-items.png).
 
-Pour ce faire, nous devons retenir un principe de base de `FlexBox` :
+Pour se faire, nous devons retenir un principe de base de `FlexBox` :
 
-un `flex-container` ne peut agir que sur ses éléments enfants mais ne peut pas agir sur les éléments contenu dans ses élements enfants. (Les petits enfants du `flex-container`).
+un `flex-container` ne peut agir que sur ses éléments enfants mais ne peut pas agir sur les éléments contenus dans ses élements enfants. (Les petits enfants du `flex-container`).
 
 Pour illustrer ceci, entourons nos éléments
 
@@ -351,7 +385,7 @@ Pour illustrer ceci, entourons nos éléments
 <div class="login">Se connecter</div>
 ```
 
-contenu dans notre `index.html` par une div supplémentaire à laquelle nous allons ajouter la class `links` (liens en anglais)
+contenus dans notre `index.html` par une div supplémentaire à laquelle nous allons ajouter la class `links` (liens en anglais)
 
 Ainsi la structure HTML de notre menu ressemblera à ceci :
 
@@ -367,17 +401,21 @@ Ainsi la structure HTML de notre menu ressemblera à ceci :
 
 Véirifions le résultat dans notre navigateur.
 
-Super jusque'ici nous avons le rendu que nous avons espéré. Cependant, le rendu n'est est pas très joli car les `div` contenues dans la `div` avec la e class `links` ne sont plus soumises à l'autorité de leur grand parent (le `.menu`).
+Super jusque'ici nous avons le rendu que nous avons espéré.
+
+Cependant, le rendu n'est est pas très joli car les `div` contenues dans la `div` avec la e class `links` ne sont plus soumises à l'autorité de leur grand parent (le `.menu`).
 
 Elles ont donc retrouvées leur état naturel d'élement de type `bloc` et s'empilent les unes sur les autres.
 
-Nous ce que nous souhaiterons c'est que le `signup` et le `login` soient aussi alignés horizontalement dans leur `div` parent.
+Nous ce que nous souhaiterions c'est que le `signup` et le `login` soient aussi alignés horizontalement dans leur `div` parent.
 
 Comment pouvons nous faire ceci ?
 
 La solution est simple : nous pouvons aussi transormer la `<div>` avec la class `links` en `flex-containeur`.
 
-Je vous laisse rajouter la règle CSS correspondante dans le fichier `style.css`. Par la suite nous la complèterons ensemble.
+Je vous laisse rajouter la règle CSS correspondante dans le fichier `style.css`.
+
+Par la suite nous la complèterons cette règle ensemble.
 
 --- Barrière anti-spoil ---
 
@@ -389,9 +427,11 @@ Voici la règle :
 }
 ```
 
-Grâce à cette règle, les `<div>` signup et login sont devenues des `flex-items` dont l'organisation dépend de leur parent la div `links`
+Grâce à cette règle, les `<div>` signup et login sont devenues des `flex-items` dont l'organisation dépend de leur parent direct : la div `links`
 
-Cette règle nous pouvons un peu l'améliorée car vous le remarquez le `login` et le `signup` sont collés les uns aux autres. Srtout, ils sont rammassés vers la gauche de la `div` parente alors que nous souhaitons qu'ils se placent à droite de cette même div.
+Cette règle nous pouvons un peu l'améliorée car vous le remarquez le `login` et le `signup` sont collés les uns aux autres.
+
+Surtout, elles sont rammassés vers la gauche de la `div` parente alors que nous souhaitons qu'elles se placent à droite de cette même div.
 
 Pour ce faire nous pouvons modifier notre règle comme ceci :
 
@@ -412,7 +452,7 @@ et rajouter un peu d'espacement entre le login et le signup en écrivant cette r
 
 ### L'alignement vertical
 
-Jusqu'à présent nous manipulions nos éléments en modifiant leur position sur l'axe horizontal.
+Jusqu'à présent nous manipulions nos éléments en modifiant leurs positions sur l'axe horizontal.
 
 Avec `FlexBox` nous pouvons aussi les manipuler sur l'axe vertical.
 
@@ -509,7 +549,7 @@ Notre objectif serait d'obtenir quelque chose ce rapprochant de ceci :
 
 **_Petit défi :_**
 
-Je pense qu'à l'heure actuelle vous avez toutes les clés en mains pour obtenur le rendu indiqué un peu plus haut.
+Je pense qu'à l'heure actuelle vous avez toutes les clés en mains pour obtenir le rendu indiqué un peu plus haut.
 
 Ici n'oubliez pas vous avez juste besoin de travailler avec la balise ayant pour class `.header`
 
@@ -531,7 +571,7 @@ width: 900px;
 height: 300px;
 ```
 
-ainsi notre règle pour le `.header` devient :
+Notre règle pour le `.header` devient donc :
 
 ```css
 .header {
@@ -542,7 +582,9 @@ ainsi notre règle pour le `.header` devient :
 }
 ```
 
-Voilà qui est déja mieux. Cependant, tout le header reste collé au menu. Ce qui est pas réellement esthétique.
+Voilà qui est déja mieux.
+
+Cependant, tout le header reste collé au menu. Ce qui n'est pas réellement esthétique.
 
 Ce qui serait plus chouette ce serait d'avoir plus d'espace en haut et en bas pour un peu décrocher ce contenu du menu. Aérer un peu tout ceci en somme.
 
@@ -566,17 +608,21 @@ Je vous laisse devnier la valeur que nous devons donner à notre header pour que
 
 --- Minute de réflexion ---
 
-Et la valeur est `center`. Bravo vous avez gagnez un chocolat. Je vous laisse le demander auprès de votre formateur. ;-)
+Et la valeur est `center`.
+
+Bravo vous avez gagnez un chocolat. Je vous laisse le demander auprès de votre formateur. ;-)
 
 Donc nous aurons la propriété `align-itemps : center` à rajouter à là règle css pour le `.header`.
 
 Je vous laisse la modifier dans votre fichier `styles.css`
 
-Maintenant, je pense qu'il serait chouette si vous preniez le temps d'experimenter un peu avec les propriété de positionement que nous avons vu jusqu'à présent.
+Maintenant, je pense qu'il serait chouette si vous preniez le temps d'experimenter un peu avec les propriété de positionement que nous avons vues jusqu'à présent.
 
-N'hésitez pas à modifier la structure du HTML pour obtenir une nouvelle mise en page.
+Je pense que c'est en prenant le temps de pratiquer que l'utilisation de `Flexbox` deviendra limpide et facile.
 
-Avant de continuer et après avoir experimenter, n'oubliez pas de remettre votre fichier `index.html` dans cet état :
+N'hésitez pas, aussi, à modifier la structure du HTML pour obtenir une nouvelle mise en page. Laissez libre court à vitre imagination !
+
+Ce pendant avant de continuer la leçon, pensez à de remettre votre fichier `index.html` dans cet état :
 
 ```html
 <!DOCTYPE html>
@@ -658,17 +704,13 @@ et le fichier `styles.css` comme ceci :
 
 Bon on va tout de suite arrêter les bétises et au lieu d'utiliser ce mot désuet `enrubanner` nous allons utiliser sa traduction anglaise qui est `wrapping` (emballer, enrubanner, englober, ...).
 
-Quoique j'aime assez bien ce mot `enrubanner`...
-
-Allez non, restons international.
-
 Donc dans cette partie nous allons voir comment nous pouvons `wrapper` nos `flex-items`.
 
 #### Tou d'abord à quoi cela sert-il ?
 
-Je ne sais pas si durant vos experimentations vous avez déja eu à faire face à une situation où vous souhaitiez afficher plus d'élements dans une `<div>` que la taille de celle-ci pouvait afficher.
+Je ne sais pas si durant vos experimentations vous avez déja eu à faire face à cette situation :
 
-Que ce passe t'il ?
+Que ce passe-t-il si nous souhaitonst afficher plus d'élements dans une `<div>` que la taille de celle-ci ne peut afficher.
 
 Et bien il est possilble que ces éléments sortent complètement de la `<div>` un peu comme sur ce schéma :
 
@@ -745,15 +787,17 @@ Ainsi notre `.photo-grid-container` aura cette structure :
 
 Regardons le résultat à l'écran.
 
-Orage ô désespoir, ô viellesse ennemie. Notre mise en page est complêtement cassée.
+Orage ô désespoir, ô viellesse ennemie. Notre mise en page est complêtement cassée. Des images sortent carrément de la page.
 
 Rassurons-nous, c'est ici que nous pouvons utiliser la "pâte à (hot) fix" du CSS nommée `flex-wrap`.
 
 #### Petit point culture web
 
-Juste pour que vous compreniez ma vanne un peu bancale `pâte à (hot) fix`, dans le jargon du développement informatique un `hot fix` est un bout de code qui va permettre de réparer un bug rapidement mais la solution proposée au problème n'est généralement pas élégante et à vocation à être retravaillée et améliorée par la suite.
+Juste pour que vous compreniez ma vanne un peu bancale : `pâte à (hot) fix`:
 
-Et faire des `hot fixes` c'ést généralement maaaaaaaaal car tant qu'à faire il vaut mieux autant que possible privillégié une réparation (un `fix`) durable.
+Dans le jargon du développement informatique un `hot fix` est un bout de code qui va permettre de réparer un bug rapidement. Cependant, la solution proposée au problème n'est généralement pas élégante et à vocation à être retravaillée et améliorée par la suite.
+
+Faire des `hot fixes` c'ést généralement maaaaaaaaal car tant qu'à faire il vaut mieux autant que possible privillégier une réparation (un `fix`) durable.
 
 Bon ici c'était juste pour faire la blague, dans notre cas `flex-wrap` est réellement la bonne solution.
 
@@ -786,15 +830,21 @@ Un peu plus haut je vous touchais un mot à propos du `responsive design` en vou
 
 Sans trop rentrer dans les détails (car cela fera l'objet d'un cours à part entière), nous pouvons essayer quelque chose.
 
-Je vous propose d'ouvrir et de rétraicir la fenêtre de votre navigateur et de regarder comment le site évolue. Notamment la grille d'images.
+Je vous propose d'ouvrir et de rétraicir la fenêtre de votre navigateur et de regarder comment le site évolue; notamment la grille d'images.
 
-Vous remarquez la grille se transforme en colonne dès que l'écran devient trop petit. C'est une des choses géniale avec `FlexBox`, cette technique nous permet de construire de sites s'adaptant à leur contexte d'affichage.
+Vous remarquez la grille se transforme en colonne dès que l'écran devient trop petit. C'est une des choses géniale avec `FlexBox.
 
-Une des grandes contraintes que nous avons actuellement c'est que pour l'affichage `desktop` (sur ordinateur en français), les web design actuels privillégient une structuration des élements `en grille` (comme pour les images par exemple) tandis que le design mobile prévillégie l'affichage en colonne (question de place disponible).
+Cette technique nous permet donc de construire de sites s'adaptant à leur contexte d'affichage.
+
+Une des grandes contraintes que nous avons actuellement est la différence de design entre une page affichée sur orditanteur et celui utilisé pour les smartphones.
+
+Pour l'affichage `desktop` (sur ordinateur en français), les web design actuels privillégient une structuration des élements `en grille` (comme pour les images par exemple) tandis que le design mobile prévillégie l'affichage en colonne (question de place disponible).
 
 `FlexBox` est ici un réel allié qui va nous aider à faire en sorte que notre site web soit toujours affiché dans les meilleures conditions.
 
-Et si maintenant nous voulions cassez le codes actuels et toujours afficher notre grille d'images en colonne peut-importe si l'on est sur un ordinateur ou sur mobile. Comment pourrions nous faire ?
+Et si maintenant nous voulions cassez le codes et toujours afficher notre grille d'images en colonne peut-importe que l'on est sur un ordinateur ou sur mobile.
+
+Comment pourrions nous faire ?
 
 Pour répondre à ce besoin, il est possible d'indiquer dans quelle direction (en grille ou en colonne) les élements contenus dans un `flex-container` vont être affichés.
 
@@ -839,7 +889,9 @@ Donc nous obtenons cette règle css :
 
 ### Un peu de passe-passe
 
-Pour finir ce cours sur `flex-box`, nous allons faire un peu de magie. Et si je vous disais qu'il était possible de modifier l'ordre dans lequel les élémens de la grille d'image vont s'afficher et ceci sans toucher au HTML ?
+Pour finir ce cours sur `flex-box`, nous allons continuer de faire un peu de magie.
+
+Et si je vous disais qu'il était possible de modifier l'ordre dans lequel les élémens de la grille d'image vont s'afficher et ceci sans toucher au HTML ?
 
 Ce serai un tour plutôt culoté n'est-ce pas ?
 
@@ -855,11 +907,13 @@ Ce que nous voulons faire c'est :
 
 Et tout ça, je le répète, sans toucher une ligne d'HTML !
 
-Et bien je ne vais pas faire durer plus longtemps le suspense. Nous pouvons simplement modifier la `flex-direction` en lui donnant la valeur `row-reverse`
+Et bien je ne vais pas faire durer plus longtemps le suspense.
+
+Nous pouvons simplement modifier la `flex-direction` en lui donnant la valeur `row-reverse`
 
 Essayez ce tour de magie par vous même, je vous en prie.
 
-Etant donné que nous sommes revenu dans la dimension `flex-direction:row` (dont fait partie `row-reverse`) si nous voulons centrer nos élements que devons-nous faire ?
+Etant donné que nous sommes revenus dans la dimension `flex-direction:row` (dont fait partie `row-reverse`) si nous voulons centrer nos élements que devons-nous faire ?
 
 Je vous laisse trouver tout seul.
 
@@ -876,7 +930,7 @@ Pour revenir à l'état naturel des choses deux options:
 
 Voilà qui clotûre cette partie sur la mise en page avec `Flexbox`.
 
-A ce stade-ci vous devriez être capable de mettre en page des sites web en décidant comment les éléments doivent être organisés entre eux.
+A ce stade-ci vous devriez être capable de mettre en page des sites web en décidant de comment les éléments doivent être organisés entre eux.
 
 `FlexBox` est un outil massivement utilisé actuellement, je vous encourage donc à prendre le temps d'experimenté en essayant de créer des variations autour du design que nous avons construit ensemble.
 
