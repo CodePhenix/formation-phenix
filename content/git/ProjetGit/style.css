@@ -1,0 +1,43 @@
+/** GENERAL **/
+
+body {
+    background-image: url("./images/pluton.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+main {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 50%;
+}
+
+/** ELEMENTS **/
+
+button {
+    background-color: #0088ca;
+    border: none;
+    border-radius: .2rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .5rem .7rem;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: white;
+    color: #0088ca;
+    cursor: pointer;
+}
+
+/** UTILS **/
+
+.text-right {
+    text-align: right;
+}
