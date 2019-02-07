@@ -1,12 +1,12 @@
 # Apprendre à utiliser Git
 
+
+
+**Table des matières**
+
 [TOC]
 
-
-
-
-
-## 1. Git, c'est quoi ?
+## Git, c'est quoi ?
 
 
 
@@ -23,7 +23,9 @@ Son but est de gérer l'évolution du contenu sous la forme d'une arborescence, 
 
 Sur internet, un des outils les plus utilisés vient d'ailleurs de l'utilisation de Git : il s'agit de Github, un site sur lequel vous pouvez héberger gratuitement vos projets, et où tout le monde peut apporter sa contribution. Github est devenu une gigantesque librairie de projets, dont certains très connus : React, VueJS, Bootstrap...
 
-### 1.1. Comment ça marche ?
+
+
+### Comment ça marche ?
 
 Git va conserver la source du projet sur un serveur, et chacun va récupérer le projet en local. Lorsque vous allez passer vos modifications sur le serveur, Git va vérifier que vos fichiers modifiés n'ont pas été modifiés par quelqu'un d'autre en parallèle et vous prévenir si c'est le cas.
 
@@ -35,7 +37,7 @@ En cas de conflit (si quelqu'un a modifié les mêmes fichiers que vous), Git vo
 
 
 
-## 2. Installer Git
+## Installation et configuration
 
 
 
@@ -49,7 +51,9 @@ Git s'utilise très très bien avec le terminal, et il est vraiment conseillé d
 
 Si vous préférez avoir quelque chose de visuel, une appli comme GiKraken vous permettra de gérer votre projet facilement.
 
-### 2.1 Configurer Git
+
+
+### Configurer Git
 
 La première chose à faire, une fois Git installé, c'est de le configurer.
 
@@ -92,6 +96,8 @@ git config --global color.ui true
 
 Et voilà pour la partie configuration !
 
+
+
 ------
 
 **Important**
@@ -126,7 +132,9 @@ Vous n'êtes pas obligé de mettre un nom de commande à la fin ! Faites juste u
 
 
 
-## 3. C'est parti ! Premiers pas avec Git
+## C'est parti ! Premiers pas avec Git
+
+
 
 Il existe deux façons de mettre un projet sous Git :
 
@@ -135,7 +143,9 @@ Il existe deux façons de mettre un projet sous Git :
 
 **À noter** Les dossiers sont aussi appelés "répertoires" (`repository` en anglais). Quand on parle d'un projet sur Git, on va généralement parler d'un `repo Git`.
 
-### 3.1. Créer un repo Git
+
+
+### Créer un repo Git
 
 Un petit exercice de rappel des commandes du terminal ! Dans votre terminal, naviguez jusqu'au dossier ProjetGit.
 
@@ -157,7 +167,9 @@ Ce dossier va contenir toutes les informations nécessaires à Git pour versionn
 
 Voilà ! Votre repo Git est initialisé, prêt à suivre l'avancement de votre projet.
 
-### 3.2. Cloner un repo Git
+
+
+### Cloner un repo Git
 
 Cloner un repo signifie qu'on va récupérer le projet sur un serveur, et en faire **une copie** en local.
 
@@ -169,11 +181,17 @@ git clone URL_DU_PROJET
 
 Et c'est tout !
 
-## 4. Enregistrer des modifications
+
+
+## Enregistrer des modifications
+
+
 
 Git est configuré, et nous avons un repo Git qui est prêt. Allons-y pour les modifications !
 
-### 4.1. Le statut des fichiers
+
+
+### Le statut des fichiers
 
 Tout d'abord, naviguez dans le dossier ProjetGit avec le terminal.
 
@@ -204,22 +222,36 @@ aucune modification ajoutée à la validation mais des fichiers non suivis sont 
 
 Mais qu'est-ce que ça signifie ?
 
-Par défaut, Git ne suit pas l'état d'avancement des fichiers. Il faut lui indiquer quels fichiers il doit suivre, pour qu'il puisse tenir compte de leurs modifications. C'est ce qu'il indique ici !
+Par défaut, Git ne suit pas l'état d'avancement des fichiers. Il faut lui indiquer quels fichiers il doit suivre, pour qu'il puisse tenir compte de leurs modifications. C'est ce qu'il indique ici.
 
-Pour gérer les différentes versions des fichiers, Git leur donne différents statuts :
+Voilà comment ça fonctionne :
+
+- Git a un historique de modification des fichiers du projet. Si l'historique et le fichier actuel sont identiques, Git ne fait rien.
+- Vous modifiez un ou des fichiers.
+- Git va vous résumer quels fichiers ont été modifiés, par rapport à l'historique.
+- Vous allez lui indiquer, parmi tous ces fichiers, lesquels vous souhaitez inscrire dans l'historique.
+- Git va les stocker séparément.
+- Quand vous êtes prêts, vous pouvez lui dire d'écrire l'historique avec les fichiers que vous lui avez fait stocker.
+- Git va écrire l'historique.
+
+
+
+Pour gérer ce cycle de vie, les fichiers vont passer par différents statuts :
 
 ![git-status](./images/git-status.png)
 
-- **Untracked** (non suivi) : le fichier existe en local, mais n'est pas suivi par Git. Ça signifie qu'en cas de modification de ce fichier, Git n'en tiendra pas compte et fera comme s'il n'existait pas.
-- **Unmodified** (non modifié) : le fichier est suivi par Git, et n'a pas été modifié en local.
-- **Modified** (modifié) : le fichier a été modifié en local. Git est capable de dire qu'il y a eu des modifications, mais il ne les enverra pas sur le serveur.
-- **Staged** (enregistré) : Git a une "mémoire" interne, qu'on appelle *staged area*. Il y conserve les fichiers modifiés qu'il doit envoyer sur le serveur. Nous y reviendrons un peu plus tard.
+- **Non suivi** : le fichier existe en local, mais n'est pas suivi par Git. Ça signifie qu'en cas de modification de ce fichier, Git n'en tiendra pas compte et fera comme s'il n'existait pas.
+- **Non modifié** : le fichier est suivi par Git, et n'a pas été modifié en local. Il ne se passe rien.
+- **Modifié** : le fichier a été modifié en local. Git est capable de dire qu'il y a eu des modifications, mais il ne les a pas stockées pour la prochaine écriture de l'historique.
+- **Stocké** : le fichier est "stocké" à part, et ses modifications seront incluses dans la prochaine écriture de l'historique.
+
+Techniquement, le terme "stocké" n'est pas exact : Git ne duplique pas le fichier pour le mettre ailleurs. Quand il "stocke" des modifications, il écrit quelques lignes dans un fichier texte pour indiquer quel fichier a été modifié. Par ex : Tel fichier, ligne XX, caractère XX remplacé par YY
 
 
 
-### 4.2. Ajouter des fichiers au suivi Git
+### Ajouter des fichiers au suivi Git
 
-Actuellement, tous les fichiers de notre projet sont en statut "untracked". Ajoutons-les pour voir ce qu'il se passe !
+Actuellement, tous les fichiers de notre projet sont en statut "non suivis". Ajoutons-les pour voir ce qu'il se passe !
 
 Pour ajouter un document au suivi de Git, il suffit d'utiliser la commande `git add`
 
@@ -229,7 +261,7 @@ Allez dans le terminal, et tapez :
 git add index.html
 ```
 
-Comment savoir ce qu'il s'est passé ? Avec la commande git que nous avons vu plus haut, `git status` ! Allez-y, tapez-la dans le terminal.
+Comment savoir ce qu'il s'est passé ? Avec la commande git que nous avons vu plus haut, `git status`. Allez-y, tapez-la dans le terminal !
 
 Vous devriez voir ceci :
 
@@ -253,14 +285,25 @@ Fichiers non suivis:
 
 Git vous indique bien qu'il a repéré le nouveau fichier `index.html`, et qu'il va le suivre.
 
+Vous vous souvenez des différents statuts d'un fichier ? Notre fichier `index.html` est passé de `non suivi` à `stocké`. Pourquoi ? C'est simple : quand on demande à Git de suivre un fichier, il le met directement dans la zone de stockage, prêt à être inscrit dans l'historique. Il n'a pas été modifié, puisqu'il n'existait pas jusqu'ici.
+
+Ça signifie que, si on prend l'historique du projet vu par Git, il s'est passé deux choses :
+
+- vous avez instancié un nouveau projet vide
+- vous avez créé un fichier `index.html`
+
+Si là, tout de suite, vous faisiez passer ce projet sur un serveur via Git, les personnes qui récupéreraient le projet ne récupèrerait que le fichier `index.html`. 
+
+
+
 Maintenant, vous n'avez plus qu'à ajouter tous les autres. Comment feriez-vous ?
 
-||
-||
-||
-||
-||
-||
+||  
+||  
+||  
+||  
+||  
+||  
 Réponse !
 
 ```bash
@@ -296,12 +339,113 @@ Modifications qui seront validées :
 
 C'est bon, tous vos fichiers sont suivis par Git !
 
-### 4.3. Suivre des modifications
 
 
+### Faire un commit
+
+Pour le moment, vos fichiers en sont là dans Git :
+
+![git-status-modified](./images/git-status-staged.png)
+
+Vos fichiers ont été ajoutés, et Git a stocké cette information. Ça signifie qu'à la prochaine écriture de l'historique, il notera que ces fichiers ont été ajoutés.
+
+Pour écrire dans l'historique, il faut que vous fassiez ce qu'on appelle un `commit`. 
+
+Un commit est une section dans l'historique, qui va contenir différentes données :
+
+- un identifiant unique, qui vous permettra de retrouver le commit quand le projet sera plus avancé
+- le pseudo et l'adresse mail de la personne qui a écrit le commit
+- un message écrit par la personne qui a fait le commit
+- et surtout : les modifications qui ont été ajoutées
+
+Allons-y, créons notre premier commit !
+
+Dans le terminal, tapez la commande suivante :
+
+```bash
+git commit
+```
+
+Et là, surprise ! Git va vous ouvrir un éditeur de texte par défaut, avec un fichier COMMIT_EDITMSG
+
+Dans ce fichier, il va vous rappeler les modifications qui seront inscrites dans l'historique, et vous demander de saisir un message (le fameux message de commit).
+
+Vous pouvez tout à fait passer par ce système à chaque fois que vous faites un commit, mais soyons honnêtes : utiliser un éditeur de texte dans un terminal ne plaît pas à tout le monde.
+
+En plus, il paraîtrait que les développeurs sont des feignasses... Alors quand ils peuvent faire les choses plus vite...
+
+```bash
+git commit -m "Mon premier commit"
+```
+
+Tadaaaa ! L'argument `-m` vous permet d'écrire directement le message de commit, sans passer par la case éditeur.
+
+Votre terminal va vous afficher :
+
+```bash
+[master (commit racine) ef853e5] Mon premier commit
+ 5 files changed, 69 insertions(+)
+
+(+ les fichiers modifiés)
+```
+
+Vous retrouvez bien votre message de commit, le nombre de fichiers modifiés et le nombre de lignes ajoutés (`69 insertions(+)`).
+
+Mais... et l'historique, il est où ?
+
+Juste ici :
+
+```bash
+git log
+```
+
+Et là, vous devriez voir apparaître tout l'historique Git du projet !
+
+```bash
+commit ef853e52cdbc7a64de2a099c6e1c28f488e6f94f
+Author: Batman <alfred@batman.com>
+Date:   Thu Feb 7 14:19:02 2019 +0100
+
+    Mon premier commit
+```
+
+Pour sortir de l'historique, il vous suffit de taper la lettre *q* (comme `quit`)
+
+
+
+Félicitations, vous avez fait votre premier commit !
+
+### Suivre des modifications
 
 Ouvrez le document `index.html` avec votre éditeur de texte, et regardez le résultat sur votre navigateur.
 
 Comme vous pouvez le voir, il y a un texte étrange, qui ressemble à du latin : c'est du Lorem Ipsum. C'est un faux langage, totalement inventé, qui permet simplement de faire le design d'un site sans avoir à réfléchir à la rédaction de textes ou de titres.
 
-Dans `index.html`, modifiez le texte entre les balises `h1`.
+Dans `index.html`, modifiez le texte entre les balises `h1` (vous pouvez mettre ce que vous souhaitez) et sauvegardez.
+
+Vérifiez le statut de Git...
+
+Normalement, vous devriez voir apparaître ceci :
+
+```bash
+Sur la branche master
+
+Validation initiale
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached <fichier>..." pour désindexer)
+
+	nouveau fichier : fonts/Roboto-Regular.ttf
+	nouveau fichier : fonts/fonts.css
+	nouveau fichier : images/pluton.jpg
+	nouveau fichier : index.html
+	nouveau fichier : style.css
+
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git checkout -- <fichier>..." pour annuler les modifications dans la copie de travail)
+
+	modifié :         index.html
+
+```
+
