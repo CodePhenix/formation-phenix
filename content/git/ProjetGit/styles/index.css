@@ -1,0 +1,130 @@
+@import "fonts.css";
+/**
+ * 1. GENERAL
+ * 2. HEADER
+ * 3. MAIN
+ * 4. ELEMENTS
+ */
+
+/** 1. GENERAL **/
+
+body {
+    background: url("../images/background.png") no-repeat top / cover;
+    color: #fff;
+    display: grid;
+    font-family: 'Roboto', sans-serif;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    height: 100vh;
+    margin: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+header,
+main {
+    grid-column: span 1 / 3;
+}
+
+/** 2. HEADER **/
+nav {
+    position: relative;
+}
+
+nav > img {
+    position: absolute;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin-top: 1rem;
+    position: relative;
+}
+
+nav > ul > li > a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: .7rem;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+}
+
+nav > ul > li > a:after,
+nav > ul > li > a:before {
+    background-color: #fff;
+    content: '';
+    height: 2px;
+    position: absolute;
+    transition: width 0.35s ease;
+    width: 0;
+}
+nav > ul > li > a:after {
+    bottom: 28px;
+    right: 0;
+}
+
+nav > ul > li > a:before {
+    top: 28px;
+    left: 0;
+}
+
+nav > ul > li > a:hover:after,
+nav > ul > li > a:hover:before {
+    width: 100%;
+}
+
+.title {
+    color: #fff;
+    font-family: 'Righteous', sans-serif;
+    font-size: 2.5rem;
+    position: absolute;
+}
+
+/** 3. MAIN **/
+
+main {
+    align-items: center;
+    display: flex;
+}
+
+main > section {
+    width: 50%;
+}
+
+main > section > p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/** 4. ELEMENTS **/
+
+button {
+    background-color: #0088ca;
+    border: none;
+    border-radius: .2rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    padding: 1rem 1.2rem;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: white;
+    color: #0088ca;
+    cursor: pointer;
+}
