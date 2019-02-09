@@ -411,35 +411,98 @@ Date:   Thu Feb 7 14:19:02 2019 +0100
 
 Pour sortir de l'historique, il vous suffit de taper la lettre *q* (comme `quit`)
 
-
-
 Félicitations, vous avez fait votre premier commit !
+
+Vos fichiers ont désormais ce statut :
+
+![git-status-unmodified](./images/git-status-unmodified.png)
+
+
 
 ### Suivre des modifications
 
 Ouvrez le document `index.html` avec votre éditeur de texte, et regardez le résultat sur votre navigateur.
 
-Comme vous pouvez le voir, il y a un texte étrange, qui ressemble à du latin : c'est du Lorem Ipsum. C'est un faux langage, totalement inventé, qui permet simplement de faire le design d'un site sans avoir à réfléchir à la rédaction de textes ou de titres.
+Comme vous pouvez le voir, il y a un texte étrange, qui ressemble à du latin : c'est du *Lorem Ipsum*. C'est un faux langage, totalement inventé, qui permet simplement de faire le design d'un site sans avoir à réfléchir à la rédaction de textes ou de titres.
 
-Dans `index.html`, modifiez le texte entre les balises `h1` (vous pouvez mettre ce que vous souhaitez) et sauvegardez.
+Dans `index.html`, modifiez le texte entre les balises `h1` (par ex, "Je suis une licorne") et sauvegardez.
 
-Vérifiez le statut de Git...
+Vérifiez le statut...
 
 Normalement, vous devriez voir apparaître ceci :
 
 ```bash
 Sur la branche master
 
-Validation initiale
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git checkout -- <fichier>..." pour annuler les modifications dans la copie de travail)
 
+	modifié :         index.html
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+
+```
+
+
+
+Que vous dit Git ? Qu'il a bien repéré que vous avez effectué des modifications, qu'il ne les a pas stockés pour le prochain commit, et que vous pouvez le stocker avec `git add`
+
+*"Git add ? C'est pas pour suivre un fichier, normalement ?"*
+
+Si vous vous souvenez bien, pour ajouter des fichiers au suivi Git, on a fait la commande `git add`. Et effectivement, cette commande ne servait *que* pour mettre en place le suivi, les fichiers n'étaient pas ajouté à l'historique.
+
+Mais ça ne fonctionne que si les fichiers n'ont jamais été suivi par Git ! Si vos fichiers sont déjà suivis, et qu'ils ont été modifiés, `git add` va permettre d'ajouter les modifications au stockage pour le prochain commit.
+
+Si c'est un peu compliqué à digérer, c'est normal !
+
+Si je résume :
+
+Fichier non suivi => git add => fichier suivi, dans la zone de stockage => git commit
+
+Fichier suivi => modification => git add => modification dans la zone de stockage => git commit
+
+
+
+C'est parti pour l'ajout de la modification !
+
+Faites un
+
+```bash
+git add index.html
+```
+
+et si vous faites un `git status`:
+
+```bash
+Sur la branche master
 Modifications qui seront validées :
-  (utilisez "git rm --cached <fichier>..." pour désindexer)
+  (utilisez "git reset HEAD <fichier>..." pour désindexer)
 
-	nouveau fichier : fonts/Roboto-Regular.ttf
-	nouveau fichier : fonts/fonts.css
-	nouveau fichier : images/pluton.jpg
-	nouveau fichier : index.html
-	nouveau fichier : style.css
+	modifié :         index.html
+
+```
+
+
+
+La modification a bien été stockée !
+
+Vous n'avez plus qu'à faire un commit, et vérifier qu'il apparaît dans les logs.
+
+**Et si j'ai d'autres modifications avant le commit ?**
+
+Aucun problème !
+
+Remodifiez le fichier `index.html`, et faites un `git status`.
+
+Vous allez obtenir :
+
+```bash
+Sur la branche master
+Modifications qui seront validées :
+  (utilisez "git reset HEAD <fichier>..." pour désindexer)
+
+	modifié :         index.html
 
 Modifications qui ne seront pas validées :
   (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
@@ -449,3 +512,87 @@ Modifications qui ne seront pas validées :
 
 ```
 
+Et oui, Git vous précise quelles modifications il a en stockage, et lesquels ne seront pas dans le prochain commit ! Vous pouvez faire un `git add`, qui viendra automatiquement ajouter les nouvelles modifications à celles que vous avez déjà stockées.
+
+Au prochain commit, elles seront toutes envoyées en même temps dans l'historique.
+
+
+
+Amusez-vous à faire différentes modifications et commits, et regardez l'historique se remplir !
+
+
+
+### Voir les modifications d'un fichier avant l'ajout au stockage, ou avant un commit
+
+Voilà une petite commande très pratique ! Vous avez un fichier modifié, qui n'est pas encore dans le stockage, et vous ne savez plus ce que vous avez modifié ?
+
+Ou bien il est stocké, mais vous voulez vérifier les modifications avant de faire un commit ?
+
+Faites simplement la commande :
+
+```bash
+git diff monfichier.html
+```
+
+Et vous aurez la liste des ajouts et suppressions dans le fichier !
+
+
+
+### Gitignore
+
+Parfois, il peut arriver que vous ayez des fichiers ou des dossiers que vous souhaitez garder sur votre ordinateur, mais que vous ne voulez pas partager, ni suivre. Attention, il faut que ces fichiers ne soient pas dans le fichier Git !
+
+Pour éviter que Git vous dise à chaque fois "Hé, tu as un fichier que je ne connais pas, veux-tu l'ajouter ?", il suffit de créer, à la racine du projet, un fichier qui s'appellera `.gitignore`. Dans ce fichier, vous mettrez simplement le chemin vers le fichier / dossier que vous souhaitez laisser en paix, et Git fera comme s'il n'existait pas.
+
+
+
+### Au secours, je me suis trompé !
+
+Se tromper, ça arrive à tout le monde, et Git a pas mal de méthodes pour revenir en arrière.
+
+Généralement, il vous indique ces méthodes quand vous faites un `git status`.
+
+**Se tromper à l'ajout d'un fichier au suivi, ou à l'ajout d'une modification au stockage**
+
+Vous avez demandé à Git de suivre un fichier que vous ne souhaitiez pas suivre ?
+
+Vous avez ajouté au stockage une modification que vous ne souhaitiez pas ajouter ?
+
+La commande pour annuler est la même ! Après le `git add`, il vous suffira de faire :
+
+```bash
+git reset HEAD monfichier.html
+```
+
+Je vous expliquerais à quoi correspond exactement le reset HEAD un peu plus tard, sachez simplement que ça enlèvera le fichier concerné du suivi, si vous venez tout juste de l'y ajouter, ou la dernière modification du stockage.
+
+**Modifier un fichier par erreur**
+
+Au détour d'un `git status`, vous vous rendez compte qu'un fichier a été modifié et qu'il n'aurait pas dû l'être. Heureusement, les modifications ne sont pas stockées...
+
+Vous pouvez bien sûr annuler les modifications directement dans votre éditeur de texte, mais sinon, vous pouvez aussi taper :
+
+```bash
+git checkout monfichier.html
+```
+
+Et les modifications seront annulées sur le fichier.
+
+**Changer le message d'un commit, ou ajouter une modification dans un commit**
+
+Alors, deux situations possibles :
+
+- Vous avez fait un commit (par ex, `git commit -m "Mon supr commit"`) et vous vous rendez compte qu'il y a une faute de frappe
+- Vous avez fait un commit, et vous vous rendez compte qu'il y a des modifications que vous aimeriez ajouter à ce commit
+
+
+
+Il suffit de taper la commande :
+
+```bash
+git commit --amend
+```
+
+
+
+Il va vous afficher le commit dans un éditeur, et vous pourrez modifier le message. Si vous avez ajouté des modifications dans le stockage, il les prendra automatiquement en compte.
