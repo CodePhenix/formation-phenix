@@ -419,6 +419,30 @@ Vos fichiers ont désormais ce statut :
 
 
 
+**À savoir**
+
+Les dev aiment les standards, parce... ce sont des feignasses, souvenez-vous ! Alors si c'est possible de moins réfléchir sur les à-côtés pour pouvoir se concentrer sur la tech pure, ils adorent.
+
+Du coup, il existe des standards pour à peu près tout et n'importe quoi. 
+
+Le standard d'un message de commit, par exemple, est celui-ci : 
+
+```bash
+<type de tâche>(<périmètre>): message court
+
+Description complémentaire/complète
+
+Référence/action sur un ticket définissant cette tâche
+```
+
+La plupart du temps, la première partie `<type de tâche>(<périmètre>): message court` suffit.
+
+Ça permet d'avoir un historique beaucoup plus facile à lire !
+
+Quand au `type de tâche`, vous pouvez avoir `fix` pour le fix de bugs, `feat` pour l'ajout ou l'amélioration d'élements dans l'appli, `doc` pour de l'écriture de documentation, `test` pour de l'écriture de test...
+
+
+
 ### Suivre des modifications
 
 Ouvrez le document `index.html` avec votre éditeur de texte, et regardez le résultat sur votre navigateur.
@@ -654,3 +678,158 @@ Par exemple, votre branche master contient 3 commits :
 En revenant un commit en arrière, la branche ressemblera à ça :
 
 ![git_branch_commits_HEAD1](./images/git_branch_commits_HEAD1.png)
+
+Cette notion de pointeur `HEAD` n'est pas évidente, mais elle est importante pour la suite. 
+
+
+
+### Créer une branche
+
+Revenons à notre ProjetGit. Dans le terminal, tapez la commande suivante :
+
+```bash
+git branch --all
+```
+
+Cette commande permet tout simplement d'afficher toutes les branches de votre projet, en indiquant avec une astérisque celle sur laquelle vous vous trouvez.
+
+Vous devriez donc voir s'afficher :
+
+```bash
+* master
+```
+
+
+
+Imaginons que, sur notre ProjetGit, on nous a demandé d'ajouter des liens dans le menu. On pourrait les ajouter directement sur la branche `master`. Mais une des bonnes pratiques du dev (surtout quand on travaille en équipe), est de faire chaque `feature` dans une branche à part (une feature est une amélioration de l'appli, comme par ex l'ajout de liens dans le menu). 
+
+L'avantage de faire comme ça, c'est que ça limitera les problèmes si vous êtes plusieurs à modifier les mêmes fichiers, et à vouloir les faire passer sur `master`. 
+
+Ça permet également de s'arrêter sur cette tâche et de la reprendre plus tard. Si vous commencez le développement d'une feature directement sur `master`, que vous devez vous arrêter pendant plusieurs heures pour une raison X ou Y (au hasard : un bug super urgent), vous allez devoir laisser sur `master` du travail qui n'est pas terminé. Et quand vous le reprendrez, peut être que quelqu'un sera passé par là et aura modifié du code. Bref, un beau bazar !
+
+Si vous avez votre propre branche, vous savez qu'elle sera dans l'état dans lequel vous l'avez laissé en partant.
+
+Bonne pratique, donc : une branche, une feature.
+
+**À savoir** 
+
+Il existe différentes conventions pour le nommage des branches, qui peuvent dépendre des projets. Un des standards s'appelle le `conventionnal Changelog`, et c'est celui que nous allons utiliser. Il propose une écriture des branches de cette façon : `<contexte>/<fonction>`
+
+Ici, nous faisons commencer le nom de la branche avec `feat` parce que nous créons une feature. On pourrait mettre `fix` si on réparait un bug, par exemple.
+
+Attention à ne pas mettre d'espace, qui ne seront pas pris en compte.
+
+Une dernière chose, importante : l'anglais est omniprésent dans le dev. Parler anglais n'est pas indispensable, mais le lire et l'écrire (de façon simple, inutile d'être un crack en grammaire) vous sera très, très, très utile au quotidien. Généralement, la documentation et les forums sont écrits en anglais, les noms des branches sont en anglais, les commits sont en anglais...
+
+Prenez l'habitude dès maintenant !
+
+------
+
+
+
+C'est parti ! Nous allons créer une branche qu'on appellera `feat/menu-add-new-links`
+
+Tapez la commande suivante dans le terminal :
+
+```bash
+git branch feat/menu-add-new-links
+```
+
+
+
+Affichez toutes les branches. Vous vous souvenez de la commande ? Elle est un peu plus haut !
+
+Vous devriez avoir :
+
+```bash
+  feat/menu-add-new-links
+* master
+```
+
+
+
+Nous avons bien créé une branche, mais nous sommes encore sur la branche `master`. Concrètement, nous en sommes là :
+
+![git_branch_create2](./images/git_branch_create2.png)
+
+Le pointeur `HEAD` est encore sur le dernier commit de `master`.
+
+Maintenant, passons sur notre nouvelle branche :
+
+```bash
+git checkout feat/menu-add-new-links
+```
+
+La commande `checkout`, que vous avez déjà croisé plus haut, sert ici à passer d'une branche à l'autre.
+
+Voilà où nous en sommes :
+
+![git_branch_switch](/home/boulot/Documents/Projets/Contenu/content/git/images/git_branch_switch.png)
+
+
+
+Lorsqu'on créé une branche, elle va automatiquement contenir tout l'historique de la branche à partir de laquelle on la créée. Ici, notre branche contient tout l'historique de master. 
+
+Notre pointeur `HEAD` est bien passé de `master` à `feat/menu-add-new-links`. Désormais, les modifications que nous allons faire dans cette branche n'impacterons pas `master`.
+
+Pour vérifier que vous êtes bien sur la bonne branche, deux solutions !
+
+Soit afficher toutes les branches, qui devrait vous indiquer ceci :
+
+```bash
+* feat/menu-add-new-links
+  master
+```
+
+Sinon, faire un `git status` qui devrait vous indiquer cela :
+
+```bash
+Sur la branche feat/menu-add-new-links
+rien à valider, la copie de travail est propre
+```
+
+
+
+Il existe une commande qui permet de faire en une seule fois ce que nous avons fait en deux commandes, `branch` et `checkout` :
+
+```bash
+git checkout -b feat/menu-add-new-links
+```
+
+Cette commande va créer une branche sur laquelle on va directement se rendre. Plutôt pratique !
+
+
+
+### Faire des commits sur une autre branche
+
+Maintenant que nous avons créé la branche, nous allons pouvoir faire des commits dessus !
+
+Et comme vous maîtrisez les commits, je ne vous dirais rien :)
+
+Dans le projet, ajoutez des éléments dans le menu et faites un commit.
+
+Concrètement, que s'est-il passé au niveau des branches ? 
+
+![git_branch_switch_2](./images/git_branch_switch_2.png)
+
+Tout à l'heure, à la création de la branche, le pointeur `HEAD` se trouvait au niveau du même commit, sur `master` et sur `feat/menu-add-new-links`. Nous avons fait des modifications sur la branche `feat/menu-add-new-links`, et la branche `master` ne peut pas être impactée. Les deux branches ont donc divergé !
+
+Techniquement, la branche `feat/menu-add-new-links` a un commit d'avance sur `master`.
+
+Faites un `git log` : vous verrez bien vos nouveaux commits.
+
+Et si on revenait sur `master`, pour voir ? Faites un `git checkout master`, puis un `git log` : vous êtes revenu sur `master`, et comme vous pouvez le constater, vos nouveaux commits n'y sont pas. C'est normal, puisque ce n'est pas la même branche !
+
+![git_branch_switch_3](./images/git_branch_switch_3.png)
+
+
+
+Tant que vous êtes sur `master`, faites une petite modification (changez le paragraphe, par exemple), et faites un commit.
+
+Si vous faites un `git log`, vous verrez bien votre nouveau commit. Mais où en est master par rapport à l'autre branche ? Eh bien, elle fait simplement sa vie en parallèle : 
+
+![git_branch_switch_4](./images/git_branch_switch_4.png)
+
+
+
+Désormais, vous allez pouvoir travailler sur les deux branches de façon indépendante !
