@@ -2,49 +2,56 @@
 
 Jusqu'à présent nous avons vu comment travailler avec `git` en local (sur notre machine) pour ajouter des points de sauvegarde (`commits`) et ainsi garder une trace de chaque changement apporté au fil du temps à notre code.
 
-De cette manière, en cas de besoin et/ou si on a fait une grosse boulette dans notre code et que plus rien ne fonctionne par exemple, il est totalement possible de revenir en arrière dans un état précédent du code plus stable et donc en état de marche.
+De cette manière, en cas de besoin et/ou si on a fait une grosse boulette dans notre code et que plus rien ne fonctionne
+, il est totalement possible de revenir en arrière dans un état précédent du code plus stable et donc en état de marche.
 
 Maintenant, comme je le disais plus haut, ces modifications et cet historique de commit est toujours localisé sur notre machine.
 
 Maintenant imaginez ce scénario :
 
-Après une longue journée ou quelques semaines de dure labeur, vous avez fièrement bien avancé sur votre projet. Consciencieusement, vous avez fait vos commits qui étaient magnifiquement intitulés et possédant chacuns une description très descriptive de chaque modification apportées.
+Après une longue journée ou quelques semaines de dur labeur, vous avez bien avancé sur votre projet. Consciencieusement, vous avez fait vos commits qui étaient magnifiquement intitulés. Chacun de ces commits possédaient une description très descriptive de chaque modification apportée.
 
-Vous quitter donc votre ordinateur avec le sentiment du travail bien accompli.
+Vous quitter donc votre ordinateur avec le sentiment du travail bien accompli. Un réel sentiment de plénitude.
 
-Malheur! Durant la nuit, votre ordinateur à été anéhanti par une horde de zombie atomique de l'espace. Vous le retrouvez donc fumant le lendemain et ceci sans mot d'excuse aucun évidement.
+Malheur! Durant la nuit, votre ordinateur à été anéhanti par une horde de zombie atomique de l'espace. Vous le retrouvez donc fumant le lendemain et ceci sans mot d'excuse... Evidement.
 
 En plus de râler sévèrement de pas avoir souscrit une assurance contre ce type de dommage matériel vous vous rendez compte avec effroi que TOUT votre travail à lui aussi été détruit. Tant d'heures de travail parties dans ces volutes de fumée.
 
-Bon, perdre votre ordinateur c'est déja assez furstrant mais perdre votre travail ça l'est encore plus. Surtout si vous travailliez sur une application qui aurait peut-être pû éradiquer la faim du monde ou juste envoyer des images de perroquets portant des chapeaux mexicains à vos amis. (Chacun son ambition hien :-) ).
+Bon, perdre votre ordinateur c'est déja assez furstrant mais perdre votre travail ça l'est encore plus.
 
-Bref, grâce à git et ses fonctionalitées pour le travail à distance, cette situation aurait pû être évitée.
+Surtout si vous travailliez sur une application qui aurait peut-être pû éradiquer la faim du monde ou juste envoyer des images de perroquets portant des chapeaux mexicains à vos amis. (Chacun son ambition hien :-) ).
+
+Bref, grâce à git et ses fonctionalitées liées au travail à distance, cette situation aurait pû être évitée.
 
 **Mais comment ce pourrait-ce ?**
 
-En effet, grâce à `git` nous pouvons communiquer directement avec des machines situés à distance . Des machines que l'on nomme dans le jargon des `remote` (distant, en anglais).
+Grâce à `git` nous pouvons communiquer directement avec des machines situés à distance.
 
-Ces remotes peuvent être de deux types :
+es machines que l'on nomme dans le jargon des `remote` (distant, en anglais), peuvent être de deux types :
 
 1. Interne : un autre ordinateur que vous possédez par exemple.
 
 2. Externe : un service tiers qui hébergera sur internet votre code. `GitHub` , `GitLab`, `BitBucket`, ... sont autant de site internet permettant l'hébergement de code et étant accessible via `git`.
 
-Ici notre scénario catastrophe aurait pû être éviter si nous avions utiliser ces services tiers pour y pousser (`push`) régulièrement notre code. Ansi, en plus d'avoir une version sur notre ordinateur, nous aurions eu une version qui co-existerait sur internet.
+Ici notre scénario catastrophe aurait pû être éviter si nous avions utiliser ces services tiers pour y pousser (`push`) régulièrement notre code.
+
+Ansi, en plus d'avoir une version sur notre ordinateur, nous aurions eu une version identique de notre projet qui co-existerait sur internet.
 
 Déjà que la destruction totale de notre machine par une horde de zombie est peu probable, la destruction totale simultanée de notre ordinateur ET d'un serveur sécurisé l'est encore moins.
 
-Toute probalitité gardée, en poussant notre code sur ce type de service, notre travail aurait toujours été acccessible.
+Donc toute probalitité gardée, en poussant notre code sur ce type de service, notre travail pourrait toujours été acccessible.
 
-Un autre avantage non négligeable du travail avec ces `remote` est que cela favorise et facilite aussi énormément le travail collaboratif.
+Un autre avantage non négligeable du travail avec ces `remote` est que cela favorise et facilite énormément le travail collaboratif.
 
-En effet, une fois ayant reçue l'autorisation de se connecter via `git` (via HTTPS ou autre) à un `remote`, chaque collaborateur d'un projet pourra récupérer et ainsi aider à la construction d'un projet.
+En effet, une fois ayant reçu l'autorisation de se connecter via `git` (via HTTPS ou autre) à un `remote`, chaque collaborateur d'un projet pourra récupérer un projet et ainsi aider à sa construction.
 
 ### Récupérer un projet hébergé sur un `remote`
 
 Pour commencer, nous allons devoir un peu changer nos habitudes : pour cette leçon nous n'allons pas créer notre projet en ajoutant des fichiers à la main et en initialisant un repo git (via la commande `git init`) mais nous allons récuperer notre projet depuis un remote !!!
 
-Pour ce faire nous allons devoir nous placer via le terminal à l'endroit où l'on souhaite ajouter le projet. Pour des raisons de simplicité, n'hésitez pas à aller dans le dossier où se trouve les autres projets CSS par exemple.
+Pour ce faire nous allons devoir nous placer via le terminal à l'endroit où l'on souhaite ajouter le projet.
+
+Pour des raisons de simplicité, n'hésitez pas à aller dans le dossier où se trouve les autres projets CSS par exemple.
 
 Une fois que vous êtes au bon endroit taper cette commande dans le terminal :
 
@@ -56,27 +63,37 @@ git clone <url du repo>
 
 Ici nous avons demander à `git` de cloner le repo distant (sur le remote) sur notre disque dur en local.
 
-Essayons cette commande. Soyez patient le clonage peu prendre quelques minutes avant de se terminer. Tout dépend la taille des fichiers présent dans le repo sur le `remote`.
+Essayons cette commande.
 
-Super, dès que c'est terminé vous pouvez ouvrir le dossier avec votre éditeur de texte. Ce projet devrait vous être familier. En effet c'est celui que l'on a construit ensemble durant le cours sur `FlexBox`.
+Soyez patient le clonage peut prendre quelques minutes avant de se terminer. Tout dépend la taille des fichiers présent dans le repo sur le `remote`.
 
-Super tout est déja prêt pour nos experimentations.
+Dès que c'est terminé vous pouvez ouvrir le dossier avec votre éditeur de texte. Ce projet devrait vous être familier.
+
+En effet c'est celui que l'on a construit ensemble durant le cours sur `FlexBox`.
+
+Super! Tout est déja prêt pour nos experimentations.
 
 ### Master, la branche sacrée
 
-Pour ce projet, nous pourrions uniquement sur la branche master. Cependant en cas de travail en équipe, il est fortement déconseillé de travailler directement sur cette branche.
+Pour ce projet, nous pourrions uniquement travailler sur la branche master.
+
+Cependant en cas de travail en équipe, il est fortement déconseillé de travailler directement sur cette branche.
 
 **Mais pourquoi ??**
 
-Sur beaucoup de projet et pour beaucoup d'équipe de développement, `master` revêt une importance particulière. En effet, cette branche doit toujours conserver la version du code la plus `stable` c'est-à-dire la version du code dont on est certains qu'elle contient le moins de bug possible et dont ont est certains de vouloir la mettre en `production`.
+Sur beaucoup de projet et pour beaucoup d'équipe de développement, `master` revêt une importance particulière.
+
+Cette branche doit toujours conserver la version du code la plus `stable` c'est-à-dire la version du code dont on est certains qu'elle contient le moins de bug possible et dont ont aussi certains de vouloir mettre en `production`.
 
 _Point vocabulaire :_
 
 Mettre en `production` un site web ou une application signifie la mettre `en ligne` sur internet et donc disponnible pour tout le monde.
 
-Vous comprenez aisément que il est important de vouloir présenter la meilleure version de notre travail et surtout éviter que les utilisateurs de notre site se plaigne car celui-ci ne fonctionne qu'à peu près ou voir pas du tout.
+Vous comprenez aisément qu'il est important de vouloir présenter la meilleure version de notre travail aux utilisateurs finaux. Nous souhaitons aussi éviter que ces utilisateurs ne se plaigne de dysfonctionement ou encore se plaigne car notre application web ne fonctionne plus du tout!
 
-Souvenez vous la furstration que vous pouvez peut-être ressentir face à quelque chose qui ne fonctionne pas comme il devrait. Un de nos objectifs principaux en tant que développeur et d'éviter que nos utilisateurs ressente ce type de furstration.
+Souvenez vous la furstration que vous avez déjà peut-être ressenti face à quelque chose qui ne fonctionne pas comme il le devrait.
+
+Un de nos objectifs principaux en tant que développeur et d'éviter que nos utilisateurs ressente ce type de furstration.
 
 ```
 VOUS ( avec un regard confu ) :
@@ -86,7 +103,7 @@ VOUS ( avec un regard confu ) :
 
 Ben oui effectivement, on peut remballer. C'est chômage technique ...
 
-Mais non malheureux ! Ici nous allons privillégier une autre solution à savoir créer une autre branche qui hébergera nos experimentations.
+Mais non malheureux! Ici nous allons privillégier une autre solution. Nous allons créer une autre branche qui hébergera nos experimentations.
 
 Plaçons nous via le terminal sur le dossier fraîchement cloné et créons une branche que l'on va nommer `fix/ajout-readme`.
 
@@ -104,9 +121,9 @@ Et nous voilà sur notre branche `fix/ajout-readme`
 
 #### Modifions notre façon de travailler.
 
-Depuis le début du cours, nous avons apprès à commiter notre code en utilisant la commande `git commit` ou sa version raccourcie `git commit -m <mon message de commit>`.
+Depuis le début du cours, nous avons appris à commiter notre code en utilisant la commande `git commit` ou sa version raccourcie `git commit -m <mon message de commit>`.
 
-Pour ceci rien ne change. Cependant une fois que nous avons bien avancé sur notre projet, il va être temps de le mettre en sécurité et de le rendre disponible pour nos cammarades de travail.
+Pour ceci rien ne change. Cependant une fois que nous avons bien avancé sur notre projet, il va être temps de le mettre en sécuritér et de le rendre disponible pour nos cammarades de travail.
 
 Pour ce faire nous pouvons utiliser la commande `git push`
 
@@ -134,7 +151,9 @@ To push the current branch and set the remote as upstream, use
 
 Si vous avez le message en français c'est super mais pour ceux qui ont `git` configuré en anglais, nous allons essayer de décortiquer le message ensemble :
 
-Ici `git` nous dit qu'il ne connait pas de branche nommée `feature/ajout-readme` sur le repo distant `origin`. Effectivement c'est vrai nous n'avons pas encore signifié au remote que nous souhaitons aussi créer une copie distante de notre branche.
+Ici `git` nous dit qu'il ne connait pas de branche nommée `feature/ajout-readme` sur le repo distant `origin`.
+
+Effectivement c'est vrai nous n'avons pas encore signifié au remote que nous souhaitons aussi créer une copie distante de notre branche.
 
 Actuellement, uniquement et par défaut `master` possède une copie distante.
 
@@ -142,7 +161,9 @@ Comme `git` est un outil fort sympatique, il nous indique aussi la commande à u
 
 Et cette commande est celle-ci : `git push --set-upstream origin feature/ajout-readme`
 
-Tapons la dans notre terminal. Si tout c'est bien passé `git` nous confirme que notre branche distante à bien été crée.
+Tapons la dans notre terminal.
+
+Si tout c'est bien passé `git` nous confirme que notre branche distante à bien été créée.
 
 Donc nous pouvons réessayer de `push` notre code sur le remote.
 
@@ -211,13 +232,17 @@ Bon soyons fou faisons donc un
 git rebase feature/ajout-readme
 ```
 
-Et bardaf voici la `fatal Error` et bien oui, je vous ait piégé. Vu que la branche locale `feature/ajout-readme` n'existe plus `git` ne peu plus l'utiliser pour mettre à jour `master`.
+Et bardaf voici la `fatal Error` ..
+
+Et bien oui, je vous ait piégé.
+
+Etant donné que la branche locale `feature/ajout-readme` n'existe plus `git` ne peu plus l'utiliser pour mettre à jour `master`.
 
 Voilà fin du cours. De nouveau chômage technique.
 
 Ah ben non vous ne vous en tirerez pas aussi facilement.
 
-N'oubliez pas que nous avions aussi créé une branche distante `feature/ajout-readme` qui était la copie conforme de notre branche locale et qui donc elle contient encore notre fichier `ReadMe.txt`.
+N'oubliez pas que nous avions aussi créé une branche distante `feature/ajout-readme` qui était la copie conforme de notre branche locale et qui donc, elle, contient encore notre fichier `ReadMe.txt`.
 
 Nous pouvons donc peut-être utiliser cette branche distante pour mettre à jour master.
 
@@ -273,13 +298,13 @@ Bon jusqu'ici nous travaillions avec nous même dans un monde idéal, calme et p
 
 Vous êtiez tranquillement en train d'enrichir sur votre branche locale votre fichier `README.txt` avec les instructions les plus précises que vous puissiez founrir.
 
-Jack (c'est un pseudonyme - pour préserver son identité) lui aussi à eu cette idée et modifie le même fichier. Mais Jack à été plus rapide que vous : Il a déjà fait ses modifications et les a déja mise sur master.
+Jack (c'est un pseudonyme - pour préserver son identité) lui aussi a eu cette idée et modifie le même fichier. Mais Jack à été plus rapide que vous : Il a déjà fait ses modifications et les a déja mises sur master.
 
-Vous biensûr n'êtes absolument pas au courrant donc vous continuer à travailler tranquillement. Le temps passe et arrive le moment où vous aussi souhaitez mettre votre travail sur master.
+Vous, évidemment, n'êtes absolument pas au courrant donc vous continuer à travailler tranquillement. Le temps passe et arrive le moment où vous aussi souhaitez mettre votre travail sur master.
 
 A votre avis comment git va agir ? Va-t-il supprimer les modifications de Jack pour les remplacer par les vôtres ? Ou le contraire, va-t-il ignorer vos modifications et garder celles de Jack ?
 
-Essayons de reproduire cette situation :
+Voyons par nous même. Essayons de reproduire cette situation :
 
 **Etape 1**: Reproduire les actions de Jack
 
@@ -362,7 +387,7 @@ Le document README est un fichier très important car il a pour but d'aider les 
   Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
 ```
 
-Pour résoudre ce confits nous allons devoir choisir manuellement ce que nous souhaitons faire : garder nos modifications, garder celle de Jack ou garder les deux.
+Pour résoudre ce confit nous allons devoir choisir manuellement ce que nous souhaitons faire : garder nos modifications, garder celles de Jack ou garder les deux.
 
 Pour ce faire remarquer que la partie du texte conflictuelle est délimitée par ceci :
 
