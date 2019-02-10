@@ -38,89 +38,33 @@ Toute probalitité gardée, en poussant notre code sur ce type de service, notre
 
 Un autre avantage non négligeable du travail avec ces `remote` est que cela favorise et facilite aussi énormément le travail collaboratif.
 
-En effet, une fois ayant reçue l'autorisation de se connecter via `git` (via SSH ou autre) à un `remote`, chaque collaborateur d'un projet pourra récupérer et ainsi aider à la construction d'un projet.
+En effet, une fois ayant reçue l'autorisation de se connecter via `git` (via HTTPS ou autre) à un `remote`, chaque collaborateur d'un projet pourra récupérer et ainsi aider à la construction d'un projet.
 
-#### Modifions notre façon de travailler.
+### Récupérer un projet hébergé sur un `remote`
 
-Depuis le début du cours, nous avons apprès à commiter notre code en utilisant la commande `git commit` ou sa version raccourcie `git commit -m <mon message de commit>`.
+Pour commencer, nous allons devoir un peu changer nos habitudes : pour cette leçon nous n'allons pas créer notre projet en ajoutant des fichiers à la main et en initialisant un repo git (via la commande `git init`) mais nous allons récuperer notre projet depuis un remote !!!
 
-Pour ceci rien ne change. Cependant une fois que nous avons bien avancé sur notre projet, il va être temps de le mettre en sécurité et de le rendre disponible pour nos cammarades de travail.
+Pour ce faire nous allons devoir nous placer via le terminal à l'endroit où l'on souhaite ajouter le projet. Pour des raisons de simplicité, n'hésitez pas à aller dans le dossier où se trouve les autres projets CSS par exemple.
 
-Pour ce faire nous pouvons utiliser la commande `git push`
+Une fois que vous êtes au bon endroit taper cette commande dans le terminal :
+
+```bash
+git clone <url du repo>
+```
 
 **Décortiquons cette commande :**
 
-Ici nous demandons à git de pousser notre code sur un `remote`.
+Ici nous avons demander à `git` de cloner le repo distant (sur le remote) sur notre disque dur en local.
 
-Petite astuce, en réalité la commande éxectuée par git va être un peu plus complexe. En tapant cette commande `git push`, git va l'interprété comme étant `git push origin/<la branche où nous nous trouvons - master par défaut>`.
+Essayons cette commande. Soyez patient le clonage peu prendre quelques minutes avant de se terminer. Tout dépend la taille des fichiers présent dans le repo sur le `remote`.
 
-Nous allons voir un peu plus en détail par la suite cette notion de branche. Ici retenons simplement que,par défaut, git va essayer de `push` notre code sur un serveur distant que git connaîtra sous le nom de `origin`.
+Super, dès que c'est terminé vous pouvez ouvrir le dossier avec votre éditeur de texte. Ce projet devrait vous être familier. En effet c'est celui que l'on a construit ensemble durant le cours sur `FlexBox`.
 
-Il est tout à fait possible de choisir de pousser notre code sur un autre `remote` que `origin` mais ceci est une thématique encore un poil trop avancée pour nos connaissances actuelles. Chaque chose en son temps.
+Super tout est déja prêt pour nos experimentations.
 
-**Petite Note importante**
+### Master, la branche sacrée
 
-Pour des raisons techniques, nous n'allons pas pouvoir travailler directement avec des serveurs distants. Donc en l'état actuel, la commande `git push` risque de ne pas fonctionner. Malheureusement, vous allez devoir me croire sur parole. J'en suis désolé :(
-
-Donc ainsi notre manière de travailler (`workflow`, en anglais) pourrait être le suivant :
-
-- j'initialise mon projet avec `git init`
-- je modifie du code
-- je commit `git commit -m <mon message>`
-- je modifie du code
-- je commit `git commit -m <mon message>`
-- ...
-- ...
-- je suis satistafait et je vais donc pusher mon code via la commande `git push`
-- je modifie du code
-- je commit `git commit -m <mon message>`
-- je modifie du code
-- je commit `git commit -m <mon message>`
-- ...
-- ...
-- je suis satistafait et je vais donc pusher mon code via la commande `git push`
-
-et ainsi de suite jusqu'à la fin du projet.
-
-### Une histoire de branche et de tronc
-
-En plus de nous permettre de travailler avec des branches et donc de facilement passer notre CAP d'arboriculeteur.
-
-C'est quand même magique `git`.
-
-Sauf qu'en fait non...
-
-Je vous ai menti malheureusement `git` ne ne va pas nous être suffisant pour passer ce certificat. Cependant nous allons tout de même pouvoir créer d'autres type de branches d'un autre type seulement.
-
-Pour comprendre prenons cette métaphore de l'arbre :
-
-Quand vous avez initialiser votre repo `git` (avec la commande `git init` donc) vous avez créer une première branche nommée `master`
-
-Dans notre métaphore, `master` est le tronc de notre arbre. Ce tronc devrait exister par défaut dans notre répertoire `git`.
-
-Pour le vérifier, ouvrez votre `terminal` et placer vous (si ce n'est déjà pas fait) à l'endroit où ce situe
-le dossier `ProjetGit` et tapez le commande suivante
-
-```bash
-git branch
-```
-
-nomralement vous devriez voir apparaître quelque chose comme ceci
-
-```bash
-git branch
-* master
-```
-
-avec le mot `master` surligné.
-
-**Décortiquons cette commande :**
-
-Ici avec cette commande nous avons demander à `git` de lister toutes les branches connues de notre repository.
-
-Ici nous n'avons que `master`, notre tronc d'arbre.
-
-Travailler uniquement sur master est tout à fait possible. Cependant en cas de travail en équipe, il est fortement déconseillé de travailler directement sur master.
+Pour ce projet, nous pourrions uniquement sur la branche master. Cependant en cas de travail en équipe, il est fortement déconseillé de travailler directement sur cette branche.
 
 **Mais pourquoi ??**
 
@@ -142,203 +86,351 @@ VOUS ( avec un regard confu ) :
 
 Ben oui effectivement, on peut remballer. C'est chômage technique ...
 
-Mais non malheureux, `git` à tout prévu : nous pouvons rajouter des branches à notre tronc !
+Mais non malheureux ! Ici nous allons privillégier une autre solution à savoir créer une autre branche qui hébergera nos experimentations.
 
-Pour ce faire il nous suffit d'utiliser la commande `git` :
+Plaçons nous via le terminal sur le dossier fraîchement cloné et créons une branche que l'on va nommer `fix/ajout-readme`.
+
+Normalement, vous devriez avoir toutes les clés en mains pour retouver la commande qui permet de créer une branche.
+
+Vous ne vous rappelez plus ?
+
+Allez la voici (voyez comme je suis sympas)
 
 ```bash
-git branch <nom-de-la-branche>
-
-// remplacer <nom-de-la-branche> par le nom de votre branch.
+git  checkout-b `fix/ajout-readme`
 ```
+
+Et nous voilà sur notre branche `fix/ajout-readme`
+
+#### Modifions notre façon de travailler.
+
+Depuis le début du cours, nous avons apprès à commiter notre code en utilisant la commande `git commit` ou sa version raccourcie `git commit -m <mon message de commit>`.
+
+Pour ceci rien ne change. Cependant une fois que nous avons bien avancé sur notre projet, il va être temps de le mettre en sécurité et de le rendre disponible pour nos cammarades de travail.
+
+Pour ce faire nous pouvons utiliser la commande `git push`
 
 **Décortiquons cette commande :**
 
-Ici nous demandons à `git` de créer une nouvelle branche qui portera le nom que vous lui aurez donné.
+Ici nous demandons à git de pousser notre code sur un `remote`.
 
-#### Un peu de pratique :
+Petite astuce, en réalité la commande éxectuée par git va être un peu plus complexe. En tapant cette commande `git push`, git va l'interprété comme étant `git push origin/<la branche où nous nous trouvons>`.
 
-Actuellement sur votre terminal, vous devriez toujours être placé dans sur le dossier `ProjetGit`. C'est parfait.
+Ici git devrait essayer de `push` notre code sur un serveur distant que git connaîtra sous le nom de `origin` et plus spécifiquement sur la branche `fix/ajout-readme` située sur notre remote.
 
-Maintenant tapez la commande `git branch test-branches`.
+Il est tout à fait possible de choisir de pousser notre code sur un autre `remote` que `origin` mais ceci est une thématique encore un poil trop avancée pour nos connaissances actuelles. Chaque chose en son temps.
 
-Ici nous allons créer une nouvelle branche qui se nomme `test-branches`
+Essayons donc de pousser notre code sur le remote via la commande `git push`
 
-**_Point culture de l'informatique _**
-
-Souvent quand on développe une site web, on se rend compte que l'on passe beaucoup de temps à essayer de nommer des choses même si ces élements sont abstrait ou n'ont pas beaucoup lien avec quelque chose en dehors du monde de l'informatique.
-
-Nommer les choses et les concepts de la bonne manière est assez capital surtout si l'on travaille avec d'autres personnes. En effet, nous devons nous assurer que notre collaborateur comprenne vraiment ce que l'on essaye d'exprimer ou de faire.
-
-Ici, il est donc important de choisir un nom de banche assez explicite par rapport à ce que l'on souhaite faire.
-
-Dans notre cas, nous souhaitons `test`er les `branches` git. `test-branches` est donc un nom assez explicite.
-
-Donc normalement après avoir taper la commande `git branch test-branches` dans votre terminal, la branche `test-branche` devrait être crée.
-
-**_ Petit Challange _**
-
-Maintenant vous devriez être en mesure de vérifier si cette branche existe bel et bien. Pour ceci vous devez utiliser la commande qui permet de lister toutes les branches disponnible.
-
---- Barrière anti-spoil ---
-
-Pour ce faire, il faut utiliser la commande `git branch`
-
-En l'utilisant, vous deviez pouvoir voir toutes les branches disponnible.
-
-**_Attention !_**
-
-A ce stade-ci, nous n'avons fait _que_ créer notre nouvelle branche. Si nous nous arretons là et que nous continuons à travailler et à commiter, toutes les modifications continuerons à être faite sur la branche `master`.
-
-Regardez dans la liste des branches, c'est toujours `master` qui est en couleur.
-
-Pour ce déplacer sur notre nouvelle branche nous devons utiliser une autre commande `git` :
+Mmmmh un étrange message sauvage est apparu dans notre terminal :
 
 ```bash
-git checkout <nom-de-notre-branche>
+$ git push
+fatal: The current branch feature/ajout-readme has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature/ajout-readme
 ```
 
-Essayons donc et faisons un `git checkout test-branches`.
+Si vous avez le message en français c'est super mais pour ceux qui ont `git` configuré en anglais, nous allons essayer de décortiquer le message ensemble :
 
-Regardez nous avons eu un message de `git` disant que nous avons bien changer de branche.
+Ici `git` nous dit qu'il ne connait pas de branche nommée `feature/ajout-readme` sur le repo distant `origin`. Effectivement c'est vrai nous n'avons pas encore signifié au remote que nous souhaitons aussi créer une copie distante de notre branche.
 
-Vous pouvez toujours faire un `git branch` pour le vérifier.
+Actuellement, uniquement et par défaut `master` possède une copie distante.
 
-Super maintenant, nous somme sur notre nouvelle branche et nous pouvons faire ce que nous voulons sans que `master` soit directement impacté.
+Comme `git` est un outil fort sympatique, il nous indique aussi la commande à utiliser pour expliquer à `git` comment créer une copie distante de notre branche `feature/ajout-readme`
 
-Bien joué.
+Et cette commande est celle-ci : `git push --set-upstream origin feature/ajout-readme`
 
-Cependant vous ne trouvez pas que taper 2 commandes dans le terminal pour juste créer et travailler sur une autre branche ce n'est pas un peu long ?
+Tapons la dans notre terminal. Si tout c'est bien passé `git` nous confirme que notre branche distante à bien été crée.
 
-Rappellez-vous notre objectif en tant que développeur c'est d'être le plus fainéant possible et de faire le plus de chose en moins de ligne possible.
+Donc nous pouvons réessayer de `push` notre code sur le remote.
 
-Donc voici la commande du Grand Chef Amérindien de la tribu `git` :
+Je vous laisse le faire.
+
+Ici comme nous n'avons fait aucune modification, `git` nous dit que tout est à jour des deux coté.
+
+Cela confirme que les 2 branches (locales et remote) sont bien synchronisées.
+
+#### Lisez moi, lisez moi , lisez moiiiiiiii !
+
+Si tout va bien pour vous, je vous propose d'ajouter un fichier nommer `README.txt` à la racine du projet (`READ ME` , signifie `lisez moi` en anglais).
+
+Ce fichier à pour extension `.txt` cela signifie juste que ce fichier est un simple fichier `texte`.
+
+Dans ce fichier nous allons rajouter ceci :
+
+```text
+Voici les premières lignes de notre README.
+Le document README est un fichier très important car il a pour but d'aider les autres développeurs à collaborer sur notre projet.
+
+Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
+```
+
+Une fois ce fichier `README.txt` ajouter, sauvegardons et commitons notre travail. Une fois ceci fait, mettons notre travail à l'abri sur le remote via la commande `git push`.
+
+Aainsi grâce à `push` et au remote, notre manière de travailler (`workflow`, en anglais) peut devenir le suivant :
+
+- je clone un repo via `git clone`
+- je crée une branche de travail avec `git checkout -b <nom de ma branche>`
+- je modifie du code
+- je commit `git commit -m <mon message>`
+- je modifie du code
+- je commit `git commit -m <mon message>`
+- ...
+- ...
+- je suis satistafait et je crée une copie distante de ma branche avec `git push --set-upstream origin feature/ajout-readme`
+- je push mon code via la commande `git push`
+- je modifie du code
+- je commit `git commit -m <mon message>`
+- je modifie du code
+- je commit `git commit -m <mon message>`
+- ...
+- ...
+- je suis satistafait et je push mon code via la commande `git push`
+
+et ainsi de suite jusqu'à la fin du projet.
+
+### Toujours se maintenir à jour.
+
+Retournons sur `master`. Vous le constatez, le fichier `ReadMe.txt` n'est pas sur cette branche.
+
+Nous allons supprimer notre branche `feature/ajout-readme` en local via la commande
 
 ```bash
-git checkout -b <nom-de-la-branche>
+git branch -d feature/ajout-readme
 ```
 
-**Décortiquons cette commande :**
+Ok maitenant j'aimerais que vous fassiez en sorte d'avoir le fichier `ReadMe.txt` disponible sur la branche master.
 
-Ici nous avons dit a `git`, crée moi une branche et place moi dessus.
+Ici vous pouvez utiliser un `rebase` ou un `merge`, cela n'a que peu d'importance. Personellement je préfère le `rebase` car il garde l'historique des `commits` et ne rajoute pas de commit supplémentaire.
 
-Pour mettre en pratique ceci, revenons sur `master` avec la commande
+Bon soyons fou faisons donc un
+
+```bash
+git rebase feature/ajout-readme
+```
+
+Et bardaf voici la `fatal Error` et bien oui, je vous ait piégé. Vu que la branche locale `feature/ajout-readme` n'existe plus `git` ne peu plus l'utiliser pour mettre à jour `master`.
+
+Voilà fin du cours. De nouveau chômage technique.
+
+Ah ben non vous ne vous en tirerez pas aussi facilement.
+
+N'oubliez pas que nous avions aussi créé une branche distante `feature/ajout-readme` qui était la copie conforme de notre branche locale et qui donc elle contient encore notre fichier `ReadMe.txt`.
+
+Nous pouvons donc peut-être utiliser cette branche distante pour mettre à jour master.
+
+Ici deux solutions :
+
+1. La plus longue :
+
+Recréer une branche locale `feature/ajout-readme` depuis la branche en remote et mettre à jour master depuis cette branche locale.
+
+2. La plus courte :
+
+Directement mettre à jour `master` depuis la branche distante sans recréer une branche en local.
+
+Pour la solution 1 voici les étapes :
+
+- D'abord nous avons besoin d'aller chercher (`fetch`, en anglais) toutes les branches distantes existantes sur `origin` :
+
+```bash
+git fetch origin
+```
+
+- Ensuite nous allons recréer notre branche locale `feature/ajout-readme`.
+
+```bash
+git checkout feature/ajout-readme
+```
+
+- nous devons nous replacer sur master
 
 ```bash
 git checkout master
 ```
 
-et créons une nouvelle branche nommée `develop`.
-
-Donc notre commande sera :
+- Et enfin faire notre `rebase`
 
 ```bash
-git checkout -b develop
+git rebase `feature/ajout-readme`
 ```
 
-**_Point culture de l'informatique _**
+Un peu long non ?
 
-Ici nous avons créer une nouvelle branche nommée `develop`, cette branche est aussi importante que `master` mais son but est légèrement différant.
+Pour la solution numéro 2 c'est beaucoup plus court
 
-Là où `master` ne doit contenir que du code `stable` pouvant être mis en production, la branche `develop`, quant à elle, peut contenir du code pas totalement terminé mais presque.
+```bash
+git pull --rebase origin feature/ajout-readme
+```
 
-Je m'explique :
+Allez y essayer c'est auto-magique !
 
-Imaginons que John et Paula travaille ensemble sur un projet de magasin en ligne ayant des points de retraits de marchandise un peu partout en île de France.
+### Gérer les conflits
 
-John s'occupe de créer la page avec les informations de contact du magasin (adresse, téléphonne, ...) tandis que Paula à travaillé sur une carte où les utilisateurs pourront localiser l'emplacement des points de retraits des marchandises.
+Bon jusqu'ici nous travaillions avec nous même dans un monde idéal, calme et paisible. Mais imaginez cette situation :
 
-John et Paula ont décidé de travailler chacun sur leur branche.
+Vous êtiez tranquillement en train d'enrichir sur votre branche locale votre fichier `README.txt` avec les instructions les plus précises que vous puissiez founrir.
 
-Ni John ni Paula n'a totalement terminer son travail mais John à besoin du travai de Paula pour continuer à travailler. Comme ni le travail de Paula est presque fini, elle peut décider de déplacer sont travail sur la branche `develop` pour que John puisse l'utiliser.
+Jack (c'est un pseudonyme - pour préserver son identité) lui aussi à eu cette idée et modifie le même fichier. Mais Jack à été plus rapide que vous : Il a déjà fait ses modifications et les a déja mise sur master.
 
-Ainsi, Paula pourra partager son code sans directement devoir le mettre sur master.
+Vous biensûr n'êtes absolument pas au courrant donc vous continuer à travailler tranquillement. Le temps passe et arrive le moment où vous aussi souhaitez mettre votre travail sur master.
 
-Nous allons voir dans un instant comment déplacer notre travail de branche à branche dans quelques instants.
+A votre avis comment git va agir ? Va-t-il supprimer les modifications de Jack pour les remplacer par les vôtres ? Ou le contraire, va-t-il ignorer vos modifications et garder celles de Jack ?
 
-Pour le moment faisons l'essai et créeons cette branche `develop`
+Essayons de reproduire cette situation :
 
-On vérifie grâce à `git branch` que l'on est bien dessus.
+**Etape 1**: Reproduire les actions de Jack
 
-Si c'est ok, nous allons ajouter un fichier nommer `README.txt` à la racine du projet (`READ ME` , signifie `lisez moi` en anglais). Ce fichier à pour extension `.txt` cela signifie juste que ce fichier est un simple fichier `texte`.
+- Placçons nous sur `master` et modifions le fichier `README.txt` en remplaçant le contenu par ceci :
 
-Dans ce fichier nous allons rajouter ceci :
+  ```
+  Voici les premières lignes de MON sublime README. Bien meilleur que celui écrit par mon autre cammarade. Bien évidement, je suis le plus talentueux.
+  Le document README est un fichier très important car il a pour but d'aider les autres développeurs à collaborer sur notre projet.
+
+  Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
+
+  ```
+
+- Commitons ceci et faisons un `git push`
+
+**Etape 1**: Modifions le README sur la branche locale `feature/ajout-readme`
+
+- Si vous ne l'avez pas encore recrée faite, depuis `master`, un `git checkout feature/ajout-readme`
+- Une fois sur la branche remplaçons le contenu `README.txt` par ceci :
+
+  ```
+  Ce Readme est en cours de construction.
+  Cependant, ce projet est un projet commun créé en collaboration. Nous avons besoin de vous donc si vous le souhaitez n'hésitez pas à nous contacter pour plus d'informations.
+
+  Le document README est un fichier très important car il a pour but d'aider les autres développeurs à collaborer sur notre projet.
+
+  Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
+
+  ```
+
+  - Sauvegardons, commitons et faisons notre `git push`
+
+Une fois ceci retournous sur `master` et essayons de mettre cettre branche à jour avec notre branche `feature/ajout-readme` via un `git rebase feature/ajout-readme`
+
+Normalement vous devriez avoir ce type de message d'erreur :
+
+```
+$ git rebase feature/ajout-readme
+First, rewinding head to replay your work on top of it...
+Applying: update readme
+Using index info to reconstruct a base tree...
+M       readMe.txt
+Falling back to patching base and 3-way merge...
+Auto-merging readMe.txt
+CONFLICT (content): Merge conflict in readMe.txt
+error: Failed to merge in the changes.
+hint: Use 'git am --show-current-patch' to see the failed patch
+Patch failed at 0001 update readme
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+```
+
+Encore une fois, si votre `git` est configuré en français, cela devrait être un peu plus compréhensible.
+
+Dans tout les cas que dit ce message :
+
+Ici `git` nous informe qu'il n'arrive pas à mettre à jour master depuis la branche `feature/ajout-readme` car des deux coté (sur la branche master et sur la branche feature) des modifications ont été faites. Actuellement il est dans la panade et ne sait pas réellement quelle modification prendre en compte. Il nous demande donc de l'aide pour lui indiquer quelle modification il doit prendre.
+
+Il y a donc un `conflit`
+
+#### Resolvons les conflits
+
+Pour ce faire grâce à notre éditeur de texte, ouvrons le fichier `ReadMe.txt`
+
+Vous devriez le trouver dans un état proche de ceci :
+
+```
+<<<<<< HEAD
+  Ce Readme est en cours de construction.
+  Cependant, ce projet est un projet commun créé en collaboration. Nous avons besoin de vous donc si vous le souhaitez n'hésitez pas à nous contacter pour plus d'informations.
+
+  Le document README est un fichier très important car il a pour but d'aider les autres développeurs à collaborer sur notre projet.
+=======
+Voici les premières lignes de MON sublime README. Bien meilleur que celui écrit par mon autre cammarade. Bien évidement, je suis le plus talentueux.
+Le document README est un fichier très important car il a pour but d'aider les autres développeurs à collaborer sur notre projet.
+>>>>>>> update readme
+
+  Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
+```
+
+Pour résoudre ce confits nous allons devoir choisir manuellement ce que nous souhaitons faire : garder nos modifications, garder celle de Jack ou garder les deux.
+
+Pour ce faire remarquer que la partie du texte conflictuelle est délimitée par ceci :
+
+```
+<<<<<< HEAD
+>>>>>>> update readme
+```
+
+et que vos modifications sont séparée de celle de Jack par ceci `=======` avec des indicateurs nous pouvons mieux cerner ce que nous devons faire.
+
+Ici, nous somme beau joueur et nous allons garder aussi bien les modifications de Jack que les notres.
+
+Nous devons donc simplement suprimer tout les signes superflus de notre fichier C'est à dire :
+
+```
+<<<<<< HEAD
+>>>>>>> update readme
+```
+
+ainsi que les `=======`
+
+Ainsi notre fichier `ReadMe.txt` ressemblera à ceci :
 
 ```text
-Voici les premières lignes de la notice d'utilisation de me projet.
-Le document README à pour but d'aider les autres développeurs à collaborer sur mon projet.
-
-Ici je peux écrire toutes les informations qui les aiderons à travailler sur mon projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
+Ce Readme est en cours de construction.
+Cependant, ce projet est un projet commun créé en collaboration. Nous avons besoin de vous donc si vous le souhaitez n'hésitez pas à nous contacter pour plus d'informations.
+Le document README est un fichier très important car il a pour but d'aider les autres développeurs à collaborer sur notre projet.
+Voici les premières lignes de MON sublime README. Bien meilleur que celui écrit par mon autre cammarade. Bien évidement, je suis le plus talentueux.
+Le document README est un fichier très important car il a pour but d'aider les autres développeurs à collaborer sur notre projet.
+ Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
 ```
 
-Une fois que nous avons copié-collé le contenu dans le fichier `README.txt` nous allons pouvoir sauvegarder et commiter. Ceci en pensant à bien écrire un message explicite tel que : `Ajout du fichier ReadMe`.
+Bon cette version du Readme est pas totalement parfaite mais c'était pour l'exercice. :-)
 
-Ici dans le cadre de l'exercice, il n'y a de problème pour le rajouter ce fichier directement sur `develop` car ce fichier ne contiendra pas de code en tant que tel.
+Une fois tous les signes enlevés nous pouvons sauvegarder notre fichier et signifier à `git` que nous avons avons résolu les conflits.
 
-Dans un contexte normal de travail, tout comme pour master, on évitera de directement travailler sur `develop` car c'est une branche `commune` aux autres participants au projet.
+Pour ce faire nous devons faire un `git add .` pour ajouter les modificatons que nous avons faites et nous pouvons continuer le rebase en faisant un `git rebase --continue`.
 
-Je vous laisse créer votre commit.
+Allez essyons ceci.
 
-Une fois que c'est fait, retournons sur `master`. Si vous ne savez plus comment faire, n'hésitez pas à retourner un peu plus haut.
+Et voilà `git` a fini de remttre à jour master depuis notre branche `feature/ajout-readme`.
 
-Une fois sur master, regarder bien les fichiers du projets. Remarquez que le `ReadMe.txt` à disparu.
+Maintenant nous devons mettre le branche distante `master` à jour avec nos modifications.
 
-Rassurez vous c'est tout à fait normal car pour le moment ce fichier `ReadMe.txt` n'est disponnible que sur notre branche `develop` mais n'existe pas encore sur `master`.
-
-Si vous souhaitez le vérifier, n'hésitez pas à faire un aller-retour sur `develop` pour constater que le fichier est encore bien présent.
-
-### Fusionner (`merge`, en anglais) deux branches ensemble.
-
-Imaginons que nous sommes super content de notre `ReadMe.txt` et que nous souhaitons le mettre en production. Comme je le disais plus haut, pour ce faire nous devons donc avoir ce fichier aussi sur `master`.
-
-Pour ce faire, nous pouvons très bien recréer un fichier `ReadMe.txt` sur `master` et copier-coller le contenu de ce fichier disponible sur `develop`.
-
-Oui c'est une possibilité mais imaginons si nous avions rajouté mille milliard de fichier et de modifications sur `develop` devrions nous TOUT copier-coller ?
-
-Cela serait vraiment douloureux à faire vous ne trouvez pas ?
-
-Encore une fois, `git` propose une solution bien plus élégante qui se nomme `git merge`
-
-La commande `git merge` permet de fusionner deux branches en une seule et donc de rappatrier du travail d'une branche à l'autre (de `develop` vers `master` dans notre cas).
-
-La commande à utiliser aurait donc cette forme
+Pour ceci nous pouvons utiliser la commande
 
 ```bash
-git merge <nom-de-la-branche-à-fusionner>
+git push -f
 ```
 
-Nous comme nous sommes sur la branche `master` et que nous souhaitons rappatrier le travail effectué sur `develop`, nous pouvons utiliser cette commande.
+Nous utilisons le flag `-f` pour `f`orcer git à envoyer nos modifications sur le serveur. Nous avons besoin de ce flag car n'oublions pas que le rebase `réecrit` l'historique des commits. Notre remote lui n'est pas au courrant de ces modifications d'historique et risque donc de rejeter notre `push`.
 
-```bash
-git merge develop
-```
+C'est pourquoi nous utilisons le flag `-f` pour éviter ce rejet.
 
-Allez essayons.
+#### Gérer un conflits plus grave
 
-Vous avez vu,le fichier `ReadMe.txt` est apparu.
+Ici le conflit était assez simple à résoudre. Parfois, lors d'un rebase, les conflits peuvent être très complexe à résoudre car la différence d'historique des commits entre les deux branches est très grande.
 
-Bravo, nous avons effectuer notre premier `merge`.
+Si vous sentez que vous n'allez pas pouvoir effectuer correctement ce rebase vous pouvez le quitter en faisait un `git rebase --abort`.
 
-**Décortiquons cette commande :**
+Si vous êtes dans cette situation, peut-être qu'effectuer un `git merge` à la place d'un `git rebase` sera plus judicieux.
 
-Ici ce que nous avons fait c'est demander à git de `merge` (fusionner) la branche `develop` dans `master`.
+En effet, avec le `merge` git ne tenteras pas de comparer les deux historiques. Il se contentera de créer un commit avec les modifs de chaque branche. Vous aurez toujours les conflits mais ceux-ci devraient être plus simple à résoudre.
 
-Ici veuilez noter qu'en réalité `git` ne fusionne pas réellement les deux branches.
+Voici qui termine ce cours sur GIT.
 
-Pour le constater, faisons un `git branch`.
+Pour résumer :
 
-Regardez la branche `develop` existe encore. En fait ce qu'à fait `git` c'est fusionner les modifications (ici l'ajout de notre fichier) qui étaient présents sur `develop` et non sur `master` en un commit.
+Git est un outil essentiel de travail que, en tant que développeur, nous sommes ammener à utiliser au quotidien. Cet outil permet de créer des points de sauvegardes (`commits`) de notre travail et de le mettre en sécurité sur des serveurs distants (`remote`). Ainsi cet outil, permet de travailler de manière collaborative sur des projets de plus grande échelle.
 
-Ce commit contenant les modifications à été ajouté à notre branche `master`.
-
-Ce qui fait que maintenant nos deux branches possèdent le fichier `ReadMe.txt`.
-
-Nous avons donc réussi à tranférer notre travail d'une branche à l'autre.
-
-#### Petit bonus
-
-Maintenant imaginons que nous ayons fait des modifications sur `master` (houlà pas bien du tout) et qu'après s'être fait enguirlander par notre `CTO` (`Chief Technical Officer`, directeur technique - le grand manitou d'une équipe de développeur, NDLR) nous souhaitons tout de même utiliser ces modifications sur une de nos branches pour continuer le travail, comment pourrions nous faire ?
-
-Et bien, nous l'avons vu, si il est possible de faire un `merge` de `develop` sur `master`, il devrait tout a fait être possible de `merge` master sur un
-
-### L'art de la résolution de conflit
+Codez bien !
