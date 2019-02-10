@@ -184,4 +184,161 @@ Maintenant vous devriez être en mesure de vérifier si cette branche existe bel
 
 Pour ce faire, il faut utiliser la commande `git branch`
 
-En l'utilisant,
+En l'utilisant, vous deviez pouvoir voir toutes les branches disponnible.
+
+**_Attention !_**
+
+A ce stade-ci, nous n'avons fait _que_ créer notre nouvelle branche. Si nous nous arretons là et que nous continuons à travailler et à commiter, toutes les modifications continuerons à être faite sur la branche `master`.
+
+Regardez dans la liste des branches, c'est toujours `master` qui est en couleur.
+
+Pour ce déplacer sur notre nouvelle branche nous devons utiliser une autre commande `git` :
+
+```bash
+git checkout <nom-de-notre-branche>
+```
+
+Essayons donc et faisons un `git checkout test-branches`.
+
+Regardez nous avons eu un message de `git` disant que nous avons bien changer de branche.
+
+Vous pouvez toujours faire un `git branch` pour le vérifier.
+
+Super maintenant, nous somme sur notre nouvelle branche et nous pouvons faire ce que nous voulons sans que `master` soit directement impacté.
+
+Bien joué.
+
+Cependant vous ne trouvez pas que taper 2 commandes dans le terminal pour juste créer et travailler sur une autre branche ce n'est pas un peu long ?
+
+Rappellez-vous notre objectif en tant que développeur c'est d'être le plus fainéant possible et de faire le plus de chose en moins de ligne possible.
+
+Donc voici la commande du Grand Chef Amérindien de la tribu `git` :
+
+```bash
+git checkout -b <nom-de-la-branche>
+```
+
+**Décortiquons cette commande :**
+
+Ici nous avons dit a `git`, crée moi une branche et place moi dessus.
+
+Pour mettre en pratique ceci, revenons sur `master` avec la commande
+
+```bash
+git checkout master
+```
+
+et créons une nouvelle branche nommée `develop`.
+
+Donc notre commande sera :
+
+```bash
+git checkout -b develop
+```
+
+**_Point culture de l'informatique _**
+
+Ici nous avons créer une nouvelle branche nommée `develop`, cette branche est aussi importante que `master` mais son but est légèrement différant.
+
+Là où `master` ne doit contenir que du code `stable` pouvant être mis en production, la branche `develop`, quant à elle, peut contenir du code pas totalement terminé mais presque.
+
+Je m'explique :
+
+Imaginons que John et Paula travaille ensemble sur un projet de magasin en ligne ayant des points de retraits de marchandise un peu partout en île de France.
+
+John s'occupe de créer la page avec les informations de contact du magasin (adresse, téléphonne, ...) tandis que Paula à travaillé sur une carte où les utilisateurs pourront localiser l'emplacement des points de retraits des marchandises.
+
+John et Paula ont décidé de travailler chacun sur leur branche.
+
+Ni John ni Paula n'a totalement terminer son travail mais John à besoin du travai de Paula pour continuer à travailler. Comme ni le travail de Paula est presque fini, elle peut décider de déplacer sont travail sur la branche `develop` pour que John puisse l'utiliser.
+
+Ainsi, Paula pourra partager son code sans directement devoir le mettre sur master.
+
+Nous allons voir dans un instant comment déplacer notre travail de branche à branche dans quelques instants.
+
+Pour le moment faisons l'essai et créeons cette branche `develop`
+
+On vérifie grâce à `git branch` que l'on est bien dessus.
+
+Si c'est ok, nous allons ajouter un fichier nommer `README.txt` à la racine du projet (`READ ME` , signifie `lisez moi` en anglais). Ce fichier à pour extension `.txt` cela signifie juste que ce fichier est un simple fichier `texte`.
+
+Dans ce fichier nous allons rajouter ceci :
+
+```text
+Voici les premières lignes de la notice d'utilisation de me projet.
+Le document README à pour but d'aider les autres développeurs à collaborer sur mon projet.
+
+Ici je peux écrire toutes les informations qui les aiderons à travailler sur mon projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
+```
+
+Une fois que nous avons copié-collé le contenu dans le fichier `README.txt` nous allons pouvoir sauvegarder et commiter. Ceci en pensant à bien écrire un message explicite tel que : `Ajout du fichier ReadMe`.
+
+Ici dans le cadre de l'exercice, il n'y a de problème pour le rajouter ce fichier directement sur `develop` car ce fichier ne contiendra pas de code en tant que tel.
+
+Dans un contexte normal de travail, tout comme pour master, on évitera de directement travailler sur `develop` car c'est une branche `commune` aux autres participants au projet.
+
+Je vous laisse créer votre commit.
+
+Une fois que c'est fait, retournons sur `master`. Si vous ne savez plus comment faire, n'hésitez pas à retourner un peu plus haut.
+
+Une fois sur master, regarder bien les fichiers du projets. Remarquez que le `ReadMe.txt` à disparu.
+
+Rassurez vous c'est tout à fait normal car pour le moment ce fichier `ReadMe.txt` n'est disponnible que sur notre branche `develop` mais n'existe pas encore sur `master`.
+
+Si vous souhaitez le vérifier, n'hésitez pas à faire un aller-retour sur `develop` pour constater que le fichier est encore bien présent.
+
+### Fusionner (`merge`, en anglais) deux branches ensemble.
+
+Imaginons que nous sommes super content de notre `ReadMe.txt` et que nous souhaitons le mettre en production. Comme je le disais plus haut, pour ce faire nous devons donc avoir ce fichier aussi sur `master`.
+
+Pour ce faire, nous pouvons très bien recréer un fichier `ReadMe.txt` sur `master` et copier-coller le contenu de ce fichier disponible sur `develop`.
+
+Oui c'est une possibilité mais imaginons si nous avions rajouté mille milliard de fichier et de modifications sur `develop` devrions nous TOUT copier-coller ?
+
+Cela serait vraiment douloureux à faire vous ne trouvez pas ?
+
+Encore une fois, `git` propose une solution bien plus élégante qui se nomme `git merge`
+
+La commande `git merge` permet de fusionner deux branches en une seule et donc de rappatrier du travail d'une branche à l'autre (de `develop` vers `master` dans notre cas).
+
+La commande à utiliser aurait donc cette forme
+
+```bash
+git merge <nom-de-la-branche-à-fusionner>
+```
+
+Nous comme nous sommes sur la branche `master` et que nous souhaitons rappatrier le travail effectué sur `develop`, nous pouvons utiliser cette commande.
+
+```bash
+git merge develop
+```
+
+Allez essayons.
+
+Vous avez vu,le fichier `ReadMe.txt` est apparu.
+
+Bravo, nous avons effectuer notre premier `merge`.
+
+**Décortiquons cette commande :**
+
+Ici ce que nous avons fait c'est demander à git de `merge` (fusionner) la branche `develop` dans `master`.
+
+Ici veuilez noter qu'en réalité `git` ne fusionne pas réellement les deux branches.
+
+Pour le constater, faisons un `git branch`.
+
+Regardez la branche `develop` existe encore. En fait ce qu'à fait `git` c'est fusionner les modifications (ici l'ajout de notre fichier) qui étaient présents sur `develop` et non sur `master` en un commit.
+
+Ce commit contenant les modifications à été ajouté à notre branche `master`.
+
+Ce qui fait que maintenant nos deux branches possèdent le fichier `ReadMe.txt`.
+
+Nous avons donc réussi à tranférer notre travail d'une branche à l'autre.
+
+#### Petit bonus
+
+Maintenant imaginons que nous ayons fait des modifications sur `master` (houlà pas bien du tout) et qu'après s'être fait enguirlander par notre `CTO` (`Chief Technical Officer`, directeur technique - le grand manitou d'une équipe de développeur, NDLR) nous souhaitons tout de même utiliser ces modifications sur une de nos branches pour continuer le travail, comment pourrions nous faire ?
+
+Et bien, nous l'avons vu, si il est possible de faire un `merge` de `develop` sur `master`, il devrait tout a fait être possible de `merge` master sur un
+
+### L'art de la résolution de conflit
