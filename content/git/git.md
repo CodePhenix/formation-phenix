@@ -518,7 +518,7 @@ Au prochain commit, elles seront toutes envoyées en même temps dans l'historiq
 
 
 
-Amusez-vous à faire différentes modifications et commits, et regardez l'historique se remplir !
+Amusez-vous à faire différentes modifications et commits, et regardez l'historique se remplir ! Vous pouvez même passer vos autres projets sur Git, si vous êtes motivés.
 
 
 
@@ -546,13 +546,13 @@ Pour éviter que Git vous dise à chaque fois "Hé, tu as un fichier que je ne c
 
 
 
-### Au secours, je me suis trompé !
+## Au secours, je me suis trompé !
 
-Se tromper, ça arrive à tout le monde, et Git a pas mal de méthodes pour revenir en arrière.
+Se tromper, ça arrive tout le temps, ça fait même partie de la culture du développeur (se tromper, réparer, recommencer...). Et heureusement, Git a pas mal de méthodes pour revenir en arrière.
 
 Généralement, il vous indique ces méthodes quand vous faites un `git status`.
 
-**Se tromper à l'ajout d'un fichier au suivi, ou à l'ajout d'une modification au stockage**
+### Se tromper à l'ajout d'un fichier au suivi, ou à l'ajout d'une modification au stockage
 
 Vous avez demandé à Git de suivre un fichier que vous ne souhaitiez pas suivre ?
 
@@ -566,7 +566,7 @@ git reset HEAD monfichier.html
 
 Je vous expliquerais à quoi correspond exactement le reset HEAD un peu plus tard, sachez simplement que ça enlèvera le fichier concerné du suivi, si vous venez tout juste de l'y ajouter, ou la dernière modification du stockage.
 
-**Modifier un fichier par erreur**
+### Modifier un fichier par erreur
 
 Au détour d'un `git status`, vous vous rendez compte qu'un fichier a été modifié et qu'il n'aurait pas dû l'être. Heureusement, les modifications ne sont pas stockées...
 
@@ -578,7 +578,7 @@ git checkout monfichier.html
 
 Et les modifications seront annulées sur le fichier.
 
-**Changer le message d'un commit, ou ajouter une modification dans un commit**
+### Changer le message d'un commit, ou ajouter une modification dans un commit
 
 Alors, deux situations possibles :
 
@@ -596,3 +596,61 @@ git commit --amend
 
 
 Il va vous afficher le commit dans un éditeur, et vous pourrez modifier le message. Si vous avez ajouté des modifications dans le stockage, il les prendra automatiquement en compte.
+
+### Effacer plusieurs commits
+
+Vous voulez revenir un ou plusieurs commits en arrière .
+
+**/!\ Attention !** Cette opération réécrit l'historique en effaçant vos derniers commits, et ce ne sera pas possible de les récupérer. 
+
+Il vous suffit de faire la commande :
+
+```bash
+git reset HEAD~1
+```
+
+Le 1 signifie que vous allez revenir 1 commit en arrière. Vous pouvez mettre 2,3,4... pour revenir 2,3,4... commits en arrière.
+
+### Ne plus suivre un fichier
+
+Si vous souhaitez que Git ne suive plus un fichier, ce sera cette commande :
+
+```bash
+git rm index.html
+```
+
+
+
+
+
+## Le système de branches
+
+
+
+Les branches sont généralement au coeur des systèmes de versionning. Elles permettent de travailler à plusieurs en parallèle sur le même projet, sans se marcher sur les pieds.
+
+Par défaut, la branche principale sur laquelle vous vous trouvez au début s'appelle `master`. C'est une convention, et tous les projets que vous aurez sur Git auront une branche principale `master`. 
+
+Généralement, on fait en sorte que cette branche soit toujours fonctionnelle : on va faire nos développements sur une autre branche, et une fois qu'on est sûrs que nos développements fonctionnent correctement, on les passe sur la branche `master`.
+
+
+
+### C'est quoi, une branche ?
+
+Visuellement, on pourrait la représenter comme une ligne de métro, où chaque arrêt serait un commit.![git_branch_commits_details](./images/git_branch_commits_details.png)
+
+
+
+Comme vous pouvez le voir ici, nous avons trois commits sur la branche `master`
+
+En orange, c'est ce qu'on appelle le `pointeur` de la branche `master` : il indique à quel commit on se situe sur la branche. 
+
+Quand vous souhaitez revenir un ou plusieurs commits en arrière, vous faites la commande `git reset HEAD~1` : cette commande va supprimer le ou les commits, et déplacer ce fameux pointeur, appelé `HEAD`.
+
+Par exemple, votre branche master contient 3 commits :
+
+![git_branch_commits_HEAD2](./images/git_branch_commits_HEAD2.png)
+
+En revenant un commit en arrière, la branche ressemblera à ça :
+
+![git_branch_commits_HEAD1](./images/git_branch_commits_HEAD1.png)
