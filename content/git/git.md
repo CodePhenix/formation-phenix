@@ -245,6 +245,8 @@ Pour gérer ce cycle de vie, les fichiers vont passer par différents statuts :
 - **Modifié** : le fichier a été modifié en local. Git est capable de dire qu'il y a eu des modifications, mais il ne les a pas stockées pour la prochaine écriture de l'historique.
 - **Stocké** : le fichier est "stocké" à part, et ses modifications seront incluses dans la prochaine écriture de l'historique.
 
+**Important** La "zone" dans laquelle Git stocke les modifications s'appelle **staged area**
+
 Techniquement, le terme "stocké" n'est pas exact : Git ne duplique pas le fichier pour le mettre ailleurs. Quand il "stocke" des modifications, il écrit quelques lignes dans un fichier texte pour indiquer quel fichier a été modifié. Par ex : Tel fichier, ligne XX, caractère XX remplacé par YY
 
 
@@ -661,9 +663,9 @@ Généralement, on fait en sorte que cette branche soit toujours fonctionnelle :
 
 ### C'est quoi, une branche ?
 
-Visuellement, on pourrait la représenter comme une ligne de métro, où chaque arrêt serait un commit.![git_branch_commits_details](./images/git_branch_commits_details.png)
+Visuellement, on pourrait la représenter comme une ligne de métro, où chaque arrêt serait un commit.
 
-
+<img src="./images/git_branch_commits_details.png" width="600">
 
 Comme vous pouvez le voir ici, nous avons trois commits sur la branche `master`
 
@@ -673,11 +675,13 @@ Quand vous souhaitez revenir un ou plusieurs commits en arrière, vous faites la
 
 Par exemple, votre branche master contient 3 commits :
 
-![git_branch_commits_HEAD2](./images/git_branch_commits_HEAD2.png)
+<img src="./images/git_branch_commits_HEAD2.png" width="600">
 
 En revenant un commit en arrière, la branche ressemblera à ça :
 
-![git_branch_commits_HEAD1](./images/git_branch_commits_HEAD1.png)
+<img src="./images/git_branch_commits_HEAD1.png" width="600">
+
+
 
 Cette notion de pointeur `HEAD` n'est pas évidente, mais elle est importante pour la suite. 
 
@@ -688,7 +692,7 @@ Cette notion de pointeur `HEAD` n'est pas évidente, mais elle est importante po
 Revenons à notre ProjetGit. Dans le terminal, tapez la commande suivante :
 
 ```bash
-git branch --all
+git branch
 ```
 
 Cette commande permet tout simplement d'afficher toutes les branches de votre projet, en indiquant avec une astérisque celle sur laquelle vous vous trouvez.
@@ -701,25 +705,25 @@ Vous devriez donc voir s'afficher :
 
 
 
-Imaginons que, sur notre ProjetGit, on nous a demandé d'ajouter des liens dans le menu. On pourrait les ajouter directement sur la branche `master`. Mais une des bonnes pratiques du dev (surtout quand on travaille en équipe), est de faire chaque `feature` dans une branche à part (une feature est une amélioration de l'appli, comme par ex l'ajout de liens dans le menu). 
+Imaginons que, sur notre ProjetGit, on nous a demandé d'ajouter des liens dans le menu. On pourrait les ajouter directement sur la branche `master`, mais une des bonnes pratiques du dev est de faire chaque `feature` dans une branche à part. 
 
-L'avantage de faire comme ça, c'est que ça limitera les problèmes si vous êtes plusieurs à modifier les mêmes fichiers, et à vouloir les faire passer sur `master`. 
+L'avantage de faire comme ça, c'est que ça limitera les problèmes si vous êtes plusieurs à modifier les mêmes fichiers. 
 
-Ça permet également de s'arrêter sur cette tâche et de la reprendre plus tard. Si vous commencez le développement d'une feature directement sur `master`, que vous devez vous arrêter pendant plusieurs heures pour une raison X ou Y (au hasard : un bug super urgent), vous allez devoir laisser sur `master` du travail qui n'est pas terminé. Et quand vous le reprendrez, peut être que quelqu'un sera passé par là et aura modifié du code. Bref, un beau bazar !
+Ça permet également de s'arrêter sur une tâche et de la reprendre plus tard. Si vous commencez le développement d'une feature directement sur `master` et que vous devez vous arrêter pendant plusieurs heures (au hasard : un bug super urgent), vous allez devoir laisser sur `master` du travail qui n'est pas terminé. 
 
-Si vous avez votre propre branche, vous savez qu'elle sera dans l'état dans lequel vous l'avez laissé en partant.
+Et quand vous le reprendrez, peut être que quelqu'un sera passé par là et aura modifié du code. Bref, un beau bazar !
 
 Bonne pratique, donc : une branche, une feature.
 
 **À savoir** 
 
-Il existe différentes conventions pour le nommage des branches, qui peuvent dépendre des projets. Un des standards s'appelle le `conventionnal Changelog`, et c'est celui que nous allons utiliser. Il propose une écriture des branches de cette façon : `<contexte>/<fonction>`
+Il existe différentes conventions pour le nommage des branches. Un des standards propose une écriture des branches de cette façon : `<contexte>/<fonction>`. C'est celle que nous allons utiliser.
 
 Ici, nous faisons commencer le nom de la branche avec `feat` parce que nous créons une feature. On pourrait mettre `fix` si on réparait un bug, par exemple.
 
 Attention à ne pas mettre d'espace, qui ne seront pas pris en compte.
 
-Une dernière chose, importante : l'anglais est omniprésent dans le dev. Parler anglais n'est pas indispensable, mais le lire et l'écrire (de façon simple, inutile d'être un crack en grammaire) vous sera très, très, très utile au quotidien. Généralement, la documentation et les forums sont écrits en anglais, les noms des branches sont en anglais, les commits sont en anglais...
+Une dernière chose, importante : l'anglais est omniprésent dans le dev. Parler anglais n'est pas indispensable, mais le lire et l'écrire vous sera très, très, très utile au quotidien. Généralement, la documentation et les forums sont écrits en anglais, les noms des branches sont en anglais, les commits sont en anglais...
 
 Prenez l'habitude dès maintenant !
 
@@ -764,7 +768,7 @@ La commande `checkout`, que vous avez déjà croisé plus haut, sert ici à pass
 
 Voilà où nous en sommes :
 
-![git_branch_switch](/home/boulot/Documents/Projets/Contenu/content/git/images/git_branch_switch.png)
+![git_branch_switch](./images/git_branch_switch.png)
 
 
 
@@ -828,8 +832,68 @@ Tant que vous êtes sur `master`, faites une petite modification (changez le par
 
 Si vous faites un `git log`, vous verrez bien votre nouveau commit. Mais où en est master par rapport à l'autre branche ? Eh bien, elle fait simplement sa vie en parallèle : 
 
-![git_branch_switch_4](./images/git_branch_switch_4.png)
+![git_branch_switch_4](./images/git_rebase_1.png)
 
 
 
 Désormais, vous allez pouvoir travailler sur les deux branches de façon indépendante !
+
+
+
+### Mettre à jour une branche (rebase)
+
+Revenez sur la branche `feat/menu-add-new-links`, et refaites un commit avec la modification que vous souhaitez.
+
+Techniquement, votre arbre de branches ressemble désormais à ça :
+
+![git_rebase_2](./images/git_rebase_2.png)
+
+Imaginons que le commit que nous avons ajouté sur `master` soit indispensable sur notre nouvelle branche : comment le récupérer sans tout casser ?
+
+Grâce à une commande appelée `rebase` ! Rebase va aller chercher le dernier commit commun aux deux branches, et va rejouer l'historique des deux en intégrant les commit de `master`.
+
+La commande s'écrit simplement :
+
+```bash
+git rebase master
+```
+
+
+
+Et tadaaaaa ! Le commit que vous avez fait dans `master` se retrouve désormais dans `feat/menu-add-new-links`. 
+
+La particularité de `rebase` est que c'est ce qu'on appelle une commande "destructive" : elle va entièrement réécrire votre historique pour y intégrer l'historique qu'il vous manque de `master`.
+
+Sur un petit projet de ce type, ça ne pose aucun problème. Par contre, ça peut se compliquer sur de gros projets !
+
+Vous pouvez tout à fait continuer à travailler sur la branche après le rebase.
+
+
+
+![git_rebase_3](/home/boulot/Documents/Projets/Contenu/content/git/images/git_rebase_3.png)
+
+### Fusionner une branche (merge)
+
+Nous avons ajouté notre lien comme il nous a été demandé, nous avons donc fait notre travail. Il l'heure de mettre nos modifications sur la branche `master`, pour qu'elle soit à jour !
+
+Pour merge une branche sur une autre, il faut aller sur la branche de destination puis merger la branche sur laquelle il y a nos modifications.
+
+Concrètement, vous allez d'abord aller sur `master`.
+
+Ensuite, vous allez taper la commande :
+
+```bash
+git merge feat/menu-add-new-links
+```
+
+La commande va récupérer toutes les modifications de votre branche, et les ajouter à la branche `master`. La principale différence avec rebase est que le merge est non destructif : votre historique n'est pas réécrit, les modifications vont simplement s'ajouter dessus.
+
+![git_merge_1](./images/git_merge_1.png)
+
+### Supprimer une branche
+
+Vos modifications sont mergées sur master, vous n'avez plus aucune raison de conserver votre branche de travail.
+
+Pour la supprimer, allez sur la branche `master` et tapez :
+
+`git branch -d feat/menu-add-new-links`
