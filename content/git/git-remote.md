@@ -1,33 +1,37 @@
-### Le travail à distance
+## Le travail à distance
 
 Jusqu'à présent nous avons vu comment travailler avec `git` en local (sur notre machine) pour ajouter des points de sauvegarde (`commits`) et ainsi garder une trace de chaque changement apporté au fil du temps à notre code.
 
 De cette manière, en cas de besoin et/ou si on a fait une grosse boulette dans notre code et que plus rien ne fonctionne
-, il est totalement possible de revenir en arrière dans un état précédent du code plus stable et donc en état de marche.
+, il est totalement possible de revenir en arrière dans un état précédent. Comme cela nous pourrons retrouver du code plus stable et donc en état de marche.
 
 Maintenant, comme je le disais plus haut, ces modifications et cet historique de commit est toujours localisé sur notre machine.
 
 Maintenant imaginez ce scénario :
 
-Après une longue journée ou quelques semaines de dur labeur, vous avez bien avancé sur votre projet. Consciencieusement, vous avez fait vos commits qui étaient magnifiquement intitulés. Chacun de ces commits possédaient une description très descriptive de chaque modification apportée.
+Après une longue journée ou quelques semaines de dur labeur, vous avez bien avancé sur votre projet. Consciencieusement, vous avez fait vos commits qui étaient magnifiquement intitulés. Chacun de ces commits possédait une description très descriptive de chaque modification apportée.
 
 Vous quitter donc votre ordinateur avec le sentiment du travail bien accompli. Un réel sentiment de plénitude.
 
-Malheur! Durant la nuit, votre ordinateur à été anéhanti par une horde de zombie atomique de l'espace. Vous le retrouvez donc fumant le lendemain et ceci sans mot d'excuse... Evidement.
+Malheur!
 
-En plus de râler sévèrement de pas avoir souscrit une assurance contre ce type de dommage matériel vous vous rendez compte avec effroi que TOUT votre travail à lui aussi été détruit. Tant d'heures de travail parties dans ces volutes de fumée.
+Durant la nuit, votre ordinateur à été anéhanti par une horde de zombie atomique de l'espace. Vous le retrouvez donc fumant le lendemain et ceci sans mot d'excuse... Evidement.
+
+En plus de râler sévèrement de ne pas avoir souscrit à une assurance contre ce type de dommage matériel vous vous rendez compte avec effroi que TOUT (mais alors tout) votre travail à lui aussi été détruit.
+
+Tant d'heures de travail parties dans ces volutes de fumée...
 
 Bon, perdre votre ordinateur c'est déja assez furstrant mais perdre votre travail ça l'est encore plus.
 
-Surtout si vous travailliez sur une application qui aurait peut-être pû éradiquer la faim du monde ou juste envoyer des images de perroquets portant des chapeaux mexicains à vos amis. (Chacun son ambition hien :-) ).
+D'autant plus si vous travailliez sur une application qui aurait peut-être pû éradiquer la faim du monde ou juste envoyer des images de perroquets portant des chapeaux mexicains à vos amis. (Chacun son ambition hien :-) ).
 
-Bref, grâce à git et ses fonctionalitées liées au travail à distance, cette situation aurait pû être évitée.
+Bref, grâce à `git` et ses fonctionalités liées au travail à distance, cette situation aurait pu être évitée.
 
 **Mais comment ce pourrait-ce ?**
 
-Grâce à `git` nous pouvons communiquer directement avec des machines situés à distance.
+Grâce à `git` nous pouvons communiquer directement avec des machines situées à distance.
 
-es machines que l'on nomme dans le jargon des `remote` (distant, en anglais), peuvent être de deux types :
+Ces machines que l'on nomme dans le jargon des `remote` (distant, en anglais), peuvent être de deux types :
 
 1. Interne : un autre ordinateur que vous possédez par exemple.
 
@@ -39,7 +43,7 @@ Ansi, en plus d'avoir une version sur notre ordinateur, nous aurions eu une vers
 
 Déjà que la destruction totale de notre machine par une horde de zombie est peu probable, la destruction totale simultanée de notre ordinateur ET d'un serveur sécurisé l'est encore moins.
 
-Donc toute probalitité gardée, en poussant notre code sur ce type de service, notre travail pourrait toujours été acccessible.
+Donc toute probalitité gardée, en poussant notre code sur ce type de service, notre travail pourrait toujours été acccessible. Bon peut-être en cas de guerre nucléaire mais ça c'est une autre histoire.
 
 Un autre avantage non négligeable du travail avec ces `remote` est que cela favorise et facilite énormément le travail collaboratif.
 
@@ -47,7 +51,7 @@ En effet, une fois ayant reçu l'autorisation de se connecter via `git` (via HTT
 
 ### Récupérer un projet hébergé sur un `remote`
 
-Pour commencer, nous allons devoir un peu changer nos habitudes : pour cette leçon nous n'allons pas créer notre projet en ajoutant des fichiers à la main et en initialisant un repo git (via la commande `git init`) mais nous allons récuperer notre projet depuis un remote !!!
+Pour commencer, nous allons devoir un peu changer nos habitudes : pour cette leçon nous n'allons pas créer notre projet en ajoutant des fichiers à la main et en initialisant un repo `git` (via la commande `git init`) mais nous allons récuperer notre projet depuis un remote.
 
 Pour ce faire nous allons devoir nous placer via le terminal à l'endroit où l'on souhaite ajouter le projet.
 
@@ -75,28 +79,28 @@ Super! Tout est déja prêt pour nos experimentations.
 
 ### Master, la branche sacrée
 
-Pour ce projet, nous pourrions uniquement travailler sur la branche master.
+Pour ce projet, nous pourrions uniquement travailler sur la branche `master`.
 
 Cependant en cas de travail en équipe, il est fortement déconseillé de travailler directement sur cette branche.
 
-**Mais pourquoi ??**
+**Mais pourquoi ?**
 
-Sur beaucoup de projet et pour beaucoup d'équipe de développement, `master` revêt une importance particulière.
+Sur beaucoup de projet et pour beaucoup d'équipe de développement, la branche `master` possède une importance particulière.
 
-Cette branche doit toujours conserver la version du code la plus `stable` c'est-à-dire la version du code dont on est certains qu'elle contient le moins de bug possible et dont ont aussi certains de vouloir mettre en `production`.
+Cette branche doit toujours conserver la version du code la plus `stable` c'est-à-dire la version du code dont on est certains qu'elle contient le moins de bug possible. Il faut aussi garder en tête que cette branche à vocation à être mise en `production`.
 
 _Point vocabulaire :_
 
 Mettre en `production` un site web ou une application signifie la mettre `en ligne` sur internet et donc disponnible pour tout le monde.
 
-Vous comprenez aisément qu'il est important de vouloir présenter la meilleure version de notre travail aux utilisateurs finaux. Nous souhaitons aussi éviter que ces utilisateurs ne se plaigne de dysfonctionement ou encore se plaigne car notre application web ne fonctionne plus du tout!
+Vous comprenez aisément qu'il est important de vouloir présenter la meilleure version de notre travail aux utilisateurs finaux. Nous souhaitons aussi éviter que ces utilisateurs ne se plaigne de dysfonctionements ou encore du fait que notre application web ne fonctionne plus du tout!
 
 Souvenez vous la furstration que vous avez déjà peut-être ressenti face à quelque chose qui ne fonctionne pas comme il le devrait.
 
 Un de nos objectifs principaux en tant que développeur et d'éviter que nos utilisateurs ressente ce type de furstration.
 
 ```
-VOUS ( avec un regard confu ) :
+VOUS (avec un regard confu) :
 
 - D'accord mais si je ne peux pas travailler sur master, cela veut donc dire que je ne peux pas travailler du tout ?
 ```
@@ -119,21 +123,21 @@ git  checkout-b `fix/ajout-readme`
 
 Et nous voilà sur notre branche `fix/ajout-readme`
 
-#### Modifions notre façon de travailler.
+### Modifions notre façon de travailler.
 
 Depuis le début du cours, nous avons appris à commiter notre code en utilisant la commande `git commit` ou sa version raccourcie `git commit -m <mon message de commit>`.
 
-Pour ceci rien ne change. Cependant une fois que nous avons bien avancé sur notre projet, il va être temps de le mettre en sécuritér et de le rendre disponible pour nos cammarades de travail.
+Pour ceci rien ne change. Cependant une fois que nous avons bien avancé sur notre projet, il va être temps de le mettre en sécuritée et de le rendre disponible pour nos cammarades de travail.
 
 Pour ce faire nous pouvons utiliser la commande `git push`
 
 **Décortiquons cette commande :**
 
-Ici nous demandons à git de pousser notre code sur un `remote`.
+Ici nous demandons à `git` de pousser notre code sur un `remote`.
 
-Petite astuce, en réalité la commande éxectuée par git va être un peu plus complexe. En tapant cette commande `git push`, git va l'interprété comme étant `git push origin/<la branche où nous nous trouvons>`.
+Petite astuce, en réalité la commande éxectuée par `git` va être un peu plus complexe. En tapant cette commande `git push`, `git` va l'interpréter comme étant `git push origin/<la branche où nous nous trouvons>`.
 
-Ici git devrait essayer de `push` notre code sur un serveur distant que git connaîtra sous le nom de `origin` et plus spécifiquement sur la branche `fix/ajout-readme` située sur notre remote.
+Ici `git` devrait essayer de `push` notre code sur un serveur distant que git connaîtra sous le nom de `origin`. Plus spécifiquement `git` essayera de stocker notre code sur la branche `fix/ajout-readme` située sur notre remote.
 
 Il est tout à fait possible de choisir de pousser notre code sur un autre `remote` que `origin` mais ceci est une thématique encore un poil trop avancée pour nos connaissances actuelles. Chaque chose en son temps.
 
@@ -157,11 +161,11 @@ Effectivement c'est vrai nous n'avons pas encore signifié au remote que nous so
 
 Actuellement, uniquement et par défaut `master` possède une copie distante.
 
-Comme `git` est un outil fort sympatique, il nous indique aussi la commande à utiliser pour expliquer à `git` comment créer une copie distante de notre branche `feature/ajout-readme`
+Comme `git` est un outil fort sympatique, il nous indique aussi la commande à utiliser pour lui expliquer comment créer une copie distante de notre branche `feature/ajout-readme`
 
 Et cette commande est celle-ci : `git push --set-upstream origin feature/ajout-readme`
 
-Tapons la dans notre terminal.
+Tapons-la dans notre terminal.
 
 Si tout c'est bien passé `git` nous confirme que notre branche distante à bien été créée.
 
@@ -256,7 +260,7 @@ Recréer une branche locale `feature/ajout-readme` depuis la branche en remote e
 
 Directement mettre à jour `master` depuis la branche distante sans recréer une branche en local.
 
-Pour la solution 1 voici les étapes :
+Pour la solution 1 voici les étapes que nous pourrions faire :
 
 - D'abord nous avons besoin d'aller chercher (`fetch`, en anglais) toutes les branches distantes existantes sur `origin` :
 
@@ -290,19 +294,21 @@ Pour la solution numéro 2 c'est beaucoup plus court
 git pull --rebase origin feature/ajout-readme
 ```
 
-Allez y essayer c'est auto-magique !
+Allez y essayer la solution 2. Elle est auto-magique !
 
 ### Gérer les conflits
 
 Bon jusqu'ici nous travaillions avec nous même dans un monde idéal, calme et paisible. Mais imaginez cette situation :
 
-Vous êtiez tranquillement en train d'enrichir sur votre branche locale votre fichier `README.txt` avec les instructions les plus précises que vous puissiez founrir.
+Vous êtiez tranquillement en train d'enrichir sur votre branche locale votre fichier `README.txt` avec les instructions les plus précises que vous puissiez founrir à de futurs collaborateurs.
 
-Jack (c'est un pseudonyme - pour préserver son identité) lui aussi a eu cette idée et modifie le même fichier. Mais Jack à été plus rapide que vous : Il a déjà fait ses modifications et les a déja mises sur master.
+Jack, le méchant de notre histoire (c'est un pseudonyme - pour préserver son identitée ;=) ) lui aussi a eu cette idée et modifie le même fichier. Mais Jack à été plus rapide que vous : Il a déjà fait ses modifications et les a déja mises sur master.
 
-Vous, évidemment, n'êtes absolument pas au courrant donc vous continuer à travailler tranquillement. Le temps passe et arrive le moment où vous aussi souhaitez mettre votre travail sur master.
+Vous, évidemment, n'êtes absolument pas au courrant. Vous continuer donc à travailler tranquillement. Le temps passe et arrive le moment où vous aussi souhaitez mettre votre travail sur master.
 
-A votre avis comment git va agir ? Va-t-il supprimer les modifications de Jack pour les remplacer par les vôtres ? Ou le contraire, va-t-il ignorer vos modifications et garder celles de Jack ?
+A votre avis comment `git` va agir ?
+
+Va-t-il supprimer les modifications de Jack pour les remplacer par les vôtres ? Ou le contraire, va-t-il ignorer vos modifications et garder celles de Jack ?
 
 Voyons par nous même. Essayons de reproduire cette situation :
 
@@ -322,7 +328,7 @@ Voyons par nous même. Essayons de reproduire cette situation :
 
 **Etape 1**: Modifions le README sur la branche locale `feature/ajout-readme`
 
-- Si vous ne l'avez pas encore recrée faite, depuis `master`, un `git checkout feature/ajout-readme`
+- Si vous ne l'avez pas encore recrée faite, depuis la branche `master`, un `git checkout feature/ajout-readme`
 - Une fois sur la branche remplaçons le contenu `README.txt` par ceci :
 
   ```
@@ -337,7 +343,7 @@ Voyons par nous même. Essayons de reproduire cette situation :
 
   - Sauvegardons, commitons et faisons notre `git push`
 
-Une fois ceci retournous sur `master` et essayons de mettre cettre branche à jour avec notre branche `feature/ajout-readme` via un `git rebase feature/ajout-readme`
+Une fois ceci fait, retournons sur `master` et essayons de mettre cettre branche à jour avec notre branche `feature/ajout-readme` via un `git rebase feature/ajout-readme`
 
 Normalement vous devriez avoir ce type de message d'erreur :
 
@@ -361,13 +367,17 @@ To abort and get back to the state before "git rebase", run "git rebase --abort"
 
 Encore une fois, si votre `git` est configuré en français, cela devrait être un peu plus compréhensible.
 
-Dans tout les cas que dit ce message :
+Dans tout les cas, voyons en détail ce que dit ce message :
 
-Ici `git` nous informe qu'il n'arrive pas à mettre à jour master depuis la branche `feature/ajout-readme` car des deux coté (sur la branche master et sur la branche feature) des modifications ont été faites. Actuellement il est dans la panade et ne sait pas réellement quelle modification prendre en compte. Il nous demande donc de l'aide pour lui indiquer quelle modification il doit prendre.
+Ici `git` nous informe qu'il n'arrive pas à mettre à jour master depuis la branche `feature/ajout-readme` car des deux cotés (sur la branche master et sur la branche feature) des modifications ont été faites.
 
-Il y a donc un `conflit`
+Actuellement `git` est dans la panade et ne sait pas réellement quelle modification prendre en compte. Il nous demande donc de l'aide pour lui indiquer quelle modification il doit prendre.
+
+Il y a donc un `conflit` et `git` ne sait pas quel parti prendre.
 
 #### Resolvons les conflits
+
+Mais nous nous savons comment faire pour résoudre ce conflit.
 
 Pour ce faire grâce à notre éditeur de texte, ouvrons le fichier `ReadMe.txt`
 
@@ -387,7 +397,7 @@ Le document README est un fichier très important car il a pour but d'aider les 
   Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
 ```
 
-Pour résoudre ce confit nous allons devoir choisir manuellement ce que nous souhaitons faire : garder nos modifications, garder celles de Jack ou garder les deux.
+Pour résoudre ce conflit nous allons devoir choisir manuellement ce que nous souhaitons faire : garder nos modifications, garder celles de Jack ou garder les deux.
 
 Pour ce faire remarquer que la partie du texte conflictuelle est délimitée par ceci :
 
@@ -396,11 +406,13 @@ Pour ce faire remarquer que la partie du texte conflictuelle est délimitée par
 >>>>>>> update readme
 ```
 
-et que vos modifications sont séparée de celle de Jack par ceci `=======` avec des indicateurs nous pouvons mieux cerner ce que nous devons faire.
+et que vos modifications sont séparée de celle de Jack par ceci `=======`.
 
-Ici, nous somme beau joueur et nous allons garder aussi bien les modifications de Jack que les notres.
+Avec ces indicateurs nous pouvons mieux cerner ce que nous devons faire.
 
-Nous devons donc simplement suprimer tout les signes superflus de notre fichier C'est à dire :
+Ici, nous somme beau joueur et nous allons garder aussi bien les modifications de Jack que les nôtres.
+
+Nous devons donc simplement supprimer tous les signes superflus de notre fichier C'est-à-dire ceux-ci:
 
 ```
 <<<<<< HEAD
@@ -420,17 +432,17 @@ Le document README est un fichier très important car il a pour but d'aider les 
  Ici je peux écrire toutes les informations qui les aiderons à travailler sur notre projet comme un e-mail de contact, comment je souhaite construire mon projet etc ...
 ```
 
-Bon cette version du Readme est pas totalement parfaite mais c'était pour l'exercice. :-)
+Bon cette version du Readme est pas totalement compréhensible mais c'était pour l'exercice. :-)
 
 Une fois tous les signes enlevés nous pouvons sauvegarder notre fichier et signifier à `git` que nous avons avons résolu les conflits.
 
-Pour ce faire nous devons faire un `git add .` pour ajouter les modificatons que nous avons faites et nous pouvons continuer le rebase en faisant un `git rebase --continue`.
+Pour ce faire nous devons faire un `git add .` (le `.` est un raccourci pour dire à `git` d'ajouter toutes les modifications) pour ajouter les modificatons que nous avons faites et nous pouvons continuer le rebase en faisant un `git rebase --continue`.
 
-Allez essyons ceci.
+Je vous laisse essayer.
 
-Et voilà `git` a fini de remttre à jour master depuis notre branche `feature/ajout-readme`.
+Et voilà `git` a fini de remettre à jour master depuis notre branche `feature/ajout-readme`.
 
-Maintenant nous devons mettre le branche distante `master` à jour avec nos modifications.
+Maintenant nous devons mettre le branche distante `origin/master` à jour avec nos modifications.
 
 Pour ceci nous pouvons utiliser la commande
 
@@ -438,7 +450,9 @@ Pour ceci nous pouvons utiliser la commande
 git push -f
 ```
 
-Nous utilisons le flag `-f` pour `f`orcer git à envoyer nos modifications sur le serveur. Nous avons besoin de ce flag car n'oublions pas que le rebase `réecrit` l'historique des commits. Notre remote lui n'est pas au courrant de ces modifications d'historique et risque donc de rejeter notre `push`.
+Nous utilisons le flag `-f` pour `f`orcer git à envoyer nos modifications sur le serveur. Nous avons besoin de ce flag car n'oublions pas que le rebase `réecrit` l'historique des commits.
+
+Notre remote lui n'est pas au courrant de ces modifications d'historique et risque donc de rejeter notre `push`.
 
 C'est pourquoi nous utilisons le flag `-f` pour éviter ce rejet.
 
@@ -450,7 +464,7 @@ Si vous sentez que vous n'allez pas pouvoir effectuer correctement ce rebase vou
 
 Si vous êtes dans cette situation, peut-être qu'effectuer un `git merge` à la place d'un `git rebase` sera plus judicieux.
 
-En effet, avec le `merge` git ne tenteras pas de comparer les deux historiques. Il se contentera de créer un commit avec les modifs de chaque branche. Vous aurez toujours les conflits mais ceux-ci devraient être plus simple à résoudre.
+En effet, avec le `merge` git ne tentera pas de comparer les deux historiques. Il se contentera de créer un commit avec les modifs de chaque branches. Vous aurez toujours les conflits mais ceux-ci devraient être plus simple à résoudre.
 
 Voici qui termine ce cours sur GIT.
 
