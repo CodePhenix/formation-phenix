@@ -60,12 +60,12 @@ Pour des raisons de simplicité, n'hésitez pas à aller dans le dossier où se 
 Une fois que vous êtes au bon endroit taper cette commande dans le terminal :
 
 ```bash
-git clone <url du repo>
+git clone http://codephenix.com:2500/root/css-flexbox.git
 ```
 
 **Décortiquons cette commande :**
 
-Ici nous avons demander à `git` de cloner le repo distant (sur le remote) sur notre disque dur en local.
+Ici nous avons demander à `git` de cloner le repo distant (depuis le remote) sur notre disque dur en local.
 
 Essayons cette commande.
 
@@ -115,7 +115,7 @@ Normalement, vous devriez avoir toutes les clés en mains pour retouver la comma
 
 Vous ne vous rappelez plus ?
 
-Allez la voici (voyez comme je suis sympas)
+Allez la voici (voyez comme je suis sympa)
 
 ```bash
 git  checkout-b `fix/ajout-readme`
