@@ -192,7 +192,7 @@ Enfin, `true` et `false` et donc toute expression de comparaison comme celles qu
 | Operateur     | Description                                                    |
 | ------------- | -------------------------------------------------------------: |
 | a && b        | Qui verifie si a est vrai (vaut true) ET b aussi (les deux)    |
-| a || b        | Qui verifie si a est vrai (vaut true) OU b l'est (un des deux) |
+| a `||` b      | Qui verifie si a est vrai (vaut true) OU b l'est (un des deux) |
 | ! a           | Qui donne le contraire de a                                    |
 
 Nous verrons que les comparaisons seront très utile pour géré des boucles et des programmes conditionels !
