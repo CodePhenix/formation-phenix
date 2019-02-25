@@ -201,7 +201,7 @@ Nous verrons que les comparaisons seront très utile pour géré des boucles et 
 var a = 3;
 var b = 3*a > 6;
 var c = false;
-var d = b && s;
+var d = b && c;
 console.log(d);
 ```
 > Exercice : Que va valoir d ?
