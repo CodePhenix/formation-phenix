@@ -47,7 +47,7 @@ a=6;
 console.log(a);
 ```
 Et voilà ! Il suffira d'utiliser `console.log()` sur toutes les varaibles dont on voudra vérifier la valeur dans les exercices.
-> On peut noter ici que les commentaire s'écrivent à l'aide de `//` en JavaScript !
+> On peut noter ici que les commentaire au sein d'une ligne s'écrivent à l'aide de `//` en JavaScript !
 
 
 ### Dans le terminal
@@ -110,9 +110,9 @@ Apres sa declaration, une variable n'a pas encore de valeur. Il faut d'abord lui
 La valeur peut provenir d'une autre variable indiqué par son nom ou d'un *litéral*. Les literal sont les valeurs directement écrite dans le code :
 
 ```js
-var x, y, z               // Declaration des variables
-const c                   // Declaration d'une constante
-x = 6; y='Hello world'    // On assigne un littéral à x et y
+var x, y, z;              // Declaration des variables
+const c;                  // Declaration d'une constante
+x = 6; y='Hello world';   // On assigne un littéral à x et y
 c = 4                     // On assigne un littéral à c
 z = x;                    // On assigne la valeur de x à la variable z
 console.log(c, x, y, z)
@@ -120,11 +120,13 @@ console.log(c, x, y, z)
 
 > Dans la dernière ligne que c'est la valeur de x qui est associé à z. On aurait le meme résultat avec `z=6`. Et si x est amené à changer de valeur, ce n'est pas le cas de z.
 
-> Les noms utilisés pour les variables sont sensible aux majuscules.
+> Les noms utilisés pour les variables sont sensible aux majuscules. Ils doivent toujours ccommencer par une lettre ou `_`
 
 > La déclaration et l'assignement de variable peut se faire en une ligne : `var carName = "Volvo";`
 
 > Une variable peut etre déclarer une deuxième fois, cela n'affectera pas sa valeur si elle a été assignée
+
+Dans la console, ajoutez la ligne `c=3` pour constater l'erreur lorsque l'on essaye d'assigner de nouveau une variable constante.
 
 ### Les différents litéraux
 Les litéraux correspondent au *types* "simple" (on verra les type plus compliqué par la suite).
@@ -132,6 +134,18 @@ Les litéraux correspondent au *types* "simple" (on verra les type plus compliqu
 * Les nombre réels `6.4`
 * Les chaines de caractères `'Hello world'`
 * Les booléans qui sont `true` et `false` qui nous permette de faire de la logique.
+
+> Les chaines de charactères peuvent etre declarer avec `"` ou `'`
+> Par exemple `'` est lui même un caractère. Il peut etre saisi dans une chaine entre `"` ou précédé de `\` entre `'`
+
+Une variable peut changer de type au cours du temps comme elle peut changer de valeur au cours du temps ! Ca peut venir d'un re-assignement ou du resultat d'une opération qui a changer le type.
+
+```js
+var x;           // x n'est as défini
+x = 5;           // x est un entier
+x = "John";      // x est une chaine de charactère
+```
+
 
 ### Les opérateurs
 #### Opérations
@@ -166,7 +180,20 @@ var a = "Hello" + 5;
 var b = "5" + 5;
 var c = b + 4;
 var d = c + "Stop";
+var e = 16 + 4 + "Volvo";
+console.log(typeof a)
+console.log(typeof b)
+console.log(typeof d)
+console.log(typeof e)
 ```
+
+> `typeof` permet d'afficher le type de valeur qu'est un littera ou une variable
+
+> Les chaines de characteres de chiffres sont transformé en chiffre
+
+> L'ajout de n'importe quoi à une chaine de charactère contenant au moins une lettre donne une chaine de charactère
+
+> Les réels donne leur type aux entiers dans les opérations
 
 > Exercice : Faites afficher à la console une phrase disant que "Le résultat de la multiplication de 1265 par 246 est : XXX" avec XXX le bon résultat
 
@@ -185,8 +212,11 @@ Une autre famille d'opérateurs important sont les opérateurs de comparaison. I
 | >=            | Supérieur ou égale à                                      |
 | <=            | Inférieur ou égale à                                      |
 
-Les 4 premiers opérateurs marche pour tous les types puisqu'il ne s'agit que de dire si les valeurs sont les mêmes ou non. Il marche même parfois entre plusieurs type comme par exmple : `var a = '5'==5`
+Les 4 premiers opérateurs marche pour tous les types puisqu'il ne s'agit que de dire si les valeurs sont les mêmes ou non. Il marche même parfois entre plusieurs type comme par exemple : `var a = '5'==5` qui donnera `true`.
 
+> ATTENTION, les relations d'ordre pour les chaines de caractère se font lettre à lettre en partant du début ! Ainsi `'abc' < 'b'`. La nuane est importante surtout dans le cas des chiffres puis qu'on a `5 < 12` qui vaut `true` mais `'5' < '12'` qui vaut `false`.
+
+#### Logique
 Enfin, `true` et `false` et donc toute expression de comparaison comme celles que l'on a vu au dessus possèdent elles mêmes des opérations de comparaisons :
 
 | Operateur     | Description                                                    |
@@ -206,24 +236,233 @@ console.log(d);
 ```
 > Exercice : Que va valoir d ?
 
+### Reassignement
+Comme on a vu, le but des variables non-constance est de varier au cours du temps, au cours de l'execution du programme.
+Dans le code simple suivant, après une manipulation sur `b`, on change la valeur de `a`. On parle d'update
+```js
+var a = 2;
+var b = 3*a;
+a = b;
+```
+Très souvent, l'update des variable a lieu en fonction de leur ancienne valeure. Et donc JavaScript a developper une palette de raccourcis pour l'update de variables :
+
+
+| Expression     | Effet          |
+| -------------- | -------------: |
+| x++            | x = x + 1      |
+| x--            | x = x - 1      |
+| x += y         | x = x + y      |
+| x -= y         | x = x - y      |
+| x \*= y        | x = x * y      |
+| x /= y         | x = x / y      |
+| x %= y         | x = x % y      |
+
+```js
+var x = 2;
+var y;
+x += 3;
+y = x*3;
+x -= y;
+y++;
+console.log(x)
+```
+> Exercice : Que va valoir x ?
+
+```js
+var x, y;
+x = 5;
+y = 3;
+y += '2';
+x += y;
+```
+> Exercice : Quel est le type de x ?
+
+
 ## Statements
-### Conditions et comparaisons
-### Boucle while
-### Boucle for
+On appelle statement les mots clés réservé du langage qui servent à donner des instructions particulière à l'ordinateur dans le déroulement du programme.
+Il s'agit de série d'instructions comme celles que l'on a déjà vu (déclaration, assignation, opérations) mais utilisé dans un contexte particulier :
+* De façon conditionnelle, c'est à dire en fonction du vrai ou faux d'autres variables (booléenne)
+* De façon répétée, soit un nombre de fois convenu, soit tant qu'une condition (sur des variables) est ou n'est pas vérifié
+
+### Conditions
+L'idée est de ne réaliser des instructions que si une variable booléenne, une comparaison ou n'importe quelle combinaison de variable donnant un booléen est vrai. Si c'est faut, l'instruction n'a pas lieu
+
+#### assignement conditionnel
+```js
+var text, age;
+text = "old" ; age = 15;
+if (age < 18) text = "Too young";
+```
+Ici la variable text ne change de valeur que dans le cas ou l'age respecte une certaine condition.
+
+#### Expression ternaire
+Ici on a un groupe de de la forme `(condition) ? valeur_si_oui : valeur_si_non` qui est donc une valeur qui vaut la valeur avant les deux points si la condition est vérifié et celle apres sinon.
+
+```js
+var voteable = (age < 18) ? "Too young":"Old enough";
+```
+> Exercice : Demandez un nombre a votre voisin et mettez le dans une variable a, créer une variable b qui vaut "gagné si" a est un multiple de 7 et "perdu" sinon.
+
+#### If ... else
+Ici, on a directement le test d'une condition bouléenne puis l'ensemble d'instructions dans le cas ou la condition est validée :
+```js
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+}
+```
+Auquel on peut ajouter les instructions dans le cas contraire
+```js
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition3 is false
+}
+```
+Et meme d'autre condition avant le "dernier cas" qui est donc celui regroupé dans `else`
+```js
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else if (condition3) {
+  //  block of code to be executed if the condition1 is false and condition3 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition3 is false
+}
+```
+Comme par exemple :
+```js
+age = Number(age);
+if (isNaN(age)) {
+  voteable = "Input is not a number";
+} else {
+  voteable = (age < 18) ? "Too young" : "Old enough";
+}
+```
+ou :
+```
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+```
+> Exercice : Vous avez une variable `gender` qui vaut "homme" ou "femme", une variable `birth_year` qui est l'année de naissance, une variable `birth_month` qui est le mois de naissance en toute lettre et une variable `zipcode` du code postale. Créer une variable `sécu` qui prévoit les 7 premiers chiffres de la carte vitale.
+
+#### switch
+
+
+### Boucles
+#### do ... while
+#### for
 
 ## Types
-### Array
+On peut transforer les valeurs d'un type à un autre. En détaillant les différents type et les "méthodes" magiques qu'ils permettent, on verra que cela peut avoir beaucoup d'interet.
+
 ### String
+substr et autre méthodes
+```js
+var browser = 'Mozilla';
+
+console.log(browser.substr(1, 2));
+// expected output: "oz"
+```
+
 ### Date
+manipulation et lien avec les str
+
+### Liste
+```js
+var cars = ["Saab", "Volvo", "BMW"];
+```
+et les méthodes.
+
+### Objet
+Plutot la partie dico
+```js
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+```
+Avec le concept de méthode : this
+```js
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+### null et undefined
+```js
+typeof undefined           // undefined
+typeof null                // object
+
+null === undefined         // false
+null == undefined          // true
+```
 
 ## Fonctions
 ### Généralitées
 ### Recursivité
 
-## Algorithmes
-Des exemples d'algo simple sur les listes
-Tri et divisé pour regner ?
+## Algorithmes et Exercices
+### Exercices
+_EXERCICE 1_
+Ecrire une fonction qui prend deux réels a et b et résout l' équation aX+b=0 et renvoie b. Il faut traiter tous les cas particuliers (notamment les cas "tout x est solution" et "pas de solution").
 
-## Objets
-### Definition
-### Manipulation
+_EXERCICE 2_
+
+_EXERCICE 3_
+Ecrire une fonction qui recoit un nombre X et qui affiche la valeur absolue de X (c'est à dire le nombre sans son signe)
+
+_EXERCICE 4_
+Ecrire une fonction qui prends 3 nombres A, B et C et qui indique si C est compris entre A et B.
+
+_EXERCICE 5_
+Ecrire une fonction qui prends 4 entiers A, B, C et D, puis qui renvoit les entiers E et F pour que [E, F] soit l'intersection de [A, B] et [C, D]. Comme sur le schéma suivant
+
+_EXERCICE 6_
+Ecrire une fonction qui demande à l’utilisateur de saisir un entier A puis qui affiche "ERREUR" si A n'est pas un nombre impair compris entre 83 et 101 bornes incluses. Dans le cas contraire, on affiche "PAS D'ERREUR".
+
+_EXERCICE 7_
+Ecrire une fonction qui prends une liste et renvoie le plus grand élément de la liste
+La fonction ne doit utiliser qu'une seule variable
+
+_EXERCICE 8_
+Ecrire une fonction qui prends une liste et renvoie une liste inversée
+
+### Trier une liste
+Quels algos de tris ?
+
+## Syntaxe et bonnes pratiques
+### Syntaxe
+* A la ligne quand on veut car c'est le `;` qui fait le taff. Du coup bonnes pratiques d'indentation et à la ligne
+* Les espaces osef mais les bonnes pratique c'est de les mettes comme ci comme ça
+
+### Naming
+Bonne pratique de naming et camel case
+
+### Commentaires
+Mettre des commentaires !!!
+
+```js
+/*
+Ceci est
+un commentaire
+multi ligne
+*/
+document.getElementById("myH").innerHTML = "My First Page"; // Commentaire sur la ligne
+document.getElementById("myP").innerHTML = "My first paragraph.";
+```
+
+## Fonctions avancées
+### Regex
+### Aléatoire
+### Conversion de type
+### Erreurs
+### Scopes
+let a la place de var en déclaration
