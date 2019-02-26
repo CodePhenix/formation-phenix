@@ -277,6 +277,107 @@ x += y;
 ```
 > Exercice : Quel est le type de x ?
 
+## Types
+### Généralitées
+On a commencé à en parler.
+
+En informatique, un type de donnée, ou simplement un type, définit la nature des valeurs que peut prendre une donnée, ainsi que les opérateurs qui peuvent lui être appliqués.
+
+On a par exemple vu que l'effet des opérateurs dépendait du type des variable auquel on les applique.
+
+Le type des variables est définit au moment de l'assignement de la valeur. Les litéraux ont leur type dans la façon dont ils sont écrit. Les autres variable ont le type résultant lors de l'assignation comme résultat des opérations entre valeur qui lui est assigné.
+
+```js
+var w, x, y, z;
+w = '2';
+x = 3;
+y = w + x;
+z = yu + 'hello'
+```
+Dans l'exemple précédent `'hello'` et `'2'` et donc directement `w` sont de type string (chaine de caractère), `3` et donc directement `x` sont de type number.
+
+En JavaScript il y à 5 types "simples" que l'on peut l'on peut définir de façon literal :
+* string : `'xxxx'`
+* number : `xxxx`
+* boolean : `true` et `false`
+* object : `{'xxxx': nimporte_quoi, 'yyyy': nimporte_quoi}`
+* array : `[nimporte_quoi, nimporte_quoi, nimporte_quoi]`
+
+On a également le type simple `unasigned` qui est le type d'une variable qui a été déclaré mais pas assigné.
+On a également le type simple `date` qui ne peut pas être définit de façon litéral mais de la façon suivante :
+```js
+var a;
+a = new Date(2017,3,24);
+```
+
+On peut transforer les valeurs d'un type à un autre en appliquant le nom du type à la variable à transformer :
+```js
+var a, b;
+a = 12;
+b = String(a);
+console.log(typeof a);
+console.log(typeof b);
+```
+
+En plus de l'effet des opérateurs sur les variables, le type définit les méthodes que l'on peut appliquer aux variables. Une méthode est une fonction (voir section fonction) intraséque à la variable. C'est à dire que c'est une commande qui va utiliser la variable pour donner une nouvelle valeur. La méthode peut prendre des arguments (d'autres variables) qui auront un impact sur le la valeur résultante.
+On écrit : `variable.methode(argument1, argument2, ...)` pour obtenir la valeur.
+```js
+var a, b;
+a = 'Hello world;
+b = a.substr(0, 5);
+console.log(typeof a);
+console.log(typeof b);
+```
+> Et oui ! `log` est une méthode de la variaable spéciale `console` !
+
+### String
+_WIP_
+substr et autre méthodes
+```js
+var browser = 'Mozilla';
+
+console.log(browser.substr(1, 2)); // expected output: "oz"
+```
+
+### Date
+_WIP_
+manipulation et lien avec les string
+
+### Array
+_WIP_
+```js
+var cars = ["Saab", "Volvo", "BMW"];
+```
+Et les méthodes.
+
+### Objet
+_WIP_
+```js
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+console.log(person.firstName)
+```
+L'acces en attribut et les méthodes.
+Avec le concept de méthode : this. Qui peut etre utilisé dans les functions défini dans un objet (méthode) et référe à l'objet donc aux autres arguments qu'il peut avoir et qu'on peut acceder avec `this.attribut`.
+```js
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+### null et undefined
+_WIP_
+```js
+typeof undefined           // undefined
+typeof null                // object
+
+null === undefined         // false
+null == undefined          // true
+```
 
 ## Statements
 On appelle statement les mots clés réservé du langage qui servent à donner des instructions particulière à l'ordinateur dans le déroulement du programme.
@@ -332,15 +433,6 @@ if (condition1) {
 ```
 Comme par exemple :
 ```js
-age = Number(age);
-if (isNaN(age)) {
-  voteable = "Input is not a number";
-} else {
-  voteable = (age < 18) ? "Too young" : "Old enough";
-}
-```
-ou :
-```
 if (time < 10) {
   greeting = "Good morning";
 } else if (time < 20) {
@@ -349,68 +441,40 @@ if (time < 10) {
   greeting = "Good evening";
 }
 ```
-> Exercice : Vous avez une variable `gender` qui vaut "homme" ou "femme", une variable `birth_year` qui est l'année de naissance, une variable `birth_month` qui est le mois de naissance en toute lettre et une variable `zipcode` du code postale. Créer une variable `sécu` qui prévoit les 7 premiers chiffres de la carte vitale.
+ou encore cette exemple qui utilise la fonction `isNaN` que l'on verra plus tard.
+```
+age = Number(age);
+if (isNaN(age)) {
+  voteable = "Input is not a number";
+} else {
+  voteable = (age < 18) ? "Too young" : "Old enough";
+}
+```
+ou :
+
+> Exercice : Vous avez une variable `gender` qui vaut "homme" ou "femme", une variable `birth_year` qui est l'année de naissance, une variable `birth_month` qui est le mois de naissance en toute lettre et une variable `zipcode` du code postale. Créer une variable `secu` qui devine les 7 premiers chiffres de la carte vitale à partir des variables précédentes.
+> Pour l'exercice on pourra se servire de la *méthode* de string de charactère `substr(i, l)`
 
 #### switch
-
+_WIP_
+On le fait ou pas ? La syntax est un peu plus complexe, et tout ce que l'on peut faire avec switch peut se faire avec if...else.
 
 ### Boucles
 #### do ... while
 #### for
-
-## Types
-On peut transforer les valeurs d'un type à un autre. En détaillant les différents type et les "méthodes" magiques qu'ils permettent, on verra que cela peut avoir beaucoup d'interet.
-
-### String
-substr et autre méthodes
-```js
-var browser = 'Mozilla';
-
-console.log(browser.substr(1, 2));
-// expected output: "oz"
-```
-
-### Date
-manipulation et lien avec les str
-
-### Liste
-```js
-var cars = ["Saab", "Volvo", "BMW"];
-```
-et les méthodes.
-
-### Objet
-Plutot la partie dico
-```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-```
-Avec le concept de méthode : this
-```js
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-```
-
-### null et undefined
-```js
-typeof undefined           // undefined
-typeof null                // object
-
-null === undefined         // false
-null == undefined          // true
-```
+#### break et continue
 
 ## Fonctions
 ### Généralitées
 ### Recursivité
+### Built-in functions
+_WIP_
+isNaN, typeof
 
 ## Algorithmes et Exercices
-### Exercices
+### Exercices divers
+_WIP_
+
 _EXERCICE 1_
 Ecrire une fonction qui prend deux réels a et b et résout l' équation aX+b=0 et renvoie b. Il faut traiter tous les cas particuliers (notamment les cas "tout x est solution" et "pas de solution").
 
@@ -423,7 +487,7 @@ _EXERCICE 4_
 Ecrire une fonction qui prends 3 nombres A, B et C et qui indique si C est compris entre A et B.
 
 _EXERCICE 5_
-Ecrire une fonction qui prends 4 entiers A, B, C et D, puis qui renvoit les entiers E et F pour que [E, F] soit l'intersection de [A, B] et [C, D]. Comme sur le schéma suivant
+Ecrire une fonction qui prends 4 entiers A, B, C et D, puis qui renvoit les entiers E et F pour que [E, F] soit l'intersection de [A, B] et [C, D]. Comme sur le schéma suivant :
 
 _EXERCICE 6_
 Ecrire une fonction qui demande à l’utilisateur de saisir un entier A puis qui affiche "ERREUR" si A n'est pas un nombre impair compris entre 83 et 101 bornes incluses. Dans le cas contraire, on affiche "PAS D'ERREUR".
@@ -438,6 +502,9 @@ Ecrire une fonction qui prends une liste et renvoie une liste inversée
 ### Trier une liste
 Quels algos de tris ?
 
+### Algorithmes classiques
+
+
 ## Syntaxe et bonnes pratiques
 ### Syntaxe
 * A la ligne quand on veut car c'est le `;` qui fait le taff. Du coup bonnes pratiques d'indentation et à la ligne
@@ -447,8 +514,7 @@ Quels algos de tris ?
 Bonne pratique de naming et camel case
 
 ### Commentaires
-Mettre des commentaires !!!
-
+Mettre des commentaires ! Les pourquoi on écrit ça (clarté) et les ça ça fait ça (docstring).
 ```js
 /*
 Ceci est
@@ -459,10 +525,24 @@ document.getElementById("myH").innerHTML = "My First Page"; // Commentaire sur l
 document.getElementById("myP").innerHTML = "My first paragraph.";
 ```
 
-## Fonctions avancées
+## Fonctionnalitées avancées
 ### Regex
 ### Aléatoire
 ### Conversion de type
 ### Erreurs
+### json
+Le json est la combinbaison d'objet et de liste :
+
+```
+var a;
+a = {
+  "name": "coco";
+  "employees":[
+    {"firstName":"John", "lastName":"Doe"}, 
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+  ]
+};
+```
 ### Scopes
 let a la place de var en déclaration
