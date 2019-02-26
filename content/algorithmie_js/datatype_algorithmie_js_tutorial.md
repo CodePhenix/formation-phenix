@@ -323,7 +323,7 @@ En plus de l'effet des opérateurs sur les variables, le type définit les méth
 On écrit : `variable.methode(argument1, argument2, ...)` pour obtenir la valeur.
 ```js
 var a, b;
-a = 'Hello world;
+a = 'Hello world';
 b = a.substr(0, 5);
 console.log(typeof a);
 console.log(typeof b);
@@ -533,7 +533,7 @@ document.getElementById("myP").innerHTML = "My first paragraph.";
 ### json
 Le json est la combinbaison d'objet et de liste :
 
-```
+```js
 var a;
 a = {
   "name": "coco";
