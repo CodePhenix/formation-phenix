@@ -12,12 +12,6 @@ Mais le JavaScript est un langage à part entière ! Le but de ce tutorial et d'
 
 
 
-[TOC]
-
-
-
-
-
 ## Introduction
 Le Javascript est un langage de script incorporé dans un document HTML. Historiquement il s'agit même du premier langage de script pour le Web. Ce langage est un langage de programmation qui permet d'apporter des améliorations au langage HTML en permettant d'exécuter des commandes du côté client, c'est-à-dire au niveau du navigateur et non du serveur web.
 
@@ -392,8 +386,6 @@ var prenom = "Je m'appelle Pierre";
 var nom = 'On me surnomme "Pierrot"';
 ```
 
-
-
 Même un nombre sera considéré comme étant de type String, c’est-à-dire comme une chaîne de caractères si on l’entoure de guillemets ou d’apostrophes.
 
 Faites bien attention à cela, car ça va avoir une grande influence sur les manipulations que l’on va pouvoir faire sur telle ou telle variable !
@@ -444,12 +436,89 @@ var z = 2 + "un" + 4; // 2un4
 
 **Méthode sur les chaînes de caractères**
 
-substr et autre méthodes
+Obtenir la longueur d'une chaîne
+Pour obtenir la longueur d'une chaîne (c'est-à-dire le nombre de caractères qui la composent, qu'on appelle également sa taille), il suffit de lui ajouter.length. On obtient la longueur sous la forme d'une valeur entière.
+
+```js
+console.log("ABC".length); // 3
+console.log("Je suis une chaîne".length); // 18
+```
+
+Bien entendu,.length peut être appliqué sur des variables de type chaîne. Son résultat peut être stocké dans une variable en vue d'une utilisation ultérieure.
+
+```js
+const mot = "Kangourou";
+const longueurMot = mot.length; // longueurMot contient la valeur 9
+console.log(longueurMot); // 9
+```
+La syntaxe qui consiste à utiliser un point (.) entre la chaîne de caractères et le motlength s'appelle la notation pointée.
+
+Convertir une chaîne en minuscules ou en majuscules
+Une valeur de type chaîne peut être convertie en minuscules en lui ajoutant.toLowerCase(). De même, on peut lui ajouter `.toUpperCase()` pour la convertir en majuscules. Ces méthodes renvoient toutes deux une nouvelle chaîne.
+
+```js
+const motInitial = "Bora-Bora";
+console.log(motInitial.toLowerCase());  // "bora-bora"
+console.log(motInitial.toUpperCase());  // "BORA-BORA"
+console.log(motInitial);  // "Bora-Bora"
+```
+La méthode `substr`
 ```js
 var browser = 'Mozilla';
 
 console.log(browser.substr(1, 2)); // expected output: "oz"
 ```
+
+Il est essentiel de comprendre que la chaîne initiale n'est pas modifiée par ces méthodes, ni par aucune autre méthode appelée sur une chaîne de caractères. Toutes les opérations applicables aux chaînes de caractères ne modifient JAMAIS la chaîne initiale, mais renvoient de nouvelles chaînes. Une fois créée, une chaîne de caractères JavaScript ne peut plus être modifiée. On dit qu'elle est immuable (en anglais : immutable).
+
+On peut également manipuler les chaines comme une succession de charactère. Avec une boucle for :
+```js
+const prenom = "Odile";
+for (const lettre of prenom) {
+  console.log(lettre);
+}
+```
+
+** Rechercher dans une chaîne **
+Il arrive fréquemment qu'on souhaite rechercher des valeurs à l'intérieur d'une chaîne de caractères. JavaScript propose plusieurs solutions pour cela.
+
+La méthode  `indexOf()`  prend en paramètre la sous-chaîne recherchée. Si cette valeur est présente dans la chaîne, elle renvoie l'indice de sa première occurrence. Sinon, elle renvoie -1.
+
+```js
+const chanson = "Honky Tonk Women";
+console.log(chanson.indexOf("onk")); // 1
+console.log(chanson.indexOf("Onk")); // -1 (à cause du O)
+```
+Vous pouvez également utiliser les méthodes  `startsWith()`  et  `endsWith()`  pour rechercher une valeur au début ou à la fin de la chaîne. Ces deux méthodes renvoient  true  ou  false  selon que la valeur soit trouvée ou non. Attention, elles sont sensibles à la casse.
+
+```js
+const chanson = "Honky Tonk Women";
+
+console.log(chanson.startsWith("Honk")); // true
+console.log(chanson.startsWith("honk")); // false
+console.log(chanson.startsWith("Tonk")); // false
+
+console.log(chanson.endsWith("men")); // true
+console.log(chanson.endsWith("Men")); // false
+console.log(chanson.endsWith("Tonk")); // false
+```
+
+
+**Décomposer une chaîne en sous-parties**
+Une chaîne de caractères est parfois composée de plusieurs sous-parties séparées par un caractère particulier (point, tiret, point-virgule, etc). Dans ce cas, on peut obtenir toutes ces parties à l'aide de la méthode  split(). Elle prend en paramètre le séparateur et renvoie un tableau contenant les sous-parties.
+
+```js
+const plusieursprenoms = "Yann,Kevin,Justin";
+for (const prenom of plusieursprenoms.split(",")) {
+  console.log(lettre);
+}
+```
+
+```js
+const mois = "Jan,Fev,Mar,Avr,Mai,Jun,Jul,Aou,Sep,Oct,Nov,Dec";
+```
+> Exercice : ecrivez un programme qui affiche à partir de mois, seulement les mois commençant par la lettre "M"
+
 
 ### Boolean
 Une variable en JavaScript peut encore stocker une valer de type Boolean, c’est-à-dire un booléen.
@@ -561,7 +630,7 @@ if (isNaN(age)) {
 }
 ```
 ou :
-```
+```js
 if (time < 10) {
   greeting = "Good morning";
 } else if (time < 20) {
@@ -995,13 +1064,201 @@ function direBonjour() {
 console.log(direBonjour()); // "Bonjour !"
 ```
 
-#### Variables d'entrée
+#### Des variables dans la fonction
+Il est possible de déclarer des variables à l'intérieur d'une fonction, comme dans l'exemple ci-dessous.
+
+```js
+function direBonjour() {
+  const message = "Bonjour !";
+  return message;
+}
+
+console.log(direBonjour()); // "Bonjour !"
+```
+
+La fonction `direBonjour()` déclare une variable nommée `message`, puis renvoie sa valeur.
+
+Les variables déclarées dans le corps d'une fonction sont appelées des variables locales. En effet, elles ne sont utilisables qu'à l'intérieur de la fonction. Ainsi, l'exécution du programme suivant provoquera une erreur.
+
+```js
+function direBonjour() {
+  const message = "Bonjour !";
+  return message;
+}
 
 
-### Recursivité
+console.log(direBonjour()); // "Bonjour !"
+console.log(message); // Erreur : la variable message n'existe pas ici
+```
 
+A chaque appel d'une fonction qui déclare des variables locales, ces variables sont recréées. On peut donc appeler plusieurs fois la même fonction, et chaque appel sera parfaitement indépendant des autres !
+
+Ne pas pouvoir utiliser de variables locales en dehors des fonctions où elles sont déclarées peut sembler une limitation. C'est au contraire un double avantage :
+
+Pour comprendre le risque encouru :
+Ici a est déclaré en dehors de la fonction. ALors le resultat de la fonction dépend des utilisation précédentes !
+```js
+var a = 0;
+function obtenira() {
+  a ++
+  return a;
+}
+
+
+console.log(obtenira()); // 1
+console.log(obtenira()); // 2
+console.log(a); // 2
+```
+
+```js
+var a = 0;
+function obtenira() {
+  var a = 0;
+  a ++
+  return a;
+}
+
+
+console.log(obtenira()); // 1
+console.log(obtenira()); // 1
+console.log(a); // 0
+```
+
+
+#### Paramètres et arguments d'une fonction
+Un paramètre est une information dont une fonction a besoin pour jouer son rôle. Les paramètres d'une fonction sont définis entre parenthèses juste après le nom de la fonction. On peut ensuite utiliser leur valeur dans le corps de la fonction. 
+
+La valeur d'un paramètre est fournie au moment de l'appel de la fonction : on dit que cette valeur est passée en paramètre. On appelle argument la valeur donnée à un paramètre lors d'un appel.
+
+Modifions notre exemple pour construire un message de bienvenue personnalisé.
+
+```js
+function direBonjour(prenom) {
+  const message = `Bonjour, ${prenom} !`;
+  return message;
+}
+
+console.log(direBonjour("Baptiste")); // "Bonjour, Baptiste !"
+console.log(direBonjour("Sophie")); // "Bonjour, Sophie !"
+```
+
+La déclaration de la fonction ‌direBonjour() a été modifiée : elle contient à présent un paramètre nommé prenom.
+
+Dans cet exemple, le premier appel à la fonction `direBonjour()` est fait avec l'argument `"Baptiste"` et le second avec l'argument `"Sophie"`. Dans le premier cas, le paramètre `prenom` reçoit la valeur `"Baptiste"` et dans le second, la valeur `"Sophie"`.
+
+Voici la syntaxe générale de la déclaration d'une fonction acceptant des paramètres. Leur nombre n'est pas limité, mais il est rarement nécessaire de dépasser 3 ou 4 paramètres.
+
+```js
+// Déclaration de la fonction maFonction
+function maFonction(param1, param2, ...) {
+  // Instructions pouvant utiliser param1, param2, ...
+}
+
+// Appel de la fonction maFonction
+// param1 reçoit la valeur de arg1, param2 la valeur de arg2, ...
+maFonction(arg1, arg2, ...);
+```
+La portée des paramètres d'une fonction se limite au corps de cette fonction. Ainsi, on peut utiliser comme argument une variable externe portant le même nom qu'un paramètre. L'exemple suivant est donc parfaitement valide.
+
+```js
+function direBonjour(prenom) {
+  // Ici, prenom est le paramètre de la fonction
+  const message = `Bonjour, ${prenom} !`;
+  return message;
+}
+
+// Ici, prenom est une variable utilisée comme argument
+var prenom = "Baptiste";
+console.log(direBonjour(prenom)); // "Bonjour, Baptiste !"
+prenom = "Thomas";
+console.log(direBonjour(prenom)); // "Bonjour, Thomas!"
+```
+
+Lors d'un appel à une fonction acceptant des paramètres, le nombre et l'ordre des paramètres doivent être respectés. Observez l'exemple suivant.
+
+```js
+function presentation(prenom, age) {
+  console.log(`Tu t'appelles ${prenom} et tu as ${age} ans`);
+}
+
+presentation("Garance", 10); // "Tu t'appelles Garance et tu as 10 ans"
+presentation(6, "Prosper"); // "Tu t'appelles 6 et tu as Prosper ans"
+```
+
+Lors du second appel, les valeurs données aux paramètres sont inversées :prenom reçoit la valeur 6 etage reçoit la valeur"Prosper"
+
+#### Syntaxe alternative
+Il existe d'autres façon d'écrire une fonction :
+Comme une variable :
+```js
+const bonjour = function(prenom) {
+  const message = `Bonjour, ${prenom} !`;
+  return message;
+}
+
+console.log(bonjour("Thomas")); // "Bonjour, Thomas !"
+```
+Et en utilisant une fleche :
+```js
+// Affectation d'une fonction anonyme à la variable maVariable
+const maVariable = (param1, param2, ...) => {
+  // Instructions pouvant utiliser param1, param2, ...
+}
+
+// Appel de la fonction anonyme
+// param1 reçoit la valeur de arg1, param2 la valeur de arg2, ...
+maVariable(arg1, arg2, ...);
+```
 
 ### Built-in functions
+Ce sont les fonctions déjà codées par JavaScript. La pluàart sont en réalité des méthodes d'objets. Pensez à les utiliser !
+On peut tout de même mentionner `prompt()` qui permet de rendre le programme interactif.
+
+
+### Fonction emboitée et recursivité
+On peut aoppeler des fonctions dans les fonctions. Le but est de faire des programmes modulaire.
+
+```js
+function saluer(prenom) {
+  console.log(`Salut ${prenom}`);
+}
+
+
+function presenter(prenom, age) {
+  saluer(prenom);
+  console.log(`Tu as ${age} année`);
+}
+
+console.log(presenter(prenom, age))
+```
+Il peut etre utile de decouper les fonctions lorsque l'on perçoit qu'un morceaau pourrait servir dans plusieurs fonctions.
+
+Certaines fonction peuvent s'appeler elle-mêmes, on appelle cela les fonctions recursive.
+
+Afin que la récursivité soit effective, deux fonctionnalités clés doivent nécessairement être implémentées. Il s'agit du cas de base et du cas de propagation, aussi parfois appelé simplement le cas récursif.
+
+Le cas de base représente l'ensemble des lignes de code qui permet l'arrêt de la récursion. Habituellement, cet ensemble débute avec une clause conditionnelle comme if. Si cette notion n'est pas mise en place, la fonction sera répétée de manière infinie et le programme plantera. Le case de base est donc la condition de fin de la fonction récursive.
+
+Le cas de propagation représente l'ensemble des lignes de code où aura lieu la récursivité. Il s'agit, en clair, du bloc de code où la fonction fera à nouveau appel à elle-même.
+
+Un exemple simple, est la fonction de multiplication d'entier à partir de l'addition ! (imagiuneaons que vous n'avez pas le symbole `*` sur votre clavier...)
+```js
+function multiplication(a, b) {
+  // Le cas de base
+  if (b == 0) {
+    return 0
+  } else if (b == 1) {
+    return a
+  } else {
+    return a + multiplication(a, b - 1)
+  };
+};
+
+console.log(multiplication(2, 3))
+```
+
+> Exercice : Recoder avec une fonction recursive, la puissance n d'un nombre a que vous aviez obtenus à l'aide d'une boucle.
+
 
 ## Le concept de classe : une usine à objet
 _WIP_
