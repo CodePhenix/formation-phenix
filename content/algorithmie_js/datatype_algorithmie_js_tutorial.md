@@ -8,7 +8,7 @@ Mais le JavaScript est un langage à part entière ! Le but de ce tutorial et d'
 - Les **fonctions** qui permette de regrouper un certains nombre de manipulation sur une _entrée_ pour donner une _sortie_
 - Les types de données **data type** classque comme les string, les liste, les chiffres, les dates et les manipulation qui leur sont propre
 - Des exemples d'**algorithmes classique** sur ces types. C'est à dire l'utilisation de manipulation sur nos types pour un but précis : rechercher dans une liste, renversement d'une liste...
-- La notion d'**objet** et d'attruibu qui permet de regrouper ensemble plusieurs caractéristique de type classique (nombre, chaine de caractére) autour d'une meme eentité qui peut à son tour etre manipulé
+- La notion d'**objet** et d'attruibut qui permet de regrouper ensemble plusieurs caractéristique de type classique (nombre, chaine de caractére) autour d'une meme eentité qui peut à son tour etre manipulé
 
 
 
@@ -286,6 +286,219 @@ x += y;
 > Exercice : Quel est le type de x ?
 
 
+## Types
+### Généralitées
+On a commencé à en parler.
+
+En informatique, un type de donnée, ou simplement un type, définit la nature des valeurs que peut prendre une donnée, ainsi que les opérateurs qui peuvent lui être appliqués.
+
+On a par exemple vu que l'effet des opérateurs dépendait du type des variable auquel on les applique.
+
+Le type des variables est définit au moment de l'assignement de la valeur. Les litéraux ont leur type dans la façon dont ils sont écrit. Les autres variable ont le type résultant lors de l'assignation comme résultat des opérations entre valeur qui lui est assigné (ou comme sortie d'une fonction).
+
+```js
+var w, x, y, z;
+w = '2';
+x = 3;
+y = w + x;
+z = yu + 'hello'
+```
+Dans l'exemple précédent `'hello'` et `'2'` et donc directement `w` sont de type string (chaine de caractère), `3` et donc directement `x` sont de type number.
+
+En JavaScript il y à 6 types réels, c'est à dire de résultat qui peuvent être donné par l'instruction `typeof`
+* string : `'xxxx'`
+* number : `xxxx`
+* boolean : `true` et `false`
+* undefined : le type d'une variable déclaré mais non assigné
+* function : quelquechose qui peut être *appellé*, c'est à dire qui s'utilise de cette façon `xxx(...)`
+* object : tout le reste en JavaScript est de typeof object
+
+On a déjà parlé des 3 premiers types mais on va les détailler, le 4e permet simplement de faire le lien entre déclaration et assignement.
+
+Le type "function" est à concept à part entière qui sera traité plus tard.
+
+Le type "object" regroupe tous le reste !
+Enfait ce type peut etre vu comme une grande famille qui contient des sous-type :
+* les lites (que l'on verra dans ce chapitre)
+* les objets décrits (que l'on verra dans ce chapitre)
+* les objets qui sont le résultat de fonctions particulières qu'on appelle "Classe" (on verra le cas de Date dans ce chapitre). On peut voire les Classes comme des usines à objets. Le concept sera traité plus tard
+
+On peut transforer volontairement les valeurs du type string au type number (si c'est une string de nombre) et vice vers ça
+```js
+var a, b, c, d;
+a = 12;
+b = String(a);
+c = '12';
+d = Number(a);
+console.log(typeof a);
+console.log(typeof b);
+console.log(typeof c);
+console.log(typeof d);
+```
+
+En plus de l'effet des opérateurs sur les variables, le type définit les *méthodes* que l'on peut appliquer aux variables. Une méthode est une fonction (voir section fonction) propre au type, et que seule les variables de ce type peuvent utiliser.
+
+On écrit : `variable.methode(argument1, argument2, ...)`.
+
+Une méthode (comme une fonction) est un miçni programme qui va s'éfectuer lorsque on l'appel (utilisation de `()`) et qui peut parfois retourner une nouvelle valeur.
+
+```js
+var a, b;
+a = 'Hello world';
+b = a.substr(0, 5);
+console.log(b);
+console.log(typeof a);
+console.log(typeof b);
+```
+> `substr` est une méthode du type `string` il renvoie une sous-partie de la chaine de charactère qui utilise la méthode
+> Et oui ! `log` est une méthode de la variable spéciale `console` ! C'est le programme qui crée l'affichage.
+
+Les string, number, boolean, liste ont leur méthodes définit dont on va voir les plus importantes dans ce chapitre.
+Les méthodes des `object` sont définit dans l'objet décrit ou dans la Classe qui l'a créé. On ne verra que le cas utile de `Date`
+
+
+### number
+Ce premier type de valeur, on l'a déjà vu, ce sont tous les nombres ou chiffres, qu’il soit positif, négatif, entier ou à virgule.
+
+Pour affecter une valeur de type Number à une variable, on n’utilise ni guillemet ni apostrophe.
+
+***Faites attention*** : *lorsque nous codons nous utilisons toujours des notations anglo-saxonnes, ce qui signifie qu’il faut remplacer nos virgules par des points pour les nombres décimaux.*
+
+```js
+var x = 25;
+var y = -75;
+var z = 3.14;
+```
+
+### string
+Le type de valeurs String va représenter les chaînes de caractères, c’est-à-dire les textes.
+
+Si l’on veut stocker une chaîne de caractères dans une variable, il faut entourer notre chaîne par des apostrophes ou des guillemets.
+
+Ce sont justement ces apostrophes ou guillemets qui vont indiquer au JavaScript que l’on stocke une valeur de type String.
+
+```js
+var prenom = "Jacques";
+var nom = "Martin";
+var sexe = "Homme";
+```
+
+Au niveau des apostrophes / guillemets, vous pouvez choisir les uns ou les autres selon votre préférence.
+
+Cependant, si la valeur stockée contient elle même des apostrophes ou des guillemets, il faudra les échapper au moyen d’un antislash selon ce que vous aurez choisi pour entourer la valeur comme ceci :
+
+```js
+var prenom = "Je m'appelle Pierre";
+var nom = 'On me surnomme "Pierrot"';
+```
+
+
+
+Même un nombre sera considéré comme étant de type String, c’est-à-dire comme une chaîne de caractères si on l’entoure de guillemets ou d’apostrophes.
+
+Faites bien attention à cela, car ça va avoir une grande influence sur les manipulations que l’on va pouvoir faire sur telle ou telle variable !
+
+```js
+var x = 25;
+var y = "25";
+// x  et y n'ont pas le même type
+```
+
+
+
+**Opérations sur les chaînes de caractères**
+
+***La concaténation***
+
+Concaténer signifie tout simplement mettre bout à bout deux chaînes de caractères afin d’en former une troisième, nouvelle.
+
+Concaténer, c’est donc « additionner » des chaînes de caractères.
+
+En JavaScript, on va pouvoir concaténer grâce à l’opérateur « + ».
+
+Evidemment, nous allons pouvoir appliquer cet opérateur directement à nos variables afin de concaténer leurs contenus respectifs.
+
+
+
+Par exemple,
+
+```js
+var prenom = "Pierre", espace = ' ', nom = "Dupont";
+var moi = prenom + espace + nom;
+// moi est égal à "Pierre Dupont"
+
+var sport = "courir";
+var hobbie = "J'aime " + sport;
+// hobbie est égal à "J'aime courir"
+```
+
+
+
+***Attention***: *Si l’on tente « d’additionner » un nombre et une chaîne de caractères, tout ce qu’il y a derrière la chaîne de caractères sera également considéré comme une chaine de caractères par le JavaScript.*
+
+```js
+var x = 4 + 2 + "1"; //61
+var y = "1" + 2 + 4; //124
+var z = 2 + "un" + 4; // 2un4
+```
+
+**Méthode sur les chaînes de caractères**
+
+substr et autre méthodes
+```js
+var browser = 'Mozilla';
+
+console.log(browser.substr(1, 2)); // expected output: "oz"
+```
+
+### Boolean
+Une variable en JavaScript peut encore stocker une valer de type Boolean, c’est-à-dire un booléen.
+
+Un booléen, en algèbre, est une valeur binaire (soit 0, soit 1). En informatique, un booléen va être soit la valeur true (vrai), soit la valeur false (faux).
+
+Ce type de valeur peut sembler plus compliqué à appréhender à première vue. Pas d’inquiétude, nous allons souvent l’utiliser par la suite car il va nous être très utile pour effectuer des tests et vérifier si une condition est vérifiée (true) ou non (false).
+
+Une nouvelle fois, faites bien attention : pour qu’une variable stocke bien un booléen, il faut lui faire stocker la valeur true ou false, sans guillemets ou apostrophes.
+
+Si vous rajoutez des guillemets ou des apostrophes, la variables stockera alors la chaîne de caractères true ou la chaîne de caractères false.
+
+
+```js
+var a = true;
+var b = false;
+
+var c = "true";
+// c n'est pas un booléen mais une chaîne de caractère
+```
+
+
+### liste
+_WIP_
+```js
+var cars = ["Saab", "Volvo", "BMW"];
+```
+Et les méthodes.
+
+### objets décrit
+Un exemple de déclaration d'un objet et de log de son attribut :
+```js
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+console.log(person.firstName)
+```
+
+L'objet null est l'objet qui n'a rien ! Pas d'attributs, pas de méthode, rien... Il est comme undefined, mais c'est quand meme un objet.
+```js
+typeof undefined           // undefined
+typeof null                // object
+
+null === undefined         // false
+null == undefined          // true
+```
+
+### attributs
+_WIP_
+
+
 ## Statements
 On appelle statement les mots clés réservé du langage qui servent à donner des instructions particulière à l'ordinateur dans le déroulement du programme.
 Il s'agit de série d'instructions comme celles que l'on a déjà vu (déclaration, assignation, opérations) mais utilisé dans un contexte particulier :
@@ -358,8 +571,6 @@ if (time < 10) {
 }
 ```
 > Exercice : Vous avez une variable `gender` qui vaut "homme" ou "femme", une variable `birth_year` qui est l'année de naissance, une variable `birth_month` qui est le mois de naissance en toute lettre et une variable `zipcode` du code postale. Créer une variable `sécu` qui prévoit les 7 premiers chiffres de la carte vitale.
-
-#### switch
 
 ### Boucles
 
@@ -579,188 +790,6 @@ console.log(11 % 3); // 1
 ```
 
 
-
-
-
-## Types de variables
-
-Dans les variables, on peut stocker autre chose que des nombres et des mots. On peut y stocker différents types de valeurs.
-
-Les types de valeurs vont avoir une influence sur notre code, puisqu’on ne stockera pas de la même façon un chiffre ou une chaîne de caractères (un texte) par exemple dans une variable.
-
-Nous ne pourrons pas non plus effectuer les mêmes opérations sur les variables selon le type de valeurs qu’elles stockent.
-
-
-
-### Number
-
-Ce premier type de valeur, on l'a déjà vu, ce sont tous les nombres ou chiffres, qu’il soit positif, négatif, entier ou à virgule.
-
-Pour affecter une valeur de type Number à une variable, on n’utilise ni guillemet ni apostrophe.
-
-***Faites attention*** : *lorsque nous codons nous utilisons toujours des notations anglo-saxonnes, ce qui signifie qu’il faut remplacer nos virgules par des points pour les nombres décimaux.*
-
-```javascript
-var x = 25;
-var y = -75;
-var z = 3.14;
-```
-
-
-
-### String
-Le type de valeurs String va représenter les chaînes de caractères, c’est-à-dire les textes.
-
-Si l’on veut stocker une chaîne de caractères dans une variable, il faut entourer notre chaîne par des apostrophes ou des guillemets.
-
-Ce sont justement ces apostrophes ou guillemets qui vont indiquer au JavaScript que l’on stocke une valeur de type String.
-
-```javascript
-var prenom = "Jacques";
-var nom = "Martin";
-var sexe = "Homme";
-```
-
-Au niveau des apostrophes / guillemets, vous pouvez choisir les uns ou les autres selon votre préférence.
-
-Cependant, si la valeur stockée contient elle même des apostrophes ou des guillemets, il faudra les échapper au moyen d’un antislash selon ce que vous aurez choisi pour entourer la valeur comme ceci :
-
-```javascript
-var prenom = "Je m'appelle Pierre";
-var nom = 'On me surnomme "Pierrot"';
-```
-
-
-
-Même un nombre sera considéré comme étant de type String, c’est-à-dire comme une chaîne de caractères si on l’entoure de guillemets ou d’apostrophes.
-
-Faites bien attention à cela, car ça va avoir une grande influence sur les manipulations que l’on va pouvoir faire sur telle ou telle variable !
-
-```javascript
-var x = 25;
-var y = "25";
-// x  et y n'ont pas le même type
-```
-
-
-
-**Opérations sur les chaînes de caractères**
-
-***La concaténation***
-
-Concaténer signifie tout simplement mettre bout à bout deux chaînes de caractères afin d’en former une troisième, nouvelle.
-
-Concaténer, c’est donc « additionner » des chaînes de caractères.
-
-En JavaScript, on va pouvoir concaténer grâce à l’opérateur « + ».
-
-Evidemment, nous allons pouvoir appliquer cet opérateur directement à nos variables afin de concaténer leurs contenus respectifs.
-
-
-
-Par exemple,
-
-```javascript
-var prenom = "Pierre", espace = ' ', nom = "Dupont";
-var moi = prenom + espace + nom;
-// moi est égal à "Pierre Dupont"
-
-var sport = "courir";
-var hobbie = "J'aime " + sport;
-// hobbie est égal à "J'aime courir"
-```
-
-
-
-***Attention***: *Si l’on tente « d’additionner » un nombre et une chaîne de caractères, tout ce qu’il y a derrière la chaîne de caractères sera également considéré comme une chaine de caractères par le JavaScript.*
-
-```javascript
-var x = 4 + 2 + "1"; //61
-var y = "1" + 2 + 4; //124
-var z = 2 + "un" + 4; // 2un4
-```
-
-
-
-*WIP*
-
-substr et autre méthodes
-
-```js
-var browser = 'Mozilla';
-
-console.log(browser.substr(1, 2));
-// expected output: "oz"
-```
-
-
-
-#### Boolean
-
-Une variable en JavaScript peut encore stocker une valer de type Boolean, c’est-à-dire un booléen.
-
-Un booléen, en algèbre, est une valeur binaire (soit 0, soit 1). En informatique, un booléen va être soit la valeur true (vrai), soit la valeur false (faux).
-
-Ce type de valeur peut sembler plus compliqué à appréhender à première vue. Pas d’inquiétude, nous allons souvent l’utiliser par la suite car il va nous être très utile pour effectuer des tests et vérifier si une condition est vérifiée (true) ou non (false).
-
-Une nouvelle fois, faites bien attention : pour qu’une variable stocke bien un booléen, il faut lui faire stocker la valeur true ou false, sans guillemets ou apostrophes.
-
-Si vous rajoutez des guillemets ou des apostrophes, la variables stockera alors la chaîne de caractères true ou la chaîne de caractères false.
-
-
-
-```javascript
-var a = true;
-var b = false;
-
-var c = "true";
-// c n'est pas un booléen mais une chaîne de caractère
-```
-
-
-
-
-
-
-
-### Date
-
-manipulation et lien avec les str
-
-### Liste
-```js
-var cars = ["Saab", "Volvo", "BMW"];
-```
-et les méthodes.
-
-### Objet
-
-```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-```
-Avec le concept de méthode : this
-```js
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-```
-
-### null et undefined
-```js
-typeof undefined           // undefined
-typeof null                // object
-
-null === undefined         // false
-null == undefined          // true
-```
-
-
-
 ## Fonctions
 
 ### Introduction
@@ -902,9 +931,9 @@ Enfin, la création d'une fonction permet de lutter contre la duplication de cod
 
 
 
-#### Que faire avec les fonctions ?
+### Que faire avec les fonctions ?
 
-**Valeur de retour**
+#### Valeur de retour
 
 Voici une variante de notre programme d'exemple.
 
@@ -966,49 +995,70 @@ function direBonjour() {
 console.log(direBonjour()); // "Bonjour !"
 ```
 
-
-
-
-
+#### Variables d'entrée
 
 
 ### Recursivité
 
+
+### Built-in functions
+
+## Le concept de classe : une usine à objet
+_WIP_
+C'est une fonction qui fait des manipulation sur une variable spéciale : `this`.
+Elles sont utilisées lors de l'assignement à l'aide du mot clé `new`. La valeur crée est l'objet `this` manipulé dans la fonction.
+```js
+function Personne(nom) {
+  this.nom = nom;
+  this.salutation = function() {
+    alert('Bonjour ! Je m\'appelle ' + this.nom + '.');
+  };
+}
+
+var new_person = new Personne("Pierre")
+console.log(new_person.salutation())
+```
+
 ## Algorithmes et Exercices
-### Exercices
+### Trier une liste
+Quels algos de tris ?
+
+### Algorithmes classiques
+
+### Exercices divers
 _EXERCICE 1_
-Ecrire une fonction qui prend deux réels a et b et résout l' équation aX+b=0 et renvoie b. Il faut traiter tous les cas particuliers (notamment les cas "tout x est solution" et "pas de solution").
-
-_EXERCICE 2_
-
-_EXERCICE 3_
 Ecrire une fonction qui recoit un nombre X et qui affiche la valeur absolue de X (c'est à dire le nombre sans son signe)
 
-_EXERCICE 4_
-Ecrire une fonction qui prends 3 nombres A, B et C et qui indique si C est compris entre A et B.
+_EXERCICE 2_
+Ecrire une fonction qui prends 3 nombres A, B et C et qui indique si C est compris entre A et B ou pas.
 
-_EXERCICE 5_
-Ecrire une fonction qui prends 4 entiers A, B, C et D, puis qui renvoit les entiers E et F pour que [E, F] soit l'intersection de [A, B] et [C, D]. Comme sur le schéma suivant
-
-_EXERCICE 6_
+_EXERCICE 3_
 Ecrire une fonction qui demande à l’utilisateur de saisir un entier A puis qui affiche "ERREUR" si A n'est pas un nombre impair compris entre 83 et 101 bornes incluses. Dans le cas contraire, on affiche "PAS D'ERREUR".
 
-_EXERCICE 7_
+_EXERCICE 4_
 Ecrire une fonction qui prends une liste et renvoie le plus grand élément de la liste
 La fonction ne doit utiliser qu'une seule variable
 
-_EXERCICE 8_
+_EXERCICE 5_
 Ecrire une fonction qui prends une liste et renvoie une liste inversée
 
-### Trier une liste
 
-
+# Pour aller plus loin
+Les éléments suiivants feront l'objet de modules à part entière
 ## Syntaxe et bonnes pratiques
 ### Syntaxe
-### Naming
-### Commentaires
-Mettre des commentaires !!!
+* Signification du à la ligne quand on veut car c'est le `;` qui fait le taff.
+* Du coup bonnes pratiques d'indentation et à la ligne
+* Les espaces (au delà de 1) n'ont pas d'effet, mais il y a des conventions
 
+### Naming
+JavaScript utilise la convention du camelCase pour le naming des variables.
+
+### Commentaires
+Il faut toujours mettre des commentaires ! Dans deux buts :
+* Les "pourquoi on écrit ça" dans le code (clarté)
+* Les "cette fonction ou cette classe fait ça" (documentation).
+On peut écrire des commentaires sur une ligne de code ou sur plusieurs lignes.
 ```js
 /*
 Ceci est
@@ -1019,10 +1069,49 @@ document.getElementById("myH").innerHTML = "My First Page"; // Commentaire sur l
 document.getElementById("myP").innerHTML = "My first paragraph.";
 ```
 
-## Fonctions avancées
+## Fonctionnalitées avancées
 ### Regex
+Une technique *universelle* de manipulation de chaine de charactère.
+
 ### Aléatoire
-### Conversion de type
+En informatique il est parfois nécessaire de generer des actions aléatoire (tirage...)
+
 ### Erreurs
-### Scopes
-let a la place de var en déclaration
+En informatique on développe des outils pour gerer les comportements non prévu des programme. On appelle cela la gestion d'erreures.
+
+### json
+Le json est un protocole de structuration de donnée normalisé qui permet de communiquer en réseaux ou entre différents languages.
+Il s'agit de combiner les types élémentaires (liste, objet, nombre, chaine de charactére) de façon cohérente.
+
+On parle d'*éléments*. On a deux familles d'éléments :
+* les éléments granulaire : nombre ou chaine de charactère
+* les éléments composés qui sont liés entre eux :
+** les dictionnaires : ce sont des objet dont chaque clef commence par une lettre et chaque valeur est ou un élément granulaire ou une famille.
+** les familles : ce sont des listes de dictionnaires ayant chacun toutes les mêmes clés 
+
+Au global un json est un élément dictionnaire.
+
+Un exemple de json :
+```js
+var a;
+a = {  \\ a est un dictionnaire
+  name: "coco"; \\ clé "name" ayant un élément simple de type chaine de charactère en valeur
+  id: 123; \\ clé "name" ayant un élément simple de type nombre en valeur
+  membres:[ \\ clé "membres" ayant une famille en valeur
+    \\ chaque élément de la liste est un dictionnaire ayant deux clés "firstName" et "lastName"
+    {
+      firstName:"John",
+      lastName:"Doe"
+    }, 
+    {
+      firstName:"Anna",
+      lastName:"Smith"
+    },
+    {
+      firstName:"Peter",
+      lastName:"Jones"
+    }
+  ];
+  description: "Ceci est la description de coco"  \\ clé "description" ayant un élément simple de type chaine de charactère en valeur
+};
+```
