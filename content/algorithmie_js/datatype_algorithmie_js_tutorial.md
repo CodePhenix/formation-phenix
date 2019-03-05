@@ -11,7 +11,6 @@ Mais le JavaScript est un langage à part entière ! Le but de ce tutorial et d'
 - La notion d'**objet** et d'attruibut qui permet de regrouper ensemble plusieurs caractéristique de type classique (nombre, chaine de caractére) autour d'une meme eentité qui peut à son tour etre manipulé
 
 
-
 ## Introduction
 Le Javascript est un langage de script incorporé dans un document HTML. Historiquement il s'agit même du premier langage de script pour le Web. Ce langage est un langage de programmation qui permet d'apporter des améliorations au langage HTML en permettant d'exécuter des commandes du côté client, c'est-à-dire au niveau du navigateur et non du serveur web.
 
@@ -542,17 +541,225 @@ var c = "true";
 
 
 ### liste
-_WIP_
-```js
-var cars = ["Saab", "Volvo", "BMW"];
-```
-Et les méthodes.
+On dit parfois *array* en anglais ou encore *tableau* dans certains language. Il s'agit d'un objet constitué d'une succession de valeur.
 
-### objets décrit
-Un exemple de déclaration d'un objet et de log de son attribut :
+Imaginez que vous souhaitiez informatiser la liste de toutes les capitales d'Europe. Une première solution serait de créer une variable par ville, comme dans l'exemple suivant.
+
 ```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-console.log(person.firstName)
+const ville1 = "Paris";
+const ville2 = "Rome";
+const ville3 = "Berlin";
+// ...
+```
+Si vous êtes géographe, vous risquez rapidement de vous retrouver avec un grand nombre de variables dans votre programme. Pire, toutes ces variables sont entièrement indépendantes. Il n'existe aucun moyen pour, par exemple, afficher la liste complète des villes ou rechercher une ville dans la liste.
+
+On pourrait stocker toutes les velles dans une unique chaîne de caractères, en choisissant un caractère pour délimiter les titres.
+
+```js
+const films = "Paris - Rome - Berlin";
+```
+Mais la chaine de charactère serait compliquée à manipuler.
+
+Pour ça ont crée une liste :
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+```
+
+On crée un tableau à l'aide d'une paire de crochets  []  . Tout ce qui se trouve entre les crochets correspond au contenu du tableau. Les différents éléments stockés sont séparés par des virgules.
+
+Avec JavaScript, on peut stocker dans un tableau des éléments de différents types, comme dans l'exemple ci-dessous.
+
+```js
+const tableau = ["Bonjour", 7, true];
+```
+
+> Astuce : on nomme les tableaux avec un s à la fin du nom de la variable.
+
+#### taille
+Le nombre d'éléments stockés dans un tableau est appelé sa taille. Voici comment l'obtenir.
+
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+console.log(villes.length); // 3
+
+```
+La taille d'un tableau s'obtient en lui applicant la propriété (après un .) `length` sans parenthèse. Bien entendu, cette propriété renvoie 0 dans le cas d'un tableau vide (sans aucun élément).
+
+```js
+const tableauVide = []; // Création d'un tableau vide
+
+console.log(tableauVide.length); // 0
+```
+
+#### Accéder à un élément d'un tableau
+Chaque élément présent dans un tableau est identifié par un numéro, appelé son indice (index en anglais). On peut représenter graphiquement un tableau comme un ensemble de cases, chacune stockant une valeur spécifique et associée à un indice. Voici comment on pourrait représenter le tableau `villes`.
+
+L'accès à un élément s'effectue en plaçant cet indice entre crochets, comme dans l'exemple ci-dessous.
+
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+console.log(villes[0]); // "Paris"
+console.log(villes[1]); // "Rome"
+console.log(villes[2]); // "Berlin"
+```
+L'indice du premier élément d'un tableau est 0 et non 1 comme on aurait pu s'y attendre. Le plus grand indice utilisable est donc égal à la taille du tableau - 1.
+
+Utiliser un indice invalide pour accéder à un élément d'un tableau JavaScript renvoie la valeur spécialeundefined.
+
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+console.log(villes[3]); // undefined : le dernier indice valide est 2
+```
+
+#### Parcourir un tableau
+Il existe plusieurs solutions pour parcourir un tableau élément par élément.
+
+La première consiste à utiliser la boucle `for` que vous connaissez déjà. L'exemple ci-dessous permet d'afficher la liste des films présents dans le tableau.
+
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+for (let i = 0; i < villes.length; i++) {
+  console.log(villes[i]);
+}
+```
+
+La seconde est une utilisation du `for` spécifique à l'aide du mots `of` :
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+for (const ville of villes) {
+  console.log(ville);
+}
+```
+Le `of` dans la declaration du for permet de faire un for avec un compteur de boucle un peru special qui est en réalité successivement (et dans l'ordre) chaque élément de la liste après le `for`
+
+> Exercice : Coder une fonction qui prend une liste et renvoie la liste "à l'envers".
+
+
+#### Methodes de manipulatioon
+
+**Ajouter un élément dans un tableau**
+Ajoutons les villes Madrid et Lisbonne à notre liste :
+
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+villes.push("Madrid"); // Ajoute la ville à la fin du tableau
+villes.unshift("Lisbonne"); // Ajoute la ville au début du tableau
+
+console.log(villes);
+```
+
+L'ajout d'un nouvel élément dans un tableau se fait avec la méthode :
+* `push()` Elle prend en paramètre l'élément à insérer, qui est ajouté à la fin du tableau.
+* `unshift()`. Elle permet d'ajouter l'élément au début du tableau.
+
+
+On peut supprimer le premier et le dernier élément d'un tableau grâce à la méthode  pop().
+
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+villes.pop(); // Supprime le dernier élément
+villes.shift(); // Supprime le premier élément
+
+console.log(villes.length); // 1
+console.log(villes[2]); // undefined
+```
+
+Une autre méthode de suppression, `splice()`, permet de supprimer plusieurs éléments d'un coup. Son premier paramètre est l'indice à partir duquel supprimer, et le second est le nombre d'éléments à supprimer.
+
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+villes.splice(0, 1); // Supprime 1 element à partir de l'indice 0
+console.log(villes.length); // 2
+console.log(villes[0]); // "VRome"
+console.log(villes[1]); // "Berlin"
+```
+
+#### Autres méthodes
+`join()`
+```js
+const villes = ["Paris", "Rome, "Berlin"];
+
+var villes_string = villes.join(' - ');
+console.log(villes_string); // "Paris - Rome - Berlin"
+```
+Qui est en fait la méthode inverse de la méthode split de la chaine de charactère.
+
+Split coupe à l'aide d'un symbole la chaine de charactère en une liste de chaine de charactère et split, réunis une liste de chaines de charactères en une chaine de charactère en inserrant un symbole entre les éléments.
+
+La concatenation de liste.
+
+On peut ajouter une liste à la suite d'une autre. Pour cela on appelle la méthode `concat` sur la première liste et elle prend en argument la suivante.
+
+```js
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);
+console.log(myChildren)
+```
+
+> Exercice : Ecrire une fonction qui prend en entrée une liste et un entier n, et qui renvoit une liste étant n fois la répétition de la liste en entrée.
+
+
+### Objets décrit
+
+Voici la représentation JavaScript d'un stylo à bille Bic qui écrit en bleu.
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+```
+Le éléments avant les `:` sont les attributs ou parfois appelé propriété. On y accère de la façon suivante :
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+
+console.log(stylo.type); // "bille"
+console.log(stylo.couleur); // "bleu"
+console.log(stylo.marque); // "Bic"
+```
+L'accès à une propriété d'un objet est une expression qui produit une valeur. On peut inclure ces accès dans d'autres expressions plus complexes. Voici par exemple comment afficher les caractéristiques du stylo en une seule ligne.
+
+Une fois un objet créé, on peut modifier les valeurs de ses propriétés avec la syntaxe `monObjet.maPropriete = nouvelleValeur`.
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+
+// Modification de la propriété "couleur"
+stylo.couleur = "rouge";
+
+// "J'écris avec un stylo bille rouge de marque Bic"
+console.log(`J'écris avec un stylo ${stylo.type} ${stylo.couleur} de marque ${stylo.marque}`);
+```
+
+JavaScript offre même la possibilité d'ajouter dynamiquement de nouvelles propriétés à un objet déjà créé.
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+
+// Ajout de la propriété "prix"
+stylo.prix = "2.5";
+
+// "Mon stylo coûte 2.5 euros"
+console.log(`Mon stylo coûte ${stylo.prix} euros`);
 ```
 
 L'objet null est l'objet qui n'a rien ! Pas d'attributs, pas de méthode, rien... Il est comme undefined, mais c'est quand meme un objet.
@@ -564,9 +771,88 @@ null === undefined         // false
 null == undefined          // true
 ```
 
-### attributs
-_WIP_
+#### Méthode
+A la différente d'un objet bien défini comme celui des listes que l'on a vu, dans un objet, générique, on définit nous même ses méthodes.
 
+Prenons un exemple en créant un objet représentant un personnage de jeux video :
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25
+};
+```
+Aurora est représentée par un objet `aurora` ayant trois propriétés : `nom`, `sante` et `force`. Elles ont chacune une valeur et, ensemble, définissent l'état de notre personnage à un instant donné.
+
+Maintenant, Aurora va vire une  aventure :
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25
+};
+
+// "Aurora a 150 points de vie et 25 en force"
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+
+console.log("Aurora est blessée par une flèche");
+aurora.sante = aurora.sante - 20;
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+
+console.log("Aurora trouve un bracelet de force");
+aurora.force = aurora.force + 10;
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+
+// "Aurora a 130 points de vie et 35 en force"
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+```
+On voit que l'instruction `console.log('${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force');` est répété, enfait c''est une maniopulatiçon de l'objet que l'on va etre amené à faire souvent. On prefere donc creer une *méthode*, c'est a dire une fonction interne à lobjet qui va faire l'instruction :
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25,
+
+  // Renvoie la description du personnage
+  decrire() {
+    return `${this.nom} a ${this.sante} points de vie et ${this.force} en force`;
+  }
+};
+
+// "Aurora a 150 points de vie et 25 en force"
+console.log(aurora.decrire());
+```
+L'objet  aurora  possède à présent une nouvelle propriété nommée  decrire. La valeur de cette propriété est une fonction qui renvoie la description du personnage sous forme textuelle. Le résultat de l'exécution est exactement le même que précédemment.
+
+Une propriété dont la valeur est une fonction est appelée une méthode. Une méthode permet de définir une action pour un objet. On dit également qu'une méthode ajoute à cet objet un comportement.
+
+Un nouveau mot-clé y apparaît :  this  . Il est défini automatiquement par JavaScript à l'intérieur d'une méthode et représente l'objet sur lequel la méthode a été appelée.
+
+La méthode  decrire()  ne prend plus de personnage en paramètre : elle utilise  this  pour accéder aux propriétés de l'objet sur lequel elle a été appelée.
+
+
+On peut aussi creer une méthode qui nous dit si le personnage est en vie.
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25,
+
+  // Renvoie la description du personnage
+  decrire() {
+    return `${this.nom} a ${this.sante} points de vie et ${this.force} en force`;
+  },
+
+  isAlive() {
+    return this.sante > 0;
+  }
+};
+
+// "Aurora a 150 points de vie et 25 en force"
+console.log(aurora.isAlive());
+aurora.sante -= 200
+console.log(aurora.isAlive());
+```
 
 ## Statements
 On appelle statement les mots clés réservé du langage qui servent à donner des instructions particulière à l'ordinateur dans le déroulement du programme.
@@ -1260,27 +1546,21 @@ console.log(multiplication(2, 3))
 > Exercice : Recoder avec une fonction recursive, la puissance n d'un nombre a que vous aviez obtenus à l'aide d'une boucle.
 
 
-## Le concept de classe : une usine à objet
-_WIP_
-C'est une fonction qui fait des manipulation sur une variable spéciale : `this`.
-Elles sont utilisées lors de l'assignement à l'aide du mot clé `new`. La valeur crée est l'objet `this` manipulé dans la fonction.
-```js
-function Personne(nom) {
-  this.nom = nom;
-  this.salutation = function() {
-    alert('Bonjour ! Je m\'appelle ' + this.nom + '.');
-  };
-}
-
-var new_person = new Personne("Pierre")
-console.log(new_person.salutation())
-```
-
 ## Algorithmes et Exercices
 ### Trier une liste
-Quels algos de tris ?
+Une problématique très présente en informatique est de trier une liste. En JavaScript il esiste la méthode `.sort()` qui renvoie la liste triée. Mais il est important de savoir recoder le tri d'une liste. Il ya déférente méthode :
+* Tri par selection : il s'agit de boucler sur la liste pour trouver et mettre dans une nouvelle liste le plus petit élément et recommencer jusqu'a ce que toute la liste soit traitée
+* Tri par insertion : On prend le premier élément une nouvelle liste. Cette nouvelle liste est donc triée puisque de seulement 1 élément ! Ensuite on boucle sur le reste de la liste et pour chaque élément on *l'insère* dans la nouvelle liste triée. C'est à dire on le met ou tous ceux avant sont plus petit et ceux après sont plus grand.
+* Tri fusion : C'est un algorithme recursif. Si la liste est de taille 0 ou 1? c'est une liste triée. Sinon, on la coupe en deux, et on trie (par recursivité) chacune de ses moitiés. Alors, on *fusionne* à l'aide d'une double boucle while sur les deux moitièes triées. La fusioon doit permettre de reconstituer une liste triée à partir de deux listes triées.
 
-### Algorithmes classiques
+> Saurez-vous coder un de ces tris ?
+
+Schéma du tri par selction :
+![selection](images/tri-selection.png)
+
+Schéma du tri par selction :
+![fusion](images/tri-fusion.png)
+
 
 ### Exercices divers
 _EXERCICE 1_
@@ -1298,6 +1578,22 @@ La fonction ne doit utiliser qu'une seule variable
 
 _EXERCICE 5_
 Ecrire une fonction qui prends une liste et renvoie une liste inversée
+
+_EXERCICE 6_
+Écrire une fonction calculant le nombre de chiffres utilisé pour écrire
+
+> On pourra faire une solution qui utilise le type string. Mais il existe une solution qui utilise seulement le type entier.
+
+_EXERCICE 7_
+Le but est de coder une fonctiçoàn qui permet de jouer au jeu + ou -. C'est un jeu à deux jouer, le premier choisit un nombre entre 0 et 100. Le but du deuxième joueur est de trouver ce nombre. Jusqu'a ce qu'il trouve le bon nombre, le second propose un nombre. Alors le premier jouer dit "plus" si la proposition du second joueur est en dessous du nombre choisit et "-" si la proposition est au dessus du vrai nombre. Le second joueur peut alors faire une nouvelle proposition. La partie s'arrete quand la proposition est la bonne !
+
+Le but de cet exercice est de coder une fonction qui permet de jouer au jeu + ou -. La fonction fait le role du premier jour.
+
+Ecrire une fonction qui :
+* Qui initie une variable cible qui va etre un entier entre 1 et 100 comme ceci : `var cible = Math.floor(Math.random() * 100)`
+* Demande via la console à l'utilisateur de proposer un nombre (via l'instruction `prompt()` jusqu'a ce que le nombre saisi soit le bon.
+* A chaque proposition, le programme affichera "+" ou "-" comme dans les regles du jeu selon proposition.
+* Lorsque la proposition est bonne, le programme affichera "gagné" et se terminera
 
 
 # Pour aller plus loin
@@ -1327,6 +1623,68 @@ document.getElementById("myP").innerHTML = "My first paragraph.";
 ```
 
 ## Fonctionnalitées avancées
+## Le concept de classe : une usine à objet
+Une classe est une fonction qui à une structure particulière :
+* elle peut avoir des arguements
+* elle crée des attributs à un objet non déclaré appelé `this`
+* elle ne renvoie aucune valeur
+* elle s'utilise toujorus au moment de l'assignement d'une variable avec le mot clé `new`
+
+Son but est de regroupper lun certain nbombre de manipulation sur un objet vide pour en faire un objet utile.
+Par example si on veut crée des objets qui référence les voitures, on a envie qu'ils aient la même structure et les mêmes attributs. En revanche le nom de la marque sera différente
+```js
+function Voiture(nom) {
+  this.nom = nom;
+  this.roues = 4;
+}
+
+var peugeot403 = new Voiture("peugeot403");
+var peugeot403 = new Voiture("renaultclio");
+console.log(peugeot403.nom)
+console.log(peugeot403.roues)
+```
+Dans l'exemple précédent, en une ligne on a la création de touts les attributs, nom et roue. Cela utilise un argument.
+
+Enfait `new` crée un objet vide `this` appelle la fonction écrite aprés `new` et affecte la valeur de `this` à la fin de l'execution de la fonction à la variable avant  `new`.
+
+C'est très utile pour avoir des objets ayant la meme structure.
+
+Et comme c'est une fonction, on peut faire des Classe qui crée de sobjets specialisé en fonction des arguments fournis :
+```js
+function Vehicule(nom, roues) {
+  this.nom = nom;
+  this.roues = roues;
+  if (roues == 2) {
+    this.type = 'moto'    
+  }
+  elif (roues == 4) {
+    this.type = 'voiture' ;   
+  }
+  else {
+    this.type = 'inconnu'  ;  
+  };
+}
+
+var peugeot403 = new Vehicule("peugeot403", 4);
+var scooter = new Vehicule("piagiot", 2);
+console.log(peugeot403.type)
+console.log(scooter.type)
+```
+Dans ces manipulations, la fonction peut definir des attributs qui sont des fonctions manipulant elles-aussis `this` se seront les *méthodes* de l'objets.
+```js
+function Personne(nom) {
+  this.nom = nom;
+  this.salutation = function() {
+    alert('Bonjour ! Je m\'appelle ' + this.nom + '.');
+  };
+}
+
+var new_person = new Personne("Pierre")
+console.log(new_person.salutation())
+```
+
+Le bus des classes est de définir des famille d'objet complexe mais facilement utilisable grâce à leur méthodes.
+
 ### Regex
 Une technique *universelle* de manipulation de chaine de charactère.
 
