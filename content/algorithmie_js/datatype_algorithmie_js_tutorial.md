@@ -279,581 +279,6 @@ x += y;
 > Exercice : Quel est le type de x ?
 
 
-## Types
-### Généralitées
-On a commencé à en parler.
-
-En informatique, un type de donnée, ou simplement un type, définit la nature des valeurs que peut prendre une donnée, ainsi que les opérateurs qui peuvent lui être appliqués.
-
-On a par exemple vu que l'effet des opérateurs dépendait du type des variable auquel on les applique.
-
-Le type des variables est définit au moment de l'assignement de la valeur. Les litéraux ont leur type dans la façon dont ils sont écrit. Les autres variable ont le type résultant lors de l'assignation comme résultat des opérations entre valeur qui lui est assigné (ou comme sortie d'une fonction).
-
-```js
-var w, x, y, z;
-w = '2';
-x = 3;
-y = w + x;
-z = yu + 'hello'
-```
-Dans l'exemple précédent `'hello'` et `'2'` et donc directement `w` sont de type string (chaine de caractère), `3` et donc directement `x` sont de type number.
-
-En JavaScript il y à 6 types réels, c'est à dire de résultat qui peuvent être donné par l'instruction `typeof`
-* string : `'xxxx'`
-* number : `xxxx`
-* boolean : `true` et `false`
-* undefined : le type d'une variable déclaré mais non assigné
-* function : quelquechose qui peut être *appellé*, c'est à dire qui s'utilise de cette façon `xxx(...)`
-* object : tout le reste en JavaScript est de typeof object
-
-On a déjà parlé des 3 premiers types mais on va les détailler, le 4e permet simplement de faire le lien entre déclaration et assignement.
-
-Le type "function" est à concept à part entière qui sera traité plus tard.
-
-Le type "object" regroupe tous le reste !
-Enfait ce type peut etre vu comme une grande famille qui contient des sous-type :
-* les lites (que l'on verra dans ce chapitre)
-* les objets décrits (que l'on verra dans ce chapitre)
-* les objets qui sont le résultat de fonctions particulières qu'on appelle "Classe" (on verra le cas de Date dans ce chapitre). On peut voire les Classes comme des usines à objets. Le concept sera traité plus tard
-
-On peut transforer volontairement les valeurs du type string au type number (si c'est une string de nombre) et vice vers ça
-```js
-var a, b, c, d;
-a = 12;
-b = String(a);
-c = '12';
-d = Number(a);
-console.log(typeof a);
-console.log(typeof b);
-console.log(typeof c);
-console.log(typeof d);
-```
-
-En plus de l'effet des opérateurs sur les variables, le type définit les *méthodes* que l'on peut appliquer aux variables. Une méthode est une fonction (voir section fonction) propre au type, et que seule les variables de ce type peuvent utiliser.
-
-On écrit : `variable.methode(argument1, argument2, ...)`.
-
-Une méthode (comme une fonction) est un miçni programme qui va s'éfectuer lorsque on l'appel (utilisation de `()`) et qui peut parfois retourner une nouvelle valeur.
-
-```js
-var a, b;
-a = 'Hello world';
-b = a.substr(0, 5);
-console.log(b);
-console.log(typeof a);
-console.log(typeof b);
-```
-> `substr` est une méthode du type `string` il renvoie une sous-partie de la chaine de charactère qui utilise la méthode
-> Et oui ! `log` est une méthode de la variable spéciale `console` ! C'est le programme qui crée l'affichage.
-
-Les string, number, boolean, liste ont leur méthodes définit dont on va voir les plus importantes dans ce chapitre.
-Les méthodes des `object` sont définit dans l'objet décrit ou dans la Classe qui l'a créé. On ne verra que le cas utile de `Date`
-
-
-### number
-Ce premier type de valeur, on l'a déjà vu, ce sont tous les nombres ou chiffres, qu’il soit positif, négatif, entier ou à virgule.
-
-Pour affecter une valeur de type Number à une variable, on n’utilise ni guillemet ni apostrophe.
-
-***Faites attention*** : *lorsque nous codons nous utilisons toujours des notations anglo-saxonnes, ce qui signifie qu’il faut remplacer nos virgules par des points pour les nombres décimaux.*
-
-```js
-var x = 25;
-var y = -75;
-var z = 3.14;
-```
-
-### string
-Le type de valeurs String va représenter les chaînes de caractères, c’est-à-dire les textes.
-
-Si l’on veut stocker une chaîne de caractères dans une variable, il faut entourer notre chaîne par des apostrophes ou des guillemets.
-
-Ce sont justement ces apostrophes ou guillemets qui vont indiquer au JavaScript que l’on stocke une valeur de type String.
-
-```js
-var prenom = "Jacques";
-var nom = "Martin";
-var sexe = "Homme";
-```
-
-Au niveau des apostrophes / guillemets, vous pouvez choisir les uns ou les autres selon votre préférence.
-
-Cependant, si la valeur stockée contient elle même des apostrophes ou des guillemets, il faudra les échapper au moyen d’un antislash selon ce que vous aurez choisi pour entourer la valeur comme ceci :
-
-```js
-var prenom = "Je m'appelle Pierre";
-var nom = 'On me surnomme "Pierrot"';
-```
-
-Même un nombre sera considéré comme étant de type String, c’est-à-dire comme une chaîne de caractères si on l’entoure de guillemets ou d’apostrophes.
-
-Faites bien attention à cela, car ça va avoir une grande influence sur les manipulations que l’on va pouvoir faire sur telle ou telle variable !
-
-```js
-var x = 25;
-var y = "25";
-// x  et y n'ont pas le même type
-```
-
-
-
-**Opérations sur les chaînes de caractères**
-
-***La concaténation***
-
-Concaténer signifie tout simplement mettre bout à bout deux chaînes de caractères afin d’en former une troisième, nouvelle.
-
-Concaténer, c’est donc « additionner » des chaînes de caractères.
-
-En JavaScript, on va pouvoir concaténer grâce à l’opérateur « + ».
-
-Evidemment, nous allons pouvoir appliquer cet opérateur directement à nos variables afin de concaténer leurs contenus respectifs.
-
-
-
-Par exemple,
-
-```js
-var prenom = "Pierre", espace = ' ', nom = "Dupont";
-var moi = prenom + espace + nom;
-// moi est égal à "Pierre Dupont"
-
-var sport = "courir";
-var hobbie = "J'aime " + sport;
-// hobbie est égal à "J'aime courir"
-```
-
-
-
-***Attention***: *Si l’on tente « d’additionner » un nombre et une chaîne de caractères, tout ce qu’il y a derrière la chaîne de caractères sera également considéré comme une chaine de caractères par le JavaScript.*
-
-```js
-var x = 4 + 2 + "1"; //61
-var y = "1" + 2 + 4; //124
-var z = 2 + "un" + 4; // 2un4
-```
-
-**Méthode sur les chaînes de caractères**
-
-Obtenir la longueur d'une chaîne
-Pour obtenir la longueur d'une chaîne (c'est-à-dire le nombre de caractères qui la composent, qu'on appelle également sa taille), il suffit de lui ajouter.length. On obtient la longueur sous la forme d'une valeur entière.
-
-```js
-console.log("ABC".length); // 3
-console.log("Je suis une chaîne".length); // 18
-```
-
-Bien entendu,.length peut être appliqué sur des variables de type chaîne. Son résultat peut être stocké dans une variable en vue d'une utilisation ultérieure.
-
-```js
-const mot = "Kangourou";
-const longueurMot = mot.length; // longueurMot contient la valeur 9
-console.log(longueurMot); // 9
-```
-La syntaxe qui consiste à utiliser un point (.) entre la chaîne de caractères et le motlength s'appelle la notation pointée.
-
-Convertir une chaîne en minuscules ou en majuscules
-Une valeur de type chaîne peut être convertie en minuscules en lui ajoutant.toLowerCase(). De même, on peut lui ajouter `.toUpperCase()` pour la convertir en majuscules. Ces méthodes renvoient toutes deux une nouvelle chaîne.
-
-```js
-const motInitial = "Bora-Bora";
-console.log(motInitial.toLowerCase());  // "bora-bora"
-console.log(motInitial.toUpperCase());  // "BORA-BORA"
-console.log(motInitial);  // "Bora-Bora"
-```
-La méthode `substr`
-```js
-var browser = 'Mozilla';
-
-console.log(browser.substr(1, 2)); // expected output: "oz"
-```
-
-Il est essentiel de comprendre que la chaîne initiale n'est pas modifiée par ces méthodes, ni par aucune autre méthode appelée sur une chaîne de caractères. Toutes les opérations applicables aux chaînes de caractères ne modifient JAMAIS la chaîne initiale, mais renvoient de nouvelles chaînes. Une fois créée, une chaîne de caractères JavaScript ne peut plus être modifiée. On dit qu'elle est immuable (en anglais : immutable).
-
-On peut également manipuler les chaines comme une succession de charactère. Avec une boucle for :
-```js
-const prenom = "Odile";
-for (const lettre of prenom) {
-  console.log(lettre);
-}
-```
-
-** Rechercher dans une chaîne **
-Il arrive fréquemment qu'on souhaite rechercher des valeurs à l'intérieur d'une chaîne de caractères. JavaScript propose plusieurs solutions pour cela.
-
-La méthode  `indexOf()`  prend en paramètre la sous-chaîne recherchée. Si cette valeur est présente dans la chaîne, elle renvoie l'indice de sa première occurrence. Sinon, elle renvoie -1.
-
-```js
-const chanson = "Honky Tonk Women";
-console.log(chanson.indexOf("onk")); // 1
-console.log(chanson.indexOf("Onk")); // -1 (à cause du O)
-```
-Vous pouvez également utiliser les méthodes  `startsWith()`  et  `endsWith()`  pour rechercher une valeur au début ou à la fin de la chaîne. Ces deux méthodes renvoient  true  ou  false  selon que la valeur soit trouvée ou non. Attention, elles sont sensibles à la casse.
-
-```js
-const chanson = "Honky Tonk Women";
-
-console.log(chanson.startsWith("Honk")); // true
-console.log(chanson.startsWith("honk")); // false
-console.log(chanson.startsWith("Tonk")); // false
-
-console.log(chanson.endsWith("men")); // true
-console.log(chanson.endsWith("Men")); // false
-console.log(chanson.endsWith("Tonk")); // false
-```
-
-
-**Décomposer une chaîne en sous-parties**
-Une chaîne de caractères est parfois composée de plusieurs sous-parties séparées par un caractère particulier (point, tiret, point-virgule, etc). Dans ce cas, on peut obtenir toutes ces parties à l'aide de la méthode  split(). Elle prend en paramètre le séparateur et renvoie un tableau contenant les sous-parties.
-
-```js
-const plusieursprenoms = "Yann,Kevin,Justin";
-for (const prenom of plusieursprenoms.split(",")) {
-  console.log(lettre);
-}
-```
-
-```js
-const mois = "Jan,Fev,Mar,Avr,Mai,Jun,Jul,Aou,Sep,Oct,Nov,Dec";
-```
-> Exercice : ecrivez un programme qui affiche à partir de mois, seulement les mois commençant par la lettre "M"
-
-
-### Boolean
-Une variable en JavaScript peut encore stocker une valer de type Boolean, c’est-à-dire un booléen.
-
-Un booléen, en algèbre, est une valeur binaire (soit 0, soit 1). En informatique, un booléen va être soit la valeur true (vrai), soit la valeur false (faux).
-
-Ce type de valeur peut sembler plus compliqué à appréhender à première vue. Pas d’inquiétude, nous allons souvent l’utiliser par la suite car il va nous être très utile pour effectuer des tests et vérifier si une condition est vérifiée (true) ou non (false).
-
-Une nouvelle fois, faites bien attention : pour qu’une variable stocke bien un booléen, il faut lui faire stocker la valeur true ou false, sans guillemets ou apostrophes.
-
-Si vous rajoutez des guillemets ou des apostrophes, la variables stockera alors la chaîne de caractères true ou la chaîne de caractères false.
-
-
-```js
-var a = true;
-var b = false;
-
-var c = "true";
-// c n'est pas un booléen mais une chaîne de caractère
-```
-
-
-### liste
-On dit parfois *array* en anglais ou encore *tableau* dans certains language. Il s'agit d'un objet constitué d'une succession de valeur.
-
-Imaginez que vous souhaitiez informatiser la liste de toutes les capitales d'Europe. Une première solution serait de créer une variable par ville, comme dans l'exemple suivant.
-
-```js
-const ville1 = "Paris";
-const ville2 = "Rome";
-const ville3 = "Berlin";
-// ...
-```
-Si vous êtes géographe, vous risquez rapidement de vous retrouver avec un grand nombre de variables dans votre programme. Pire, toutes ces variables sont entièrement indépendantes. Il n'existe aucun moyen pour, par exemple, afficher la liste complète des villes ou rechercher une ville dans la liste.
-
-On pourrait stocker toutes les velles dans une unique chaîne de caractères, en choisissant un caractère pour délimiter les titres.
-
-```js
-const films = "Paris - Rome - Berlin";
-```
-Mais la chaine de charactère serait compliquée à manipuler.
-
-Pour ça ont crée une liste :
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-```
-
-On crée un tableau à l'aide d'une paire de crochets  []  . Tout ce qui se trouve entre les crochets correspond au contenu du tableau. Les différents éléments stockés sont séparés par des virgules.
-
-Avec JavaScript, on peut stocker dans un tableau des éléments de différents types, comme dans l'exemple ci-dessous.
-
-```js
-const tableau = ["Bonjour", 7, true];
-```
-
-> Astuce : on nomme les tableaux avec un s à la fin du nom de la variable.
-
-#### taille
-Le nombre d'éléments stockés dans un tableau est appelé sa taille. Voici comment l'obtenir.
-
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-console.log(villes.length); // 3
-
-```
-La taille d'un tableau s'obtient en lui applicant la propriété (après un .) `length` sans parenthèse. Bien entendu, cette propriété renvoie 0 dans le cas d'un tableau vide (sans aucun élément).
-
-```js
-const tableauVide = []; // Création d'un tableau vide
-
-console.log(tableauVide.length); // 0
-```
-
-#### Accéder à un élément d'un tableau
-Chaque élément présent dans un tableau est identifié par un numéro, appelé son indice (index en anglais). On peut représenter graphiquement un tableau comme un ensemble de cases, chacune stockant une valeur spécifique et associée à un indice. Voici comment on pourrait représenter le tableau `villes`.
-
-L'accès à un élément s'effectue en plaçant cet indice entre crochets, comme dans l'exemple ci-dessous.
-
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-console.log(villes[0]); // "Paris"
-console.log(villes[1]); // "Rome"
-console.log(villes[2]); // "Berlin"
-```
-L'indice du premier élément d'un tableau est 0 et non 1 comme on aurait pu s'y attendre. Le plus grand indice utilisable est donc égal à la taille du tableau - 1.
-
-Utiliser un indice invalide pour accéder à un élément d'un tableau JavaScript renvoie la valeur spécialeundefined.
-
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-console.log(villes[3]); // undefined : le dernier indice valide est 2
-```
-
-#### Parcourir un tableau
-Il existe plusieurs solutions pour parcourir un tableau élément par élément.
-
-La première consiste à utiliser la boucle `for` que vous connaissez déjà. L'exemple ci-dessous permet d'afficher la liste des films présents dans le tableau.
-
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-for (let i = 0; i < villes.length; i++) {
-  console.log(villes[i]);
-}
-```
-
-La seconde est une utilisation du `for` spécifique à l'aide du mots `of` :
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-for (const ville of villes) {
-  console.log(ville);
-}
-```
-Le `of` dans la declaration du for permet de faire un for avec un compteur de boucle un peru special qui est en réalité successivement (et dans l'ordre) chaque élément de la liste après le `for`
-
-> Exercice : Coder une fonction qui prend une liste et renvoie la liste "à l'envers".
-
-
-#### Methodes de manipulatioon
-
-**Ajouter un élément dans un tableau**
-Ajoutons les villes Madrid et Lisbonne à notre liste :
-
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-villes.push("Madrid"); // Ajoute la ville à la fin du tableau
-villes.unshift("Lisbonne"); // Ajoute la ville au début du tableau
-
-console.log(villes);
-```
-
-L'ajout d'un nouvel élément dans un tableau se fait avec la méthode :
-* `push()` Elle prend en paramètre l'élément à insérer, qui est ajouté à la fin du tableau.
-* `unshift()`. Elle permet d'ajouter l'élément au début du tableau.
-
-
-On peut supprimer le premier et le dernier élément d'un tableau grâce à la méthode  pop().
-
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-villes.pop(); // Supprime le dernier élément
-villes.shift(); // Supprime le premier élément
-
-console.log(villes.length); // 1
-console.log(villes[2]); // undefined
-```
-
-Une autre méthode de suppression, `splice()`, permet de supprimer plusieurs éléments d'un coup. Son premier paramètre est l'indice à partir duquel supprimer, et le second est le nombre d'éléments à supprimer.
-
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-villes.splice(0, 1); // Supprime 1 element à partir de l'indice 0
-console.log(villes.length); // 2
-console.log(villes[0]); // "VRome"
-console.log(villes[1]); // "Berlin"
-```
-
-#### Autres méthodes
-`join()`
-```js
-const villes = ["Paris", "Rome, "Berlin"];
-
-var villes_string = villes.join(' - ');
-console.log(villes_string); // "Paris - Rome - Berlin"
-```
-Qui est en fait la méthode inverse de la méthode split de la chaine de charactère.
-
-Split coupe à l'aide d'un symbole la chaine de charactère en une liste de chaine de charactère et split, réunis une liste de chaines de charactères en une chaine de charactère en inserrant un symbole entre les éléments.
-
-La concatenation de liste.
-
-On peut ajouter une liste à la suite d'une autre. Pour cela on appelle la méthode `concat` sur la première liste et elle prend en argument la suivante.
-
-```js
-var myGirls = ["Cecilie", "Lone"];
-var myBoys = ["Emil", "Tobias", "Linus"];
-var myChildren = myGirls.concat(myBoys);
-console.log(myChildren)
-```
-
-> Exercice : Ecrire une fonction qui prend en entrée une liste et un entier n, et qui renvoit une liste étant n fois la répétition de la liste en entrée.
-
-
-### Objets décrit
-
-Voici la représentation JavaScript d'un stylo à bille Bic qui écrit en bleu.
-```js
-const stylo = {
-  type: "bille",
-  couleur: "bleu",
-  marque: "Bic"
-};
-```
-Le éléments avant les `:` sont les attributs ou parfois appelé propriété. On y accère de la façon suivante :
-```js
-const stylo = {
-  type: "bille",
-  couleur: "bleu",
-  marque: "Bic"
-};
-
-console.log(stylo.type); // "bille"
-console.log(stylo.couleur); // "bleu"
-console.log(stylo.marque); // "Bic"
-```
-L'accès à une propriété d'un objet est une expression qui produit une valeur. On peut inclure ces accès dans d'autres expressions plus complexes. Voici par exemple comment afficher les caractéristiques du stylo en une seule ligne.
-
-Une fois un objet créé, on peut modifier les valeurs de ses propriétés avec la syntaxe `monObjet.maPropriete = nouvelleValeur`.
-```js
-const stylo = {
-  type: "bille",
-  couleur: "bleu",
-  marque: "Bic"
-};
-
-// Modification de la propriété "couleur"
-stylo.couleur = "rouge";
-
-// "J'écris avec un stylo bille rouge de marque Bic"
-console.log(`J'écris avec un stylo ${stylo.type} ${stylo.couleur} de marque ${stylo.marque}`);
-```
-
-JavaScript offre même la possibilité d'ajouter dynamiquement de nouvelles propriétés à un objet déjà créé.
-```js
-const stylo = {
-  type: "bille",
-  couleur: "bleu",
-  marque: "Bic"
-};
-
-// Ajout de la propriété "prix"
-stylo.prix = "2.5";
-
-// "Mon stylo coûte 2.5 euros"
-console.log(`Mon stylo coûte ${stylo.prix} euros`);
-```
-
-L'objet null est l'objet qui n'a rien ! Pas d'attributs, pas de méthode, rien... Il est comme undefined, mais c'est quand meme un objet.
-```js
-typeof undefined           // undefined
-typeof null                // object
-
-null === undefined         // false
-null == undefined          // true
-```
-
-#### Méthode
-A la différente d'un objet bien défini comme celui des listes que l'on a vu, dans un objet, générique, on définit nous même ses méthodes.
-
-Prenons un exemple en créant un objet représentant un personnage de jeux video :
-```js
-const aurora = {
-  nom: "Aurora",
-  sante: 150,
-  force: 25
-};
-```
-Aurora est représentée par un objet `aurora` ayant trois propriétés : `nom`, `sante` et `force`. Elles ont chacune une valeur et, ensemble, définissent l'état de notre personnage à un instant donné.
-
-Maintenant, Aurora va vire une  aventure :
-```js
-const aurora = {
-  nom: "Aurora",
-  sante: 150,
-  force: 25
-};
-
-// "Aurora a 150 points de vie et 25 en force"
-console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
-
-console.log("Aurora est blessée par une flèche");
-aurora.sante = aurora.sante - 20;
-console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
-
-console.log("Aurora trouve un bracelet de force");
-aurora.force = aurora.force + 10;
-console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
-
-// "Aurora a 130 points de vie et 35 en force"
-console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
-```
-On voit que l'instruction `console.log('${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force');` est répété, enfait c''est une maniopulatiçon de l'objet que l'on va etre amené à faire souvent. On prefere donc creer une *méthode*, c'est a dire une fonction interne à lobjet qui va faire l'instruction :
-```js
-const aurora = {
-  nom: "Aurora",
-  sante: 150,
-  force: 25,
-
-  // Renvoie la description du personnage
-  decrire() {
-    return `${this.nom} a ${this.sante} points de vie et ${this.force} en force`;
-  }
-};
-
-// "Aurora a 150 points de vie et 25 en force"
-console.log(aurora.decrire());
-```
-L'objet  aurora  possède à présent une nouvelle propriété nommée  decrire. La valeur de cette propriété est une fonction qui renvoie la description du personnage sous forme textuelle. Le résultat de l'exécution est exactement le même que précédemment.
-
-Une propriété dont la valeur est une fonction est appelée une méthode. Une méthode permet de définir une action pour un objet. On dit également qu'une méthode ajoute à cet objet un comportement.
-
-Un nouveau mot-clé y apparaît :  this  . Il est défini automatiquement par JavaScript à l'intérieur d'une méthode et représente l'objet sur lequel la méthode a été appelée.
-
-La méthode  decrire()  ne prend plus de personnage en paramètre : elle utilise  this  pour accéder aux propriétés de l'objet sur lequel elle a été appelée.
-
-
-On peut aussi creer une méthode qui nous dit si le personnage est en vie.
-```js
-const aurora = {
-  nom: "Aurora",
-  sante: 150,
-  force: 25,
-
-  // Renvoie la description du personnage
-  decrire() {
-    return `${this.nom} a ${this.sante} points de vie et ${this.force} en force`;
-  },
-
-  isAlive() {
-    return this.sante > 0;
-  }
-};
-
-// "Aurora a 150 points de vie et 25 en force"
-console.log(aurora.isAlive());
-aurora.sante -= 200
-console.log(aurora.isAlive());
-```
-
 ## Statements
 On appelle statement les mots clés réservé du langage qui servent à donner des instructions particulière à l'ordinateur dans le déroulement du programme.
 Il s'agit de série d'instructions comme celles que l'on a déjà vu (déclaration, assignation, opérations) mais utilisé dans un contexte particulier :
@@ -925,7 +350,8 @@ if (time < 10) {
   greeting = "Good evening";
 }
 ```
-> Exercice : Vous avez une variable `gender` qui vaut "homme" ou "femme", une variable `birth_year` qui est l'année de naissance, une variable `birth_month` qui est le mois de naissance en toute lettre et une variable `zipcode` du code postale. Créer une variable `sécu` qui prévoit les 7 premiers chiffres de la carte vitale.
+> Exercice : Vous avez une variable `gender` qui vaut "homme" ou "femme", une variable `birth_year` qui est l'année de naissance, une variable `birth_month` qui est le mois de naissance en toute lettre et une variable `zipcode` du code postale. Créer une variable `sécu` qui prévoit les 7 premiers chiffres de la carte vitale. On devra utiliser la méthode `substr` des chaines de charactère. Voire section chaine de charactère de type.
+
 
 ### Boucles
 
@@ -1546,6 +972,582 @@ console.log(multiplication(2, 3))
 > Exercice : Recoder avec une fonction recursive, la puissance n d'un nombre a que vous aviez obtenus à l'aide d'une boucle.
 
 
+## Types
+### Généralitées
+On a commencé à en parler.
+
+En informatique, un type de donnée, ou simplement un type, définit la nature des valeurs que peut prendre une donnée, ainsi que les opérateurs qui peuvent lui être appliqués.
+
+On a par exemple vu que l'effet des opérateurs dépendait du type des variable auquel on les applique.
+
+Le type des variables est définit au moment de l'assignement de la valeur. Les litéraux ont leur type dans la façon dont ils sont écrit. Les autres variable ont le type résultant lors de l'assignation comme résultat des opérations entre valeur qui lui est assigné (ou comme sortie d'une fonction).
+
+```js
+var w, x, y, z;
+w = '2';
+x = 3;
+y = w + x;
+z = yu + 'hello'
+```
+Dans l'exemple précédent `'hello'` et `'2'` et donc directement `w` sont de type string (chaine de caractère), `3` et donc directement `x` sont de type number.
+
+En JavaScript il y à 6 types réels, c'est à dire de résultat qui peuvent être donné par l'instruction `typeof`
+* string : `'xxxx'`
+* number : `xxxx`
+* boolean : `true` et `false`
+* undefined : le type d'une variable déclaré mais non assigné
+* function : quelquechose qui peut être *appellé*, c'est à dire qui s'utilise de cette façon `xxx(...)`
+* object : tout le reste en JavaScript est de typeof object
+
+On a déjà parlé des 3 premiers types mais on va les détailler, le 4e permet simplement de faire le lien entre déclaration et assignement.
+
+Le type "function" est à concept à part entière qui sera traité plus tard.
+
+Le type "object" regroupe tous le reste !
+Enfait ce type peut etre vu comme une grande famille qui contient des sous-type :
+* les lites (que l'on verra dans ce chapitre)
+* les objets décrits (que l'on verra dans ce chapitre)
+* les objets qui sont le résultat de fonctions particulières qu'on appelle "Classe" (on verra le cas de Date dans ce chapitre). On peut voire les Classes comme des usines à objets. Le concept sera traité plus tard
+
+On peut transforer volontairement les valeurs du type string au type number (si c'est une string de nombre) et vice vers ça
+```js
+var a, b, c, d;
+a = 12;
+b = String(a);
+c = '12';
+d = Number(a);
+console.log(typeof a);
+console.log(typeof b);
+console.log(typeof c);
+console.log(typeof d);
+```
+
+En plus de l'effet des opérateurs sur les variables, le type définit les *méthodes* que l'on peut appliquer aux variables. Une méthode est une fonction (voir section fonction) propre au type, et que seule les variables de ce type peuvent utiliser.
+
+On écrit : `variable.methode(argument1, argument2, ...)`.
+
+Une méthode (comme une fonction) est un miçni programme qui va s'éfectuer lorsque on l'appel (utilisation de `()`) et qui peut parfois retourner une nouvelle valeur.
+
+```js
+var a, b;
+a = 'Hello world';
+b = a.substr(0, 5);
+console.log(b);
+console.log(typeof a);
+console.log(typeof b);
+```
+> `substr` est une méthode du type `string` il renvoie une sous-partie de la chaine de charactère qui utilise la méthode
+> Et oui ! `log` est une méthode de la variable spéciale `console` ! C'est le programme qui crée l'affichage.
+
+Les string, number, boolean, liste ont leur méthodes définit dont on va voir les plus importantes dans ce chapitre.
+Les méthodes des `object` sont définit dans l'objet décrit ou dans la Classe qui l'a créé. On ne verra que le cas utile de `Date`
+
+
+### number
+Ce premier type de valeur, on l'a déjà vu, ce sont tous les nombres ou chiffres, qu’il soit positif, négatif, entier ou à virgule.
+
+Pour affecter une valeur de type Number à une variable, on n’utilise ni guillemet ni apostrophe.
+
+***Faites attention*** : *lorsque nous codons nous utilisons toujours des notations anglo-saxonnes, ce qui signifie qu’il faut remplacer nos virgules par des points pour les nombres décimaux.*
+
+```js
+var x = 25;
+var y = -75;
+var z = 3.14;
+```
+
+### string
+Le type de valeurs String va représenter les chaînes de caractères, c’est-à-dire les textes.
+
+Si l’on veut stocker une chaîne de caractères dans une variable, il faut entourer notre chaîne par des apostrophes ou des guillemets.
+
+Ce sont justement ces apostrophes ou guillemets qui vont indiquer au JavaScript que l’on stocke une valeur de type String.
+
+```js
+var prenom = "Jacques";
+var nom = "Martin";
+var sexe = "Homme";
+```
+
+Au niveau des apostrophes / guillemets, vous pouvez choisir les uns ou les autres selon votre préférence.
+
+Cependant, si la valeur stockée contient elle même des apostrophes ou des guillemets, il faudra les échapper au moyen d’un antislash selon ce que vous aurez choisi pour entourer la valeur comme ceci :
+
+```js
+var prenom = "Je m'appelle Pierre";
+var nom = 'On me surnomme "Pierrot"';
+```
+
+Même un nombre sera considéré comme étant de type String, c’est-à-dire comme une chaîne de caractères si on l’entoure de guillemets ou d’apostrophes.
+
+Faites bien attention à cela, car ça va avoir une grande influence sur les manipulations que l’on va pouvoir faire sur telle ou telle variable !
+
+```js
+var x = 25;
+var y = "25";
+// x  et y n'ont pas le même type
+```
+
+
+
+**Opérations sur les chaînes de caractères**
+
+***La concaténation***
+
+Concaténer signifie tout simplement mettre bout à bout deux chaînes de caractères afin d’en former une troisième, nouvelle.
+
+Concaténer, c’est donc « additionner » des chaînes de caractères.
+
+En JavaScript, on va pouvoir concaténer grâce à l’opérateur « + ».
+
+Evidemment, nous allons pouvoir appliquer cet opérateur directement à nos variables afin de concaténer leurs contenus respectifs.
+
+
+
+Par exemple,
+
+```js
+var prenom = "Pierre", espace = ' ', nom = "Dupont";
+var moi = prenom + espace + nom;
+// moi est égal à "Pierre Dupont"
+
+var sport = "courir";
+var hobbie = "J'aime " + sport;
+// hobbie est égal à "J'aime courir"
+```
+
+
+
+***Attention***: *Si l’on tente « d’additionner » un nombre et une chaîne de caractères, tout ce qu’il y a derrière la chaîne de caractères sera également considéré comme une chaine de caractères par le JavaScript.*
+
+```js
+var x = 4 + 2 + "1"; //61
+var y = "1" + 2 + 4; //124
+var z = 2 + "un" + 4; // 2un4
+```
+
+**Méthode sur les chaînes de caractères**
+
+Obtenir la longueur d'une chaîne
+Pour obtenir la longueur d'une chaîne (c'est-à-dire le nombre de caractères qui la composent, qu'on appelle également sa taille), il suffit de lui ajouter.length. On obtient la longueur sous la forme d'une valeur entière.
+
+```js
+console.log("ABC".length); // 3
+console.log("Je suis une chaîne".length); // 18
+```
+
+Bien entendu,.length peut être appliqué sur des variables de type chaîne. Son résultat peut être stocké dans une variable en vue d'une utilisation ultérieure.
+
+```js
+const mot = "Kangourou";
+const longueurMot = mot.length; // longueurMot contient la valeur 9
+console.log(longueurMot); // 9
+```
+La syntaxe qui consiste à utiliser un point (.) entre la chaîne de caractères et le motlength s'appelle la notation pointée.
+
+Convertir une chaîne en minuscules ou en majuscules
+Une valeur de type chaîne peut être convertie en minuscules en lui ajoutant.toLowerCase(). De même, on peut lui ajouter `.toUpperCase()` pour la convertir en majuscules. Ces méthodes renvoient toutes deux une nouvelle chaîne.
+
+```js
+const motInitial = "Bora-Bora";
+console.log(motInitial.toLowerCase());  // "bora-bora"
+console.log(motInitial.toUpperCase());  // "BORA-BORA"
+console.log(motInitial);  // "Bora-Bora"
+```
+La méthode `substr`
+```js
+var browser = 'Mozilla';
+
+console.log(browser.substr(1, 2)); // expected output: "oz"
+```
+
+Il est essentiel de comprendre que la chaîne initiale n'est pas modifiée par ces méthodes, ni par aucune autre méthode appelée sur une chaîne de caractères. Toutes les opérations applicables aux chaînes de caractères ne modifient JAMAIS la chaîne initiale, mais renvoient de nouvelles chaînes. Une fois créée, une chaîne de caractères JavaScript ne peut plus être modifiée. On dit qu'elle est immuable (en anglais : immutable).
+
+On peut également manipuler les chaines comme une succession de charactère. Avec une boucle for :
+```js
+const prenom = "Odile";
+for (const lettre of prenom) {
+  console.log(lettre);
+}
+```
+
+** Rechercher dans une chaîne **
+Il arrive fréquemment qu'on souhaite rechercher des valeurs à l'intérieur d'une chaîne de caractères. JavaScript propose plusieurs solutions pour cela.
+
+La méthode  `indexOf()`  prend en paramètre la sous-chaîne recherchée. Si cette valeur est présente dans la chaîne, elle renvoie l'indice de sa première occurrence. Sinon, elle renvoie -1.
+
+```js
+const chanson = "Honky Tonk Women";
+console.log(chanson.indexOf("onk")); // 1
+console.log(chanson.indexOf("Onk")); // -1 (à cause du O)
+```
+Vous pouvez également utiliser les méthodes  `startsWith()`  et  `endsWith()`  pour rechercher une valeur au début ou à la fin de la chaîne. Ces deux méthodes renvoient  true  ou  false  selon que la valeur soit trouvée ou non. Attention, elles sont sensibles à la casse.
+
+```js
+const chanson = "Honky Tonk Women";
+
+console.log(chanson.startsWith("Honk")); // true
+console.log(chanson.startsWith("honk")); // false
+console.log(chanson.startsWith("Tonk")); // false
+
+console.log(chanson.endsWith("men")); // true
+console.log(chanson.endsWith("Men")); // false
+console.log(chanson.endsWith("Tonk")); // false
+```
+
+
+**Décomposer une chaîne en sous-parties**
+Une chaîne de caractères est parfois composée de plusieurs sous-parties séparées par un caractère particulier (point, tiret, point-virgule, etc). Dans ce cas, on peut obtenir toutes ces parties à l'aide de la méthode  split(). Elle prend en paramètre le séparateur et renvoie un tableau contenant les sous-parties.
+
+```js
+const plusieursprenoms = "Yann,Kevin,Justin";
+for (const prenom of plusieursprenoms.split(",")) {
+  console.log(lettre);
+}
+```
+
+```js
+const mois = "Jan,Fev,Mar,Avr,Mai,Jun,Jul,Aou,Sep,Oct,Nov,Dec";
+```
+> Exercice : ecrivez un programme qui affiche à partir de mois, seulement les mois commençant par la lettre "M"
+
+
+### Boolean
+Une variable en JavaScript peut encore stocker une valer de type Boolean, c’est-à-dire un booléen.
+
+Un booléen, en algèbre, est une valeur binaire (soit 0, soit 1). En informatique, un booléen va être soit la valeur true (vrai), soit la valeur false (faux).
+
+Ce type de valeur peut sembler plus compliqué à appréhender à première vue. Pas d’inquiétude, nous allons souvent l’utiliser par la suite car il va nous être très utile pour effectuer des tests et vérifier si une condition est vérifiée (true) ou non (false).
+
+Une nouvelle fois, faites bien attention : pour qu’une variable stocke bien un booléen, il faut lui faire stocker la valeur true ou false, sans guillemets ou apostrophes.
+
+Si vous rajoutez des guillemets ou des apostrophes, la variables stockera alors la chaîne de caractères true ou la chaîne de caractères false.
+
+
+```js
+var a = true;
+var b = false;
+
+var c = "true";
+// c n'est pas un booléen mais une chaîne de caractère
+```
+
+
+### liste
+On dit parfois *array* en anglais ou encore *tableau* dans certains language. Il s'agit d'un objet constitué d'une succession de valeur.
+
+Imaginez que vous souhaitiez informatiser la liste de toutes les capitales d'Europe. Une première solution serait de créer une variable par ville, comme dans l'exemple suivant.
+
+```js
+const ville1 = "Paris";
+const ville2 = "Rome";
+const ville3 = "Berlin";
+// ...
+```
+Si vous êtes géographe, vous risquez rapidement de vous retrouver avec un grand nombre de variables dans votre programme. Pire, toutes ces variables sont entièrement indépendantes. Il n'existe aucun moyen pour, par exemple, afficher la liste complète des villes ou rechercher une ville dans la liste.
+
+On pourrait stocker toutes les velles dans une unique chaîne de caractères, en choisissant un caractère pour délimiter les titres.
+
+```js
+const villes = "Paris - Rome - Berlin";
+```
+Mais la chaine de charactère serait compliquée à manipuler.
+
+Pour ça ont crée une liste :
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+```
+
+On crée un tableau à l'aide d'une paire de crochets  []  . Tout ce qui se trouve entre les crochets correspond au contenu du tableau. Les différents éléments stockés sont séparés par des virgules.
+
+Avec JavaScript, on peut stocker dans un tableau des éléments de différents types, comme dans l'exemple ci-dessous.
+
+```js
+const tableau = ["Bonjour", 7, true];
+```
+
+> Astuce : on nomme les tableaux avec un s à la fin du nom de la variable.
+
+#### taille
+Le nombre d'éléments stockés dans un tableau est appelé sa taille. Voici comment l'obtenir.
+
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+console.log(villes.length); // 3
+
+```
+La taille d'un tableau s'obtient en lui applicant la propriété (après un .) `length` sans parenthèse. Bien entendu, cette propriété renvoie 0 dans le cas d'un tableau vide (sans aucun élément).
+
+```js
+const tableauVide = []; // Création d'un tableau vide
+
+console.log(tableauVide.length); // 0
+```
+
+#### Accéder à un élément d'un tableau
+Chaque élément présent dans un tableau est identifié par un numéro, appelé son indice (index en anglais). On peut représenter graphiquement un tableau comme un ensemble de cases, chacune stockant une valeur spécifique et associée à un indice. Voici comment on pourrait représenter le tableau `villes`.
+
+L'accès à un élément s'effectue en plaçant cet indice entre crochets, comme dans l'exemple ci-dessous.
+
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+console.log(villes[0]); // "Paris"
+console.log(villes[1]); // "Rome"
+console.log(villes[2]); // "Berlin"
+```
+L'indice du premier élément d'un tableau est 0 et non 1 comme on aurait pu s'y attendre. Le plus grand indice utilisable est donc égal à la taille du tableau - 1.
+
+Utiliser un indice invalide pour accéder à un élément d'un tableau JavaScript renvoie la valeur spécialeundefined.
+
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+console.log(villes[3]); // undefined : le dernier indice valide est 2
+```
+
+#### Parcourir un tableau
+Il existe plusieurs solutions pour parcourir un tableau élément par élément.
+
+La première consiste à utiliser la boucle `for` que vous connaissez déjà. L'exemple ci-dessous permet d'afficher la liste des villes présents dans le tableau.
+
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+for (let i = 0; i < villes.length; i++) {
+  console.log(villes[i]);
+}
+```
+
+La seconde est une utilisation du `for` spécifique à l'aide du mots `of` :
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+for (const ville of villes) {
+  console.log(ville);
+}
+```
+Le `of` dans la declaration du for permet de faire un for avec un compteur de boucle un peru special qui est en réalité successivement (et dans l'ordre) chaque élément de la liste après le `for`
+
+> Exercice : Coder une fonction qui prend une liste et renvoie la liste "à l'envers".
+
+
+#### Methodes de manipulatioon
+
+**Ajouter un élément dans un tableau**
+Ajoutons les villes Madrid et Lisbonne à notre liste :
+
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+villes.push("Madrid"); // Ajoute la ville à la fin du tableau
+villes.unshift("Lisbonne"); // Ajoute la ville au début du tableau
+
+console.log(villes);
+```
+
+L'ajout d'un nouvel élément dans un tableau se fait avec la méthode :
+* `push()` Elle prend en paramètre l'élément à insérer, qui est ajouté à la fin du tableau.
+* `unshift()`. Elle permet d'ajouter l'élément au début du tableau.
+
+
+On peut supprimer le premier et le dernier élément d'un tableau grâce à la méthode  pop().
+
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+villes.pop(); // Supprime le dernier élément
+villes.shift(); // Supprime le premier élément
+
+console.log(villes.length); // 1
+console.log(villes[2]); // undefined
+```
+
+Une autre méthode de suppression, `splice()`, permet de supprimer plusieurs éléments d'un coup. Son premier paramètre est l'indice à partir duquel supprimer, et le second est le nombre d'éléments à supprimer.
+
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+villes.splice(0, 1); // Supprime 1 element à partir de l'indice 0
+console.log(villes.length); // 2
+console.log(villes[0]); // "VRome"
+console.log(villes[1]); // "Berlin"
+```
+
+#### Autres méthodes
+`join()`
+```js
+const villes = ["Paris", "Rome", "Berlin"];
+
+var villes_string = villes.join(' - ');
+console.log(villes_string); // "Paris - Rome - Berlin"
+```
+Qui est en fait la méthode inverse de la méthode split de la chaine de charactère.
+
+Split coupe à l'aide d'un symbole la chaine de charactère en une liste de chaine de charactère et split, réunis une liste de chaines de charactères en une chaine de charactère en inserrant un symbole entre les éléments.
+
+La concatenation de liste.
+
+On peut ajouter une liste à la suite d'une autre. Pour cela on appelle la méthode `concat` sur la première liste et elle prend en argument la suivante.
+
+```js
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);
+console.log(myChildren)
+```
+
+> Exercice : Ecrire une fonction qui prend en entrée une liste et un entier n, et qui renvoit une liste étant n fois la répétition de la liste en entrée.
+
+
+### Objets décrit
+
+Voici la représentation JavaScript d'un stylo à bille Bic qui écrit en bleu.
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+```
+Le éléments avant les `:` sont les attributs ou parfois appelé propriété. On y accère de la façon suivante :
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+
+console.log(stylo.type); // "bille"
+console.log(stylo.couleur); // "bleu"
+console.log(stylo.marque); // "Bic"
+```
+L'accès à une propriété d'un objet est une expression qui produit une valeur. On peut inclure ces accès dans d'autres expressions plus complexes. Voici par exemple comment afficher les caractéristiques du stylo en une seule ligne.
+
+Une fois un objet créé, on peut modifier les valeurs de ses propriétés avec la syntaxe `monObjet.maPropriete = nouvelleValeur`.
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+
+// Modification de la propriété "couleur"
+stylo.couleur = "rouge";
+
+// "J'écris avec un stylo bille rouge de marque Bic"
+console.log(`J'écris avec un stylo ${stylo.type} ${stylo.couleur} de marque ${stylo.marque}`);
+```
+
+JavaScript offre même la possibilité d'ajouter dynamiquement de nouvelles propriétés à un objet déjà créé.
+```js
+const stylo = {
+  type: "bille",
+  couleur: "bleu",
+  marque: "Bic"
+};
+
+// Ajout de la propriété "prix"
+stylo.prix = "2.5";
+
+// "Mon stylo coûte 2.5 euros"
+console.log(`Mon stylo coûte ${stylo.prix} euros`);
+```
+
+L'objet null est l'objet qui n'a rien ! Pas d'attributs, pas de méthode, rien... Il est comme undefined, mais c'est quand meme un objet.
+```js
+typeof undefined           // undefined
+typeof null                // object
+
+null === undefined         // false
+null == undefined          // true
+```
+
+#### Méthode
+A la différente d'un objet bien défini comme celui des listes que l'on a vu, dans un objet, générique, on définit nous même ses méthodes.
+
+Prenons un exemple en créant un objet représentant un personnage de jeux video :
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25
+};
+```
+Aurora est représentée par un objet `aurora` ayant trois propriétés : `nom`, `sante` et `force`. Elles ont chacune une valeur et, ensemble, définissent l'état de notre personnage à un instant donné.
+
+Maintenant, Aurora va vire une  aventure :
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25
+};
+
+// "Aurora a 150 points de vie et 25 en force"
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+
+console.log("Aurora est blessée par une flèche");
+aurora.sante = aurora.sante - 20;
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+
+console.log("Aurora trouve un bracelet de force");
+aurora.force = aurora.force + 10;
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+
+// "Aurora a 130 points de vie et 35 en force"
+console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
+```
+On voit que l'instruction `console.log('${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force');` est répété, enfait c''est une maniopulatiçon de l'objet que l'on va etre amené à faire souvent. On prefere donc creer une *méthode*, c'est a dire une fonction interne à lobjet qui va faire l'instruction :
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25,
+
+  // Renvoie la description du personnage
+  decrire() {
+    return `${this.nom} a ${this.sante} points de vie et ${this.force} en force`;
+  }
+};
+
+// "Aurora a 150 points de vie et 25 en force"
+console.log(aurora.decrire());
+```
+L'objet  aurora  possède à présent une nouvelle propriété nommée  decrire. La valeur de cette propriété est une fonction qui renvoie la description du personnage sous forme textuelle. Le résultat de l'exécution est exactement le même que précédemment.
+
+Une propriété dont la valeur est une fonction est appelée une méthode. Une méthode permet de définir une action pour un objet. On dit également qu'une méthode ajoute à cet objet un comportement.
+
+Un nouveau mot-clé y apparaît :  this  . Il est défini automatiquement par JavaScript à l'intérieur d'une méthode et représente l'objet sur lequel la méthode a été appelée.
+
+La méthode  decrire()  ne prend plus de personnage en paramètre : elle utilise  this  pour accéder aux propriétés de l'objet sur lequel elle a été appelée.
+
+
+On peut aussi creer une méthode qui nous dit si le personnage est en vie.
+```js
+const aurora = {
+  nom: "Aurora",
+  sante: 150,
+  force: 25,
+
+  // Renvoie la description du personnage
+  decrire() {
+    return `${this.nom} a ${this.sante} points de vie et ${this.force} en force`;
+  },
+
+  isAlive() {
+    return this.sante > 0;
+  }
+};
+
+// "Aurora a 150 points de vie et 25 en force"
+console.log(aurora.isAlive());
+aurora.sante -= 200
+console.log(aurora.isAlive());
+```
+
+
 ## Algorithmes et Exercices
 ### Trier une liste
 Une problématique très présente en informatique est de trier une liste. En JavaScript il esiste la méthode `.sort()` qui renvoie la liste triée. Mais il est important de savoir recoder le tri d'une liste. Il ya déférente méthode :
@@ -1556,9 +1558,11 @@ Une problématique très présente en informatique est de trier une liste. En Ja
 > Saurez-vous coder un de ces tris ?
 
 Schéma du tri par selction :
+
 ![selection](images/tri-selection.png)
 
 Schéma du tri par selction :
+
 ![fusion](images/tri-fusion.png)
 
 
