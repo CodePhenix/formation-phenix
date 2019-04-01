@@ -1,6 +1,6 @@
 # JSON, un language de communication
 
-Dans cette petite leçon, nous allons parler d'un language dont le but et de permettre la communication entre un client et un serveur.
+Dans cette petite leçon, nous allons parler d'un language dont le but est de permettre la communication entre un client et un serveur.
 
 Ce language est nommé le `JSON` que l'on peut pronnocer (prenez un accent Texan, ça peut aider ;-) ) `Jay-son` ou `Gi-son`.
 
@@ -18,15 +18,19 @@ Chaque monde possède son propre rôle :
 
 Malheureusement, dans cet univers impitoyable, notre client et notre serveur ne savent pas communiquer ensemble.
 
-Pour communiquer ensemble il leur manque deux choses : un moyen de communication (`un protocole`) et un language commun pour échanger des informations.
+Pour communiquer ensemble ils leur manquent deux choses : un moyen de communication (`un protocole`) et un language commun pour échanger des informations.
 
-Internet fourni énormément de types de protocoles différent pour aider à la communication entre différentes entitées. Par exemple, nous utilisons le protocole `SMTP` ou `IMAP` pour l'envoi de mail, nous pouvons utiliser le protocole de communication `FTP` pour le tranfert de fichier.
+Internet fourni énormément de types de protocoles différents pour aider à la communication entre différentes entitées. 
+
+Par exemple, nous utilisons le protocole `SMTP` ou `IMAP` pour l'envoi de mail, nous pouvons utiliser le protocole de communication `FTP` pour le tranfert de fichier.
 
 Dans notre cas, le protocole le plus utilisé pour faire communiquer un client et un serveur est nommé le protocole `HTTP`.
 
 ### Hummm, http ? Cette chose me dit quelque chose ...
 
-Et oui effectivement ! Si vous regarder le début des URL de chaque site internet elles commencent toutes par ceci `http://`. C'est grâce à ce préfixe que notre client indique au serveur qu'il souhaite communiquer avec lui via le protocole `http`. Super non ? :-)
+Et oui effectivement ! Si vous regarder le début des URL de chaque site internet elles commencent toutes par ceci `http://`. 
+
+C'est grâce à ce préfixe que notre client indique au serveur qu'il souhaite communiquer avec lui via le protocole `http`. Super non ? :-)
 
 ## JSON, viens ici !
 
@@ -42,7 +46,7 @@ Historiquement, chacun de ces univers utilisaient leur(s) propre(s) language(s).
 
 Pour le client, c'est actuellement encore simple car il ne comprend que le HTML, le CSS et le JavaScript tandis que le serveur c'est un peu plus compliqué.
 
-En effet, un serveur peut connaitre tout un panel différent de language comme par exemple : le `PHP`, le `Go` , le `F#` et même depuis quelques années le `JavaScript`.
+En effet, un serveur peut comprendre tout un panel différent de language comme par exemple : le `PHP`, le `Go` , le `F#` et même depuis quelques années le `JavaScript`.
 
 **Quoi il connait aussi le JavaScript, alors bingo probème résolu**
 
@@ -52,7 +56,7 @@ Oui effectivement, nous pouvons utiliser le JavaScript comme language de program
 
 Cependant, en tant que développeur, nous aimons séparer des choses ayant des objectifs différents et, pour rappel, le client et le serveur ont réellement deux objectifs distincts :
 
-l'un s'occupe de la présentation des données, tandis que l'autre va s'occuper du traitement de celles-ci.
+L'un s'occupe de la présentation des données, tandis que l'autre va s'occuper du traitement de celles-ci.
 
 ### Donc alors quel est ce language de communication miracle ?
 
@@ -60,7 +64,7 @@ Et bien je vous en parle depuis le début, nous allons pouvoir utiliser le `JSON
 
 Pour illustrer un exemple de communication entre un client et un serveur imaginons cette scène illustrée ici :
 
-![client-serveur](cient-serveur-101.png).
+![client-serveur](cient-serveur-101.png)
 
 Cet illustration simplfie grandement la manière dont se passe la communication client/serveur mais elle permet de se faire une première image mentale.
 
