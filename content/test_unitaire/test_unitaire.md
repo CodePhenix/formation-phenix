@@ -2,7 +2,11 @@
 
 ## De la fatalité du temps,
 
-Bonjour jeune développeur! Depuis quelques semaines, vous avez certainement déjà écrit un nombre significatif de ligne de codes. Avec ces lignes de codes vous avez formé des fonctions et ces fonctions ont peut-être déja formées des fonctionalitées entières et plus tard, je n'en doute pas, certaines de des fonctionalitées formeront de réelles applications!
+Bonjour jeune développeur!
+
+Depuis quelques semaines, vous avez certainement déjà écrit un nombre significatif de ligne de code.
+
+Avec ces lignes de codes vous avez formé des fonctions et ces fonctions ont peut-être déja formées des fonctionalitées entières et plus tard, je n'en doute pas, certaines de ces fonctionalitées formeront de réelles applications!
 
 Cependant dans cette aventure nous avons un ennemi qui revient souvent dans nos vies : le temps.
 
@@ -12,17 +16,22 @@ Une loi immuable est aussi valable en informatique :
 
 Ce qui fonctionne aujourd'hui ne fonctionnera pas nécessairement demain.
 
-Ici rien de magique ou de dramatique. Un logiciel évolue au fil du temps en lui ajoutant/ratirant du code et malheureusement il est fort probable que ces modifications peuvent engendrées des bugs et autres type de joyeusetées.
+Ici rien de magique ou de dramatique :
 
-Evidement, nous le faisons jamais de manière volontaire mais parfois en touchant à cet endroit, nous allons cassé quelque chose à l'autre bout du logiciel. Ceci parfois même sans nous en rendre compte.
+Un logiciel évolue au fil du temps en lui ajoutant/ratirant du code et malheureusement il est fort probable que ces modifications peuvent engendrers des bugs et autres type de joyeusetés.
 
-**Peut-être qu'il existe des moyens d'éviter au maximum cette fatalité ?**
+Evidement, nous le faisons jamais de manière volontaire mais parfois en touchant à un endroit, nous allons cassé quelque chose à l'autre bout du logiciel.
+Ceci parfois même sans nous en rendre compte.
 
-Et oui tout à fait! Aujourd'hui nous allons voir un moyen assez populaire dans le monde de l'informatique à savoir : les test unitaire.
+**Sapristi! Peut-être qu'il existe des moyens d'éviter au maximum cette fatalité ?**
+
+Et oui tout à fait!
+
+Aujourd'hui nous allons voir un moyen assez populaire dans le monde de l'informatique pour éviter ce scénario catastrophe: les test unitaire.
 
 ## Test unitaire, késako ?
 
-Pour éviter que notre code ne fonctionne plus ou soit dégrarder au fil du temps, cela serait assez chouette d'avoir quelque chose qui nous garantisse régulièrement que celui-ci fonctionne.
+Pour éviter que notre code ne fonctionne plus ou soit dégrardé au fil du temps, cela serait assez chouette d'avoir quelque chose qui nous garantisse régulièrement que celui-ci fonctionne.
 
 Encore mieux, cela serait choutte que l'on soit averti que, en cas de modification de notre code, celui-ci risque de casser quelque chose ailleurs dans le logiciel.
 
@@ -32,13 +41,13 @@ Superbe idée vous trouvez pas?
 
 ....
 
-Non en fait, c'est pas terrible comme idée car cette solution risque vite de montrer ces limites.
+Non en fait, ce n'est pas terrible comme idée car cette solution risque vite de montrer ces limites.
 
-Pour un site internet d'une seule page et de 5 bouttons, c'est encore faisable mais imaginer faire ça pour un site comme `mozilla.org` ou encore `microsoft.com` qui comprennent chacun des centaines de pages contenant elles-mêmes des dizaines de fonctionnalitées chacunes, cela devient vite inconsevable.
+Pour un site internet d'une seule page et de 5 bouttons, c'est encore faisable mais imaginé faire ça pour un site comme `mozilla.org` ou encore `microsoft.com` qui comprennent chacun des centaines de pages contenant elles-mêmes des dizaines de fonctionnalitées chacunes, cela devient vite inconsevable.
 
 Et c'est là que le magie des `tests unitaires` intervient.
 
-**Un test unitaire c'est un bout de code qui va tester notre code.**
+Petite édtion expresse : **Un test unitaire c'est un bout de code qui va tester notre code.**
 
 Hola, du calme, en réalité un test unitaire ne va pas tester à chaque fois toutes les lignes de notre code. Le but d'un test, est de tester une toute petite portion de notre code (une unité).
 
@@ -50,7 +59,7 @@ Un test unitaire va avoir plusieures objectifs :
 
 - nous aider à déterminer ce que l'on attend de notre unité de code
 - executer notre code
-- vérifier que le résultat obtenu correspond bien à ce que l'on attendais
+- vérifier que le résultat obtenu correspond bien à ce que l'on attendait
 
 Maintenant que vous avez la base théorique en matière de test un peu de pratique.
 
@@ -74,11 +83,13 @@ Pour la suite de la leçon, nous allons utiliser une `library` développée par 
 
 Pour vous faciliter la vie, je ne vais pas vous demander de télécharger ou de récupérer quoi que ce soit car j'ai crée pour vous un petit projet qui contient déjà tout ce dont nous avons besoin dont cette fameuse librairie.
 
+Si vous ne le trouvez pas, n'hésitez pas à le demander à votre formateur.
+
 Donc ouvrons le projet `test-unitaire-101` et que voyons nous?
 
 Normalement vous devriez voir une organisation de fichier qui devrait ressembler à ceci :
 
-![orga_projet](orga_projet.png).
+![orga_projet](orga_projet.png)
 
 Concentrons nous sur le dossier nommé `src`.
 
@@ -86,19 +97,19 @@ Il contient 2 fichiers : `easy.js` et `easy.test.js`
 
 `easy.js` a pour objectif de contenir tout le code que l'on souhaite tester.
 
-Tandis que `easy.test.js` va contenir tous le code qui viendront tester toutes les fonctions que l'on souhaite tester.
+Tandis que `easy.test.js` va contenir tout le code qui viendra tester toutes les fonctions que l'on souhaite tester.
 
 Pour commencer ouvrons `easy.js` et qu'y voyons nous ?
 
-A l'intérieur de ce fichier se trouve une fonction nommée `inverseChaineDeCaractere` qui prend un `mot` en paramètre (probablement une `chaîne de caractère`, `string` en anglais) et qui retourne ce même `mot` après lui avoir appliqué un traitement.
+A l'intérieur de ce fichier se trouve une fonction nommée `inverseChaineDeCaractere` .
 
-Ce traitement est dans cet ordre :
+Nous le voyons, cette fonction prend un `mot` en paramètre (probablement une `chaîne de caractère`, `string` en anglais) et retourne ce même `mot` après lui avoir appliqué un traitement.
+
+Décortiquons ce traitement :
 
 - on sépare chaque lettre de cette chaine de caractère en utilisant la fonction `split`
-- on inverse (`reverse`, en anglais) l'ordre du tableau de lettre obtenu grâce à la chaîne de caractère `split`
+- on inverse (`reverse`, en anglais) l'ordre du tableau de lettres obtenu grâce à la chaîne de caractère `split`
 - on recolle toutes les lettres inversées ensemble pour reconstituer la chaîne de caractère avec le fonction `join` (joindre).
-
--
 
 ```javascript
 export const inverseChaineDeCaractere = function(mot) {
@@ -121,9 +132,11 @@ Ici nous importons la fonction `inverseChaineDeCaractere` depuis la fichier `./e
 
 Ligne 3 : commence un bloc de fonction qui se termine à la ligne 8. Ce bloc de fonction est lié à la fonction `it`
 
-`it` est une fonction super importante car c'est elle qui va indiquer à `jest` qu'il doit exécuter les fonctions comprise dans ce bloc de fonction. Ici le `it` indique à `Jest` qu'il doit exécuter la fonction `inverseChaineDeCaractere` placée à la ligne 6;
+`it` est une fonction super importante car c'est elle qui va indiquer à `jest` qu'il doit exécuter les fonctions comprise dans ce bloc de fonction.
 
-Aussi `it`, a un autre rôle fondamental : il permet d'expliquer à quoi sert notre test.
+Ici le `it` indique à `Jest` qu'il doit exécuter la fonction `inverseChaineDeCaractere` placée à la ligne 6;
+
+Aussi `it`, a un autre rôle fondamentalle : il permet d'expliquer à quoi sert notre test.
 
 Regardez le premier paramètre de la fonction `it`. Ce paramètre est la chaîne de caractère `"devrait retourner une chaine de caractère avec les lettres inversées"` qui exprime ce que l'on va trouver dans ce test.
 
@@ -133,7 +146,7 @@ En ligne 4 : nous avons le mot que l'on passera en paramètre de notre fonction 
 
 En ligne 5 : nous avons le résultat que nous souhaitons obtenir de notre fonction
 
-En ligne 6 : nous avons l'éxcution de notre fonction
+En ligne 6 : nous avons l'éxcution de la fonction que nous souhaitons tester.
 
 En ligne 7 : nous vérifions (`expect`) que le `résultat` obtenu est `égal` (`equal`, en anglais) au résultat attendu.
 
@@ -167,7 +180,9 @@ et regardez le résultat :
 
 ![jest-success](jest-success-tour-france.png).
 
-La description du test à changée! Bon revenons en arrière car maintenant le description du test ne nous aide pas du tout à comprendre ce que fait le test.
+La description du test à changée!
+
+Bon revenons en arrière car maintenant le description du test ne nous aide pas du tout à comprendre ce que fait le test.
 
 ### Experience 2
 
@@ -188,9 +203,11 @@ Modifions donc le `ola` pour qu'il redevienne `olleh`
 
 Super, nous avons donc un premier test qui fonctionne.
 
-Cependant ce test ne vérifie que un cas particulier de notre fonction et ce cas est plutôt un cas "tout va bien".
+Cependant ce test ne vérifie qu' un cas particulier de notre fonction et ce cas est plutôt un cas "tout va bien".
 
-En effet nous simulons, un cas où l'on passe comme paramètre à notre fonction une chaine de caractère mais maitenant imaginons qu'un développeur peu scrupuleux passe un nombre à notre fonction.
+En effet nous simulons, un cas où l'on passe comme paramètre à notre fonction une chaine de caractère, ce qu'à priori devons passer à notre fonction pour qu'elle fonctionne.
+
+Maitenant imaginons qu'un développeur peu scrupuleux passe un nombre à notre fonction.
 
 Que ce passerait-il ?
 
@@ -217,13 +234,19 @@ Et vous devriez obtenir cet écran d'erreur dans votre terminal :
 
 Ici `Jest` nous indique que notre test à échoué et nous explique pourquoi : `mot.split is not a function`
 
-En français, Jest nous dit qu'il ne peut pas appliquer la fonction `split` sur notre mot. En effet, rappelez-vous dans notre test nous avons passer un nombre comme paramètre. Or, `split` est une fonction qui ne s'applique uniquement aux chaînes de caractères.
+En français, Jest nous dit qu'il ne peut pas appliquer la fonction `split` sur notre mot.
 
-Comment pouvons nous corriger cette erreur? Peut-être que nous pourrions modifier la fonction `inverseChaineDeCaractere` pour qu'elle puisse aussi gérer des chiffres en paramètres.
+En effet, rappelez-vous dans notre test nous avons passer un nombre comme paramètre. Or, `split` est une fonction qui ne s'applique qu'uniquement aux chaînes de caractères. Comme notre paramètre est un nombre, Javascript net peut éxécuter la fonction sur le paramètre.
+
+Comment pouvons nous corriger cette erreur?
+
+Peut-être que nous pourrions modifier la fonction `inverseChaineDeCaractere` pour qu'elle puisse aussi gérer des chiffres en paramètres.
 
 Cependant, nous devons rester cohérant.
 
-Ici nous écrivons une fonction qui retourn une chaine de caractère. Cela serait étrange qu'un coup elle retourne une chaîne de caractère et qu'un autre coup elle retourne un nombre.
+Ici nous écrivons une fonction qui retourn une chaine de caractère.
+
+Cela serait étrange qu'un coup elle retourne une chaîne de caractère et qu'un autre coup elle retourne un nombre.
 
 Comme ceci par exemple :
 
@@ -231,15 +254,17 @@ Comme ceci par exemple :
 nombre -> chaine de caractère | nombre // peu cohérant
 ```
 
-Si nous souhaitons écrire une fonction qui retourne un nombre après avoir pris en parmètre un nombre
+Une autre solution serait p-e d'écrire une fonction dédiée qui prendre un nombre et retournerait un nombre. Un peu comme ceci.
 
 ```
 nombre -> nombre
 ```
 
+Cependant, cela nous ferait écrire une autre fonction. Nous préférons adapter la fonction existante.
+
 Je pense que ici le mieux serait donc de faire en sorte que notre fonction puisse accepter un nombre ou une chaîne de caractère et retourne une chaîne de caractère.
 
-Comme ceci :
+Elle aurait donc cette signature :
 
 ```
 nombre|chaine de caractère -> nombre
@@ -269,9 +294,77 @@ Après avoir modifier cette fonction relancer les tests.
 
 Normalement tout devrait fonctionner :-).
 
+## Un peu plus de pratique.
+
+Juste en bas de ce paragraphe, vous trouverez quelque fonctions assez simple. Le but pour vous serait d'écrire les tests correpondant aux fonctions.
+
+Pour réaliser l'exercice, réecrivez les fonctions dans le fichier `easy.js` et les tests dans le fichier `easy.test.js`
+
+Vous trouverez en bas de chaque fonction, un exemple de test pour vous aider.
+
+```javascript
+const motContientLettre = function(mot, lettreAchercher) {
+  const tableauLettre = mot.split("");
+
+  // la fonction indexOf va chercher la position d'un élément (index)
+  // dans un tableau. Si l'élement n'existe pas, la fonction retourne -1, sinon
+  // elle retoure la position de l'élement (un chiffre)
+  return tableauLettre.indexOf(lettreAchercher) !== -1;
+};
+```
+
+Un test possible :
+
+```javascript
+it("doit retourner true", function() {
+  const mot = "hello";
+  const resultat = motContientLettre(mot, "h");
+
+  expect(resultat).toBe(true);
+});
+```
+
+Ici vous pouvez écrire un test qui garanti que la fonction retourne `false` si la lettre que l'on recherche ne se trouve pas dans la mot passé en paramètre.
+
+```javascript
+// Cette fonction va compter le nombre de fois qu'un mot contient
+// la lettre que l'on recherche
+const compteLesLettres = function(mot, lettreACompter) {
+  let nombreOccurence = 0;
+  const tabelauLettres = mot.split("");
+
+  for (let index = 0; index < tabelauLettres.length; index++) {
+    if (tableauLettre[index] === lettreACompter) {
+      nombreOccurence += 1;
+    }
+
+    return nombreOccurence;
+  }
+};
+```
+
+Exemple de test :
+
+```javascript
+it("doit retourner 2", function() {
+  const mot = "papa";
+  const resultat = compteLesLettres(mot, "a");
+
+  expect(resultat).toEqual(2);
+});
+```
+
+Ici vous pouvez écrire des tests pour
+
+- vérifier que la fonction retourne bien 0 si le mot ne contient pas la lettre que l'on recherche
+
+- compte bien le nombre d'espace si notre mot en contient (par exemple, avec "j'apprend les test", la fonction devrait retourner le chiffre 3)
+
 ## Conclusion
 
-Voilà grâce à cette leçon, vous avez fait vos premiers pas dans le monde des test unitaire. Un test unitaire est donc un moyen de vérifier que notre code fonctionne aussi bien dans les cas "tout va bien" que dans les cas limites (passage d'un nombre à la place d'une chaîne de caractère en paramètre de fonction, par exemple). Un test unitaire, permet aussi de detecter si un changement dans le code n'a pas d'impact caché.
+Voilà grâce à cette leçon, vous avez fait vos premiers pas dans le monde des test unitaire. Un test unitaire est donc un moyen de vérifier que notre code fonctionne aussi bien dans les cas "tout va bien" que dans les cas limites (passage d'un nombre à la place d'une chaîne de caractère en paramètre de fonction, par exemple).
+
+Un test unitaire, permet aussi de detecter si un changement dans le code n'a pas d'impact caché.
 
 En développement informatique, les tests sont primordiaux car il garantisse que le code fonctionne et à été pensé pour durer.
 
@@ -280,3 +373,7 @@ Il est donc réellement importante de se familiriser avec la rédaction de test 
 Les tests unitaires ne sont qu'un type de test ayant des objectifs précis. Il existe d'autres types de tests comme les test d'intégration ou des test dit `end to end` qui vont vérifié qu'un ensemble de fonctionalitées intéragissent entre elles.
 
 Il serait trop long d'expliquer ces tests ici mais je ne doute pas que vous en entendrez parler d'ici peu de temps.
+
+Dans tous les cas, dans peu de temps, nous allons appronfondire ce sujet dense que sont les tests !
+
+A très vite donc !
