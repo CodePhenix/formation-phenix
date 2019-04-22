@@ -222,7 +222,7 @@ Il nous dit que `div` est un objet de type `HTMLDivElement`. En clair, c'est un 
 
 ### `getElementsByTagName()`
 
-> Faites très attention dans le nom de cette méthode : il y a un « s » à `Elements`. C'est une source fréquente d'erreurs.
+> Faites très **attention** dans le nom de cette méthode : il y a un « s » à `Elements`. C'est une source fréquente d'erreurs.
 
 
 
@@ -340,15 +340,13 @@ Comme dit précédemment, un élément HTML est un objet qui appartient à plusi
 Pour interagir avec les attributs, l'objet `Element` nous fournit deux méthodes, `getAttribute()` et `setAttribute()` permettant respectivement de récupérer et d'éditer un attribut. Le premier paramètre est le nom de l'attribut, et le deuxième, dans le cas de `setAttribute()` uniquement, est la nouvelle valeur à donner à l'attribut. Petit exemple :
 
 ```html
-<body>
-    <a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié dynamiquement</a>
-    <script>
-        var link = document.getElementById('myLink');
-        var href = link.getAttribute('href'); // On récupère l'attribut « href »
-        alert(href);
-        link.setAttribute('href', 'http://www.siteduzero.com'); // On édite l'attribut « href »
-    </script>
-</body>
+<a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié dynamiquement</a>
+<script>
+    var link = document.getElementById('myLink');
+    var href = link.getAttribute('href'); // On récupère l'attribut « href »
+    alert(href);
+    link.setAttribute('href', 'http://www.siteduzero.com'); // On édite l'attribut « href »
+</script>
 ```
 
 
@@ -362,15 +360,13 @@ On commence par récupérer l'élément `myLink`, et on lit son attribut `href` 
 En fait, pour la plupart des éléments courants comme `<a>`, il est possible d'accéder à un attribut via une propriété. Ainsi, si on veut modifier la destination d'un lien, on peut utiliser la propriété `href`, comme ceci :
 
 ```html
-<body>
-    <a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié dynamiquement</a>
-    <script>
-        var link = document.getElementById('myLink');
-        var href = link.href;
-        alert(href);
-        link.href = 'http://www.siteduzero.com';
-    </script>
-</body>
+<a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié dynamiquement</a>
+<script>
+    var link = document.getElementById('myLink');
+    var href = link.href;
+    alert(href);
+    link.href = 'http://www.siteduzero.com';
+</script>
 ```
 
 
@@ -382,8 +378,6 @@ Attention cependant ! Un attribut auquel on accède par le biais de la méthode 
 ```html
 <a href="/">Retour à l'accueil du site</a>
 ```
-
-
 
 
 
@@ -427,17 +421,22 @@ Toujours dans le même cas, le nom `for` est réservé lui aussi en JavaScript (
 
 Faites attention : si votre élément comporte plusieurs classes (exemple : `<a class="external red u">`) et que vous récupérez la classe avec `className`, cette propriété ne retournera pas un tableau avec les différentes classes, mais bien la chaîne « external red u », ce qui n'est pas vraiment le comportement souhaité. Il vous faudra alors couper cette chaîne avec la méthode `split()` pour obtenir un tableau, comme ceci :
 
-```js
-var classes = document.getElementById('myLink').className;
-var classesNew = [];
-classes = classes.split(' ');
-for (var i = 0, c = classes.length; i < c; i++) {
-    if (classes[i]) {
-        classesNew.push(classes[i]);
+```html
+<div id="myColoredDiv" class="blue centered home">
+    <p>Un peu de texte <a>et un lien</a></p>
+</div>
+<script>
+    var classes = document.getElementById('myColoredDiv').className;
+    var classesNew = [];
+    classes = classes.split(' ');
+    for (var i = 0, c = classes.length; i < c; i++) {
+        if (classes[i]) {
+            classesNew.push(classes[i]);
+        }
     }
-}
 
-alert(classesNew);
+    alert(classesNew);
+</script>
 ```
 
 
@@ -479,15 +478,13 @@ La propriété `innerHTML` est spéciale et demande une petite introduction. Ell
 `innerHTML` permet de récupérer le code HTML enfant d'un élément sous forme de texte. Ainsi, si des balises sont présentes,`innerHTML` les retournera sous forme de texte :
 
 ```html
-<body>
-    <div id="myDiv">
-        <p>Un peu de texte <a>et un lien</a></p>
-    </div>
-    <script>
-        var div = document.getElementById('myDiv');
-        alert(div.innerHTML);
-    </script>
-</body>
+<div id="myDiv">
+    <p>Un peu de texte <a>et un lien</a></p>
+</div>
+<script>
+    var div = document.getElementById('myDiv');
+    alert(div.innerHTML);
+</script>
 ```
 
 
@@ -540,15 +537,13 @@ La propriété `innerText` a aussi été introduite dans Internet Explorer, mais
 Le fonctionnement d'`innerText `est le même qu'`innerHTML` excepté le fait que seul le texte est récupéré, et non les balises. C'est pratique pour récupérer du contenu sans le balisage, petit exemple :
 
 ```html
-<body>
-    <div id="myDiv">
-        <p>Un peu de texte <a>et un lien</a></p>
-    </div>
-    <script>
-        var div = document.getElementById('myDiv');
-        alert(div.innerText);
-    </script>
-</body>
+<div id="myDiv">
+    <p>Un peu de texte <a>et un lien</a></p>
+</div>
+<script>
+    var div = document.getElementById('myDiv');
+    alert(div.innerText);
+</script>
 ```
 
 
@@ -570,23 +565,21 @@ Il est possible via une simple condition de tester si le navigateur prend en cha
 
 
 ```html
-<body>
-    <div id="myDiv">
-        <p>Un peu de texte <a>et un lien</a></p>
-    </div>
-    <script>
-        var div = document.getElementById('myDiv');
-        var txt = '';
-        if (div.textContent) { // « textContent » existe ? Alors on s'en sert !
-            txt = div.textContent;
-        } else if (div.innerText) { // « innerText » existe ? Alors on doit être sous IE.
-            txt = div.innerText + ' [via Internet Explorer]';
-        } else { // Si aucun des deux n'existe, cela est sûrement dû au fait qu'il n'y a pas de texte
-            txt = ''; // On met une chaîne de caractères vide
-        }
-        alert(txt);
-    </script>
-</body>
+<div id="myDiv">
+    <p>Un peu de texte <a>et un lien</a></p>
+</div>
+<script>
+    var div = document.getElementById('myDiv');
+    var txt = '';
+    if (div.textContent) { // « textContent » existe ? Alors on s'en sert !
+        txt = div.textContent;
+    } else if (div.innerText) { // « innerText » existe ? Alors on doit être sous IE.
+        txt = div.innerText + ' [via Internet Explorer]';
+    } else { // Si aucun des deux n'existe, cela est sûrement dû au fait qu'il n'y a pas de texte
+        txt = ''; // On met une chaîne de caractères vide
+    }
+    alert(txt);
+</script>
 ```
 
 
@@ -604,10 +597,6 @@ txt = div.textContent || div.innerText || '';
 
 
 #### Informations sur le noeud
-
-*WIP*
-
-
 
 `nodeType` et `nodeName` servent respectivement à vérifier le *type* d'un nœud et le *nom* d'un nœud. `nodeType` retourne un nombre, qui correspond à un type de nœud. Voici un tableau qui liste les types possibles, ainsi que leurs numéros (les types courants sont mis en gras) :
 
@@ -629,21 +618,17 @@ txt = div.textContent || div.innerText || '';
 `nodeName`, quant à lui, retourne simplement le nom de l'élément, en majuscule. Il est toutefois conseillé d'utiliser `toLowerCase()` (ou `toUpperCase()`) pour forcer un format de casse et ainsi éviter les mauvaises surprises.
 
 ```js
-var paragraph = document.getElementById('myP');
+var paragraph = document.querySelector('#myDiv p');
 
 alert(paragraph.nodeType + '\n\n' + paragraph.nodeName.toLowerCase());
 ```
 
 
 
-
-
-Changeons de problème : il faut récupérer le texte du premier enfant, et le texte contenu dans l'élément `<strong>`, mais comment faire ?
-
-Il faut soit utiliser la propriété `nodeValue` soit la propriété `data`. Si on recode le script précédent, nous obtenons ceci :
+Essayez maintenant ce morceau de code
 
 ```js
-var paragraph = document.getElementById('myP');
+var paragraph = document.querySelector('#myDiv p');
 var first = paragraph.firstChild;
 var last = paragraph.lastChild;
 
@@ -653,7 +638,7 @@ alert(last.firstChild.data);
 
 
 
-`first` contient le premier nœud, un nœud textuel. Il suffit de lui appliquer la propriété `nodeValue` (ou `data`) pour récupérer son contenu ; pas de difficulté ici. En revanche, il y a une petite différence avec notre élément `<strong>`: vu que les propriétés `nodeValue` et `data` ne s'appliquent *que* sur des nœuds textuels, il nous faut d'abord accéder au nœud textuel que contient notre élément, c'est-à-dire son nœud enfant. Pour cela, on utilise `firstChild` (et non pas `firstElementChild`), et ensuite on récupère le contenu avec `nodeValue` ou `data`.
+`first` contient le premier nœud, un nœud textuel. Il suffit de lui appliquer la propriété `nodeValue` (ou `data`) pour récupérer son contenu ; pas de difficulté ici. En revanche, il y a une petite différence avec notre élément `<a>`: vu que les propriétés `nodeValue` et `data` ne s'appliquent *que* sur des nœuds textuels, il nous faut d'abord accéder au nœud textuel que contient notre élément, c'est-à-dire son nœud enfant. Pour cela, on utilise `firstChild` (et non pas `firstElementChild`), et ensuite on récupère le contenu avec `nodeValue` ou `data`.
 
 
 
@@ -686,7 +671,7 @@ La propriété `parentNode` va nous permettre d’accéder au nœud parent d’u
 
 Cette propriété est une propriété de l’objet `Element`.
 
-La propriété`parentNode`permet d'accéder à l'élément parent d'un élément. Regardez ce code :
+La propriété `parentNode` permet d'accéder à l'élément parent d'un élément. Regardez ce code :
 
 ```html
 <blockquote>
@@ -714,24 +699,22 @@ La propriété`childNodes`retourne un tableau contenant la liste des enfants d'u
 
 
 ```html
-<body>
-    <div>
-        <p id="myP">Un peu de texte <a>et un lien</a></p>
-    </div>
+<div>
+    <p id="myP">Un peu de texte <a>et un lien</a></p>
+</div>
 
-    <script>
-        var paragraph = document.getElementById('myP');
-        var children = paragraph.childNodes;
+<script>
+    var paragraph = document.getElementById('myP');
+    var children = paragraph.childNodes;
 
-        for (var i = 0, c = children.length; i < c; i++) {
-            if (children[i].nodeType === Node.ELEMENT_NODE) { // C'est un élément HTML
-                alert(children[i].firstChild.data);
-            } else { // C'est certainement un nœud textuel
-                alert(children[i].data);
-            }
+    for (var i = 0, c = children.length; i < c; i++) {
+        if (children[i].nodeType === Node.ELEMENT_NODE) { // C'est un élément HTML
+            alert(children[i].firstChild.data);
+        } else { // C'est certainement un nœud textuel
+            alert(children[i].data);
         }
-    </script>
-</body>
+    }
+</script>
 ```
 
 Attention cependant : retenez bien qu’un nœud élément ne contient pas de texte à proprement parler selon le DOM, mais plutôt un nœud de type texte contenant une valeur qui est du texte.
@@ -753,28 +736,18 @@ Cependant, il me semblait intéressant de vous montrer cela afin que vous puissi
 Comme leur nom le laisse présager,`firstChild` et `lastChild` servent respectivement à accéder au premier et au dernier enfant d'un nœud.
 
 ```html
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Le titre de la page</title>
-</head>
+<div>
+    <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
+</div>
 
-<body>
-    <div>
-        <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
-    </div>
+<script>
+    var paragraph = document.getElementById('myP');
+    var first = paragraph.firstChild;
+    var last = paragraph.lastChild;
 
-	<script>
-        var paragraph = document.getElementById('myP');
-        var first = paragraph.firstChild;
-        var last = paragraph.lastChild;
-
-		alert(first.nodeName.toLowerCase());
-        alert(last.nodeName.toLowerCase());
-	</script>
-</body>
-</html>
+    alert(first.nodeName.toLowerCase());
+    alert(last.nodeName.toLowerCase());
+</script>
 ```
 
 
@@ -789,7 +762,7 @@ En schématisant l'élément `myP` précédent, on obtient ceci :
 
 Le premier enfant de `<p>` est un nœud textuel, alors que le dernier enfant est un élément `<strong>`.
 
-Dans le cas où vous ne souhaiteriez récupérer que les enfants qui sont considérés comme des éléments HTML (et donc éviter les nœuds **#text**par exemple), sachez qu'il existe les propriétés `firstElementChild` et `lastElementChild`. Ainsi, dans l'exemple précédent, la propriété `firstElementChild` renverrait l'élément `<a>`.
+Dans le cas où vous ne souhaiteriez récupérer que les enfants qui sont considérés comme des éléments HTML (et donc éviter les nœuds **#text** par exemple), sachez qu'il existe les propriétés `firstElementChild` et `lastElementChild`. Ainsi, dans l'exemple précédent, la propriété `firstElementChild` renverrait l'élément `<a>`.
 Malheureusement, ces deux propriétés ne sont supportées qu'à partir de la version 9 concernant Internet Explorer.
 
 
@@ -804,46 +777,30 @@ Il va donc une nouvelle fois faire bien attention à cela et particulièrement l
 
 `nextSibling `et `previousSibling` sont deux propriétés qui permettent d'accéder respectivement au nœud suivant et au nœud précédent.
 
-```html
-<body>
-    <div>
-        <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
-    </div>
+```js
+var paragraph = document.getElementById('myP');
+var first = paragraph.firstChild;
+var next = first.nextSibling;
 
-    <script>
-        var paragraph = document.getElementById('myP');
-        var first = paragraph.firstChild;
-        var next = first.nextSibling;
-
-        alert(next.firstChild.data); // Affiche « un lien »
-    </script>
-</body>
+alert(next.firstChild.data); // Affiche « un lien »
 ```
 
 
 
 Dans cet exemple, on récupère le premier enfant de `myP`, et sur ce premier enfant on utilise `nextSibling`, qui permet de récupérer l’élément `<a>`. Avec ça, il est même possible de parcourir les enfants d'un élément, en utilisant une boucle `while` :
 
-```html
-<body>
-    <div>
-        <p id="myP">Un peu de texte <a>et un lien</a></p>
-    </div>
+```js
+var paragraph = document.getElementById('myP');
+var child = paragraph.lastChild; // On prend le dernier enfant
+while (child) {
+    if (child.nodeType === Node.ELEMENT_NODE) { // C'est un élément HTML
+        alert(child.firstChild.data);
+    } else { // C'est certainement un nœud textuel
+        alert(child.data);
+    }
 
-	<script>
-        var paragraph = document.getElementById('myP');
-        var child = paragraph.lastChild; // On prend le dernier enfant
-        while (child) {
-            if (child.nodeType === Node.ELEMENT_NODE) { // C'est un élément HTML
-                alert(child.firstChild.data);
-            } else { // C'est certainement un nœud textuel
-                alert(child.data);
-            }
-
-            child = child.previousSibling; // À chaque tour de boucle, on prend l'enfant précédent
-        }
-    </script>
-</body>
+    child = child.previousSibling; // À chaque tour de boucle, on prend l'enfant précédent
+}
 ```
 
 
@@ -856,7 +813,7 @@ Tout comme pour `firstChild` et `lastChild`, sachez qu'il existe les propriété
 
 ### Attention aux noeuds vides
 
-En considérant le code HTML suivant, on peut penser que l'élément`<div>`ne contient que trois enfants`<p>`:
+En considérant le code HTML suivant, on peut penser que l'élément `<div>` ne contient que trois enfants `<p>`:
 
 ```html
 <div>
@@ -886,9 +843,9 @@ Alors que le deuxième code peut être schématisé comme ça :
 
 
 
-Heureusement, il existe une solution à ce problème ! Les attributs `firstElementChild`, `lastElementChild`, `nextElementSibling` et `previousElementSibling` ne retournent que des éléments HTML et permettent donc d'ignorer les nœuds textuels. Ils s'utilisent exactement de la même manière que les attributs de base (`firstChild`, `lastChild`, etc.). Attention, ces attributs ne sont pas supportés par les versions d'Internet Explorer antérieures à la 9.
+Heureusement, il existe une solution à ce problème ! Les attributs `firstElementChild`, `lastElementChild`, `nextElementSibling` et `previousElementSibling` ne retournent que des éléments HTML et permettent donc d'ignorer les nœuds textuels. Ils s'utilisent exactement de la même manière que les attributs de base (`firstChild`, `lastChild`, etc.). 
 
-
+> Attention, ces attributs ne sont pas supportés par les versions d'Internet Explorer antérieures à la 9.
 
 
 
@@ -913,24 +870,20 @@ Cette méthode va prendre en argument le nom de l’élément HTML que l’on so
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Le DOM HTML</title>
-    </head>
-    <body>
-        <h1 id="gros_titre">Le DOM</h1>
-        <p class="para">
-            Du texte
-        </p>
-        <p class="para">
-            Un deuxième paragraphe
-        </p>
-        
-        <script>
-        	//on crée un élément de type p
-            document.createElement('p');
-        </script>
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title>Le titre de la page</title>
+</head>
+<body>
+	<div>
+	    <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
+	</div>
+
+	<script>
+        //on crée un élément de type p
+        document.createElement('p');
+	</script>
+</body>
 </html>
 ```
 
@@ -948,34 +901,15 @@ Pour ajouter des attributs, nous allons procéder comme dans le chapitre précé
 
 
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Le DOM HTML</title>
-    </head>
-    <body>
-        <h1 id="gros_titre">Le DOM</h1>
-        <p class="para">
-            Du texte
-        </p>
-        <p class="para">
-            Un deuxième paragraphe
-        </p>
-        
-        <script>
-        	//on crée un élément de type p
-            var newPara = document.createElement('p');
-            
-            //On ajoute un attribut id à notre paragraphe
-            newPara.id = 'nouveau';
-            
-            //On crée un noeud de type texte
-            var texte = document.createTextNode("Inséré !")
-        </script>
-    </body>
-</html>
+```js
+//on crée un élément de type p
+var newPara = document.createElement('p');
+
+//On ajoute un attribut id à notre paragraphe
+newPara.id = 'nouveau';
+
+//On crée un noeud de type texte
+var texte = document.createTextNode("Inséré !")
 ```
 
 
@@ -992,40 +926,21 @@ Pour insérer notre texte dans notre élément et notre élément dans le flux d
 
 La méthode `appendChild()` va insérer un objet en tant que dernier enfant d’un autre objet. Cette méthode appartient à l’objet `Element` et va prendre le nom de l’objet à insérer en argument.
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Le DOM HTML</title>
-    </head>
-    <body>
-        <h1 id="gros_titre">Le DOM</h1>
-        <p class="para">
-            Du texte
-        </p>
-        <p class="para">
-            Un deuxième paragraphe
-        </p>
-        
-        <script>
-        	//on crée un élément de type p
-            var newPara = document.createElement('p');
-            
-            //On ajoute un attribut id à notre paragraphe
-            newPara.id = 'nouveau';
-            
-            //On crée un noeud de type texte
-            var texte = document.createTextNode("Inséré !")
-            
-            //On insère le texte dans notre paragraphe
-            newPara.appendChild(texte);
-            
-            /* On isère finalement notre élément en tant que dernier enfant de body (auquel on accède directement avec "document.body", tout simplement !) */
-            document.body.appendChild(newPara);
-        </script>
-    </body>
-</html>
+```js
+//on crée un élément de type p
+var newPara = document.createElement('p');
+
+//On ajoute un attribut id à notre paragraphe
+newPara.id = 'nouveau';
+
+//On crée un noeud de type texte
+var texte = document.createTextNode("Inséré !")
+
+//On insère le texte dans notre paragraphe
+newPara.appendChild(texte);
+
+/* On isère finalement notre élément en tant que dernier enfant de body (auquel on accède directement avec "document.body", tout simplement !) */
+document.body.appendChild(newPara);
 ```
 
 
@@ -1036,58 +951,38 @@ Ensuite, on insère notre paragraphe dans notre page. Là encore, il faut préci
 
 
 
-
-
 Parfois, on voudra insérer un élément dans un endroit précis d’une page HTML. Pour faire cela, on va pouvoir utiliser la méthode `insertBefore()`, qui va insérer un objet juste avant un élément comme son nom l’indique.
 
 Cette nouvelle méthode appartient également à l’objet `Element` et nous devons lui fournir deux arguments : l’élément à insérer et l’élément avant lequel il sera inséré.
 
-Par exemple, on peut insérer notre paragraphe `newPara` juste avant notre paragraphe qui contient le texte « Du texte ».
+Par exemple, on peut insérer notre paragraphe `newPara` juste avant notre paragraphe qui contient le texte « Un peu de texte... ».
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Le DOM HTML</title>
-    </head>
-    <body>
-        <h1 id="gros_titre">Le DOM</h1>
-        <p class="para">
-            Du texte
-        </p>
-        <p class="para">
-            Un deuxième paragraphe
-        </p>
-        
-        <script>
-        	//on crée un élément de type p
-            var newPara = document.createElement('p');
-            
-            //On ajoute un attribut id à notre paragraphe
-            newPara.id = 'nouveau';
-            
-            //On crée un noeud de type texte
-            var texte = document.createTextNode("Inséré !")
-            
-            //On insère le texte dans notre paragraphe
-            newPara.appendChild(texte);
-            
-            // On accède à notre premier paragraphe
-            var para1 = document.querySelector('.para');
-            
-            //On insère notre nouveau paragraphe juste avant
-            document.body.appendChild(newPara, para1);
-        </script>
-    </body>
-</html>
+```js
+//on crée un élément de type p
+var newPara = document.createElement('p');
+
+//On ajoute un attribut id à notre paragraphe
+newPara.id = 'nouveau';
+
+//On crée un noeud de type texte
+var texte = document.createTextNode("Inséré !")
+
+//On insère le texte dans notre paragraphe
+newPara.appendChild(texte);
+
+// On accède à notre premier paragraphe
+var para1 = document.querySelector('#myP');
+
+// On récupère le parent du premier paragraphe
+var parent = para1.parentNode;
+
+//On insère notre nouveau paragraphe juste avant
+parent.insertBefore(newPara, para1);
 ```
 
 
 
 Notre nouvel élément s’insère bien à la place voulue. Attention à ne pas oublier de bien appliquer la méthode `insertBefore()` à un objet de type element.
-
-Ici, comme notre paragraphe `para1` est un enfant direct de l’élément `body`, on applique notre méthode `insertBefore()` à cet objet JavaScript que l’on récupère grâce à `document.body`.
 
 
 
@@ -1106,36 +1001,32 @@ Nous allons donc appliquer cette méthode à partir de l’élément parent comm
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Le DOM HTML</title>
-    </head>
-    <body>
-        <h1 id="gros_titre">Le DOM</h1>
-        <p class="para">
-            Du texte
-        </p>
-        <p class="para">
-            Un deuxième paragraphe
-        </p>
-        
-        <script>
-        	/*On veut supprimer notre titre, on commence donc par y accéder */
-            var titre = document.getElementById('gros_titre');
-            
-            // On accède ensuite à l'élément parent de h1 (body)
-            var parent = document.body;
-            
-            //On supprime finalement notre titre avec removeChild
-            parent.removeChild(titre);
-        </script>
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title>Le titre de la page</title>
+</head>
+<body>
+	<div>
+	    <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
+	</div>
+
+	<script>
+        /*On veut supprimer l'élément strong, on commence donc par y accéder */
+        var element = document.querySelector('#myP strong');
+
+        // On accède ensuite à l'élément parent de strong (myP)
+        var parent = document.getElementById('myP');
+
+        //On supprime finalement notre élément avec removeChild
+        parent.removeChild(element);
+	</script>
+</body>
 </html>
 ```
 
 
 
-Comme vous pouvez l’observer, notre titre a bien été retiré de la page HTML.
+Comme vous pouvez l’observer, notre élément `strong` a bien été retiré de la page HTML.
 
 
 
@@ -1162,21 +1053,21 @@ Cette méthode va prendre deux arguments : la valeur de remplacement et le nœud
         </p>
         
         <script>
-        	// On accède à notre élément h1 en JS
-            var titre = document.getElementById('gros_titre');
+        	// On accède à notre élément strong en JS
+            var strong = document.querySelector('#myP strong');
             
-            //On accède ensuite à l'élément parent de h1 (body)
-            var parent = document.body;
+            //On accède ensuite à l'élément parent de strong (myP)
+            var parent = document.getElementById('myP');
             
             // On crée une valeur de remplacement
-            var nouveautTitre = document.createElement('h2');
+            var nouvelElement = document.createElement('span');
             
-            //On ajoute du texte et un id à notre h2
-            nouveauTitre.id = 'titre_moyen';
-            nouveauTitre.innerHTML = 'Titre modifié en JS !'
+            //On ajoute du texte et un id à notre span
+            nouvelElement.id = 'emphase-span';
+            nouvelElement.innerHTML = 'du texte modifié en JS !'
             
-            //On remplace finalement h1 par h2
-            parent.reeplaceChild(nouveauTitre, titre);
+            //On remplace finalement strong par span
+            parent.replaceChild(nouvelElement, strong);
         </script>
     </body>
 </html>
@@ -1184,17 +1075,17 @@ Cette méthode va prendre deux arguments : la valeur de remplacement et le nœud
 
 
 
-Ici, nous avons commencé par accéder à notre titre `h1` ainsi qu’à son parent. En effet, comme `replaceChild()` est une méthode de l’objet `Element`, on va devoir l'appliquer au parent de l’élément à remplacer.
+Ici, nous avons commencé par accéder à notre `strong` ainsi qu’à son parent. En effet, comme `replaceChild()` est une méthode de l’objet `Element`, on va devoir l'appliquer au parent de l’élément à remplacer.
 
-Ensuite, nous avons crée un nouvel élément `h2` et lui avons attribué un attribut `id`et du texte.
+Ensuite, nous avons crée un nouvel élément `span` et lui avons attribué un attribut `id`et du texte.
 
-Finalement, nous avons remplacé notre ancien titre `h1` par notre nouveau titre `h2`grâce à la méthode `replaceChild()`.
+Finalement, nous avons remplacé notre ancien élément `strong` par notre nouveau titre `span` grâce à la méthode `replaceChild()`.
 
 
 
 ### Cloner un élément
 
-Pour cloner un élément, rien de plus simple :`cloneNode()`. Cette méthode requiert un paramètre booléen (`true`ou`false`) : si vous désirez cloner le nœud avec (`true`) ou sans (`false`) ses enfants et ses différents attributs.
+Pour cloner un élément, rien de plus simple : `cloneNode()`. Cette méthode requiert un paramètre booléen (`true` ou `false`) : si vous désirez cloner le nœud avec (`true`) ou sans (`false`) ses enfants et ses différents attributs.
 
 Petit exemple très simple : on crée un élément`<hr />`, et on en veut un deuxième, donc on clone le premier :
 
@@ -1204,12 +1095,361 @@ var hr1 = document.createElement('hr');
 var hr2 = hr1.cloneNode(false); // Il n'a pas d'enfants…
 
 // Ici, on clone un élément existant :
-var paragraph1 = document.querySelector('.para');
+var paragraph1 = document.getElementById('myP');
 var paragraph2 = paragraph1.cloneNode(true);
 
 // Et attention, l'élément est cloné, mais pas « inséré » tant que l'on n'a pas appelé appendChild() :
 paragraph1.parentNode.appendChild(paragraph2);
 ```
+
+
+
+## Manipuler le CSS
+
+Avant de s'attaquer à la manipulation du CSS, rafraîchissons-nous un peu la mémoire :
+
+### Quelques rappels sur le CSS
+
+CSS est l'abréviation de *Cascading Style Sheets*, c'est un langage qui permet d'éditer l'aspect graphique des éléments HTML et XML. Il est possible d'éditer le CSS d'un seul élément comme nous le ferions en HTML de la manière suivante :
+
+```html
+<div style="color:red;">Le CSS de cet élément a été modifié avec l'attribut STYLE. Il n'y a donc que lui qui possède un texte de couleur rouge.</div>
+```
+
+
+
+Mais on peut tout aussi bien éditer les feuilles de style qui se présentent de la manière suivante :
+
+```css
+div {
+    color: red; /* Ici on modifie la couleur du texte de tous les éléments <div> */
+}
+```
+
+
+
+Il est de bon ton de vous le rappeler : les propriétés CSS de l'attribut  `style` sont prioritaires sur les propriétés d'une feuille de style ! Ainsi, dans le code d'exemple suivant, le texte n'est pas rouge mais bleu :
+
+```html
+<style>
+    div {
+        color: red;
+    }
+</style>
+
+<div style="color:blue;">I'm blue ! DABADIDABADA !</div>
+```
+
+
+
+Voilà tout pour les rappels sur le CSS. Oui, c'était très rapide, mais il suffisait simplement d'insister sur cette histoire de priorité des styles CSS, parce que ça va vous servir !
+
+### Éditer les styles CSS d'un élément
+
+Comme nous venons de le voir, il y a deux manières de modifier le CSS d'un élément HTML, nous allons ici aborder la méthode la plus simple et la plus utilisée : l'utilisation de la propriété  `style`. L'édition des feuilles de style ne sera pas abordée, car elle est profondément inutile en plus d'être mal gérée par de nombreux navigateurs.
+
+Alors comment accéder à la propriété `style` de notre élément ? Eh bien de la même manière que pour accéder à n'importe quelle propriété de notre élément :
+
+```js
+element.style; // On accède à la propriété « style » de l'élément « element »
+```
+
+
+
+Une fois que l'on a accédé à notre propriété, comment modifier les styles CSS ? Eh bien tout simplement en écrivant leur nom et en leur attribuant une valeur, `width` (pour la largeur) par exemple :
+
+```js
+element.style.width = '150px'; // On modifie la largeur de notre élément à 150px
+```
+
+
+
+Pensez bien à écrire l'unité de votre valeur, il est fréquent de l'oublier et généralement cela pose de nombreux problèmes dans un code !
+
+Maintenant, une petite question pour vous : comment accède-t-on à une propriété CSS qui possède un nom composé ? En JavaScript, les tirets sont interdits dans les noms des propriétés, ce qui fait que ce code ne fonctionne pas :
+
+```js
+element.style.background-color = 'blue'; // Ce code ne fonctionne pas, les tirets sont interdits
+```
+
+
+
+La solution est simple : supprimer les tirets et chaque mot suivant normalement un tiret voit sa première lettre devenir une majuscule. Ainsi, notre code précédent doit s'écrire de la manière suivante pour fonctionner correctement :
+
+```js
+element.style.backgroundColor = 'blue'; // Après avoir supprimé le tiret et ajouté une majuscule au deuxième mot, le code fonctionne !
+```
+
+
+
+Comme vous pouvez le constater, l'édition du CSS d'un élément n'est pas bien compliquée. Cependant, il y a une limitation de taille : la *lecture* des propriétés CSS !
+
+Prenons un exemple :
+
+```html
+<style type="text/css">
+    #myDiv {
+        background-color: orange;
+    }
+</style>
+
+<div id="myDiv">Je possède un fond orange.</div>
+
+<script>
+    var myDiv = document.getElementById('myDiv');
+
+    alert('Selon le JavaScript, la couleur de fond de ce <div> est : ' + myDiv.style.backgroundColor); // On affiche la couleur de fond
+</script>
+```
+
+
+
+Et on n'obtient rien ! Pourquoi ? Parce que notre code va lire uniquement les valeurs contenues dans la propriété `style`. C'est-à-dire, rien du tout dans notre exemple, car nous avons modifié les styles CSS depuis une feuille de style, et non pas depuis l'attribut `style`.
+
+En revanche, en modifiant le CSS avec l'attribut `style`, on retrouve sans problème la couleur de notre fond :
+
+```html
+<div id="myDiv" style="background-color: orange">Je possède un fond orange.</div>
+
+<script>
+    var myDiv = document.getElementById('myDiv');
+
+    alert('Selon le JavaScript, la couleur de fond de ce DIV est : ' + myDiv.style.backgroundColor); // On affiche la couleur de fond
+</script>
+```
+
+C'est gênant n'est-ce pas ? Malheureusement, on ne peut pas y faire grand-chose à partir de la propriété `style`, pour cela nous allons devoir utiliser la méthode `getComputedStyle()` !
+
+
+
+### Récupérer les propriétés CSS
+
+#### La fonction `getComputedStyle()`
+
+Comme vous avez pu le constater, il n'est pas possible de récupérer les valeurs des propriétés CSS d'un élément par le biais de la propriété  `style`  vu que celle-ci n'intègre pas les propriétés CSS des feuilles de style, ce qui nous limite énormément dans nos possibilités d'analyse… Heureusement, il existe une fonction permettant de remédier à ce problème :  `getComputedStyle()` !
+
+Cette fonction va se charger de récupérer, à notre place, la valeur de n'importe quel style CSS ! Qu'il soit déclaré dans la propriété `style`, une feuille de style ou bien même encore calculé automatiquement, cela importe peu : `getComputedStyle()` la récupérera sans problème.
+
+**Attention**, toutes les valeurs obtenues par le biais de `getComputedStyle()` ou `currentStyle` sont en lecture seule, c'est-à-dire que vous ne pourrez pas les modifier !
+
+Son fonctionnement est très simple et se fait de cette manière :
+
+```html
+<style>
+    #text {
+        color: red;
+    }
+</style>
+
+<span id="text"></span>
+
+<script>
+    var text = document.getElementById('text'),
+        color = getComputedStyle(text).color;
+
+    alert(color);
+</script>
+```
+
+
+
+> **Attention** ! Les versions d'Internet Explorer antérieures à la 9 ne supportent pas la méthode getComputedStyle() mais la propriété currentStyle
+
+
+
+### Les propriétés de type `offset`
+
+Certaines valeurs de positionnement ou de taille des éléments ne pourront pas être obtenues de façon simple avec `getComputedStyle()`, pour pallier ce problème il existe les propriétés `offset` qui sont, dans notre cas, au nombre de cinq :
+
+| Nom de l'attribut | Contient…                                                    |
+| ----------------- | ------------------------------------------------------------ |
+| `offsetWidth`     | Contient la largeur complète (`width` + `padding` + `border`) de l'élément. |
+| `offsetHeight`    | Contient la hauteur complète (`height` + `padding` + `border`) de l'élément. |
+| `offsetLeft`      | Surtout utile pour les éléments en position absolue. Contient la position de l'élément par rapport au bord gauche de son élément parent. |
+| `offsetTop`       | Surtout utile pour les éléments en position absolue. Contient la position de l'élément par rapport au bord supérieur de son élément parent. |
+| `offsetParent`    | Utile que pour un élément en position absolue ou relative ! Contient l'objet de l'élément parent par rapport auquel est positionné l'élément actuel. |
+
+Leur utilisation ne se fait pas de la même manière que n'importe quel style CSS, tout d'abord parce que ce ne sont pas des styles CSS ! Ce sont juste des propriétés (en lecture seule) mises à jour dynamiquement qui concernent certains états physiques d'un élément.
+Pour les utiliser, on oublie la propriété `style` vu qu'il ne s'agit pas de styles CSS et on les lit directement sur l'objet de notre élément HTML :
+
+```js
+alert(el.offsetHeight); // On affiche la hauteur complète de notre élément HTML
+```
+
+
+
+Faites bien attention : les valeurs contenues dans ces propriétés (à part `offsetParent`) sont exprimées en pixels et sont donc de type `Number`, pas comme les styles CSS qui sont de type `String` et pour lesquelles les unités sont explicitement spécifiées (px, cm, em, etc.).
+
+#### La propriété `offsetParent`
+
+Concernant la propriété `offsetParent`, elle contient l'objet de l'élément parent par rapport auquel est positionné votre élément actuel. Petit rappel de ce que cela veut dire. 
+
+Lorsque vous décidez de mettre un de vos éléments HTML en positionnement absolu, celui-ci est sorti du positionnement par défaut des éléments HTML et va aller se placer tout en haut à gauche de votre page Web, par-dessus tous les autres éléments. Seulement, ce principe n'est applicable que lorsque votre élément n'est pas déjà lui-même placé *dans* un élément positionné. Si cela arrive, alors votre élément se positionnera non plus par rapport au coin supérieur gauche de la page Web, mais par rapport au coin supérieur gauche *du précédent élément placé en positionnement **absolu, relatif ou fixe***.
+
+Ce système de positionnement est clair ? Bon, nous pouvons alors revenir à notre propriété `offsetParent` ! Si elle existe, c'est parce que les propriétés `offsetTop` et `offsetLeft` contiennent le positionnement de votre élément *par rapport à son précédent élément parent* et non pas par rapport à la page ! Si nous voulons obtenir son positionnement par rapport à la page, il faudra alors aussi ajouter les valeurs de positionnement de son (ses) élément(s) parent(s).
+
+Voici le problème mis en pratique ainsi que sa solution :
+
+```html
+<style>
+    #parent,
+    #child {
+        position: absolute;
+        top: 50px;
+        left: 100px;
+    }
+
+    #parent {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+
+    #child {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+    }
+</style>
+
+<div id="parent">
+    <div id="child"></div>
+</div>
+
+<script>
+    var parent = document.getElementById('parent');
+    var child = document.getElementById('child');
+
+	alert("Sans la fonction de calcul, la position de l'élément enfant est : \n\n" +
+        'offsetTop : ' + child.offsetTop + 'px\n' +
+        'offsetLeft : ' + child.offsetLeft + 'px');
+
+	function getOffset(element) { // Notre fonction qui calcule le positionnement complet
+        var top = 0,
+            left = 0;
+
+        do {
+            top += element.offsetTop;
+            left += element.offsetLeft;
+        } while (element = element.offsetParent); // Tant que « element » reçoit un « offsetParent » valide alors on additionne les valeurs des offsets
+
+        return { // On retourne un objet, cela nous permet de retourner les deux valeurs calculées
+            top: top,
+            left: left
+        };
+    }
+
+    alert("Avec la fonction de calcul, la position de l'élément enfant est : \n\n" +
+        'offsetTop : ' + getOffset(child).top + 'px\n' +
+        'offsetLeft : ' + getOffset(child).left + 'px');
+</script>
+```
+
+
+
+> PS: on voit ici une autre façon de faire une boucle while que ce qu'on a pu voir précédemment avec le mot-clé `do`
+
+Comme vous pouvez le constater, les valeurs seules de positionnement de notre élément enfant ne sont pas correctes si nous souhaitons connaître son positionnement par rapport à la page et non pas par rapport à l'élément parent. Nous sommes finalement obligés de créer une fonction pour calculer le positionnement par rapport à la page.
+
+Concernant cette fonction, nous allons insister sur la boucle qu'elle contient car il est probable que le principe ne soit pas clair pour vous :
+
+```js
+do {
+    top += element.offsetTop;
+    left += element.offsetLeft;
+} while (element = element.offsetParent);
+```
+
+
+
+Si on utilise ce code HTML :
+
+```html
+<body>
+    <div id="parent" style="position:absolute; top:200px; left:200px;">
+        <div id="child" style="position:absolute; top:100px; left:100px;"></div>
+    </div>
+</body>
+```
+
+
+
+son schéma de fonctionnement sera le suivant pour le calcul des valeurs de positionnement de l'élément `#child` :
+
+- La boucle s'exécute une première fois en ajoutant les valeurs de positionnement de l'élément `#child` à nos deux variables `top` et `left`. Le calcul effectué est donc :
+
+  ```js
+  top = 0 + 100; // 100
+  left = 0 + 100; // 100
+  ```
+
+  
+
+- Ligne 4, on attribue à `element` l'objet de l'élément parent de `#child`. En gros, on monte d'un cran dans l'arbre DOM. L'opération est donc la suivante :
+
+  ```js
+  element = child.offsetParent; // Le nouvel élément est « parent »
+  ```
+
+  
+
+- Toujours ligne 4, `element` possède une référence vers un objet valide (qui est l'élément `#parent`), la condition est donc vérifiée (l'objet est évalué à `true`) et la boucle s'exécute de nouveau.
+
+- La boucle se répète en ajoutant cette fois les valeurs de positionnement de l'élément `#parent` à nos variables `top` et `left`. Le calcul effectué est donc :
+
+  ```js
+  top = 100 + 200; // 300
+  left = 100 + 200; // 300
+  ```
+
+  
+
+- Ligne 4, cette fois l'objet parent de `#parent` est l'élément `<body>`. La boucle va donc se répéter avec `<body>` qui est un objet valide. Comme nous n'avons pas touché à ses styles CSS il ne possède pas de valeurs de positionnement, le calcul effectué est donc :
+
+  ```js
+  top = 300 + 0; // 300
+  left = 300 + 0; // 300
+  ```
+
+  
+
+- Ligne 4, `<body>` a une propriété `offsetParent` qui est à `undefined`, la boucle s'arrête donc.
+
+Voilà tout pour cette boucle ! Son fonctionnement n'est pas bien compliqué mais peut en dérouter certains, c'est pourquoi il valait mieux vous l'expliquer en détail.
+
+
+
+Avant de terminer : pourquoi avoir écrit « hauteur complète (`width` + `padding` + `border`) » dans le tableau ? Qu'est-ce que ça veut dire ?
+
+Il faut savoir qu'en HTML, la largeur (ou hauteur) *complète* d'un élément correspond à la valeur de width + celle du padding + celle des bordures.
+
+Par exemple, sur ce code :
+
+```html
+<style>
+    #offsetTest {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+</style>
+
+<div id="offsetTest"></div>
+```
+
+
+
+la largeur complète de notre élément `<div>` vaut : `100` (`width`) + `10` (`padding-left`) + `10` (`padding-right`) + `2` (`border-left`) + `2` (`border-right`) = **124px**.
+
+Et il s'agit bien de la valeur retournée par `offsetWidth` :
+
+```js
+var offsetTest = document.getElementById('offsetTest');
+alert(offsetTest.offsetWidth);
+```
+
+
 
 
 
