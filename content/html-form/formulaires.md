@@ -568,23 +568,15 @@ Pour donner un nom à chaque section, nous allons utiliser l’élément HTML  `
 
 Maintenant que nous avons fait le tour des éléments et des attributs indispensables aux formulaires, et que nous savons créer des formulaires assez complets en HTML, nous allons pouvoir mettre en forme nos formulaires avec le CSS.
 
-Pour cela, nous allons commencer par harmoniser nos lignes grâce aux propriétés  `width`  et  `height`.
 
-Ensuite, nous allons rajouter des  `padding`  et  `margin`  pour aérer nos formulaires et nous allons mettre en forme nos textes.
 
-Nous allons également modifier la couleur de fond de nos différentes sections afin de bien les différencier.
+Je vous propose donc pour conclure ce cours sur le formulaire de reproduire les deux formuilaires suivants
 
-Je vous propose donc pour conclure ce cours sur le formulaire de reproduire les deux formulaires suivants
+![](images/form_a_reproduire.png)
 
 
 
-![form1](images/form_a_reproduire.png)
 
 
-
-et 
-
-
-
-![form2](images/form_a_reproduire_2.png)
+![](images/form_a_reproduire_2.png)
 
