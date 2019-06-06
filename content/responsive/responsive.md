@@ -172,33 +172,7 @@ Pour vous donner un aperçu ajouter ce code à notre fichier `styles.css`.
 }
 
 /* Styles pour ordinateur */
-@media on* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Styles pour le mobile*/
-@media only screen and (max-width: 400px) {
-  body {
-    background-color: #F09A9D; /* Rouge */
-  }
-}
-
-/* Styles pour les tablettes */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
-  body {
-    background-color: #F5CF8E; /* Jaune */
-  }
-}
-
-/* Styles pour ordinateur */
 @media only screen and (min-width: 961px) {
-  body {
-    background-color: #B2D6FF; /* Bleu */
-  }
-}
-ly screen and (min-width: 961px) {
   body {
     background-color: #B2D6FF; /* Bleu */
   }
