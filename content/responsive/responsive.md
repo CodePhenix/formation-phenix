@@ -2,9 +2,9 @@
 
 ## I. Responsive design ?
 
-Depuis la création du web, l'appareil le plus rependu servant à naviguer sur  la toile a toujours été l'ordinateur. Cependant avec l'émergence de l'internet mobile, les habitudes de consommation ont changé. 
+Depuis la création du web, l'appareil le plus rependu servant à naviguer sur la toile a toujours été l'ordinateur. Cependant avec l'émergence de l'internet mobile, les habitudes de consommation ont changé. 
 
-Les utilisateurs ont envie de pouvoir naviguer sur un site aussi bien sur leur smartphone, leur tablette que sur leur ordinateur. De ce fait un nouvel enjeu pour les développeurs et les designer est apparu : la  nécessité de faire un site qui s'affiche correctement sur les différents appareils, ceci afin de pouvoir garantir une expérience utilisateur optimale peu importe les modes de consommation.
+Les utilisateurs ont envie de pouvoir naviguer sur un site aussi bien sur leur smartphone, leur tablette que sur leur ordinateur. De ce fait un nouvel enjeu pour les développeurs et les designer est apparu : la nécessité de faire un site qui s'affiche correctement sur les différents appareils, ceci afin de pouvoir garantir une expérience utilisateur optimale peu importe les modes de consommation.
 
 Pour répondre à ce besoin, il existe deux grandes solutions :
 
@@ -23,7 +23,7 @@ En d'autres termes, notre blog sera une succession de page HTML avec du CSS et p
 
 Dans un premier temps, tout se passe bien : vous créez vos pages HTML avec votre contenu. Vous y ajoutez votre CSS  et vous mettez en ligne (_déployer_, dans le jargon du développement informatique) votre site web super optimisé pour les ordinateurs avec écran 4/3 (rappelez-vous ce sont les écrans au format carré).
 
-Quelques années plus tard, on vous annonce qu'un nouveau type d'écran est sorti : le format 16/9 (format rectangulaire). Vous vous dites bien que ce serait génial de pouvoir utiliser le même HTML, mais la mise en page avec le CSS utilisé pour la version 4/3 ne fonctionne pas du tout sur le 16/9: les images débordent, les titres sortent de l'écran.
+Quelques années plus tard, on vous annonce qu'un nouveau type d'écran est sorti : le format 16/9 (format rectangulaire). Vous vous dites bien que ce serait génial de pouvoir utiliser le même HTML, mais la mise en page avec le CSS utilisée pour la version 4/3 ne fonctionne pas du tout sur le 16/9: les images débordent, les titres sortent de l'écran.
 
 C'est un vrai carnage...
 
@@ -41,7 +41,7 @@ Vous pensiez en avoir fini ? En fait non, le président de votre club préféré
 
 Vous êtes donc partis pour changer, sur ***TOUTES*** les versions du site, le nom du président. Que de boulot pour Mr Poulpe ...
 
-Et là astucieux et fénéant commme tout les développeurs doivent l'être vous avez une illumination. Vous vous dites que  peut-être il existe une autre solution : avoir un seul site internet qui s'adaptera à tous les écrans ou du moins aux format d'écran le plus rependus (16/9, 4/3, smartphone paysage / portrait et tablette).
+Et là, astucieux et fénéant commme tous les développeurs doivent l'être, vous avez une illumination. Vous vous dites que peut-être il existe une autre solution : avoir un seul site internet qui s'adaptera à tous les écrans ou du moins aux formats d'écran les plus rependus (16/9, 4/3, smartphone paysage / portrait et tablette).
 
 Ce qui voudrait dire qu'avec cette solution, en cas de changement de contenu, vous n'auriez besoin que de changer à un seul endroit le nom de Mr Poulpe. 
 
@@ -69,7 +69,7 @@ Pour commencer, nous allons créer un nouveau dossier nommé `responsive design`
 </html>
 
 ```
-En plus, nous allons créer le fichier `styles.css`. Une fois ceci fait nous allons connecter le fichier css  au ficher HTML. Si vous ne vous souvenez plus de comment faire, je vous invite à relire le cours `CSS 101`.
+En plus, nous allons créer le fichier `styles.css`. Une fois ceci fait, nous allons connecter le fichier CSS au ficher HTML. Si vous ne vous souvenez plus de comment faire, je vous invite à relire le cours `CSS 101`.
 
 Nous allons aussi ajouter à la même hauteur que le fichier HTML, le dossier `images` qui contiendra toutes nos images.
 
@@ -93,11 +93,11 @@ Rajoutons donc ceci :
 
 **Tout d'abord un peu de vocabulaire :**
 
-Pour atteindre notre objectif de quelque chose portant le nom étrange de `Media Queries`. Ces `Media Queries` auront pour but de dire au CSS d'appliquer des règles différentes au même HTML en fonction de l'appareil sur lequel l’utilisateur va afficher le site web. 
+Pour atteindre notre objectif, nous allons avoir besoin de quelque chose portant le nom étrange de `Media Queries`. Ces `Media Queries` auront pour but de dire au CSS d'appliquer des règles différentes au même HTML en fonction de l'appareil sur lequel l’utilisateur va afficher le site web. 
 
-Ainsi on pourra par exemple dire que "si l'écran du navigateur est inférieur à 300px, affiche le fond en rouge tandis que si l'écran est supérieur ou égal à 300px alors le fond sera vert"
+Ainsi on pourra par exemple dire que "si l'écran du navigateur est inférieur à 300px, affiche le fond en rouge, tandis que si l'écran est supérieur ou égal à 300px alors le fond sera vert"
 
-De cette manière, pas besoin d'avoir différentes version du HTML pour chaque mode d'affichage (`mobile`, `tablette` ou `ordinateur`)
+De cette manière, pas besoin d'avoir différentes versions du HTML pour chaque mode d'affichage (`mobile`, `tablette` ou `ordinateur`)
 
 Ces `Media Queries` sont en réalité juste un petit ajout supplémentaire au CSS que l'on connaît déjà
 
@@ -125,7 +125,7 @@ Cette règle indiquera au CSS d'afficher un fond rouge si le site web est affich
 
 Voilà vous savez tout sur les ` Media Queries` ...
 
-En réalité je ne vous mens pas tant que ça, faire du responsive, ce n'est pas plus compliqué que d'écrire quelques  `Media Queries` pour indiquer le CSS qui est spécifique à chaque média. Ainsi l'on pourra apporter des modifications spécifiques au CSS en cas d'affichage sur tablette, sur smartphone et même sur écran géant si l'on a besoin. (Imaginez un site web sur un écran de cinéma ..... :-D)
+En réalité, je ne vous mens pas tant que ça, faire du responsive, ce n'est pas plus compliqué que d'écrire quelques  `Media Queries` pour indiquer le CSS qui est spécifique à chaque média. Ainsi l'on pourra apporter des modifications spécifiques au CSS en cas d'affichage sur tablette, sur smartphone et même sur écran géant si l'on a besoin. (Imaginez un site web sur un écran de cinéma ..... :-D)
 
 Pour vous donner un aperçu ajouter ce code à notre fichier `styles.css`. 
 
@@ -165,7 +165,7 @@ De la magie ? non des media queries !!!
 
 ## Quelques notes sur le design
 
-Généralement, une équipe qui construit un site internet ou plus largement une application n'est pas composée uniquement de développeurs mais comprend d'autres métiers super importants. Parmi ceux-ci, l'on compte la présence d'un designer UI/UX .
+Généralement, une équipe qui construit un site internet, ou plus largement une application, n'est pas composée uniquement de développeurs mais comprend d'autres métiers super importants. Parmi ceux-ci, l'on compte la présence d'un designer UI/UX .
 
 Ici, on précise que notre designer à deux casquettes et doit s'occuper aussi bien de l'UX que de l'UI. 
 
@@ -199,7 +199,7 @@ En effet, il existe des centaines de différentes tailles d'écran. Nous, notre 
 
 Actuellement, une pratique en vogue est de commencer par le design mobile avant de penser à la version ordinateur de bureau.  Cette pratique est surtout liée au fait que, selon les statistiques, un utilisateur aura plus tendance à consulter un site internet via son téléphone que sur son ordinateur. 
 
-L'autre objectif est aussi de pouvoir maximiser la quantité de css qui pourra être réutiliser pour les différents layout (_mode d'affichage_, en français)
+L'autre objectif est aussi de pouvoir maximiser la quantité de CSS qui pourra être réutiliser pour les différents layout (_mode d'affichage_, en français)
 
 
 Pour faire la partie pratique en suivant cette règle, rajoutons ce code à l'intérieur de la balise `<body>` présente dans notre fichier `index.html`
@@ -356,9 +356,9 @@ Maintenant si vous réduisez votre navigateur à un moment l'affichage mobile de
 
 ### On passe à table(-ette) !
 
-Pour le mode tablette, notre designer aimerait quelque chose de spécial. Au lieu d'avoir une mise en page toute en colonne il aimerait que le bloc `signup` (_s'enregistrer_ , en français) et que les blocs `feature` (_fonctionnalités_, en français) ne forment plus une colonne avec un élément mais forment une grille de 2X2 éléments.
+Pour le mode tablette, notre designer aimerait quelque chose de spécial. Au lieu d'avoir une mise en page toute en colonne, il aimerait que le bloc `signup` (_s'enregistrer_ , en français) et que les blocs `feature` (_fonctionnalités_, en français) ne forment plus une colonne avec un élément mais forment une grille de 2X2 éléments.
 
-Pour ce faire, remplaçons le style existant `/* Styles pour les tablettes */` dans notre fichier css par ceci : 
+Pour ce faire, remplaçons le style existant `/* Styles pour les tablettes */` dans notre fichier CSS par ceci : 
 
 
 ```css
