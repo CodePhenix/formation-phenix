@@ -1,8 +1,9 @@
 # JSON, un language de communication
 
+
 Dans cette petite leçon, nous allons parler d'un language dont le but est de permettre la communication entre un client et un serveur.
 
-Ce language est nommé le `JSON` que l'on peut pronnocer (prenez un accent Texan, ça peut aider ;-) ) `Jay-son` ou `Gi-son`.
+Ce language est nommé le `JSON` que l'on peut prononcer (prenez un accent Texan, ça peut aider ;-) ) `Jay-son` ou `Gi-son`.
 
 Bon je sens qu'avec ce premier paragraphe je vous ai un peu perdu avec tout ces nouveaux termes alors reprenons depuis le debut.
 
