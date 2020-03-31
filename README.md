@@ -1,4 +1,4 @@
-![logo](content/images-code-phenix/logo-Code-Phenix.png)
+![logo](logo/logo-Code-Phenix.png)
 
 
 
