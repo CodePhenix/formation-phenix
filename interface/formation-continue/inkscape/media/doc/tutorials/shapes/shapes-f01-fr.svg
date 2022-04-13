@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="56" version="1.1" viewBox="0 0 300 56" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <text x="40.248711" y="26.427183" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" opacity=".065574" stroke-width="1pt" style="line-height:0%" xml:space="preserve"><tspan x="40.248711" y="26.427183" font-size="16.8px" style="line-height:1.25">dessinez ici</tspan></text>
+  <rect x="180.93" y=".625" width="77.318" height="53.706" color="#000000" fill="#00f" fill-opacity=".75" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+ </g>
+</svg>

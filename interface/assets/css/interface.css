@@ -1,0 +1,99 @@
+header{  justify-content: space-between;}
+section, a.section{
+  background-image: url("../img/computer.jpg");
+  background-size: cover;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin:2%;
+  text-align: center;
+  text-decoration: none;
+  padding:0;
+  height: 22em;
+  display: block;
+}
+
+a.section section{width:100%;margin:0;}
+
+section > div, a.section > div{
+  background-image: linear-gradient(160deg, rgba(63, 149, 233, .96), rgba(82, 211, 170, 0.96));
+  height: 100%;
+}
+section > div > div , a.section > div{
+  height: 100%;
+  animation-name: down;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  padding-top:11%;
+}
+@keyframes down {
+  from {opacity: 0;padding-top:0;}
+  to {opacity: 1; padding-top:11%;}
+}
+section > div, section > div > div  {
+  opacity: 1;
+  transition: all .6s ease;
+}
+h2{
+  font-weight: bold;
+  opacity: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.6em;
+  color: #fff;
+  margin:0;
+  transition: all .6s ease;
+}
+
+section:hover h2, section:hover h3{
+  opacity: .2;
+}
+section ul{margin:0;margin-top: 6%;padding:0;}
+section li{line-height: 2;list-style-type: none;text-align: center;}
+section li a{color:#fff;text-decoration: none;}
+section li a:hover{color:#fff;text-decoration: underline;}
+section i{color: white;font-size: 4em;}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 768px){
+  main{
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  section, a.section {
+    width: 31%;
+    margin: 1%;
+  }
+  section > div > div, a.section > div{padding-top:24%;}
+  @keyframes down {
+    from {opacity: 0;padding-top:11%;}
+    to {opacity: 1; padding-top:24%;}
+  }
+}
+@media screen and (min-width: 1240px){
+  main{
+    padding: 0 10%;
+  }
+  section, a.section {
+    width: 31%%;
+  }
+  section > div > div, a.section > div{padding: 3%;padding-top:36%;}
+  @keyframes down {
+    from {opacity: 0;padding-top:11%;}
+    to {opacity: 1; padding-top:36%;}
+  }
+  section > div > div > div {
+    opacity: 0;
+  }
+  section:hover > div > div > div{
+    opacity: 1;
+  }
+  section:hover > div > div {
+    padding-top:16%;
+  }
+  a section:hover > div > div {
+    padding-top:24%;
+  }
+
+}

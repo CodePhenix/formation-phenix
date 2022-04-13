@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+    <link href="../../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/quiz.css" rel="stylesheet">
+  	<title>Quiz JS : Intermédiaire</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-light ">
+        <div class="container-fluid">
+          <a href="../index.php"><span class="h1">&lt; Retour au cours</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h2>Quiz JavaScipt</h2>
+        <p>Cochez la ou les bonnes réponses.</p>
+        <form name="monquiz"><div id="quiz"></div></form>
+        <div id="navigation">
+          <button id="prev" class="no-display"><</button>
+          <button id="next">></button>
+          <button id="resultat" class="no-display">Voir le résultat</button>
+        </div>
+    </main>
+    <script>
+      const questions = [
+        {
+          intitule: "Comment récuperer facilement les élément d'un formulaire ?",
+          reponses: {
+            a: "avec l'attribut <code>name</code>",
+            b: "avec un <code>id</code>",
+            c: "avec un <code>queryslector</code>"
+          },
+          bonneReponse:  ["a"]
+        },
+        {
+          intitule: "Quel évènement permet de verifier la valeur d'un champs tant que celui-ci à le focus ?",
+          reponses: {
+            a: "clic",
+            b: "input",
+            c: "change",
+            d: "mouseOver"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Le javascript permet de vérifier les informations d'un formulaire côté serveur ?",
+          reponses: {
+            a: "Vrai",
+            b: "C'est faux !"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "La fonction <code>Date();</code> renvoie une date :",
+          reponses: {
+            a: "en millisecondes uniquement",
+            b: "avec l'année, le mois et le jour",
+            c: "avec l'heure et le fuseau horaire"
+          },
+          bonneReponse: ["b", "c"]
+        },
+        {
+          intitule: "Si je déclare une variable <code>new Date()</code> je peux récupérer :",
+          reponses: {
+            a: "l'année",
+            b: "le mois ",
+            c: "les heures",
+            d: "les minutes"
+          },
+          bonneReponse: ["a", "b", "c", "d"]
+        },
+        {
+          intitule: "Je peux récuperer le jour du mois :",
+          reponses: {
+            a: "non, je ne peux pas",
+            b: "getDay",
+            c: "getDateNumber",
+            d: "getDate"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Sur ma fonction <code>setTimeout()</code> je doit donner un temps :",
+          reponses: {
+            a: "ca dépend",
+            b: "en seconde",
+            c: "en milliseconde"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Pour faire un intervale de temps, je peux :",
+          reponses: {
+            a: "faire une fonction",
+            b: "utiliser <code>setInterval</code>",
+            c: "utiliser <code>setTimeout</code>"
+          },
+          bonneReponse: ["a", "b", "c"]
+        },
+        {
+          intitule: "Je peux récuperer la valeur d'un input de type date et l'utiliser avec une fonction <code>new Date()</code> ?",
+          reponses: {
+            a: "Vrai",
+            b: "C'est faux !"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Pour modifier plusieurs éléments, je dois utiliser :",
+          reponses: {
+            a: "un sélecteur multiple avec <code>querySelectorAll</code>",
+            b: "une boucle <code>for of</code>",
+            c: "une fonction",
+            d: "une condition"
+          },
+          bonneReponse: ["a", "b"]
+        },
+        {
+          intitule: "Sur le tableau suivant, je peux récuperer la valeur 'bleu' :<br>\
+                    <img src='../../assets/img/quiz/array.png'><br>",
+          reponses: {
+            a: "avec <code>colors[2]</code>",
+            b: "avec <code>colors[3]</code>",
+            c: "avec <code>colors.indexOf('bleu')</code>",
+            d: "avec <code>colors.length</code>"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Selon le code suivant, les instructions sont éxecutées si la valeur de <code>maVariable</code> :<br>\
+                    <img src='../../assets/img/quiz/if.png'><br>",
+          reponses: {
+            a: "est comprise entre 10 et 20",
+            b: "égale à 10 ou 20",
+            c: "est inférieur à 10 ou supérieur à 20",
+            d: "n'est pas égale à 10 et 20"
+          },
+          bonneReponse: ["c", "d"]
+        },
+        {
+          intitule: "Combien vaut la valeur de <code>maVariable</code> pour la condition 'else' ?<br>\
+                    <img src='../../assets/img/quiz/if2.png'><br>",
+          reponses: {
+            a: "'Très bien !'",
+            b: "20",
+            c: "supèrieur à 20",
+            d: "entre 1 et supérieur à 20"
+          },
+          bonneReponse: ["b", "c"]
+        },
+        {
+          intitule: "Trouver l'erreur dans le code suivant<br>\
+                    <img src='../../assets/img/quiz/erreurjs1.png'><br>",
+          reponses: {
+            a: "un problème de point-virgule",
+            b: "une valeur n'est pas correcte",
+            c: "il manque une ou plusieurs virgule",
+            d: "il n'y a pas d'erreur"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Combien d'erreur il y a dans le code suivant<br>\
+                    <img src='../../assets/img/quiz/erreurjs2.png'><br>",
+          reponses: {
+            a: "0",
+            b: "1",
+            c: "2",
+            d: "3"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Trouver l'erreur dans le code suivant<br>\
+                    <img src='../../assets/img/quiz/erreurjs3.png'><br>",
+          reponses: {
+            a: "une méthode n'est pas correcte",
+            b: "une valeur n'est pas correcte",
+            c: "une erreur de syntaxe",
+            d: "il n'y a pas d'erreur"
+          },
+          bonneReponse: ["a", "c"]
+        }
+      ];
+    </script>
+    <script type="text/javascript" src="../../assets/js/quiz.js"></script>
+  </body>
+</html>

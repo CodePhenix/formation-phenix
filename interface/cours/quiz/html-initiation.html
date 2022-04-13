@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+    <link href="../../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/quiz.css" rel="stylesheet">
+  	<title>Quiz HTML : initiation</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-light ">
+        <div class="container-fluid">
+          <a href="../index.php"><span class="h1">&lt; Retour au cours</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h2>Quiz HTML</h2>
+        <p>Cochez la bonne réponse.</p>
+        <form name="monquiz"><div id="quiz"></div></form>
+        <div id="navigation">
+          <button id="prev" class="no-display"><</button>
+          <button id="next">></button>
+          <button id="resultat" class="no-display">Voir le résultat</button>
+        </div>
+    </main>
+    <script>
+        const questions = [
+          {
+            intitule: "Dans quelle balise je donne le titre de ma page web",
+            reponses: {
+              a: "&lt;heading&gt;",
+              b: "&lt;title&gt;",
+              c: "&lt;h1&gt;",
+              d: "&lt;div&gt;"
+            },
+            bonneReponse: "b"
+          },
+          {
+            intitule: "Quelle balise va contenir le contenu qui va être afficher dans le navigateur ?",
+            reponses: {
+              a: "&lt;nav&gt;",
+              b: "&lt;html&gt;",
+              c: "&lt;body&gt;",
+              d: "&lt;content&gt;"
+            },
+            bonneReponse: "c"
+          },
+          {
+            intitule: "Laquelle de ces balises indique qu'il s'agit de l'entête du site ?",
+            reponses: {
+              a: "&lt;head&gt;",
+              b: "&lt;header&gt;",
+              c: "&lt;h1&gt;",
+              d: "&lt;nav&gt;"
+            },
+            bonneReponse: "b"
+          },
+          {
+            intitule: "Quelle balise je dois utiliser qu'une seule fois, pour indiquer le titre principale de ma page ?",
+            reponses: {
+              a: "&lt;h1&gt;",
+              b: "&lt;h6&gt;",
+              c: "&lt;principal&gt;",
+              d: "&lt;title&gt;"
+            },
+            bonneReponse: "a"
+          },
+          {
+            intitule: "Si on considère un conteneur <code>&lt;div&gt;</code> qui contient un paragraphe <code>&lt;p&gt;</code>, on peut affirmer que la balise <code>&lt;div&gt;</code> est le parent de <code>&lt;p&gt;</code>, qui est alors son enfant ?",
+            reponses: {
+              a: "Vrai",
+              b: "C'est faux !"
+            },
+            bonneReponse: "a"
+          },
+          {
+            intitule: "Pour faire une liste, quelles balises vais-je devoir utiliser ?",
+            reponses: {
+              a: "&lt;li&gt;",
+              b: "&lt;p&gt; et &lt;span&gt;",
+              c: "&lt;p&gt; et &lt;/br&gt;",
+              d: "&lt;ul&gt; et &lt;li&gt;"
+            },
+            bonneReponse: "d"
+          },
+          {
+            intitule: "Une seule syntaxe est correcte, laquelle ?",
+            reponses: {
+              a: "&lt;img&gt;mon-image.jpg&lt;/img&gt;",
+              b: "&lt;img href='mon-image.jpg' /&gt;",
+              c: "&lt;img src='mon-image.jpg' /&gt;",
+              d: "&lt;img&gt;dossier-image/mon-image.jpg&lt;/img&gt;"
+            },
+            bonneReponse: "c"
+          },
+          {
+            intitule: "L'une des balises suivantes n'a pas de sens sémantique particulier",
+            reponses: {
+              a: "&lt;aside&gt;",
+              b: "&lt;ul&gt;",
+              c: "&lt;br/&gt;",
+              d: "&lt;div&gt;"
+            },
+            bonneReponse: "d"
+          },
+          {
+            intitule: "Quelle est la différence entre une balise 'bloc' et une balise 'inline' ?",
+            reponses: {
+              a: "Une balise 'inline' à une largeur égale à son contenu seulement, <br>contrairement à une balise 'bloc' qui utilise 100% de la largeur de son élément parent.",
+              b: "La balise 'bloc' est une balise par paires et la balise 'inline' est une balise orpheline.",
+              c: "La balise 'inline' utilise 100% de la largeur de son élément parent, <br>contrairement à la balise 'bloc' qui à une largeur égale à son contenu seulement.",
+              d: "Le contraire de la 2ème réponse."
+            },
+            bonneReponse: "a"
+          },
+          {
+            intitule: "Si mon image se trouve dans un dossier nommé 'images' quel sera son chemin ?",
+            reponses: {
+              a: "img/images/mon-image.jpg",
+              b: "images/mon-image.gif",
+              c: "../images/mon-image.jpg",
+              d: "image/mon-image.png"
+            },
+            bonneReponse: "b"
+          }
+        ];
+        </script>
+        <script type="text/javascript" src="../../assets/js/quiz-initiation.js"></script>
+      </body>
+      </html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+    <link href="../../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/quiz.css" rel="stylesheet">
+  	<title>Quiz</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-light ">
+        <div class="container-fluid">
+          <a href="../../index.php"><span class="h1">&lt; Retour</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h2>Quiz</h2>
+        <section id="select">
+        </section>
+        <section id="selected" class="no-display">
+          <p>Donner la bonne réponse.</p>
+          <form name="monquiz"><div id="quiz"></div></form>
+          <div id="score">
+            <div>
+              <div id="result"></div>
+              <div id="hp">Chance :
+                <span>
+                  <span>★★★★★</span><span id="lasts"></span></span>
+                </span>
+              </div>
+              <div id="pts">Points : <span></span></div>
+            </div>
+          </div>
+          <button id="retry" class="no-display fade-top-anim"><i class="bi bi-arrow-clockwise"></i>Recommencer</button>
+          <span id="questionNumber">Question : <span id="currentNumber"></span>/<span id="totalQuestion"></span></span>
+        </section>
+    </main>
+    <script>
+    // , "scss", "vue", "jquery"
+      const allSubjects = ["html", "css", "javascript", "bootstrap", "terminal", "git"];
+      const html = [
+        {
+          intitule: "Quel attribut permet de fusionner les lignes d'un tableau ?",
+          bonneReponse:  ["rowspan"]
+        },
+        {
+          intitule: "Quel attribut permet de fusionner les colonnes d'un tableau ?",
+          bonneReponse:  ["colspan"]
+        },
+        {
+          intitule: "Quel type d'<code>input</code> permet de téléverser un fichier ?",
+          bonneReponse:  ["file"]
+        },
+        {
+          intitule: "Quelle balise permet de dessiner des formes vectorielles ?",
+          bonneReponse:  ["svg", "<svg>"]
+        },
+        {
+          intitule: "Quelle balise permet de dessiner des formes accessible via JavaScript ?",
+          bonneReponse:  ["canvas", "<canvas>"]
+        },
+        {
+          intitule: "Quelle balise permet d'intégrer une partie d'un autre site web ?",
+          bonneReponse:  ["iframe", "<iframe>"]
+        },
+        {
+          intitule: "Quel attribut permet de donner un texte alternatif à une image ?",
+          bonneReponse:  ["alt"]
+        },
+        {
+          intitule: "Quel attribut permet de donner un texte consultatif à un élément ?",
+          bonneReponse:  ["title"]
+        },
+        {
+          intitule: "Quel attribut placé sur la balise <code>html</code> précise la langue de la page ?",
+          bonneReponse:  ["lang"]
+        },
+        {
+          intitule: "Quel organisme définit les normes du langage HTML et valide que les page web sont bien conformes à ces normes ?",
+          bonneReponse:  ["w3c", "World Wide Web Consortium"]
+        }
+      ];
+      const css = [
+        {
+          intitule: "Quelle propriété CSS permet de créer et d'afficher un élément <code>:before</code> ou <code>:after</code> ?",
+          bonneReponse:  ["content"]
+        },
+        {
+          intitule: "Quelle propriété CSS applique une ombre à un élément ?",
+          bonneReponse:  ["box-shadow"]
+        },
+        {
+          intitule: "Quelle propriété CSS applique une ombre à un texte ?",
+          bonneReponse:  ["text-shadow"]
+        },
+        {
+          intitule: "Quelle propriété CSS permet de modifier l'apparence du pointeur de la souris ?",
+          bonneReponse:  ["cursor"]
+        },
+        {
+          intitule: "Quelle propriété CSS permet de gérer le nombre et la taille de plusieurs colonnes pour un texte ?",
+          bonneReponse:  ["columns"]
+        },
+        {
+          intitule: "Quelle propriété CSS permet de mettre un effet de filtre sur un élément ?",
+          bonneReponse:  ["filter"]
+        },
+        {
+          intitule: "Quelle paramètre permet d'appliquer un dégradé de couleur à un fond en CSS ?",
+          bonneReponse:  ["linear-gradient"]
+        },
+        {
+          intitule: "Quelle propriété CSS et son paramètre permettent de gérer un élément en grille, avec des lignes et des colonnes ?",
+          bonneReponse:  ["display:grid;", "display :grid;", "display : grid;", "display : grid ;", "display: grid;", "display: grid ;", "display :grid ;"]
+        },
+        {
+          intitule: "Donner le mot-clé qui permet la gestion de la CSS pour une impression :",
+          bonneReponse:  ["@media print", "media print", "print"]
+        },
+        {
+          intitule: "Donner le mot-clé qui permet d'importer un feuille de style CSS spécifique à un type de média :",
+          bonneReponse:  ["@import", "import"]
+        }
+      ];
+      const javascript = [
+        {
+          intitule: "Quel écouteur d'évènement est utilisé pour détecter un mouvement de souris ?",
+          bonneReponse:  ["mousemove"]
+        },
+        {
+          intitule: "Quel écouteur d'évènement est utilisé pour détecter l'entrée d'une touche du clavier ?",
+          bonneReponse:  ["keypress"]
+        },
+        {
+          intitule: "Quel <code>keycode</code> désigne la touche entrée du clavier ?",
+          bonneReponse:  ["13"]
+        },
+        {
+          intitule: "Quelle boucle vérifie sa condition en fin d'instruction et donc sera toujours exécutée au moins une fois ?",
+          bonneReponse:  ["while do"]
+        },
+        {
+          intitule: "Quel est le symbole de l'opérateur ternaire, qui est l'écriture abrégée de la condition <code>if else</code> ?",
+          bonneReponse:  ["?"]
+        },
+        {
+          intitule: "Quelle méthode permet de chercher un élément dans un tableau ?",
+          bonneReponse:  ["includes", "includes()", ".includes", ".includes()"]
+        },
+        {
+          intitule: "Quelle méthode permet de chercher si un élément contient le nom d'une classe ?",
+          bonneReponse:  ["classList.contains", ".classList.contains", ".classList.contains()", "classList.contains()"]
+        },
+        {
+          intitule: "Quelle méthode de calcul permet d'arrondir à l'entier le plus proche ?",
+          bonneReponse:  ["Math.round", "Math.round()"]
+        },
+        {
+          intitule: "Quelle méthode permet d'annuler le comportement par défaut d'un évènement ?",
+          bonneReponse:  ["preventDefault();", "preventDefault()", "preventDefault", "e.preventDefault();", "event.preventDefault();", "e.preventDefault()", "event.preventDefault()", "e.preventDefault", "event.preventDefault"]
+        },
+        {
+          intitule: "Donner une valeur booléenne :",
+          bonneReponse:  ["true", "false"]
+        }
+      ];
+      const bootstrap = [
+        {
+          intitule: "Sur combiens de colonne est divisée une grille bootstrap ?",
+          bonneReponse:  ["12"]
+        },
+        {
+          intitule: "Quel est le nom de la classe qui contient les colonnes bootstrap ?",
+          bonneReponse:  ["row"]
+        },
+        {
+          intitule: "Quel mot-clé bootstrap d'une classe permet de laisser une colonne vide ?",
+          bonneReponse:  ["offset"]
+        },
+        {
+          intitule: "Quel mot-clé d'une classe permet de gérer une taille d'écran dite 'moyenne' selon bootstrap ?",
+          bonneReponse:  ["md"]
+        },
+        {
+          intitule: "Quel mot-clé d'une classe permet de gérer une taille d'écran dite 'très large' selon bootstrap ?",
+          bonneReponse:  ["xl"]
+        },
+        {
+          intitule: "Quel est le nom de la classe bootstrap pour centrer du texte ?",
+          bonneReponse:  ["text-center"]
+        },
+        {
+          intitule: "Quel est le nom de la classe bootstrap pour mettre du texte en gras ?",
+          bonneReponse:  ["fw-bold"]
+        },
+        {
+          intitule: "Quel est le nom de la classe bootstrap pour appliquer une largeur de 100% ?",
+          bonneReponse:  ["w-100"]
+        },
+        {
+          intitule: "Quel est le nom de la classe bootstrap pour masquer un contenu qui déborde ?",
+          bonneReponse:  ["overflow-hidden"]
+        },
+        {
+          intitule: "Avec bootstrap, quel paramètre est appliqué sur la plupart des propriétés pour avoir une importance la plus élevé possible ?",
+          bonneReponse:  ["!important"]
+        }
+      ];
+      const terminal = [
+        {
+          intitule: "Entrez la commande du terminal pour indiquer l'endroit où vous êtes dans l'arborescence :",
+          bonneReponse:  ["pwd"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour lister le contenu d'un répertoire :",
+          bonneReponse:  ["ls"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour naviguer dans l'arborescence :",
+          bonneReponse:  ["cd"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour créer un répertoire :",
+          bonneReponse:  ["mkdir"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour créer un fichier :",
+          bonneReponse:  ["touch"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour copier un répertoire :",
+          bonneReponse:  ["cp -r"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour déplacer un élément :",
+          bonneReponse:  ["mv"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour supprimer un fichier :",
+          bonneReponse:  ["rm"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour savoir à quoi sert la commande <code>mv</code> :",
+          bonneReponse:  ["mv -h"]
+        },
+        {
+          intitule: "Entrez la commande du terminal pour vider le terminal de commande :",
+          bonneReponse:  ["clear"]
+        }
+      ];
+      const git = [
+        {
+          intitule: "Entrez la commande pour initialiser un repo git :",
+          bonneReponse:  ["git init"]
+        },
+        {
+          intitule: "Entrez la commande pour vérifier le statut des fichiers d'un projet git :",
+          bonneReponse:  ["git status"]
+        },
+        {
+          intitule: "Entrez la commande pour afficher l'historique d'un projet git :",
+          bonneReponse:  ["git log"]
+        },
+        {
+          intitule: "Entrez la commande qui donne la liste des commandes disponibles pour git :",
+          bonneReponse:  ["git help"]
+        },
+        {
+          intitule: "Entrez la commande pour afficher les branches d'un projet git :",
+          bonneReponse:  ["git branch"]
+        },
+        {
+          intitule: "Entrez la commande pour avoir les informations sur une branche d'un projet git :",
+          bonneReponse:  ["git fetch"]
+        },
+        {
+          intitule: "Entrez la commande pour cloner un projet git distant en local :",
+          bonneReponse:  ["git clone"]
+        },
+        {
+          intitule: "Entrez la commande pour récupérer le projet git distant et mettre à jour un projet local :",
+          bonneReponse:  ["git pull"]
+        },
+        {
+          intitule: "Entrez la commande pour mettre à jour un projet git distant avec la version local :",
+          bonneReponse:  ["git push"]
+        },
+        {
+          intitule: "Entrez la commande pour pousser une branche sur un projet git distant :",
+          bonneReponse:  ["git push --set-upstream origin"]
+        }
+      ];
+
+    </script>
+    <script type="text/javascript" src="../../assets/js/quiz-continue.js"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+    <link href="../../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/quiz.css" rel="stylesheet">
+  	<title>Quiz JS : initiation</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-light ">
+        <div class="container-fluid">
+          <a href="../index.php"><span class="h1">&lt; Retour au cours</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h2>Quiz JavaScript</h2>
+        <p>Cochez la bonne réponse.</p>
+        <form name="monquiz"><div id="quiz"></div></form>
+        <div id="navigation">
+          <button id="prev" class="no-display"><</button>
+          <button id="next">></button>
+          <button id="resultat" class="no-display">Voir le résultat</button>
+        </div>
+    </main>
+    <script>
+        const questions = [
+          {
+            intitule: "Quelle est la différence entre une variable et une constante ?",
+            reponses: {
+              a: "Une variable à une valeur qui peut évoluer, une constante garde une valeur fixe.",
+              b: "Le nom d'une constante peut contenir un espace contrairement à la variable.",
+              c: "Une variable avoir différent type de données contrairement à une constante.",
+              d: "Aucune différence"
+            },
+            bonneReponse: "a"
+          },
+          {
+            intitule: "Quel sélecteur est correcte pour cibler mon <code>id</code> en JavaScript ?",
+            reponses: {
+              a: "getElementsByTagName('mon-id')",
+              b: "getElementById('#mon-id')",
+              c: "getElementsByClassName('mon-id')",
+              d: "querySelector('#mon-id')"
+            },
+            bonneReponse: "d"
+          },
+          {
+            intitule: "Pour modifier la couleur du fond d'un élément en JavaScript, je vais écrire :",
+            reponses: {
+              a: "monElement.css.background-color('none')",
+              b: "monElement.style.backgroundColor = 'none'",
+              c: "monElement.style.background-color = 'none'",
+              d: "monElement.backgroundColor('none')"
+            },
+            bonneReponse: "b"
+          },
+          {
+            intitule: "La fonction <code>addEventListener</code> permet de :",
+            reponses: {
+              a: "Créer un événement au clic uniquement.",
+              b: "Vérifier si notre écouteur d'événement se déclenche.",
+              c: "Modifier un élément dans notre page.",
+              d: "Déclencher une réaction en fonction d'une action faite par l'utilisateur."
+            },
+            bonneReponse: "d"
+          },
+          {
+            intitule: "Comment appel-t-on la représentation de l'interface, que l'on va pouvoir manipuler en JavaScript ?",
+            reponses: {
+              a: "BOM",
+              b: "DOM",
+              c: "JSON",
+              d: "Array"
+            },
+            bonneReponse: "b"
+          },
+          {
+            intitule: "Pour créer des variables avec plusieurs informations (comme une liste de recette avec leur nom, ingrédients, etc.).<br> Il est préférable d'utiliser :",
+            reponses: {
+              a: "Un tableau.",
+              b: "Un objet.",
+              c: "Un tableau d'objet.",
+              d: "Plusieurs variables."
+            },
+            bonneReponse: "c"
+          },
+          {
+            intitule: "Pour impacter plusieurs éléments du DOM, je vais devoir utiliser le sélecteur <code>querySelectorAll</code> et faire une boucle.",
+            reponses: {
+              a: "Vrai",
+              b: "C'est faux !"
+            },
+            bonneReponse: "a"
+          },
+          {
+            intitule: "Si on considère la condition <code>if(maVariable > monTableau.length)</code> on execute des instructions :",
+            reponses: {
+              a: "Si la valeur d'un élément de monTableau est inférieur à la valeur de maVariable.",
+              b: "Si le nombre d'élément de monTableau n'est pas supérieur ou égale à maVariable.",
+              c: "Si maVariable est supérieur au nombre d'élément dans monTableau.",
+              d: "Il manque 'else' dans le cas ou la condition est fausse pour que ca fonctionne."
+            },
+            bonneReponse: "c"
+          },
+          {
+            intitule: "Quel opérateur je dois utiliser pour vérifier si ma variable est inférieur à 5 ou supérieur à 10 ?",
+            reponses: {
+              a: "!",
+              b: "!=",
+              c: "&&",
+              d: "||"
+            },
+            bonneReponse: "d"
+          },
+          {
+            intitule: "Quelle méthode je dois utiliser, si on veut changer une instruction en fonction de plusieurs conditions différentes ?",
+            reponses: {
+              a: "Faire une fonction",
+              b: "Une boucle <code>for of</code>",
+              c: "Une condition <code>else if</code>",
+              d: "une condition <code>if</code>"
+            },
+            bonneReponse: "c"
+          }
+        ];
+      </script>
+      <script type="text/javascript" src="../../assets/js/quiz-initiation.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>RGBA and Hex Color Converter: Hex to RGBA and RGBA to Hex</title>
+  <meta name="description" content="A RGBA and Hex Color CSS Generator tool to quickly generate RGBA and Hex Color CSS declarations.">
+  <meta name="author" content="CSSGenerator.Org">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="RGBA and Hex Color Converter">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cssgenerator.org/rgba-and-hex-color-generator.html">
+  <meta property="og:image" content="https://cssgenerator.org/images/title.png">
+  <meta property="og:description" content="A RGBA and Hex Color CSS Generator tool to quickly generate RGBA and Hex Color CSS declarations.">
+  <meta property="og:site_name" content="RGBA and Hex Color Converter">
+  <meta property="fb:app_id" content="102943676769481">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="lib/color-picker/css/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="lib/bootstrap-toggle-master/css/bootstrap-toggle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row row-centered">
+    <div id="top_notification" class="custom-container">
+    </div>
+
+    <!-- Nav bars -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation" id="navbar-default">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle dsk_only" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">RGBA and Hex Color Converter Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.htm" id="navbar-brand-logo">
+              <h1 id="title_brand">RGBA and Hex Color Converter: Hex to RGBA and RGBA to Hex</h1>
+              </a>
+          </div>
+          <div class="navbar-collapse collapse">
+
+          </div>
+          <!--/.nav-collapse -->
+      </div>
+    </div>
+
+      <div class="clear"></div>
+
+      <ul class="nav">
+        <li><a href="index.htm">Home</a></li>
+        <li class=""><a href="box-shadow-css-generator.html">Box Shadow</a></li>
+        <li class=""><a href="text-shadow-css-generator.html">Text Shadow</a></li>
+        <li class=""><a href="css-cursor-demonstrator-and-generator.html">CSS Cursor</a></li>
+        <li class=""><a href="border-css-generator.html">Border</a></li>
+        <li class=""><a href="border-radius-css-generator.html">Border Radius</a></li>
+        <li class=""><a href="gradient-css-generator.html">Gradient CSS</a></li>
+        <li class=""><a href="transform-css-generator.html">Transform CSS</a></li>
+        <li class="nav_active"><a href="rgba-and-hex-color-generator.html">RGBA &amp; Hex Color</a></li>
+        <li class=""><a href="multiple-columns-css-generator.html">Multiple Columns</a></li>
+        <li class=""><a href="filter-css-generator.html">Filter</a></li>
+      </ul>
+
+      <!-- first column -ads -->
+      <div class="col-md-4">
+
+        <div class="panel-group">
+          <div class="panel panel-primary" id="site_navigation">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" class="accordion-toggle" href="#panel_body_collapse">RGBA or Hex Options</a>
+              </h4>
+            </div>
+
+
+            <div id="panel_body_collapse" class="panel-collapse collapse in">
+              <div class="panel-body">
+              <ul class="list-group" id="generator-option">
+                <li class="list-group-item">
+                  <div class="option_name">
+                    Red
+                  </div>
+                  <input type="text" id="redValue_label" class="option_label inputValue" value="255">
+                  <div class="clear"></div>
+                  <div id="redValue_slider" class="slider"></div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="option_name">
+                    Green
+                  </div>
+                  <input type="text" id="greenValue_label" class="option_label inputValue" value="101">
+                  <div class="clear"></div>
+                  <div id="greenValue_slider" class="slider"></div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="option_name">
+                    Blue
+                  </div>
+                  <input type="text" id="blueValue_label" class="option_label inputValue" value="80">
+                  <div class="clear"></div>
+                  <div id="blueValue_slider" class="slider"></div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="option_name">
+                    Opacity (Alpha)
+                  </div>
+                  <input type="text" id="opacity_label" class="option_label inputValue" value="0.4">
+                  <div class="clear"></div>
+                  <div id="opacity_slider" class="slider"></div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="option_name">
+                    Hex value
+                  </div>
+                  <input type="text" id="hexValue_textbox" class="option_label hexValue" value="#FF6550">
+                  <div class="clear"></div>
+                </li>
+
+
+
+              </ul>
+            </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- second column   -->
+      <div class="col-md-8 main_content">
+
+        <div id="rgba-css-generator-demo">
+        </div>
+
+        <div id="rgba-css-generator-demo-2">
+        </div>
+
+        <div class="col-md-12" id="color_code_copy_container">
+          <div class="col-md-4">
+            <div class="emphasis" id="css-generator-code">
+            </div>
+            <div id="copy_btn_container">
+                <button class="btn btn-info" data-original-text="RGB Copy" role="button" type="button" id="copy-btn-1" data-clipboard-target="#css-generator-code"><span class="glyphicon glyphicon-copy"></span> <span id="copy-text-bubble" class="copy_text">RGB Copy</span></button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="emphasis" id="css-generator-code-2">
+            </div>
+            <div id="copy_btn_container">
+                <button class="btn btn-info" data-original-text="RGBA Copy" role="button" type="button" id="copy-btn-2" data-clipboard-target="#css-generator-code-2"><span class="glyphicon glyphicon-copy"></span> <span id="copy-text-bubble" class="copy_text">RGBA Copy</span></button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="emphasis" id="css-generator-code-3">
+            </div>
+            <div id="copy_btn_container">
+                <button class="btn btn-info" data-original-text="Hex Copy" role="button" type="button" id="copy-btn-3" data-clipboard-target="#css-generator-code-3"><span class="glyphicon glyphicon-copy"></span> <span id="copy-text-bubble" class="copy_text">Hex Copy</span></button>
+            </div>
+          </div>
+        </div>
+
+
+      </div> <!-- second column - col-md-10 -->
+
+
+    </div>
+
+
+
+  </div> <!-- Main Content -->
+
+
+
+
+   <!--Container -->
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="js/300/addthis_widget.js#pubid=ra-58dcfed9b69920ae"></script>
+
+
+  <!-- JQuery   -->
+   <script type="text/javascript" src="ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+   <script src="ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+
+   <!-- <script src="js/bootstrap.min.js"></script>  -->
+   <!-- Latest compiled and minified JavaScript -->
+  <script src="bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+   <script src="js/clipboard.min.js"></script>
+   <script src="lib/color-picker/js/bootstrap-colorpicker.min.js">
+
+   <script src="js/sweetalert2.min.js"></script>
+   <script type="text/javascript" src="js/gen/rgba-and-hex-generator.js"></script>
+   <script src="lib/bootstrap-toggle-master/js/bootstrap-toggle.min.js"></script>
+   <script type="text/javascript" src="js/libs.js"></script>
+
+
+      <!-- Histats.com  START  (aync)-->
+      <script type="text/javascript">var _Hasync= _Hasync|| [];
+      _Hasync.push(['Histats.start', '1,3775246,4,0,0,0,00010000']);
+      _Hasync.push(['Histats.fasi', '1']);
+      _Hasync.push(['Histats.track_hits', '']);
+      (function() {
+      var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+      hs.src = ('//s10.histats.com/js15_as.js');
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+      })();</script>
+      <noscript><a href="index.htm" target="_blank"><img src="0.gif?3775246&101" alt="" border="0"></a></noscript>
+      <!-- Histats.com  END  -->
+
+    <!-- Google Analytics  START  (aync)-->
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-41694441-16', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    <!-- Google Analytics  END  -->
+
+
+
+
+</body>
+</html>

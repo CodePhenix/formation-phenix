@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <title>Inkscape tutorial: Basique | Inkscape</title>
+    <meta charset="utf-8">
+
+    <link rel="shortcut icon" href="../static/images/inkscape-favicon-1.png">
+
+
+
+
+      <link rel="stylesheet" type="text/css" href="../static/css/main-1.css">
+      <link rel="stylesheet" type="text/css" href="../static/css/text-1.css">
+      <link rel="stylesheet" type="text/css" href="../static/css/gallery-1.css">
+      <link rel="stylesheet" type="text/css" href="../static/css/ink-1.css">
+
+
+    <link rel="stylesheet" type="text/css" href="../media/doc/tutorials/tutorial-html.css">
+
+
+
+<!--
+      <link rel="alternate" hreflang="en" href="/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="be" href="/be/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="ca" href="/ca/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="da" href="/da/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="de" href="/de/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="el" href="/el/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="eo" href="/eo/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="es" href="/es/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="es-ar" href="/es-ar/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="es-co" href="/es-co/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="es-mx" href="/es-mx/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="es-ni" href="/es-ni/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="es-ve" href="/es-ve/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="eu" href="/eu/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="fa" href="/fa/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="fr" href="tutorial-basic.html">
+      <link rel="alternate" hreflang="gl" href="/gl/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="hu" href="/hu/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="id" href="/id/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="it" href="/it/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="ja" href="/ja/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="ko" href="/ko/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="nl" href="/nl/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="nn" href="/nn/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="pl" href="/pl/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="pt" href="/pt/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="pt-br" href="/pt-br/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="ru" href="/ru/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="sk" href="/sk/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="sl" href="/sl/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="sr" href="/sr/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="sr-latn" href="/sr-latn/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="uk" href="/uk/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="vi" href="/vi/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="zh-hans" href="/zh-hans/doc/tutorials/basic/tutorial-basic.html">
+      <link rel="alternate" hreflang="zh-hant" href="/zh-hant/doc/tutorials/basic/tutorial-basic.html">
+
+    <link rel="alternate" type="application/rss+xml" title="Flux d'actualités" href="../../../news/feed/index.htm-1.rss">
+
+ -->
+
+      <script type="text/javascript" src="../static/admin/js/vendor/jquery/jquery.min-1.js"></script>
+      <script type="text/javascript" src="../static/js/js.cookie-1.js"></script>
+      <script type="text/javascript" src="../static/js/inkscape-1.js"></script>
+
+
+    <!-- Sekizai blocks are deprecated, when django-cms stops using them, remove -->
+
+
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/mobile-device-1.css" media="only screen and (max-width: 959px)">
+
+
+    <meta name="author" content="Développeurs du site web d'Inkscape">
+    <meta name="description" content="">
+    <meta name="keywords" content="inkscape,vectoriel,dessin,graphisme,svg,xml,document,affiche,linux,source ouverte,foss,floss,logiciel gratuit,logiciel libre,libre,liberté,ligne,forme,diagramme,organigramme,graphe,extension,greffon,logiciel,télécharger,plateforme,windows,win,mac,osx,ubuntu,fedora,debian,aide,didacticiel,discussion,irc,accueil,page d'accueil,professionnel,particulier,puissant,texte,web,www,w3c,standard">
+    <meta property="og:image" content="https://media.inkscape.org/static/images/inkscape-og-image.png">
+
+  </head>
+
+<body id="page-" class="">
+
+
+  <div class="header">
+    <div id="cleartop">
+      <div id="logo">
+
+          <a href="../index.htm"><img src="../static/images/inkscape-logo-1.svg" width="64" height="64" alt="Inkscape"></a>
+          <h1><a href="../index.htm" tabindex="-1">Inkscape</a></h1>
+          <h2><a href="../index.htm" tabindex="-1">Dessiner en toute liberté.</a></h2>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <div id="content">
+      <div class="wrapper">
+
+            <div class="breadcrumbs">
+
+  </div>
+
+
+
+
+  <h1>Inkscape tutorial: Basique</h1>
+
+  <div class="tutorial"><div id="tut-container">
+<div id="tut-header">
+<a id="tut-link" href="">Inkscape</a><h1>Didacticiel<span> | </span><span>Basique</span>
+</h1>
+</div>
+<div id="tut-content">
+
+
+    <div id="tut-intro">
+      <p>Ce didacticiel présente les bases de l'utilisation d'Inkscape. Si vous l'avez ouvert à partir du menu <kbd class="tutorial-guimenu"><samp>Aide</samp></kbd> d'Inkscape, il s'agit alors d'un document standard : vous pouvez le visionner, le modifier, en copier des éléments ou même le sauvegarder.</p>
+      <p>Le didacticiel basique aborde la navigation sur le canevas, la gestion des documents, les bases des outils de formes, les techniques de sélection, la transformation d'objets à l'aide du sélecteur, le groupement, le paramétrage du fond et du contour, l'alignement et la superposition. Pour des sujets plus avancés, consultez les autres didacticiels dans le menu <kbd class="tutorial-guimenu"><samp>Aide</samp></kbd>.</p>
+    </div>
+
+      <h2>Se déplacer sur le canevas</h2>
+      <p>Il y a plusieurs façons de se déplacer sur le canevas (le faire défiler). Utilisez les raccourcis <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">flèche</kbd></kbd> pour vous déplacer avec le clavier (essayez donc dès maintenant de faire défiler ce document vers le bas). Vous pouvez aussi agripper et déplacer le canevas en enfonçant le bouton du milieu de la souris. Ou bien, vous pouvez utiliser les barres de défilement (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">B</kbd></kbd> permet de les afficher/masquer). La <kbd class="tutorial-mousebutton mouse-wheel">molette</kbd> de la souris permet les déplacements verticaux, et même horizontaux en combinaison avec la touche <kbd class="tutorial-modifierkey">Maj</kbd>.</p>
+
+
+      <h2>Zoomer et dézoomer</h2>
+      <p>Le moyen le plus simple est d'utiliser les touches <kbd class="tutorial-key">−</kbd> et <kbd class="tutorial-key">+</kbd> (ou <kbd class="tutorial-key">=</kbd>). Vous pouvez aussi zoomer avec <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton middle-click">clic milieu</kbd></kbd> ou <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton right-click">clic droit</kbd></kbd>, dézoomer avec <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton middle-click">clic milieu</kbd></kbd> ou <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton right-click">clic droit</kbd></kbd>, et faire tourner la molette de la souris tout en appuyant sur <kbd class="tutorial-modifierkey">Ctrl</kbd>. Vous pouvez aussi cliquer sur le champ de saisie du zoom « Z » (dans le coin en bas à droite de la fenêtre), y saisir une valeur précise en %, et la valider en appuyant sur la touche <kbd class="tutorial-key">Entrée</kbd>. Enfin, il reste l'outil de zoom (dans la barre d'outils à gauche) qui vous permet de définir une région sur laquelle zoomer à l'aide de la souris.</p>
+      <p>Inkscape garde aussi en mémoire un historique des niveaux de zoom pour la session de travail en cours. Appuyez sur la touche <kbd class="tutorial-key">`</kbd> pour revenir au niveau de zoom précédent et utilisez <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">`</kbd></kbd> pour retourner au suivant.</p>
+
+
+      <h2>Les outils d'Inkscape</h2>
+      <p>La barre d'outils verticale à gauche affiche les outils de dessin et d'édition d'Inkscape. La <span class="firstterm">barre de commandes</span> affiche les boutons des commandes générales, comme « Enregistrer » ou « Imprimer » et – suivant votre définition d'écran – elle se trouve soit en haut de la fenêtre, juste en dessous des menus, soit à droite de la fenêtre, entre la barre de défilement et la <span class="firstterm">barre de contrôle du magnétisme</span>. Juste au-dessus de <span class="firstterm">canevas</span> (l'espace de travail), la <span class="firstterm">barre de contrôle des outils</span> montre les contrôles spécifiques à chaque outil. La <span class="firstterm">barre d'état</span> en bas de la fenêtre affiche des indications et des messages qui peuvent vous aider dans votre travail.</p>
+      <p>De nombreuses opérations peuvent être effectuées avec des raccourcis clavier. Pour consulter tous les raccourcis disponibles, ouvrez le menu <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Aide</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Référence des raccourcis clavier et souris</samp></kbd></kbd>.</p>
+
+
+      <h2>Créer et gérer des documents</h2>
+      <p>Pour créer un nouveau document vide, utilisez <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Fichier</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Nouveau</samp></kbd></kbd> ou appuyez sur <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">N</kbd></kbd>. Pour créer un nouveau document à partir d'un des nombreux modèles d'Inkscape, utilisez <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Fichier</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Nouveau à partir d'un modèle…</samp></kbd></kbd> ou appuyez sur <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">N</kbd></kbd>.</p>
+      <p>Pour ouvrir un document SVG existant, utilisez <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Fichier</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Ouvrir</samp></kbd></kbd> (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">O</kbd></kbd>). Pour enregistrer, utilisez <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Fichier</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Enregistrer</samp></kbd></kbd> (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">S</kbd></kbd>) ou <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Fichier</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Enregistrer sous</samp></kbd></kbd> (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">S</kbd></kbd>) pour enregistrer sous un nouveau nom (même si Inkscape active par défaut l'option d'enregistrement automatique, il est toujours conseillé d'enregistrer son travail régulièrement).</p>
+      <p>Inkscape utilise le format SVG (Scalable Vector Graphics) pour ses fichiers. Le format SVG est un standard ouvert largement utilisé par les logiciels de graphisme. Les fichiers SVG sont basés sur le format XML et peuvent être édités à l'aide de n'importe quel éditeur de texte ou XML (ou avec Inkscape, bien sûr). En plus du SVG, Inkscape peut importer et exporter des documents dans bien d'autres formats. Vous trouverez la liste des formats de fichiers pris en charge dans les boîtes de dialogue des menus <kbd class="tutorial-guimenuitem"><samp>Enregistrer</samp></kbd> et <kbd class="tutorial-guimenuitem"><samp>Importer</samp></kbd>.</p>
+      <p>Inkscape ouvre une nouvelle fenêtre pour chaque document. Naviguez entre elles avec votre gestionnaire de fenêtres (avec le raccourci <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Tab</kbd></kbd> par exemple), ou utilisez le raccourci <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Tab</kbd></kbd>, qui permet de circuler parmi les documents ouverts (en guise d'entraînement, créez dès maintenant un nouveau document pour tester la navigation entre ce didacticiel et le nouveau document). Note : Inkscape traite ces fenêtres comme des onglets dans un navigateur web, ce qui signifie que le raccourci <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Tab</kbd></kbd> ne fonctionne qu'avec des documents s'exécutant dans la même instance. Si vous ouvrez plusieurs fichiers depuis un navigateur de fichiers ou exécutez plusieurs instances d'Inkscape, cela ne fonctionnera pas.</p>
+
+
+      <h2>Créer des formes</h2>
+      <p>Il est temps de passer aux formes ! Cliquez sur l'outil Rectangle dans la barre d'outils à gauche (ou appuyez sur <kbd class="tutorial-key">F4</kbd>) et avec un cliquer-glisser, créez un rectangle, soit dans un nouveau document vide, soit dans celui-ci :</p>
+      <object data="../media/doc/tutorials/basic/basic-f01.svg" type="image/svg+xml"></object>
+      <p>Comme vous pouvez le voir, par défaut, les rectangles ont un <span class="firstterm">fond</span> bleu et un <span class="firstterm">contour</span> noir, et sont complètement opaques. Nous allons voir comment changer cela ci-dessous. Avec les autres outils, vous pouvez aussi créer des ellipses, des étoiles et des spirales :</p>
+      <object data="../media/doc/tutorials/basic/basic-f02.svg" type="image/svg+xml"></object>
+      <p>Ces outils sont les <span class="firstterm">outils de formes</span>. Chaque forme créée affiche une ou plusieurs <span class="firstterm">poignées</span> ; essayez de les déplacer pour voir comment la forme réagit. Pour chacun des outils de formes, la barre de contrôle fournit une façon supplémentaire de modifier la forme ; ces contrôles affectent la forme sélectionnée (c'est-à-dire celle qui a ses poignées affichées) <em>et</em> définissent les paramètres par défaut qui s'appliqueront lors de la création de toute nouvelle forme.</p>
+      <p>Pour <span class="firstterm">annuler</span> votre dernière action, appuyez sur <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Z</kbd></kbd> (ou si vous changez d'avis, vous pouvez <span class="firstterm">rétablir</span> l'action annulée avec <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Z</kbd></kbd>.</p>
+
+
+      <h2>Déplacer, redimensionner et tourner</h2>
+      <p>L'outil d'Inkscape le plus utilisé est le <span class="firstterm">sélecteur</span>. Cliquez sur le bouton tout en haut (celui avec la flèche) dans la barre d'outils (ou appuyez sur <kbd class="tutorial-key">s</kbd>, <kbd class="tutorial-key">F1</kbd> ou sur la <kbd class="tutorial-key">barre d'espace</kbd>). Vous pouvez alors sélectionner n'importe quel objet sur le canevas. Ainsi, sélectionnez le rectangle ci-dessous.</p>
+      <object data="../media/doc/tutorials/basic/basic-f03.svg" type="image/svg+xml"></object>
+      <p>Vous devriez voir apparaître huit poignées en forme de flèche autour des bords de l'objet. Vous pouvez maintenant :</p>
+      <ul>
+        <li>
+          <p><span class="firstterm">Déplacer</span> l'objet à la souris avec un cliquer-glisser (appuyez sur <kbd class="tutorial-modifierkey">Ctrl</kbd>pour restreindre le mouvement à l'horizontale et à la verticale).</p>
+        </li>
+        <li>
+          <p><span class="firstterm">Redimensionner</span> l'objet, en déplaçant une poignée (appuyez sur <kbd class="tutorial-modifierkey">Ctrl</kbd> pour préserver ses proportions).</p>
+        </li>
+      </ul>
+      <p>Cliquez à nouveau sur le rectangle. Les poignées changent de forme. Vous pouvez maintenant :</p>
+      <ul>
+        <li>
+          <p><span class="firstterm">Tourner</span> l'objet en déplaçant une poignée de coin (appuyez sur <kbd class="tutorial-modifierkey">Ctrl</kbd> pour forcer une rotation par incréments de 15 degrés ; déplacez la croix pour définir le centre de rotation).</p>
+        </li>
+        <li>
+          <p><span class="firstterm">Incliner</span> l'objet en déplaçant une poignée autre que celle d'un coin (appuyez sur <kbd class="tutorial-modifierkey">Ctrl</kbd> pour forcer une inclinaison par incréments de 15 degrés).</p>
+        </li>
+      </ul>
+      <p>Toujours avec le sélecteur, dans les champs numériques de la barre supérieure, vous pouvez définir précisément les coordonnées (X et Y) et la taille (L et H) de la sélection.</p>
+
+
+      <h2>Transformer à l'aide des raccourcis clavier</h2>
+      <p>Une des capacités d'Inkscape le distinguant d'autres éditeurs vectoriels est la possibilité d'utiliser le clavier de façon intensive. Il n'y a pratiquement pas d'action ou de commande qui ne soit pas accessible depuis le clavier, et la transformation d'objet ne fait pas exception.</p>
+      <p>Vous pouvez utiliser le clavier pour déplacer (<kbd class="tutorial-key">flèches</kbd>), redimensionner (<kbd class="tutorial-key">&lt;</kbd> et <kbd class="tutorial-key">&gt;</kbd>) et tourner (<kbd class="tutorial-key">[</kbd> et <kbd class="tutorial-key">]</kbd>) les objets. L'incrément par défaut de modification des dimensions et de déplacement est de 2 px ; avec la touche <kbd class="tutorial-modifierkey">Maj</kbd>, le déplacement est multiplié par 10. <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">&gt;</kbd></kbd> et <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">&lt;</kbd></kbd> redimensionnent respectivement de 200 % et 50 % par rapport à l'original. L'incrément de rotation par défaut est de 15 degrés ; ou de 90 degrés si vous appuyez sur <kbd class="tutorial-modifierkey">Ctrl</kbd>.</p>
+      <p>Mais les <span class="firstterm">transformations à l'échelle du pixel</span> sont peut-être les plus utiles, obtenues par la combinaison de la touche <kbd class="tutorial-modifierkey">Alt</kbd> avec un raccourci. Par exemple, <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">flèche</kbd></kbd> déplace la sélection d'1 pixel, <em>au niveau de zoom actuel</em> (c'est-à-dire d'un <span class="firstterm">pixel sur l'écran</span>). Par conséquent, si vous zoomez plus, utiliser <kbd class="tutorial-key">Alt</kbd> avec votre raccourci clavier vous permettra de déplacer les objets avec une plus grande précision. À l'inverse, si vous dézoomez, utiliser <kbd class="tutorial-key">Alt</kbd> vous donnera une précision plus faible. Il est ainsi possible de positionner des objets avec une précision arbitraire simplement en zoomant ou dézoommant selon les besoins.</p>
+      <p>De même, <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">&gt;</kbd></kbd> et <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">&lt;</kbd></kbd> changent les dimensions de la sélection d'1 pixel à l'écran, et <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">[</kbd></kbd> et <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">]</kbd></kbd> la tournent de telle façon que le point le plus éloigné du centre bouge d'un seul pixel à l'écran.</p>
+      <p>Note : il se peut que les utilisateurs de Linux n'obtiennent pas les résultats attendus avec <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">flèche</kbd></kbd> et d'autres combinaisons si leur gestionnaire de fenêtres récupère les événements des touches avant qu'ils n'atteignent l'application Inkscape (et les utilise pour basculer entre les espaces de travail). Une des solutions consiste à changer la configuration du gestionnaire de fenêtres pour éviter cela.</p>
+
+
+      <h2>Sélections multiples</h2>
+      <p>Avec <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd>, vous pouvez simultanément sélectionner plusieurs objets. Avec un <kbd class="tutorial-mousebutton mouse-drag">cliquer-glisser</kbd>, vous pouvez aussi définir une zone autour des objets ; on appelle ceci une <span class="firstterm">sélection par bande étirable</span> (le sélecteur crée une bande étirable quand on commence un cliquer-glisser sur une zone vide ; mais si vous appuyez sur <kbd class="tutorial-modifierkey">Maj</kbd> avant de cliquer, Inkscape forcera la création d'une bande étirable). Entraînez-vous à sélectionner les trois formes ci-dessous :</p>
+      <object data="../media/doc/tutorials/basic/basic-f04.svg" type="image/svg+xml"></object>
+      <p>Maintenant, utilisez la bande étirable (avec un cliquer-glisser ou <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton mouse-drag">cliquer-glisser</kbd></kbd>) pour sélectionner les deux ellipses mais pas le rectangle :</p>
+      <object data="../media/doc/tutorials/basic/basic-f05.svg" type="image/svg+xml"></object>
+      <p>Tout objet sélectionné affiche une <span class="firstterm">marque de sélection</span> — par défaut, un cadre en pointillés. Ceci permet de distinguer facilement ce qui est sélectionné de ce qui ne l'est pas. Si, par exemple, vous sélectionnez les deux ellipses et le rectangle ci-dessus, sans ces indications, il vous sera difficile de savoir si les ellipses sont bien sélectionnées ou non.</p>
+      <p><kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> sur un objet sélectionné l'exclut de la sélection. Sélectionnez les trois objets ci-dessus, puis utilisez <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> pour exclure les deux ellipses de la sélection, en n'y conservant que le rectangle.</p>
+      <p>Appuyer sur <kbd class="tutorial-key">Échap</kbd> désélectionne tous les objets. <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">A</kbd></kbd> sélectionne tous les objets du calque actuel (si vous n'avez pas créé de calque, vous sélectionnerez tous les objets du document). Le comportement par défaut du raccourci <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">A</kbd></kbd> peut être réglé dans les préférences.</p>
+
+
+      <h2>Grouper</h2>
+      <p>Plusieurs objets peuvent être réunis dans un <span class="firstterm">groupe</span>. Un groupe se comporte comme un simple objet quand vous le déplacez ou le transformez. Ci-dessous, les trois objets de gauche sont indépendants ; les trois mêmes objets de droite sont groupés. Essayez de les déplacer.</p>
+      <object data="../media/doc/tutorials/basic/basic-f06.svg" type="image/svg+xml"></object>
+      <p>Pour créer un groupe, sélectionnez un ou plusieurs objets et appuyez sur <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">G</kbd></kbd>. Pour dégrouper un ou plusieurs groupes, sélectionnez-les et appuyez sur <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">U</kbd></kbd>. Ces deux opérations sont aussi réalisables avec un <kbd class="tutorial-mousebutton right-click">clic droit</kbd>, dans le menu <kbd class="tutorial-guimenu"><samp>Objet</samp></kbd>, ou dans la barre de commandes. Les groupes peuvent eux-mêmes être groupés, comme n'importe quels objets ; de tels groupes récursifs peuvent avoir une profondeur quelconque. Cependant, <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">U</kbd></kbd> ne dégroupe que le dernier niveau de groupe de la sélection ; vous devrez répéter <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">U</kbd></kbd> si vous voulez dégrouper complètement des groupes de groupes (ou utiliser <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Extensions</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guisubmenu"><samp>Organiser</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Dégrouper récursivement</samp></kbd></kbd>).</p>
+      <p>Cependant, vous n'avez pas nécessairement besoin de dégrouper pour éditer un objet au sein d'un groupe. Un simple <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> sur un objet permet de le sélectionner seul et de l'éditer, et <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> sur plusieurs objets (inclus ou non dans des groupes quelconques) permet d'effectuer une sélection multiple.</p>
+      <p>Il est également possible de <kbd class="tutorial-mousebutton click">double-cliquer</kbd> sur un groupe pour y descendre et accéder à tous ses éléments sans le dégrouper. Il suffit ensuite de <kbd class="tutorial-mousebutton click">double-cliquer</kbd> sur une zone vide du canevas pour sortir du groupe.</p>
+      <p>Essayez de déplacer ou transformer sans les dégrouper les formes du groupe ci-dessus à droite, puis de les désélectionner, et resélectionnez le groupe normalement pour vérifier qu'elles sont toujours groupées.</p>
+
+
+      <h2>Fond et contour</h2>
+      <p>La façon la plus simple de donner une couleur à un objet est probablement de sélectionner un objet, puis de cliquer sur un <span class="firstterm">échantillon</span> de couleur dans la palette en bas afin de le peindre (changer sa couleur de fond).</p>
+      <p>Vous pouvez également ouvrir la boîte de dialogue Palettes depuis le menu <kbd class="tutorial-guimenu"><samp>Affichage</samp></kbd> (ou appuyer sur <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">W</kbd></kbd>), choisir une palette à partir du petit triangle dans le coin supérieur droit, sélectionner un objet, et cliquer sur une couleur pour le peindre (donc changer sa couleur de fond).</p>
+      <p>La boîte de dialogue Fond et contour du menu <kbd class="tutorial-guimenu"><samp>Objet</samp></kbd> (ou accessible avec <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">F</kbd></kbd>) est plus puissante. Sélectionnez la forme ci-dessous et ouvrez la boîte de dialogue Fond et contour.</p>
+      <object data="../media/doc/tutorials/basic/basic-f07.svg" type="image/svg+xml"></object>
+      <p>Vous constatez que la boîte de dialogue a trois onglets : Fond, Contour et Style du contour. L'onglet Fond permet d'éditer le fond (l'intérieur) du ou des objet(s) sélectionné(s) (on parle aussi de remplissage — « fill » en anglais —, mais nous avons choisi une traduction brève pour des contraintes techniques). L'utilisation des boutons juste sous l'onglet vous permet de choisir le type de fond : transparent (aucun fond, le bouton avec un X), aplat (couleur de fond uniforme), ou encore dégradé linéaire ou radial. Pour la forme ci-dessus, le bouton Aplat devrait être sélectionné.</p>
+      <p>Plus bas, vous pouvez voir la collection de <span class="firstterm">sélecteurs de couleur</span> chacun dans un onglet : RVB, CMJN, TSL et Roue. Le plus pratique est peut-être la roue, dans laquelle vous pouvez tourner un triangle pour choisir une teinte sur la roue, puis une nuance dans le triangle. Tous les sélecteurs de couleur comportent une réglette identifiée par la lettre « A » pour définir l'<span class="firstterm">alpha</span> (opacité) de la couleur sélectionnée.</p>
+      <p>Quand vous sélectionnez un objet, la boîte de dialogue Fond et contour est mise à jour pour afficher ses fond et contour actuels (quand plusieurs objets sont sélectionnés, elle affiche la <em>moyenne</em> de leurs couleurs). Jouez avec les exemples ci-dessous ou créez les vôtres :</p>
+      <object data="../media/doc/tutorials/basic/basic-f08.svg" type="image/svg+xml"></object>
+      <p>En utilisant l'onglet Contour, vous pouvez enlever le <span class="firstterm">contour</span> d'un objet ou lui attribuer n'importe quelle couleur ou transparence :</p>
+      <object data="../media/doc/tutorials/basic/basic-f09.svg" type="image/svg+xml"></object>
+      <p>Le dernier onglet, Style de contour, vous permet de définir la largeur et les autres paramètres du contour :</p>
+      <object data="../media/doc/tutorials/basic/basic-f10.svg" type="image/svg+xml"></object>
+      <p>Enfin, vous pouvez utiliser des <span class="firstterm">dégradés</span> au lieu de couleurs uniformes pour les fonds comme pour les contours :</p>
+      <object data="../media/doc/tutorials/basic/basic-f11.svg" type="image/svg+xml"></object>
+      <p>Quand vous passez d'une couleur uniforme à un dégradé, le dégradé nouvellement créé utilise cette même couleur, allant d'opaque à transparente. Utilisez l'outil de Dégradé (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">F1</kbd></kbd> ou simplement <kbd class="tutorial-key">G</kbd>) pour déplacer les <span class="firstterm">poignées de dégradé</span> — les poignées de contrôle connectées par des lignes qui définissent la direction et la longueur du dégradé. Quand l'une de ces poignées est sélectionnée (surlignée en bleu), la boîte de dialogue Fond et contour permet de définir la couleur liée à cette poignée à la place de la couleur de l'objet sélectionné.</p>
+      <p>Une autre manière pratique de changer la couleur d'un objet est d'utiliser l'outil Pipette (<kbd class="tutorial-key">F7</kbd> ou <kbd class="tutorial-key">D</kbd>). Un simple <kbd class="tutorial-mousebutton click">clic</kbd> n'importe où sur le dessin avec cet outil permet d'attribuer la couleur ainsi capturée au fond de l'objet sélectionné  (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> l'attribuera à son contour).</p>
+
+
+      <h2>Duplication, alignement, distribution</h2>
+      <p>Une des opérations les plus courantes est la <span class="firstterm">duplication</span> d'un objet (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">D</kbd></kbd>). Le dupliqué est placé juste au-dessus de l'original et est sélectionné, vous permettant ainsi de le déplacer à la <kbd class="tutorial-mousebutton ">souris</kbd> ou avec les <kbd class="tutorial-key">flèches</kbd>. Pour vous exercer, essayez de remplir la ligne avec des copies du carré noir ci-dessous :</p>
+      <object data="../media/doc/tutorials/basic/basic-f12.svg" type="image/svg+xml"></object>
+      <p>Il y a des chances que vos copies du carré ne soient pas bien alignées. La boîte de dialogue <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Objet</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Aligner et distribuer</samp></kbd></kbd> (<kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-modifierkey">Ctrl</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">A</kbd></kbd>) devient alors utile. Sélectionnez tous les carrés (avec <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> ou une bande étirable), ouvrez la boîte de dialogue et appuyez sur le bouton « Centrer selon un axe horizontal », puis sur « Distribuer des distances égales horizontalement entre les objets » (consultez les indications affichées quand la souris passe au-dessus des boutons). Les objets sont maintenant alignés et distribués de façon équidistante. Voici d'autres exemples d'objets alignés et distribués :</p>
+      <object data="../media/doc/tutorials/basic/basic-f13.svg" type="image/svg+xml"></object>
+
+
+      <h2>Ordre d'empilement</h2>
+      <p>Lorsque plusieurs objets se recouvrent, il est possible de définir l'ordre dans lequel ils sont empilés, c'est-à-dire quels objets sont en haut et masquent les autres (paramètre <span class="firstterm">z-order</span>). Les deux commandes du menu <kbd class="tutorial-guimenu"><samp>Objet</samp></kbd>, <kbd class="tutorial-guimenuitem"><samp>Monter au premier plan</samp></kbd> (touche <kbd class="tutorial-key">Début</kbd>) et <kbd class="tutorial-guimenuitem"><samp>Descendre à l'arrière-plan</samp></kbd> (touche <kbd class="tutorial-key">Fin</kbd>), feront passer les objets sélectionnés tout au-dessus ou tout au fond de l'empilement du calque actuel. Deux autres commandes, <kbd class="tutorial-guimenuitem"><samp>Monter</samp></kbd> (<kbd class="tutorial-key">Page précédente</kbd>) et <kbd class="tutorial-guimenuitem"><samp>Descendre</samp></kbd> (<kbd class="tutorial-key">Page suivante</kbd>), les enfouiront ou émergeront d'<em>un cran seulement</em>, c'est-à-dire juste au-delà d'un objet non sélectionné dans l'empilement (seuls les objets chevauchant la sélection comptent, en fonction de leur boîte englobante).</p>
+      <p>Exercez-vous à l'utilisation de ces commandes en inversant la superposition des objets ci-dessous, de telle sorte que l'ellipse la plus à gauche soit tout au-dessus et la plus à droite tout au fond :</p>
+      <object data="../media/doc/tutorials/basic/basic-f14.svg" type="image/svg+xml"></object>
+      <p>Un raccourci de sélection très utile est la touche <kbd class="tutorial-key">Tab</kbd>. Si rien n'est sélectionné, il sélectionne l'objet le plus au fond ; sinon, il sélectionne l'objet <em>juste au-dessus</em> de l'objet sélectionné dans l'empilement. <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Tab</kbd></kbd> fait l'inverse, commençant par l'objet tout au-dessus en allant vers le fond. Comme les objets que vous créez sont ajoutés au-dessus de la pile, appuyer sur <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Tab</kbd></kbd> quand aucun objet n'est sélectionné vous permettra de retrouver facilement le <em>dernier</em> objet que vous avez créé. Essayez <kbd class="tutorial-key">Tab</kbd> et <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Maj</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-key">Tab</kbd></kbd> sur les ellipses superposées ci-dessus.</p>
+
+
+      <h2>Sélectionner et déplacer des objets couverts</h2>
+      <p>Que faire si l'objet dont vous avez besoin est caché derrière un autre objet ? Vous pouvez encore voir l'objet en dessous si celui du dessus est (partiellement) transparent, mais en cliquant dessus, vous sélectionnerez l'objet du dessus, pas celui dont vous avez besoin.</p>
+      <p>Pour cela, il faut utiliser <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd>. <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> sélectionne d'abord l'objet du dessus, comme un clic normal ; mais le <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> suivant au même endroit sélectionne l'objet juste <em>en dessous</em> ; et ainsi de suite. Donc, plusieurs <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> à la suite vous permettront de naviguer du dessus vers le fond à travers la superposition de différents objets sous le pointeur de la souris. Quand l'objet du fond est sélectionné, un <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> de plus sélectionne de nouveau l'objet du dessus.</p>
+      <p>[Si vous êtes sous Linux, vous pourriez éventuellement vous apercevoir que <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> ne fonctionne pas correctement, mais déplace la fenêtre Inkscape en totalité. C'est parce que votre gestionnaire de fenêtres a réservé le raccourci <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> pour une autre action. Pour corriger cela, il faut trouver l'option de configuration du comportement des fenêtres de votre gestionnaire de fenêtres, puis la désactiver ou bien lui associer une autre touche (par exemple <kbd class="tutorial-key">Super</kbd> — aussi appelée <kbd class="tutorial-key">Windows</kbd>), afin qu'Inkscape et les autres applications puissent librement utiliser la touche <kbd class="tutorial-modifierkey">Alt</kbd>.]</p>
+      <p>Bien, mais une fois l'objet recouvert sélectionné, qu'en faire ? Vous pouvez le transformer grâce aux raccourcis et déplacer ses poignées de sélection. Cependant, déplacer l'objet lui-même resélectionnera l'objet tout au-dessus à nouveau (le cliquer-glisser est conçu comme cela : d'abord sélectionner l'objet le plus haut juste sous le curseur puis déplacer la sélection). Pour demander à Inkscape de déplacer la <em>sélection présente</em> (éventuellement en dessous d'autres objets) sans rien sélectionner d'autre, utilisez <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton mouse-drag">cliquer-glisser</kbd></kbd>. Cela vous permettra de déplacer la sélection actuelle où que vous placiez la souris.</p>
+      <p>Exercez-vous sur les deux formes marron situées sous le rectangle vert transparent en utilisant <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton click">clic</kbd></kbd> et <kbd class="tutorial-keycombo"><kbd class="tutorial-modifierkey">Alt</kbd><span class="tutorial-plussign">+</span><kbd class="tutorial-mousebutton mouse-drag">cliquer-glisser</kbd></kbd> :</p>
+      <object data="../media/doc/tutorials/basic/basic-f15.svg" type="image/svg+xml"></object>
+
+
+      <h2>Sélectionner des objets similaires</h2>
+      <p>Inkscape peut sélectionner automatiquement tous les objets ayant un point commun. Par exemple, si vous souhaitez sélectionner tous les carrés bleus ci-dessous, sélectionnez tout d'abord l'un d'entre eux, puis utilisez <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Édition</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guisubmenu"><samp>Sélectionner même</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Couleur du fond</samp></kbd></kbd> dans le menu (ou <kbd class="tutorial-mousebutton right-click">clic droit</kbd> sur l'espace de travail). Tous les objets avec la même teinte de bleu seront alors sélectionnés.</p>
+      <object data="../media/doc/tutorials/basic/basic-f16.svg" type="image/svg+xml"></object>
+      <p>Vous pouvez non seulement sélectionner par couleur de fond, mais également par couleur de contour, style de contour, fond et contour, et type d'objet. Si ce n'est pas suffisant pour vous, essayez d'utiliser la boîte de dialogue <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Édition</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Rechercher/remplacer</samp></kbd></kbd>.</p>
+
+
+      <h2>Conclusion</h2>
+      <p>Ceci conclut le didacticiel basique. Inkscape offre beaucoup d'autres fonctionnalités, mais les techniques décrites ci-dessus vous permettront déjà de créer des dessins simples mais utiles. Pour aller plus loin, consultez le didacticiel « Inkscape : Avancé » et les autres dans <kbd class="tutorial-menuchoice"><kbd class="tutorial-guimenu"><samp>Aide</samp></kbd><span class="tutorial-arrowsign">⇒</span><kbd class="tutorial-guimenuitem"><samp>Didacticiels</samp></kbd></kbd>.</p>
+
+
+<div class="credits">
+<p id="credits-authors"><span>Authors:</span>驿窗</p>
+<p id="credits-translators"><span>Translators:</span>Matiphas
+                  — 2004; Popolon
+                  — 2007; jazzynico
+                  — 2014; Frigory
+                  — 2016; gadic
+                  — 2020</p>
+<p id="credits-designer"><span>Header / footer design: </span>Esteban Capella — 2019</p>
+</div>
+</div>
+<div id="tut-footer"> </div>
+</div></div>
+
+
+
+
+      </div>
+    </div>
+
+
+
+    <div class="footer">
+      <div class="nav">
+
+        <ul>
+
+        </ul>
+
+      </div>
+      <p>
+
+          Inkscape est un logiciel libre et open source sous licence <a href="">GPL</a>.
+
+      </p>
+    </div>
+
+
+
+  <p id="final-footer">
+    <a href="" title="Équipe des documents">Documents Team</a>
+    <a>Langue: 'fr'</a>
+  </p>
+
+
+
+</body>
+</html>

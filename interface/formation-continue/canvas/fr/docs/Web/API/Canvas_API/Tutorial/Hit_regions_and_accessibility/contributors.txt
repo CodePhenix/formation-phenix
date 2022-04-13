@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/translated-content/commits/main/files/fr/web/api/canvas_api/tutorial/hit_regions_and_accessibility/index.md
+
+# Original Wiki contributors
+SphinxKnight
+smartinus44
+Syberam

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex, nofollow">
+        <style type="text/css">
+            body {
+              padding: 0;
+              margin: 0;
+            }
+
+            svg:not(:root) {
+              display: block;
+            }
+
+            .playable-code {
+              background-color: #f4f7f8;
+              border: none;
+              border-left: 6px solid #558abb;
+              border-width: medium medium medium 6px;
+              color: #4d4e53;
+              height: 100px;
+              width: 90%;
+              padding: 10px 10px 0;
+            }
+
+            .playable-canvas {
+              border: 1px solid #4d4e53;
+              border-radius: 2px;
+            }
+
+            .playable-buttons {
+              text-align: right;
+              width: 90%;
+              padding: 5px 10px 5px 26px;
+            }
+        </style>
+        
+        <title>Animations avancées - deuxième_démo - code sample</title>
+    </head>
+    <body>
+        
+            <canvas id="canvas" style="border: 1px solid" width="600" height="300"></canvas>
+
+        
+        
+            <script>
+                var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var raf;
+
+var ball = {
+  x: 100,
+  y: 100,
+  vx: 5,
+  vy: 2,
+  radius: 25,
+  color: 'blue',
+  draw: function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
+    ctx.closePath();
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  }
+};
+
+function draw() {
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+  ball.draw();
+  ball.x += ball.vx;
+  ball.y += ball.vy;
+  ball.vy *= .99;
+  ball.vy += .25;
+
+  if (ball.y + ball.vy > canvas.height ||
+      ball.y + ball.vy < 0) {
+    ball.vy = -ball.vy;
+  }
+  if (ball.x + ball.vx > canvas.width ||
+      ball.x + ball.vx < 0) {
+    ball.vx = -ball.vx;
+  }
+
+  raf = window.requestAnimationFrame(draw);
+}
+
+canvas.addEventListener('mouseover', function(e){
+  raf = window.requestAnimationFrame(draw);
+});
+
+canvas.addEventListener("mouseout",function(e){
+  window.cancelAnimationFrame(raf);
+});
+
+ball.draw();
+
+            </script>
+        
+    </body>
+</html>

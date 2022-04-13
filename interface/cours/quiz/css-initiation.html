@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+    <link href="../../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/quiz.css" rel="stylesheet">
+  	<title>Quiz CSS : initiation</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-light ">
+        <div class="container-fluid">
+          <a href="../index.php"><span class="h1">&lt; Retour au cours</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h2>Quiz CSS</h2>
+        <p>Cochez la bonne réponse.</p>
+        <form name="monquiz"><div id="quiz"></div></form>
+        <div id="navigation">
+          <button id="prev" class="no-display"><</button>
+          <button id="next">></button>
+          <button id="resultat" class="no-display">Voir le résultat</button>
+        </div>
+    </main>
+    <script>
+        const questions = [
+          {
+            intitule: "Une seule des syntaxe suivante est correcte, laquelle ?",
+            reponses: {
+              a: "p='color:blue;'",
+              b: "p{color=yellow;}",
+              c: "p{color:green; font-size:16px;}",
+              d: "p{color:red}"
+            },
+            bonneReponse: "c"
+          },
+          {
+            intitule: "Si on considère la CSS <code>p{color:green;}</code> alors les paragraphes qui se trouvent dans une <code>&lt;div&gt;</code> n'auront pas la couleur verte ?",
+            reponses: {
+              a: "Vrai",
+              b: "C'est faux !",
+            },
+            bonneReponse: "b"
+          },
+          {
+            intitule: "Si on considère <code>div{color:blue;}</code> les paragraphes qui sont dedans n'auront pas la couleur bleu ?",
+            reponses: {
+              a: "Vrai.",
+              b: "C'est faux !",
+            },
+            bonneReponse: "b"
+          },
+          {
+            intitule: "Si je veux cibler les paragraphes qui se trouvent dans mes balises <code>&lt;article&gt;</code> je dois alors écrire :",
+            reponses: {
+              a: "article p",
+              b: "p article",
+              c: "p.article",
+              d: "article .p"
+            },
+            bonneReponse: "a"
+          },
+          {
+            intitule: "Laquelle de ces propriété CSS sera plus importante que les autres ?",
+            reponses: {
+              a: "li",
+              b: "li.maclasse",
+              c: "header ul li",
+              d: "header li.maclasse"
+            },
+            bonneReponse: "d"
+          },
+          {
+            intitule: "L'une de ces balises est de type inline, laquelle ?",
+            reponses: {
+              a: "p",
+              b: "div",
+              c: "a",
+              d: "main"
+            },
+            bonneReponse: "c"
+          },
+          {
+            intitule: "Pour ajouter une image de fond à mon élément, que dois-je écrire ?",
+            reponses: {
+              a: "background-image:url(mon-image.png);",
+              b: "background:src(mon-image.jpg);",
+              c: "background-image:href(img/mon-image.gif);",
+              d: "background:url(mon-image);"
+            },
+            bonneReponse: "a"
+          },
+          {
+            intitule: "Si je veux mettre un marge intérieur de 20px en haut, 15px sur les côtés et 10px en bas, je peux écrire :",
+            reponses: {
+              a: "margin-top:20px; margin-left:15px; margin-right:15px; margin-bottom:10px;",
+              b: "margin: 20 15 10 15;",
+              c: "padding: 15px 10px 15px 20px;",
+              d: "padding: 20px 15px 10px;"
+            },
+            bonneReponse: "d"
+          },
+          {
+            intitule: "Quelle est la différence entre un identifiant et une classe ?",
+            reponses: {
+              a: "Une classe est unique, un id peut être utilisé plusieurs fois",
+              b: "Un id est unique, une classe peut être utilisée plusieurs fois",
+              c: "Une classe à une importance en css plus haute qu'un identifiant",
+              d: "Aucune différence"
+            },
+            bonneReponse: "b"
+          },
+          {
+            intitule: "Que doit-on écrire en CSS pour appliquer un style aux balises de titre de niveau 2 et 3 ?",
+            reponses: {
+              a: "title",
+              b: "h2 h3",
+              c: "h2, h3",
+              d: "h2 + h3"
+            },
+            bonneReponse: "c"
+          },
+        ];
+      </script>
+      <script type="text/javascript" src="../../assets/js/quiz-initiation.js"></script>
+    </body>
+    </html>

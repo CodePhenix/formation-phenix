@@ -1,0 +1,36 @@
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\index.htm
+Content Type: text/html
+
+Uri: https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\css.css
+Content Type: text/css
+
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/css/style.css
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\css\style.css
+Content Type: text/css
+
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/fevicon.ico
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\fevicon.ico
+Content Type: image/vnd.microsoft.icon
+
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/js/jquery-1.11.1.min.js
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\js\jquery-1.11.1.min.js
+Content Type: application/javascript
+
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/js/jquery.reveal.js
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\js\jquery.reveal.js
+Content Type: application/javascript
+
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/js/jquery.cookie.min.js
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\js\jquery.cookie.min.js
+Content Type: application/javascript
+
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/js/jquery.navgoco.min.js
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\js\jquery.navgoco.min.js
+Content Type: application/javascript
+
+Uri: http://www.theappguruz.com/tag-tools/web/CSSAnimations/tag-logo.png
+File Name: C:\Downloaded Web Sites\www.theappguruz.com\tag-tools\web\CSSAnimations\tag-logo.png
+Content Type: image/png
+

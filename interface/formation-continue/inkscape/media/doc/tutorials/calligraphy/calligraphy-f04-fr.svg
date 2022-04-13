@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="141" version="1.1" viewBox="0 0 300 141" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <marker id="c" overflow="visible" orient="auto">
+   <path transform="scale(.2)" d="m5.77 0-8.65 5v-10z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="d" overflow="visible" orient="auto">
+   <path transform="scale(-.2)" d="m5.77 0-8.65 5v-10z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <path d="m111.33 102.81h92.823" display="block" fill="none" stroke="#000" stroke-dasharray="0.650136, 1.95041" stroke-width=".65014"/>
+ <path d="m111.36 103.08 88.164-50.901" display="block" fill="none" stroke="#000" stroke-dasharray="0.6875, 2.0625" stroke-width=".6875"/>
+ <path d="m111.47 130.33v-118.78" color="#000000" display="block" fill="none" stroke="#000" stroke-dasharray="0.6875, 2.0625" stroke-width=".6875"/>
+ <text x="88.336723" y="6" display="block" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" stroke-width="1pt" style="line-height:0%" xml:space="preserve"><tspan x="88.336723" y="6" font-size="6px" style="line-height:1.1">angle = 90°</tspan></text>
+ <text x="202.46759" y="52.500549" display="block" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" stroke-width="1pt" style="line-height:0%" xml:space="preserve"><tspan x="202.46759" y="52.500549" font-size="6px" style="line-height:1.1">angle = 30° (par défaut)</tspan></text>
+ <text x="215" y="104.26855" display="block" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" stroke-width="1pt" style="line-height:0%" xml:space="preserve"><tspan x="215" y="104.26855" font-size="6px" style="line-height:1.1">angle = 0°</tspan></text>
+ <text x="87.677307" y="139.26855" display="block" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" stroke-width="1pt" style="line-height:0%" xml:space="preserve"><tspan x="87.677307" y="139.26855" font-size="6px" style="line-height:1.1">angle = −90°</tspan></text>
+ <path d="m162.44 86.792c2.0412 4.3309 3.2095 9.0215 3.4381 13.804" color="#000000" display="block" fill="none" marker-end="url(#c)" marker-start="url(#d)" stroke="#000" stroke-width="1.6875"/>
+ <g transform="matrix(.36245 -.20926 .20926 .36245 -189.84 -450.15)" display="block">
+  <use transform="matrix(-1 1.5541e-6 1.5541e-6 1 279.99 -.00021757)" width="320" height="2515" xlink:href="#a"/>
+  <path id="a" d="m140.95 1527.7h-14.519s0.019 51.9-15.338 51.9c8.741 47.256 10.022 36.942 10.841 46.776 8.7733 5.3489 16.354 6.3692 19.732 5.9823" fill="#fff" fill-rule="evenodd"/>
+  <path d="m140.95 1527.3h-14.519s0.019 51.9-15.338 51.9c8.741 47.256 10.022 36.942 10.841 46.776 10.615-5.0767 18.564-6.1416 19.383 3.692" fill="#fff" fill-rule="evenodd"/>
+  <path id="b" d="m140.95 1527.3h-14.519s0.019 51.9-15.338 51.9c8.741 47.256 9.5604 38.788 10.38 48.622" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="3.325"/>
+  <use transform="matrix(-1 0 0 1 279.54 0)" width="320" height="2515" xlink:href="#b"/>
+  <path d="m140.13 1527.6v52.936" fill="none" stroke="#000" stroke-width="3.325"/>
+  <path transform="matrix(1.066 .050345 -.034293 .72608 40.018 415.84)" d="m155.15 1610.6c0 10.409-4.2192 18.848-9.4239 18.848-5.2047 0-9.4239-8.4384-9.4239-18.848 0-10.409 4.2192-18.848 9.4239-18.848 5.2047 0 9.4239 8.4384 9.4239 18.848z" color="#000000" display="block"/>
+ </g>
+ <path d="m174.48 76.72c-5.3084-7.7671-14.746-11.811-23.749-13.131-18.922-1.6511-34.886 12.692-53.778 11.114-4.4139-0.8521-6.3854-3.8204-5.414-8.2285 3.4322-15.574 26.47-25.038 39.215-29.804 9.8641-3.4255 20.192-4.9113 30.538-5.9031l-10.883 6.2839c-10.346 0.9918-20.674 2.4766-30.538 5.9021-1.8659 0.6978-3.758 1.3289-5.5976 2.0934-1.7031 0.707-6.3392 3.6107-5.0232 2.3188 1.7902-1.7581 4.1832-2.8393 6.5096-3.7786 0.30055-0.1213-3.1261 1.7341-6.726 5.3896-3.4778 3.5325-8.5715 10.426-6.5266 15.827 0.88473 2.3363 3.1075 3.1082 5.3281 3.6151 18.893 1.5792 34.856-12.764 53.778-11.113 9.0033 1.32 18.441 5.3628 23.749 13.13z" display="block" fill="#d2d2d2"/>
+</svg>

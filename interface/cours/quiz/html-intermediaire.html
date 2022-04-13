@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+    <link href="../../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/quiz.css" rel="stylesheet">
+  	<title>Quiz HTML/CSS : Intermédiaire</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-light ">
+        <div class="container-fluid">
+          <a href="../index.php"><span class="h1">&lt; Retour au cours</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h2>Quiz HTML/CSS</h2>
+        <p>Cochez la ou les bonnes réponses.</p>
+        <form name="monquiz"><div id="quiz"></div></form>
+        <div id="navigation">
+          <button id="prev" class="no-display"><</button>
+          <button id="next">></button>
+          <button id="resultat" class="no-display">Voir le résultat</button>
+        </div>
+    </main>
+    <script>
+      // let main=document.querySelector("main"),
+      // quiz=document.querySelector("#quiz");
+      const questions = [
+        {
+          intitule: "Quelle(s) balise(s) est/sont de type block ?",
+          reponses: {
+            a: "ul",
+            b: "form",
+            c: "a"
+          },
+          bonneReponse:  ["a", "b"]
+        },
+        {
+          intitule: "Quelle(s) balise(s) est/sont de type inline ?",
+          reponses: {
+            a: "label",
+            b: "li",
+            c: "hr",
+            d: "span"
+          },
+          bonneReponse: ["a", "d"]
+        },
+        {
+          intitule: "Quelle(s) balise(s) est/sont orpheline(s) ?",
+          reponses: {
+            a: "hr",
+            b: "br",
+            c: "meta"
+          },
+          bonneReponse: ["a", "b", "c"]
+        },
+        {
+          intitule: "Quel(s) attribut permet de modifier le type de champs d'un formulaire ?",
+          reponses: {
+            a: "value",
+            b: "type",
+            c: "input",
+            d: "pattern"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Quel couple d’attributs permet de lier sémantiquement une balise <code>&lt;label&gt;</code> à un champ dans un formulaire ?",
+          reponses: {
+            a: "for",
+            b: "name",
+            c: "value",
+            d: "id"
+          },
+          bonneReponse: ["a", "d"]
+        },
+        {
+          intitule: "Sur une balise <code>&lt;input&gt;</code> quel(s) valeur(s) de l'attribut type(s) permet(tent) une vérification du champ ?",
+          reponses: {
+            a: "email",
+            b: "url",
+            c: "tel",
+            d: "required"
+          },
+          bonneReponse: ["a", "b", "c"]
+        },
+        {
+          intitule: "Selon la CSS suivante <br>\
+                    <img src='../../assets/img/quiz/selecteur-plus.png'><br>\
+                    je sélectionne :",
+          reponses: {
+            a: "Les éléments <code>&lt;span&gt;</code> placé directement dans les <code>&lt;div&gt;</code>",
+            b: "Les éléments <code>&lt;div&gt;</code> placé directement après les <code>&lt;span&gt;</code>",
+            c: "Les éléments <code>&lt;span&gt;</code> placé directement après les <code>&lt;div&gt;</code>",
+            d: "Rien, ce sélecteur n'est pas correct"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Selon la CSS suivante <br>\
+                    <img src='../../assets/img/quiz/selecteur-tilde.png'><br>\
+                    je sélectionne :",
+          reponses: {
+            a: "Les prochains éléments <code>&lt;span&gt;</code> placé directement après les <code>&lt;div&gt;</code>",
+            b: "Les éléments <code>&lt;span&gt;</code> qui sont les enfants direct des <code>&lt;div&gt;</code>",
+            c: "Les éléments <code>&lt;span&gt;</code> qui sont en dehors des <code>&lt;div&gt;</code>",
+            d: "Rien, ce sélecteur n'est pas correct"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Selon la CSS suivante <br>\
+                    <img src='../../assets/img/quiz/selecteur-first-child.png'><br>\
+                    je sélectionne :",
+          reponses: {
+            a: "Les éléments qui sont des enfants direct de la classe 'maclass'",
+            b: "Le premier enfant de la classe 'maclass'",
+            c: "Le premier enfant qui à la classe 'maclass'",
+            d: "Les éléments qui ont un seul enfant et la classe 'maclass'"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Je peux modifier la largeur de mon élément si sa propriété <code>display</code> est de type :",
+          reponses: {
+            a: "block",
+            b: "inline",
+            c: "inline-block",
+            d: "flex"
+          },
+          bonneReponse: ["a", "c", "d"]
+        },
+        {
+          intitule: "Pour aligner des éléments je veux utiliser une propriété <code>display:flex;</code> je la place alors :",
+          reponses: {
+            a: "Sur le parent des balises que je veux positionner",
+            b: "Sur la balise que je veux positionner"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Selon la CSS suivante <br>\
+                    <img src='../../assets/img/quiz/display-flex.png'><br>\
+                    je précise l'alignement :",
+          reponses: {
+            a: "De la direction",
+            b: "Sur l'axe horizontal",
+            c: "Pour le passage à la ligne"
+          },
+          bonneReponse: ["b", "c"]
+        },
+        {
+          intitule: "Je peux positionner un élément de manière absolue par rapport à son parent si la position de celui-ci est :",
+          reponses: {
+            a: "absolue",
+            b: "relative",
+            c: "Dans tous les cas",
+            d: "C'est pas possible"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Pour positioner l'élément avec le fond bleu,<br>\
+                    <img src='../../assets/img/quiz/element-bleu.png'><br>\
+                    je peux utiliser la/les propriété(s) :",
+          reponses: {
+            a: "top",
+            b: "left",
+            c: "right",
+            d: "justify-content"
+          },
+          bonneReponse: ["a", "b", "c", "d"]
+        },
+        {
+          intitule: "Pour realiser l'exemple suivant,<br>\
+                    <img src='../../assets/img/quiz/adaptive.gif'><br>\
+                    j'ai utilisé :",
+          reponses: {
+            a: "Une media query",
+            b: "Des valeurs en pourcentage"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "D'après le code suivant,<br>\
+                    <img src='../../assets/img/quiz/keyframes.png'><br>\
+                    J'utilise :",
+          reponses: {
+            a: "Une animation",
+            b: "Une tranistion",
+            c: "Une propriété animation-name",
+            d: "Un sélecteur au survol :hover"
+          },
+          bonneReponse: ["a", "c"]
+        },
+        {
+          intitule: "Trouver l'erreur dans le code suivant<br>\
+                    <img src='../../assets/img/quiz/erreur1.png'><br>",
+          reponses: {
+            a: "Il y a un espace en trop",
+            b: "Un attribut et sa valeur ne sont pas corrects",
+            c: "Il manque une fermeture",
+            d: "Il n'y a pas d'erreur"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Trouver l'erreur dans le code suivant<br>\
+                    <img src='../../assets/img/quiz/erreur2.png'><br>",
+          reponses: {
+            a: "Il manque un point-virgule",
+            b: "Un sélecteur n'est pas correct",
+            c: "Il y a une fermeture en trop",
+            d: "Il n'y a pas d'erreur"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Trouver l'erreur dans le code suivant<br>\
+                    <img src='../../assets/img/quiz/erreur3.png'><br>",
+          reponses: {
+            a: "Il y a un espace en trop",
+            b: "La sémantique",
+            c: "Il manque une fermeture",
+            d: "Il n'y a pas d'erreur"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Trouver l'erreur dans le code suivant<br>\
+                    <img src='../../assets/img/quiz/erreur4.png'><br>",
+          reponses: {
+            a: "Il manque un point-virgule",
+            b: "Il manque une unité",
+            c: "Il y a une fermeture en trop",
+            d: "Il n'y a pas d'erreur"
+          },
+          bonneReponse: ["a", "b", "c"]
+        }
+      ];
+
+      // let totalRep= new Array();
+      // /*Constructions de la structure*/
+      //  for (var question of questions) {
+      //      let fieldset=document.createElement("fieldset");
+      //      let questionNum="question"+questions.indexOf(question);
+      //      fieldset.id=questionNum;
+      //      //console.log(question.intitule);
+      //      let intituleQuestion="<legend>"+ question.intitule +" </legend>"
+      //
+      //      fieldset.classList.add("question");
+      //      quiz.appendChild(fieldset);
+      //      fieldset.innerHTML+= intituleQuestion;
+      //
+      //      for(var reponse in question.reponses){
+      //        let div=document.createElement("div");
+      //        //console.log(reponse);
+      //        let choix="<input name='question' type='checkbox' value="+reponse+">\
+      //                   <label for='question'>"+question.reponses[reponse]+"</label>"
+      //
+      //        fieldset.appendChild(div);
+      //        div.innerHTML += choix;
+      //      }
+      //
+      //      for(var bonneReponse of question.bonneReponse){
+      //        //console.log(bonneReponse);
+      //         totalRep.push(bonneReponse)
+      //      }
+      //   }
+      //   //console.log(totalRep);
+      //
+      // /*Navigation entre les questions*/
+      // let suivant =   document.getElementById("next"),
+      //     precedent =   document.getElementById("prev"),
+      //     navButtons =   document.getElementById("navigation"),
+      //     resultat =   document.getElementById("resultat"),
+      //     questionActive = document.querySelector('.question');
+      //
+      // questionActive.classList.add('active')
+      //
+      // suivant.addEventListener("click", function(){
+      //   var currentQuestion = document.querySelector('.question.active');
+      //
+      //   if(precedent.classList.contains('no-display')){
+      //     precedent.classList.remove('no-display');
+      //   }
+      //   if (currentQuestion.nextElementSibling) {
+      //     currentQuestion.classList.remove('active');
+      //     currentQuestion.nextElementSibling.classList.add('active');
+      //   }
+      // });
+      //
+      // precedent.addEventListener("click", function(){
+      //   var currentQuestion = document.querySelector('.question.active');
+      //
+      //   if(currentQuestion.previousElementSibling){
+      //     currentQuestion.classList.remove('active');
+      //     currentQuestion.previousElementSibling.classList.add('active');
+      //   }
+      // });
+      //
+      // navButtons.addEventListener("click", function(){
+      //   var currentQuestion = document.querySelector('.question.active');
+      //
+      //   if(currentQuestion.nextElementSibling==null){
+      //     suivant.classList.add('no-display');
+      //     resultat.classList.remove('no-display');
+      //   }else{
+      //     suivant.classList.remove('no-display');
+      //   }
+      //   if(currentQuestion.previousElementSibling==null){
+      //     precedent.classList.add('no-display');
+      //   }
+      // });
+      //
+      // /*Résultat*/
+      // resultat.addEventListener('click', function(){
+      //   let note = 0;
+      //
+      //   for (var question of questions) {
+      //     let questionNum="question"+questions.indexOf(question),
+      //         fields=document.querySelector("#"+questionNum),
+      //         inputs=fields.querySelectorAll('input'),
+      //         allBonneRep= new Array(),
+      //         userRep= new Array();
+      //
+      //     /*Comparaison des réponses et calcul de la note*/
+      //     for(var bonneReponse in question.bonneReponse){
+      //        allBonneRep.push(question.bonneReponse[bonneReponse])
+      //     }
+      //     //console.log(allBonneRep);
+      //     for(var input of inputs){
+      //       if(input.checked==true){
+      //           userRep.push(input.value);
+      //        }else if(input.checked==false && allBonneRep.includes(input.value)){
+      //            note-=.5;
+      //         }
+      //         /*Affichage de la correction*/
+      //        if(allBonneRep.includes(input.value)){
+      //           input.nextElementSibling.style.color="#52d3aa";
+      //        }else{
+      //           input.nextElementSibling.style.color="red";
+      //        }
+      //     }
+      //     //console.log(userRep);
+      //     for (var rep of userRep){
+      //       //console.log(allBonneRep.includes(rep))
+      //       if(allBonneRep.includes(rep)){
+      //         note++;
+      //       }else{
+      //         note-=.5;
+      //       }
+      //     }
+      //   }
+      //   //console.log(note);
+      //   if(note<0){
+      //     note=0;
+      //   }else{
+      //     note=note/totalRep.length*20
+      //   }
+      //   /*Affichage du résultat*/
+      //   quiz.style.pointerEvents ='none';
+      //   quiz.classList.add("no-display");
+      //   navButtons.classList.add("no-display");
+      //
+      //   let div=document.createElement("div");
+      //   div.id= "result";
+      //   let result="<h6>Résultat :<br>\
+      //                 <b>"+note+"/20</b>\
+      //                 </h6>\
+      //                 <button id='correction'>Voir la correction</button>";
+      //   div.innerHTML=result;
+      //   main.appendChild(div);
+      //   /*Structure de la correction*/
+      //   let correction=document.querySelector("#correction");
+      //   correction.addEventListener('click', function(){
+      //     let result=document.querySelector("#result");
+      //     result.parentElement.removeChild(result);
+      //     quiz.classList.remove("no-display");
+      //     navButtons.classList.remove("no-display");
+      //   });
+      // })
+    </script>
+    <script type="text/javascript" src="../../assets/js/quiz.js"></script>
+  </body>
+</html>

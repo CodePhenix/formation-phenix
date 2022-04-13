@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="157" version="1.1" viewBox="0 0 300 157" xmlns="http://www.w3.org/2000/svg">
+ <text x="37.091438" y="145.20508" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" font-size="6px" stroke-width="1pt" style="line-height:0%" xml:space="preserve"><tspan x="37.091438" y="145.20508" style="line-height:1.4">Redimensionner des rectangles arrondis </tspan><tspan x="37.091438" y="153.54752" style="line-height:1.4">avec « Préserver l'échelle des arrondis » activé</tspan></text>
+ <rect x="69.242" y=".40561" width="196.68" height="63.16" rx="15.76" ry="16.984" color="#000000" fill="#00f" fill-opacity=".11037" fill-rule="evenodd" stroke="#000" stroke-dasharray="0.625, 1.25" stroke-width=".625"/>
+ <rect x="69.242" y=".33054" width="196.68" height="122.46" rx="15.76" ry="32.93" color="#000000" fill="#00f" fill-opacity=".11037" fill-rule="evenodd" stroke="#000" stroke-dasharray="0.625, 1.25" stroke-width=".625"/>
+ <rect x="114.29" y=".35556" width="151.72" height="106.01" rx="12.157" ry="28.506" color="#000000" fill="#00f" fill-opacity=".11037" fill-rule="evenodd" stroke="#000" stroke-dasharray="0.625, 1.25" stroke-width=".625"/>
+ <rect x="183.44" y=".31943" width="82.83" height="63.106" rx="6.6372" ry="16.97" fill="#ff0004" fill-opacity=".75" fill-rule="evenodd" stroke="#000" stroke-width=".625"/>
+ <rect x="218.04" y=".32016" width="48.118" height="148.86" rx="3.8557" ry="40.031" color="#000000" fill="#00f" fill-opacity=".11037" fill-rule="evenodd" stroke="#000" stroke-dasharray="0.625, 1.25" stroke-width=".625"/>
+ <rect x="205.74" y=".38217" width="60.456" height="55.042" rx="4.8444" ry="14.801" color="#000000" fill="#00f" fill-opacity=".11037" fill-rule="evenodd" stroke="#000" stroke-dasharray="0.625, 1.25" stroke-width=".625"/>
+ <rect x="227.86" y=".31296" width="38.454" height="29.249" rx="3.0813" ry="7.8653" color="#000000" fill="#00f" fill-opacity=".11037" fill-rule="evenodd" stroke="#000" stroke-dasharray="0.625, 1.25" stroke-width=".625"/>
+ <rect x="38.124" y=".31247" width="227.21" height="42.865" rx="18.207" ry="11.527" color="#000000" fill="#00f" fill-opacity=".11037" fill-rule="evenodd" stroke="#000" stroke-dasharray="0.625, 1.25" stroke-width=".625"/>
+</svg>

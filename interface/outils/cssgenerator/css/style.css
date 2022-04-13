@@ -1,0 +1,397 @@
+.container{
+    width: 98%;
+}
+.copy_btn_container{
+    /*padding: 40px 10px 6px;*/
+    text-align: center;
+}
+
+
+#title_brand{
+    display: inline-block;
+    margin-top: -8px;
+    color:rgb(255, 101, 80);
+}
+#introduction{
+    text-align: justify;
+    line-height: 1.65;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+}
+#footer{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+#title_brand a{
+    /*text-decoration: none;*/
+
+}
+
+#adsense_side_ad{
+    padding-top: 15px;
+    margin-left: -15px;
+    /*min-width: 300px;*/
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.panel-body{
+    padding: 7px;
+}
+
+.nav-tabs>li{
+    font-weight: bold;
+}
+
+.text_center_align{
+    text-align: center;
+}
+#
+#adsense_top_ad{
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#box-css-generator-demo,#borderbox-css-generator-demo, #transformbox-css-generator-demo{
+    background: #158cba;
+    width: 400px;
+    height: 250px;
+    margin: 50px auto;
+    overflow: visible;    
+    border: 0px;
+}
+#borderbox-css-generator-demo, #transformbox-css-generator-demo{
+    width: 300px;
+    height: 300px;
+}
+#multiple-column-css-generator-demo{
+    width: 90%;
+    min-height: 300px;
+    font-size: 13pt;
+}
+#gradient-css-generator-demo{
+    width: 90%;
+    height: 200px;
+    margin: 50px auto;
+    overflow: visible;    
+    border: 0px;
+}
+#text-shadow-css-generator-demo, #rgba-css-generator-demo, #rgba-css-generator-demo-2{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    background: #ffffff;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #ccc;
+    width: 700px;
+    height: 100px;
+    line-height: 100px;
+    margin: 50px auto;
+    overflow: visible;   
+}
+#css-generator-code,#css-generator-code-2,#css-generator-code-3{
+    width: 700px;
+    max-width: 100%;
+    margin: 100px auto 10px;
+    background: #eee;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 8px;
+    min-height: 60px;
+}
+#css-generator-code.gradient_code{
+    width: 100%;
+    font-size: 16px;
+}
+#copy_btn_container{
+    margin: 5px auto;
+    max-width: 70px;
+}
+.clear{
+    clear: both;
+}
+#horizontal_length_slider, #vertical_length_slider,#blur_length_slider,#spread_length_slider,
+#shadowcolorpicker, #opacity_slider, #degree_slider, #column_count_slider, #column_gap_slider,
+#column_rule_width_slider{
+    width: 80%;
+    margin: 10px auto 2px auto;    
+}
+
+#filershadowcolorpicker{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.slider{
+    width: 80%;
+    margin: 10px auto 2px auto;   
+}
+.input-group.colorpicker-component{
+    float: right;
+    max-width: 40%;
+}
+/*#startcolorpicker, #endcolorpicker{
+    float: right;
+    max-width: 50%;
+}*/
+#inset_option{
+    float: right;
+}
+
+#all_corners_radius_slider, #topleft_radius_slider, #topright_radius_slider,#bottomleft_radius_slider,
+#bottomright_radius_slider, #border_width_slider{
+    width: 80%;
+    margin: 10px auto 2px auto;    
+}
+
+#rotate_slider, #scale_slider, #skew_slider, #translateX_slider, #translateY_slider{
+    width: 80%;
+    margin: 10px auto 2px auto; 
+}
+#addthis_box_container{
+    display: inline-block;
+    float: right;
+}
+
+.option_name{
+    float: left;
+}
+.option_label{
+    float: right;
+    color: #158cba;
+    font-weight: bold;
+}
+.option_label.inputValue{
+    max-width: 14%;
+}
+#generator-option,#cursor-option{
+    font-size: 16px;
+}
+ul.nav{
+    list-style: none;
+    font-size: 14px;
+}
+ul.nav li{
+    display: inline-block;
+    border-top: 1px solid #ccc;
+}
+ul.nav li.nav_active{
+    font-weight: bold;
+    border-top-color: #000;
+}
+
+#css-generator-list .generator{
+    background: #158cba;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+    min-height: 75px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    border: 6px solid white;
+    padding: 0px;
+}
+#css-generator-list .generator a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin:25px auto;
+}
+#css-generator-list .generator a:hover{
+    color:rgb(255, 101, 80);
+}
+.selectpicker{
+    display: block;
+    float: right;
+}
+/*#borderStyle,#orientation{
+    display: block;
+    float: right;
+}*/
+#include_option{
+    margin-top: 10px;
+}
+#toggle_container{
+    float: right;
+}
+#cursor-option li{
+    font-size: 125%;
+}
+#cursor-option li.active{
+    /*background: rgb(230, 255, 249);*/
+    background: rgba(128, 255, 225,0.7);
+    transition: background 1.2s;
+    color: rgb(255, 101, 80);
+    font-weight: bold;
+}
+
+#circle_percentage{
+    margin: 2px auto;
+}
+#circle_percentage .rs-handle  {
+    background-color: transparent;
+    border: 8px solid transparent;
+    border-right-color: black;
+    margin: -8px 0 0 2px !important;
+    z-index: -10;
+}
+#circle_percentage .rs-handle:before  {
+    display: block;
+    content: " ";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: black;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 100%;
+}
+#circle_percentage .rs-handle:after  {
+    display: block;
+    content: " ";
+    width: 62px;
+    position: absolute;
+    top: -1px;
+    right: 0px;
+    border-top: 2px dotted black;
+}
+#circle_percentage .rs-range-color  {
+    background-color: #ff6550;
+}
+#circle_percentage .rs-path-color  {
+    background-color: #ffe8e6;
+}
+/*.rs-tooltip.edit, .rs-tooltip .rs-input{
+    font-weight: bold;
+    color:rgb(255, 101, 80);
+    background: #158cba;
+    border-radius: 50%;
+}*/
+.percentage_stoppage{
+    max-width: 15%;
+    float: right;
+    margin-top: 5px;
+}
+.percentage_stoppage input{
+    max-width: 100%;
+    text-align: right;
+}
+/*#percentage_startColor_container,#percentage_endColor_container{
+    max-width: 15%;
+    float: right;
+    margin-top: 5px;
+}*/
+/*#percentage_startColor_container input, #percentage_endColor_container input{
+    max-width: 100%;
+    text-align: right;
+}*/
+.hide{
+    display: none;
+}
+#add_stop_color{
+    margin: 5px auto;
+}
+.align_center{
+    text-align: center;
+}
+
+a.remove_stopper{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 125%;
+    color: #ff6550;
+}
+#rgbacolorpicker,#rgbcolorpicker, #hexcolorpicker{
+    max-width: 75%;
+    width: 75%;
+    font-size: 175%;
+    text-transform: uppercase;
+}
+#rgbacolorpicker input[type="text"],#rgbcolorpicker input[type="text"], #hexcolorpicker input[type="text"]{
+    text-transform: uppercase;
+}
+.emphasis{
+    text-transform: uppercase;
+    text-align: center;
+}
+#color_code_copy_container div.emphasis{
+    margin-top: 10px;
+}
+#hexValue_textbox{
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 50%;
+}
+#borderbox-css-generator-demo-for-border-container{
+    width: 100%;
+    height: 250px;
+    background: #eee;
+}
+#borderbox-css-generator-demo-for-border{
+    background: #ffffff;
+    width: 400px;
+    height: 250px;
+    margin: 50px auto;
+    overflow: visible;    
+    border: 0px;
+}
+#filer-css-generator-demo{
+    background: #ffffff;
+    width: 400px;
+    height: 268px;
+    margin: 20px auto;
+    overflow: visible;    
+    border: 0px;
+}
+li.list-group-item.invididual_only input.option_input{
+    max-width: 10%;
+}
+
+li.list-group-item.invididual_only input.option_input, li.list-group-item.invididual_only select{
+    margin-top: 7px;
+}
+#top_banner_ads{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 760px) {
+  .dsk_only{
+    display: none !important;
+  } 
+}
+
+.sticky-ads-container {
+  position: fixed;
+  margin: 0px auto;  
+  padding: 0px;
+  text-align: center;
+  bottom: 0px;
+  z-index: 2001;  
+  background-color: white;
+  width: 100%;
+}
+
+.sticky-ads{
+  width: 970px; 
+  height: 90px;
+  text-align: center;
+  margin:0px auto;
+  padding: 0px;
+}
+
+@media only screen and (min-device-width: 800px) { 
+  .mobile_only{
+    display: none;
+  }
+  body{
+    margin-bottom: 100px;
+  }
+}

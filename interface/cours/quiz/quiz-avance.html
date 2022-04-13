@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  	<meta charset="utf-8">
+    <link href="../../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/quiz.css" rel="stylesheet">
+  	<title>Quiz HTML/CSS & JS</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-light ">
+        <div class="container-fluid">
+          <a href="../index.php"><span class="h1">&lt; Retour au cours</span></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h2>Quiz HTML/CSS & JS</h2>
+        <p>Cochez la bonne réponse.</p>
+        <form name="monquiz"><div id="quiz"></div></form>
+        <div id="score">
+          <div>
+            <div id="result"></div>
+            <div id="hp">Chance :
+              <span>
+                <span>★★★★★</span><span id="lasts"></span></span>
+              </span>
+            </div>
+            <div id="pts">Points : <span></span></div>
+          </div>
+        </div>
+        <button id="retry" class="no-display fade-top-anim"><i class="bi bi-arrow-clockwise"></i>Recommencer</button>
+        <span id="questionNumber">Question : <span id="currentNumber"></span>/<span id="totalQuestion"></span></span>
+    </main>
+    <script>
+      const questions = [
+        {
+          intitule: "Que signifie la balise <code>&lt;strong&gt;</code> ?",
+          reponses: {
+            a: "Permet de mettre le texte en gras.",
+            b: "Indique qu'il s'agit d'un texte d'une forte importance.",
+            c: "Sert à attirer l'attention sur une partie d'un texte sans y ajouter une importance particulière."
+          },
+          bonneReponse:  ["b"]
+        },
+        {
+          intitule: "Que signifie la balise <code>&lt;b&gt;</code> ?",
+          reponses: {
+            a: "Permet de mettre le texte en gras.",
+            b: "Indique qu'il s'agit d'un texte d'une forte importance.",
+            c: "Sert à attirer l'attention sur une partie d'un texte sans y ajouter une importance particulière."
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Que signifie la balise <code>&lt;abbr&gt;</code> ?",
+          reponses: {
+            a: "Indique qu'il s'agit d'un acronyme ou d'une abréviation.",
+            b: "Représente le terme qui est en train d'être défini.",
+            c: "Précise le sens d'un acronyme ou d'une abréviation."
+          },
+          bonneReponse:  ["a"]
+        },
+        {
+          intitule: "Que signifie la balise <code>&lt;cite&gt;</code> ?",
+          reponses: {
+            a: "Indique qu'il s'agit d'une citation de source extérieure.",
+            b: "Indique une citation et sa référence.",
+            c: "Représente une référence de citation ou de source."
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Que signifie la balise <code>&lt;q&gt;</code> ?",
+          reponses: {
+            a: "Indique qu'il s'agit d'une citation de source extérieure.",
+            b: "Indique une citation et sa référence.",
+            c: "Représente une référence de citation ou de source."
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Que signifie la balise <code>&lt;time&gt;</code> ?",
+          reponses: {
+            a: "Indique qu'il s'agit d'une heure.",
+            b: "Indique qu'il s'agit d'une date ou d'une heure.",
+            c: "Indique qu'il s'agit d'une date."
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Que signifie la balise <code>&lt;small&gt;</code> ?",
+          reponses: {
+            a: "Indique un contenu d'une importance secondaire.",
+            b: "Permet d'écrire le texte en plus petit.",
+            c: "Utilisé pour mettre du texte en exposant."
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Que signifie la balise <code>&lt;i&gt;</code> ?",
+          reponses: {
+            a: "Permet d'écrire le texte en italique.",
+            b: "Met l'accent sur un contenu particulier.",
+            c: "Change la manière de lire le texte par rapport au contenu principal, c'est une indication complémentaire."
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Quelle balise est le parent pour indiquer différentes sources d'une image ?",
+          reponses: {
+            a: "<code>&lt;img&gt;</code>",
+            b: "<code>&lt;source&gt;</code>",
+            c: "<code>&lt;picture&gt;</code>",
+            d: "<code>&lt;figure&gt;</code>"
+          },
+          bonneReponse:  ["c"]
+        },
+        {
+          intitule: "Sur l'image suivante, selon le modèle d'un élément HTML<br>\
+                    <img src='../../assets/img/quiz/modele-element.png'><br>\
+                    Que represente la partie en noir ?",
+          reponses: {
+            a: "<code>margin</code>",
+            b: "<code>border</code>",
+            c: "<code>padding</code>"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "La propriété <code>z-index</code> permet de changer le niveau d'empilement des éléments uniquement si ils ont une <code>position</code> autre que <code>static</code>.",
+          reponses: {
+            a: "Vrai",
+            b: "C'est faux !"
+          },
+          bonneReponse:  ["a"]
+        },
+        {
+          intitule: "D'après l'image suivante :<br>\
+                    <img src='../../assets/img/quiz/text-bg.png'><br>\
+                    quelle propriété est utilisé ?",
+          reponses: {
+            a: "<code>linear-gradient</code>",
+            b: "<code>color</code>",
+            c: "<code>background-color</code>",
+            d: "<code>background-clip</code>"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Laquelle de ces valeurs pourrait permettre la gestion de son opacité ?",
+          reponses: {
+            a: "<code>white</code>",
+            b: "<code>#fff</code>",
+            c: "<code>rgb(255, 255, 255)</code>"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Quelle propriété permet à une animation de se répeter à l'infinie ?",
+          reponses: {
+            a: "<code>animation-timing-function</code>",
+            b: "<code>animation-duration</code>",
+            c: "<code>animation-direction</code>",
+            d: "<code>animation-iteration-count</code>"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Quel sélecteur CSS permet de sélectionner un <code>input</code> qui est coché ?",
+          reponses: {
+            a: "<code>:focus</code>",
+            b: "<code>:visited</code>",
+            c: "<code>:checked</code>",
+            d: "<code>:target</code>"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Le sélécteur CSS <code>:before</code> permet de créer un élément :",
+          reponses: {
+            a: "Avant un élément",
+            b: "En tant que premier enfant",
+            c: "Après votre élément",
+            d: "En tant que dernier enfant"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Le sélécteur CSS <code>:after</code> permet de créer un élément :",
+          reponses: {
+            a: "Avant un élément",
+            b: "En tant que premier enfant",
+            c: "Après votre élément",
+            d: "En tant que dernier enfant"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Quelle propriété permet de gérer le débordement d'un contenu ?",
+          reponses: {
+            a: "<code>visibility</code>",
+            b: "<code>opacity</code>",
+            c: "<code>overflow</code>",
+            d: "<code>outline</code>"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Laquelle de ces methodes permet d'ajouter ou retirer un élément d'un tableau en fonction de son index ?",
+          reponses: {
+            a: "<code>splice()</code>",
+            b: "<code>unshift</code>",
+            c: "<code>shift()</code>",
+            d: "<code>includes()</code>"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Contrairement à la boucle while, la boucle while do sera toujours répété une fois.",
+          reponses: {
+            a: "Vrai",
+            b: "C'est faux !"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Il n'existe pas de syntaxe abrégé pour une condition <code>if...else</code>.",
+          reponses: {
+            a: "Vrai",
+            b: "C'est faux !"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Quelle méthode est appropriée pour basculer d'un cas à l'autre en fonction d'une valeur précise ?",
+          reponses: {
+            a: "Une fonction",
+            b: "Un switch",
+            c: "Une condition <code>else if</code>",
+            d: "Une boucle <code>for of</code>"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "Avec la méthode <code>Math</code> on peut arrondire un nombre à l'entier le plus proche avec :",
+          reponses: {
+            a: "<code>Math.round</code>",
+            b: "<code>Math.floor</code>",
+            c: "<code>Math.celi</code>"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "En JavaScript, il est possible de créer un modèle d'objet puis créer un objet basé sur ce modèle.",
+          reponses: {
+            a: "Vrai",
+            b: "C'est faux !"
+          },
+          bonneReponse: ["a"]
+        },
+        {
+          intitule: "Quelle méthode faut-il utiliser pour insérer un élément HTML avant un autre ?",
+          reponses: {
+            a: "<code>innerHTML</code>",
+            b: "<code>appendChild</code>",
+            c: "<code>insertBefore</code>",
+            d: "<code>insertAdjacentHTML</code>"
+          },
+          bonneReponse: ["c"]
+        },
+        {
+          intitule: "Quelle méthode faut-il utiliser pour insérer du contenu en HTML avant un élément ?",
+          reponses: {
+            a: "<code>innerHTML</code>",
+            b: "<code>appendChild</code>",
+            c: "<code>insertBefore</code>",
+            d: "<code>insertAdjacentHTML</code>"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "La méthode <code>previousElementSibling</code> permet de :",
+          reponses: {
+            a: "Sélectionner le premier enfant d'un élément",
+            b: "Sélectionner l'élément précédent",
+            c: "Sélectionner tous les enfants d'un élément",
+            d: "Sélectionner le parent d'un élément"
+          },
+          bonneReponse: ["b"]
+        },
+        {
+          intitule: "La méthode <code>nextElementSibling</code> permet de :",
+          reponses: {
+            a: "Sélectionner le premier enfant d'un élément",
+            b: "Sélectionner tous les enfants d'un élément",
+            c: "Sélectionner tous les prochains éléments",
+            d: "Sélectionner le prochain élément"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Quelle méthode utiliser pour sélectionner le parent d'un élément ?",
+          reponses: {
+            a: "<code>previousElementSibling</code>",
+            b: "<code>childNodes</code>",
+            c: "<code>getElementParent</code>",
+            d: "<code>parentElement</code>"
+          },
+          bonneReponse: ["d"]
+        },
+        {
+          intitule: "Pour ajouter un nom d'attribut et sa valeur je dois obligatoirement utiliser la méthode <code>setAttribute</code>.",
+          reponses: {
+            a: "Vrai",
+            b: "C'est faux !"
+          },
+          bonneReponse: ["b"]
+        }
+      ];
+
+    </script>
+    <script type="text/javascript" src="../../assets/js/quiz-avance.js"></script>
+  </body>
+</html>
