@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" version="1.1" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <pattern id="b" xlink:href="#a" patternTransform="matrix(1.1591 .32609 -.32609 1.1591 35.386 31.058)"/>
+  <pattern id="a" width="49.643104" height="39.359000" patternTransform="matrix(1.1809 .33224 -.33224 1.1809 43.379 2477)" patternUnits="userSpaceOnUse">
+   <path transform="matrix(.50852 .15606 -.15606 .50852 394.13 -1261.8)" d="m43.213 2505.2-7.1827-5.9504-7.6057 0.2123 6.4963-8.1152-9.2111-12.58 15.103-0.0155 10.167-6.7175 0.39154 10.962 10.447 11.114-13.977-0.956-4.6284 12.046z" fill="#ff0" fill-opacity=".75" fill-rule="evenodd" stroke="#bdbb00" stroke-width="1.8799pt"/>
+   <path transform="matrix(.51058 .0016625 -.0016625 .51058 13.696 -1254.9)" d="m75.59 2486.6-11.505-7.0683-6.8023 9.8347 0.1533-13.794-6.9626-0.5266 11.086-3.6531 2.0564-12.181 3.6358 10.754 8.0883-3.8056-4.7868 8.2964 5.0368 12.143z" fill="#ff0" fill-opacity=".75" fill-rule="evenodd" stroke="#bdbb00" stroke-width="2.4482"/>
+   <path transform="matrix(.80173 .0026128 -.0026128 .80173 -.50263 -1983.7)" d="m62.847 2516-4.7007-3.5563-6.4252 7.2355 0.97019-9.4802-6.8896-7.5489 7.9211-1.367 3.9842-6.3569 3.5922 8.7952 8.6247-1.0824-6.0973 9.6557-0.97964 3.7053z" fill="#ff0" fill-opacity=".75" fill-rule="evenodd" stroke="#bdbb00" stroke-width="1.5591"/>
+   <path transform="matrix(.43573 -.30511 .30511 .43573 -744.66 -1031.7)" d="m33.995 2474-13.29-16.582-12.87 4.6204 9.6639-15.124-5.1915-11.628 14.254 5.6404 10.458-8.0537-1.6657 14.741 14.236 3.6526-16.742 6.6347 1.1474 16.099z" fill="#ff0" fill-opacity=".75" fill-rule="evenodd" stroke="#bdbb00" stroke-width="1.8799pt"/>
+   <path transform="matrix(.16492 -.50572 .50572 .16492 -1249.9 -402.18)" d="m12.4 2503.1-9.0646-2.2648-6.6401 5.5796-3.354-10.891-12.632-2.2872 14.957-6.084-2.5394-12.031 11.15 5.8506 8.3942 0.4146-2.764 7.827 2.4928 13.886z" fill="#ff0" fill-opacity=".75" fill-rule="evenodd" stroke="#bdbb00" stroke-width="1.8799pt"/>
+  </pattern>
+ </defs>
+ <rect x=".16661" y=".3482" width="299.66" height="98.884" fill="url(#b)"/>
+ <rect x=".33523" y=".31848" width="299.33" height="98.745" fill="none"/>
+ <rect x=".24455" y=".24468" width="299.51" height="99.125" fill="none" stroke="#000" stroke-width=".4891"/>
+</svg>

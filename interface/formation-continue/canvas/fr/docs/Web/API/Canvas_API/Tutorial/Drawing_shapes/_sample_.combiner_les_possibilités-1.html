@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex, nofollow">
+        <style type="text/css">
+            body {
+              padding: 0;
+              margin: 0;
+            }
+
+            svg:not(:root) {
+              display: block;
+            }
+
+            .playable-code {
+              background-color: #f4f7f8;
+              border: none;
+              border-left: 6px solid #558abb;
+              border-width: medium medium medium 6px;
+              color: #4d4e53;
+              height: 100px;
+              width: 90%;
+              padding: 10px 10px 0;
+            }
+
+            .playable-canvas {
+              border: 1px solid #4d4e53;
+              border-radius: 2px;
+            }
+
+            .playable-buttons {
+              text-align: right;
+              width: 90%;
+              padding: 5px 10px 5px 26px;
+            }
+        </style>
+        
+        <title>Dessiner des formes avec le canevas - combiner_les_possibilités - code sample</title>
+    </head>
+    <body>
+        
+            <html>
+ <body onload="dessiner();">
+   <canvas id="canevas" width="150" height="150"></canvas>
+ </body>
+</html>
+
+        
+        
+            <script>
+                function dessiner() {
+  var canevas = document.getElementById('canevas');
+  if (canevas.getContext) {
+    var ctx = canevas.getContext('2d');
+    
+    rectArrondi(ctx, 12, 12, 150, 150, 15
+    rectArrondi(ctx, 19, 19, 150, 150, 9)
+    rectArrondi(ctx, 53, 53, 49, 33, 10);
+    rectArrondi(ctx, 53, 119, 49, 16, 6);
+    rectArrondi(ctx, 1
+    rectArrondi(ctx,
+    
+    ctx.beginPath();
+    ctx.arc(37, 
+    ctx.lineTo(31, 37);
+    ctx.fill();
+    
+    for(var i = 0; i< 8; i++
+      
+    }
+    
+    for(i = 0; i < 6; i++) {
+    
+    }
+    
+    for(i = 0; i < 8; i+
+    ctx.fillRect(51 + i * 
+    }
+    
+    ctx.beginPat
+    ctx.moveTo(83, 116);
+    ctx.lineTo(83, 1
+    ctx.bezierCurveTo(8
+    ctx.bezierCurveTo(105, 88, 1
+    ctx.lineTo(111, 116)
+    ctx.lineTo(1
+    ctx.lineTo(101.666, 
+    ctx.lineTo(97, 1
+    ctx.lineTo(92.333, 
+    ctx.lineTo(87.666, 111.333);
+    ctx.lineTo(83, 116);
+    ctx.fill();
+    
+    ctx.fillStyle = 
+    ctx.beginPath();
+    ctx.moveTo(9
+    ctx.bezierCurveT
+    ctx.bezierCurveTo(87, 103, 88, 106, 91, 10
+    ctx.bezierCu
+       ctx.bezierCurveTo(95, 99
+       ctx.moveTo(103, 
+       ctx.bezierCurveTo(100, 96, 99, 99, 99, 101)
+       ctx.bezierCu
+       ctx.bezierCurveT
+       ctx.bezierCurveTo(107, 99, 106, 96, 103, 9
+       ctx.fill();
+       
+    ctx.fillStyle = 
+    ctx.beginPath();
+    ctx.arc(101,
+    ctx.fill();
+       
+       ctx.beginPath();
+    ctx.arc(89, 102, 2, 0, Math.PI * 2, true);
+    ctx.fill();
+  }
+}
+
+// Une fonction utilitaire pour tracer des rectangles avec des coins arrondis
+
+function rectArrondi(ctx, x, y, largeur, hauteur, rayon) {
+  ctx.beginPath();
+  ctx.moveTo(x, y + rayon);
+  ctx.lineTo(x, y + hauteur - rayon);
+  ctx.quadraticCurveTo(x, y + hauteur, x + rayon, y + hauteur);
+  ctx.lineTo(x + largeur - rayon, y + hauteur);
+  ctx.quadraticCurveTo(x + largeur, y + hauteur, x + largeur, y + hauteur - rayon);
+  ctx.lineTo(x + largeur, y + rayon);
+  ctx.quadraticCurveTo(x + largeur, y, x + largeur - rayon, y);
+  ctx.lineTo(x + rayon,y);
+  ctx.quadraticCurveTo(x, y, x, y + rayon);
+  ctx.stroke();
+}
+
+            </script>
+        
+    </body>
+</html>

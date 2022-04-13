@@ -1,0 +1,251 @@
+body{
+  color: #333;
+  text-align: center;
+}
+header a{
+  text-decoration: none;
+}
+main{display: block;}
+main > div{
+    display: block;
+    background: #fff;
+    padding: 1%;
+    margin: 2% auto;
+    width: 80%;
+}
+h2{
+  margin: 1% 0;
+  font-size: 1.4em;
+  color: #52d3aa;
+}
+p{text-align: center;font-size: .8em;}
+
+.quiz-container{
+  width: 80%;
+  margin: 0 auto;
+  height: 40vh;
+  background:white;
+  position: relative;
+  padding:3%;
+}
+#quiz{
+  position:relative;
+}
+.question{
+  font-size: 1.4em;
+  margin-bottom: 3%;
+}
+.question, .no-display{display: none;}
+.question > div{text-align: left;}
+.question > div > div {
+  margin:.5em 0;
+  display: flex;
+  align-items: baseline;
+
+}
+.question.active{display: flex;}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+input{
+  margin: 0 .3em;
+}
+button{
+  font-size: 1.5em;
+  background-color: #52d3aa;
+  color: #fff;
+  border: 0px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 2% auto;
+  margin-bottom: 20px;
+  padding: 1%;
+}
+button:hover{
+  background-color: #3f95ea;
+}
+ #navigation button{   font-size: 2em; padding: 2%;}
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+#results{
+  padding: 3%;
+  margin:0 auto;
+}
+#resultat{display: block;}
+
+#navigation{
+  background: transparent;
+  padding: 0;
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.no-display{display:none !important;}
+
+fieldset{
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;align-items: center;flex-wrap: wrap;
+  display:flex;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+legend{font-weight: bold;margin-bottom: 2%;}
+
+.tag {
+  background: #3f95ea;
+  color: white;
+  margin: 0 .4em;
+  padding: 0.25em 0.5em;
+  font-size: 0.5em;
+  font-weight: 700;
+  border-radius: .5em;
+  text-transform: uppercase;
+}
+
+
+#score{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#score.fade-top-anim > div{text-align: center;}
+#score > div{text-align: left;width: 20%;}
+#score h4{text-align: center;}
+#score h6{color:#3f95ea;font-size: 2em;}
+#score h6 span{
+  color: #777;
+  font-size: .7em;
+}
+#hp > span{position: relative;}
+#hp span span{
+  color: #777;
+  font-size: 2em;
+  position: absolute;
+  top: -.55em;
+  left: 0;
+}
+#pts, #hp{
+  color:#777;
+}
+#score.fade-top-anim #pts{margin-bottom: 2em;}
+#pts span{
+  color:#111;
+  font-size: 1.5em;
+  font-weight: 900;
+   display: inline-block;
+}
+  #correct, #oneup{
+    animation-name: fade-top;
+    animation-duration: 2s;
+    color: #52d3aa;
+  }
+  #oneup{color:#3f95ea;}
+  #hp #lasts{
+    background-image: linear-gradient(-260deg, #777  30%, #adcff0  30%, #6bacec  60%, #3f95ea 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    background-position-y: center;
+    background-position: right center;
+  }
+  #wrong{
+    animation-name: fade-bottom;
+    animation-duration: 2s;
+    color: red;
+  }
+  #correct h5, #wrong h5, #oneup h5{
+    font-size: 2em;
+    font-weight: bolder;
+  }
+
+  #wrong span, #oneup span{font-size: 1.3em;}
+
+  .fix-bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 4%;
+  }
+
+  #questionNumber{
+    position: fixed;
+    bottom:1em;
+    right: 1em;
+  }
+  #select input:checked ~  label{color: #3f95ea;}
+  #select fieldset > div{
+    display: flex;
+  flex-wrap: wrap;
+  width: 28%;
+  }
+  #select fieldset > div > div {
+    margin: .5em 0;
+  display: flex;
+  align-items: baseline;
+  width: 50%;
+  padding: 0 2%;
+  }
+
+  section{background: transparent;width: 100%}
+  #score{background: #fff;}
+
+  #select p{
+    color: red;
+    font-size:1em;
+  }
+  .question input[type="text"]{
+    font-family: courier;
+  }
+
+
+
+/* ANIMATION */
+  .backslide{
+    animation-name: backslide;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+
+  }
+  @keyframes backslide {
+    to {background-position-x: 125%;}
+  }
+  .backslide2{
+    animation-name: backslide2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes backslide2 {
+    to {background-position-x: 145%;}
+  }
+  .backslide3{
+    animation-name: backslide3;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+
+  }
+  @keyframes backslide3 {
+    to {background-position-x: 175%;}
+  }

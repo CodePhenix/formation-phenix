@@ -1,0 +1,7 @@
+# Contributors by commit history
+https://github.com/mdn/translated-content/commits/main/files/fr/web/api/canvas_api/tutorial/compositing/index.md
+
+# Original Wiki contributors
+SphinxKnight
+a-mt
+Syberam

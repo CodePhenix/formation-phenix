@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="91" version="1.1" viewBox="0 0 300 91" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-1.2798)">
+  <path transform="matrix(1.1746 0 0 1.1746 -.54892 -5471.6)" d="m203.96 4729.2c-8.4271 8.4271-56.219 8.4271-64.646 0s-8.4271-56.219 0-64.646 56.219-8.4271 64.646 0c8.4271 8.4271 8.4271 56.219 0 64.646z" color="#000000" fill-rule="evenodd"/>
+  <text x="201.01576" y="41.899632" fill="#ffffff" font-family="'Liberation Sans',Arial,sans-serif" font-size="10px" stroke-width="1px" text-align="center" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="201.01576" y="41.899632">Arrondi</tspan><tspan x="201.01576" y="54.399632">polygone</tspan></text>
+  <rect x="56.117" y="1.8127" width="87.192" height="87.192" rx="18.04" ry="18.04" color="#000000" fill-rule="evenodd"/>
+  <text x="99.512451" y="41.917397" fill="#ffffff" font-family="'Liberation Sans',Arial,sans-serif" font-size="10px" stroke-width="1px" text-align="center" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="99.512451" y="41.917397">Arrondi</tspan><tspan x="99.512451" y="54.417397">rectangle</tspan></text>
+ </g>
+</svg>

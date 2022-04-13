@@ -1,0 +1,374 @@
+
+nav span.active{
+  background: rgba(247, 247, 247, .8);
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  justify-content: flex-end;
+  animation-name: fadeIn;
+  animation-duration: .8s;
+  animation-timing-function: ease;
+}
+nav span.active ul{
+  background: #fff;
+  display: block;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+@keyframes slideIn {
+  from {margin-left:100%;}
+  to {margin-left:0;}
+}
+nav span #burger, nav span #burger-close{
+  display: block;
+  background: transparent;
+  border: 0;
+  font-size: 1.3em;
+  position: absolute;
+  top:0;
+  right: 0;
+  padding: .5% 3%;
+  z-index: 999;
+}
+nav span #burger-close{
+  display: none;
+}
+nav span.active #burger-close{display: block;}
+nav span.active #burger{display: none;}
+nav ul{
+  display: none;
+  width: 76%;
+  padding: 6% 3%;
+  list-style-type: none;
+}
+span.active ul li a{
+  padding:3%;
+}
+
+h2, .h2, aside h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 1em 0 0.2em;
+    color: #52d3aa;
+}
+h3, .h3 {
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+h4, .h4 {
+    font-size: 1.6em;
+    margin: 1em 0 0.6em;
+}
+
+button h3, button h4 {margin: 0;}
+
+.commentaire{
+  color: gray;
+  line-height: 1;
+  font-size: 0.8em;
+}
+
+/************************ DOCUMENTATION HTML ************************/
+
+#tableaux table{
+  border-collapse: collapse;
+  width: 100%;
+  height: 50%;
+  caption-side: initial;
+}
+#tableaux table, #tableaux th, #tableaux td {border: 1px solid black;}
+#tableaux th, #tableaux td {padding: 3%;}
+
+#formulaires form div{margin:20px 0;}
+
+#input input, #input fieldset, #input legend{margin: 3% 0;}
+#input label{margin-top: 6%;}
+#input fieldset label{margin-top: 0;}
+#input legend{font-size: 1.1em;}
+
+/************************ DOCUMENTATION CSS ************************/
+
+#selecteurs-demo p{color:blue;}
+#selecteurs-demo #exemple{color:red;}
+#selecteurs-demo .exemple{color:green;}
+#selecteurs-demo div .exemple{color:orange;}
+#selecteurs-demo p:first-child{color:yellow;}
+#selecteurs-demo p:last-child{color:purple;}
+
+#modele-exemple{
+  position: relative;
+  background: #3f95ea;
+  padding: 3%;
+  text-align:center;
+}
+#modele-exemple div{
+  position:relative;
+  background: black;
+  padding: 3%;
+  margin:3%;
+  color:white;
+}
+#modele-exemple div div{background: lightgray;color:#333;}
+#modele-exemple div div div{
+  font-weight: bold;
+  margin:3% auto;
+  width: 80%;
+  padding:6%;
+  border: 6px dashed #3f95ea;
+  color: black;
+}
+#modele-exemple .left{
+  position: absolute;
+  left: -2%;
+  top: 50%;
+  transform: rotate(-90deg);
+}
+#modele-exemple .right{
+  position: absolute;
+  right: -3%;
+  top: 50%;
+  transform: rotate(90deg);
+}
+
+#positions #display-flex-contenu .container-flex{
+  display: flex;
+  background: lightgray;
+  padding: 2%;
+  height: 100%;
+}
+#positions #display-flex-contenu .container-flex .item-flex{
+  background: #3f95ea;
+  padding: 2%;
+  width:20%;
+  border: 1px solid #52d3aa;
+  color:white;
+  font-size: 2em;
+  font-weight:bold;
+  text-align: center;
+}
+#positions #display-flex-contenu .row code{display: block; margin:4% 0 2%; }
+#positions #display-flex-contenu .row code.commentaire{margin:2% 0 4%; }
+#positions #display-flex-contenu button:focus,#positions button:target{background:#52d3aa;}
+
+#bordures-contenu #outline-exemple > div {
+  width: 20%;
+  margin:4% 2%;
+  text-align:center;
+  display: inline-block;
+  padding: 2%;
+  outline-color: black;
+  outline-width:6px;
+}
+
+#display-exemple div{
+  padding:2%;
+  background: #3f95ea;
+  border: 1px solid #52d3aa;
+  color:white;
+  font-size: 2em;
+  font-weight:bold;
+  text-align: center;
+}
+
+.demoContent {
+  height: 100%;
+  min-height: 11em;
+  background: lightgray;
+  padding: 2%;
+}
+.demoContent #pos{
+  top:20%;
+  left:45%;
+  background: #3f95ea;
+  display:inline-block;
+  width:200px;
+  border: 1px solid #52d3aa;
+  color:white;
+  font-size: 2em;
+  font-weight:bold;
+  text-align: center;
+}
+
+#zindex-exemple{background: lightgray;padding: 2%;}
+#zindex-exemple > div{
+  background: #3f95ea;
+  border: 3px solid #52d3aa;
+  color: white;
+  padding: 2%;
+  position: relative;
+  z-index: 2;
+  width:220px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+#zindex-exemple > div:firs-child{top:0;left:0;z-index:1;}
+
+#display-contenu button.active, #positions-liste button.active, #fond-exemple button.active{background-color: #52d3aa;}
+
+#fond-exemple #background-content{
+  height: 100%;
+  background-image: url(../img/documentation/losange.png);
+}
+
+
+/************************ DOCUMENTATION BOOTSTRAP ************************/
+aside h3 a{
+  font-size: 1em;
+text-transform: uppercase;
+margin: 1em 0 0.2em;
+color: #52d3aa;
+text-decoration: none;
+}
+
+/*** EXEMPLES ***/
+.exemple button {
+    width: 100%;
+    padding: 2%;
+    margin: 2% 0;
+    border: 0;
+}
+.demo{
+	 height: 100%;
+	 padding: 2%;
+	 background: #f7f7f7;
+	 display: flex;
+	 align-items: center;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+}
+.demo > div{
+	height: 100%;
+	width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+align-content: center;
+}
+.demo div div {
+    border: .3em solid #3f95ea;
+		min-height: 3em;
+		/* margin:.1em 0; */
+    display: flex;
+    align-items: center;
+		justify-content: center;
+		background: #fff;
+		color: #3f95ea;
+}
+
+/*** COLOR ***/
+.box {
+	width: 80px;
+	height: 20px;
+	white-space: nowrap;
+	position: absolute;
+	margin-top: -20px;
+	margin-left: 100px;
+}
+.border-blue, .border-yellow {
+    transition-duration: 400ms;
+    margin: 0px;
+    border: 5px solid #1b76c4;
+    height: 33%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+.border-yellow {
+  border-color: #ffc129;
+}
+
+/*** Marges ***/
+#demo-mp{background: #ccc;display: block;height:auto;}
+#size{background: #fff;    border: .3em solid #3f95ea;width: auto;height:auto;}
+#wh50{
+	width: 50%;
+	height: 50%;
+}
+
+/*** Caroussel ***/
+.demoSlide{
+	height: 28em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color:#fff;
+}
+
+/************************ surcharge bootstrap ************************/
+.sp-replacer.sp-light{
+   width: 120px;
+    border-radius: 50%;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+}
+.sp-replacer.sp-light .sp-preview{
+  width: 110%;
+  height: 110px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+#demohover {
+color: #fff;
+border: none;
+padding: 10px 20px;
+background: blue;
+/* transition */
+transition-property: all;
+transition-duration: 2s;
+/* transition: all 2s; */
+}
+  #demohover:hover {
+  background: green;
+}
+
+#demoanim {
+    width:100px;
+    height:100px;
+    border-radius:100%;
+    background: blue;
+    position: relative;
+    /* comportement de l'animation */
+    animation: repeatit 2s linear 0s infinite alternate;
+}
+/* Réglage de l'animation */
+@keyframes repeatit {
+    from {left: 0;top:0;}
+    to {left: 50%;top:50%;}
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 768px){
+
+  header nav{
+    width:50%;
+  }
+  nav span{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  nav span ul{
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
+  nav span ul li{
+    width: 22%;
+}
+  nav span #burger, nav span #burger-close{display: none;}
+}
+@media screen and (min-width: 1240px){
+
+}

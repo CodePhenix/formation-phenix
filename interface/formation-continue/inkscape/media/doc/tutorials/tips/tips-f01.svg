@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="118" version="1.1" viewBox="0 0 300 118" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <path id="a" d="m91.25 58.9h117.5" color="#000000" fill="none" stroke="#000" stroke-width=".3"/>
+ <use transform="rotate(6 150 58.902)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(12 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(18 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(24 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(30 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(36 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(42 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(48 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(54 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(60 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(66 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(72 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(78 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(84 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(90,150,58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(96 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(102 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(108 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(114 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(120 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(126 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(132 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(138 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(144 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(150 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(156 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(162 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(168 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+ <use transform="rotate(174 150 58.9)" width="744.09448" height="1052.3622" xlink:href="#a"/>
+</svg>

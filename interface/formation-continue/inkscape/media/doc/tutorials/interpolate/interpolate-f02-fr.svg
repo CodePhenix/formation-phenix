@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="79" version="1.1" viewBox="0 0 300 79" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(10.004 .020374)">
+  <path d="m20.29 2.0037c10.119 0 18.266 8.1464 18.266 18.266 0 10.119-8.1464 18.266-18.266 18.266s-18.266-8.1464-18.266-18.266c0-10.119 8.1464-18.266 18.266-18.266z" fill="#0cf" stroke="#2e75ac" stroke-linejoin="round" stroke-width="4.0482"/>
+  <path d="m245.44 2.0037c10.119 0 18.266 8.1464 18.266 18.266 0 10.119-8.1464 18.266-18.266 18.266s-18.266-8.1464-18.266-18.266c0-10.119 8.1464-18.266 18.266-18.266z" fill="#0cf" stroke="#2e75ac" stroke-linejoin="round" stroke-width="4.0482"/>
+  <g transform="matrix(.52187 0 0 .52187 -12.141 -26.068)" fill="#0cf" stroke="#2e75ac" stroke-linejoin="round" stroke-width="7.757">
+   <path d="m123.78 53.791c19.39 0 35 15.61 35 35 0 19.39-15.61 35-35 35s-35-15.61-35-35c0-19.39 15.61-35 35-35"/>
+   <path d="m185.41 53.791c19.39 0 35 15.61 35 35 0 19.39-15.61 35-35 35s-35-15.61-35-35c0-19.39 15.61-35 35-35"/>
+   <path d="m247.04 53.791c19.39 0 35 15.61 35 35 0 19.39-15.61 35-35 35s-35-15.61-35-35c0-19.39 15.61-35 35-35"/>
+   <path d="m308.67 53.791c19.39 0 35 15.61 35 35 0 19.39-15.61 35-35 35s-35-15.61-35-35c0-19.39 15.61-35 35-35"/>
+   <path d="m370.31 53.791c19.39 0 35 15.61 35 35 0 19.39-15.61 35-35 35s-35-15.61-35-35c0-19.39 15.61-35 35-35"/>
+   <path d="m431.94 53.791c19.39 0 35 15.61 35 35 0 19.39-15.61 35-35 35s-35-15.61-35-35c0-19.39 15.61-35 35-35"/>
+  </g>
+  <text x="-0.59277618" y="47.577751" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" font-size="6px" stroke-width="1px" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="-0.59277618" y="47.577751">Exposant : 0,0</tspan><tspan x="-0.59277618" y="55.077751">Étapes d'interpolation : 6</tspan><tspan x="-0.59277618" y="62.577751">Méthode d'interpolation : 2</tspan><tspan x="-0.59277618" y="70.077751">Dupliquer les extrémités : décoché</tspan><tspan x="-0.59277618" y="77.577751">Interpoler le style : décoché</tspan></text>
+ </g>
+</svg>
