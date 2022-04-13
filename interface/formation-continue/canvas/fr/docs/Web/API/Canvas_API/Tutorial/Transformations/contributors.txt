@@ -1,9 +1,0 @@
-# Contributors by commit history
-https://github.com/mdn/translated-content/commits/main/files/fr/web/api/canvas_api/tutorial/transformations/index.md
-
-# Original Wiki contributors
-SphinxKnight
-ni.pineau
-loella16
-BEHOUBA
-gliluaume

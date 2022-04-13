@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="300" height="66" version="1.1" viewBox="0 0 300 66" xmlns="http://www.w3.org/2000/svg">
- <g transform="translate(10.258)">
-  <path transform="matrix(.67263 .35535 -.35535 .67263 1407.5 -2577.2)" d="m107.3 3871.6-25.241 0.151-14.185 20.878-7.9434-23.959-24.24-7.039 20.331-14.958-0.7961-25.229 20.509 14.714 23.748-8.5532-7.6562 24.052z" color="#000000" fill="#fff100" fill-rule="evenodd" stroke="#000" stroke-width=".98589"/>
-  <text x="86.568001" y="6" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" font-size="6px" stroke-width="1px" text-align="center" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="86.568001" y="6" text-align="center" text-anchor="middle">Étoile</tspan></text>
-  <path transform="matrix(.67263 .35535 -.35535 .67263 1513.8 -2577.2)" d="m107.3 3871.6-39.426 21.029-32.183-30.998 19.535-40.187 44.257 6.1608z" color="#000000" fill="#fff100" fill-rule="evenodd" stroke="#000" stroke-width=".98589"/>
-  <text x="193.02451" y="6" fill="#000000" font-family="'Liberation Sans',Arial,sans-serif" font-size="6px" stroke-width="1px" text-align="center" text-anchor="middle" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="193.02451" y="6" text-align="center" text-anchor="middle">Polygone</tspan></text>
- </g>
-</svg>

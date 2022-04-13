@@ -1,8 +1,0 @@
-# Contributors by commit history
-https://github.com/mdn/translated-content/commits/main/files/fr/web/api/canvas_api/tutorial/pixel_manipulation_with_canvas/index.md
-
-# Original Wiki contributors
-SphinxKnight
-loella16
-NemoNobobyPersonne
-jodenda

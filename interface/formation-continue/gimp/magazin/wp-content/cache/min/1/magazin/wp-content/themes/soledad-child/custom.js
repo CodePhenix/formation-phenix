@@ -1,2 +1,0 @@
-jQuery(document).ready(function($){var mega_menu_sticker_label=$(".penci-megamenu .penci-mega-thumbnail > span.mega-cat-name > a").get();for(i=0;i<mega_menu_sticker_label.length;i++){var word=$(mega_menu_sticker_label[i]).text();if(word.length>25){var cut_word=word.slice(0,25)+"...";$(mega_menu_sticker_label[i]).text(cut_word)}}
-$(".uc-central-modal-show").on("click",function(e){UC_UI.showSecondLayer();return!1})})

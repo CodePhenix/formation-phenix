@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="300" height="40" version="1.1" viewBox="0 0 300 40" xmlns="http://www.w3.org/2000/svg">
- <text x="74.187622" y="32.078743" fill="#000000" font-family="'DejaVu Serif',serif" font-size="33.6px" stroke-width="1pt" style="line-height:0%" xml:space="preserve">
-  <!-- TRANSLATORS: This string is used for demonstrating letter spacing and manual kerning. Offsets are hardcoded for the English word "Inspiration" and currently can't be changed. If you translate this string, please check the output visually in advanced-f14.svg, advanced-f15.svg and advanced-f16.svg. Omit translation if in doubt. --><tspan dx="0 -3.4339702 -1.746122 -1.4281086 -2.0297282 -1.981069 -3.9864676 -3.8832457 -1.2720536 -2.1715312 -1.5699117" dy="0 0.0056477566 6.8183579 -6.6178179 0 -6.4172778 6.0161972 -5.8156576 5.8156576 -3.4091773 2.8075578" letter-spacing="-1.2478">Inspiration</tspan></text>
-</svg>

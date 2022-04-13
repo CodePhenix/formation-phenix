@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="300" height="100" version="1.1" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
- <g transform="matrix(.9815 0 0 .9815 -7.1906 -600.64)" stroke="#000">
-  <rect x="7.5753" y="612.21" width="305.16" height="100.99" fill="none" stroke-width=".49832"/>
-  <path transform="rotate(-45 62.041 579.85)" d="m97.81 689.54-18.404 68.686-50.281-50.281z" fill-rule="evenodd" stroke-width="1pt"/>
-  <rect x="28.147" y="628.75" width="65.282" height="65.282" fill-rule="evenodd" stroke-width="1pt"/>
-  <path transform="matrix(1.1957 0 0 1.1957 83.878 -215.2)" d="m175.45 733.14c0 14.808-12.004 26.812-26.812 26.812s-26.812-12.004-26.812-26.812 12.004-26.812 26.812-26.812 26.812 12.004 26.812 26.812z" fill-rule="evenodd" stroke-width="1pt"/>
- </g>
-</svg>
