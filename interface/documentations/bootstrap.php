@@ -117,6 +117,39 @@
               </button>
             </li>
             <li>
+                <h3>Forms</h3>
+            </li>
+            <li>
+              <button class="nav-link" id="form-control-tab" data-bs-toggle="pill" data-bs-target="#form-control" type="button" role="tab" aria-controls="form-control" aria-selected="false">
+                Form control
+              </button>
+            </li>
+            <li>
+              <button class="nav-link" id="select-tab" data-bs-toggle="pill" data-bs-target="#select" type="button" role="tab" aria-controls="select" aria-selected="false">
+                Select
+              </button>
+            </li>
+            <li>
+              <button class="nav-link" id="check-radio-tab" data-bs-toggle="pill" data-bs-target="#check-radio" type="button" role="tab" aria-controls="check-radio" aria-selected="false">
+                Checks & radios
+              </button>
+            </li>
+            <li>
+              <button class="nav-link" id="range-tab" data-bs-toggle="pill" data-bs-target="#range" type="button" role="tab" aria-controls="range" aria-selected="false">
+                Range
+              </button>
+            </li>
+            <li>
+              <button class="nav-link" id="label-tab" data-bs-toggle="pill" data-bs-target="#label" type="button" role="tab" aria-controls="label" aria-selected="false">
+                Floating labels
+              </button>
+            </li>
+            <li>
+              <button class="nav-link" id="validation-tab" data-bs-toggle="pill" data-bs-target="#validation" type="button" role="tab" aria-controls="validation" aria-selected="false">
+                Validation
+              </button>
+            </li>
+            <li>
                 <h3><a href="icons-bootstrap/index.htm" target="_blank" role="button">Icons</a></h3>
             </li>
           </ul>
@@ -959,7 +992,7 @@
                         </div>
                         <div class="bg-dark">
                         <code>
-                         &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"accordion"</span> <span class="function">id</span>=<span class="valeur">"accordionExample"</span></span>><br>
+                         &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"accordion"</span> <span class="function">id</span>=<span class="valeur">"accordionExample"</span>><br>
                         &nbsp;&nbsp;     &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"accordion-item"</span>><br>
                         &nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">h2</span> <span class="attribut">class</span>=<span class="valeur">"accordion-header"</span> <span class="function">id</span>=<span class="valeur">"headingOne"</span>><br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          &lt;<span class="balise">button</span> <span class="attribut">class</span>=<span class="valeur">"accordion-button"</span> <span class="attribut">type</span>=<span class="valeur">"button"</span> <span class="attribut">data-bs-toggle</span>=<span class="valeur">"collapse"</span>
@@ -1133,7 +1166,7 @@
                 </code></div>
             <h3>Buttons</h3>
             <p>
-                La classe <code>.btn</code> est à utiliser avec les balises <code>&lt;button&gt;</code> et <code>&lt;a&gt;</code> (lorsque l'on utilise la balise <code>&lt;a&gt;</code>, il faut préciser <code>role="button"</code>).<br>
+                La classe <code>.btn</code> est à utiliser avec les balises <code>&lt;<span class="balise">button</span>&gt;</code> et <code>&lt;a&gt;</code> (lorsque l'on utilise la balise <code>&lt;a&gt;</code>, il faut préciser <code>role="button"</code>).<br>
                 Avant d'assigner une couleur au bouton (ou une autre propriété) il faut donner la classe <code>btn</code>.<br>
                 Pour ajouter un lien à un boutton, il suffit d'ajouter un <code>href="chemin_lien"</code>.
             </p>
@@ -1160,8 +1193,8 @@
             <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
             <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
             <div class="bg-dark"><code>
-                &lt;<span class="balise">button</span> <span class="attribut">type</span>=<span class="valeur">"button"</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-lg btn-primary"</span> disabled>Primary button&lt;/<span class="balise">button</span>><br>
-                &lt;<span class="balise">button</span> <span class="attribut">type</span>=<span class="valeur">"button"</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-secondary btn-lg"</span> disabled>Button&lt;/<span class="balise">button</span>><br>
+                &lt;<span class="balise">button</span> <span class="attribut">type</span>=<span class="valeur">"button"</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-lg btn-primary"</span> <span class="attribut">readonly</span>>Primary button&lt;/<span class="balise">button</span>><br>
+                &lt;<span class="balise">button</span> <span class="attribut">type</span>=<span class="valeur">"button"</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-secondary btn-lg"</span> <span class="attribut">readonly</span>>Button&lt;/<span class="balise">button</span>><br>
             </code></div>
           </article>
           <article class="tab-pane fade" id="card" role="tabpanel" aria-labelledby="card-tab">
@@ -1629,6 +1662,938 @@
                 </div>
             </div>
           </article>
+          <article class="tab-pane fade" id="form-control" role="tabpanel" aria-labelledby="form-control-tab">
+            <h3>Form control</h3>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"mb-3"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"exampleFormControlInput1"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Email address&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"email" class="form-control"</span> <span class="function">id</span>=<span class="valeur">"exampleFormControlInput1"</span> <span class="attribut">placeholder</span>=<span class="valeur">"name@example.com"</span>><br>
+              &lt;/<span class="balise">div</span>><br>
+              &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"mb-3"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"exampleFormControlTextarea1"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Example textarea&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">textarea</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"exampleFormControlTextarea1"</span> <span class="attribut">rows</span>=<span class="valeur">"3"</span>>&lt;/textarea><br>
+              &lt;/<span class="balise">div</span>>
+
+            </code></div>
+
+                <h6>Readonly</h6>
+
+                <p>
+                  Ajoutez l'attribut booléen <code>readonly</code> sur une entrée pour empêcher la modification de la valeur de l'entrée.
+
+                </p>
+              <input class="form-control" type="text" value="Readonly input here..." aria-label="readonly input example" readonly>
+
+              <div class="bg-dark"><code>
+                  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="attribut">type</span>=<span class="valeur">"text"</span> <span class="attribut">value</span>=<span class="valeur">"Readonly input here..."</span> <span class="attribut">aria-label</span>=<span class="valeur">"readonly input example"</span> <span class="attribut">readonly</span>>
+              </code></div>
+
+              <h6>Readonly plain text</h6>
+
+              <form class="row g-3">
+                <div class="col-auto">
+                  <label for="staticEmail2" class="visually-hidden">Email</label>
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                </div>
+                <div class="col-auto">
+                  <label for="inputPassword2" class="visually-hidden">Password</label>
+                  <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+                </div>
+              </form>
+
+              <div class="bg-dark"><code>
+
+                &lt;<span class="balise">form</span> <span class="attribut">class</span>=<span class="valeur">"row g-3"</span>><br>
+                &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-auto"</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"staticEmail2"</span> <span class="attribut">class</span>=<span class="valeur">"visually-hidden"</span>>Email&lt;/<span class="balise">label</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"text"</span> <span class="attribut">readonly</span> <span class="attribut">class</span>=<span class="valeur">"form-control-plaintext"</span> <span class="function">id</span>=<span class="valeur">"staticEmail2"</span> <span class="attribut">value</span>=<span class="valeur">"email@example.com"</span>><br>
+                &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+                &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-auto"</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"inputPassword2"</span> <span class="attribut">class</span>=<span class="valeur">"visually-hidden"</span>>Password&lt;/<span class="balise">label</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"password"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"inputPassword2"</span> <span class="attribut">placeholder</span>=<span class="valeur">"Password"</span>><br>
+                &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+                &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-auto"</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">button</span> <span class="attribut">type</span>=<span class="valeur">"submit"</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-primary mb-3"</span>>Confirm identity&lt;/<span class="balise">button</span>><br>
+                &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+                &lt;/<span class="balise">form</span>>
+
+              </code></div>
+
+              <h6>File input</h6>
+
+              <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile">
+              </div>
+              <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
+              </div>
+
+              <div class="bg-dark"><code>
+
+                &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"mb-3"</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"formFile"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Default file input example&lt;/<span class="balise">label</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="attribut">type</span>=<span class="valeur">"file"</span> <span class="function">id</span>=<span class="valeur">"formFile"</span>><br>
+                &lt;/<span class="balise">div</span>><br>
+                &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"mb-3"</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"formFileMultiple"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Multiple files input example&lt;/<span class="balise">label</span>><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="attribut">type</span>=<span class="valeur">"file"</span> <span class="function">id</span>=<span class="valeur">"formFileMultiple"</span> multiple><br>
+                &lt;/<span class="balise">div</span>>
+
+              </code></div>
+
+              <h6>Color</h6>
+
+              <label for="exampleColorInput" class="form-label">Color picker</label>
+              <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+
+              <div class="bg-dark"><code>
+
+                &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"exampleColorInput"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Color picker&lt;/<span class="balise">label</span>><br>
+                &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"color"</span> <span class="attribut">class</span>=<span class="valeur">"form-control form-control-color"</span> <span class="function">id</span>=<span class="valeur">"exampleColorInput"</span> <span class="attribut">value</span>=<span class="valeur">"#563d7c"</span> title="Choose your color"</span>>
+
+              </code></div>
+
+          </article>
+          <article class="tab-pane fade" id="select" role="tabpanel" aria-labelledby="select-tab">
+            <h3>Select</h3>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select"</span> <span class="attribut">aria-label</span>=<span class="valeur">"Default select example"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">selected</span>>Open this select menu&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"1"</span>>One&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"2"</span>>Two&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"3"</span>>Three&lt;/<span class="balise">option</span>><br>
+              &lt;/<span class="balise">select</span>>
+
+            </code></div>
+
+            <h6>Sizing</h6>
+            <p>
+              Vous pouvez également choisir entre les petites et les grandes sélections personnalisées qui correspondent à nos entrées de texte de taille similaire.
+            </p>
+
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select form-select-lg mb-3"</span> <span class="attribut">aria-label</span>=<span class="valeur">".form-select-lg example"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">selected</span>>Open this select menu&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"1"</span>>One&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"2"</span>>Two&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"3"</span>>Three&lt;/<span class="balise">option</span>><br>
+              &lt;/<span class="balise">select</span>>
+
+            </code></div>
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select form-select-sm"</span> <span class="attribut">aria-label</span>=<span class="valeur">".form-select-sm example"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">selected</span>>Open this select menu&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"1"</span>>One&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"2"</span>>Two&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"3"</span>>Three&lt;/<span class="balise">option</span>><br>
+              &lt;/<span class="balise">select</span>>
+
+            </code></div>
+
+            <p>
+            L'attribut multiple est également pris en charge :
+            </p>
+
+            <select class="form-select" multiple aria-label="multiple select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select"</span> <span class="attribut">multiple</span>aria-label="multiple select example"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">selected</span>>Open this select menu&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"1"</span>>One&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"2"</span>>Two&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"3"</span>>Three&lt;/<span class="balise">option</span>><br>
+              &lt;/<span class="balise">select</span>>
+
+            </code></div>
+
+            <p>
+            Tout comme l'attribut de taille :
+            </p>
+
+            <select class="form-select" size="3" aria-label="size 3 select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select"</span> <span class="attribut">size</span>=<span class="valeur">"3"</span> <span class="attribut">aria-label</span>=<span class="valeur">"size 3 select example"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">selected</span>>Open this select menu&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"1"</span>>One&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"2"</span>>Two&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"3"</span>>Three&lt;/<span class="balise">option</span>><br>
+              &lt;/<span class="balise">select</span>>
+
+            </code></div>
+
+            <h6>Disabled</h6>
+            <p>
+              Ajoutez l'attribut booléen désactivé sur une sélection pour lui donner un aspect grisé et supprimer les événements liés au pointeur.
+            </p>
+
+            <select class="form-select" aria-label="Disabled select example" disabled>
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select"</span> <span class="attribut">aria-label</span>=<span class="valeur">"Disabled select example"</span> <span class="attribut">readonly</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">selected</span>>Open this select menu&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"1"</span>>One&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"2"</span>>Two&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"3"</span>>Three&lt;/<span class="balise">option</span>><br>
+              &lt;/<span class="balise">select</span>>
+
+            </code></div>
+
+          </article>
+          <article class="tab-pane fade" id="check-radio" role="tabpanel" aria-labelledby="check-radio-tab">
+            <h3>Checks & radios</h3>
+
+            <div class="accordion accordion-flush" id="check-radio-liste">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="check-titre">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#check-contenu" aria-expanded="false" aria-controls="check-contenu">
+                      <h4>Checks</h4>
+                    </button>
+                  </h2>
+                  <div id="check-contenu" class="accordion-collapse collapse" aria-labelledby="check-titre" data-bs-parent="#check-radio-liste">
+                    <div class="accordion-body">
+
+                      <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Default checkbox
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Checked checkbox
+                      </label>
+                    </div>
+
+                    <div class="bg-dark"><code>
+
+                      &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">value</span>=<span class="valeur">""</span> <span class="function">id</span>=<span class="valeur">"flexCheckDefault"</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexCheckDefault"</span>><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;    Default checkbox<br>
+                    &nbsp;&nbsp;  &lt;/<span class="balise">label</span>><br>
+                    &lt;/<span class="balise">div</span>><br>
+                    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">value</span>=<span class="valeur">""</span> <span class="function">id</span>=<span class="valeur">"flexCheckChecked"</span> <span class="attribut">checked</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexCheckChecked"</span>><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;    Checked checkbox<br>
+                    &nbsp;&nbsp;  &lt;/<span class="balise">label</span>><br>
+                    &lt;/<span class="balise">div</span>>
+
+                    </code></div>
+
+                    <h6>Indeterminate</h6>
+                    <p>
+                      Les cases à cocher peuvent utiliser la pseudo-classe :indeterminate lorsqu'elles sont définies manuellement via JavaScript (il n'existe pas d'attribut HTML permettant de la spécifier).
+                    </p>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                      <label class="form-check-label" for="flexCheckIndeterminate">
+                        Indeterminate checkbox
+                      </label>
+                    </div>
+
+                    <div class="bg-dark"><code>
+
+                      &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                      &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">value</span>=<span class="valeur">""</span> <span class="function">id</span>=<span class="valeur">"flexCheckIndeterminate"</span>><br>
+                      &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexCheckIndeterminate"</span>><br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;    Indeterminate checkbox<br>
+                      &nbsp;&nbsp;  &lt;/<span class="balise">label</span>><br>
+                      &lt;/<span class="balise">div</span>>
+
+                    </code></div>
+
+                    <h6>Disabled</h6>
+                    <p>
+                      Ajoutez l'attribut disabled et les <code>label</code> associés sont automatiquement stylisés pour correspondre avec une couleur plus claire pour aider à indiquer l'état de l'entrée.
+                    </p>
+
+                      <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                      <label class="form-check-label" for="flexCheckDisabled">
+                        Disabled checkbox
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+                      <label class="form-check-label" for="flexCheckCheckedDisabled">
+                        Disabled checked checkbox
+                      </label>
+                    </div>
+
+                    <div class="bg-dark"><code>
+
+                      &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">value</span>=<span class="valeur">""</span> <span class="function">id</span>=<span class="valeur">"flexCheckDisabled"</span> <span class="attribut">readonly</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexCheckDisabled"</span>><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;    Disabled checkbox<br>
+                    &nbsp;&nbsp;  &lt;/<span class="balise">label</span>><br>
+                    &lt;/<span class="balise">div</span>><br>
+                    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">value</span>=<span class="valeur">""</span> <span class="function">id</span>=<span class="valeur">"flexCheckCheckedDisabled"</span> <span class="attribut">checked</span> <span class="attribut">disabled</span>><br>
+                    &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexCheckCheckedDisabled"</span>><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;    Disabled checked checkbox<br>
+                    &nbsp;&nbsp;  &lt;/<span class="balise">label</span>><br>
+                    &lt;/<span class="balise">div</span>>
+
+                    </code></div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="radio-titre">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#radio-contenu" aria-expanded="false" aria-controls="radio-contenu">
+                      <h4>Radios</h4>
+                    </button>
+                  </h2>
+                  <div id="radio-contenu" class="accordion-collapse collapse" aria-labelledby="radio-titre" data-bs-parent="#check-radio-liste">
+                    <div class="accordion-body">
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Default radio
+                          </label>
+                          </div>
+                          <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Default checked radio
+                          </label>
+                          </div>
+
+                          <div class="bg-dark"><code>
+
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                            &nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">name</span>=<span class="valeur">"flexRadioDefault"</span> <span class="function">id</span>=<span class="valeur">"flexRadioDefault1"</span>><br>
+                            &nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexRadioDefault1"</span>><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;      Default radio<br>
+                            &nbsp;&nbsp;    &lt;/<span class="balise">label</span>><br>
+                                &lt;/<span class="balise">div</span>><br>
+                                &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                            &nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">name</span>=<span class="valeur">"flexRadioDefault"</span> <span class="function">id</span>=<span class="valeur">"flexRadioDefault2"</span> <span class="attribut">checked</span>><br>
+                            &nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexRadioDefault2"</span>><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;      Default checked radio<br>
+                            &nbsp;&nbsp;    &lt;/<span class="balise">label</span>><br>
+                                &lt;/<span class="balise">div</span>>
+
+                          </code></div>
+
+                          <h6>Disabled</h6>
+                          <p>
+                            Ajoutez l'attribut disabled et les <code>label</code> associés sont automatiquement stylisés pour correspondre avec une couleur plus claire pour aider à indiquer l'état de l'entrée.
+                          </p>
+
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+                            <label class="form-check-label" for="flexRadioDisabled">
+                              Disabled radio
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioCheckedDisabled" checked disabled>
+                            <label class="form-check-label" for="flexRadioCheckedDisabled">
+                              Disabled checked radio
+                            </label>
+                          </div>
+
+                          <div class="bg-dark"><code>
+
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                          &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">name</span>=<span class="valeur">"flexRadioDisabled"</span> <span class="function">id</span>=<span class="valeur">"flexRadioDisabled"</span> <span class="attribut">readonly</span>><br>
+                          &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexRadioDisabled"</span>><br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;    Disabled radio<br>
+                          &nbsp;&nbsp;  &lt;/<span class="balise">label</span>><br>
+                          &lt;/<span class="balise">div</span>><br>
+                          &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+                          &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">name</span>=<span class="valeur">"flexRadioDisabled"</span> <span class="function">id</span>=<span class="valeur">"flexRadioCheckedDisabled"</span> <span class="attribut">checked</span> <span class="attribut">disabled</span>><br>
+                          &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexRadioCheckedDisabled"</span>><br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Disabled checked radio<br>
+                          &nbsp;&nbsp;  &lt;/<span class="balise">label</span>><br>
+                          &lt;/<span class="balise">div</span>>
+
+                          </code></div>
+
+                          <h6>Switches</h6>
+                          <p>
+                            Un interrupteur possède le balisage d'une case à cocher personnalisée mais utilise la classe <code>.form-switch</code> pour rendre un interrupteur à bascule. Pensez à utiliser <code>role="switch"</code> pour transmettre plus précisément la nature du contrôle aux technologies d'assistance qui prennent en charge ce rôle.
+                            Dans les technologies d'assistance plus anciennes, le contrôle sera simplement annoncé comme une case à cocher ordinaire. Les interrupteurs prennent également en charge l'attribut désactivé.
+                          </p>
+
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                            <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+                          </div>
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                            <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+                          </div>
+
+                          <div class="bg-dark"><code>
+
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-switch"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">role</span>=<span class="valeur">"switch"</span> <span class="function">id</span>=<span class="valeur">"flexSwitchCheckDefault"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexSwitchCheckDefault"</span>>Default switch checkbox input&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>><br>
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-switch"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">role</span>=<span class="valeur">"switch"</span> <span class="function">id</span>=<span class="valeur">"flexSwitchCheckChecked"</span> <span class="attribut">checked</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexSwitchCheckChecked"</span>>Checked switch checkbox input&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>><br>
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-switch"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">role</span>=<span class="valeur">"switch"</span> <span class="function">id</span>=<span class="valeur">"flexSwitchCheckDisabled"</span> <span class="attribut">readonly</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexSwitchCheckDisabled"</span>>Disabled switch checkbox input&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>><br>
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-switch"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">role</span>=<span class="valeur">"switch"</span> <span class="function">id</span>=<span class="valeur">"flexSwitchCheckCheckedDisabled"</span> <span class="attribut">checked</span> <span class="attribut">disabled</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"flexSwitchCheckCheckedDisabled"</span>>Disabled checked switch checkbox input&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>>
+
+                          </code></div>
+
+
+                          <h6>Inline</h6>
+                          <p>
+                            Regroupez les cases à cocher ou les cases radios sur une même ligne horizontale en ajoutant <code>.form-check-inline</code> à tout <code>.form-check</code>.
+                          </p>
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">2</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                          </div>
+
+                          <div class="bg-dark"><code>
+
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-check-inline"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="function">id</span>=<span class="valeur">"inlineCheckbox1"</span> <span class="attribut">value</span>=<span class="valeur">"option1"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"inlineCheckbox1"</span>>1&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>><br>
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-check-inline"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="function">id</span>=<span class="valeur">"inlineCheckbox2"</span> <span class="attribut">value</span>=<span class="valeur">"option2"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"inlineCheckbox2"</span>>2&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>><br>
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-check-inline"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="function">id</span>=<span class="valeur">"inlineCheckbox3"</span> <span class="attribut">value</span>=<span class="valeur">"option3"</span> <span class="attribut">readonly</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"inlineCheckbox3"</span>>3 (disabled)&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>>
+
+                          </code></div>
+
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                          </div>
+
+                          <div class="bg-dark"><code>
+
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-check-inline"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">name</span>=<span class="valeur">"inlineRadioOptions"</span> <span class="function">id</span>=<span class="valeur">"inlineRadio1"</span> <span class="attribut">value</span>=<span class="valeur">"option1"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"inlineRadio1"</span>>1&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>><br>
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-check-inline"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">name</span>=<span class="valeur">"inlineRadioOptions"</span> <span class="function">id</span>=<span class="valeur">"inlineRadio2"</span> <span class="attribut">value</span>=<span class="valeur">"option2"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"inlineRadio2"</span>>2&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>><br>
+                            &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check form-check-inline"</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">name</span>=<span class="valeur">"inlineRadioOptions"</span> <span class="function">id</span>=<span class="valeur">"inlineRadio3"</span> <span class="attribut">value</span>=<span class="valeur">"option3"</span> <span class="attribut">readonly</span>><br>
+                            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"inlineRadio3"</span>>3 (disabled)&lt;/<span class="balise">label</span>><br>
+                            &lt;/<span class="balise">div</span>>
+
+                          </code></div>
+
+                          <h6>Radio toggle buttons</h6>
+
+                          <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                          <label class="btn btn-secondary" for="option1">Checked</label>
+
+                          <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                          <label class="btn btn-secondary" for="option2">Radio</label>
+
+                          <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
+                          <label class="btn btn-secondary" for="option3">Disabled</label>
+
+                          <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+                          <label class="btn btn-secondary" for="option4">Radio</label>
+
+                          <div class="bg-dark"><code>
+
+                            &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">class</span>=<span class="valeur">"btn-check"</span> <span class="attribut">name</span>=<span class="valeur">"options"</span> <span class="function">id</span>=<span class="valeur">"option1"</span> autocomplete="off"</span> <span class="attribut">checked</span>><br>
+                            &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-secondary"</span> <span class="attribut">for</span>=<span class="valeur">"option1"</span>>Checked&lt;/<span class="balise">label</span>><br><br>
+
+                            &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">class</span>=<span class="valeur">"btn-check"</span> <span class="attribut">name</span>=<span class="valeur">"options"</span> <span class="function">id</span>=<span class="valeur">"option2"</span> autocomplete="off"</span>><br>
+                            &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-secondary"</span> <span class="attribut">for</span>=<span class="valeur">"option2"</span>>Radio&lt;/<span class="balise">label</span>><br><br>
+
+                            &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">class</span>=<span class="valeur">"btn-check"</span> <span class="attribut">name</span>=<span class="valeur">"options"</span> <span class="function">id</span>=<span class="valeur">"option3"</span> autocomplete="off"</span> <span class="attribut">readonly</span>><br>
+                            &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-secondary"</span> <span class="attribut">for</span>=<span class="valeur">"option3"</span>>Disabled&lt;/<span class="balise">label</span>><br><br>
+
+                            &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"radio"</span> <span class="attribut">class</span>=<span class="valeur">"btn-check"</span> <span class="attribut">name</span>=<span class="valeur">"options"</span> <span class="function">id</span>=<span class="valeur">"option4"</span> autocomplete="off"</span>><br>
+                            &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-secondary"</span> <span class="attribut">for</span>=<span class="valeur">"option4"</span>>Radio&lt;/<span class="balise">label</span>>
+
+                          </code></div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+          </article>
+          <article class="tab-pane fade" id="range" role="tabpanel" aria-labelledby="range-tab">
+            <h3>Range</h3>
+
+            <h6>Overview</h6>
+            <p>
+              Créez des contrôles <code>input type="range"</code> personnalisés avec <code>.form-range</code>.
+              La piste (l'arrière-plan) et la vignette (la valeur) sont toutes deux stylisées pour apparaître de la même manière dans tous les navigateurs.
+              Comme seul Firefox prend en charge le "remplissage" de sa piste à partir de la gauche ou de la droite de la vignette comme moyen d'indiquer visuellement la progression, nous ne le prenons pas en charge actuellement.
+            </p>
+
+            <label for="customRange1" class="form-label">Example range</label>
+            <input type="range" class="form-range" id="customRange1">
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"customRange1"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Example range&lt;/<span class="balise">label</span>><br>
+              &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"range"</span> <span class="attribut">class</span>=<span class="valeur">"form-range"</span> <span class="function">id</span>=<span class="valeur">"customRange1"</span>>
+
+            </code></div>
+
+            <h6>Disabled</h6>
+            <p>
+               Ajoutez l'attribut booléen désactivé sur une entrée pour lui donner un aspect grisé et supprimer les événements du pointeur.
+            </p>
+            <label for="disabledRange" class="form-label">Disabled range</label>
+            <input type="range" class="form-range" id="disabledRange" disabled>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"disabledRange"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Disabled range&lt;/<span class="balise">label</span>><br>
+              &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"range"</span> <span class="attribut">class</span>=<span class="valeur">"form-range"</span> <span class="function">id</span>=<span class="valeur">"disabledRange"</span> <span class="attribut">readonly</span>>
+
+            </code></div>
+
+            <h6>Min and max</h6>
+            <p>
+              Les entrées de la plage ont des valeurs implicites pour min et max - 0 et 100, respectivement. Vous pouvez spécifier de nouvelles valeurs pour celles-ci en utilisant les attributs min et max.
+            </p>
+
+            <label for="customRange2" class="form-label">Example range</label>
+            <input type="range" class="form-range" min="0" max="5" id="customRange2">
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"customRange2"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Example range&lt;/<span class="balise">label</span>><br>
+              &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"range"</span> <span class="attribut">class</span>=<span class="valeur">"form-range"</span> <span class="attribut">min</span>=<span class="valeur">"0"</span> <span class="attribut">max</span>=<span class="valeur">"5"</span> <span class="function">id</span>=<span class="valeur">"customRange2"</span>>
+
+            </code></div>
+
+            <h6>Steps</h6>
+            <p>
+              Par défaut, les entrées de la gamme sont "instantanées" à des valeurs entières. Pour changer cela, vous pouvez spécifier une valeur de pas. Dans l'exemple ci-dessous, nous doublons le nombre d'étapes en utilisant step="0.5".
+
+            </p>
+            <label for="customRange3" class="form-label">Example range</label>
+            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"customRange3"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Example range&lt;/<span class="balise">label</span>><br>
+              &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"range"</span> <span class="attribut">class</span>=<span class="valeur">"form-range"</span> <span class="attribut">min</span>=<span class="valeur">"0"</span> <span class="attribut">max</span>=<span class="valeur">"5"</span> <span class="attribut">step</span>=<span class="valeur">"0.5"</span> <span class="function">id</span>=<span class="valeur">"customRange3"</span>>
+
+            </code></div>
+
+
+          </article>
+          <article class="tab-pane fade" id="label" role="tabpanel" aria-labelledby="label-tab">
+            <h3>Floating labels</h3>
+
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-floating mb-3"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"email"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"floatingInput"</span> <span class="attribut">placeholder</span>=<span class="valeur">"name@example.com"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"floatingInput"</span>>Email address&lt;/<span class="balise">label</span>><br>
+              &lt;/<span class="balise">div</span>><br>
+              &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-floating"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"password"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"floatingPassword"</span> <span class="attribut">placeholder</span>=<span class="valeur">"Password"</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"floatingPassword"</span>>Password&lt;/<span class="balise">label</span>><br>
+              &lt;/<span class="balise">div</span>>
+
+            </code></div>
+
+            <p>Lorsqu'il y a une valeur déjà définie, les <code>label</code> s'ajusteront automatiquement à leur position flottante.</p>
+              <form class="form-floating">
+              <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" value="test@example.com">
+              <label for="floatingInputInvalid">Invalid input</label>
+            </form>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">form</span> <span class="attribut">class</span>=<span class="valeur">"form-floating"</span>><br>
+            &nbsp;&nbsp;  &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"email"</span> <span class="attribut">class</span>=<span class="valeur">"form-control is-invalid"</span> <span class="function">id</span>=<span class="valeur">"floatingInputInvalid"</span> <span class="attribut">placeholder</span>=<span class="valeur">"name@example.com"</span> <span class="attribut">value</span>=<span class="valeur">"test@example.com"</span>><br>
+            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"floatingInputInvalid"</span>>Invalid input&lt;/<span class="balise">label</span>><br>
+            &lt;/<span class="balise">form</span>>
+
+            </code></div>
+
+            <h6>Textareas</h6>
+              <p>
+                Par défaut, les <code>textarea</code> avec .form-control auront la même hauteur que les <code>input</code>.
+              </p>
+
+              <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Comments</label>
+            </div>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-floating"</span>><br>
+            &nbsp;&nbsp;  &lt;<span class="balise">textarea</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="attribut">placeholder</span>=<span class="valeur">"Leave a comment here"</span> <span class="function">id</span>=<span class="valeur">"floatingTextarea"</span>>&lt;/textarea><br>
+            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"floatingTextarea"</span>>Comments&lt;/<span class="balise">label</span>><br>
+            &lt;/<span class="balise">div</span>>
+
+            </code></div>
+              <p>
+    Pour définir une hauteur personnalisée sur votre <code>textarea</code>, n'utilisez pas l'attribut rows. Au lieu de cela, définissez une hauteur explicite (soit en ligne, soit via une CSS personnalisée).
+              </p>
+              <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Comments</label>
+            </div>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-floating"</span>><br>
+            &nbsp;&nbsp;  &lt;<span class="balise">textarea</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="attribut">placeholder</span>=<span class="valeur">"Leave a comment here"</span> <span class="function">id</span>=<span class="valeur">"floatingTextarea2"</span> style="height: 100px"</span>>&lt;/textarea><br>
+            &nbsp;&nbsp;  &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"floatingTextarea2"</span>>Comments&lt;/<span class="balise">label</span>><br>
+            &lt;/<span class="balise">div</span>>
+
+            </code></div>
+
+            <h6>Selects</h6>
+            <p>
+                En dehors de <code>.form-control</code>, les <code>label</code> flottants ne sont disponibles que sur <code>.form-selects</code>.
+                Ils fonctionnent de la même manière, mais contrairement aux <code>input</code>, ils montreront toujours le <code>label</code>> dans son état flottant.
+                avec taille et multiple ne sont pas pris en charge.
+            </p>
+              <div class="form-floating">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <label for="floatingSelect">Works with selects</label>
+            </div>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-floating"</span>><br>
+            &nbsp;&nbsp;  &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select"</span> <span class="function">id</span>=<span class="valeur">"floatingSelect"</span> <span class="attribut">aria-label</span>=<span class="valeur">"Floating label select example"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">selected</span>>Open this select menu&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"1"</span>>One&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"2"</span>>Two&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  &lt;<span class="balise">option</span> <span class="attribut">value</span>=<span class="valeur">"3"</span>>Three&lt;/<span class="balise">option</span>><br>
+            &nbsp;&nbsp;  &lt;/<span class="balise">select</span>><br>
+              &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"floatingSelect"</span>>Works with selects&lt;/<span class="balise">label</span>><br>
+            &lt;/<span class="balise">div</span>>
+
+            </code></div>
+
+          </article>
+
+          <article class="tab-pane fade" id="validation" role="tabpanel" aria-labelledby="validation-tab">
+            <h3>Validation</h3>
+
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">City</label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">State</label>
+                <select class="form-select" id="validationCustom04" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option>...</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="validationCustom05" required>
+                <div class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                  <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                  </label>
+                  <div class="invalid-feedback">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+              </div>
+            </form>
+
+            <div class="bg-dark"><code>
+
+              &lt;<span class="balise">form</span> <span class="attribut">class</span>=<span class="valeur">"row g-3 needs-validation"</span> <span class="attribut">novalidate</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-md-4"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"validationCustom01"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>First name&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"text"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"validationCustom01"</span> <span class="attribut">value</span>=<span class="valeur">"Mark"</span> <span class="attribut">required</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"valid-feedback"</span>><br>
+            &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Looks good!<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-md-4"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"validationCustom02"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Last name&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"text"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"validationCustom02"</span> <span class="attribut">value</span>=<span class="valeur">"Otto"</span> <span class="attribut">required</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"valid-feedback"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Looks good!<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-md-4"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"validationCustomUsername"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Username&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"input-group has-validation"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">span</span> <span class="attribut">class</span>=<span class="valeur">"input-group-text"</span> <span class="function">id</span>=<span class="valeur">"inputGroupPrepend"</span>>@&lt;/<span class="balise">span</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"text"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"validationCustomUsername"</span> aria-describedby="inputGroupPrepend"</span> <span class="attribut">required</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"invalid-feedback"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        Please choose a username.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-md-6"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"validationCustom03"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>City&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"text"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"validationCustom03"</span> <span class="attribut">required</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"invalid-feedback"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Please provide a valid city.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-md-3"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"validationCustom04"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>State&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">select</span> <span class="attribut">class</span>=<span class="valeur">"form-select"</span> <span class="function">id</span>=<span class="valeur">"validationCustom04"</span> <span class="attribut">required</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">option</span> <span class="attribut">selected</span> <span class="attribut">readonly</span> <span class="attribut">value</span>=<span class="valeur">""</span>>Choose...&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">option</span>>...&lt;/<span class="balise">option</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">select</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"invalid-feedback"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Please select a valid state.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-md-3"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">label</span> <span class="attribut">for</span>=<span class="valeur">"validationCustom05"</span> <span class="attribut">class</span>=<span class="valeur">"form-label"</span>>Zip&lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">input</span> <span class="attribut">type</span>=<span class="valeur">"text"</span> <span class="attribut">class</span>=<span class="valeur">"form-control"</span> <span class="function">id</span>=<span class="valeur">"validationCustom05"</span> <span class="attribut">required</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"invalid-feedback"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Please provide a valid zip.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-12"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"form-check"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">input</span> <span class="attribut">class</span>=<span class="valeur">"form-check-input"</span> <span class="attribut">type</span>=<span class="valeur">"checkbox"</span> <span class="attribut">value</span>=<span class="valeur">""</span> <span class="function">id</span>=<span class="valeur">"invalidCheck"</span> <span class="attribut">required</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">label</span> <span class="attribut">class</span>=<span class="valeur">"form-check-label"</span> <span class="attribut">for</span>=<span class="valeur">"invalidCheck"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        Agree to terms and conditions<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;/<span class="balise">label</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"invalid-feedback"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        You must agree before submitting.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &nbsp;&nbsp;  &lt;<span class="balise">div</span> <span class="attribut">class</span>=<span class="valeur">"col-12"</span>><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;    &lt;<span class="balise">button</span> <span class="attribut">class</span>=<span class="valeur">"btn btn-primary"</span> <span class="attribut">type</span>=<span class="valeur">"submit"</span>>Submit form&lt;/<span class="balise">button</span>><br>
+              &nbsp;&nbsp;  &lt;/<span class="balise">div</span>><br>
+              &lt;/<span class="balise">form</span>>
+
+            </code></div>
+
+            <p>Voici le code javascript à ajouter :</p>
+
+            <div class="bg-dark"><code>
+
+              // Example starter JavaScript for disabling form submissions if there are invalid fields<br>
+              (function () {<br>
+                'use strict'<br>
+<br>
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to<br>
+                var forms = document.querySelectorAll('.needs-validation')<br>
+<br>
+                // Loop over them and prevent submission<br>
+                Array.prototype.slice.call(forms)<br>
+                  .forEach(function (form) {<br>
+                    form.addEventListener('submit', function (event) {<br>
+                      if (!form.checkValidity()) {<br>
+                        event.preventDefault()<br>
+                        event.stopPropagation()<br>
+                      }<br>
+<br>
+                      form.classList.add('was-validated')<br>
+                    }, false)<br>
+                  })<br>
+              })()
+
+            </code></div>
+
+
+
+
+
+            <script>
+
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+              'use strict'
+
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.querySelectorAll('.needs-validation')
+
+              // Loop over them and prevent submission
+              Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault()
+                      event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                  }, false)
+                })
+            })()
+
+            </script>
+
+
+
+
+
       </section>
       </main>
       <script src="../assets/js/doc.js" type="text/javascript"></script>
