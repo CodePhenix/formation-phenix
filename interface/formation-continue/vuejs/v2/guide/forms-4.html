@@ -1,0 +1,1273 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>폼 입력 바인딩 — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/forms.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/forms.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/forms.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/forms.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/forms.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/forms.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/forms.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/forms.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="폼 입력 바인딩 — Vue.js">
+    <meta property="og:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="폼 입력 바인딩 — Vue.js">
+    <meta name="twitter:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    
+<link rel="stylesheet" href="/css/page.css">
+
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89623208-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+</head>
+  <body class="docs">
+    <div id="mobile-bar" style="pointer-events: none;" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    
+
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    
+<li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">배우기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>문서</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">가이드</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">스타일 가이드</a></li>
+        <li><a href="/v2/examples/" class="nav-link">예시</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">쿡북</a></li>
+        <li><a target="_blank" rel="noopener" href="https://v3.vuejs-korea.org/ko-KR/" class="nav-lin>">Vue.js 3 한국어문서</a></li>
+      </ul>
+    </li>
+    <li><h4>영상 강의</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">생태계</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>도움</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">포럼</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link"  target="_blank" rel="noopener">채팅</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">모임</a></li>
+    </ul></li>
+    <li><h4>도구</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">개발도구</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>코어 라이브러리</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 라우터</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 서버 렌더러</a></li>
+    </ul></li>
+    <li><h4>뉴스</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">주간 뉴스</a></li>
+      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank" rel="noopener">로드맵</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">이벤트</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">트위터</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">블로그</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">구인</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">개발 커뮤니티</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">팀</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">리소스</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">파트너</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">테마</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">쩌는 Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue 후원하기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">1회 후원하기</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">정기후원</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">티셔츠 샵</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">다른 언어로 보기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/forms.html" class="nav-link" target="_blank" rel="noopener" rel="noopener">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>스페셜 스폰서</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Standard Library">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          가이드
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>필수요소</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">설치방법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">시작하기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue 인스턴스</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">템플릿 문법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">computed와 watch</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">클래스와 스타일 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">조건부 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">리스트 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">이벤트 핸들링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link current">폼 입력 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>컴포넌트 톺아보기</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">컴포넌트 등록</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">커스텀 이벤트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">슬롯(Slots)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">동적 & 비동기 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">예외적인 상황들</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>트랜지션 & 애니메이션</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">진입/진출 그리고 리스트 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">상태 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>재사용 & 컴포지션</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">믹스인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">사용자 지정 디렉티브</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Render Functions & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">플러그인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">필터</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>도구</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">싱글 파일 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">단위 테스팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript 지원</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">프로덕션 배포 팁</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>스케일링 업</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">라우팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">상태 관리</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">서버사이드 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">보안</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>내부</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">반응형에 대해 깊이 알아보기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>마이그레이션1</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x에서 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x으로 부터 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x에서 1.0로 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>메타</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">다른 프레임워크와의 비교</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js 커뮤니티에 참여하세요!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">팀 구성원 만나기</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar forms-guide">
+  
+    
+      
+<div id="ad">
+  <script
+    async
+    type="text/javascript"
+    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>폼 입력 바인딩</h1>
+  
+  
+    <h2 id="기본-사용법"><a href="#기본-사용법" class="headerlink" title="기본 사용법"></a>기본 사용법</h2><p><code>v-model</code> 디렉티브를 사용하여 폼 input과 textarea 엘리먼트에 양방향 데이터 바인딩을 생성할 수 있습니다. 입력 유형에 따라 엘리먼트를 업데이트 하는 올바른 방법을 자동으로 선택합니다. 약간 이상하지만 <code>v-model</code>은 기본적으로 사용자 입력 이벤트에 대한 데이터를 업데이트하는 “syntax sugar”이며 일부 경우에 특별한 주의를 해야합니다.</p>
+<p class="tip">
+`v-model`은 모든 form 엘리먼트의 초기 `value`와 `checked` 그리고 `selected` 속성을 무시합니다. 항상 Vue 인스턴스 데이터를 원본 소스로 취급합니다. 컴포넌트의 `data` 옵션 안에 있는 JavaScript에서 초기값을 선언해야합니다.
+</p>
+
+<p><code>v-model</code>은 내부적으로 서로 다른 속성을 사용하고 서로 다른 입력 요소에 대해 서로 다른 이벤트를 전송합니다 : </p>
+<ul>
+<li>text 와 textarea 태그는 <code>value</code>속성과 <code>input</code>이벤트를 사용합니다.</li>
+<li>체크박스들과 라디오버튼들은 <code>checked</code> 속성과 <code>change</code> 이벤트를 사용합니다.</li>
+<li>Select 태그는 <code>value</code>를 prop으로, <code>change</code>를 이벤트로 사용합니다.</li>
+</ul>
+<p class="tip" id="vmodel-ime-tip">[IME](https://en.wikipedia.org/wiki/Input_method) (중국어, 일본어, 한국어 등)가 필요한 언어의 경우 IME 중 `v-model`이 업데이트 되지 않습니다. 이러한 업데이트를 처리하려면 `input` 이벤트를 대신 사용하십시오.</p>
+
+<h3 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;message&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;여기를 수정해보세요&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>메시지: &#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<div id="example-1" class="demo">
+  <input v-model="message" placeholder="여기를 수정해보세요">
+  <p>메시지: {{ message }}</p>
+</div>
+<script>
+new Vue({
+  el: '#example-1',
+  data: {
+    message: ''
+  }
+})
+</script>
+
+
+<h3 id="여러줄을-가진-문장"><a href="#여러줄을-가진-문장" class="headerlink" title="여러줄을 가진 문장"></a>여러줄을 가진 문장</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>여러 줄을 가지는 메시지:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;white-space: pre-line&quot;</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;message&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;여러줄을 입력해보세요&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<div id="example-textarea" class="demo">
+  <span>여러 줄을 가지는 메시지:</span>
+  <p style="white-space: pre-line">{{ message }}</p>
+  <br>
+  <textarea v-model="message" placeholder="여러줄을 입력해보세요"></textarea>
+</div>
+<script>
+new Vue({
+  el: '#example-textarea',
+  data: {
+    message: ''
+  }
+})
+</script>
+
+
+
+<p class="tip">텍스트 영역의 보간 (<code>&lt;textarea&gt;&#123;&#123; text &#125;&#125;&lt;/textarea&gt;</code>)은 작동하지 않습니다. 대신 <code>v-model</code>를 사용하십시오.</p>
+
+
+<h3 id="체크박스"><a href="#체크박스" class="headerlink" title="체크박스"></a>체크박스</h3><p>하나의 체크박스는 단일 boolean 값을 가집니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;checked&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123; checked &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<div id="example-2" class="demo">
+  <input type="checkbox" id="checkbox" v-model="checked">
+  <label for="checkbox">{{ checked }}</label>
+</div>
+<script>
+new Vue({
+  el: '#example-2',
+  data: {
+    checked: false
+  }
+})
+</script>
+
+
+<p>여러개의 체크박스는 같은 배열을 바인딩 할 수 있습니다</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#x27;example-3&#x27;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;jack&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Jack&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;checkedNames&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;jack&quot;</span>&gt;</span>Jack<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;john&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;John&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;checkedNames&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;john&quot;</span>&gt;</span>John<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mike&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Mike&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;checkedNames&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;mike&quot;</span>&gt;</span>Mike<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>체크한 이름: &#123;&#123; checkedNames &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#example-3&#x27;</span>,<br>  data: &#123;<br>    checkedNames: []<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+<div id="example-3" class="demo">
+  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+  <label for="jack">Jack</label>
+  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+  <label for="john">John</label>
+  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+  <label for="mike">Mike</label>
+  <br>
+  <span>체크한 이름: {{ checkedNames }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-3',
+  data: {
+    checkedNames: []
+  }
+})
+</script>
+
+
+<h3 id="라디오"><a href="#라디오" class="headerlink" title="라디오"></a>라디오</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;one&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;One&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;picked&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;one&quot;</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;two&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Two&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;picked&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;two&quot;</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>선택: &#123;&#123; picked &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<div id="example-4" class="demo">
+  <input type="radio" id="one" value="One" v-model="picked">
+  <label for="one">One</label>
+  <br>
+  <input type="radio" id="two" value="Two" v-model="picked">
+  <label for="two">Two</label>
+  <br>
+  <span>Picked: {{ picked }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-4',
+  data: {
+    picked: ''
+  }
+})
+</script>
+
+
+<h3 id="셀렉트"><a href="#셀렉트" class="headerlink" title="셀렉트"></a>셀렉트</h3><p>하나의 셀렉트</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Please select one<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>선택함: &#123;&#123; selected &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;...&#x27;</span>,<br>  data: &#123;<br>    selected: <span class="hljs-string">&#x27;&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<div id="example-5" class="demo">
+  <select v-model="selected">
+    <option disabled value="">Please select one</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-5',
+  data: {
+    selected: ''
+  }
+})
+</script>
+
+
+<p class="tip">`v-model` 표현식의 초기 값이 어떤 옵션에도 없으면, `&lt;select&gt;` 엘리먼트는 "선택없음" 상태로 렌더링됩니다. iOS에서는 이 경우 변경 이벤트가 발생하지 않아 사용자가 첫 번째 항목을 선택할 수 없게됩니다. 따라서 위 예제처럼 사용하지 않는 옵션에 빈 값을 넣는 것이 좋습니다.</p>
+
+<p>다중 셀렉트 (배열을 바인딩 합니다):</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selected&quot;</span> <span class="hljs-attr">multiple</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Selected: &#123;&#123; selected &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<div id="example-6" class="demo">
+  <select v-model="selected" multiple style="width: 50px;">
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <br>
+  <span>Selected: {{ selected }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-6',
+  data: {
+    selected: []
+  }
+})
+</script>
+
+
+<p><code>v-for</code>를 이용한 동적 옵션 렌더링</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;option in options&quot;</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;option.value&quot;</span>&gt;</span><br>    &#123;&#123; option.text &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Selected: &#123;&#123; selected &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;...&#x27;</span>,<br>  data: &#123;<br>    selected: <span class="hljs-string">&#x27;A&#x27;</span>,<br>    options: [<br>      &#123; <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;One&#x27;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;A&#x27;</span> &#125;,<br>      &#123; <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Two&#x27;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;B&#x27;</span> &#125;,<br>      &#123; <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;Three&#x27;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;C&#x27;</span> &#125;<br>    ]<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<div id="example-7" class="demo">
+  <select v-model="selected">
+    <option v-for="option in options" v-bind:value="option.value">
+      {{ option.text }}
+    </option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-7',
+  data: {
+    selected: 'A',
+    options: [
+      { text: 'One', value: 'A' },
+      { text: 'Two', value: 'B' },
+      { text: 'Three', value: 'C' }
+    ]
+  }
+})
+</script>
+
+
+<h2 id="값-바인딩하기"><a href="#값-바인딩하기" class="headerlink" title="값 바인딩하기"></a>값 바인딩하기</h2><p>라디오, 체크박스 및 셀렉트 옵션의 경우, <code>v-model</code> 바인딩 값은 보통 정적인 문자열(또는 체크 박스의 boolean) 입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- `picked` 는 선택시 문자열 &quot;a&quot; 입니다 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;picked&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;a&quot;</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- `toggle` 는 true 또는 false 입니다 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;toggle&quot;</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- `selected`는 &quot;ABC&quot; 선택시 &quot;abc&quot; 입니다 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;abc&quot;</span>&gt;</span>ABC<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그러나 때로 값을 Vue 인스턴스에 동적 속성에 바인딩 해야할 수 있습니다. <code>v-bind</code>를 사용할 수 있습니다. <code>v-bind</code>를 사용하면 입력 값을 문자열이 아닌 값에 바인딩 할 수도 있습니다.</p>
+<h3 id="체크박스-1"><a href="#체크박스-1" class="headerlink" title="체크박스"></a>체크박스</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;toggle&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">true-value</span>=<span class="hljs-string">&quot;yes&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">false-value</span>=<span class="hljs-string">&quot;no&quot;</span></span><br><span class="hljs-tag">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 체크된 경우</span><br>vm.toggle === <span class="hljs-string">&#x27;yes&#x27;</span><br><span class="hljs-comment">// 체크 되지 않은 경우</span><br>vm.toggle === <span class="hljs-string">&#x27;no&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p class="tip">`true-value` 와 `false-value` 속성은 폼 전송시 체크되지 않은 박스를 포함하지 않기 때문에 입력의 `value` 속성에 영향을 미치지 않습니다. 두 값 중 하나가 폼을 통해 전송 되려면 (예 : '예' 또는 '아니요') 라디오를 대신 사용하십시오.</p>
+
+<h3 id="라디오-1"><a href="#라디오-1" class="headerlink" title="라디오"></a>라디오</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;pick&quot;</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;a&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 체크 하면:</span><br>vm.pick === vm.a<br></code></pre></td></tr></table></figure>
+
+<h3 id="셀렉트-옵션"><a href="#셀렉트-옵션" class="headerlink" title="셀렉트 옵션"></a>셀렉트 옵션</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- inline object literal --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;&#123; number: 123 &#125;&quot;</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 선택 하면:</span><br><span class="hljs-keyword">typeof</span> vm.selected <span class="hljs-comment">// -&gt; &#x27;object&#x27;</span><br>vm.selected.number <span class="hljs-comment">// -&gt; 123</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="수식어"><a href="#수식어" class="headerlink" title="수식어"></a>수식어</h2><h3 id="lazy"><a href="#lazy" class="headerlink" title=".lazy"></a><code>.lazy</code></h3><p>기본적으로, <code>v-model</code>은 각 입력 이벤트 후 입력과 데이터를 동기화 합니다. (단 <a href="#vmodel-ime-tip">앞에서 설명</a>한 IME 구성은 제외됩니다.) <code>.lazy</code> 수식어를 추가하여 <code>change</code> 이벤트 이후에 동기화 할 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- &quot;input&quot; 대신 &quot;change&quot; 이후에 동기화 됩니다. --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.lazy</span>=<span class="hljs-string">&quot;msg&quot;</span> &gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="number"><a href="#number" class="headerlink" title=".number"></a><code>.number</code></h3><p>사용자 입력이 자동으로 숫자로 형변환 되기를 원하면, <code>v-model</code>이 관리하는 input에 <code>number</code> 수식어를 추가하면 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.number</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>type=&quot;number&quot;</code>를 사용하는 경우에도 HTML 입력 엘리먼트의 값은 항상 문자열을 반환하기 때문에 이것은 종종 유용하게 사용할 수 있습니다. If the value cannot be parsed with <code>parseFloat()</code>, then the original value is returned.</p>
+<h3 id="trim"><a href="#trim" class="headerlink" title=".trim"></a><code>.trim</code></h3><p><code>v-model</code>이 관리하는 input을 자동으로 trim 하기 원하면, <code>trim</code> 수정자를 추가하면 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.trim</span>=<span class="hljs-string">&quot;msg&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="v-model-과-컴포넌트"><a href="#v-model-과-컴포넌트" class="headerlink" title="v-model 과 컴포넌트"></a><code>v-model</code> 과 컴포넌트</h2><blockquote>
+<p>Vue의 컴포넌트에 익숙하지 않으면 지금은 보지 않아도 괜찮습니다.</p>
+</blockquote>
+<p>HTML의 기본 제공 input 유형이 항상 사용자의 요구를 만족시킬 수는 없습니다. 다행히 Vue 컴포넌트를 사용하면 완전히 사용자 정의 된 동작으로 재사용 가능한 input을 만들 수 있습니다. 이 input은 <code>v-model</code>에도 작동합니다! 자세한 컴포넌트 가이드의 <a href="components.html#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-v-model-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98">사용자 정의 입력</a>을 참조하십시오.</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/events.html">이벤트 핸들링</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/components.html">컴포넌트</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    이 문서에 문제를 제보하거나 기여하고 싶은 부분이 있으십니까?
+    <a href="https://github.com/vuejs-kr/kr.vuejs.org/blob/master/src/v2/guide/forms.md" rel="noopener" target="_blank">
+      Github에서 이 페이지를 수정하세요!
+    </a>
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

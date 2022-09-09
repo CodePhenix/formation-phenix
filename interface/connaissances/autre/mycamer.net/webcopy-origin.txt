@@ -1,0 +1,424 @@
+Uri: https://mycamer.net/quest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir/
+File Name: C:\Downloaded Web Sites\mycamer.net\quest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir\index.htm
+Content Type: text/html
+
+Uri: https://mycamer.net/wp-content/uploads/2021/03/architect_bg.jpg
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\uploads\2021\03\architect_bg.jpg
+Content Type: image/jpeg
+
+Uri: http://gmpg.org/xfn/11
+File Name: C:\Downloaded Web Sites\mycamer.net\xfn\11.html
+Content Type: text/html
+
+Uri: https://s.w.org/
+File Name: C:\Downloaded Web Sites\mycamer.net\index.htm
+Content Type: text/html
+
+Uri: https://mycamer.net/feed/
+File Name: C:\Downloaded Web Sites\mycamer.net\feed\index.htm.rss
+Content Type: application/rss+xml
+
+Uri: https://mycamer.net/comments/feed/
+File Name: C:\Downloaded Web Sites\mycamer.net\comments\feed\index.htm.rss
+Content Type: application/rss+xml
+
+Uri: https://mycamer.net/quest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir/feed/
+File Name: C:\Downloaded Web Sites\mycamer.net\quest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir\feed\index.htm.rss
+Content Type: application/rss+xml
+
+Uri: https://mycamer.net/wp-content/plugins/gtranslate/gtranslate-style24.css?ver=6.0.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\gtranslate\gtranslate-style24.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-includes/css/dist/block-library/style.min.css?ver=6.0.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\css\dist\block-library\style.min.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-video/assets/css/plugin.css?ver=10.0.6
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-video\assets\css\plugin.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-video/assets/css/darkmode.css?ver=10.0.6
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-video\assets\css\darkmode.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/wp-automatic/css/wp-automatic.css?ver=1.0.0
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\wp-automatic\css\wp-automatic.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/wp-news-and-widget-pro/assets/css/slick.css?ver=2.5.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\wp-news-and-widget-pro\assets\css\slick.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/wp-news-and-widget-pro/assets/css/wpnw-pro-public.min.css?ver=2.5.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\wp-news-and-widget-pro\assets\css\wpnw-pro-public.min.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-split/assets/css/splitpost.css
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-split\assets\css\splitpost.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-split/assets/css/splitpost-toc.css
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-split\assets\css\splitpost-toc.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/speaker-lite/css/speaker.min.css?ver=1.1.5
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\speaker-lite\css\speaker.min.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.9.0
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\js_composer\assets\css\js_composer.min.css
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css?family=Roboto:regular%2C700|Zilla+Slab+Highlight:700&display=swap&ver=1.2.9
+File Name: C:\Downloaded Web Sites\mycamer.net\css.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/themes/jnews/assets/dist/frontend.min.css?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\assets\dist\frontend.min.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/themes/jnews/assets/css/js-composer-frontend.css?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\assets\css\js-composer-frontend.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/themes/jnews/style.css?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\style.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/themes/jnews/assets/css/darkmode.css?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\assets\css\darkmode.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/themes/jnews/data/import/architect/scheme.css?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\data\import\architect\scheme.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/halfdata-green-forms/css/style.min.css?ver=1.41
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\halfdata-green-forms\css\style.min.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/halfdata-green-forms/css/leform-fa.min.css?ver=1.41
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\halfdata-green-forms\css\leform-fa.min.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/halfdata-green-forms/css/airdatepicker.min.css?ver=1.41
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\halfdata-green-forms\css\airdatepicker.min.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-social-login/assets/css/plugin.css?ver=10.0.3
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-social-login\assets\css\plugin.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-social-share/assets/css/plugin.css
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-social-share\assets\css\plugin.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-weather/assets/css/plugin.css?ver=10.0.3
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-weather\assets\css\plugin.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-push-notification/assets/css/plugin.css?ver=10.0.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-push-notification\assets\css\plugin.css
+Content Type: text/css
+
+Uri: https://mycamer.net/wp-json/
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-json\index.htm.json
+Content Type: application/json
+
+Uri: https://mycamer.net/wp-json/wp/v2/posts/16526
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-json\wp\v2\posts\16526.json
+Content Type: application/json
+
+Uri: https://mycamer.net/xmlrpc.php?rsd
+File Name: C:\Downloaded Web Sites\mycamer.net\xmlrpc.php.xml
+Content Type: text/xml
+
+Uri: https://mycamer.net/wp-includes/wlwmanifest.xml
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\wlwmanifest.xml
+Content Type: application/xml
+
+Uri: https://mycamer.net/wp-json/oembed/1.0/embed?url=https:%2F%2Fmycamer.net%2Fquest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir%2F
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-json\oembed\1.0\embed.json
+Content Type: application/json
+
+Uri: https://mycamer.net/wp-json/oembed/1.0/embed?url=https:%2F%2Fmycamer.net%2Fquest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir%2F&format=xml
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-json\oembed\1.0\embed.xml
+Content Type: text/xml
+
+Uri: https://mycamer.net/wp-content/plugins/halfdata-green-forms/fonts/leform-fa.woff2
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\halfdata-green-forms\fonts\leform-fa.woff2
+Content Type: font/woff2
+
+Uri: https://mycamer.net/wp-content/uploads/2021/03/favicon-75x75.png
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\uploads\2021\03\favicon-75x75.png
+Content Type: image/png
+
+Uri: https://mycamer.net/wp-content/uploads/2021/03/favicon-300x300.png
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\uploads\2021\03\favicon-300x300.png
+Content Type: image/png
+
+Uri: https://www.facebook.com/jegtheme/
+File Name: C:\Downloaded Web Sites\mycamer.net\jegtheme\index.htm
+Content Type: text/html
+
+Uri: https://twitter.com/jegtheme
+File Name: C:\Downloaded Web Sites\mycamer.net\jegtheme.html
+Content Type: text/html
+
+Uri: https://mycamer.net/wp-content/uploads/2022/02/hex-colors-guide-.jpg
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\uploads\2022\02\hex-colors-guide-.jpg
+Content Type: image/jpeg
+
+Uri: https://twitter.com/intent/tweet?text=Qu’est-ce que le code hexadécimal %3F  Tout ce que tu as besoin de savoir&url=https:%2F%2Fmycamer.net%2Fquest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir%2F
+File Name: C:\Downloaded Web Sites\mycamer.net\intent\tweet.html
+Content Type: text/html
+
+Uri: https://www.makeuseof.com/essential-graphic-design-terms/
+File Name: C:\Downloaded Web Sites\mycamer.net\essential-graphic-design-terms\index.htm
+Content Type: text/html
+
+Uri: https://www.binaryhexconverter.com/hex-to-decimal-converter
+File Name: C:\Downloaded Web Sites\mycamer.net\hex-to-decimal-converter.html
+Content Type: text/html
+
+Uri: https://www.makeuseof.com/css-fundamentals-working-with-colors/
+File Name: C:\Downloaded Web Sites\mycamer.net\css-fundamentals-working-with-colors\index.htm
+Content Type: text/html
+
+Uri: https://www.makeuseof.com/tag/find-hex-value-color-screen/
+File Name: C:\Downloaded Web Sites\mycamer.net\tag\find-hex-value-color-screen\index.htm
+Content Type: text/html
+
+Uri: https://www.makeuseof.com/author/gargi-ghosal/
+File Name: C:\Downloaded Web Sites\mycamer.net\author\gargi-ghosal\index.htm
+Content Type: text/html
+
+Uri: https://www.makeuseof.com/hex-code-what-is-it/
+File Name: C:\Downloaded Web Sites\mycamer.net\hex-code-what-is-it\index.htm
+Content Type: text/html
+
+Uri: https://www.instagram.com/envato/
+File Name: C:\Downloaded Web Sites\mycamer.net\envato\index.htm
+Content Type: text/html
+
+Uri: https://twitter.com/intent/tweet?text=10 problèmes courants de l’iPhone 13 et comment les résoudre&url=https:%2F%2Fmycamer.net%2F10-problemes-courants-de-liphone-13-et-comment-les-resoudre%2F
+File Name: C:\Downloaded Web Sites\mycamer.net\intent\tweet-1.html
+Content Type: text/html
+
+Uri: https://twitter.com/intent/tweet?text=Comment installer phpMyAdmin sur Debian 11 Bullseye (Apache)&url=https:%2F%2Fmycamer.net%2Fcomment-installer-phpmyadmin-sur-debian-11-bullseye-apache%2F
+File Name: C:\Downloaded Web Sites\mycamer.net\intent\tweet-2.html
+Content Type: text/html
+
+Uri: https://twitter.com/intent/tweet?text=Le procès dit que le jeu d’arcade Key Master de Sega est intentionnellement truqué&url=https:%2F%2Fmycamer.net%2Fle-proces-dit-que-le-jeu-darcade-key-master-de-sega-est-intentionnellement-truque%2F
+File Name: C:\Downloaded Web Sites\mycamer.net\intent\tweet-3.html
+Content Type: text/html
+
+Uri: https://twitter.com/intent/tweet?text=Comment réparer “Impossible de charger l’image.  Appuyez pour réessayer “Erreur Instagram&url=https:%2F%2Fmycamer.net%2Fcomment-reparer-impossible-de-charger-limage-appuyez-pour-reessayer-erreur-instagram%2F
+File Name: C:\Downloaded Web Sites\mycamer.net\intent\tweet-4.html
+Content Type: text/html
+
+Uri: https://twitter.com/intent/tweet?text=Comment réparer le décalage d’Instagram sur iPhone et Android&url=https:%2F%2Fmycamer.net%2Fcomment-reparer-le-decalage-dinstagram-sur-iphone-et-android%2F
+File Name: C:\Downloaded Web Sites\mycamer.net\intent\tweet-5.html
+Content Type: text/html
+
+Uri: https://www.facebook.com/mycamer.net
+File Name: C:\Downloaded Web Sites\mycamer.net\mycamer.net.html
+Content Type: text/html
+
+Uri: https://www.instagram.com/
+File Name: C:\Downloaded Web Sites\mycamer.net\index-3.htm
+Content Type: text/html
+
+Uri: https://mycamer.net/wp-includes/js/jquery/jquery.min.js?ver=3.6.0
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\jquery\jquery.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\jquery\jquery-migrate.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/wp-automatic/js/main-front.js?ver=6.0.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\wp-automatic\js\main-front.js
+Content Type: application/javascript
+
+Uri: https://www.googletagmanager.com/gtag/js?id=UA-216122676-1
+File Name: C:\Downloaded Web Sites\mycamer.net\gtag\js.js
+Content Type: application/javascript
+
+Uri: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1560061249950980
+File Name: C:\Downloaded Web Sites\mycamer.net\pagead\js\f.txt
+Content Type: text/javascript
+
+Uri: https://mycamer.net/wp-content/uploads/2021/12/logo-mycamer2.png
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\uploads\2021\12\logo-mycamer2.png
+Content Type: image/png
+
+Uri: https://mycamer.net/wp-content/themes/jnews/assets/img/jeg-empty.png
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\assets\img\jeg-empty.png
+Content Type: image/png
+
+Uri: https://secure.gravatar.com/avatar/5955a4ab55ab39e4f1f103b50a6d1ea9?s=80&d=mm&r=g
+File Name: C:\Downloaded Web Sites\mycamer.net\avatar\5955a4ab55ab39e4f1f103b50a6d1ea9.png
+Content Type: image/jpeg
+
+Uri: https://static1.makeuseofimages.com/wordpress/wp-content/authors/60f9cd5c0efc2-gargi-ghosal-1039.jpg?fit=crop&w=100&h=100
+File Name: C:\Downloaded Web Sites\mycamer.net\wordpress\wp-content\authors\60f9cd5c0efc2-gargi-ghosal-1039.jpg
+Content Type: image/jpeg
+
+Uri: https://mycamer.net/wp-content/plugins/gtranslate/flags/24/fr.png
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\gtranslate\flags\24\fr.png
+Content Type: image/png
+
+Uri: https://mycamer.net/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\jquery\ui\core.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\jquery\ui\mouse.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-includes/js/jquery/ui/sortable.min.js?ver=1.13.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\jquery\ui\sortable.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-frontend-submit/assets/js/frontend.js?ver=10.0.2
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-frontend-submit\assets\js\frontend.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-auto-load-post/assets/js/jquery.autoload.js
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-auto-load-post\assets\js\jquery.autoload.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-video/assets/js/supposition.js?ver=10.0.6
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-video\assets\js\supposition.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-video/assets/js/plugin.js?ver=10.0.6
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-video\assets\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/themes/jnews/assets/dist/frontend.min.js?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\assets\dist\frontend.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-split/assets/js/jquery.split.js
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-split\assets\js\jquery.split.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-includes/js/comment-reply.min.js?ver=6.0.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\comment-reply.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/themes/jnews/assets/js/photoswipe/photoswipe.js?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\assets\js\photoswipe\photoswipe.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/themes/jnews/assets/js/photoswipe/photoswipe-ui-default.js?ver=10.7.8
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\themes\jnews\assets\js\photoswipe\photoswipe-ui-default.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-includes/js/hoverIntent.min.js?ver=1.10.2
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\hoverIntent.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-includes/js/imagesloaded.min.js?ver=4.1.4
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-includes\js\imagesloaded.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/halfdata-green-forms/js/leform.min.js?ver=1.41
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\halfdata-green-forms\js\leform.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/halfdata-green-forms/js/airdatepicker.min.js?ver=1.41
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\halfdata-green-forms\js\airdatepicker.min.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-like/assets/js/plugin.js?ver=10.0.0
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-like\assets\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-social-login/assets/js/plugin.js?ver=10.0.3
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-social-login\assets\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-social-share/assets/js/plugin.js
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-social-share\assets\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-weather/assets/js/plugin.js?ver=10.0.3
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-weather\assets\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-push-notification/assets/js/plugin.js?ver=10.0.1
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-push-notification\assets\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://cdn.onesignal.com/sdks/OneSignalSDK.js?ver=6.0.1
+File Name: C:\Downloaded Web Sites\mycamer.net\sdks\OneSignalSDK.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/plugins/jnews-instagram/assets/js/plugin.js?ver=10.0.0
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\plugins\jnews-instagram\assets\js\plugin.js
+Content Type: application/javascript
+
+Uri: https://mycamer.net/wp-content/uploads/2021/12/logo-mycamer2-1.png
+File Name: C:\Downloaded Web Sites\mycamer.net\wp-content\uploads\2021\12\logo-mycamer2-1.png
+Content Type: image/png
+
+Uri: https://secure.gravatar.com/avatar/5955a4ab55ab39e4f1f103b50a6d1ea9?s=160&d=mm&r=g
+File Name: C:\Downloaded Web Sites\mycamer.net\avatar\5955a4ab55ab39e4f1f103b50a6d1ea9-1.png
+Content Type: image/jpeg
+
+Uri: https://www.youtube.com/
+File Name: C:\Downloaded Web Sites\mycamer.net\index-1.htm
+Content Type: text/html
+
+Uri: https://vimeo.com/
+File Name: C:\Downloaded Web Sites\mycamer.net\index-2.htm
+Content Type: text/html
+
+Uri: https://m.facebook.com/cookie/consent_prompt/?next_uri=https:%2F%2Fm.facebook.com%2Flogin.php%3Fskip_api_login%3D1%26api_key%3D966242223397117%26signed_next%3D1%26next%3Dhttps%253A%252F%252Fm.facebook.com%252Fsharer.php%253Fu%253Dhttps%25253A%25252F%25252Fmycamer.net%25252Fquest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir%25252F%26cancel_url%3Dhttps%253A%252F%252Fm.facebook.com%252Fdialog%252Fclose_window%252F%253Fapp_id%253D966242223397117%2526connect%253D0%2523_%253D_%26display%3Dtouch%26locale%3Dfr_FR&refsrc=deprecated&locale2=fr_FR&_rdr
+File Name: C:\Downloaded Web Sites\mycamer.net\cookie\consent_prompt\index.htm.xhtml
+Content Type: application/xhtml+xml
+
+Uri: https://www.reddit.com/login/?dest=https:%2F%2Fwww.reddit.com%2Fsubmit%3Furl%3Dhttps%253A%252F%252Fmycamer.net%252Fquest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir%252F%26title%3DQu%25E2%2580%2599est-ce%2Bque%2Ble%2Bcode%2Bhexad%25C3%25A9cimal%25C2%25A0%253F%2B%2BTout%2Bce%2Bque%2Btu%2Bas%2Bbesoin%2Bde%2Bsavoir
+File Name: C:\Downloaded Web Sites\mycamer.net\login\index.htm
+Content Type: text/html
+
+Uri: https://www.linkedin.com/uas/login?session_redirect=https:%2F%2Fwww.linkedin.com%2FshareArticle%3Furl%3Dhttps:%252F%252Fmycamer.net%252Fquest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir%252F%26title%3DQu%25E2%2580%2599est-ce%2520que%2520le%2520code%2520hexad%25C3%25A9cimal%25C2%25A0%253F%2520%2520Tout%2520ce%2520que%2520tu%2520as%2520besoin%2520de%2520savoir
+File Name: C:\Downloaded Web Sites\mycamer.net\uas\login.html
+Content Type: text/html
+
+Uri: https://www.pinterest.fr/pin/create/bookmarklet/?pinFave=1&url=https:%2F%2Fmycamer.net%2Fquest-ce-que-le-code-hexadecimal-tout-ce-que-tu-as-besoin-de-savoir%2F&media=https://mycamer.net/wp-content/uploads/2022/02/hex-colors-guide-.jpg&description=Qu’est-ce que le code hexadécimal %3F  Tout ce que tu as besoin de savoir
+File Name: C:\Downloaded Web Sites\mycamer.net\pin\create\bookmarklet\index.htm
+Content Type: text/html
+
+Uri: https://consent.youtube.com/ml?continue=https://www.youtube.com/user/Envato?cbrd%3D1&gl=FR&hl=fr&pc=yt&uxe=eomty&src=1
+File Name: C:\Downloaded Web Sites\mycamer.net\ml.html
+Content Type: text/html
+
+Uri: https://m.facebook.com/cookie/consent_prompt/?next_uri=https:%2F%2Fm.facebook.com%2Flogin.php%3Fskip_api_login%3D1%26api_key%3D966242223397117%26signed_next%3D1%26next%3Dhttps%253A%252F%252Fm.facebook.com%252Fsharer.php%253Fu%253Dhttps%25253A%25252F%25252Fmycamer.net%25252F10-problemes-courants-de-liphone-13-et-comment-les-resoudre%25252F%26cancel_url%3Dhttps%253A%252F%252Fm.facebook.com%252Fdialog%252Fclose_window%252F%253Fapp_id%253D966242223397117%2526connect%253D0%2523_%253D_%26display%3Dtouch%26locale%3Dfr_FR&refsrc=deprecated&locale2=fr_FR&_rdr
+File Name: C:\Downloaded Web Sites\mycamer.net\cookie\consent_prompt\index.htm-1.xhtml
+Content Type: application/xhtml+xml
+
+Uri: https://m.facebook.com/cookie/consent_prompt/?next_uri=https:%2F%2Fm.facebook.com%2Flogin.php%3Fskip_api_login%3D1%26api_key%3D966242223397117%26signed_next%3D1%26next%3Dhttps%253A%252F%252Fm.facebook.com%252Fsharer.php%253Fu%253Dhttps%25253A%25252F%25252Fmycamer.net%25252Fcomment-installer-phpmyadmin-sur-debian-11-bullseye-apache%25252F%26cancel_url%3Dhttps%253A%252F%252Fm.facebook.com%252Fdialog%252Fclose_window%252F%253Fapp_id%253D966242223397117%2526connect%253D0%2523_%253D_%26display%3Dtouch%26locale%3Dfr_FR&refsrc=deprecated&locale2=fr_FR&_rdr
+File Name: C:\Downloaded Web Sites\mycamer.net\cookie\consent_prompt\index.htm-2.xhtml
+Content Type: application/xhtml+xml
+
+Uri: https://m.facebook.com/cookie/consent_prompt/?next_uri=https:%2F%2Fm.facebook.com%2Flogin.php%3Fskip_api_login%3D1%26api_key%3D966242223397117%26signed_next%3D1%26next%3Dhttps%253A%252F%252Fm.facebook.com%252Fsharer.php%253Fu%253Dhttps%25253A%25252F%25252Fmycamer.net%25252Fle-proces-dit-que-le-jeu-darcade-key-master-de-sega-est-intentionnellement-truque%25252F%26cancel_url%3Dhttps%253A%252F%252Fm.facebook.com%252Fdialog%252Fclose_window%252F%253Fapp_id%253D966242223397117%2526connect%253D0%2523_%253D_%26display%3Dtouch%26locale%3Dfr_FR&refsrc=deprecated&locale2=fr_FR&_rdr
+File Name: C:\Downloaded Web Sites\mycamer.net\cookie\consent_prompt\index.htm-3.xhtml
+Content Type: application/xhtml+xml
+
+Uri: https://m.facebook.com/cookie/consent_prompt/?next_uri=https:%2F%2Fm.facebook.com%2Flogin.php%3Fskip_api_login%3D1%26api_key%3D966242223397117%26signed_next%3D1%26next%3Dhttps%253A%252F%252Fm.facebook.com%252Fsharer.php%253Fu%253Dhttps%25253A%25252F%25252Fmycamer.net%25252Fcomment-reparer-impossible-de-charger-limage-appuyez-pour-reessayer-erreur-instagram%25252F%26cancel_url%3Dhttps%253A%252F%252Fm.facebook.com%252Fdialog%252Fclose_window%252F%253Fapp_id%253D966242223397117%2526connect%253D0%2523_%253D_%26display%3Dtouch%26locale%3Dfr_FR&refsrc=deprecated&locale2=fr_FR&_rdr
+File Name: C:\Downloaded Web Sites\mycamer.net\cookie\consent_prompt\index.htm-4.xhtml
+Content Type: application/xhtml+xml
+
+Uri: https://m.facebook.com/cookie/consent_prompt/?next_uri=https:%2F%2Fm.facebook.com%2Flogin.php%3Fskip_api_login%3D1%26api_key%3D966242223397117%26signed_next%3D1%26next%3Dhttps%253A%252F%252Fm.facebook.com%252Fsharer.php%253Fu%253Dhttps%25253A%25252F%25252Fmycamer.net%25252Fcomment-reparer-le-decalage-dinstagram-sur-iphone-et-android%25252F%26cancel_url%3Dhttps%253A%252F%252Fm.facebook.com%252Fdialog%252Fclose_window%252F%253Fapp_id%253D966242223397117%2526connect%253D0%2523_%253D_%26display%3Dtouch%26locale%3Dfr_FR&refsrc=deprecated&locale2=fr_FR&_rdr
+File Name: C:\Downloaded Web Sites\mycamer.net\cookie\consent_prompt\index.htm-5.xhtml
+Content Type: application/xhtml+xml
+
+Uri: https://jegtheme.com/
+File Name: C:\Downloaded Web Sites\mycamer.net\index-4.htm
+Content Type: text/html
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Commentaires sur : Les dernières statistiques sur l&#8217;utilisation d&#8217;internet	</title>
+	<atom:link href="https://zenuacademie.com/statistiques/statistiques-utilisation-internet/feed/" rel="self" type="application/rss+xml" />
+	<link>https://zenuacademie.com/statistiques/statistiques-utilisation-internet/</link>
+	<description>L&#039;académie de création de contenu</description>
+	<lastBuildDate>Tue, 15 Feb 2022 00:05:42 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+</channel>
+</rss>

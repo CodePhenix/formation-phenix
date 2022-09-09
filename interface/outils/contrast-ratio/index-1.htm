@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+
+<html class="no-js language-css" lang="en-US">
+
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+
+		<title>Lea Verou &#8211; Life at the bleeding edge (of web standards)</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Lea Verou &raquo; Feed" href="https://lea.verou.me/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Lea Verou &raquo; Comments Feed" href="https://lea.verou.me/comments/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/lea.verou.me\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://lea.verou.me/wp-includes/css/dist/block-library/style.min.css?ver=6.0.1' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--accent: #cd2653;--wp--preset--color--primary: #000000;--wp--preset--color--secondary: #6d6d6d;--wp--preset--color--subtle-background: #dcd7ca;--wp--preset--color--background: #f5efe0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 26.25px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 21px;--wp--preset--font-size--larger: 32px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='twentytwenty-style-css'  href='https://lea.verou.me/wp-content/themes/lv2020/style.css?ver=6.0.1' media='all' />
+<link rel='stylesheet' id='twentytwenty-print-style-css'  href='https://lea.verou.me/wp-content/themes/twentytwenty/print.css?ver=6.0.1' media='print' />
+<script src='https://lea.verou.me/wp-content/themes/twentytwenty/assets/js/index.js?ver=6.0.1' id='twentytwenty-js-js' async></script>
+<link rel="https://api.w.org/" href="https://lea.verou.me/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://lea.verou.me/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://lea.verou.me/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 6.0.1" />
+<link rel='shortlink' href='http://wp.me/roQm' />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.css" rel="stylesheet" />
+<link href="https://get.mavo.io/mavo.css" rel="stylesheet" />
+	<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
+			<link rel="shortcut icon" href="/logo.svg" />
+	</head>
+
+	<body class="home blog wp-embed-responsive enable-search-modal has-no-pagination showing-comments show-avatars footer-top-visible">
+
+		<a class="skip-link screen-reader-text" href="#site-content">Skip to the content</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+		<header id="site-header" class="header-footer-group" role="banner">
+
+			<div class="header-inner section-inner">
+
+				<div class="header-titles-wrapper">
+
+					
+						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+							<span class="toggle-inner">
+								<span class="toggle-icon">
+									<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)" /></svg>								</span>
+								<span class="toggle-text">Search</span>
+							</span>
+						</button><!-- .search-toggle -->
+
+					
+					<a href="https://lea.verou.me/" class="site-logo">
+						<img src="/mark.svg" alt="">
+						<div class="site-title">Lea Verou</div>
+					</a>
+					<div class="site-description">Life at the bleeding edge (of web standards)</div>
+
+					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+						<span class="toggle-inner">
+							<span class="toggle-icon">
+								<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="26" height="7" viewBox="0 0 26 7"><path fill-rule="evenodd" d="M332.5,45 C330.567003,45 329,43.4329966 329,41.5 C329,39.5670034 330.567003,38 332.5,38 C334.432997,38 336,39.5670034 336,41.5 C336,43.4329966 334.432997,45 332.5,45 Z M342,45 C340.067003,45 338.5,43.4329966 338.5,41.5 C338.5,39.5670034 340.067003,38 342,38 C343.932997,38 345.5,39.5670034 345.5,41.5 C345.5,43.4329966 343.932997,45 342,45 Z M351.5,45 C349.567003,45 348,43.4329966 348,41.5 C348,39.5670034 349.567003,38 351.5,38 C353.432997,38 355,39.5670034 355,41.5 C355,43.4329966 353.432997,45 351.5,45 Z" transform="translate(-329 -38)" /></svg>							</span>
+							<span class="toggle-text">Menu</span>
+						</span>
+					</button><!-- .nav-toggle -->
+
+				</div><!-- .header-titles-wrapper -->
+
+				<div class="header-navigation-wrapper">
+
+					
+							<nav class="primary-menu-wrapper" aria-label="Horizontal" role="navigation">
+
+								<ul class="primary-menu reset-list-style">
+
+								<li id="menu-item-3012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3012"><a href="https://lea.verou.me/projects/">Projects</a></li>
+<li id="menu-item-3015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3015"><a href="https://lea.verou.me/speaking/">Speaking</a></li>
+<li id="menu-item-3013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3013"><a href="https://lea.verou.me/publications/">Publications</a></li>
+<li id="menu-item-3014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3014"><a href="https://lea.verou.me/press/">Press</a></li>
+<li id="menu-item-3011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3011"><a href="https://lea.verou.me/interviews/">Interviews</a></li>
+<li id="menu-item-3016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3016"><a href="https://lea.verou.me/about/">About</a></li>
+
+								</ul>
+
+							</nav><!-- .primary-menu-wrapper -->
+
+						
+						<div class="header-toggles hide-no-js">
+
+						
+							<div class="toggle-wrapper search-toggle-wrapper">
+
+								<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+									<span class="toggle-inner">
+										<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)" /></svg>										<span class="toggle-text">Search</span>
+									</span>
+								</button><!-- .search-toggle -->
+
+							</div>
+
+							
+						</div><!-- .header-toggles -->
+						
+				</div><!-- .header-navigation-wrapper -->
+
+			</div><!-- .header-inner -->
+
+			<div class="search-modal cover-modal header-footer-group" data-modal-target-string=".search-modal">
+
+	<div class="search-modal-inner modal-inner">
+
+		<div class="section-inner">
+
+			<form role="search" aria-label="Search for:" method="get" class="search-form" action="https://lea.verou.me/">
+	<label for="search-form-1">
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" id="search-form-1" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<input type="submit" class="search-submit" value="Search" />
+</form>
+
+			<button class="toggle search-untoggle close-search-toggle fill-children-current-color" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+				<span class="screen-reader-text">Close search</span>
+				<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>			</button><!-- .search-toggle -->
+
+		</div><!-- .section-inner -->
+
+	</div><!-- .search-modal-inner -->
+
+</div><!-- .menu-modal -->
+
+		</header><!-- #site-header -->
+
+		
+<div class="menu-modal cover-modal header-footer-group" data-modal-target-string=".menu-modal">
+
+	<div class="menu-modal-inner modal-inner">
+
+		<div class="menu-wrapper section-inner">
+
+			<div class="menu-top">
+
+				<button class="toggle close-nav-toggle fill-children-current-color" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".menu-modal">
+					<span class="toggle-text">Close Menu</span>
+					<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>				</button><!-- .nav-toggle -->
+
+				
+					<nav class="mobile-menu" aria-label="Mobile" role="navigation">
+
+						<ul class="modal-menu reset-list-style">
+
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3012"><div class="ancestor-wrapper"><a href="https://lea.verou.me/projects/">Projects</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3015"><div class="ancestor-wrapper"><a href="https://lea.verou.me/speaking/">Speaking</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3013"><div class="ancestor-wrapper"><a href="https://lea.verou.me/publications/">Publications</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3014"><div class="ancestor-wrapper"><a href="https://lea.verou.me/press/">Press</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3011"><div class="ancestor-wrapper"><a href="https://lea.verou.me/interviews/">Interviews</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3016"><div class="ancestor-wrapper"><a href="https://lea.verou.me/about/">About</a></div><!-- .ancestor-wrapper --></li>
+
+						</ul>
+
+					</nav>
+
+					
+			</div><!-- .menu-top -->
+
+			<div class="menu-bottom">
+
+				
+					<nav aria-label="Expanded Social links" role="navigation">
+						<ul class="social-menu reset-list-style social-icons fill-children-current-color">
+
+							<li id="menu-item-2980" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2980"><a href="https://twitter.com/leaverou"><span class="screen-reader-text">@leaverou on Twitter</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27 c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103 c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814 c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023 c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85 c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843 c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z"></path></svg></a></li>
+<li id="menu-item-2983" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2983"><a href="https://github.com/LeaVerou"><span class="screen-reader-text">GitHub</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,2C6.477,2,2,6.477,2,12c0,4.419,2.865,8.166,6.839,9.489c0.5,0.09,0.682-0.218,0.682-0.484 c0-0.236-0.009-0.866-0.014-1.699c-2.782,0.602-3.369-1.34-3.369-1.34c-0.455-1.157-1.11-1.465-1.11-1.465 c-0.909-0.62,0.069-0.608,0.069-0.608c1.004,0.071,1.532,1.03,1.532,1.03c0.891,1.529,2.341,1.089,2.91,0.833 c0.091-0.647,0.349-1.086,0.635-1.337c-2.22-0.251-4.555-1.111-4.555-4.943c0-1.091,0.39-1.984,1.03-2.682 C6.546,8.54,6.202,7.524,6.746,6.148c0,0,0.84-0.269,2.75,1.025C10.295,6.95,11.15,6.84,12,6.836 c0.85,0.004,1.705,0.114,2.504,0.336c1.909-1.294,2.748-1.025,2.748-1.025c0.546,1.376,0.202,2.394,0.1,2.646 c0.64,0.699,1.026,1.591,1.026,2.682c0,3.841-2.337,4.687-4.565,4.935c0.359,0.307,0.679,0.917,0.679,1.852 c0,1.335-0.012,2.415-0.012,2.741c0,0.269,0.18,0.579,0.688,0.481C19.138,20.161,22,16.416,22,12C22,6.477,17.523,2,12,2z"></path></svg></a></li>
+<li id="menu-item-2982" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2982"><a href="http://gr.linkedin.com/in/leaverou"><span class="screen-reader-text">LinkedIn</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.7,3H4.3C3.582,3,3,3.582,3,4.3v15.4C3,20.418,3.582,21,4.3,21h15.4c0.718,0,1.3-0.582,1.3-1.3V4.3 C21,3.582,20.418,3,19.7,3z M8.339,18.338H5.667v-8.59h2.672V18.338z M7.004,8.574c-0.857,0-1.549-0.694-1.549-1.548 c0-0.855,0.691-1.548,1.549-1.548c0.854,0,1.547,0.694,1.547,1.548C8.551,7.881,7.858,8.574,7.004,8.574z M18.339,18.338h-2.669 v-4.177c0-0.996-0.017-2.278-1.387-2.278c-1.389,0-1.601,1.086-1.601,2.206v4.249h-2.667v-8.59h2.559v1.174h0.037 c0.356-0.675,1.227-1.387,2.526-1.387c2.703,0,3.203,1.779,3.203,4.092V18.338z"></path></svg></a></li>
+<li id="menu-item-2981" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2981"><a href="http://dribbble.com/LeaVerou"><span class="screen-reader-text">Dribbble</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,22C6.486,22,2,17.514,2,12S6.486,2,12,2c5.514,0,10,4.486,10,10S17.514,22,12,22z M20.434,13.369 c-0.292-0.092-2.644-0.794-5.32-0.365c1.117,3.07,1.572,5.57,1.659,6.09C18.689,17.798,20.053,15.745,20.434,13.369z M15.336,19.876c-0.127-0.749-0.623-3.361-1.822-6.477c-0.019,0.006-0.038,0.013-0.056,0.019c-4.818,1.679-6.547,5.02-6.701,5.334 c1.448,1.129,3.268,1.803,5.243,1.803C13.183,20.555,14.311,20.313,15.336,19.876z M5.654,17.724 c0.193-0.331,2.538-4.213,6.943-5.637c0.111-0.036,0.224-0.07,0.337-0.102c-0.214-0.485-0.448-0.971-0.692-1.45 c-4.266,1.277-8.405,1.223-8.778,1.216c-0.003,0.087-0.004,0.174-0.004,0.261C3.458,14.207,4.29,16.21,5.654,17.724z M3.639,10.264 c0.382,0.005,3.901,0.02,7.897-1.041c-1.415-2.516-2.942-4.631-3.167-4.94C5.979,5.41,4.193,7.613,3.639,10.264z M9.998,3.709 c0.236,0.316,1.787,2.429,3.187,5c3.037-1.138,4.323-2.867,4.477-3.085C16.154,4.286,14.17,3.471,12,3.471 C11.311,3.471,10.641,3.554,9.998,3.709z M18.612,6.612C18.432,6.855,17,8.69,13.842,9.979c0.199,0.407,0.389,0.821,0.567,1.237 c0.063,0.148,0.124,0.295,0.184,0.441c2.842-0.357,5.666,0.215,5.948,0.275C20.522,9.916,19.801,8.065,18.612,6.612z"></path></svg></a></li>
+<li id="menu-item-2984" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2984"><a href="https://codepen.io/leaverou"><span class="screen-reader-text">CodePen</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.016,8.84c-0.002-0.013-0.005-0.025-0.007-0.037c-0.005-0.025-0.008-0.048-0.015-0.072 c-0.003-0.015-0.01-0.028-0.013-0.042c-0.008-0.02-0.015-0.04-0.023-0.062c-0.007-0.015-0.013-0.028-0.02-0.042 c-0.008-0.02-0.018-0.037-0.03-0.057c-0.007-0.013-0.017-0.027-0.025-0.038c-0.012-0.018-0.023-0.035-0.035-0.052 c-0.01-0.013-0.02-0.025-0.03-0.037c-0.015-0.017-0.028-0.032-0.043-0.045c-0.01-0.012-0.022-0.023-0.035-0.035 c-0.015-0.015-0.032-0.028-0.048-0.04c-0.012-0.01-0.025-0.02-0.037-0.03c-0.005-0.003-0.01-0.008-0.015-0.012l-9.161-6.096 c-0.289-0.192-0.666-0.192-0.955,0L2.359,8.237C2.354,8.24,2.349,8.245,2.344,8.249L2.306,8.277 c-0.017,0.013-0.033,0.027-0.048,0.04C2.246,8.331,2.234,8.342,2.222,8.352c-0.015,0.015-0.028,0.03-0.042,0.047 c-0.012,0.013-0.022,0.023-0.03,0.037C2.139,8.453,2.125,8.471,2.115,8.488C2.107,8.501,2.099,8.514,2.09,8.526 C2.079,8.548,2.069,8.565,2.06,8.585C2.054,8.6,2.047,8.613,2.04,8.626C2.032,8.648,2.025,8.67,2.019,8.69 c-0.005,0.013-0.01,0.027-0.013,0.042C1.999,8.755,1.995,8.778,1.99,8.803C1.989,8.817,1.985,8.828,1.984,8.84 C1.978,8.879,1.975,8.915,1.975,8.954v6.093c0,0.037,0.003,0.075,0.008,0.112c0.002,0.012,0.005,0.025,0.007,0.038 c0.005,0.023,0.008,0.047,0.015,0.072c0.003,0.015,0.008,0.028,0.013,0.04c0.007,0.022,0.013,0.042,0.022,0.063 c0.007,0.015,0.013,0.028,0.02,0.04c0.008,0.02,0.018,0.038,0.03,0.058c0.007,0.013,0.015,0.027,0.025,0.038 c0.012,0.018,0.023,0.035,0.035,0.052c0.01,0.013,0.02,0.025,0.03,0.037c0.013,0.015,0.028,0.032,0.042,0.045 c0.012,0.012,0.023,0.023,0.035,0.035c0.015,0.013,0.032,0.028,0.048,0.04l0.038,0.03c0.005,0.003,0.01,0.007,0.013,0.01 l9.163,6.095C11.668,21.953,11.833,22,12,22c0.167,0,0.332-0.047,0.478-0.144l9.163-6.095l0.015-0.01 c0.013-0.01,0.027-0.02,0.037-0.03c0.018-0.013,0.035-0.028,0.048-0.04c0.013-0.012,0.025-0.023,0.035-0.035 c0.017-0.015,0.03-0.032,0.043-0.045c0.01-0.013,0.02-0.025,0.03-0.037c0.013-0.018,0.025-0.035,0.035-0.052 c0.008-0.013,0.018-0.027,0.025-0.038c0.012-0.02,0.022-0.038,0.03-0.058c0.007-0.013,0.013-0.027,0.02-0.04 c0.008-0.022,0.015-0.042,0.023-0.063c0.003-0.013,0.01-0.027,0.013-0.04c0.007-0.025,0.01-0.048,0.015-0.072 c0.002-0.013,0.005-0.027,0.007-0.037c0.003-0.042,0.007-0.079,0.007-0.117V8.954C22.025,8.915,22.022,8.879,22.016,8.84z M12.862,4.464l6.751,4.49l-3.016,2.013l-3.735-2.492V4.464z M11.138,4.464v4.009l-3.735,2.494L4.389,8.954L11.138,4.464z M3.699,10.562L5.853,12l-2.155,1.438V10.562z M11.138,19.536l-6.749-4.491l3.015-2.011l3.735,2.492V19.536z M12,14.035L8.953,12 L12,9.966L15.047,12L12,14.035z M12.862,19.536v-4.009l3.735-2.492l3.016,2.011L12.862,19.536z M20.303,13.438L18.147,12 l2.156-1.438L20.303,13.438z"></path></svg></a></li>
+
+						</ul>
+					</nav><!-- .social-menu -->
+
+				
+			</div><!-- .menu-bottom -->
+
+		</div><!-- .menu-wrapper -->
+
+	</div><!-- .menu-modal-inner -->
+
+</div><!-- .menu-modal -->
+
+<main id="site-content" role="main">
+
+	
+<article class="post-3493 post type-post status-publish format-standard hentry category-news tag-css tag-state-of-css" id="post-3493">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/news/" rel="category tag">News</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2022/07/help-design-the-state-of-css-survey-2022/">Help design the State of CSS Survey 2022!</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/07/help-design-the-state-of-css-survey-2022/">July 28, 2022</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/07/help-design-the-state-of-css-survey-2022/#respond"><span class="dsq-postid" data-dsqidentifier="3493 https://lea.verou.me/?p=3493">No Comments<span class="screen-reader-text"> on Help design the State of CSS Survey 2022!</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>Since 2019, the annual <a href="https://stateofcss.com/en-us/">State of CSS survey</a> has collected feedback from web developers from across the world to try and take the pulse of the CSS ecosystem, and it&#8217;s become a valuable resource not only for CSS developers, but also for browser vendors.&nbsp;This summer, one of my side projects is helping out with survey design and outreach for the <a href="https://stateofcss.com/en-us/">State of CSS survey</a>, thanks to a generous Google <a href="https://web.dev/ui-fund/">UI fund</a> grant.</p>
+
+
+
+<p>The target is for the survey to launch in mid September, and we are currently working on the outline. So far we have created a preliminary outline based on last year&#8217;s survey and early research. All our work happens is in the open, in <a href="https://github.com/Devographics/Surveys">this repo</a>. Here are some of the <a href="https://github.com/Devographics/Surveys/issues/1">changes from last year&#8217;s survey</a>:</p>
+
+
+
+<ul><li>Removed the Pre-processors category as it feels like there isn&#8217;t too much debate around that area.</li><li>Got rid of &#8220;which browser do you primarily develop in?&#8221; question as we already ask which browsers people test in.</li><li>Merged &#8220;Opinions&#8221; and &#8220;Environments&#8221; sections into new &#8220;Usage&#8221; section.</li><li>Moved browsers question to &#8220;Other Tools&#8221;.</li><li>New features:<ul><li>currentcolor</li><li><code>color-mix()</code></li><li>Wide gamut colors</li><li><code>scroll-behavior</code></li><li><code>scroll-padding</code></li><li><code>font-palette</code></li><li><code>:focus-visible</code></li><li><code>:has()</code> pseudo-class</li><li><code>:where()</code> pseudo-class</li><li>Cascade Layers</li><li>Houdini Paint API</li><li>and there are <a href="https://github.com/Devographics/Surveys/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">several others we are considering</a></li></ul></li></ul>
+
+
+
+<p>We are currently looking for feedback from the community, including suggesting CSS features to ask about, libraries and tools, or even new questions altogether.</p>
+
+
+
+<p>There are also <a href="https://github.com/Devographics/Monorepo/issues/99">some design issues</a> to flesh out, you&#8217;re welcome to weigh in there too.</p>
+
+
+
+<p>If you want to quickly vote on which features are most important for you to make it into the survey, you can do that either via GitHub 👍🏼reactions, or <a href="https://projects.verou.me/mavoice/?repo=devographics/surveys&amp;labels=State%20of%20CSS%202022">here</a> (which uses GitHub reactions behind the scenes). Do note that reactions are only one metric among many we will use to consider items.</p>
+
+
+
+<p>The feedback period will be open until <strong>August 20</strong>, then we will start working on launching the survey.</p>
+
+
+
+<p>Do note that <strong>browser makers are looking at this</strong> and similar surveys to prioritize what to implement. This is why Google is sponsoring this project. So any effort you put into survey outline feedback, and on responding to the survey when it&#8217;s ready, could come back to you tenfold when your favorite CSS features get implemented faster!</p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/tag/css/" rel="tag">CSS</a>, <a href="https://lea.verou.me/tag/state-of-css/" rel="tag">State of CSS</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3484 post type-post status-publish format-standard hentry category-articles tag-a11y tag-web-components" id="post-3484">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/articles/" rel="category tag">Articles</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2022/07/button-group/">What is the best way to mark up an exclusive button group?</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/07/button-group/">July 14, 2022</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/07/button-group/#respond"><span class="dsq-postid" data-dsqidentifier="3484 https://lea.verou.me/?p=3484">No Comments<span class="screen-reader-text"> on What is the best way to mark up an exclusive button group?</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>A few days ago I asked Twitter a seemingly simple question<em> (I meant <code>aria-pressed</code>, not <code>aria-selected</code> but Twitter doesn&#8217;t allow edits…)</em>:</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">What is the best, most accessible way to mark up mutually exclusive button groups?<br>Radios + labels styled as buttons?<br>&lt;button&gt; with aria-selected=&quot;true&quot; + JS to manage the behavior?<br>Something else? <a href="https://t.co/T63oHzenTl">pic.twitter.com/T63oHzenTl</a></p>&mdash; Lea Verou (@LeaVerou) <a href="https://twitter.com/LeaVerou/status/1545712667515654144?ref_src=twsrc%5Etfw">July 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<p>For background, I was implementing a web component for an app I&#8217;m working on at work and I was getting into some pretty weird rabbit holes with my approach of generating radios and labels.</p>
+
+
+
+<p>Unsurprisingly, <a href="https://twitter.com/heydonworks/status/1545713406187114496">most</a> <a href="https://twitter.com/WebReflection/status/1545722200598233097">people</a> <a href="https://twitter.com/gumnos/status/1545745858339250176">thought</a> <a href="https://twitter.com/TimBrock_DtD/status/1545714402367885313">the</a> <a href="https://twitter.com/tolgamndl/status/1545714439000825856">best</a> <a href="https://twitter.com/jorgepinon/status/1545743881169510401">solution</a> <a href="https://twitter.com/dotstepan/status/1545729640731447298">is</a> <a href="https://twitter.com/sunlix/status/1545747700427145216">radio</a> <a href="https://twitter.com/gazjoy/status/1545754675395297280">buttons</a> <a href="https://twitter.com/devongovett/status/1547593573448552450">and</a> <a href="https://twitter.com/rmors_/status/1547568003520221186">labels</a>. After all, it works without CSS, right? Progressive enhancement and everything? </p>
+
+
+
+<p>That&#8217;s what I thought too. I had contorted my component to generate labels and radios in the Shadow DOM from buttons in the light DOM, which resulted in awkward code and awkward CSS, but I felt I was fighting the good fight and doing the best thing for accessibility. </p>
+
+
+
+<p>All this was challenged when the actual accessibility expert, <a href="https://twitter.com/LeonieWatson">Léonie Watson</a> chimed in. For those of you who don’t know her, <a href="https://tink.uk/about-leonie/">she is pretty much <em>the</em> expert</a> when it comes to web accessibility and standards. She is also visually impaired herself, giving her a firsthand experience many other a11y aficionados lack. Her recommendation was contrary to what most others were saying:</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">If the intent is that only one button can be activated at a time, suggest using &lt;button&gt; elements with aria-pressed, so the state of the active chosen button is &quot;true&quot; and the rest automatically set to &quot;false&quot;.</p>&mdash; Léonie (@LeonieWatson) <a href="https://twitter.com/LeonieWatson/status/1545745436740313089?ref_src=twsrc%5Etfw">July 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<p>She went on to make the point that if a design <em>looks</em> like buttons, it should <em>act</em> like buttons, otherwise there are mismatched expectations and poor UX for AT users:</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">They have similar behaviours, yes, but your design gives them the appearance of buttons (I think?) not radio buttons, so there is a mismatch of expectations in terms of k&#39;board interaction and shortcuts.</p>&mdash; Léonie (@LeonieWatson) <a href="https://twitter.com/LeonieWatson/status/1545762058339319808?ref_src=twsrc%5Etfw">July 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Sure. It&#39;s generally better to use the element that matches the intent. If you use radio buttons but style them to look like buttons, it creates a mismatch that you need to polyfill with ARIA etc.</p>&mdash; Léonie (@LeonieWatson) <a href="https://twitter.com/LeonieWatson/status/1545757022645325824?ref_src=twsrc%5Etfw">July 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<p>In case you were wondering if state would be equally noticeable with <code>aria-pressed</code> and buttons, it is:</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">The vailable state info is the same &#8211; you either hear that one button is pressed and the others are not, or that one radio is selected and the others are not. The state/behaviour in both cases is essentially the same, but the interaction/expectations are not.</p>&mdash; Léonie (@LeonieWatson) <a href="https://twitter.com/LeonieWatson/status/1545763493412052992?ref_src=twsrc%5Etfw">July 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<p>And some advice on grouping: </p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">If the grouping is also important, putting each group of buttons inside a &lt;section&gt; element with aria-label to give it an accessible name should do the trick. Has the added bonus of turning each section into a navigable landmark.</p>&mdash; Léonie (@LeonieWatson) <a href="https://twitter.com/LeonieWatson/status/1545745923011117057?ref_src=twsrc%5Etfw">July 9, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<p>In theory doing this in Shadow DOM and/or using ElementInternals implicit roles should be fine, <a href="https://twitter.com/LeonieWatson/status/1547544701036888065">though in practice we&#8217;ve had some trouble with that</a>.</p>
+
+
+
+<p>Today I posted <a href="https://projects.verou.me/nudeforms/button-group/">my attempt to implement what we&#8217;ve discussed in a <code>&lt;button-group&gt;</code> component</a>, which restarted the discussion.</p>
+
+
+
+<figure class="wp-block-image size-full"><img width="1800" height="428" src="https://lea.verou.me/wp-content/uploads/2022/07/image.png" alt="" class="wp-image-3485"/></figure>
+
+
+
+<p>Its <a href="https://github.com/LeaVerou/nudeforms/tree/main/button-group">implementation is right here</a> if you want to improve it further! And make sure to <a href="https://twitter.com/LeaVerou/status/1545712667515654144">check out the actual Twitter thread</a>, as there is a lot of good stuff I couldn&#8217;t include in this!</p>
+
+
+
+<p><em><strong>Edit:</strong> Léonie wrote a blog post too, <a href="https://tink.uk/perceived-affordances-and-the-functionality-mismatch/">Perceived affordances and the functionality mismatch</a></em>.<em> It&#8217;s a great read.</em></p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/tag/a11y/" rel="tag">a11y</a>, <a href="https://lea.verou.me/tag/web-components/" rel="tag">Web Components</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3478 post type-post status-publish format-standard hentry category-releases category-speaking tag-conferences tag-javascript" id="post-3478">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/releases/" rel="category tag">Releases</a> <a href="https://lea.verou.me/category/personal/speaking/" rel="category tag">Speaking</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2022/07/rety/">Introducing Rety: live coding, without the stress</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/07/rety/">July 13, 2022</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/07/rety/#respond"><span class="dsq-postid" data-dsqidentifier="3478 https://lea.verou.me/?p=3478">No Comments<span class="screen-reader-text"> on Introducing Rety: live coding, without the stress</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>I recently spoke at CSS Day in Amsterdam. It was only my second f2f talk after the pandemic. It went down really well, both in person, and recently that the video was released:</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="Lea Verou | CSS Variable Secrets | CSS Day 2022" width="580" height="326" src="https://www.youtube.com/embed/ZuZizqDF4q8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>Here is a sample of tweets about it that made me particularly warm and fuzzy inside:</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Looks like <a href="https://twitter.com/LeaVerou?ref_src=twsrc%5Etfw">@LeaVerou</a> is already breaking all our view records for a new upload.<br><br>Watch her full <a href="https://twitter.com/hashtag/cssday?src=hash&amp;ref_src=twsrc%5Etfw">#cssday</a> talk at <a href="https://t.co/EuU8smrb04">https://t.co/EuU8smrb04</a> <a href="https://t.co/cZPrJnJCmb">https://t.co/cZPrJnJCmb</a></p>&mdash; CSS Day conference (@CSSDayConf) <a href="https://twitter.com/CSSDayConf/status/1542778793219301376?ref_src=twsrc%5Etfw">July 1, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Easily one of my favourite talks from this year’s <a href="https://twitter.com/hashtag/cssday?src=hash&amp;ref_src=twsrc%5Etfw">#cssday</a>, and perhaps the one I’ve been looking forward to rewatching the most. Time to put the kettle on and find my notebook, methinks… <a href="https://t.co/kr5bpnw74e">https://t.co/kr5bpnw74e</a></p>&mdash; Jon Pearse (@jonpearse) <a href="https://twitter.com/jonpearse/status/1542490268322103296?ref_src=twsrc%5Etfw">June 30, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">&quot;We got kickass reactive variables and we are still treating them as glorified constants&quot; – <a href="https://twitter.com/LeaVerou?ref_src=twsrc%5Etfw">@LeaVerou</a> <a href="https://t.co/6uBdkjYGIM">https://t.co/6uBdkjYGIM</a></p>&mdash; Stuart Robson (@StuRobson) <a href="https://twitter.com/StuRobson/status/1542461048791384066?ref_src=twsrc%5Etfw">June 30, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">I will never think of CSS variables the same way after watching this talk from <a href="https://twitter.com/LeaVerou?ref_src=twsrc%5Etfw">@LeaVerou</a>:  <a href="https://t.co/SxhCpPPEci">https://t.co/SxhCpPPEci</a></p>&mdash; Val Head (@vlh) <a href="https://twitter.com/vlh/status/1544483583544463361?ref_src=twsrc%5Etfw">July 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">If you still think that CSS is not a programming language, watch this one by <a href="https://twitter.com/LeaVerou?ref_src=twsrc%5Etfw">@LeaVerou</a>. It is like part II of Lea&#39;s book &quot;CSS Secrets&quot;.<br><br>😮 😮 😮<a href="https://t.co/ouo6KhN90M">https://t.co/ouo6KhN90M</a></p>&mdash; Pawel Grzybek (@pawelgrzybek) <a href="https://twitter.com/pawelgrzybek/status/1546861605824126980?ref_src=twsrc%5Etfw">July 12, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">I am just astounded by the creativity in this talk by <a href="https://twitter.com/LeaVerou?ref_src=twsrc%5Etfw">@LeaVerou</a>!<a href="https://t.co/8U8LcqQKkY">https://t.co/8U8LcqQKkY</a></p>&mdash; Parker Codes 💻 (@parker_codes) <a href="https://twitter.com/parker_codes/status/1547055116221497344?ref_src=twsrc%5Etfw">July 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Experiencing a minor mind melt* watching <a href="https://t.co/rBb6o6KYEE">https://t.co/rBb6o6KYEE</a>. So so good!<br><br>*not to be confused with a Vulcan mind meld</p>&mdash; Søren Birkemeyer (@polarbirke) <a href="https://twitter.com/polarbirke/status/1547202631315214338?ref_src=twsrc%5Etfw">July 13, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter"><div class="wp-block-embed__wrapper">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="en" dir="ltr">Ready to get mind blown 🤯 about <a href="https://twitter.com/hashtag/CSS?src=hash&amp;ref_src=twsrc%5Etfw">#CSS</a> Variable Secrets from <a href="https://twitter.com/LeaVerou?ref_src=twsrc%5Etfw">@LeaVerou</a><br><br>Thank you so much for this, I really enjoyed the hacking part (a revive of the feeling &quot;from the old days&quot;).<br><br>🔗 <a href="https://t.co/Rf2h9IbRDT">https://t.co/Rf2h9IbRDT</a></p>&mdash; gossi (@unistyler) <a href="https://twitter.com/unistyler/status/1544619175796252672?ref_src=twsrc%5Etfw">July 6, 2022</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></figure>
+
+
+
+<p>There&#8217;s <a href="https://twitter.com/search?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZuZizqDF4q8">a lot more where these came from too</a>.</p>
+
+
+
+<p>This was not just my second post-pandemic talk, but my first talk using <em><a href="https://rety.verou.me">Rety</a></em>, which is what this post is about.</p>
+
+
+
+<p>As you may know, I love live coding as a teaching tool, and over the years&nbsp;<a href="https://twitter.com/aarongarciah/status/844212506365235200">it</a>&nbsp;<a href="https://twitter.com/gumnos/status/1118527972342935552">has become</a>&nbsp;<a href="https://twitter.com/ChrisFerdinandi/status/1027343408187277312">part</a>&nbsp;<a href="https://twitter.com/LinnOyenFarley/status/1011650208831287296">of</a>&nbsp;<a href="https://twitter.com/feross/status/928018779115724800">my</a>&nbsp;<a href="https://twitter.com/HenriHelvetica/status/1011630698984361985">trademark</a>&nbsp;<a href="https://twitter.com/johnallsopp/status/926417129070456832">speaking</a>&nbsp;<a href="https://bradfrost.com/blog/post/on-speaking/#:~:text=Don%E2%80%99t%20live%20code%20%E2%80%93%20This%20applies%20to%20everyone%20except%20Lea%20Verou%2C%20who%20is%20an%20absolute%20beast">style</a>.</p>
+
+
+
+<p>When combined with some kind of interactive preview, it allows the speaker to demonstrate not only the final state of a coding snippet, but also how you get there, and what the intermediate results are. <strong>Live coding is to programming what a blackboard is to math or physics.</strong></p>
+
+
+
+<p>But it does create a unique challenge: My live coded slides don’t make sense without me. This may be acceptable for a conference talk, which is usually recorded, but not in other contexts, such as teaching a university course, where all instructors need to be able to teach all lectures, and students need to be able to quickly refer to examples shown.</p>
+
+
+
+<p>Back in the fall of 2021, when we were preparing for the second iteration of our course, <a href="https://designftw.mit.edu/">Design for the Web: Languages and User Interfaces</a>, this came up as a pressing issue. The current state of the course <em>required</em> me to be there to teach my lectures, and this may well be the last year I teach it, since I&#8217;m finishing up my PhD soon.</p>
+
+
+
+<p>I didn’t want to completely remove live coding from my slides, as I truly believe it is the perfect implementation of the&nbsp;<em>“show, don’t tell”</em>&nbsp;teaching adage for certain things, so I thought instead: what if I could&nbsp;<em>record</em>&nbsp;my live coding, and make it replayable? </p>
+
+
+
+<p>Doing so manually seemed like cruel and unusual punishment. And thus, <strong><em></em><em><a href="https://rety.verou.me">Rety</a></em></strong> was born (pronounced like the “rety” in “retype”).</p>
+
+
+
+<p>While originally the plan was for me to still live code, and have the <em><a href="https://rety.verou.me">Rety</a></em> functionality there for students and future instructors, I ended up using it during my own lectures as well, as I concluded that a well crafted <a rel="noreferrer noopener" href="https://rety.verou.me/#rety-actions" target="_blank">Rety script</a> was strictly superior to me doing the live coding: </p>
+
+
+
+<ul><li>Same progressive development as a live demo</li><li>It still affords unplanned demonstrations (e.g. to answer a question), since Rety still works with the same editors, and I could always pause it and take over if needed.</li><li>I could record myself and edit the script to maximize education value and minimize typos, delays, fumbling etc.</li><li>People can consume typed text far faster than people can type text. This is why most video tutorials speed up the typing. With Rety, typing speed is adjustable, and doesn&#8217;t need to match mine.</li></ul>
+
+
+
+<p>After test driving it for our course the entire spring 2022 semester, it went through the ultimate test in June 2022: I used it for my <a href="https://cssday.nl/2022">CSSDay</a> conference talk. You can&nbsp;<a href="https://www.youtube.com/watch?v=ZuZizqDF4q8">watch the talk here</a>&nbsp;(first live demo at 7:15).</p>
+
+
+
+<p>Right now <em><a href="https://rety.verou.me">Rety</a></em> is just a set of two classes: <code>Recorder</code> and <code>Replayer</code>, which are used entirely independently. The exact UI is left up to the Rety user. E.g. to use it in my slides, I integrated it with the Live Demo plugin of <a href="https://inspirejs.org">Inspire.js</a> (it is automatically included if a <code>&lt;script class="demo-script" type="application/json"&gt;</code> is found in a live demo slide).</p>
+
+
+
+<p>The library could use more docs and <em>some</em> tests and I have doubts about the API, but I figured I should release it it earlier rather than later (it&#8217;s already been sitting in a repo for 7 months). After all, what best time to release it than when the first Rety talk is <a href="https://frontendfoc.us/issues/549">still making the rounds</a>?</p>
+
+
+
+<p>My vision is to ultimately evolve and standardize the <a href="https://rety.verou.me/#actions">Rety script</a> format, so that it can be used to describe a coding interaction across a variety of tools. There are so many possibilities! </p>
+
+
+
+<ul><li>Wouldn&#8217;t it be cool if CodePen and similar playgrounds supported embedding a <em>Rety</em> script into a pen?</li><li>What if you could store <em>Rety</em> scripts in a repo and editors like VS Code recognized them and let you replay them?</li></ul>
+
+
+
+<p>Enjoy: <a class="view-demo" href="https://rety.verou.me">Rety</a></p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/tag/conferences/" rel="tag">conferences</a>, <a href="https://lea.verou.me/tag/javascript/" rel="tag">JavaScript</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3463 post type-post status-publish format-standard hentry category-original category-releases tag-color tag-color-api tag-color-science tag-colors tag-css-color-4-2 tag-css-color-5-2 tag-esm tag-javascript tag-js tag-standards" id="post-3463">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/original/" rel="category tag">Original</a> <a href="https://lea.verou.me/category/releases/" rel="category tag">Releases</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2022/06/releasing-colorjs/">Releasing Color.js: A library that takes color seriously</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/06/releasing-colorjs/">June 29, 2022</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2022/06/releasing-colorjs/#respond"><span class="dsq-postid" data-dsqidentifier="3463 https://lea.verou.me/?p=3463">No Comments<span class="screen-reader-text"> on Releasing Color.js: A library that takes color seriously</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<figure class="wp-block-image size-full"><img loading="lazy" width="1994" height="1106" src="https://lea.verou.me/wp-content/uploads/2022/06/image-2.png" alt="" class="wp-image-3471"/></figure>
+
+
+
+<p><em>Related: <a href="https://svgees.us/blog/colorjs-release.html">Chris’ blog post for the release of Color.js</a></em></p>
+
+
+
+<p>This post has been long overdue: <a href="https://svgees.us">Chris</a> and I started working on Color.js in 2020, over 2 years ago! It was shortly after I had finished the Color lecture <a href="https://designftw.mit.edu">for the class I was teaching at MIT</a> and I was appalled by the lack of color libraries that did the things I needed for the demos in my slides. I asked Chris, &#8220;Hey, what if we make a Color library? You will bring your Color Science knowledge and I will bring my JS and API design knowledge. Wouldn&#8217;t this be the coolest color library ever?&#8221;. There was also a fair bit of discussion in the CSS WG about a native Color object for the Web Platform, and we needed to play around with JS for a while before we could work on an API that would be baked into browsers.</p>
+
+
+
+<p>We had a prototype ready in a few months and presented it to the CSS WG. People loved it and some started using it despite it not being &#8220;officially&#8221; released. There was even a library that used Color.js as a dependency!</p>
+
+
+
+<p>Once we got some experience from this usage, we worked on a draft specification for a Color API for the Web. In July 2021 <a href="https://github.com/w3c/css-houdini-drafts/issues/1047">we presented it again in a CSS WG Color breakout</a> and everyone agreed to <a href="https://github.com/wicg/color-api">incubate it in WICG, where it lives now</a>.</p>
+
+
+
+<p><em><strong>Why can&#8217;t we just standardize the API in Color.js?</strong> While one is influenced by the other, a Web Platform API has different constraints and needs to follow more restricted design principles compared to a JS library, which can be more flexible. E.g. exotic properties (things like <code>color.lch.l</code>) are very common in JS libraries, but are <a href="https://github.com/w3ctag/design-principles/issues/16">now considered an antipattern in Web Platform APIs</a>.</em></p>
+
+
+
+<p>Work on Color.js as well as the Color API continued, on and off as time permitted, but no release. There were always things to do and bugs to fix before more eyes would look at it. Because eyes <em>were</em> looking at it anyway, we even slapped a big fat warning on the homepage:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="2006" height="358" src="https://lea.verou.me/wp-content/uploads/2022/06/image.png" alt="" class="wp-image-3464"/></figure>
+
+
+
+<p>Eventually a few days ago, I discovered that the <a href="https://www.npmjs.com/package/colorjs.io">Color.js package we had published on npm</a> somehow has over 6000 downloads per week, nearly all of them direct. I would not bat an eyelid at those numbers if we had released Color.js into the wild, but for a library we actively avoided mentioning to anyone outside of standards groups, it was rather odd.</p>
+
+
+
+<p>How did this happen? Maybe it was the <a href="https://web.dev/shows/http-203/Uh95jZPTDfw/">HTTP 203 episode that mentioned it in passing</a>? Regardless, it gave us hope that it&#8217;s filling a very real need in the pretty crowded space of color manipulation libraries and it gave us a push to finally get it out there.</p>
+
+
+
+<p>So here we are, releasing <a href="https://colorjs.io">Color.js</a> into the wild. So what&#8217;s cool about it?</p>
+
+
+
+<ul><li>Completely color space agnostic, each <code>Color</code> object just has a reference to a color space, a list of coordinates,, and optionally an alpha.</li><li>Supports a large variety of color spaces including all color spaces from <a href="https://drafts.csswg.org/css-color-4/">CSS Color 4</a>, as well as the unofficial <a href="https://drafts.csswg.org/css-color-hdr">CSS Color HDR</a> draft.</li><li>Supports interpolation as defined in CSS Color 4</li><li>Doesn&#8217;t skimp on color science: does actual gamut mapping instead of naïve clipping, and actual chromatic adaptation when converting between color spaces with different white points.</li><li>Multiple DeltaE methods for calculating color difference (2000, CMC, 76, Jz, OK etc)</li><li>The library itself is written to be very modular and ESM-first (with CJS and IIFE bundles) and provides a tree-shakeable API as well.</li></ul>
+
+
+
+<p>Enjoy: <a class="view-demo" href="https://colorjs.io">Color.js</a></p>
+
+
+
+<p>There is also an entire (buggy, but usable) script in the website for realtime editable color demos that we call &#8220;Color Notebook&#8221;. It looks like this:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="1954" height="296" src="https://lea.verou.me/wp-content/uploads/2022/06/image-3.png" alt="" class="wp-image-3473"/></figure>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="1950" height="298" src="https://lea.verou.me/wp-content/uploads/2022/06/image-4.png" alt="" class="wp-image-3474"/></figure>
+
+
+
+<p>And you can <a href="https://colorjs.io/notebook/">create and share your own documents with live Color.js demos</a>. You log in with GitHub and the app saves in GitHub Gists.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="1792" height="1805" src="https://lea.verou.me/wp-content/uploads/2022/06/image-1.png" alt="" class="wp-image-3467"/><figcaption>Color spaces presently supported by Color.js</figcaption></figure>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/tag/color/" rel="tag">Color</a>, <a href="https://lea.verou.me/tag/color-api/" rel="tag">Color API</a>, <a href="https://lea.verou.me/tag/color-science/" rel="tag">Color science</a>, <a href="https://lea.verou.me/tag/colors/" rel="tag">colors</a>, <a href="https://lea.verou.me/tag/css-color-4-2/" rel="tag">CSS Color 4</a>, <a href="https://lea.verou.me/tag/css-color-5-2/" rel="tag">CSS Color 5</a>, <a href="https://lea.verou.me/tag/esm/" rel="tag">esm</a>, <a href="https://lea.verou.me/tag/javascript/" rel="tag">JavaScript</a>, <a href="https://lea.verou.me/tag/js/" rel="tag">JS</a>, <a href="https://lea.verou.me/tag/standards/" rel="tag">standards</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3392 post type-post status-publish format-standard hentry category-original category-personal category-releases tag-esm tag-markdown tag-stretchy tag-web-components tag-yak-shaving" id="post-3392">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/original/" rel="category tag">Original</a> <a href="https://lea.verou.me/category/personal/" rel="category tag">Personal</a> <a href="https://lea.verou.me/category/releases/" rel="category tag">Releases</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2021/11/on-yak-shaving-and-md-block-an-html-element-for-markdown/">On Yak Shaving and &lt;md-block>, a new HTML element for Markdown</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/11/on-yak-shaving-and-md-block-an-html-element-for-markdown/">November 26, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/11/on-yak-shaving-and-md-block-an-html-element-for-markdown/#respond"><span class="dsq-postid" data-dsqidentifier="3392 https://lea.verou.me/?p=3392">No Comments<span class="screen-reader-text"> on On Yak Shaving and &lt;md-block>, a new HTML element for Markdown</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>This week has been <a href="https://americanexpress.io/yak-shaving/">Yak Shaving</a> Galore. It went a bit like this:</p>
+
+
+
+<ol><li>I&#8217;ve been working on a web component that I need for the project I’m working on. More on that later, but let’s call it <code>&lt;x-foo></code> for now.</li><li><em>Of course</em> that needs to be developed as a separate reusable library and released as a separate open source project. No, this is not the titular component, this was only level 1 of my multi-level yak shaving… 🤦🏽‍♀️</li><li>I wanted to showcase various usage examples of that component in its page, so I made another component for these demos: <code>&lt;x-foo-live></code>. This demo component would have markup with editable parts on one side and the live rendering on the other side.</li><li>I wanted the editable parts to autosize as you type. Hey, I’ve written a library for that in the past, it’s called <a href="https://github.com/leaverou/stretchy/">Stretchy</a>! </li><li>But Stretchy was not written in ESM, nor did it support Shadow DOM. I must rewrite Stretchy in ESM and support Shadow DOM first! Surely it won’t take more than a half hour, it’s a tiny library.</li><li><em>(It took more than a half hour)</em></li><li>Ok, now I have a nice lil&#8217; module, but I also need to export IIFE as well, so that it&#8217;s compatible with Stretchy v1. Let&#8217;s switch to Rollup and npm scripts and ditch Gulp.</li><li>Oh look, Stretchy’s CSS is still written in Sass, even though it doesn’t really need it now. Let’s rewrite it to use CSS variables, use PostCSS for nesting, and use <code>conic-gradient()</code> instead of inline SVG data URIs.</li><li>Ok, Stretchy v2 is ready, now I need to update its docs. Oooh, it doesn’t have a README? I should add one. But I don’t want to duplicate content between the page and the README. Hmmm, if only…</li><li>I know! I’ll make a web component for rendering both inline and remote Markdown! I have an unfinished one lying around somewhere, surely it won’t take more than a couple hours to finish it?</li><li><em>(It took almost a day, two with docs, demos etc)</em></li><li><em>Done!</em> Here it is! <a rel="noreferrer noopener" href="https://md-block.verou.me/" target="_blank">https://md-block.verou.m</a><a href="https://md-block.verou.me/">e</a></li><li><em>Great!</em> Now I can update <a href="https://stretchy.verou.me/">Stretchy’s docs</a> and <a href="https://github.com/LeaVerou/stretchy/releases/tag/v2.0.0">release its v2</a></li><li><em>Great!</em> Now I can use Stretchy in my <code>&lt;x-foo-live></code> component demoing my <code>&lt;x-foo></code> component and be back to only one level of yak shaving!</li><li><em>Wow, it’s already Friday afternoon?!</em> 🤦🏽‍♀️😂</li></ol>
+
+
+
+<p>Hopefully you find <a href="https://md-block.verou.me/" target="_blank" rel="noreferrer noopener">&lt;md-block></a> useful! Enjoy!</p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/tag/esm/" rel="tag">esm</a>, <a href="https://lea.verou.me/tag/markdown/" rel="tag">Markdown</a>, <a href="https://lea.verou.me/tag/stretchy/" rel="tag">Stretchy</a>, <a href="https://lea.verou.me/tag/web-components/" rel="tag">Web Components</a>, <a href="https://lea.verou.me/tag/yak-shaving/" rel="tag">Yak Shaving</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3384 post type-post status-publish format-standard hentry category-articles category-original category-tutorials tag-css tag-css-custom-properties tag-css-variables tag-dynamic-css" id="post-3384">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/articles/" rel="category tag">Articles</a> <a href="https://lea.verou.me/category/original/" rel="category tag">Original</a> <a href="https://lea.verou.me/category/articles/tutorials/" rel="category tag">Tutorials</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2021/10/custom-properties-with-defaults/">Custom properties with defaults: 3+1 strategies</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/10/custom-properties-with-defaults/">October 15, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/10/custom-properties-with-defaults/#respond"><span class="dsq-postid" data-dsqidentifier="3384 https://lea.verou.me/?p=3384">No Comments<span class="screen-reader-text"> on Custom properties with defaults: 3+1 strategies</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>When developing customizable components, one often wants to expose various parameters of the styling as custom properties, and form a sort of <em>CSS API</em>. This is still underutlized, but there are libraries, e.g. <a href="https://shoelace.style/">Shoelace</a>, that already <a href="https://shoelace.style/components/switch?id=css-custom-properties">list</a> <a href="https://shoelace.style/components/progress-ring?id=css-custom-properties">custom</a> <a href="https://shoelace.style/components/image-comparer?id=css-custom-properties">properties</a> alongside other parts of each component&#8217;s API (even <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part">CSS parts</a>!).</p>
+
+
+
+<p><em><strong>Note:</strong> I’m using &#8220;component&#8221; here broadly, as any reusable chunk of HTML/CSS/JS, not necessarily a web component or framework component. What we are going to discuss applies to reusable chunks of HTML just as much as it does to &#8220;proper&#8221; web components.</em></p>
+
+
+
+<p>Let&#8217;s suppose we are designing a certain button styling, that looks like this:</p>
+
+
+
+ <div class="read-more-button-wrap"><a href="https://lea.verou.me/2021/10/custom-properties-with-defaults/#more-3384" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">&#8220;Custom properties with defaults: 3+1 strategies&#8221;</span></a></div>
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/tag/css/" rel="tag">CSS</a>, <a href="https://lea.verou.me/tag/css-custom-properties/" rel="tag">CSS Custom Properties</a>, <a href="https://lea.verou.me/tag/css-variables/" rel="tag">CSS variables</a>, <a href="https://lea.verou.me/tag/dynamic-css/" rel="tag">Dynamic CSS</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3366 post type-post status-publish format-standard hentry category-articles category-original category-tutorials" id="post-3366">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/articles/" rel="category tag">Articles</a> <a href="https://lea.verou.me/category/original/" rel="category tag">Original</a> <a href="https://lea.verou.me/category/articles/tutorials/" rel="category tag">Tutorials</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2021/06/inherit-ancestor-font-size-for-fun-and-profit/">Inherit ancestor font-size, for fun and profit</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/06/inherit-ancestor-font-size-for-fun-and-profit/">June 24, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/06/inherit-ancestor-font-size-for-fun-and-profit/#respond"><span class="dsq-postid" data-dsqidentifier="3366 https://lea.verou.me/?p=3366">No Comments<span class="screen-reader-text"> on Inherit ancestor font-size, for fun and profit</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>If you’ve been writing CSS for any length of time, you&#8217;re probably familiar with the <code>em</code> unit, and possibly the other <a href="https://drafts.csswg.org/css-values/#font-relative-lengths">type-relative units</a>. We are going to refer to <code>em</code> for the rest of this post, but anything described works for all type-relative units.</p>
+
+
+
+<p>As you well know, <code>em</code> resolves to the current font size on all properties except <code>font-size</code>, where it resolves to the <em>parent</em> font size. It can be quite useful for making scalable components that adapt to their context size.</p>
+
+
+
+<p>However, I have often come across cases where you actually need to &#8220;circumvent&#8221; one level of this. Either you need to set <code>font-size</code> to the grandparent font size instead of the parent one, or you need to set other properties to the parent font size, not the current one. </p>
+
+
+
+ <div class="read-more-button-wrap"><a href="https://lea.verou.me/2021/06/inherit-ancestor-font-size-for-fun-and-profit/#more-3366" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">&#8220;Inherit ancestor font-size, for fun and profit&#8221;</span></a></div>
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3357 post type-post status-publish format-standard hentry category-rants" id="post-3357">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/rants/" rel="category tag">Rants</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2021/05/is-the-current-tab-active/">Is the current tab active?</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/05/is-the-current-tab-active/">May 24, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/05/is-the-current-tab-active/#respond"><span class="dsq-postid" data-dsqidentifier="3357 https://lea.verou.me/?p=3357">No Comments<span class="screen-reader-text"> on Is the current tab active?</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>Today I ran into an interesting problem. Interesting because it&#8217;s one of those very straightforward, deceptively simple questions, that after a fair amount of digging, does not appear to have a definite answer (though I would love to be wrong!). </p>
+
+
+
+<p>The problem was to determine <strong>if the current tab is active</strong>. Yes, as simple as that. </p>
+
+
+
+ <div class="read-more-button-wrap"><a href="https://lea.verou.me/2021/05/is-the-current-tab-active/#more-3357" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">&#8220;Is the current tab active?&#8221;</span></a></div>
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3347 post type-post status-publish format-standard hentry category-uncategorized" id="post-3347">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/uncategorized/" rel="category tag">Uncategorized</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2021/05/82-of-developers-get-this-3-line-css-quiz-wrong/">82% of developers get this 3 line CSS quiz wrong</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/05/82-of-developers-get-this-3-line-css-quiz-wrong/">May 21, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/05/82-of-developers-get-this-3-line-css-quiz-wrong/#respond"><span class="dsq-postid" data-dsqidentifier="3347 https://lea.verou.me/?p=3347">No Comments<span class="screen-reader-text"> on 82% of developers get this 3 line CSS quiz wrong</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>(<em>I always wanted to do a clickbait title like this and when this chance came along I could not pass it up. 😅 Sorry!</em>)</p>
+
+
+
+<p>While putting my ideas into slides for my <a href="https://smashingconf.com/online-workshops/workshops/lea-verou">Dynamic CSS workshop</a> for next week, I was working on a slide explaining how the CSS wide keywords work with custom properties. <code>inherit</code>, <code>initial</code>, <code>unset</code> I had used numerous times and knew well. But what about <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/revert">revert</a></code>? How did that work? I had an idea, but quickly coded up a demo to try it out. </p>
+
+
+
+<p>The code was:</p>
+
+
+
+<pre class="wp-block-code"><code>:root {
+    --accent-color: skyblue;
+}
+
+div {
+    --accent-color: revert; 
+    background: var(--accent-color, orange);
+}</code></pre>
+
+
+
+<p>Phew, I was correct, but the amount of uncertainty I had before seeing the result tipped me that I might be on to something.</p>
+
+
+
+<p>Before you read on, take a moment to think about what you would vote. Warning: Spoilers ahead!</p>
+
+
+
+ <div class="read-more-button-wrap"><a href="https://lea.verou.me/2021/05/82-of-developers-get-this-3-line-css-quiz-wrong/#more-3347" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">&#8220;82% of developers get this 3 line CSS quiz wrong&#8221;</span></a></div>
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-3293 post type-post status-publish format-standard hentry category-articles category-original category-tutorials tag-css-variables tag-dark-mode tag-hsl tag-lch" id="post-3293">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://lea.verou.me/category/articles/" rel="category tag">Articles</a> <a href="https://lea.verou.me/category/original/" rel="category tag">Original</a> <a href="https://lea.verou.me/category/articles/tutorials/" rel="category tag">Tutorials</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://lea.verou.me/2021/03/inverted-lightness-variables/">Dark mode in 5 minutes, with inverted lightness variables</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://lea.verou.me/author/admin/">Lea Verou</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/03/inverted-lightness-variables/">March 30, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/2021/03/inverted-lightness-variables/#respond"><span class="dsq-postid" data-dsqidentifier="3293 https://lea.verou.me/?p=3293">No Comments<span class="screen-reader-text"> on Dark mode in 5 minutes, with inverted lightness variables</span></span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p>By now, you probably know that you can use custom properties for individual color components, to avoid repeating the same color coordinates multiple times throughout your theme. You may even know that you can use the same variable for multiple components, e.g. HSL hue and lightness:</p>
+
+
+
+<pre class="wp-block-code"><code>:root {
+	--primary-hs: 250 30%;
+}
+
+h1 {
+	color: hsl(var(--primary-hs) 30%);
+}
+
+article {
+	background: hsl(var(--primary-hs) 90%);
+}
+
+article h2 {
+	background: hsl(var(--primary-hs) 40%);
+	color: white;
+}</code></pre>
+
+
+
+<p>Here is a <a href="https://codepen.io/leaverou/pen/QWdjpEL">very simple page designed with this technque</a>:</p>
+
+
+
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper"><iframe id="cp_embed_QWdjpEL" src="//codepen.io/anon/embed/QWdjpEL?height=500&amp;theme-id=1&amp;slug-hash=QWdjpEL&amp;default-tab=result" height="500" scrolling="no" frameborder="0" allowfullscreen allowpaymentrequest name="CodePen Embed QWdjpEL" title="CodePen Embed QWdjpEL" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe></div>
+
+
+
+<p>Unlike preprocessor variables, you could even locally override the variable, <a href="https://codepen.io/leaverou/pen/rNjOypm">to have blocks with a different accent color</a>:</p>
+
+
+
+<pre class="wp-block-code"><code>:root {
+	--primary-hs: 250 30%;
+	--secondary-hs: 190 40%;
+}
+
+article {
+	background: hsl(var(--primary-hs) 90%);
+}
+
+article.alt {
+	--primary-hs: var(--secondary-hs);
+}</code></pre>
+
+
+
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper"><iframe id="cp_embed_rNjOypm" src="//codepen.io/anon/embed/rNjOypm?height=500&amp;theme-id=1&amp;slug-hash=rNjOypm&amp;default-tab=result" height="500" scrolling="no" frameborder="0" allowfullscreen allowpaymentrequest name="CodePen Embed rNjOypm" title="CodePen Embed rNjOypm" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe></div>
+
+
+
+<p>This is all fine and dandy, until dark mode comes into play. The idea of using custom properties to make it easier to adapt a theme to dark mode is not new. However, <a href="https://alxgbsn.co.uk/2019/02/08/blog-theming-css-variables/">in</a> <a href="https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/">every</a> <a href="https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8">article</a> <a href="https://css-irl.info/quick-and-easy-dark-mode-with-css-custom-properties/">I</a> <a href="https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode">have</a> <a href="https://www.digitalocean.com/community/tutorials/css-theming-custom-properties">seen</a>, the strategy suggested is to create a bunch of custom properties, one for each color, and override them in a media query.</p>
+
+
+
+<p>This is a fine approach, and you&#8217;ll likely want to do that for at least part of your colors eventually. However, even in the most disciplined of designs, not every color is a CSS variable. You often have colors declared inline, especially grays (e.g. the footer color in our example). This means that adding a dark mode is taxing enough that you may put it off for later, especially on side projects.</p>
+
+
+
+<p>The trick I&#8217;m going to show you will make anyone who knows enough about color cringe (sorry Chris!) but it does help you create a dark mode that <em>works</em> in minutes. It won&#8217;t be great, and you should eventually tweak it to create a proper dark mode (also <a href="https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/">dark mode is not just about swapping colors</a>) but it&#8217;s better than nothing and can serve as a base.</p>
+
+
+
+ <div class="read-more-button-wrap"><a href="https://lea.verou.me/2021/03/inverted-lightness-variables/#more-3293" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">&#8220;Dark mode in 5 minutes, with inverted lightness variables&#8221;</span></a></div>
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://lea.verou.me/tag/css-variables/" rel="tag">CSS variables</a>, <a href="https://lea.verou.me/tag/dark-mode/" rel="tag">dark mode</a>, <a href="https://lea.verou.me/tag/hsl/" rel="tag">hsl</a>, <a href="https://lea.verou.me/tag/lch/" rel="tag">lch</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+
+	
+	<div class="pagination-wrapper section-inner">
+
+		<hr class="styled-separator pagination-separator is-style-wide" aria-hidden="true" />
+
+		
+	<nav class="navigation pagination" aria-label="Posts">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><span class="prev page-numbers placeholder" aria-hidden="true"><span aria-hidden="true">&larr;</span> <span class="nav-prev-text">Newer <span class="nav-short">Posts</span></span></span><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://lea.verou.me/page/2/">2</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class="page-numbers" href="https://lea.verou.me/page/21/">21</a>
+<a class="next page-numbers" href="https://lea.verou.me/page/2/"><span class="nav-next-text">Older <span class="nav-short">Posts</span></span> <span aria-hidden="true">&rarr;</span></a></div>
+	</nav>
+	</div><!-- .pagination-wrapper -->
+
+	
+</main><!-- #site-content -->
+
+
+	<div class="footer-nav-widgets-wrapper header-footer-group">
+
+		<div class="footer-inner section-inner">
+
+							<div class="footer-top has-social-menu">
+										
+						<nav aria-label="Social links" class="footer-social-wrapper">
+
+							<ul class="social-menu footer-social reset-list-style social-icons fill-children-current-color">
+
+								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2980"><a href="https://twitter.com/leaverou"><span class="screen-reader-text">@leaverou on Twitter</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27 c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103 c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814 c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023 c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85 c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843 c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z"></path></svg></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2983"><a href="https://github.com/LeaVerou"><span class="screen-reader-text">GitHub</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,2C6.477,2,2,6.477,2,12c0,4.419,2.865,8.166,6.839,9.489c0.5,0.09,0.682-0.218,0.682-0.484 c0-0.236-0.009-0.866-0.014-1.699c-2.782,0.602-3.369-1.34-3.369-1.34c-0.455-1.157-1.11-1.465-1.11-1.465 c-0.909-0.62,0.069-0.608,0.069-0.608c1.004,0.071,1.532,1.03,1.532,1.03c0.891,1.529,2.341,1.089,2.91,0.833 c0.091-0.647,0.349-1.086,0.635-1.337c-2.22-0.251-4.555-1.111-4.555-4.943c0-1.091,0.39-1.984,1.03-2.682 C6.546,8.54,6.202,7.524,6.746,6.148c0,0,0.84-0.269,2.75,1.025C10.295,6.95,11.15,6.84,12,6.836 c0.85,0.004,1.705,0.114,2.504,0.336c1.909-1.294,2.748-1.025,2.748-1.025c0.546,1.376,0.202,2.394,0.1,2.646 c0.64,0.699,1.026,1.591,1.026,2.682c0,3.841-2.337,4.687-4.565,4.935c0.359,0.307,0.679,0.917,0.679,1.852 c0,1.335-0.012,2.415-0.012,2.741c0,0.269,0.18,0.579,0.688,0.481C19.138,20.161,22,16.416,22,12C22,6.477,17.523,2,12,2z"></path></svg></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2982"><a href="http://gr.linkedin.com/in/leaverou"><span class="screen-reader-text">LinkedIn</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.7,3H4.3C3.582,3,3,3.582,3,4.3v15.4C3,20.418,3.582,21,4.3,21h15.4c0.718,0,1.3-0.582,1.3-1.3V4.3 C21,3.582,20.418,3,19.7,3z M8.339,18.338H5.667v-8.59h2.672V18.338z M7.004,8.574c-0.857,0-1.549-0.694-1.549-1.548 c0-0.855,0.691-1.548,1.549-1.548c0.854,0,1.547,0.694,1.547,1.548C8.551,7.881,7.858,8.574,7.004,8.574z M18.339,18.338h-2.669 v-4.177c0-0.996-0.017-2.278-1.387-2.278c-1.389,0-1.601,1.086-1.601,2.206v4.249h-2.667v-8.59h2.559v1.174h0.037 c0.356-0.675,1.227-1.387,2.526-1.387c2.703,0,3.203,1.779,3.203,4.092V18.338z"></path></svg></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2981"><a href="http://dribbble.com/LeaVerou"><span class="screen-reader-text">Dribbble</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,22C6.486,22,2,17.514,2,12S6.486,2,12,2c5.514,0,10,4.486,10,10S17.514,22,12,22z M20.434,13.369 c-0.292-0.092-2.644-0.794-5.32-0.365c1.117,3.07,1.572,5.57,1.659,6.09C18.689,17.798,20.053,15.745,20.434,13.369z M15.336,19.876c-0.127-0.749-0.623-3.361-1.822-6.477c-0.019,0.006-0.038,0.013-0.056,0.019c-4.818,1.679-6.547,5.02-6.701,5.334 c1.448,1.129,3.268,1.803,5.243,1.803C13.183,20.555,14.311,20.313,15.336,19.876z M5.654,17.724 c0.193-0.331,2.538-4.213,6.943-5.637c0.111-0.036,0.224-0.07,0.337-0.102c-0.214-0.485-0.448-0.971-0.692-1.45 c-4.266,1.277-8.405,1.223-8.778,1.216c-0.003,0.087-0.004,0.174-0.004,0.261C3.458,14.207,4.29,16.21,5.654,17.724z M3.639,10.264 c0.382,0.005,3.901,0.02,7.897-1.041c-1.415-2.516-2.942-4.631-3.167-4.94C5.979,5.41,4.193,7.613,3.639,10.264z M9.998,3.709 c0.236,0.316,1.787,2.429,3.187,5c3.037-1.138,4.323-2.867,4.477-3.085C16.154,4.286,14.17,3.471,12,3.471 C11.311,3.471,10.641,3.554,9.998,3.709z M18.612,6.612C18.432,6.855,17,8.69,13.842,9.979c0.199,0.407,0.389,0.821,0.567,1.237 c0.063,0.148,0.124,0.295,0.184,0.441c2.842-0.357,5.666,0.215,5.948,0.275C20.522,9.916,19.801,8.065,18.612,6.612z"></path></svg></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2984"><a href="https://codepen.io/leaverou"><span class="screen-reader-text">CodePen</span><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.016,8.84c-0.002-0.013-0.005-0.025-0.007-0.037c-0.005-0.025-0.008-0.048-0.015-0.072 c-0.003-0.015-0.01-0.028-0.013-0.042c-0.008-0.02-0.015-0.04-0.023-0.062c-0.007-0.015-0.013-0.028-0.02-0.042 c-0.008-0.02-0.018-0.037-0.03-0.057c-0.007-0.013-0.017-0.027-0.025-0.038c-0.012-0.018-0.023-0.035-0.035-0.052 c-0.01-0.013-0.02-0.025-0.03-0.037c-0.015-0.017-0.028-0.032-0.043-0.045c-0.01-0.012-0.022-0.023-0.035-0.035 c-0.015-0.015-0.032-0.028-0.048-0.04c-0.012-0.01-0.025-0.02-0.037-0.03c-0.005-0.003-0.01-0.008-0.015-0.012l-9.161-6.096 c-0.289-0.192-0.666-0.192-0.955,0L2.359,8.237C2.354,8.24,2.349,8.245,2.344,8.249L2.306,8.277 c-0.017,0.013-0.033,0.027-0.048,0.04C2.246,8.331,2.234,8.342,2.222,8.352c-0.015,0.015-0.028,0.03-0.042,0.047 c-0.012,0.013-0.022,0.023-0.03,0.037C2.139,8.453,2.125,8.471,2.115,8.488C2.107,8.501,2.099,8.514,2.09,8.526 C2.079,8.548,2.069,8.565,2.06,8.585C2.054,8.6,2.047,8.613,2.04,8.626C2.032,8.648,2.025,8.67,2.019,8.69 c-0.005,0.013-0.01,0.027-0.013,0.042C1.999,8.755,1.995,8.778,1.99,8.803C1.989,8.817,1.985,8.828,1.984,8.84 C1.978,8.879,1.975,8.915,1.975,8.954v6.093c0,0.037,0.003,0.075,0.008,0.112c0.002,0.012,0.005,0.025,0.007,0.038 c0.005,0.023,0.008,0.047,0.015,0.072c0.003,0.015,0.008,0.028,0.013,0.04c0.007,0.022,0.013,0.042,0.022,0.063 c0.007,0.015,0.013,0.028,0.02,0.04c0.008,0.02,0.018,0.038,0.03,0.058c0.007,0.013,0.015,0.027,0.025,0.038 c0.012,0.018,0.023,0.035,0.035,0.052c0.01,0.013,0.02,0.025,0.03,0.037c0.013,0.015,0.028,0.032,0.042,0.045 c0.012,0.012,0.023,0.023,0.035,0.035c0.015,0.013,0.032,0.028,0.048,0.04l0.038,0.03c0.005,0.003,0.01,0.007,0.013,0.01 l9.163,6.095C11.668,21.953,11.833,22,12,22c0.167,0,0.332-0.047,0.478-0.144l9.163-6.095l0.015-0.01 c0.013-0.01,0.027-0.02,0.037-0.03c0.018-0.013,0.035-0.028,0.048-0.04c0.013-0.012,0.025-0.023,0.035-0.035 c0.017-0.015,0.03-0.032,0.043-0.045c0.01-0.013,0.02-0.025,0.03-0.037c0.013-0.018,0.025-0.035,0.035-0.052 c0.008-0.013,0.018-0.027,0.025-0.038c0.012-0.02,0.022-0.038,0.03-0.058c0.007-0.013,0.013-0.027,0.02-0.04 c0.008-0.022,0.015-0.042,0.023-0.063c0.003-0.013,0.01-0.027,0.013-0.04c0.007-0.025,0.01-0.048,0.015-0.072 c0.002-0.013,0.005-0.027,0.007-0.037c0.003-0.042,0.007-0.079,0.007-0.117V8.954C22.025,8.915,22.022,8.879,22.016,8.84z M12.862,4.464l6.751,4.49l-3.016,2.013l-3.735-2.492V4.464z M11.138,4.464v4.009l-3.735,2.494L4.389,8.954L11.138,4.464z M3.699,10.562L5.853,12l-2.155,1.438V10.562z M11.138,19.536l-6.749-4.491l3.015-2.011l3.735,2.492V19.536z M12,14.035L8.953,12 L12,9.966L15.047,12L12,14.035z M12.862,19.536v-4.009l3.735-2.492l3.016,2.011L12.862,19.536z M20.303,13.438L18.147,12 l2.156-1.438L20.303,13.438z"></path></svg></a></li>
+
+							</ul><!-- .footer-social -->
+
+						</nav><!-- .footer-social-wrapper -->
+
+									</div><!-- .footer-top -->
+
+			
+			
+				<aside class="footer-widgets-outer-wrapper" role="complementary">
+
+					<div class="footer-widgets-wrapper">
+
+						
+							<div class="footer-widgets column-one grid-item">
+								<div class="widget_text widget-odd widget-first widget-1 buybook-widget widget widget_custom_html"><div class="widget_text widget-content"><h2 class="widget-title subheading heading-size-3">Buy my book!</h2><div class="textwidget custom-html-widget"><a href="http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20" target="_blank" rel="noopener"><img src="https://lea.verou.me/cover.png" alt="CSS Secrets book cover" /></a></div></div></div><div class="widget-even widget-2 widget widget_search"><div class="widget-content"><form role="search"  method="get" class="search-form" action="https://lea.verou.me/">
+	<label for="search-form-2">
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" id="search-form-2" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<input type="submit" class="search-submit" value="Search" />
+</form>
+</div></div><div class="widget-odd widget-last widget-3 widget widget_categories"><div class="widget-content"><h2 class="widget-title subheading heading-size-3">Categories</h2>
+			<ul>
+					<li class="cat-item cat-item-17"><a href="https://lea.verou.me/category/articles/" title="Helpful (I hope) articles without original content (unless they are also in the category &quot;Original&quot;) that just sum up techniques I&#039;ve read about elsewhere.">Articles</a> (34)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://lea.verou.me/category/benchmarks/" title="Speed comparisons I did or found.">Benchmarks</a> (2)
+</li>
+	<li class="cat-item cat-item-159"><a href="https://lea.verou.me/category/csswg/">CSS WG</a> (3)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://lea.verou.me/category/news/" title="Something new to our field that I&#039;ve read about somewhere and just couldn&#039;t resist sharing.">News</a> (14)
+</li>
+	<li class="cat-item cat-item-32"><a href="https://lea.verou.me/category/original/" title="Posts that hold POTENTIALLY original content, partially or totally. Content that I came up and haven’t read about somewhere else. It might not be actually original, as people often have the same ideas, it’s just original as far as my knowledge goes, which isn’t infinite :P. IF it its actually original, then it&#039;s licensed through the MIT license.">Original</a> (80)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://lea.verou.me/category/personal/" title="Posts about stuff that is related to me, and not to Web design &amp; development.">Personal</a> (37)
+</li>
+	<li class="cat-item cat-item-27"><a href="https://lea.verou.me/category/rants/" title="Things that make me mad about stuff related to my work. Like &quot;Thoughts&quot; but in a more angry fashion.">Rants</a> (13)
+</li>
+	<li class="cat-item cat-item-132"><a href="https://lea.verou.me/category/releases/">Releases</a> (36)
+</li>
+	<li class="cat-item cat-item-79"><a href="https://lea.verou.me/category/replies/" title="Replies to other people&#039;s blog posts that are lengthy enough to not fit in a comment.">Replies</a> (6)
+</li>
+	<li class="cat-item cat-item-117"><a href="https://lea.verou.me/category/personal/speaking/">Speaking</a> (12)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://lea.verou.me/category/thoughts/" title="Doesn&#039;t contain anything new, or particularly helpful, just thoughts that cross my mind about stuff related to my work.">Thoughts</a> (19)
+</li>
+	<li class="cat-item cat-item-16"><a href="https://lea.verou.me/category/tips/" title="Tips that boost your productivity">Tips</a> (52)
+</li>
+	<li class="cat-item cat-item-180"><a href="https://lea.verou.me/category/articles/tutorials/">Tutorials</a> (5)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://lea.verou.me/category/uncategorized/">Uncategorized</a> (4)
+</li>
+			</ul>
+
+			</div></div>							</div>
+
+						
+						
+							<div class="footer-widgets column-two grid-item">
+								<div class="widget_text widget-odd widget-first widget-1 carbonads-widget widget widget_custom_html"><div class="widget_text widget-content"><h2 class="widget-title subheading heading-size-3">Carbon ads</h2><div class="textwidget custom-html-widget"><script async src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=leaveroume" id="_carbonads_js"></script></div></div></div>
+		<div class="widget-even widget-last widget-2 widget widget_recent_entries"><div class="widget-content">
+		<h2 class="widget-title subheading heading-size-3">Recent Posts</h2>
+		<ul>
+											<li>
+					<a href="https://lea.verou.me/2022/07/help-design-the-state-of-css-survey-2022/">Help design the State of CSS Survey 2022!</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2022/07/button-group/">What is the best way to mark up an exclusive button group?</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2022/07/rety/">Introducing Rety: live coding, without the stress</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2022/06/releasing-colorjs/">Releasing Color.js: A library that takes color seriously</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2021/11/on-yak-shaving-and-md-block-an-html-element-for-markdown/">On Yak Shaving and &lt;md-block>, a new HTML element for Markdown</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2021/10/custom-properties-with-defaults/">Custom properties with defaults: 3+1 strategies</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2021/06/inherit-ancestor-font-size-for-fun-and-profit/">Inherit ancestor font-size, for fun and profit</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2021/05/is-the-current-tab-active/">Is the current tab active?</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2021/05/82-of-developers-get-this-3-line-css-quiz-wrong/">82% of developers get this 3 line CSS quiz wrong</a>
+									</li>
+											<li>
+					<a href="https://lea.verou.me/2021/03/inverted-lightness-variables/">Dark mode in 5 minutes, with inverted lightness variables</a>
+									</li>
+					</ul>
+
+		</div></div>							</div>
+
+						
+					</div><!-- .footer-widgets-wrapper -->
+
+				</aside><!-- .footer-widgets-outer-wrapper -->
+
+			
+		</div><!-- .footer-inner -->
+
+	</div><!-- .footer-nav-widgets-wrapper -->
+
+
+			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+
+				<div class="section-inner">
+
+					<div class="footer-credits">
+
+						<p class="footer-copyright">&copy;
+							2022							<a href="https://lea.verou.me/">Lea Verou</a>
+						</p><!-- .footer-copyright -->
+
+						<p class="powered-by-wordpress">
+							<a href="https://wordpress.org/">
+								Powered by WordPress							</a>
+						</p><!-- .powered-by-wordpress -->
+
+					</div><!-- .footer-credits -->
+
+					<a class="to-the-top" href="#site-header">
+						<span class="to-the-top-long">
+							To the top <span class="arrow" aria-hidden="true">&uarr;</span>						</span><!-- .to-the-top-long -->
+						<span class="to-the-top-short">
+							Up <span class="arrow" aria-hidden="true">&uarr;</span>						</span><!-- .to-the-top-short -->
+					</a><!-- .to-the-top -->
+
+				</div><!-- .section-inner -->
+
+			</footer><!-- #site-footer -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-markup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+<script src="https://get.mavo.io/mavo.js"></script>
+<script src="https://lea.verou.me/wp-content/themes/lv2020/theme.js"></script>
+<script id='disqus_count-js-extra'>
+var countVars = {"disqusShortname":"leaverou"};
+</script>
+<script src='https://lea.verou.me/wp-content/plugins/disqus-comment-system/public/js/comment_count.js?ver=3.0.22' id='disqus_count-js'></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<!--stats_footer_test--><script src="https://stats.wordpress.com/e-202232.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'6530358',v:'ext',post:'0'});
+var load_cmc = function(){linktracker_init(6530358,0,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script>
+
+	</body>
+</html>

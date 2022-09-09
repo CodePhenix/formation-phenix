@@ -1,0 +1,1113 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>컴포넌트 등록 — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-registration.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-registration.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-registration.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-registration.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-registration.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components-registration.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components-registration.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/components-registration.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="컴포넌트 등록 — Vue.js">
+    <meta property="og:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="컴포넌트 등록 — Vue.js">
+    <meta name="twitter:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    
+<link rel="stylesheet" href="/css/page.css">
+
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89623208-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+</head>
+  <body class="docs">
+    <div id="mobile-bar" style="pointer-events: none;" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    
+
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    
+<li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">배우기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>문서</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">가이드</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">스타일 가이드</a></li>
+        <li><a href="/v2/examples/" class="nav-link">예시</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">쿡북</a></li>
+        <li><a target="_blank" rel="noopener" href="https://v3.vuejs-korea.org/ko-KR/" class="nav-lin>">Vue.js 3 한국어문서</a></li>
+      </ul>
+    </li>
+    <li><h4>영상 강의</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">생태계</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>도움</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">포럼</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link"  target="_blank" rel="noopener">채팅</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">모임</a></li>
+    </ul></li>
+    <li><h4>도구</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">개발도구</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>코어 라이브러리</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 라우터</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 서버 렌더러</a></li>
+    </ul></li>
+    <li><h4>뉴스</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">주간 뉴스</a></li>
+      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank" rel="noopener">로드맵</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">이벤트</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">트위터</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">블로그</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">구인</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">개발 커뮤니티</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">팀</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">리소스</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">파트너</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">테마</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">쩌는 Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue 후원하기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">1회 후원하기</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">정기후원</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">티셔츠 샵</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">다른 언어로 보기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-registration.html" class="nav-link" target="_blank" rel="noopener" rel="noopener">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>스페셜 스폰서</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Standard Library">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          가이드
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>필수요소</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">설치방법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">시작하기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue 인스턴스</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">템플릿 문법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">computed와 watch</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">클래스와 스타일 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">조건부 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">리스트 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">이벤트 핸들링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">폼 입력 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>컴포넌트 톺아보기</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link current">컴포넌트 등록</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">커스텀 이벤트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">슬롯(Slots)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">동적 & 비동기 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">예외적인 상황들</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>트랜지션 & 애니메이션</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">진입/진출 그리고 리스트 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">상태 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>재사용 & 컴포지션</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">믹스인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">사용자 지정 디렉티브</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Render Functions & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">플러그인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">필터</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>도구</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">싱글 파일 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">단위 테스팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript 지원</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">프로덕션 배포 팁</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>스케일링 업</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">라우팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">상태 관리</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">서버사이드 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">보안</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>내부</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">반응형에 대해 깊이 알아보기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>마이그레이션1</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x에서 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x으로 부터 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x에서 1.0로 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>메타</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">다른 프레임워크와의 비교</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js 커뮤니티에 참여하세요!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">팀 구성원 만나기</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar components-registration-guide">
+  
+    
+      
+<div id="ad">
+  <script
+    async
+    type="text/javascript"
+    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>컴포넌트 등록</h1>
+  
+  
+    <blockquote>
+<p>이 페이지는 여러분이 이미 <a href="components.html">컴포넌트 기초</a>를 읽었다고 가정하고 쓴 내용입니다. 컴포넌트가 처음이라면 기초 문서를 먼저 읽으시기 바랍니다.</p>
+</blockquote>
+<div class="vueschool"><a href="https://vueschool.io/lessons/global-vs-local-components?friend=vuejs" target="_blank" rel="sponsored noopener" title="Free Vue.js Component Registration lesson">Watch a free video lesson on Vue School</a></div>
+
+<h2 id="컴포넌트-이름"><a href="#컴포넌트-이름" class="headerlink" title="컴포넌트 이름"></a>컴포넌트 이름</h2><p>컴포넌트를 등록할 때는 항상 이름을 지어줘야 합니다. 예를 들어 우리가 살펴봤던 전역등록은 아래처럼 하죠.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;my-component-name&#x27;</span>, &#123; <span class="hljs-comment">/* ... */</span> &#125;)<br></code></pre></td></tr></table></figure>
+
+<p>컴포넌트의 이름은 <code>Vue.component</code>의 첫번째 인자입니다.</p>
+<p>컴포넌트에 부여한 이름은 그 컴포넌트를 어디에 쓸 지에 따라 다를 수 있습니다. 컴포넌트를 (스트링 템플릿이나 <a href="single-file-components.html">싱글파일 컴포넌트</a>로 사용하지 않고) DOM에서 바로 사용할 때는 <a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name">W3C 규칙</a>에 따라서 사용자 정의 태그의 이름처럼 쓰는 것을 추천합니다(모두 소문자로 쓰고 단어는 하이픈(-)으로 연결하는 거죠). 이렇게 하면 지금 있거나 앞으로 작성할 HTML 엘리먼트와 충돌하는 것을 피할 수 있습니다.</p>
+<p>기타 컴포넌트 이름을 지을 때 숙지할 내용은 <a href="../style-guide/#%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9D%B4%EB%A6%84-%EB%A7%A4%EC%9A%B0-%EC%B6%94%EC%B2%9C%ED%95%A8">스타일 가이드</a>를 참고해주세요.</p>
+<h3 id="이름-표기법"><a href="#이름-표기법" class="headerlink" title="이름 표기법"></a>이름 표기법</h3><p>컴포넌트 이름을 지을 때는 두 가지 방법이 있습니다.</p>
+<h4 id="케밥-표기법"><a href="#케밥-표기법" class="headerlink" title="케밥-표기법"></a>케밥-표기법</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;my-component-name&#x27;</span>, &#123; <span class="hljs-comment">/* ... */</span> &#125;)<br></code></pre></td></tr></table></figure>
+
+<p>케밥-표기법으로 컴포넌트를 정의할 때는 사용자 정의 엘리먼트를 부를 때에도 <code>&lt;my-component-name&gt;</code>와 같이 반드시 케밥-표기법을 사용해야 합니다.</p>
+<h4 id="파스칼표기법"><a href="#파스칼표기법" class="headerlink" title="파스칼표기법"></a>파스칼표기법</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;MyComponentName&#x27;</span>, &#123; <span class="hljs-comment">/* ... */</span> &#125;)<br></code></pre></td></tr></table></figure>
+
+<p>파스칼표기법으로 컴포넌트를 정의할 때는 사용자 정의 엘리먼트를 부를 때 두 가지 표기법 모두 사용할 수 있습니다. 즉 <code>&lt;my-component-name&gt;</code>와 <code>&lt;MyComponentName&gt;</code> 모두 괜찮습니다. 단, DOM에 바로 쓸 때는 케밥-표기법 이름만 가능합니다.</p>
+<h2 id="전역-등록"><a href="#전역-등록" class="headerlink" title="전역 등록"></a>전역 등록</h2><p>지금까지 우리는 <code>Vue.component</code>를 이용해서만 컴포넌트를 만들었습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;my-component-name&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ... options ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>이런 컴포넌트를 <strong>전역 등록</strong>되었다고 합니다. 즉 어떤 루트 Vue 인스턴스(<code>new Vue</code>)에서도 사용할 수 있는 거죠.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;component-a&#x27;</span>, &#123; <span class="hljs-comment">/* ... */</span> &#125;)<br>Vue.component(<span class="hljs-string">&#x27;component-b&#x27;</span>, &#123; <span class="hljs-comment">/* ... */</span> &#125;)<br>Vue.component(<span class="hljs-string">&#x27;component-c&#x27;</span>, &#123; <span class="hljs-comment">/* ... */</span> &#125;)<br><br><span class="hljs-keyword">new</span> Vue(&#123; <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app&#x27;</span> &#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">component-a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component-a</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">component-b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component-b</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">component-c</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component-c</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이렇게 등록한 컴포넌트들은 모든 하위 컴포넌트에도 사용가능합니다. 즉 위의 3개 컴포넌트들은 <em>각각의 컴포넌트 안에서도</em> 사용할 수 있습니다.</p>
+<h2 id="지역-등록"><a href="#지역-등록" class="headerlink" title="지역 등록"></a>지역 등록</h2><p>전역 등록이 썩 좋기만 한 건 아닙니다. 예를 들어 웹팩같은 빌드 시스템을 사용하고 모든 컴포넌트를 전역 등록했으면 설사 어떤 컴포넌트를 더 이상 사용하지 않더라도 최종 빌드에는 들어가 있게 됩니다. 사용자가 내려받아야 하는 자바스크립트의 양이 불필요하게 커지는 거죠.</p>
+<p>이 경우에 컴포넌트를 일반 자바스크립트 객체로 정의할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> ComponentA = &#123; <span class="hljs-comment">/* ... */</span> &#125;<br><span class="hljs-keyword">var</span> ComponentB = &#123; <span class="hljs-comment">/* ... */</span> &#125;<br><span class="hljs-keyword">var</span> ComponentC = &#123; <span class="hljs-comment">/* ... */</span> &#125;<br></code></pre></td></tr></table></figure>
+
+<p>그러면 사용할 컴포넌트들만 <code>components</code> 옵션을 통해 쓸 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>  components: &#123;<br>    <span class="hljs-string">&#x27;component-a&#x27;</span>: ComponentA,<br>    <span class="hljs-string">&#x27;component-b&#x27;</span>: ComponentB<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p><code>components</code> 객체의 각 속성에서 키가 커스텀 엘리먼트의 이름이 되고 밸류가 사용할 컴포넌트 객체를 지정합니다.</p>
+<p><strong>지역 등록된 컴포넌트는 하위컴포넌트에서는 사용이 <em>불가능하다</em></strong>는 점을 유의해야 합니다. 예를 들어 <code>ComponentA</code>를 <code>ComponentB</code>에서 쓰고 싶다면 아래와 같이 해야 합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> ComponentA = &#123; <span class="hljs-comment">/* ... */</span> &#125;<br><br><span class="hljs-keyword">var</span> ComponentB = &#123;<br>  components: &#123;<br>    <span class="hljs-string">&#x27;component-a&#x27;</span>: ComponentA<br>  &#125;,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>바벨이나 웹팩을 이용해서 ES2015를 적용하고 있다면 싱글파일 컴포넌트를 이용해서 이렇게 할 수도 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> ComponentA <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./ComponentA.vue&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  components: &#123;<br>    ComponentA<br>  &#125;,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>ES2015 이상에서는 객체 내의 <code>components</code> 옵션에서 <code>ComponentA: ComponentA</code>라고 하지 않고 <code>ComponentA</code>라고만 해도 됩니다. 즉 키로 아래의 두 가지가 모두 가능합니다.(역자 주: <code>component-a: ComponentA</code>, <code>ComponentA: ComponentA</code>, <code>ComponentA</code>가 모두 가능합니다.)</p>
+<ul>
+<li>템플릿에서 사용할 사용자정의 엘리먼트 이름</li>
+<li>컴포넌트 옵션에 들어갈 변수명</li>
+</ul>
+<h2 id="모듈-시스템"><a href="#모듈-시스템" class="headerlink" title="모듈 시스템"></a>모듈 시스템</h2><p><code>import</code>/<code>require</code>를 이용한 모듈 시스템을 쓰지 않으면 이번 내용은 넘어가도 괜찮습니다. 만약 모듈 시스템을 쓴다면 특별한 소개와 팁을 드리도록 할게요.</p>
+<h3 id="모듈-시스템에서-컴포넌트를-다른-컴포넌트에-지역적으로-등록하기"><a href="#모듈-시스템에서-컴포넌트를-다른-컴포넌트에-지역적으로-등록하기" class="headerlink" title="모듈 시스템에서 컴포넌트를 다른 컴포넌트에 지역적으로 등록하기"></a>모듈 시스템에서 컴포넌트를 다른 컴포넌트에 지역적으로 등록하기</h3><p>지금 읽고 있다면 당신은 모듈 시스템을 쓴다는 뜻이겠죠. 바벨이나 웹팩같은 것과 함께 말입니다. 이 경우에는 <code>components</code> 디렉토리를 만들고 각 컴포넌트들을 그 자체로 하나의 파일에 관리하는 것을 추천합니다.</p>
+<p>그러면 어떤 컴포넌트를 다른 컴포넌트에 지역적으로 등록하기 전에 사용할 컴포넌트를 가져와야 합니다. 예를 들면 <code>ComponentB.js</code>나 <code>ComponentB.vue</code>같은 파일에서 아래처럼 다른 컴포넌트를 가져오는 거죠.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> ComponentA <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./ComponentA&#x27;</span><br><span class="hljs-keyword">import</span> ComponentC <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./ComponentC&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  components: &#123;<br>    ComponentA,<br>    ComponentC<br>  &#125;,<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>이제 <code>ComponentA</code>와 <code>ComponentC 모두 </code>ComponentB`의 템플릿에서 사용할 수 있습니다.</p>
+<h3 id="기본-컴포넌트를-자동으로-전역-등록하기"><a href="#기본-컴포넌트를-자동으로-전역-등록하기" class="headerlink" title="기본 컴포넌트를 자동으로 전역 등록하기"></a>기본 컴포넌트를 자동으로 전역 등록하기</h3><p>많은 컴포넌트들은 여기저기서 쓰이고 입력값이나 버튼 하나로 구성될 수도 있습니다. 이런 컴포넌트는 <a href="../style-guide/#%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9D%B4%EB%A6%84-%EB%A7%A4%EC%9A%B0-%EC%B6%94%EC%B2%9C%ED%95%A8">기본 컴포넌트</a>라고 하고 여러 컴포넌트들에서 매우 빈번하게 사용합니다.</p>
+<p>그래서 많은 컴포넌트에서 긴 기본 컴포넌트 목록을 보게 되죠.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> BaseButton <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./BaseButton.vue&#x27;</span><br><span class="hljs-keyword">import</span> BaseIcon <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./BaseIcon.vue&#x27;</span><br><span class="hljs-keyword">import</span> BaseInput <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./BaseInput.vue&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  components: &#123;<br>    BaseButton,<br>    BaseIcon,<br>    BaseInput<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>템플릿에서는 좀 더 짧은 마크업을 사용할 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">BaseInput</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;searchText&quot;</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">keydown.enter</span>=<span class="hljs-string">&quot;search&quot;</span></span><br><span class="hljs-tag">/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">BaseButton</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;search&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">BaseIcon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;search&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">BaseButton</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>다행히 웹팩을 쓴다면(<a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-cli">Vue CLI 3+</a>을 쓴다면 그 안에 내장하고 있어요) <code>require.context</code>를 써서 자주 쓰는 기본 컴포넌트들을 전역 등록할 수 있습니다. 아래의 예시는 어플리케이션의 엔트리 파일(e.g. <code>src/main.js</code>)에 기본 컴포넌트들을 전역적으로 불러오는 코드입니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> upperFirst <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lodash/upperFirst&#x27;</span><br><span class="hljs-keyword">import</span> camelCase <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lodash/camelCase&#x27;</span><br><br><span class="hljs-keyword">const</span> requireComponent = <span class="hljs-built_in">require</span>.context(<br>  <span class="hljs-comment">// 컴포넌트들이 있는 폴더</span><br>  <span class="hljs-string">&#x27;./components&#x27;</span>,<br>  <span class="hljs-comment">// 하위 폴더까지 포함할 지 여부</span><br>  <span class="hljs-literal">false</span>,<br>  <span class="hljs-comment">// 기본 컴포넌트를 찾는데 사용할 정규표현식</span><br>  /Base[A-Z]\w+\.(vue|js)$/<br>)<br><br>requireComponent.keys().forEach(<span class="hljs-function"><span class="hljs-params">fileName</span> =&gt;</span> &#123;<br>  <span class="hljs-comment">// 컴포넌트 설정 가져오기</span><br>  <span class="hljs-keyword">const</span> componentConfig = requireComponent(fileName)<br><br>  <span class="hljs-comment">// 컴포넌트의 파스칼표기법 이름 가져오기</span><br>  <span class="hljs-keyword">const</span> componentName = upperFirst(<br>    camelCase(<br>      <span class="hljs-comment">// 폴더 위치와 무관하게 파일이름 추출</span><br>      fileName<br>        .split(<span class="hljs-string">&#x27;/&#x27;</span>)<br>        .pop()<br>        .replace(<span class="hljs-regexp">/\.\w+$/</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br>    )<br>  )<br><br>  <span class="hljs-comment">// 컴포넌트를 전역적으로 등록</span><br>  Vue.component(<br>    componentName,<br>    <span class="hljs-comment">// `export default`를 이용한 컴포넌트는 `.default`로 컴포넌트</span><br>    <span class="hljs-comment">// 옵션을 추출하고 그렇지 않은 컴포넌트는 모듈의 루트를 호출</span><br>    componentConfig.default || componentConfig<br>  )<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p><strong>전역 등록은 (<code>new Vue</code>로) 루트 Vue 인스턴스가 만들어지기 전에 반드시 이뤄져야 한다는 것</strong> 을 기억해주시기 바랍니다. 실제 프로젝트에서 이 패턴이 어떻게 이뤄지는지 <a target="_blank" rel="noopener" href="https://github.com/chrisvfritz/vue-enterprise-boilerplate/blob/master/src/components/_globals.js">이 예시</a>를 참고해주세요.</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components.html">컴포넌트</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/components-props.html">Props</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    이 문서에 문제를 제보하거나 기여하고 싶은 부분이 있으십니까?
+    <a href="https://github.com/vuejs-kr/kr.vuejs.org/blob/master/src/v2/guide/components-registration.md" rel="noopener" target="_blank">
+      Github에서 이 페이지를 수정하세요!
+    </a>
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1165 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Testing — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/testing.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/testing.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Testing — Vue.js">
+    <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta property="og:image" content="https://br.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Testing — Vue.js">
+    <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'br.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Você está navegando a documentação da v2.x e anterior.</span>
+    <a href="https://vuejsbr-docs-next.netlify.app/">Clique aqui</a> para a documentação da v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Pesquisa">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Aprenda</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentação</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guia</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Guia de Estilos</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemplos</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Livro de Receitas</a></li>
+      </ul>
+    </li>
+    <li><h4>Cursos em Vídeo</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecossistema</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Ajuda</h4></li>
+    <li><ul>
+      <li class="inline"><a href="https://github.com/vuejs-br/forum" class="nav-link" target="_blank" rel="noopener">Fórum</a>
+      <a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat (Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/comunidades" class="nav-link" target="_blank" rel="noopener">Comunidades</a>
+			<a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+    <li><h4>Ferramentas</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliotecas Oficiais</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Atualize-se</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Notícias Semanais</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Eventos</a></li>
+			<li class="inline"><a href="https://twitter.com/vuejs_brasil" class="nav-link" target="_blank" rel="noopener">Twitter</a>
+			<a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="http://vuejs-brasil.com.br/" class="nav-link" target="_blank" rel="noopener">Blog</a>
+			<a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/vagas" class="nav-link" target="_blank" rel="noopener">Empregos</a>
+			<a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Equipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Recursos</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Parceiros</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Temas</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Lista Geral "Awesome Vue"</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Bibliotecas Recomendadas</a></li>
+    <li><a href="https://empresas-usando-vuejs.netlify.com/" class="nav-link" target="_blank" rel="noopener">Empresas usando Vue no Brasil</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Patrocine</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#Doacoes-Unicas" class="nav-link">Doações Únicas</a></li>
+    <li><a href="/support-vuejs/#Ajuda-Recorrente" class="nav-link">Ajuda Recorrente</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Loja de Camisetas</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Traduções</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/testing.html" class="nav-link">Chinês</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/testing.html" class="nav-link">Coreano</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/testing.html" class="nav-link">Francês</a></li>
+    <li><a href="https://vuejs.org/v2/guide/testing.html" class="nav-link">Inglês</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/testing.html" class="nav-link">Japonês</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/testing.html" class="nav-link">Português</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/testing.html" class="nav-link">Russo</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/testing.html" class="nav-link">Vietnamita</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/testing.html" class="nav-link">Espanhol</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/testing.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guia
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essenciais</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalação</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introdução</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">A Instância Vue</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaxe de Templates</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Dados Computados e Observadores</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Interligações de Classe e Estilo</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Renderização Condicional</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Renderização de Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Manipulação de Eventos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Interligações em Formulários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Básico sobre Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Componentes em Detalhes</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registro de Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Propriedades</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Eventos Personalizados</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dinâmicos & Assíncronos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Lidando com Casos Extremos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transições & Animações</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transições de Visibilidade e Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reuso & Composição</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Diretivas Personalizadas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Funções de Renderização & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filtros</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Ferramentas</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Componentes Single-File</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link current">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Publicando em Produção</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Escalonando</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Gerenciamento de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Segurança</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internamente</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migração</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migração do Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migração do Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migração do Vuex 0.6.x para 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Diversos</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Comparação com Outros Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Junte-se à Comunidade Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Conheça a Equipe</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar testing-guide">
+  <p class="tip warning v3-warning">
+    Você está navegando a documentação da v2.x e anterior.
+    Para a v3.x, <a href="https://vuejsbr-docs-next.netlify.app/">clique aqui</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Testing</h1>
+  
+  
+    <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>When it comes to building reliable applications, tests can play a critical role in an individual or team’s ability to build new features, refactor code, fix bugs, etc. While there are many schools of thought with testing, there are three categories often discussed in the context of web applications:</p>
+<ul>
+<li>Unit Testing</li>
+<li>Component Testing</li>
+<li>End-To-End (E2E) Testing</li>
+</ul>
+<p>This section aims to provide guidance to navigating the testing ecosystem and choosing the right tools for your Vue application or component library.</p>
+<h2 id="Unit-Testing"><a href="#Unit-Testing" class="headerlink" title="Unit Testing"></a>Unit Testing</h2><h3 id="Introduction-1"><a href="#Introduction-1" class="headerlink" title="Introduction"></a>Introduction</h3><p>Unit tests allow you to test individual units of code in isolation. The purpose of unit testing is to provide developers with confidence in their code. By writing thorough, meaningful tests, you achieve the confidence that as new features are built or your code is refactored your application will remain functional and stable.</p>
+<p>Unit testing a Vue application does not significantly differ from testing other types of applications.</p>
+<h3 id="Choosing-Your-Framework"><a href="#Choosing-Your-Framework" class="headerlink" title="Choosing Your Framework"></a>Choosing Your Framework</h3><p>Since unit testing advice is often framework-agnostic, here are some basic guidelines to keep in mind when evaluating which unit testing tool is best for your application.</p>
+<h4 id="First-class-error-reporting"><a href="#First-class-error-reporting" class="headerlink" title="First-class error reporting"></a>First-class error reporting</h4><p>When tests fail, it is critical that your unit testing framework provides useful errors. This is the job of the assertion library. An assertion with high-quality error messages helps minimize the amount of time it takes to debug the problem. In addition to simply telling you what test is failing, assertion libraries provide context for why a test fails, e.g., what is expected vs what was received.</p>
+<p>Some unit testing frameworks, like Jest, include assertion libraries. Others, like Mocha, require you to install assertion libraries separately (usually Chai).</p>
+<h4 id="Active-community-and-team"><a href="#Active-community-and-team" class="headerlink" title="Active community and team"></a>Active community and team</h4><p>Since the majority of unit testing frameworks are open-source, having a community that is active can be critical to some teams that will be maintaining their tests for a long period of time and needs to ensure that a project will be actively maintained. In addition, having an active community has the benefit of providing more support whenever you run into issues.</p>
+<h3 id="Frameworks"><a href="#Frameworks" class="headerlink" title="Frameworks"></a>Frameworks</h3><p>While there are many tools in the ecosystem, here are some common unit testing tools that are being used in the Vue.js ecosystem.</p>
+<h4 id="Jest"><a href="#Jest" class="headerlink" title="Jest"></a>Jest</h4><p>Jest is a JavaScript test framework that is focused on simplicity. One of its unique features is the ability to take snapshots of tests in order to provide an alternative means of verifying units of your application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://jestjs.io" target="_blank" rel="noopener">Official Jest Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/unit-jest.html" target="_blank" rel="noopener">Official Vue 2 CLI Plugin - Jest</a></li>
+</ul>
+<h4 id="Mocha"><a href="#Mocha" class="headerlink" title="Mocha"></a>Mocha</h4><p>Mocha is a JavaScript test framework that is focused on being flexible. Because of this flexibility, it allows you to choose different libraries to fulfill other common features such as spying (e.g., Sinon) and assertions (e.g., Chai). Another unique feature of Mocha is that it can also execute tests in the browser in addition to Node.js.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://mochajs.org" target="_blank" rel="noopener">Official Mocha Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/unit-mocha.html" target="_blank" rel="noopener">Official Vue CLI Plugin - Mocha</a></li>
+</ul>
+<h2 id="Component-Testing"><a href="#Component-Testing" class="headerlink" title="Component Testing"></a>Component Testing</h2><h3 id="Introduction-2"><a href="#Introduction-2" class="headerlink" title="Introduction"></a>Introduction</h3><p>To test most Vue components, they must be mounted to the DOM (either virtual or real) in order to fully assert that they are working. This is another framework-agnostic concept. As a result, component testing frameworks were created to give users the ability to do this reliably while also providing Vue-specific conveniences such as integrations for Vuex, Vue Router, and other Vue plugins.</p>
+<h3 id="Choosing-Your-Framework-1"><a href="#Choosing-Your-Framework-1" class="headerlink" title="Choosing Your Framework"></a>Choosing Your Framework</h3><p>The following section provides guidelines on things to keep in mind when evaluating which component testing framework is best for your application.</p>
+<h4 id="Optimal-compatibility-with-the-Vue-ecosystem"><a href="#Optimal-compatibility-with-the-Vue-ecosystem" class="headerlink" title="Optimal compatibility with the Vue ecosystem"></a>Optimal compatibility with the Vue ecosystem</h4><p>It should be no surprise that one of the first criteria is that a component testing library should have is being as compatible with the Vue ecosystem as possible. While this may seem comprehensive, some key integration areas to keep in mind include single file components (SFCs), Vuex, Vue Router, and any other Vue specific plugins that your application relies on.</p>
+<h4 id="First-class-error-reporting-1"><a href="#First-class-error-reporting-1" class="headerlink" title="First-class error reporting"></a>First-class error reporting</h4><p>When tests fail, it is critical that your component testing framework provides useful error logs that help to minimize the amount of time it takes to debug the problem. In addition to simply telling you what test fails, they should also provide context for why a test fails, e.g., what is expected vs what was received.</p>
+<h3 id="Recommendations"><a href="#Recommendations" class="headerlink" title="Recommendations"></a>Recommendations</h3><h4 id="Vue-Testing-Library-testing-library-vue"><a href="#Vue-Testing-Library-testing-library-vue" class="headerlink" title="Vue Testing Library (@testing-library/vue)"></a>Vue Testing Library (@testing-library/vue)</h4><p>Vue Testing Library is a set of tools focused on testing components without relying on implementation details. Built with accessibility in mind, its approach also makes refactoring a breeze.</p>
+<p>Its guiding principle is that the more tests resemble the way software is used, the more confidence they can provide.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://testing-library.com/docs/vue-testing-library/intro" target="_blank" rel="noopener">Official Vue Testing Library Website</a></li>
+</ul>
+<h4 id="Vue-Test-Utils"><a href="#Vue-Test-Utils" class="headerlink" title="Vue Test Utils"></a>Vue Test Utils</h4><p>Vue Test Utils is the official low-level component testing library that was written to provide users access to Vue specific APIs. If you are new to testing Vue applications, we would recommend using Vue Testing Library, which is an abstraction over Vue Test Utils.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://vue-test-utils.vuejs.org" target="_blank" rel="noopener">Official Vue Test Utils Documentation</a></li>
+<li><a href="https://lmiller1990.github.io/vue-testing-handbook/#what-is-this-guide" target="_blank" rel="noopener">Vue Testing Handbook</a> by Lachlan Miller</li>
+<li><a href="https://vuejs.org/v2/cookbook/unit-testing-vue-components.html" target="_blank" rel="noopener">Cookbook: Unit Testing Vue Components</a></li>
+</ul>
+<h2 id="End-to-End-E2E-Testing"><a href="#End-to-End-E2E-Testing" class="headerlink" title="End-to-End (E2E) Testing"></a>End-to-End (E2E) Testing</h2><h3 id="Introduction-3"><a href="#Introduction-3" class="headerlink" title="Introduction"></a>Introduction</h3><p>While unit tests provide developers with some degree of confidence, unit and component tests are limited in their abilities to provide holistic coverage of an application when deployed to production. As a result, end-to-end (E2E) tests provide coverage on what is arguably the most important aspect of an application: what happens when users actually use your applications.</p>
+<p>In other words, E2E tests validate all of the layers in your application. This not only includes your frontend code, but all associated backend services and infrastructure that are more representative of the environment that your users will be in. By testing how user actions impact your application, E2E tests are often the key to higher confidence in whether an application is functioning properly or not.</p>
+<h3 id="Choosing-Your-Framework-2"><a href="#Choosing-Your-Framework-2" class="headerlink" title="Choosing Your Framework"></a>Choosing Your Framework</h3><p>While end-to-end (E2E) testing on the web has gained a negative reputation for unreliable (flaky) tests and slowing down development processes, modern E2E tools have made strides forward to create more reliable, interactive, and useful tests. When choosing an E2E testing framework, the following sections provide some guidance on things to keep in mind when choosing a testing framework for your application.</p>
+<h4 id="Cross-browser-testing"><a href="#Cross-browser-testing" class="headerlink" title="Cross-browser testing"></a>Cross-browser testing</h4><p>One of the primary benefits that end-to-end (E2E) testing is known for is its ability to test your application across multiple browsers. While it may seem desirable to have 100% cross-browser coverage, it is important to note that cross browser testing has diminishing returns on a team’s resources due the additional time and machine power required to run them consistently. As a result, it is important to be mindful of this trade-off when choosing the amount of cross-browser testing your application needs.</p>
+<p class="tip">A recent development in E2E for catching browser-specific issues is using application monitoring and error reporting tools (e.g., Sentry, LogRocket, etc.) for browsers that are not as commonly used (e.g., &lt; IE11, older Safari versions, etc.).</p>
+
+<h4 id="Faster-feedback-loops"><a href="#Faster-feedback-loops" class="headerlink" title="Faster feedback loops"></a>Faster feedback loops</h4><p>One of the primary problems with end-to-end (E2E) tests and development is that running the entire suite takes a long time. Typically, this is only done in continuous integration and deployment (CI/CD) pipelines. Modern E2E testing frameworks have helped to solve this by adding features like parallelization, which allows for CI/CD pipelines to often run magnitudes faster than before. In addition, when developing locally, the ability to selectively run a single test for the page you are working on while also providing hot reloading of tests can help to boost a developer’s workflow and productivity.</p>
+<h4 id="First-class-debugging-experience"><a href="#First-class-debugging-experience" class="headerlink" title="First class debugging experience"></a>First class debugging experience</h4><p>While developers have traditionally relied on scanning logs in a terminal window to help determine what went wrong in a test, modern end-to-end (E2E) test frameworks allow developers to leverage tools that they are already familiar with, e.g. browser developer tools.</p>
+<h4 id="Visibility-in-headless-mode"><a href="#Visibility-in-headless-mode" class="headerlink" title="Visibility in headless mode"></a>Visibility in headless mode</h4><p>When end-to-end (E2E) tests are run in continuous integration / deployment pipelines, they are often run in headless browsers (i.e., no visible browser is opened for the user to watch). As a result, when errors occur, a critical feature that modern E2E testing frameworks provide 1st class support for is the ability to see snapshots and/or videos of your applications during various testing stages in order to provide insight into why errors are happening. Historically, it was tedious to maintain these integrations.</p>
+<h3 id="Recommendations-1"><a href="#Recommendations-1" class="headerlink" title="Recommendations"></a>Recommendations</h3><p>While there are many tools in the ecosystem, here are some common end-to-end (E2E) testing frameworks that are being used in the Vue.js ecosystem.</p>
+<h4 id="Cypress-io"><a href="#Cypress-io" class="headerlink" title="Cypress.io"></a>Cypress.io</h4><p>Cypress.io is a testing framework that aims to enhance developer productivity by enabling developers to reliably test their applications while providing a first class developer experience.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://www.cypress.io" target="_blank" rel="noopener">Cypress’ Official Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/e2e-cypress.html" target="_blank" rel="noopener">Official Vue CLI Cypress Plugin</a></li>
+<li><a href="https://github.com/testing-library/cypress-testing-library" target="_blank" rel="noopener">Cypress Testing Library</a></li>
+</ul>
+<h4 id="Nightwatch-js"><a href="#Nightwatch-js" class="headerlink" title="Nightwatch.js"></a>Nightwatch.js</h4><p>Nightwatch.js is an end-to-end testing framework that can be used to test web applications and websites, as well as Node.js unit and integration testing.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://nightwatchjs.org" target="_blank" rel="noopener">Nightwatch’s Official Website</a></li>
+<li><a href="https://cli.vuejs.org/core-plugins/e2e-nightwatch.html" target="_blank" rel="noopener">Official Vue CLI Nightwatch Plugin</a></li>
+</ul>
+<h4 id="Puppeteer"><a href="#Puppeteer" class="headerlink" title="Puppeteer"></a>Puppeteer</h4><p>Puppeteer is a Node library that provides a high-level API to control the browser and can pair with other test runners (e.g., Jest) to test your application.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://pptr.dev" target="_blank" rel="noopener">Puppeteer’s Official Website</a></li>
+</ul>
+<h4 id="TestCafe"><a href="#TestCafe" class="headerlink" title="TestCafe"></a>TestCafe</h4><p>TestCafe is a Node.js based end-to-end framework that aims to provide easy setup so that developers can focus on creating tests that are easy to write and reliable.</p>
+<p><strong>Resources:</strong></p>
+<ul>
+<li><a href="https://devexpress.github.io/testcafe/" target="_blank" rel="noopener">TestCafe’s Official Website</a></li>
+</ul>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/single-file-components.html">Componentes Single-File</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/typescript.html">Suporte ao TypeScript</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Encontrou um erro ou quer contribuir com a documentação?
+    <a href="https://github.com/vuejs-br/br.vuejs.org/blob/master/src/v2/guide/testing.md" rel="noopener" target="_blank">
+      Edite isto no Github!
+    </a>
+    Deploy feito via
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

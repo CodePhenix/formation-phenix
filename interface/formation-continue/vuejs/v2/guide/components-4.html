@@ -1,0 +1,1632 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>컴포넌트 — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/components.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="컴포넌트 — Vue.js">
+    <meta property="og:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="컴포넌트 — Vue.js">
+    <meta name="twitter:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    
+<link rel="stylesheet" href="/css/page.css">
+
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89623208-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+</head>
+  <body class="docs">
+    <div id="mobile-bar" style="pointer-events: none;" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    
+
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    
+<li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">배우기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>문서</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">가이드</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">스타일 가이드</a></li>
+        <li><a href="/v2/examples/" class="nav-link">예시</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">쿡북</a></li>
+        <li><a target="_blank" rel="noopener" href="https://v3.vuejs-korea.org/ko-KR/" class="nav-lin>">Vue.js 3 한국어문서</a></li>
+      </ul>
+    </li>
+    <li><h4>영상 강의</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">생태계</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>도움</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">포럼</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link"  target="_blank" rel="noopener">채팅</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">모임</a></li>
+    </ul></li>
+    <li><h4>도구</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">개발도구</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>코어 라이브러리</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 라우터</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 서버 렌더러</a></li>
+    </ul></li>
+    <li><h4>뉴스</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">주간 뉴스</a></li>
+      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank" rel="noopener">로드맵</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">이벤트</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">트위터</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">블로그</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">구인</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">개발 커뮤니티</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">팀</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">리소스</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">파트너</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">테마</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">쩌는 Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue 후원하기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">1회 후원하기</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">정기후원</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">티셔츠 샵</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">다른 언어로 보기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components.html" class="nav-link" target="_blank" rel="noopener" rel="noopener">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>스페셜 스폰서</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Standard Library">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          가이드
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>필수요소</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">설치방법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">시작하기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue 인스턴스</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">템플릿 문법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">computed와 watch</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">클래스와 스타일 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">조건부 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">리스트 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">이벤트 핸들링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">폼 입력 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link current">컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>컴포넌트 톺아보기</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">컴포넌트 등록</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">커스텀 이벤트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">슬롯(Slots)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">동적 & 비동기 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">예외적인 상황들</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>트랜지션 & 애니메이션</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">진입/진출 그리고 리스트 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">상태 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>재사용 & 컴포지션</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">믹스인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">사용자 지정 디렉티브</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Render Functions & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">플러그인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">필터</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>도구</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">싱글 파일 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">단위 테스팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript 지원</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">프로덕션 배포 팁</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>스케일링 업</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">라우팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">상태 관리</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">서버사이드 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">보안</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>내부</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">반응형에 대해 깊이 알아보기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>마이그레이션1</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x에서 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x으로 부터 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x에서 1.0로 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>메타</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">다른 프레임워크와의 비교</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js 커뮤니티에 참여하세요!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">팀 구성원 만나기</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar components-guide">
+  
+    
+      
+<div id="ad">
+  <script
+    async
+    type="text/javascript"
+    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>컴포넌트</h1>
+  
+  
+    <div class="vueschool"><a href="https://vueschool.io/courses/vuejs-components-fundamentals?friend=vuejs" target="_blank" rel="sponsored noopener" title="Free Vue.js Components Fundamentals Course">Watch a free video course on Vue School</a></div>
+
+<h2 id="컴포넌트가-무엇인가요"><a href="#컴포넌트가-무엇인가요" class="headerlink" title="컴포넌트가 무엇인가요?"></a>컴포넌트가 무엇인가요?</h2><p>컴포넌트는 Vue의 가장 강력한 기능 중 하나입니다. 기본 HTML 엘리먼트를 확장하여 재사용 가능한 코드를 캡슐화하는 데 도움이 됩니다. 상위 수준에서 컴포넌트는 Vue의 컴파일러에 의해 동작이 추가된 사용자 지정 엘리먼트입니다. 경우에 따라 특별한 <code>is</code> 속성으로 확장 된 원시 HTML 엘리먼트로 나타날 수도 있습니다.</p>
+<p>Vue 컴포넌트는 Vue 인스턴스이기도 합니다. 그러므로 모든 옵션 객체를 사용할 수 있습니다. (루트에만 사용하는 옵션은 제외) 그리고 같은 라이프사이클 훅을 사용할 수 있습니다.</p>
+<h2 id="컴포넌트-사용하기"><a href="#컴포넌트-사용하기" class="headerlink" title="컴포넌트 사용하기"></a>컴포넌트 사용하기</h2><h3 id="전역-등록"><a href="#전역-등록" class="headerlink" title="전역 등록"></a>전역 등록</h3><p>이전 섹션에서 다음을 사용하여 새 Vue 인스턴스를 만들 수 있음을 알게 되었습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#some-element&#x27;</span>,<br>  <span class="hljs-comment">// 옵션</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>전역 컴포넌트를 등록하려면, <code>Vue.component(tagName, options)</code>를 사용합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;my-component&#x27;</span>, &#123;<br>  <span class="hljs-comment">// 옵션</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p class="tip">Vue는 사용자 지정 태그 이름에 대해 [W3C 규칙](http://www.w3.org/TR/custom-elements/#concepts)을 적용하지 않습니다 (모두 소문자이어야 하고 하이픈을 포함해야합니다). 그러나 이 규칙을 따르는 것이 좋습니다.</p>
+
+<p>일단 등록되면, 컴포넌트는 인스턴스의 템플릿에서 커스텀 엘리먼트,<code>&lt;my-component&gt;&lt;/my-component&gt;</code>로 사용할 수 있습니다. 루트 Vue 인스턴스를 인스턴스화하기 <strong>전에</strong> 컴포넌트가 등록되어 있는지 확인하십시오. 전체 예제는 다음과 같습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 등록</span><br>Vue.component(<span class="hljs-string">&#x27;my-component&#x27;</span>, &#123;<br>  template: <span class="hljs-string">&#x27;&lt;div&gt;사용자 정의 컴포넌트 입니다!&lt;/div&gt;&#x27;</span><br>&#125;)<br><br><span class="hljs-comment">// 루트 인스턴스 생성</span><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#example&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>아래와 같이 렌더링 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>사용자 정의 컴포넌트 입니다!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<div id="example" class="demo">
+  <my-component></my-component>
+</div>
+<script>
+Vue.component('my-component', {
+  template: '<div>사용자 정의 컴포넌트 입니다!</div>'
+})
+new Vue({ el: '#example' })
+</script>
+
+
+<h3 id="지역-등록"><a href="#지역-등록" class="headerlink" title="지역 등록"></a>지역 등록</h3><p>모든 컴포넌트를 전역으로 등록 할 필요는 없습니다. 컴포넌트를 <code>components</code> 인스턴스 옵션으로 등록함으로써 다른 인스턴스/컴포넌트의 범위에서만 사용할 수있는 컴포넌트를 만들 수 있습니다:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> Child = &#123;<br>  template: <span class="hljs-string">&#x27;&lt;div&gt;사용자 정의 컴포넌트 입니다!&lt;/div&gt;&#x27;</span><br>&#125;<br><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  <span class="hljs-comment">// ...</span><br>  components: &#123;<br>    <span class="hljs-comment">// &lt;my-component&gt; 는 상위 템플릿에서만 사용할 수 있습니다.</span><br>    <span class="hljs-string">&#x27;my-component&#x27;</span>: Child<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>동일한 캡슐화는 디렉티브와 같은 다른 등록 가능한 Vue 기능에도 적용됩니다.</p>
+<h3 id="DOM-템플릿-구문-분석-경고"><a href="#DOM-템플릿-구문-분석-경고" class="headerlink" title="DOM 템플릿 구문 분석 경고"></a>DOM 템플릿 구문 분석 경고</h3><p>DOM을 템플릿으로 사용할 때 (예 : <code>el</code> 옵션을 사용하여 기존 콘텐츠가 있는 엘리먼트를 마운트하는 경우), Vue는 템플릿 콘텐츠만 가져올 수 있기 때문에 HTML이 작동하는 방식에 고유한 몇 가지 제한 사항이 적용됩니다. 이는 브라우저가 구문 분석과 정규화한 후에 작동합니다. 가장 중요한 것은<code>&lt;ul&gt;</code>,<code>&lt;ol&gt;</code>,<code>&lt;table&gt;</code>과<code>&lt;select&gt;</code>와 같은 일부 엘리먼트는 그 안에 어떤 엘리먼트가 나타날 수 있는지에 대한 제한을 가지고 있으며,<code>&lt;option&gt;</code>과 같이 특정 다른 엘리먼트 안에만 나타날 수 있습니다.</p>
+<p>이러한 제한이 있는 엘리먼트가 있는 사용자 지정 컴포넌트를 사용하면 다음과 같은 문제가 발생할 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">my-row</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">my-row</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>사용자 지정 컴포넌트 <code>&lt;my-row&gt;</code> 는 잘못 된 컨텐츠가 되어, 결과적으로 렌더링시 에러를 발생시킵니다. 해결 방법은 <code>is</code> 특수 속성을 사용하는 것입니다 :</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">is</span>=<span class="hljs-string">&quot;my-row&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>다음 소스 중 하나에 포함되면 문자열 템플릿을 사용하는 경우에는 이러한 제한 사항이 적용되지 않습니다.</strong>:</p>
+<ul>
+<li><code>&lt;script type=&quot;text/x-template&quot;&gt;</code></li>
+<li>JavaScript 인라인 템플릿 문자열</li>
+<li><code>.vue</code> 컴포넌트</li>
+</ul>
+<p>따라서 가능한 경우 항상 문자열 템플릿을 사용하는 것이 좋습니다.</p>
+<h3 id="data-는-반드시-함수여야합니다"><a href="#data-는-반드시-함수여야합니다" class="headerlink" title="data 는 반드시 함수여야합니다."></a><code>data</code> 는 반드시 함수여야합니다.</h3><p>Vue 생성자에 사용할 수 있는 대부분의 옵션은 컴포넌트에서 사용할 수 있습니다. 한가지 특별한 경우가 있습니다. <code>data</code> 는 함수여야 합니다. 실제로 이를 사용하는 경우에:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;my-component&#x27;</span>, &#123;<br>  template: <span class="hljs-string">&#x27;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&#x27;</span>,<br>  data: &#123;<br>    message: <span class="hljs-string">&#x27;hello&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>그런 다음 Vue는 중단하고 콘솔에서 경고를 합니다. <code>data</code>는 컴포넌트 인스턴스의 함수여야합니다. 규칙이 존재하는 이유를 이해하는 것이 좋습니다. 따라서 다음과 같이 사용하십시오.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example-2&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">simple-counter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">simple-counter</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">simple-counter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">simple-counter</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">simple-counter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">simple-counter</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> data = &#123; <span class="hljs-attr">counter</span>: <span class="hljs-number">0</span> &#125;<br><br>Vue.component(<span class="hljs-string">&#x27;simple-counter&#x27;</span>, &#123;<br>  template: <span class="hljs-string">&#x27;&lt;button v-on:click=&quot;counter += 1&quot;&gt;&#123;&#123; counter &#125;&#125;&lt;/button&gt;&#x27;</span>,<br>  <span class="hljs-comment">// 데이터는 기술적으로 함수이므로 Vue는 따지지 않지만</span><br>  <span class="hljs-comment">// 각 컴포넌트 인스턴스에 대해 같은 객체 참조를 반환합니다.</span><br>  data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> data<br>  &#125;<br>&#125;)<br><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#example-2&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+<div id="example-2" class="demo">
+  <simple-counter></simple-counter>
+  <simple-counter></simple-counter>
+  <simple-counter></simple-counter>
+</div>
+<script>
+var data = { counter: 0 }
+Vue.component('simple-counter', {
+  template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+  data: function () {
+    return data
+  }
+})
+new Vue({
+  el: '#example-2'
+})
+</script>
+
+
+<p>이런! 세 개의 컴포넌트 인스턴스가 모두 같은 <code>data</code> 객체를 공유하므로 하나의 카운터를 증가 시키면 모두 증가합니다! 대신 새로운 데이터 객체를 반환하여 이 문제를 해결합시다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> &#123;<br>    counter: <span class="hljs-number">0</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>이제 모든 카운터에는 각각 고유한 내부 상태가 있습니다.</p>
+
+<div id="example-2-5" class="demo">
+  <my-component></my-component>
+  <my-component></my-component>
+  <my-component></my-component>
+</div>
+<script>
+Vue.component('my-component', {
+  template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+  data: function () {
+    return {
+      counter: 0
+    }
+  }
+})
+new Vue({
+  el: '#example-2-5'
+})
+</script>
+
+
+<h3 id="컴포넌트-작성"><a href="#컴포넌트-작성" class="headerlink" title="컴포넌트 작성"></a>컴포넌트 작성</h3><p>컴포넌트는 부모-자식 관계에서 가장 일반적으로 함께 사용하기 위한 것입니다. 컴포넌트 A는 자체 템플릿에서 컴포넌트 B를 사용할 수 있습니다. 그들은 필연적으로 서로 의사 소통이 필요합니다. 부모는 자식에게 데이터를 전달해야 할 수도 있으며, 자식은 자신에게 일어난 일을 부모에게 알릴 필요가 있습니다. 그러나 부모와 자식이 명확하게 정의된 인터페이스를 통해 가능한한 분리된 상태로 유지하는 것도 매우 중요합니다. 이렇게하면 각 컴포넌트의 코드를 상대적으로 격리 할 수 있도록 작성하고 추론할 수 있으므로 유지 관리가 쉽고 잠재적으로 쉽게 재사용 할 수 있습니다.</p>
+<p>Vue.js에서 부모-자식 컴포넌트 관계는 <strong>props는 아래로, events 위로</strong> 라고 요약 할 수 있습니다. 부모는 <strong>props</strong>를 통해 자식에게 데이터를 전달하고 자식은 <strong>events</strong>를 통해 부모에게 메시지를 보냅니다. 어떻게 작동하는지 보겠습니다.</p>
+<p style="text-align: center;">
+  <img style="width: 300px;" src="/images/props-events.png" alt="props down, events up">
+</p>
+
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><h3 id="Props로-데이터-전달하기"><a href="#Props로-데이터-전달하기" class="headerlink" title="Props로 데이터 전달하기"></a>Props로 데이터 전달하기</h3><p>모든 컴포넌트 인스턴스에는 자체 <strong>격리 된 범위</strong> 가 있습니다. 즉, 하위 컴포넌트의 템플릿에서 상위 데이터를 직접 참조 할 수 없으며 그렇게 해서는 안됩니다. 데이터는 <a href="../api/#props"><code>props</code> 옵션</a> 을 사용하여 하위 컴포넌트로 전달 될 수 있습니다.</p>
+<p>prop는 상위 컴포넌트의 정보를 전달하기위한 사용자 지정 특성입니다. 하위 컴포넌트는<code>props</code> 옵션을 사용하여 수신 할 것으로 기대되는 props를 명시적으로 선언해야합니다</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;child&#x27;</span>, &#123;<br>  <span class="hljs-comment">// props 정의</span><br>  props: [<span class="hljs-string">&#x27;message&#x27;</span>],<br>  <span class="hljs-comment">// 데이터와 마찬가지로 prop은 템플릿 내부에서 사용할 수 있으며</span><br>  <span class="hljs-comment">// vm의 this.message로 사용할 수 있습니다.</span><br>  template: <span class="hljs-string">&#x27;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>그런 다음 일반 문자열을 다음과 같이 전달할 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">child</span> <span class="hljs-attr">message</span>=<span class="hljs-string">&quot;안녕하세요!&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>결과:</p>
+
+<div id="prop-example-1" class="demo">
+  <child message="안녕하세요!"></child>
+</div>
+<script>
+new Vue({
+  el: '#prop-example-1',
+  components: {
+    child: {
+      props: ['message'],
+      template: '<span>{{ message }}</span>'
+    }
+  }
+})
+</script>
+
+
+<h3 id="camelCase-vs-kebab-case"><a href="#camelCase-vs-kebab-case" class="headerlink" title="camelCase vs. kebab-case"></a>camelCase vs. kebab-case</h3><p>HTML 속성은 대소 문자를 구분하지 않으므로 문자열이 아닌 템플릿을 사용할 때 camelCased prop 이름에 해당하는 kebab-case(하이픈 구분)를 사용해야 합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;child&#x27;</span>, &#123;<br>  <span class="hljs-comment">// JavaScript는 camelCase</span><br>  props: [<span class="hljs-string">&#x27;myMessage&#x27;</span>],<br>  template: <span class="hljs-string">&#x27;&lt;span&gt;&#123;&#123; myMessage &#125;&#125;&lt;/span&gt;&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- HTML는 kebab-case --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">child</span> <span class="hljs-attr">my-message</span>=<span class="hljs-string">&quot;안녕하세요!&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>문자열 템플릿을 사용하는 경우에는 이 제한이 적용되지 않습니다.</p>
+<h3 id="동적-Props"><a href="#동적-Props" class="headerlink" title="동적 Props"></a>동적 Props</h3><p>정규 속성을 표현식에 바인딩하는 것과 비슷하게, <code>v-bind</code>를 사용하여 부모의 데이터에 props를 동적으로 바인딩 할 수 있습니다. 데이터가 상위에서 업데이트 될 때마다 하위 데이터로도 전달됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;parentMsg&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">child</span> <span class="hljs-attr">v-bind:my-message</span>=<span class="hljs-string">&quot;parentMsg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>v-bind</code>에 대한 단축 구문을 사용하는 것이 더 간단합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">child</span> <span class="hljs-attr">:my-message</span>=<span class="hljs-string">&quot;parentMsg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>결과:</p>
+
+<div id="demo-2" class="demo">
+  <input v-model="parentMsg">
+  <br>
+  <child v-bind:my-message="parentMsg"></child>
+</div>
+<script>
+new Vue({
+  el: '#demo-2',
+  data: {
+    parentMsg: '부모로부터 전달 받은 메시지'
+  },
+  components: {
+    child: {
+      props: ['myMessage'],
+      template: '<span>{{myMessage}}</span>'
+    }
+  }
+})
+</script>
+
+
+<p>객체의 모든 속성을 props로 전달하려면, 인자없이 <code>v-bind</code>를 쓸 수 있습니다. (<code>v-bind:prop-name</code> 대신 <code>v-bind</code>). 예를 들어 <code>todo</code> 객체가 있다면,</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">todo: &#123;<br>  text: <span class="hljs-string">&#x27;Learn Vue&#x27;</span>,<br>  isComplete: <span class="hljs-literal">false</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>그런 다음,</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-item</span> <span class="hljs-attr">v-bind</span>=<span class="hljs-string">&quot;todo&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">todo-item</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이것은 다음과 같은 동작을합니다.:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-item</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-bind:text</span>=<span class="hljs-string">&quot;todo.text&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-bind:is-complete</span>=<span class="hljs-string">&quot;todo.isComplete&quot;</span></span><br><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">todo-item</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="리터럴-vs-동적"><a href="#리터럴-vs-동적" class="headerlink" title="리터럴 vs. 동적"></a>리터럴 vs. 동적</h3><p>초보자가 흔히 범하는 실수는 리터럴 구문을 사용하여 숫자를 전달하려고 시도하는 것입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 이것은 일반 문자열 &quot;1&quot;을 전달합니다. --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">comp</span> <span class="hljs-attr">some-prop</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">comp</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그러나 이것은 리터럴 prop이기 때문에 그 값은 실제 숫자가 아닌 일반 문자열 <code>&quot;1&quot;</code> 로 전달됩니다. 실제 JavaScript 숫자를 전달하려면 값이 JavaScript 표현식으로 평가되도록 <code>v-bind</code>를 사용해야합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 이것은 실제 숫자로 전달합니다. --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">comp</span> <span class="hljs-attr">v-bind:some-prop</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">comp</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="단방향-데이터-흐름"><a href="#단방향-데이터-흐름" class="headerlink" title="단방향 데이터 흐름"></a>단방향 데이터 흐름</h3><p>모든 props는 하위 속성과 상위 속성 사이의 <strong>단방향</strong> 바인딩을 형성합니다. 상위 속성이 업데이트되면 하위로 흐르게 되지만 그 반대는 안됩니다. 이렇게하면 하위 컴포넌트가 실수로 부모의 상태를 변경하여 앱의 데이터 흐름을 추론하기 더 어렵게 만드는 것을 <strong>방지할 수</strong> 있습니다.</p>
+<p>일반적으로 prop을 변경시키고 싶은 유혹을 불러 일으킬 수있는 두 가지 경우가 있습니다.</p>
+<ol>
+<li><p>이 prop는 초기 값을 전달 하는데만 사용되며 하위 컴포넌트는 이후에 이를 로컬 데이터 속성으로 사용하기만 합니다.</p>
+</li>
+<li><p>prop는 변경되어야 할 원시 값으로 전달됩니다.</p>
+</li>
+</ol>
+<p>이러한 사용 사례에 대한 적절한 대답은 다음과 같습니다.</p>
+<ol>
+<li><p>prop의 초기 값을 초기 값으로 사용하는 로컬 데이터 속성을 정의 하십시오.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">props: [<span class="hljs-string">&#x27;initialCounter&#x27;</span>],<br>data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">counter</span>: <span class="hljs-built_in">this</span>.initialCounter &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>prop 값으로 부터 계산된 속성을 정의 합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">props: [<span class="hljs-string">&#x27;size&#x27;</span>],<br>computed: &#123;<br>  normalizedSize: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.size.trim().toLowerCase()<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p class="tip">자바 스크립트의 객체와 배열은 참조로 전달되므로 prop가 배열이나 객체인 경우 하위 객체 또는 배열 자체를 부모 상태로 변경하면 부모 상태에 **영향을 줍니다**.</p>
+
+<h3 id="Prop-검증"><a href="#Prop-검증" class="headerlink" title="Prop 검증"></a>Prop 검증</h3><p>컴포넌트가 받는 중인 prop에 대한 요구사항을 지정할 수 있습니다. 요구사항이 충족 되지 않으면 Vue에서 경고를 내보냅니다. 이 기능은 다른 사용자가 사용할 컴포넌트를 제작할 때 특히 유용합니다.</p>
+<p>props를 문자열 배열로 정의하는 대신 유효성 검사 요구사항이 있는 객체를 사용할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;example&#x27;</span>, &#123;<br>  props: &#123;<br>    <span class="hljs-comment">// 기본 타입 확인 (`null` 은 어떤 타입이든 가능하다는 뜻입니다)</span><br>    propA: <span class="hljs-built_in">Number</span>,<br>    <span class="hljs-comment">// 여러개의 가능한 타입</span><br>    propB: [<span class="hljs-built_in">String</span>, <span class="hljs-built_in">Number</span>],<br>    <span class="hljs-comment">// 문자열이며 꼭 필요합니다</span><br>    propC: &#123;<br>      type: <span class="hljs-built_in">String</span>,<br>      required: <span class="hljs-literal">true</span><br>    &#125;,<br>    <span class="hljs-comment">// 숫자이며 기본 값을 가집니다</span><br>    propD: &#123;<br>      type: <span class="hljs-built_in">Number</span>,<br>      <span class="hljs-keyword">default</span>: <span class="hljs-number">100</span><br>    &#125;,<br>    <span class="hljs-comment">// 객체/배열의 기본값은 팩토리 함수에서 반환 되어야 합니다.</span><br>    propE: &#123;<br>      type: <span class="hljs-built_in">Object</span>,<br>      <span class="hljs-keyword">default</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;hello&#x27;</span> &#125;<br>      &#125;<br>    &#125;,<br>    <span class="hljs-comment">// 사용자 정의 유효성 검사 가능</span><br>    propF: &#123;<br>      validator: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> value &gt; <span class="hljs-number">10</span><br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p><code>type</code>은 다음 네이티브 생성자 중 하나를 사용할 수 있습니다.</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Function</li>
+<li>Object</li>
+<li>Array</li>
+<li>Symbol</li>
+</ul>
+<p>또한, <code>type</code> 은 커스텀 생성자 함수가 될 수 있고, assertion은 <code>instanceof</code> 체크로 만들어 질 것입니다.</p>
+<p>props 검증이 실패하면 Vue는 콘솔에서 경고를 출력합니다(개발 빌드를 사용하는 경우). props는 컴포넌트 인스턴스가 __생성되기 전__에 검증되기 때문에 <code>default</code> 또는 <code>validator</code> 함수 내에서 <code>data</code>, <code>computed</code> 또는 <code>methods</code>와 같은 인스턴스 속성을 사용할 수 없습니다.</p>
+<h2 id="Props가-아닌-속성"><a href="#Props가-아닌-속성" class="headerlink" title="Props가 아닌 속성"></a>Props가 아닌 속성</h2><p>Props가 아닌 속성은 컴포넌트로 전달되지만 해당 props는 정의되지 않은 속성입니다.</p>
+<p>명시적으로 정의된 props는 하위 컴포넌트에 정보를 전달하는데 적절하지만 컴포넌트 라이브러리를 만드는 경우 컴포넌트가 사용될 수있는 상황을 항상 예측할 수는 없습니다. 이것이 컴포넌트가 컴포넌트의 루트 요소에 추가되는 임의의 속성을 허용해야하는 이유입니다.</p>
+<p>예를 들어, 우리가 <code>input</code>에 <code>data-3d-date-picker</code> 속성을 요구하는 부트스트랩 플러그인으로 써드 파티 <code>bs-date-input</code> 컴포넌트를 사용하고 있다고 상상해보세요. 이 속성을 컴포넌트 인스턴스에 추가 할 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">bs-date-input</span> <span class="hljs-attr">data-3d-date-picker</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bs-date-input</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그리고 <code>data-3d-date-picker=&quot;true&quot;</code>속성은 <code>bs-date-input</code>의 루트 엘리먼트에 자동으로 추가 될 것입니다.</p>
+<h3 id="존재하는-속성-교체-병합"><a href="#존재하는-속성-교체-병합" class="headerlink" title="존재하는 속성 교체/병합"></a>존재하는 속성 교체/병합</h3><p>이 파일이 <code>bs-date-input</code>의 템플릿이라고 가정합니다:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-control&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>데이트피커 플러그인의 테마를 추가하려면 다음과 같이 특정 클래스를 추가해야 할 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">bs-date-input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">data-3d-date-picker</span>=<span class="hljs-string">&quot;true&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;date-picker-theme-dark&quot;</span></span><br><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bs-date-input</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이 경우 <code>class</code>에 대한 두 개의 서로 다른 값이 정의됩니다.</p>
+<ul>
+<li>템플릿의 컴포넌트에 의해 설정된 <code>form-control</code></li>
+<li><code>date-picker-theme-dark</code>는 부모에 의해 컴포넌트로 전달됩니다.</li>
+</ul>
+<p>대부분의 속성의 경우 컴포넌트에 제공된 값은 컴포넌트에서 설정된 값을 대체합니다. 예를 들어, <code>type=&quot;large&quot;</code>가 전달되면 <code>type=&quot;date&quot;</code>를 대체할 것이고 아마도 망가뜨릴 것입니다! 다행스럽게도 <code>class</code>와 <code>style</code> 속성은 똑똑하기 때문에 두 값이 합쳐져서 최종 값인 <code>form-control date-picker-theme-dark</code>를 만듭니다.</p>
+<p>우리는 부모가 prop을 사용하여 자식에게 데이터를 전달할 수 있다는 것을 알았지만, 문제가 발생했을 때 어떻게 부모에게 다시 알릴까요? 바로 Vue의 사용자 정의 이벤트 시스템이 들어오는 곳입니다.</p>
+<h3 id="v-on을-이용한-사용자-지정-이벤트"><a href="#v-on을-이용한-사용자-지정-이벤트" class="headerlink" title="v-on을 이용한 사용자 지정 이벤트"></a><code>v-on</code>을 이용한 사용자 지정 이벤트</h3><p>모든 Vue 인스턴스는 다음과 같은 <a href="../api/#Instance-Methods-Events">이벤트 인터페이스</a>를 구현합니다.</p>
+<ul>
+<li><code>$on(eventName)</code>을 사용하여 이벤트를 감지 하십시오.</li>
+<li><code>$emit(eventName)</code>을 사용하여 이벤트를 트리거 하십시오.</li>
+</ul>
+<p class="tip">Vue의 이벤트 시스템은 브라우저의 [EventTarget API](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)와 별개입니다. 비슷하게 작동하지만 `$on` 과 `$emit` 는 `addEventListener` 와 `dispatchEvent`의 별칭이 __아닙니다__.</p>
+
+<p>또한, 부모 컴포넌트는 자식 컴포넌트가 사용되는 템플릿에서 직접 <code>v-on</code> 을 사용하여 자식 컴포넌트에서 보내진 이벤트를 청취할 수 있습니다.</p>
+<p class="tip">`$on`은 자식에서 호출한 이벤트는 감지하지 않습니다. `v-on`을 템플릿에 반드시 지정해야 합니다. 아래의 예제를 보십시오.</p>
+
+<p>예제:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;counter-event-example&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; total &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button-counter</span> <span class="hljs-attr">v-on:increment</span>=<span class="hljs-string">&quot;incrementTotal&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button-counter</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button-counter</span> <span class="hljs-attr">v-on:increment</span>=<span class="hljs-string">&quot;incrementTotal&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button-counter</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;button-counter&#x27;</span>, &#123;<br>  template: <span class="hljs-string">&#x27;&lt;button v-on:click=&quot;incrementCounter&quot;&gt;&#123;&#123; counter &#125;&#125;&lt;/button&gt;&#x27;</span>,<br>  data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      counter: <span class="hljs-number">0</span><br>    &#125;<br>  &#125;,<br>  methods: &#123;<br>    incrementCounter: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-built_in">this</span>.counter += <span class="hljs-number">1</span><br>      <span class="hljs-built_in">this</span>.$emit(<span class="hljs-string">&#x27;increment&#x27;</span>)<br>    &#125;<br>  &#125;,<br>&#125;)<br><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#counter-event-example&#x27;</span>,<br>  data: &#123;<br>    total: <span class="hljs-number">0</span><br>  &#125;,<br>  methods: &#123;<br>    incrementTotal: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-built_in">this</span>.total += <span class="hljs-number">1</span><br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+<div id="counter-event-example" class="demo">
+  <p>{{ total }}</p>
+  <button-counter v-on:increment="incrementTotal"></button-counter>
+  <button-counter v-on:increment="incrementTotal"></button-counter>
+</div>
+<script>
+Vue.component('button-counter', {
+  template: '<button v-on:click="incrementCounter">{{ counter }}</button>',
+  data: function () {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    incrementCounter: function () {
+      this.counter += 1
+      this.$emit('increment')
+    }
+  }
+})
+new Vue({
+  el: '#counter-event-example',
+  data: {
+    total: 0
+  },
+  methods: {
+    incrementTotal: function () {
+      this.total += 1
+    }
+  }
+})
+</script>
+
+
+<p>이 예제에서는 하위 컴포넌트가 외부에서 발생 하는 것과 완전히 분리 된다는 점에 유의해야 합니다. 부모 컴포넌트가 신경 쓸 수 있는 경우를 대비하여 자체 활동에 대한 정보를 보고 하는 것뿐입니다.</p>
+<h4 id="컴포넌트에-네이티브-이벤트-바인딩"><a href="#컴포넌트에-네이티브-이벤트-바인딩" class="headerlink" title="컴포넌트에 네이티브 이벤트 바인딩"></a>컴포넌트에 네이티브 이벤트 바인딩</h4><p>컴포넌트의 루트 엘리먼트에서 네이티브 이벤트를 수신하려는 경우가 있을 수 있습니다. 이러한 경우 <code>v-on</code> 에 <code>.native</code> 수식자를 사용할 수 있습니다. 예 :</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">v-on:click.native</span>=<span class="hljs-string">&quot;doTheThing&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="sync-수식어"><a href="#sync-수식어" class="headerlink" title=".sync 수식어"></a><code>.sync</code> 수식어</h3><blockquote>
+<p>2.3.0+</p>
+</blockquote>
+<p>일부 경우에 속성에 “양방향 바인딩”이 필요할 수 있습니다. Vue 1버전에 있던 <code>.sync</code> 수식어와 동일합니다. 자식 컴포넌트가 <code>.sync</code>를 가지는 속성을 변경하면 값의 변경이 부모에 반영됩니다. 편리하지만 단방향 데이터 흐름이 아니기 때문에 장기적으로 유지보수에 문제가 생깁니다. 자식 속성을 변경하는 코드는 부모의 상태에 영향을 미칩니다.</p>
+<p>이 때문에 <code>.sync</code>는 2.0버전에서 삭제되었습니다. 그러나 재사용 가능한 컴포넌트를 만들 때 유용할 수 있다는 점을 알게 되었습니다. <strong>부모 상태에 영향을 미치는 코드를 더욱 일관적이고 명백하게 만들어야합니다.</strong></p>
+<p>2.3 버전에서 속성을 위한 <code>.sync</code> 수식어를 다시 만들었습니다. 자동으로 <code>v-on</code>로 확장되는 신택스 슈가입니다.</p>
+<p>따라서 아래 코드는</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">comp</span> <span class="hljs-attr">:foo.sync</span>=<span class="hljs-string">&quot;bar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">comp</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>아래와 같습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">comp</span> <span class="hljs-attr">:foo</span>=<span class="hljs-string">&quot;bar&quot;</span> @<span class="hljs-attr">update:foo</span>=<span class="hljs-string">&quot;val =&gt; bar = val&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">comp</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>하위 컴포넌트가 <code>foo</code>를 갱신하려면 속성을 변경하는 대신 명시적으로 이벤트를 보내야합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">this</span>.$emit(<span class="hljs-string">&#x27;update:foo&#x27;</span>, newValue)<br></code></pre></td></tr></table></figure>
+
+<h3 id="사용자-정의-이벤트를-사용하여-폼-입력-컴포넌트-만들기"><a href="#사용자-정의-이벤트를-사용하여-폼-입력-컴포넌트-만들기" class="headerlink" title="사용자 정의 이벤트를 사용하여 폼 입력 컴포넌트 만들기"></a>사용자 정의 이벤트를 사용하여 폼 입력 컴포넌트 만들기</h3><p>사용자 정의 이벤트는 <code>v-model</code> 에서 작동하는 사용자 정의 입력을 만드는데에도 사용할 수 있습니다. 기억하세요.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;something&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>위 문장은 아래와 같습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">&quot;something&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">&quot;something = $event.target.value&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>컴포넌트와 함께 사용하면 다음과 같이 간단해집니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">custom-input</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:value</span>=<span class="hljs-string">&quot;something&quot;</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">input</span>=<span class="hljs-string">&quot;value =&gt; &#123; something = value &#125;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">custom-input</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>따라서 <code>v-model</code>을 사용하는 컴포넌트는 (2.2.0버전 이상에서 설정을 조작할 수 있습니다.)</p>
+<ul>
+<li><code>value</code> prop를 가집니다.</li>
+<li>새로운 값으로 <code>input</code> 이벤트를 내보냅니다.</li>
+</ul>
+<p>매우 간단한 통화 입력을 사용하는 모습을 보겠습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">currency-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;price&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">currency-input</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;currency-input&#x27;</span>, &#123;<br>  template: <span class="hljs-string">&#x27;\</span><br><span class="hljs-string">    &lt;span&gt;\</span><br><span class="hljs-string">      $\</span><br><span class="hljs-string">      &lt;input\</span><br><span class="hljs-string">        ref=&quot;input&quot;\</span><br><span class="hljs-string">        v-bind:value=&quot;value&quot;\</span><br><span class="hljs-string">        v-on:input=&quot;updateValue($event.target.value)&quot;&gt;\</span><br><span class="hljs-string">    &lt;/span&gt;\</span><br><span class="hljs-string">  &#x27;</span>,<br>  props: [<span class="hljs-string">&#x27;value&#x27;</span>],<br>  methods: &#123;<br>    <span class="hljs-comment">// 값을 직접 업데이트하는 대신 이 메소드를 사용하여</span><br>    <span class="hljs-comment">// 입력 값에 대한 서식을 지정하고 배치 할 수 있습니다</span><br>    updateValue: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;<br>      <span class="hljs-keyword">var</span> formattedValue = value<br>        <span class="hljs-comment">// 공백을 제거합니다.</span><br>        .trim()<br>        <span class="hljs-comment">// 소수 자릿수 2자리로 줄입니다</span><br>        .slice(<br>          <span class="hljs-number">0</span>,<br>          value.indexOf(<span class="hljs-string">&#x27;.&#x27;</span>) === <span class="hljs-number">-1</span><br>            ? value.length<br>            : value.indexOf(<span class="hljs-string">&#x27;.&#x27;</span>) + <span class="hljs-number">3</span><br>        )<br>      <span class="hljs-comment">// 값이 아직 정규화 되지 않은 경우</span><br>      <span class="hljs-comment">// 이를 수동으로 재정의하여 조건을 충족시킵니다.</span><br>      <span class="hljs-keyword">if</span> (formattedValue !== value) &#123;<br>        <span class="hljs-built_in">this</span>.$refs.input.value = formattedValue<br>      &#125;<br>      <span class="hljs-comment">// 입력 이벤트를 통해 숫자 값을 내보냅니다.</span><br>      <span class="hljs-built_in">this</span>.$emit(<span class="hljs-string">&#x27;input&#x27;</span>, <span class="hljs-built_in">Number</span>(formattedValue))<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+<div id="currency-input-example" class="demo">
+  <currency-input v-model="price"></currency-input>
+</div>
+<script>
+Vue.component('currency-input', {
+  template: '\
+    <span>\
+      $\
+      <input\
+        ref="input"\
+        v-bind:value="value"\
+        v-on:input="updateValue($event.target.value)"\
+      >\
+    </span>\
+  ',
+  props: ['value'],
+  methods: {
+    updateValue: function (value) {
+      var formattedValue = value
+        .trim()
+        .slice(
+          0,
+          value.indexOf('.') === -1
+            ? value.length
+            : value.indexOf('.') + 3
+        )
+      if (formattedValue !== value) {
+        this.$refs.input.value = formattedValue
+      }
+      this.$emit('input', Number(formattedValue))
+    }
+  }
+})
+new Vue({
+  el: '#currency-input-example',
+  data: { price: '' }
+})
+</script>
+
+
+<p>위의 구현은 꽤 단순합니다. 예를 들어, 사용자는 때때로 여러 마침표와 글자를 입력 할 수 있습니다. 그렇기 때문에 보다 강력한 통화 필터를 사용할 수 있습니다.</p>
+<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/1oqjojjx/embedded/result,html,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="컴포넌트의-v-model-사용자-정의"><a href="#컴포넌트의-v-model-사용자-정의" class="headerlink" title="컴포넌트의 v-model 사용자 정의"></a>컴포넌트의 <code>v-model</code> 사용자 정의</h3><blockquote>
+<p>2.2.0 버전에서 추가됨</p>
+</blockquote>
+<p>기본적으로 컴포넌트의 <code>v-model</code>은 <code>value</code>를 보조 변수로 사용하고 <code>input</code>을 이벤트로 사용하지만 체크 박스와 라디오 버튼과 같은 일부 입력 타입은 다른 목적으로 <code>value</code> 속성을 사용할 수 있습니다. <code>model</code> 옵션을 사용하면 다음 경우에 충돌을 피할 수 있습니다:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;my-checkbox&#x27;</span>, &#123;<br>  model: &#123;<br>    prop: <span class="hljs-string">&#x27;checked&#x27;</span>,<br>    event: <span class="hljs-string">&#x27;change&#x27;</span><br>  &#125;,<br>  props: &#123;<br>    <span class="hljs-comment">// 다른 목적을 위해 `value` prop를 사용할 수 있습니다.</span><br>    checked: <span class="hljs-built_in">Boolean</span>,<br>    value: <span class="hljs-built_in">String</span><br>  &#125;,<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-checkbox</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;foo&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;some value&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-checkbox</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>아래와 같습니다</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-checkbox</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:checked</span>=<span class="hljs-string">&quot;foo&quot;</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;val =&gt; &#123; foo = val &#125;&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;some value&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">my-checkbox</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p class="tip">`checked` prop를 명시적으로 선언해야 합니다.</p>
+
+<h3 id="비-부모-자식간-통신"><a href="#비-부모-자식간-통신" class="headerlink" title="비 부모-자식간 통신"></a>비 부모-자식간 통신</h3><p>때로는 두 컴포넌트가 서로 통신 할 필요가 있지만 서로 부모/자식이 아닐 수도 있습니다. 간단한 시나리오에서는 비어있는 Vue 인스턴스를 중앙 이벤트 버스로 사용할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> bus = <span class="hljs-keyword">new</span> Vue()<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 컴포넌트 A의 메소드</span><br>bus.$emit(<span class="hljs-string">&#x27;id-selected&#x27;</span>, <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 컴포넌트 B의 created 훅</span><br>bus.$on(<span class="hljs-string">&#x27;id-selected&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>&#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>보다 복잡한 경우에는 전용 <a href="state-management.html">상태 관리 패턴</a>을 고려해야합니다</p>
+<h2 id="슬롯을-사용한-컨텐츠-배포"><a href="#슬롯을-사용한-컨텐츠-배포" class="headerlink" title="슬롯을 사용한 컨텐츠 배포"></a>슬롯을 사용한 컨텐츠 배포</h2><p>컴포넌트를 사용할 때 다음과 같이 컴포넌트를 구성하는 것이 좋습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">app</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">app-header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">app-header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">app-footer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">app-footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">app</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>주목해야할 두가지 사항이 있습니다.</p>
+<ol>
+<li><p><code>&lt;app&gt;</code> 컴포넌트는 어떤 컨텐츠를 받을지 모릅니다. 그것은 <code>&lt;app&gt;</code>이 사용하는 컴포넌트에 의해 결정됩니다.</p>
+</li>
+<li><p><code>&lt;app&gt;</code> 컴포넌트에는 자체 템플릿이 있을 가능성이 큽니다.</p>
+</li>
+</ol>
+<p>위 구성으로 작동하도록 하려면 부모 “content”와 컴포넌트의 자체 템플릿을 섞는 방법이 필요합니다. 이것은 <strong>콘텐츠 배포</strong> (또는 Angular에 익숙한 경우 “transclusion”) 프로세스입니다. Vue.js는 현재 <a target="_blank" rel="noopener" href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md">웹 컴포넌트 사양 초안</a>을 모델로 한 콘텐츠 배포 API를 구현하며 원본 콘텐츠의 배포판 역할을하기 위해 특수한 <code>&lt;slot&gt;</code> 엘리먼트를 사용합니다.</p>
+<h3 id="범위-컴파일"><a href="#범위-컴파일" class="headerlink" title="범위 컴파일"></a>범위 컴파일</h3><p>API를 파헤치기 전에 먼저 내용이 컴파일되는 범위를 명확히 해야합니다. 다음과 같은 템플릿이 있다고 상상해보겠습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">child-component</span>&gt;</span><br>  &#123;&#123; message &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">child-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>message</code>가 부모 데이터 또는 자식 데이터중 어디에 바인딩되어야 할까요? 대답은 부모입니다. 컴포넌트 범위에 대한 간단한 법칙은 다음과 같습니다.</p>
+<blockquote>
+<p>상위 템플릿의 모든 내용은 상위 범위로 컴파일됩니다. 하위 템플릿의 모든 내용은 하위 범위에서 컴파일됩니다.</p>
+</blockquote>
+<p>일반적인 실수는 부모 템플릿의 하위 속성/메소드에 디렉티브를 바인딩하려고하는 것입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 작동하지 않습니다 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">child-component</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot;someChildProperty&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">child-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>someChildProperty</code>가 자식 컴포넌트의 속성이라고 가정하면, 위의 예제는 작동하지 않을 것입니다. 상위 템플릿은 하위 컴포넌트의 상태를 인식하지 못합니다.</p>
+<p>컴포넌트 루트 노드에서 하위 범위 디렉티브를 바인딩 해야하는 경우 하위 컴포넌트의 자체 템플릿에서 하위 범위 디렉티브를 바인딩해야합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;child-component&#x27;</span>, &#123;<br>  <span class="hljs-comment">// 이제 작동합니다. 올바른 위치에 놓여 있습니다.</span><br>  template: <span class="hljs-string">&#x27;&lt;div v-show=&quot;someChildProperty&quot;&gt;Child&lt;/div&gt;&#x27;</span>,<br>  data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      someChildProperty: <span class="hljs-literal">true</span><br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>마찬가지로 분산된 콘텐츠는 상위 범위에서 컴파일됩니다.</p>
+<h3 id="단일-슬롯"><a href="#단일-슬롯" class="headerlink" title="단일 슬롯"></a>단일 슬롯</h3><p>하위 컴포넌트 템플릿에 최소한 하나의 <code>&lt;slot&gt;</code> 콘텐츠가 포함되어 있지 않으면 부모 콘텐츠가 <strong>삭제</strong> 됩니다. 속성이 없는 슬롯이 하나 뿐인 경우 전체 내용 조각이 DOM의 해당 위치에 삽입되어 슬롯 자체를 대체합니다.</p>
+<p>원래 <code>&lt;slot&gt;</code> 태그 안에 있는 내용은 <strong>대체 콘텐츠</strong> 로 간주됩니다. 대체 콘텐츠는 하위 범위에서 컴파일되며 호스팅 엘리먼트가 비어 있고 삽입할 콘텐츠가 없는 경우에만 표시됩니다.</p>
+<p>다음 템플릿으로 <code>my-component</code>라는 컴포넌트가 있다고 가정하십시오.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>나는 자식 컴포넌트의 제목입니다<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><br>    제공된 컨텐츠가 없는 경우에만 보실 수 있습니다.<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그리고 그 컴포넌트를 사용하는 부모는</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>나는 부모 컴포넌트의 제목입니다<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>이것은 원본 컨텐츠 입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>이것은 원본 중 추가 컨텐츠 입니다<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>아래처럼 렌더링 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>나는 부모 컴포넌트의 제목입니다<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>나는 자식 컴포넌트의 제목 입니다<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>이것은 원본 컨텐츠 입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>이것은 원본 중 추가 컨텐츠 입니다<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="이름을-가지는-슬롯"><a href="#이름을-가지는-슬롯" class="headerlink" title="이름을 가지는 슬롯"></a>이름을 가지는 슬롯</h3><p><code>&lt;slot&gt;</code> 엘리먼트는 특별한 속성 인 <code>name</code> 을 가지고 있습니다. 이 속성은 어떻게 내용을 배포해야 하는지를 더 커스터마이징하는 데 사용할 수 있습니다. 이름이 다른 슬롯이 여러 개 있을 수 있습니다. 이름을 가진 슬롯은 내용 조각에 해당 <code>slot</code> 속성이 있는 모든 엘리먼트와 일치합니다.</p>
+<p>명명되지 않은 슬롯이 하나 있을 수 있습니다. <strong>기본 슬롯</strong> 은 일치하지 않는 콘텐츠의 포괄적인 컨텐츠 역할을 합니다. 기본 슬롯이 없으면 일치하지 않는 콘텐츠가 삭제됩니다.</p>
+<p>예를 들어, 다음과 같은 템플릿을 가진<code>app-layout</code> 컴포넌트가 있다고 가정 해보십시오 :</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>부모 마크업</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">app-layout</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>여기에 페이지 제목이 위치합니다<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>메인 컨텐츠의 단락입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>하나 더 있습니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>여기에 연락처 정보입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">app-layout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>아래와 같이 렌더링 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>여기에 페이지 제목이 위치합니다<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>메인 컨텐츠의 단락입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>하나 더 있습니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>여기에 연락처 정보입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>콘텐츠 배포 API는 함께 구성할 컴포넌트를 디자인 할 때 매우 유용한 메커니즘입니다.</p>
+<h3 id="범위를-가지는-슬롯"><a href="#범위를-가지는-슬롯" class="headerlink" title="범위를 가지는 슬롯"></a>범위를 가지는 슬롯</h3><blockquote>
+<p>2.1.0에 새롭게 추가됨.</p>
+</blockquote>
+<p>범위가 지정된 슬롯은 이미 렌더링 된 엘리먼트 대신 재사용 가능한 템플릿(데이터를 전달할 수 있음)으로 작동하는 특별한 유형의 슬롯입니다.</p>
+<p>prop을 컴포넌트에게 전달하는 것처럼, 하위 컴포넌트에서 단순히 데이터를 슬롯에 전달하면 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;child&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;hello from child&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>부모에서, 특별한 속성 <code>slot-scope</code>를 가진 <code>&lt;template&gt;</code> 엘리먼트가 있어야 합니다. 이것은 범위를 가지는 슬롯을 위한 템플릿임을 나타냅니다. <code>slot-scope</code>의 값은 자식으로부터 전달 된 props 객체를 담고있는 임시 변수의 이름입니다:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">child</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;props&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello from parent<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; props.text &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>위를 렌더링하면 출력은 다음과 같습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;child&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello from parent<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello from child<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.5.0+에서, <code>slot-scope</code> 는 더이상 <code>&lt;template&gt;</code> 뿐 아니라 컴포넌트나 엘리먼트에서도 사용할 수 있습니다.</p>
+</blockquote>
+<p>범위가 지정된 슬롯의 보다 일반적인 사용 사례는 컴포넌트 사용자가 리스트의 각 항목을 렌더링하는 방법을 사용자 정의할 수 있는 리스트 컴포넌트입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-awesome-list</span> <span class="hljs-attr">:items</span>=<span class="hljs-string">&quot;items&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- scoped slot 역시 이름을 가질 수 있습니다 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;item&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;props&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;my-fancy-item&quot;</span>&gt;</span><br>    &#123;&#123; props.text &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">my-awesome-list</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그리고 리스트 컴포넌트의 템플릿 :</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;item&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in items&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:text</span>=<span class="hljs-string">&quot;item.text&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 대체 컨텐츠는 여기입니다. --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="디스트럭처링"><a href="#디스트럭처링" class="headerlink" title="디스트럭처링"></a>디스트럭처링</h4><p><code>slot-scope</code> 값은 실제로 함수 서명의 인수 위치에 나타날 수 있는 유효한 JavaScript 표현식입니다. 이는 지원되는 환경 (싱글 파일 컴포넌트 또는 최신 브라우저)에서 ES2015 디스트럭처를 사용할 수 있다는 것을 의미합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">child</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;&#123; text &#125;&quot;</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">child</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="동적-컴포넌트"><a href="#동적-컴포넌트" class="headerlink" title="동적 컴포넌트"></a>동적 컴포넌트</h2><p>같은 마운트 포인트를 사용하고 예약된 <code>&lt;component&gt;</code> 엘리먼트를 사용하여 여러 컴포넌트 간에 동적으로 트랜지션하고 <code>is</code> 속성에 동적으로 바인드 할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#example&#x27;</span>,<br>  data: &#123;<br>    currentView: <span class="hljs-string">&#x27;home&#x27;</span><br>  &#125;,<br>  components: &#123;<br>    home: &#123; <span class="hljs-comment">/* ... */</span> &#125;,<br>    posts: &#123; <span class="hljs-comment">/* ... */</span> &#125;,<br>    archive: &#123; <span class="hljs-comment">/* ... */</span> &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">&quot;currentView&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- vm.currentView가 변경되면 컴포넌트가 변경됩니다! --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>원하는 경우 컴포넌트 객체에 직접 바인딩 할 수도 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> Home = &#123;<br>  template: <span class="hljs-string">&#x27;&lt;p&gt;Welcome home!&lt;/p&gt;&#x27;</span><br>&#125;<br><br><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#example&#x27;</span>,<br>  data: &#123;<br>    currentView: Home<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a><code>keep-alive</code></h3><p>트랜지션된 컴포넌트를 메모리에 유지하여 상태를 보존하거나 다시 렌더링하지 않도록하려면 동적 컴포넌트를 <code>&lt;keep-alive&gt;</code> 엘리먼트에 래핑 할 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">:is</span>=<span class="hljs-string">&quot;currentView&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 비활성화 된 컴포넌트는 캐시 됩니다! --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><a href="../api/#keep-alive">API 참조</a>에서 <code>&lt;keep-alive&gt;</code> 에 대한 자세한 내용을 확인하십시오.</p>
+<h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><h3 id="재사용-가능한-컴포넌트-제작하기"><a href="#재사용-가능한-컴포넌트-제작하기" class="headerlink" title="재사용 가능한 컴포넌트 제작하기"></a>재사용 가능한 컴포넌트 제작하기</h3><p>컴포넌트를 작성할 때 나중에 다른 곳에서 다시 사용할 것인지에 대한 여부를 명심하는 것이 좋습니다. 일회용 컴포넌트가 단단히 결합 되어도 상관 없지만 재사용 가능한 컴포넌트는 깨끗한 공용 인터페이스를 정의 해야하며 사용된 컨텍스트에 대한 가정을 하지 않아야합니다.</p>
+<p>Vue 컴포넌트의 API는 prop, 이벤트 및 슬롯의 세 부분으로 나뉩니다.</p>
+<ul>
+<li><p><strong>Props</strong> 는 외부 환경이 데이터를 컴포넌트로 전달하도록 허용합니다.</p>
+</li>
+<li><p><strong>이벤트</strong>를 통해 컴포넌트가 외부 환경에서 사이드이펙트를 발생할 수 있도록 합니다.</p>
+</li>
+<li><p><strong>슬롯</strong> 을 사용하면 외부 환경에서 추가 컨텐츠가 포함 된 컴포넌트를 작성할 수 있습니다.</p>
+</li>
+</ul>
+<p><code>v-bind</code> 와 <code>v-on</code> 을 위한 전용 약어문을 사용하여 의도를 명확하고 간결하게 템플릿에 전달할 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:foo</span>=<span class="hljs-string">&quot;baz&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:bar</span>=<span class="hljs-string">&quot;qux&quot;</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">event-a</span>=<span class="hljs-string">&quot;doThis&quot;</span></span><br><span class="hljs-tag">  @<span class="hljs-attr">event-b</span>=<span class="hljs-string">&quot;doThat&quot;</span></span><br><span class="hljs-tag">&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;...&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;main-text&quot;</span>&gt;</span>Hello!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="자식-컴포넌트-참조"><a href="#자식-컴포넌트-참조" class="headerlink" title="자식 컴포넌트 참조"></a>자식 컴포넌트 참조</h3><p>props나 이벤트가 있었음에도 불구하고 때때로 JavaScript로 하위 컴포넌트에 직접 액세스 해야 할 수도 있습니다. 이를 위해 <code>ref</code> 를 이용하여 참조 컴포넌트 ID를 자식 컴포넌트에 할당해야 합니다. 예:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">user-profile</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;profile&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">user-profile</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> parent = <span class="hljs-keyword">new</span> Vue(&#123; <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#parent&#x27;</span> &#125;)<br><span class="hljs-comment">// 자식 컴포넌트 인스턴스에 접근합니다.</span><br><span class="hljs-keyword">var</span> child = parent.$refs.profile<br></code></pre></td></tr></table></figure>
+
+<p><code>ref</code>가 <code>v-for</code>와 함께 사용될 때, 얻을 수 있는 ref는 데이터 소스를 미러링하는 자식 컴포넌트를 포함하는 배열이 될 것입니다.</p>
+<p class="tip">`$refs` 는 컴포넌트가 렌더링 된 후에만 채워지며 반응적이지 않습니다. 그것은 직접 자식 조작을 위한 escape 해치를 의미합니다 - 템플릿이나 계산 된 속성에서 `$refs`를 사용하지 말아야합니다.</p>
+
+<h3 id="비동기-컴포넌트"><a href="#비동기-컴포넌트" class="headerlink" title="비동기 컴포넌트"></a>비동기 컴포넌트</h3><p>대규모 응용 프로그램에서는 응용 프로그램을 더 작은 덩어리로 나누고 실제로 필요할 때만 서버에서 컴포넌트를 로드해야 할 수도 있습니다. Vue를 사용하면 컴포넌트 정의를 비동기식으로 해결하는 팩토리 함수로 컴포넌트를 정의 할 수 있습니다. Vue는 컴포넌트가 실제로 렌더링되어야 할 때만 팩토리 기능을 트리거하고 이후의 리렌더링을 위해 결과를 캐시합니다. 예 :</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;async-example&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>&#123;<br>  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">// 컴포넌트 정의를 resolve 콜백에 전달합니다.</span><br>    resolve(&#123;<br>      template: <span class="hljs-string">&#x27;&lt;div&gt;I am async!&lt;/div&gt;&#x27;</span><br>    &#125;)<br>  &#125;, <span class="hljs-number">1000</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>팩토리 함수는 <code>resolve</code> 콜백을 받습니다. 이 콜백은 서버에서 컴포넌트 정의를 가져 왔을 때 호출 되어야 합니다. 또한 <code>reject (reason)</code> 을 호출하여 로드가 실패 했음을 알릴 수 있습니다. 여기서 <code>setTimeout</code> 은 데모 용입니다. 컴포넌트를 검색하는 방법은 전적으로 귀하에게 달려 있습니다. 권장되는 접근법 중 하나는 <a target="_blank" rel="noopener" href="https://webpack.js.org/guides/code-splitting/">Webpack의 코드 분할 기능</a>과 함께 비동기 컴포넌트를 사용하는 것입니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;async-webpack-example&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) </span>&#123;<br>  <span class="hljs-comment">// 이 특별한 require 구문은 Webpack이 Ajax 요청을 통해</span><br>  <span class="hljs-comment">// 로드되는 번들로 작성된 코드를 자동으로 분리하도록 지시합니다.</span><br>  <span class="hljs-built_in">require</span>([<span class="hljs-string">&#x27;./my-async-component&#x27;</span>], resolve)<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>factory 함수에서 <code>Promise</code>를 반환할 수도 있습니다. 그래서 Webpack 2 + ES2015 구문을 사용하면 다음을 할 수 있습니다 :</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<br>  <span class="hljs-string">&#x27;async-webpack-example&#x27;</span>,<br>  <span class="hljs-comment">// `import` 함수는 `Promise`를 반환합니다.</span><br>  () =&gt; <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;./my-async-component&#x27;</span>)<br>)<br></code></pre></td></tr></table></figure>
+
+<p><a href="components.html#Local-Registration">지역 등록</a>을 사용하는 경우, <code>Promise</code>를 반환하는 함수를 제공할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>  <span class="hljs-comment">// ...</span><br>  components: &#123;<br>    <span class="hljs-string">&#x27;my-component&#x27;</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;./my-async-component&#x27;</span>)<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p class="tip">비동기 컴포넌트를 사용하려는 <strong>Browserify</strong> 사용자인 경우, 작성자는 불행히도 비동기로드가 Browserify에서 지원하지 않는 것이라고 [분명하게 주장합니다.](https://github.com/substack/node-browserify/issues/58#issuecomment-21978224) 적어도 공식적으로. Browserify 커뮤니티는 기존 및 복잡한 응용 프로그램에 도움이 될 수있는 [몇 가지 해결 방법](https://github.com/vuejs/vuejs.org/issues/620)을 발견했습니다. 다른 모든 시나리오의 경우 기본 제공되는 비동기식 지원을 위해 Webpack을 사용하는 것이 좋습니다.</p>
+
+<h3 id="고급-비동기-컴포넌트"><a href="#고급-비동기-컴포넌트" class="headerlink" title="고급 비동기 컴포넌트"></a>고급 비동기 컴포넌트</h3><blockquote>
+<p>2.3.0버전에서 추가</p>
+</blockquote>
+<p>2.3 버전부터 비동기 컴포넌트 팩토리는 다음 형태의 객체를 반환할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> AsyncComp = <span class="hljs-function">() =&gt;</span> (&#123;<br>  <span class="hljs-comment">// 로드하는 컴포넌트입니다. 반드시 Promise이어야합니다.</span><br>  component: <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;./MyComp.vue&#x27;</span>),<br>  <span class="hljs-comment">// 비동기 컴포넌트가 로드되는 동안 사용할 컴포넌트</span><br>  loading: LoadingComp,<br>  <span class="hljs-comment">// 실패했을 경우 사용하는 컴포넌트</span><br>  error: ErrorComp,<br>  <span class="hljs-comment">// 로딩 컴포넌트를 보여주기전 지연하는 정도. 기본값: 200ms.</span><br>  delay: <span class="hljs-number">200</span>,<br>  <span class="hljs-comment">// 시간이 초과되면 에러용 컴포넌트가 표시됩니다</span><br>  <span class="hljs-comment">// 기본값: Infinity.</span><br>  timeout: <span class="hljs-number">3000</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p><code>vue-router</code>에서 라우트 컴포넌트로 사용하는 경우 라우트 네비게이션이 발생하기전에 비동기 컴포넌트가 먼저 작동하기때문에 이러한 특성은 무시됩니다. 라우트 컴포넌트에서 위의 문법을 사용하려면 <code>vue-router</code> 2.4.0 이상을 사용해야합니다.</p>
+<h3 id="컴포넌트-이름-규약"><a href="#컴포넌트-이름-규약" class="headerlink" title="컴포넌트 이름 규약"></a>컴포넌트 이름 규약</h3><p>컴포넌트 (또는 prop)를 등록 할 때 kebab-case, camelCase 또는 PascalCase를 사용할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 컴포넌트 정의에서</span><br>components: &#123;<br>  <span class="hljs-comment">// kebab-case를 사용한 등록</span><br>  <span class="hljs-string">&#x27;kebab-cased-component&#x27;</span>: &#123; <span class="hljs-comment">/* ... */</span> &#125;,<br>  <span class="hljs-comment">// camelCase를 사용한 등록</span><br>  <span class="hljs-string">&#x27;camelCasedComponent&#x27;</span>: &#123; <span class="hljs-comment">/* ... */</span> &#125;,<br>  <span class="hljs-comment">// PascalCase를 사용한 등록</span><br>  <span class="hljs-string">&#x27;PascalCasedComponent&#x27;</span>: &#123; <span class="hljs-comment">/* ... */</span> &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>HTML 템플릿 내에서 kebab-case와 동등한 것을 사용해야합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- HTML 템플릿에서 항상 kebab-case를 사용하세요 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">kebab-cased-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">kebab-cased-component</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">camel-cased-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">camel-cased-component</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">pascal-cased-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pascal-cased-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그러나 <em>문자열</em> 템플릿을 사용할 때 HTML의 대소문자를 구분하지 않습니다. 즉, 템플릿에서도 CamelCase, PascalCase 또는 kebab-case를 사용하여 컴포넌트와 prop을 참조할 수 있습니다.</p>
+<ul>
+<li>kebab-case</li>
+<li>camelCase를 사용하여 컴포넌트가 정의된 경우 camelCase 또는 kebab-case</li>
+<li>PascalCase를 사용하여 컴포넌트가 정의된 경우 kebab-case, camelCase or PascalCase</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">components: &#123;<br>  <span class="hljs-string">&#x27;kebab-cased-component&#x27;</span>: &#123; <span class="hljs-comment">/* ... */</span> &#125;,<br>  camelCasedComponent: &#123; <span class="hljs-comment">/* ... */</span> &#125;,<br>  PascalCasedComponent: &#123; <span class="hljs-comment">/* ... */</span> &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">kebab-cased-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">kebab-cased-component</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">camel-cased-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">camel-cased-component</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">camelCasedComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">camelCasedComponent</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">pascal-cased-component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pascal-cased-component</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">pascalCasedComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pascalCasedComponent</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">PascalCasedComponent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">PascalCasedComponent</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<p>이것은 PascalCase가 가장 보편적 인 _선언적 컨벤션_임을 의미하며 케밥 케이스는 가장 보편적으로 사용하는 _컨벤션_입니다.</p>
+<p>컴포넌트가 <code>slot</code> 엘리먼트를 통해 내용을 전달받지 못하면 이름 뒤에 <code>/</code>를 사용하여 자체적으로 닫을 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>다시 말하지만, 이것은 자기 닫는 사용자 정의 엘리먼트가 유효한 HTML이 아니므로 문자열 템플릿내에서만 작동하며 브라우저의 기본 파서는 이를 이해하지 못합니다.</p>
+<h3 id="재귀-컴포넌트"><a href="#재귀-컴포넌트" class="headerlink" title="재귀 컴포넌트"></a>재귀 컴포넌트</h3><p>컴포넌트는 자신의 템플릿에서 재귀적으로 호출할 수 있습니다. 그러나, 그들은 <code>name</code> 옵션으로만 가능합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">name: <span class="hljs-string">&#x27;unique-name-of-my-component&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>Vue.component</code>를 사용하여 컴포넌트를 전역적으로 등록하면, 글로벌 ID가 컴포넌트의 <code>name</code> 옵션으로 자동 설정됩니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;unique-name-of-my-component&#x27;</span>, &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>주의하지 않으면 재귀적 컴포넌트로 인해 무한 루프가 발생할 수도 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">name: <span class="hljs-string">&#x27;stack-overflow&#x27;</span>,<br>template: <span class="hljs-string">&#x27;&lt;div&gt;&lt;stack-overflow&gt;&lt;/stack-overflow&gt;&lt;/div&gt;&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>위와 같은 컴포넌트는 “최대 스택 크기 초과” 오류가 발생하므로 재귀 호출이 조건부 (즉, 마지막에 <code>false</code>가 될 <code>v-if</code>를 사용하세요)인지 확인하십시오.</p>
+<h3 id="컴포넌트-사이의-순환-참조"><a href="#컴포넌트-사이의-순환-참조" class="headerlink" title="컴포넌트 사이의 순환 참조"></a>컴포넌트 사이의 순환 참조</h3><p>Finder나 파일 탐색기와 같이 파일 디렉토리 트리를 작성한다고 가정해 보겠습니다. 이 템플릿을 가지고 <code>tree-folder</code> 컴포넌트를 가질 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; folder.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tree-folder-contents</span> <span class="hljs-attr">:children</span>=<span class="hljs-string">&quot;folder.children&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그런 다음이 템플릿이 있는 <code>tree-folder-contents</code> 컴포넌트 :</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;child in children&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tree-folder</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;child.children&quot;</span> <span class="hljs-attr">:folder</span>=<span class="hljs-string">&quot;child&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-else</span>&gt;</span>&#123;&#123; child.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>자세히 살펴보면이 컴포넌트가 실제로 렌더링 트리에서 서로의 자식 및 조상인 패러독스라는 것을 알 수 있습니다! <code>Vue.component</code>를 이용해 전역으로 컴포넌트 등록할 때, 이 패러독스는 자동으로 해결됩니다. 그런 경우에 처해있으면 한번 읽어보세요.</p>
+<p>그러나 <strong>모듈 시스템</strong> 을 사용하여 컴포넌트를 필요로하거나 가져오는 경우. Webpack 또는 Browserify를 통해 오류가 발생합니다.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">컴포넌트를 마운트하지 못했습니다 : 템플릿 또는 렌더링 함수가 정의되지 않았습니다.<br></code></pre></td></tr></table></figure>
+
+<p>설명을 위해 두 개의 컴포넌트 A와 B가 있다고 합시다. 모듈시스템은 우선 A가 필요하다고 합니다. 하지만 첫번째 A는 B를 필요로 하고, B는 A를 필요로 합니다. 첫번째 A의 의존성을 해결하지 않고서는 무한 루프에 빠져버립니다. 이를 해결하려면 모듈 시스템에 “A는 B를 필요로 하나 B를 <strong>먼저</strong> 해결할 필요가 없습니다.” 라고 말할 수있는 지점을 제공해야합니다.</p>
+<p>여기에서는 <code>tree-folder</code> 컴포넌트를 그 지점으로 삼겠습니다. 패러독스를 만드는 자식은 <code>tree-folder-contents</code> 컴포넌트이므로, <code>beforeCreate</code> 라이프 사이클 훅 시점까지 기다렸다가 해당 컴포넌트를 등록합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">beforeCreate: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.$options.components.TreeFolderContents = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./tree-folder-contents.vue&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>또 다른 방법으론, 컴포넌트를 지역등록 하는 경우에 Webpack의 비동기 <code>import</code>를 이용할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">components: &#123;<br>  TreeFolderContents: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;./tree-folder-contents.vue&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>문제가 해결되었습니다!</p>
+<h3 id="인라인-템플릿"><a href="#인라인-템플릿" class="headerlink" title="인라인 템플릿"></a>인라인 템플릿</h3><p>하위 컴포넌트에 <code>inline-template</code> 이라는 특수한 속성이 존재할 때, 컴포넌트는 그 내용을 분산 된 내용으로 취급하지 않고 템플릿으로 사용합니다. 따라서 보다 유연한 템플릿 작성이 가능합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">inline-template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>이것은 컴포넌트의 자체 템플릿으로 컴파일됩니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>부모가 만들어낸 내용이 아닙니다.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그러나, <code>inline-template</code> 은 템플릿의 범위를 추론하기 더 어렵게 만듭니다. 가장 좋은 방법은 <code>template</code> 옵션을 사용하거나<code>.vue</code> 파일의<code>template</code> 엘리먼트를 사용하여 컴포넌트 내부에 템플릿을 정의하는 것입니다.</p>
+<h3 id="X-Templates"><a href="#X-Templates" class="headerlink" title="X-Templates"></a>X-Templates</h3><p>템플리트를 정의하는 또 다른 방법은 <code>text/x-template</code> 유형의 스크립트 엘리먼트 내부에 ID로 템플릿을 참조하는 것입니다. 예:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/x-template&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hello-world-template&quot;</span>&gt;</span><br><span class="handlebars"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello hello hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></span><br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;hello-world&#x27;</span>, &#123;<br>  template: <span class="hljs-string">&#x27;#hello-world-template&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>이 기능은 큰 템플릿이나 매우 작은 응용 프로그램의 데모에는 유용 할 수 있지만 템플릿을 나머지 컴포넌트 정의와 분리하기 때문에 피해야합니다.</p>
+<h3 id="v-once를-이용한-비용이-적게드는-정적-컴포넌트"><a href="#v-once를-이용한-비용이-적게드는-정적-컴포넌트" class="headerlink" title="v-once를 이용한 비용이 적게드는 정적 컴포넌트"></a><code>v-once</code>를 이용한 비용이 적게드는 정적 컴포넌트</h3><p>일반 HTML 엘리먼트를 렌더링하는 것은 Vue에서 매우 빠르지만 가끔 정적 콘텐츠가 <strong>많이</strong> 포함 된 컴포넌트가 있을 수 있습니다. 이런 경우,<code>v-once</code> 디렉티브를 루트 엘리먼트에 추가함으로써 캐시가 한번만 실행되도록 할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">Vue.component(<span class="hljs-string">&#x27;terms-of-service&#x27;</span>, &#123;<br>  template: <span class="hljs-string">&#x27;\</span><br><span class="hljs-string">    &lt;div v-once&gt;\</span><br><span class="hljs-string">      &lt;h1&gt;Terms of Service&lt;/h1&gt;\</span><br><span class="hljs-string">      ... a lot of static content ...\</span><br><span class="hljs-string">    &lt;/div&gt;\</span><br><span class="hljs-string">  &#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/forms.html">폼 입력 바인딩</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/components-registration.html">컴포넌트 등록</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    이 문서에 문제를 제보하거나 기여하고 싶은 부분이 있으십니까?
+    <a href="https://github.com/vuejs-kr/kr.vuejs.org/blob/master/src/v2/guide/components.md" rel="noopener" target="_blank">
+      Github에서 이 페이지를 수정하세요!
+    </a>
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1268 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Instalação — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/installation.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Instalação — Vue.js">
+    <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta property="og:image" content="https://br.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Instalação — Vue.js">
+    <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'br.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Você está navegando a documentação da v2.x e anterior.</span>
+    <a href="https://vuejsbr-docs-next.netlify.app/">Clique aqui</a> para a documentação da v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Pesquisa">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Aprenda</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentação</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guia</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Guia de Estilos</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemplos</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Livro de Receitas</a></li>
+      </ul>
+    </li>
+    <li><h4>Cursos em Vídeo</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecossistema</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Ajuda</h4></li>
+    <li><ul>
+      <li class="inline"><a href="https://github.com/vuejs-br/forum" class="nav-link" target="_blank" rel="noopener">Fórum</a>
+      <a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat (Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/comunidades" class="nav-link" target="_blank" rel="noopener">Comunidades</a>
+			<a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+    <li><h4>Ferramentas</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliotecas Oficiais</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Atualize-se</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Notícias Semanais</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Eventos</a></li>
+			<li class="inline"><a href="https://twitter.com/vuejs_brasil" class="nav-link" target="_blank" rel="noopener">Twitter</a>
+			<a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="http://vuejs-brasil.com.br/" class="nav-link" target="_blank" rel="noopener">Blog</a>
+			<a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/vagas" class="nav-link" target="_blank" rel="noopener">Empregos</a>
+			<a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Equipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Recursos</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Parceiros</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Temas</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Lista Geral "Awesome Vue"</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Bibliotecas Recomendadas</a></li>
+    <li><a href="https://empresas-usando-vuejs.netlify.com/" class="nav-link" target="_blank" rel="noopener">Empresas usando Vue no Brasil</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Patrocine</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#Doacoes-Unicas" class="nav-link">Doações Únicas</a></li>
+    <li><a href="/support-vuejs/#Ajuda-Recorrente" class="nav-link">Ajuda Recorrente</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Loja de Camisetas</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Traduções</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/installation.html" class="nav-link">Chinês</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/installation.html" class="nav-link">Coreano</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/installation.html" class="nav-link">Francês</a></li>
+    <li><a href="https://vuejs.org/v2/guide/installation.html" class="nav-link">Inglês</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/installation.html" class="nav-link">Japonês</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/installation.html" class="nav-link">Português</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/installation.html" class="nav-link">Russo</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/installation.html" class="nav-link">Vietnamita</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/installation.html" class="nav-link">Espanhol</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/installation.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guia
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essenciais</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link current">Instalação</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introdução</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">A Instância Vue</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaxe de Templates</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Dados Computados e Observadores</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Interligações de Classe e Estilo</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Renderização Condicional</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Renderização de Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Manipulação de Eventos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Interligações em Formulários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Básico sobre Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Componentes em Detalhes</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registro de Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Propriedades</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Eventos Personalizados</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dinâmicos & Assíncronos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Lidando com Casos Extremos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transições & Animações</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transições de Visibilidade e Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reuso & Composição</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Diretivas Personalizadas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Funções de Renderização & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filtros</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Ferramentas</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Componentes Single-File</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Publicando em Produção</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Escalonando</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Gerenciamento de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Segurança</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internamente</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migração</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migração do Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migração do Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migração do Vuex 0.6.x para 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Diversos</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Comparação com Outros Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Junte-se à Comunidade Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Conheça a Equipe</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar installation-guide">
+  <p class="tip warning v3-warning">
+    Você está navegando a documentação da v2.x e anterior.
+    Para a v3.x, <a href="https://vuejsbr-docs-next.netlify.app/">clique aqui</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Instalação</h1>
+  
+  
+    <h3 id="Sobre-a-Compatibilidade"><a href="#Sobre-a-Compatibilidade" class="headerlink" title="Sobre a Compatibilidade"></a>Sobre a Compatibilidade</h3><p>Vue <strong>não</strong> suporta IE8 e versões anteriores, pois usa funcionalidades ECMAScript 5 incompatíveis nestes. Entretanto, suporta todos os <a href="https://caniuse.com/#feat=es5" target="_blank" rel="noopener">navegadores compatíveis com ECMAScript 5</a>.</p>
+<h3 id="Versionamento-Semantico"><a href="#Versionamento-Semantico" class="headerlink" title="Versionamento Semântico"></a>Versionamento Semântico</h3><p>Vue segue o <a href="https://semver.org/lang/pt-BR/" target="_blank" rel="noopener">Versionamento Semântico</a> em todos os seus projetos oficiais onde são documentados features e comportamentos. Para comportamentos não documentados ou partes internas expostas, as mudanças estão descritas nas <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">notas de lançamento</a>.</p>
+<h3 id="Notas-de-Lancamento"><a href="#Notas-de-Lancamento" class="headerlink" title="Notas de Lançamento"></a>Notas de Lançamento</h3><p>Última versão estável: 2.6.14</p>
+<p>Notas detalhadas para cada versão estão disponíveis no <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Vue-Devtools"><a href="#Vue-Devtools" class="headerlink" title="Vue Devtools"></a>Vue Devtools</h2><p>Antes de mais nada, ao utilizar Vue também recomendamos que você instale a extensão <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> em seu navegador, lhe permitindo inspecionar e depurar suas aplicações Vue em uma interface mais amigável.</p>
+<h2 id="Inclusao-Direta-com-lt-script-gt"><a href="#Inclusao-Direta-com-lt-script-gt" class="headerlink" title="Inclusão Direta com &lt;script&gt;"></a>Inclusão Direta com <code>&lt;script&gt;</code></h2><p>Simplesmente faça o <em>download</em> e inclua a <em>tag</em> <code>&lt;script&gt;</code> com o caminho correto. <code>Vue</code> será registrado como uma variável global.</p>
+<p class="tip">Não use a versão minificada (de produção) durante o desenvolvimento. Você irá perder todos os avisos interessantes para os erros mais comuns!</p>
+
+<div id="downloads"><br>  <a class="button" href="/js/vue.js" download="">Versão Desenvolvedor</a><span class="light info">Mensagens de erro completas e modo de depuração</span><br><br>  <a class="button" href="/js/vue.min.js" download="">Versão de Produção</a><span class="light info">Sem mensagens de erro, 33.46KB min+gzip</span><br></div>
+
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>Para propósitos de prototipação ou aprendizado, você pode usar a versão mais recente com:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>Para produção, recomendados vincular a um número de versão específico  para evitar quebra de funções das versões mais novas:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.14"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>Se você está usando Modulos ES nativos, existe uma <em>build</em> compatível com isso:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js'</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>Você pode navegar pelos códigos-fonte do pacote NPM em <a href="https://cdn.jsdelivr.net/npm/vue/" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/vue</a>.</p>
+<p>Vue também está disponível no <a href="https://unpkg.com/vue@2.6.14/dist/vue.js" target="_blank" rel="noopener">unpkg</a> e no <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js" target="_blank" rel="noopener">cdnjs</a> (cdnjs leva algum tempo para sincronizar, então a última versão lançada pode não estar disponível ainda).</p>
+<p>Tenha certeza de ler sobre <a href="#Explicacao-das-Distribuicoes">as diferentes distribuições do Vue</a> e usar a <strong>versão para produção</strong> em seu projeto publicado, alterando <code>vue.js</code> por <code>vue.min.js</code>. Este é um pacote menor otimizado para desempenho ao invés de experiência de desenvolvimento.</p>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><p>NPM é o método de instalação recomendado para construção de aplicações em larga escala com o Vue. Ele combina perfeitamente com empacotadores de módulos, tais como <a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack</a> ou <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a>. Vue também oferece ferramentas para a criação de <a href="single-file-components.html">Componentes Single-File</a>.</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># última versão estável</span>
+$ npm install vue</code></pre>
+<h2 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h2><p>Vue.js oferece um <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">CLI oficial</a> para rapidamente construir ambiciosas <em>Single Page Applications</em>. Ele possui um conjunto de configurações de <em>build</em> prontas para um processo de trabalho de <em>front-end</em> moderno. Leva apenas alguns minutos para estar pronto e executando com <em>hot-reload</em>, <em>lint</em> ao salvar e empacotamento pronto para distribuição em produção. Dê uma olhada na <a href="https://cli.vuejs.org" target="_blank" rel="noopener">documentação do Vue CLI</a> para mais detalhes.</p>
+<p class="tip">Este assunto pressupõe conhecimento prévio em Node.js e ferramentas de <em>build</em> associadas. Se você é novo no Vue ou neste tipo de ferramenta, recomendamos fortemente que passe por todo <a href="./">o guia</a> antes de tentar usar o CLI.</p>
+
+<div class="vue-mastery"><a href="https://www.vuemastery.com/courses/real-world-vue-js/vue-cli" target="_blank" rel="sponsored noopener" title="Vue CLI">Assista a uma lição em vídeo gratuita na Vue Mastery</a></div>
+
+<h2 id="Explicacao-das-Distribuicoes"><a href="#Explicacao-das-Distribuicoes" class="headerlink" title="Explicação das Distribuições"></a>Explicação das Distribuições</h2><p>No <a href="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/" target="_blank" rel="noopener">diretório <code>dist/</code> do pacote NPM</a> você encontrará muitas distribuições diferentes do Vue.js. Aqui está uma visão geral das variações entre cada uma delas:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>UMD</th>
+<th>CommonJS</th>
+<th>ES Module (para empacotadores)</th>
+<th>ES Module (para navegadores)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Completa</strong></td>
+<td>vue.js</td>
+<td>vue.common.js</td>
+<td>vue.esm.js</td>
+<td>vue.esm.browser.js</td>
+</tr>
+<tr>
+<td><strong>Apenas Runtime</strong></td>
+<td>vue.runtime.js</td>
+<td>vue.runtime.common.js</td>
+<td>vue.runtime.esm.js</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Completa (produção)</strong></td>
+<td>vue.min.js</td>
+<td>-</td>
+<td>-</td>
+<td>vue.esm.browser.min.js</td>
+</tr>
+<tr>
+<td><strong>Apenas Runtime (produção)</strong></td>
+<td>vue.runtime.min.js</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Termos"><a href="#Termos" class="headerlink" title="Termos"></a>Termos</h3><ul>
+<li><p><strong>Completa</strong>: pacotes que contêm tanto o compilador quanto o motor de tempo de execução (em inglês, <em>runtime</em>).</p>
+</li>
+<li><p><strong>Compilador</strong>: código responsável por compilar Strings com <em>templates</em> para funções de renderização em JavaScript.</p>
+</li>
+<li><p><strong>Runtime</strong>: código responsável por criar instâncias Vue, renderizar e atualizar o Virtual DOM, etc. Basicamente, tudo menos o compilador.</p>
+</li>
+<li><p><strong><a href="https://github.com/umdjs/umd" target="_blank" rel="noopener">UMD</a></strong>: definição de módulos universal, pode ser usada diretamente no navegador através de uma <em>tag</em> <code>&lt;script&gt;</code>. O arquivo padrão no jsDelivr CDN em <a href="https://cdn.jsdelivr.net/npm/vue@2.6.14" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue@2.6.14</a> é a distribuição Compilador + Runtime em formato UMD (<code>vue.js</code>).</p>
+</li>
+<li><p><strong><a href="http://wiki.commonjs.org/wiki/Modules/1.1" target="_blank" rel="noopener">CommonJS</a></strong>: formato destinado a empacotadores antigos como <a href="http://browserify.org/" target="_blank" rel="noopener">browserify</a> ou <a href="https://webpack.github.io" target="_blank" rel="noopener">webpack 1</a>. O arquivo padrão para estes empacotadores (<code>pkg.main</code>) é a distribuição apenas Runtime em formato CommonJS (<code>vue.runtime.common.js</code>).</p>
+</li>
+<li><p><strong><a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="noopener">ES Module</a></strong>: a partir de 2.6 Vue fornece dois <em>builds</em> ES Modules (ESM):</p>
+<ul>
+<li><p>ESM para empacotadores: destinado ao uso com empacotadores modernos como o <a href="https://webpack.js.org" target="_blank" rel="noopener">webpack 2</a> ou <a href="https://rollupjs.org/" target="_blank" rel="noopener">rollup</a>. O formato ESM é projetado para ser estaticamente analisável, de modo que os empacotadores possam tirar proveito disso para realizar <em>“tree-shaking”</em> e eliminar o código não utilizado de seu pacote final. O arquivo padrão para estes empacotadores (<code>pkg.module</code>) é a distribuição apenas Runtime em formato ES Module (<code>vue.runtime.esm.js</code>).</p>
+</li>
+<li><p>ESM para navegadores (somente 2.6+): destinado a importações diretas em navegadores modernos via <code>&lt;script type=&quot;module&quot;&gt;</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Runtime-Compilador-vs-Runtime"><a href="#Runtime-Compilador-vs-Runtime" class="headerlink" title="Runtime + Compilador vs. Runtime"></a>Runtime + Compilador vs. Runtime</h3><p>Se você precisar compilar <em>templates</em> em tempo real no cliente (por exemplo, passando uma String na opção <code>template</code>, ou usando elementos pré-existentes no DOM através do HTML como <em>template</em>), você vai precisar do compilador e, portanto, do <em>build</em> completo:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Isso requer o compilador</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;&#123;&#123; hi &#125;&#125;&lt;/div&gt;'</span>
+&#125;)
+
+<span class="hljs-comment">// Isso não requer</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> h(<span class="hljs-string">'div'</span>, <span class="hljs-keyword">this</span>.hi)
+&#125;)</code></pre>
+<p>Ao utilizar <code>vue-loader</code> ou <code>vueify</code>, <em>templates</em> dentro de arquivos <code>*.vue</code> são pré-compilados para JavaScript durante o processo de construção. Você realmente não precisa do compilador no seu pacote final, desta forma pode utilizar apenas a distribuição Runtime.</p>
+<p>Uma vez que as distribuições apenas com o código de Runtime são aproximadamente 30% mais leves que as completas, você deve usá-las sempre que puder. Se você ainda assim desejar utilizar a distribuição completa, precisará configurar um <em>alias</em> no seu empacotador:</p>
+<h4 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h4><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">resolve</span>: &#123;
+    <span class="hljs-attr">alias</span>: &#123;
+      <span class="hljs-string">'vue$'</span>: <span class="hljs-string">'vue/dist/vue.esm.js'</span> <span class="hljs-comment">// 'vue.common.js' para webpack 1</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<h4 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h4><pre><code class="hljs js"><span class="hljs-keyword">const</span> alias = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rollup-plugin-alias'</span>)
+
+rollup(&#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">plugins</span>: [
+    alias(&#123;
+      <span class="hljs-string">'vue'</span>: <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'vue/dist/vue.esm.js'</span>)
+    &#125;)
+  ]
+&#125;)</code></pre>
+<h4 id="Browserify"><a href="#Browserify" class="headerlink" title="Browserify"></a>Browserify</h4><p>Adicione no <code>package.json</code> de seu projeto:</p>
+<pre><code class="hljs js">&#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-string">"browser"</span>: &#123;
+    <span class="hljs-string">"vue"</span>: <span class="hljs-string">"vue/dist/vue.common.js"</span>
+  &#125;
+&#125;</code></pre>
+<h4 id="Parcel"><a href="#Parcel" class="headerlink" title="Parcel"></a>Parcel</h4><p>Adicione no <code>package.json</code> de seu projeto:</p>
+<pre><code class="hljs js">&#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-string">"alias"</span>: &#123;
+    <span class="hljs-string">"vue"</span> : <span class="hljs-string">"./node_modules/vue/dist/vue.common.js"</span>
+  &#125;
+&#125;</code></pre>
+<h3 id="Desenvolvimento-vs-Producao"><a href="#Desenvolvimento-vs-Producao" class="headerlink" title="Desenvolvimento vs. Produção"></a>Desenvolvimento vs. Produção</h3><p>Modos de desenvolvimento/produção estão fixos no código das distribuições UMD: os arquivos não minificados são para desenvolvimento, os arquivos minificados são para produção.</p>
+<p>Distribuições CommonJS e ES Module são destinadas a empacotadores, desta forma não oferecemos versões minificadas. Você será responsável por minificar todo seu pacote final.</p>
+<p>Tais distribuições também preservam checagens à variável <code>process.env.NODE_ENV</code>, para determinar o modo de operação que utilizarão. Você deve configurar apropriadamente seu empacotador para alterar essa variável de ambiente corretamente, de forma a controlar o modo em que o Vue irá executar. Alterar <code>process.env.NODE_ENV</code> usando Strings literais também permite que minificadores como UglifyJS possam remover completamente blocos de código exclusivos de desenvolvimento, reduzindo o tamanho final do pacote.</p>
+<h4 id="Webpack-1"><a href="#Webpack-1" class="headerlink" title="Webpack"></a>Webpack</h4><p>No Webpack 4+, você pode usar a opção <code>mode</code>:</p>
+<pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">'production'</span>
+&#125;</code></pre>
+<p>No Webpack 3 e anteriores é necessário utilizar o <a href="https://webpack.js.org/plugins/define-plugin/" target="_blank" rel="noopener">DefinePlugin</a>:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>)
+
+<span class="hljs-built_in">module</span>.exports = &#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">new</span> webpack.DefinePlugin(&#123;
+      <span class="hljs-string">'process.env'</span>: &#123;
+        <span class="hljs-attr">NODE_ENV</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">'production'</span>)
+      &#125;
+    &#125;)
+  ]
+&#125;</code></pre>
+<h4 id="Rollup-1"><a href="#Rollup-1" class="headerlink" title="Rollup"></a>Rollup</h4><p>Utilize o <a href="https://github.com/rollup/rollup-plugin-replace" target="_blank" rel="noopener">rollup-plugin-replace</a>:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> replace = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rollup-plugin-replace'</span>)
+
+rollup(&#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">plugins</span>: [
+    replace(&#123;
+      <span class="hljs-string">'process.env.NODE_ENV'</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">'production'</span>)
+    &#125;)
+  ]
+&#125;).then(...)</code></pre>
+<h4 id="Browserify-1"><a href="#Browserify-1" class="headerlink" title="Browserify"></a>Browserify</h4><p>Aplique uma transformação <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a> global em seu pacote.</p>
+<pre><code class="hljs bash">NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m &gt; build.js</code></pre>
+<p>Veja também <a href="deployment.html">Dicas de Publicação para Produção</a>.</p>
+<h3 id="Ambientes-CSP"><a href="#Ambientes-CSP" class="headerlink" title="Ambientes CSP"></a>Ambientes CSP</h3><p>Alguns ambientes, como aplicativos do Google Chrome, forçam Content Security Policy (CSP), a qual proíbe o uso de <code>new Function()</code> para avaliar expressões. A distribuição completa depende deste recurso para compilar os <em>templates</em>, portanto não é viável nestes ambientes.</p>
+<p>Por outro lado, a distribuição apenas Runtime é totalmente compatível. Ao utilizar este tipo de distribuição com <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="noopener">Webpack + vue-loader</a> ou <a href="https://github.com/vuejs-templates/browserify-simple" target="_blank" rel="noopener">Browserify + vueify</a>, seus <em>templates</em> serão pré-compilados em funções <code>render</code>, as quais funcionam perfeitamente neste tipo de ambiente.</p>
+<h2 id="Compilacao-de-Desenvolvimento"><a href="#Compilacao-de-Desenvolvimento" class="headerlink" title="Compilação de Desenvolvimento"></a>Compilação de Desenvolvimento</h2><p><strong>Importante</strong>: os arquivos compilados no diretório <code>/dist</code> do GitHub são criados apenas nos lançamentos de novas versões. Se quiser usar o Vue a partir do código-fonte mais recente do GitHub (e portanto, possivelmente não estável), você terá que compilá-lo você mesmo!</p>
+<pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/vuejs/vue.git node_modules/vue
+<span class="hljs-built_in">cd</span> node_modules/vue
+npm install
+npm run build</code></pre>
+<h2 id="Bower"><a href="#Bower" class="headerlink" title="Bower"></a>Bower</h2><p>Apenas distribuições UMD estão disponíveis através do Bower.</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># última versão estável</span>
+$ bower install vue</code></pre>
+<h2 id="Modulos-AMD"><a href="#Modulos-AMD" class="headerlink" title="Módulos AMD"></a>Módulos AMD</h2><p>Todas as distribuições UMD podem ser utilizadas diretamente como módulos AMD.</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/index.html">Introdução</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Encontrou um erro ou quer contribuir com a documentação?
+    <a href="https://github.com/vuejs-br/br.vuejs.org/blob/master/src/v2/guide/installation.md" rel="noopener" target="_blank">
+      Edite isto no Github!
+    </a>
+    Deploy feito via
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

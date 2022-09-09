@@ -1,0 +1,1335 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Manipulação de Eventos — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/events.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/events.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/events.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/events.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/events.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/events.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/events.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/events.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Manipulação de Eventos — Vue.js">
+    <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta property="og:image" content="https://br.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Manipulação de Eventos — Vue.js">
+    <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'br.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Você está navegando a documentação da v2.x e anterior.</span>
+    <a href="https://vuejsbr-docs-next.netlify.app/">Clique aqui</a> para a documentação da v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Pesquisa">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Aprenda</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentação</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guia</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Guia de Estilos</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemplos</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Livro de Receitas</a></li>
+      </ul>
+    </li>
+    <li><h4>Cursos em Vídeo</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecossistema</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Ajuda</h4></li>
+    <li><ul>
+      <li class="inline"><a href="https://github.com/vuejs-br/forum" class="nav-link" target="_blank" rel="noopener">Fórum</a>
+      <a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat (Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/comunidades" class="nav-link" target="_blank" rel="noopener">Comunidades</a>
+			<a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+    <li><h4>Ferramentas</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliotecas Oficiais</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Atualize-se</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Notícias Semanais</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Eventos</a></li>
+			<li class="inline"><a href="https://twitter.com/vuejs_brasil" class="nav-link" target="_blank" rel="noopener">Twitter</a>
+			<a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="http://vuejs-brasil.com.br/" class="nav-link" target="_blank" rel="noopener">Blog</a>
+			<a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/vagas" class="nav-link" target="_blank" rel="noopener">Empregos</a>
+			<a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Equipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Recursos</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Parceiros</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Temas</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Lista Geral "Awesome Vue"</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Bibliotecas Recomendadas</a></li>
+    <li><a href="https://empresas-usando-vuejs.netlify.com/" class="nav-link" target="_blank" rel="noopener">Empresas usando Vue no Brasil</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Patrocine</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#Doacoes-Unicas" class="nav-link">Doações Únicas</a></li>
+    <li><a href="/support-vuejs/#Ajuda-Recorrente" class="nav-link">Ajuda Recorrente</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Loja de Camisetas</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Traduções</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/events.html" class="nav-link">Chinês</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/events.html" class="nav-link">Coreano</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/events.html" class="nav-link">Francês</a></li>
+    <li><a href="https://vuejs.org/v2/guide/events.html" class="nav-link">Inglês</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/events.html" class="nav-link">Japonês</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/events.html" class="nav-link">Português</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/events.html" class="nav-link">Russo</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/events.html" class="nav-link">Vietnamita</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/events.html" class="nav-link">Espanhol</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/events.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guia
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essenciais</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalação</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introdução</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">A Instância Vue</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaxe de Templates</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Dados Computados e Observadores</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Interligações de Classe e Estilo</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Renderização Condicional</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Renderização de Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link current">Manipulação de Eventos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Interligações em Formulários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Básico sobre Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Componentes em Detalhes</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registro de Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Propriedades</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Eventos Personalizados</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dinâmicos & Assíncronos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Lidando com Casos Extremos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transições & Animações</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transições de Visibilidade e Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reuso & Composição</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Diretivas Personalizadas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Funções de Renderização & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filtros</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Ferramentas</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Componentes Single-File</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Publicando em Produção</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Escalonando</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Gerenciamento de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Segurança</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internamente</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migração</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migração do Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migração do Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migração do Vuex 0.6.x para 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Diversos</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Comparação com Outros Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Junte-se à Comunidade Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Conheça a Equipe</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar events-guide">
+  <p class="tip warning v3-warning">
+    Você está navegando a documentação da v2.x e anterior.
+    Para a v3.x, <a href="https://vuejsbr-docs-next.netlify.app/">clique aqui</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Manipulação de Eventos</h1>
+  
+  
+    <div class="vueschool"><a href="https://vueschool.io/lessons/vuejs-user-events?friend=vuejs" target="_blank" rel="sponsored noopener" title="Aprenda como manipular eventos na Vue School">Aprenda como manipular eventos em uma aula gratuita na Vue School</a></div>
+
+<h2 id="Escutando-Eventos"><a href="#Escutando-Eventos" class="headerlink" title="Escutando Eventos"></a>Escutando Eventos</h2><p>Você pode usar a diretiva <code>v-on</code> para escutar eventos do DOM e rodar algum JavaScript quando tal evento for disparado.</p>
+<p>Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"counter += 1"</span>&gt;</span>Adiciona 1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Quantas vezes o botão acima foi clicado: &#123;&#123; counter &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> example1 = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-1'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">counter</span>: <span class="hljs-number">0</span>
+  &#125;
+&#125;)</code></pre>
+<p>Resultado:</p>
+
+<div id="example-1" class="demo">
+  <button v-on:click="counter += 1">Adiciona 1</button>
+  <p>Quantas vezes o botão acima foi clicado: {{ counter }}</p>
+</div>
+<script>
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
+</script>
+
+<h2 id="Metodos-em-Manipuladores"><a href="#Metodos-em-Manipuladores" class="headerlink" title="Métodos em Manipuladores"></a>Métodos em Manipuladores</h2><p>A lógica para muitos manipuladores de evento será mais complexa, sendo assim manter diretamente código JavaScript no valor do atributo <code>v-on</code> não é viável. É por isso que <code>v-on</code> também pode aceitar o nome de um método que você gostaria de chamar.</p>
+<p>Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-2"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- `greet` é o nome de um método definido abaixo --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"greet"</span>&gt;</span>Cumprimentar<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> example2 = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-2'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Vue.js'</span>
+  &#125;,
+  <span class="hljs-comment">// define métodos dentro do objeto `methods`</span>
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">greet</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>&#123;
+      <span class="hljs-comment">// `this` dentro de métodos aponta para a instância Vue</span>
+      alert(<span class="hljs-string">'Olá '</span> + <span class="hljs-keyword">this</span>.name + <span class="hljs-string">'!'</span>)
+      <span class="hljs-comment">// `event` é o evento DOM nativo</span>
+      <span class="hljs-keyword">if</span> (event) &#123;
+        alert(event.target.tagName)
+      &#125;
+    &#125;
+  &#125;
+&#125;)
+
+<span class="hljs-comment">// você pode invocar métodos no JavaScript também</span>
+example2.greet() <span class="hljs-comment">// =&gt; 'Olá Vue.js!'</span></code></pre>
+<p>Resultado:</p>
+
+<div id="example-2" class="demo">
+  <button v-on:click="greet">Cumprimentar</button>
+</div>
+<script>
+var example2 = new Vue({
+  el: '#example-2',
+  data: {
+    name: 'Vue.js'
+  },
+  methods: {
+    greet: function (event) {
+      alert('Olá ' + this.name + '!')
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
+})
+</script>
+
+<h2 id="Chamada-Direta-de-Metodos"><a href="#Chamada-Direta-de-Metodos" class="headerlink" title="Chamada Direta de Métodos"></a>Chamada Direta de Métodos</h2><p>Em vez de fazer uma ligação apenas ao nome de um método, também podemos chamar métodos com uma instrução JavaScript diretamente no <code>v-on</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"say('oi')"</span>&gt;</span>Diga oi<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"say('tchau')"</span>&gt;</span>Diga tchau<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-3'</span>,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">say</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">message</span>) </span>&#123;
+      alert(message)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<p>Resultado:<br>
+<div id="example-3" class="demo">
+  <button v-on:click="say('oi')">Diga oi</button>
+  <button v-on:click="say('tchau')">Diga tchau</button>
+</div>
+<script>
+new Vue({
+  el: '#example-3',
+  methods: {
+    say: function (message) {
+      alert(message)
+    }
+  }
+})
+</script>
+</p>
+<p>Às vezes, também precisamos acessar o evento original do DOM em um manipulador. Você pode passá-lo a um método usando a variável especial <code>$event</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"warn('Form cannot be submitted yet.', $event)"</span>&gt;</span>
+  Enviar
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">warn</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">message, event</span>) </span>&#123;
+    <span class="hljs-comment">// agora temos acesso ao evento nativo</span>
+    <span class="hljs-keyword">if</span> (event) &#123;
+      event.preventDefault()
+    &#125;
+    alert(message)
+  &#125;
+&#125;</code></pre>
+<h2 id="Modificadores-de-Evento"><a href="#Modificadores-de-Evento" class="headerlink" title="Modificadores de Evento"></a>Modificadores de Evento</h2><p>É muito comum precisar chamar <code>event.preventDefault()</code> ou <code>event.stopPropagation()</code> em manipuladores de eventos. Embora possamos fazer isto facilmente dentro de métodos, seria melhor se os métodos pudessem lidar apenas com a lógica dos dados, em vez de ter que lidar com detalhes de eventos DOM.</p>
+<p>Para resolver esse problema, o Vue fornece <strong>modificadores de evento</strong> para <code>v-on</code>. É só se lembrar que modificadores são sufixos da diretiva, indicados após um ponto.</p>
+<ul>
+<li><code>.stop</code></li>
+<li><code>.prevent</code></li>
+<li><code>.capture</code></li>
+<li><code>.self</code></li>
+<li><code>.once</code></li>
+<li><code>.passive</code></li>
+</ul>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- a propagação do evento click será interrompida --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-on:click.stop</span>=<span class="hljs-string">"doThis"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- o evento submit deixará de recarregar a página --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">v-on:submit.prevent</span>=<span class="hljs-string">"onSubmit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- modificadores podem ser encadeados --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-on:click.stop.prevent</span>=<span class="hljs-string">"doThat"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- é possível utilizar apenas o modificador --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">v-on:submit.prevent</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- usar modo de captura ao adicionar o evento --&gt;</span>
+<span class="hljs-comment">&lt;!-- ou seja, um evento em um elemento interno é tratado aqui após ser tratado por aquele elemento --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-on:click.capture</span>=<span class="hljs-string">"doThis"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- só aciona o manipulador se event.target é o próprio elemento --&gt;</span>
+<span class="hljs-comment">&lt;!-- isto é, não aciona a partir de um elemento filho --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-on:click.self</span>=<span class="hljs-string">"doThat"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p class="tip">A ordem importa ao utilizar modificadores pois o código relevante é gerado na mesma ordem. Desta forma, <code>v-on:click.prevent.self</code> prevenirá <strong>todos os cliques</strong>, enquanto <code>v-on:click.self.prevent</code> prevenirá apenas cliques no próprio elemento.</p>
+
+<blockquote>
+<p>Novo em 2.1.4+</p>
+</blockquote>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- o evento click será disparado apenas uma vez --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-on:click.once</span>=<span class="hljs-string">"doThis"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+<p>Diferente dos outros modificadores, exclusivos para eventos nativos, o <code>.once</code> também pode ser usado em <a href="components-custom-events.html">eventos de componentes</a>. Se você ainda não leu sobre componentes, não se preocupe com isso neste momento.</p>
+<blockquote>
+<p>Novo em 2.3.0+</p>
+</blockquote>
+<p>Vue também oferece o modificador <code>.passive</code>, correspondendo à <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Parameters" target="_blank" rel="noopener">opção <code>passive</code> do <code>addEventListener</code></a>.</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- o comportamento padrão do evento scroll (rolar) acontecerá --&gt;</span>
+<span class="hljs-comment">&lt;!-- imediatamente, ao invés de aguardar `onScroll` completar   --&gt;</span>
+<span class="hljs-comment">&lt;!-- para descobrir se ele chama `event.preventDefault()`       --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-on:scroll.passive</span>=<span class="hljs-string">"onScroll"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>O <code>.passive</code> é especialmente útil para otimizar desempenho em dispositivos móveis.</p>
+<p class="tip">Não use <code>.passive</code> e <code>.prevent</code> juntos, pois <code>.prevent</code> será ignorado e seu navegador provavelmente exibirá um aviso. Lembre-se, <code>.passive</code> comunica ao navegador que você <em>não</em> quer prevenir o comportamento padrão do evento.</p>
+
+<h2 id="Modificadores-de-Teclado"><a href="#Modificadores-de-Teclado" class="headerlink" title="Modificadores de Teclado"></a>Modificadores de Teclado</h2><p>Quando escutamos eventos do teclado, precisamos muitas vezes verificar a ocorrência de teclas específicas. O Vue também permite a adição de modificadores <code>v-on</code> ao escutar eventos de teclado:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- só chama `vm.submit()` quando o `key` é `Enter` --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup.enter</span>=<span class="hljs-string">"submit"</span>&gt;</span></code></pre>
+<p>Você pode usar diretamente qualquer nome de chave válido exposto via <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values" target="_blank" rel="noopener"><code>KeyboardEvent.key</code></a> como modificadores, convertendo-os em kebab-case.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup.page-down</span>=<span class="hljs-string">"onPageDown"</span>&gt;</span></code></pre>
+<p>No exemplo acima, o manipulador só será chamado se <code>$event.key</code> for igual a <code>&#39;PageDown&#39;</code>.</p>
+<h3 id="Key-Codes"><a href="#Key-Codes" class="headerlink" title="Key Codes"></a>Key Codes</h3><p class="tip">O uso de eventos <code>keyCode</code> <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode" target="_blank" rel="noopener">está obsoleto</a> e pode não ser suportado em novos navegadores.</p>
+
+<p>Usando os atributos <code>keyCode</code> também é permitido:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup.13</span>=<span class="hljs-string">"submit"</span>&gt;</span></code></pre>
+<p>O Vue fornece apelidos para os códigos de teclas mais comuns ​​quando necessário para suporte a um navegador legado:</p>
+<ul>
+<li><code>.enter</code></li>
+<li><code>.tab</code></li>
+<li><code>.delete</code> (captura tanto “Delete” quanto “Backspace”)</li>
+<li><code>.esc</code></li>
+<li><code>.space</code></li>
+<li><code>.up</code></li>
+<li><code>.down</code></li>
+<li><code>.left</code></li>
+<li><code>.right</code></li>
+</ul>
+<p class="tip">Algumas teclas (<code>.esc</code> e todas as teclas de seta) têm valores <code>key</code> inconsistentes no IE9, portanto, esses apelidos internos devem ter preferência se você precisar dar suporte ao IE9.</p>
+
+<p>Se necessário, defina <a href="../api/#keyCodes">apelidos personalizados</a> através do objeto global <code>config.keyCodes</code>:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// habilita `v-on:keyup.f1`</span>
+Vue.config.keyCodes.f1 = <span class="hljs-number">112</span></code></pre>
+<h2 id="Teclas-Modificadoras-de-Sistema"><a href="#Teclas-Modificadoras-de-Sistema" class="headerlink" title="Teclas Modificadoras de Sistema"></a>Teclas Modificadoras de Sistema</h2><blockquote>
+<p>Novo em 2.1.0+</p>
+</blockquote>
+<p>Você pode utilizar os modificadores a seguir para acionar eventos de <em>mouse</em> ou teclado apenas quando o modificador correspondente estiver acionado:</p>
+<ul>
+<li><code>.ctrl</code></li>
+<li><code>.alt</code></li>
+<li><code>.shift</code></li>
+<li><code>.meta</code></li>
+</ul>
+<blockquote>
+<p>Nota: Nos teclados Macintosh, meta é a tecla de comando (⌘). Nos teclados Windows, meta é a tecla Windows (⊞). Nos teclados Sun Microsystems, meta é marcada como um diamante sólido (◆). Em alguns teclados, especificamente em máquinas MIT e Lisp, como o teclado Knight e teclados space-cadet, meta é marcada como “META”. Em teclados Symbolics, meta é marcada como “META” ou “Meta”.</p>
+</blockquote>
+<p>Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Alt + C --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup.alt.67</span>=<span class="hljs-string">"clear"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Ctrl + Click --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-on:click.ctrl</span>=<span class="hljs-string">"doSomething"</span>&gt;</span>Faça alguma coisa<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p class="tip">Teclas modificadoras são diferentes de teclas comuns, e quando utilizadas com eventos <code>keyup</code>, precisam estar pressionadas quando o evento é emitido. Em outras palavras, <code>keyup.ctrl</code> só vai disparar se você soltar alguma tecla enquanto ainda estiver segurando <code>ctrl</code>. E não irá disparar se você soltar a tecla <code>ctrl</code> sozinha. Se você deseja tal comportamento, use o <code>keyCode</code> para <code>ctrl</code>: <code>keyup.17</code>.</p>
+
+<h3 id="Modificar-exact"><a href="#Modificar-exact" class="headerlink" title="Modificar .exact"></a>Modificar <code>.exact</code></h3><blockquote>
+<p>Novo em 2.5.0+</p>
+</blockquote>
+<p>O modificador <code>.exact</code> permite controlar a exata combinação de modificadores de sistema que deve ser pressionada para que o gatilho dispare.</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- dispara mesmo se Alt ou Shift também estiverem pressionados --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click.ctrl</span>=<span class="hljs-string">"onClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- dispara quando somente Ctrl estiver pressionado --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click.ctrl.exact</span>=<span class="hljs-string">"onCtrlClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- dispara somente se não houverem teclas de sistema pressionadas --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click.exact</span>=<span class="hljs-string">"onClick"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<h3 id="Modificadores-de-Mouse"><a href="#Modificadores-de-Mouse" class="headerlink" title="Modificadores de Mouse"></a>Modificadores de Mouse</h3><blockquote>
+<p>Novo em 2.2.0+</p>
+</blockquote>
+<ul>
+<li><code>.left</code></li>
+<li><code>.right</code></li>
+<li><code>.middle</code></li>
+</ul>
+<p>Estes modificadores restringem o manipulador a eventos disparados por um botão específico do <em>mouse</em>, respectivamente o botão da esquerda, o da direita e o central (quando existente).</p>
+<h2 id="Por-Que-Escutas-no-HTML"><a href="#Por-Que-Escutas-no-HTML" class="headerlink" title="Por Que Escutas no HTML?"></a>Por Que Escutas no HTML?</h2><p>Você pode estar pensando que esta abordagem de escutas de evento viola as boas e velhas práticas sobre “separação de responsabilidades”. Fique tranquilo - como todas as funções de manipuladores e expressões Vue são estritamente ligadas ao <em>ViewModel</em> que está manipulando o modo de exibição atual, essa abordagem não causará qualquer dificuldade de manutenção. Na verdade, há vários benefícios em usar <code>v-on</code> no <em>template</em>:</p>
+<ol>
+<li><p>É mais fácil localizar as implementações de função de manipulador dentro de seu código JS deslizando sobre o <em>template</em> HTML.</p>
+</li>
+<li><p>Como você não tem que manualmente anexar escutas a eventos em JS, seu código de <em>ViewModel</em> pode conter apenas a lógica pura e está livre de manipulação DOM. Isto torna mais fácil de testar.</p>
+</li>
+<li><p>Quando um <em>ViewModel</em> é destruído, todas escutas a eventos são removidas automaticamente. Você não precisa se preocupar em removê-las explicitamente.</p>
+</li>
+</ol>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/list.html">Renderização de Listas</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/forms.html">Interligações em Formulários</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Encontrou um erro ou quer contribuir com a documentação?
+    <a href="https://github.com/vuejs-br/br.vuejs.org/blob/master/src/v2/guide/events.md" rel="noopener" target="_blank">
+      Edite isto no Github!
+    </a>
+    Deploy feito via
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

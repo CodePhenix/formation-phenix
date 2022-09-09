@@ -1,0 +1,1505 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Básico sobre Componentes — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/components.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Básico sobre Componentes — Vue.js">
+    <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta property="og:image" content="https://br.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Básico sobre Componentes — Vue.js">
+    <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'br.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Você está navegando a documentação da v2.x e anterior.</span>
+    <a href="https://vuejsbr-docs-next.netlify.app/">Clique aqui</a> para a documentação da v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Pesquisa">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Aprenda</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentação</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guia</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Guia de Estilos</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemplos</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Livro de Receitas</a></li>
+      </ul>
+    </li>
+    <li><h4>Cursos em Vídeo</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecossistema</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Ajuda</h4></li>
+    <li><ul>
+      <li class="inline"><a href="https://github.com/vuejs-br/forum" class="nav-link" target="_blank" rel="noopener">Fórum</a>
+      <a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat (Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/comunidades" class="nav-link" target="_blank" rel="noopener">Comunidades</a>
+			<a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+    <li><h4>Ferramentas</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliotecas Oficiais</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Atualize-se</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Notícias Semanais</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Eventos</a></li>
+			<li class="inline"><a href="https://twitter.com/vuejs_brasil" class="nav-link" target="_blank" rel="noopener">Twitter</a>
+			<a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="http://vuejs-brasil.com.br/" class="nav-link" target="_blank" rel="noopener">Blog</a>
+			<a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/vagas" class="nav-link" target="_blank" rel="noopener">Empregos</a>
+			<a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Equipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Recursos</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Parceiros</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Temas</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Lista Geral "Awesome Vue"</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Bibliotecas Recomendadas</a></li>
+    <li><a href="https://empresas-usando-vuejs.netlify.com/" class="nav-link" target="_blank" rel="noopener">Empresas usando Vue no Brasil</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Patrocine</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#Doacoes-Unicas" class="nav-link">Doações Únicas</a></li>
+    <li><a href="/support-vuejs/#Ajuda-Recorrente" class="nav-link">Ajuda Recorrente</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Loja de Camisetas</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Traduções</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/components.html" class="nav-link">Chinês</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/components.html" class="nav-link">Coreano</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components.html" class="nav-link">Francês</a></li>
+    <li><a href="https://vuejs.org/v2/guide/components.html" class="nav-link">Inglês</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components.html" class="nav-link">Japonês</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components.html" class="nav-link">Português</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components.html" class="nav-link">Russo</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components.html" class="nav-link">Vietnamita</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components.html" class="nav-link">Espanhol</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/components.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guia
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essenciais</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalação</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introdução</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">A Instância Vue</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaxe de Templates</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Dados Computados e Observadores</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Interligações de Classe e Estilo</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Renderização Condicional</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Renderização de Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Manipulação de Eventos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Interligações em Formulários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link current">Básico sobre Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Componentes em Detalhes</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registro de Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Propriedades</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Eventos Personalizados</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dinâmicos & Assíncronos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Lidando com Casos Extremos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transições & Animações</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transições de Visibilidade e Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reuso & Composição</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Diretivas Personalizadas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Funções de Renderização & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filtros</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Ferramentas</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Componentes Single-File</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Publicando em Produção</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Escalonando</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Gerenciamento de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Segurança</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internamente</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migração</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migração do Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migração do Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migração do Vuex 0.6.x para 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Diversos</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Comparação com Outros Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Junte-se à Comunidade Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Conheça a Equipe</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar components-guide">
+  <p class="tip warning v3-warning">
+    Você está navegando a documentação da v2.x e anterior.
+    Para a v3.x, <a href="https://vuejsbr-docs-next.netlify.app/">clique aqui</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Básico sobre Componentes</h1>
+  
+  
+    <div class="vueschool"><a href="https://vueschool.io/courses/vuejs-components-fundamentals?friend=vuejs" target="_blank" rel="sponsored noopener" title="Curso Gratuito de Fundamentos em Componentes Vue.js">Assista a um curso em vídeo gratuito na Vue School</a></div>
+
+<h2 id="Exemplo-Base"><a href="#Exemplo-Base" class="headerlink" title="Exemplo Base"></a>Exemplo Base</h2><p>Aqui está um exemplo de um componente Vue:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Definindo novo componente chamado button-counter</span>
+Vue.component(<span class="hljs-string">'button-counter'</span>, &#123;
+  <span class="hljs-attr">data</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> &#123;
+      <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>
+    &#125;
+  &#125;,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;button v-on:click="count++"&gt;Você clicou em mim &#123;&#123; count &#125;&#125; vezes.&lt;/button&gt;'</span>
+&#125;)</code></pre>
+<p>Componentes são instâncias reutilizáveis do Vue com um nome: Nesse caso, <code>&lt;button-counter&gt;</code>. Podemos usar esses componentes como um elemento personalizado dentro da instância Vue raiz criada com <code>new Vue</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"components-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button-counter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button-counter</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123; <span class="hljs-attr">el</span>: <span class="hljs-string">'#components-demo'</span> &#125;)</code></pre>
+
+<div id="components-demo" class="demo">
+  <button-counter></button-counter>
+</div>
+<script>
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count += 1">Você clicou em mim {{ count }} vezes.</button>'
+})
+new Vue({ el: '#components-demo' })
+</script>
+
+<p>Como componentes são instância Vue reutilizáveis, eles aceitam as mesmas opções que <code>new Vue</code>, como <code>data</code>, <code>computed</code>, <code>watch</code>, <code>methods</code> e gatilhos de ciclo de vida. As únicas exceções são as poucas opções específicas de raiz, como <code>el</code>.</p>
+<h2 id="Reutilizando-Componentes"><a href="#Reutilizando-Componentes" class="headerlink" title="Reutilizando Componentes"></a>Reutilizando Componentes</h2><p>Componentes podem ser reutilizados quantas vezes você quiser:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"components-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button-counter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button-counter</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button-counter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button-counter</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button-counter</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button-counter</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<div id="components-demo2" class="demo">
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+  <button-counter></button-counter>
+</div>
+<script>
+new Vue({ el: '#components-demo2' })
+</script>
+
+<p>Perceba que ao clicar nos botões, cada um mantêm seu próprio e único <code>count</code>. Isso acontece porque cada vez que você usa um componente, uma nova  <strong>instância</strong> dele é criada.</p>
+<h3 id="Use-data-como-uma-Funcao"><a href="#Use-data-como-uma-Funcao" class="headerlink" title="Use data como uma Função"></a>Use <code>data</code> como uma Função</h3><p>Quando definimos o componente <code>&lt;button-counter&gt;</code>, você talvez percebeu que a opção <code>data</code> não recebeu um objeto, como abaixo:</p>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>
+&#125;</code></pre>
+<p>Em vez disso, <strong>a opção <code>data</code> de um componente precisa ser uma função</strong>, para que cada instância possa manter uma cópia independente do object data retornado:</p>
+<pre><code class="hljs js">data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>
+  &#125;
+&#125;</code></pre>
+<p>Se Vue não tivesse essa regra, clicar em um botão afetaria a data de <em>todas outras instâncias</em>, como abaixo:</p>
+
+<div id="components-demo3" class="demo">
+  <button-counter2></button-counter2>
+  <button-counter2></button-counter2>
+  <button-counter2></button-counter2>
+</div>
+<script>
+var buttonCounter2Data = {
+  count: 0
+}
+Vue.component('button-counter2', {
+  data: function () {
+    return buttonCounter2Data
+  },
+  template: '<button v-on:click="count++">Você clicou em mim {{ count }} vezes.</button>'
+})
+new Vue({ el: '#components-demo3' })
+</script>
+
+<h2 id="Organizando-Componentes"><a href="#Organizando-Componentes" class="headerlink" title="Organizando Componentes"></a>Organizando Componentes</h2><p>É comum que um aplicativo seja organizado em uma árvore de componentes aninhados:</p>
+<p><img src="/images/components.png" alt="Component Tree"></p>
+<p>Por exemplo, você pode ter componentes para o cabeçalho, barra lateral e área de conteúdo, cada um normalmente contendo outros componentes para navegação, como links, postagens de blog, etc.</p>
+<p>Para usar esses componentes em templates, eles devem ser registrados para que Vue saiba deles. Há dois tipos de registro de componentes, sendo eles: <strong>global</strong> e <strong>local</strong>. Até agora, nós só registramos componentes de maneira global, usando <code>Vue.component</code>:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'my-component-name'</span>, &#123;
+  <span class="hljs-comment">// ... options ...</span>
+&#125;)</code></pre>
+<p>Componentes registrados globalmente podem ser usados no template de qualquer instância Vue raiz (<code>new Vue</code>) criada posteriormente – e até mesmo dentro de todos subcomponentes dessa árvore de componentes da instância Vue.</p>
+<p>Isso é tudo que você precisa saber sobre registro por hora, mas assim que você terminar de ler essa página e se sentir confortável com o conteúdo, recomendamos retornar mais tarde para ler o guia completo em <a href="components-registration.html">Component Registration</a>.</p>
+<h2 id="Passando-Dados-aos-Filhos-com-Props"><a href="#Passando-Dados-aos-Filhos-com-Props" class="headerlink" title="Passando Dados aos Filhos com Props"></a>Passando Dados aos Filhos com Props</h2><p>Anteriormente falamos sobre criar componentes para postagens de blog. O problema é que, o componente não será útil a não ser que você possa passar dados para ele, como título e conteúdo da postagem específica que desejamos mostrar. É aí que props entra.</p>
+<p>Props são atributos personalizáveis que você pode registrar em um componente. Quando um valor é passado para um atributo prop, ele torna-se uma propriedade daquela instância de componente. Para passar um título ao nosso componente de postagem de blog, podemos incluir na lista de props que esse componente aceita, usando a opção <code>props</code>:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'blog-post'</span>, &#123;
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'title'</span>],
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'</span>
+&#125;)</code></pre>
+<p>Um componente pode ter quantos props você quiser, e por padrão, qualquer valor pode ser passado para qualquer prop. No template acima, você verá que nós podemos acessar esse valor dentro da instância do componente, da mesma forma como <code>data</code>.</p>
+<p>Assim que um prop é registrado, você pode passar dados para ele como um atributo personalizado, dessa forma:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Minha jornada com Vue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Postagens com Vue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Porque Vue é tão divertido"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
+
+<div id="blog-post-demo" class="demo">
+  <blog-post1 title="Minha jornada com Vue"></blog-post1>
+  <blog-post1 title="Postagens com Vue"></blog-post1>
+  <blog-post1 title="Porque Vue é tão divertido"></blog-post1>
+</div>
+<script>
+Vue.component('blog-post1', {
+  props: ['title'],
+  template: '<h3>{{ title }}</h3>'
+})
+new Vue({ el: '#blog-post-demo' })
+</script>
+
+<p>Todavia, tipicamente você vai querer ter um array de posts em <code>data</code>:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#blog-post-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">posts</span>: [
+      &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Minha jornada com Vue'</span> &#125;,
+      &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Postagens com Vue'</span> &#125;,
+      &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Porque Vue é tão divertido'</span> &#125;
+    ]
+  &#125;
+&#125;)</code></pre>
+<p>Quando quisermos renderizar um componente para cada:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span>
+  <span class="hljs-attr">v-for</span>=<span class="hljs-string">"post in posts"</span>
+  <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"post.id"</span>
+  <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">"post.title"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
+<p>No exemplo acima, você verá que podemos usar <code>v-bind</code> para dinamicamente passar props. Isso é especialmente útil quando você não sabe, de antemão, exatamente que tipo de conteúdo irá renderizar, como ao <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-component-blog-post-example" target="_blank" rel="noopener">obter postagens de uma API</a>.</p>
+<p>Isso é tudo que você precisa saber de props por hora, mas assim que você terminar de ler essa página e se sentir confortável com o conteúdo, recomendamos retornar mais tarde para ler o guia completo em <a href="components-props.html">Props</a>.</p>
+<h2 id="Um-Elemento-Raiz-Unico"><a href="#Um-Elemento-Raiz-Unico" class="headerlink" title="Um Elemento Raiz Único"></a>Um Elemento Raiz Único</h2><p>Quando construindo um componente <code>&lt;blog-post&gt;</code>, seu template eventualmente conterá mais que apenas o título:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></code></pre>
+<p>No mínimo, você vai querer incluir o conteúdo da postagem:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"content"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>No entando, se você tentar isso no seu template, Vue mostrará um erro, explicando que <strong>todo componente deve ter um único elemento raiz</strong>. Você pode corrigir esse problema por envolver todo o template em um elemento pai, como abaixo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"blog-post"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"content"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>À medida que nosso componente cresce, é provável que nós iremos mostrar mais que apenas o título e o conteúdo da postagem, como também a data de publicação, comentários e mais. Definir um prop para cada pedaço de informação pode se tornar bem irritante:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span>
+  <span class="hljs-attr">v-for</span>=<span class="hljs-string">"post in posts"</span>
+  <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"post.id"</span>
+  <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">"post.title"</span>
+  <span class="hljs-attr">v-bind:content</span>=<span class="hljs-string">"post.content"</span>
+  <span class="hljs-attr">v-bind:publishedAt</span>=<span class="hljs-string">"post.publishedAt"</span>
+  <span class="hljs-attr">v-bind:comments</span>=<span class="hljs-string">"post.comments"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
+<p>Então agora é uma boa hora para reestruturar o componente <code>&lt;blog-post&gt;</code> para aceitar um único prop <code>post</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span>
+  <span class="hljs-attr">v-for</span>=<span class="hljs-string">"post in posts"</span>
+  <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"post.id"</span>
+  <span class="hljs-attr">v-bind:post</span>=<span class="hljs-string">"post"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'blog-post'</span>, &#123;
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'post'</span>],
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;div class="blog-post"&gt;
+      &lt;h3&gt;&#123;&#123; post.title &#125;&#125;&lt;/h3&gt;
+      &lt;div v-html="post.content"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  `</span>
+&#125;)</code></pre>
+<p class="tip">O exemplo acima (e alguns outros futuramente) usa <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/template_strings" target="_blank" rel="noopener">Template strings</a> para fazer templates de mais de uma linha mais legíveis. No entanto, isso não é suportado pelo Internet Explorer (IE), se você precisa de suporte para IE e não está usando uma ferramenta como Babel ou TypeScript, você ainda pode fazer da forma <a href="https://css-tricks.com/snippets/javascript/multiline-string-variables-in-javascript/" target="_blank" rel="noopener">pré-ES6</a>.</p>
+
+<p>Agora, toda vez que uma nova propriedade é adicionado ao objeto <code>post</code>, ela será automaticamente acessível dentro do componente <code>&lt;blog-post&gt;</code>.</p>
+<h2 id="Escutando-Eventos-de-Componentes-Filho"><a href="#Escutando-Eventos-de-Componentes-Filho" class="headerlink" title="Escutando Eventos de Componentes Filho"></a>Escutando Eventos de Componentes Filho</h2><p>À medida que desenvolvemos nosso componente <code>&lt;blog-post&gt;</code>, alguns recursos podem precisar comunicar de volta para o componente pai. Por exemplo, talvez decidamos incluir uma funcionalidade de acessibilidade que aumenta o tamanho da fonte das nossas postagens, enquanto deixa o resto da página no tamanho padrão:</p>
+<p>No componente pai, nós podemos suportar essa funcionalidade por adicionar a propriedade <code>postFontSize</code> para data:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#blog-posts-events-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">posts</span>: [<span class="hljs-comment">/* ... */</span>],
+    <span class="hljs-attr">postFontSize</span>: <span class="hljs-number">1</span>
+  &#125;
+&#125;)</code></pre>
+<p>Que pode ser usada no template para controlar o tamanho de todas postagens:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"blog-posts-events-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">"&#123; fontSize: postFontSize + 'em' &#125;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"post in posts"</span>
+      <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"post.id"</span>
+      <span class="hljs-attr">v-bind:post</span>=<span class="hljs-string">"post"</span>
+    &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>Agora vamos adicionar um botão para aumentar o tamanho do texto logo à direita de cada postagem:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'blog-post'</span>, &#123;
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'post'</span>],
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;div class="blog-post"&gt;
+      &lt;h3&gt;&#123;&#123; post.title &#125;&#125;&lt;/h3&gt;
+      &lt;button&gt;
+        Aumentar fonte
+      &lt;/button&gt;
+      &lt;div v-html="post.content"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  `</span>
+&#125;)</code></pre>
+<p>O problema é que, esse botão não faz nada:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+  Aumentar fonte
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Quando clicamos no botão, precisamos comunicar o componente pai que ele deve aumentar o tamanho da fonte de todas postagens. Felizmente, instâncias Vue provêm um evento para resolver esse problema. O pai pode escolher escutar qualquer evento na instância do componente filho com <code>v-on</code>, assim como faríamos com um evento DOM nativo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span>
+  <span class="hljs-attr">...</span>
+  <span class="hljs-attr">v-on:enlarge-text</span>=<span class="hljs-string">"postFontSize += 0.1"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
+<p>Então o componente filho pode emitir um evento em si mesmo chamando o <a href="../api/#vm-emit">método <strong><code>$emit</code></strong></a>, passando o nome do evento:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"$emit('enlarge-text')"</span>&gt;</span>
+  Enlarge text
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Graças ao escutador <code>v-on:enlarge-text=&quot;postFontSize += 0.1&quot;</code>, o pai receberá o evento e atualizará o valor <code>postFontSize</code>.</p>
+
+<div id="blog-posts-events-demo" class="demo">
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize += 0.1"></blog-post>
+  </div>
+</div>
+<script>
+Vue.component('blog-post', {
+  props: ['post'],
+  template: '\
+    <div class="blog-post">\
+      <h3>{{ post.title }}</h3>\
+      <button v-on:click="$emit(\'enlarge-text\')">\
+        Aumentar fonte\
+      </button>\
+      <div v-html="post.content"></div>\
+    </div>\
+  '
+})
+new Vue({
+  el: '#blog-posts-events-demo',
+  data: {
+    posts: [
+      { id: 1, title: 'Minha jornada com Vue', content: '...content...' },
+      { id: 2, title: 'Postagens com Vue', content: '...content...' },
+      { id: 3, title: 'Porque Vue é tão divertido', content: '...content...' }
+    ],
+    postFontSize: 1
+  }
+})
+</script>
+
+<h3 id="Emitindo-um-Valor-com-um-Evento"><a href="#Emitindo-um-Valor-com-um-Evento" class="headerlink" title="Emitindo um Valor com um Evento"></a>Emitindo um Valor com um Evento</h3><p>Às vezes é útil emitir um valor específico com um evento. Por exemplo, nós talvez queiramos que o componente <code>&lt;blog-post&gt;</code> seja responsável de quando em quanto aumentar a fonte. Nesses casos, podemos usar o 2° parâmetro do método <code>$emit</code> para prover esse valor:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"$emit('enlarge-text', 0.1)"</span>&gt;</span>
+  Aumentar fonte
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Quando ouvirmos por esse evento no componente pai, podemos acessar o valor emitido com <code>$event</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span>
+  <span class="hljs-attr">...</span>
+  <span class="hljs-attr">v-on:enlarge-text</span>=<span class="hljs-string">"postFontSize += $event"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
+<p>Ou, se o manipulador de eventos é um método:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">blog-post</span>
+  <span class="hljs-attr">...</span>
+  <span class="hljs-attr">v-on:enlarge-text</span>=<span class="hljs-string">"onEnlargeText"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post</span>&gt;</span></code></pre>
+<p>Então o valor será passado como o primeiro parâmetro desse método:</p>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">onEnlargeText</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">enlargeAmount</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.postFontSize += enlargeAmount
+  &#125;
+&#125;</code></pre>
+<h3 id="Usando-v-model-em-Componentes"><a href="#Usando-v-model-em-Componentes" class="headerlink" title="Usando v-model em Componentes"></a>Usando <code>v-model</code> em Componentes</h3><p>Eventos personalizados podem também ser usados para criar inputs personalizados que funcionam com <code>v-model</code>. Lembre-se que:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"searchText"</span>&gt;</span></code></pre>
+<p>tem a mesma funcionalidade que:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+  <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"searchText"</span>
+  <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">"searchText = $event.target.value"</span>
+&gt;</span></code></pre>
+<p>No entanto, quando usado em um componente, <code>v-model</code> fará isso:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">custom-input</span>
+  <span class="hljs-attr">v-bind:value</span>=<span class="hljs-string">"searchText"</span>
+  <span class="hljs-attr">v-on:input</span>=<span class="hljs-string">"searchText = $event"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">custom-input</span>&gt;</span></code></pre>
+<p>Para isso realmente funcionar, o <code>&lt;input&gt;</code> dentro do componente precisa:</p>
+<ul>
+<li>Vincular o atributo <code>value</code> com o prop <code>value</code></li>
+<li>No <code>input</code>, emitir seu próprio evento <code>input</code> personalizado com o novo valor</li>
+</ul>
+<p>Aqui isso em ação:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'custom-input'</span>, &#123;
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'value'</span>],
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;input
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
+    &gt;
+  `</span>
+&#125;)</code></pre>
+<p>Agora <code>v-model</code> deve funcionar perfeitamente com esse componente:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">custom-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"searchText"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">custom-input</span>&gt;</span></code></pre>
+<p>Isso é tudo que você precisa saber sobre eventos personalizados de componentes por hora, mas assim que você terminar de ler essa página e se sentir confortável com o conteúdo, recomendamos retornar mais tarde para ler o guia completo em <a href="components-custom-events.html">Custom Events</a>.</p>
+<h2 id="Distribuicao-de-Conteudo-com-Slots"><a href="#Distribuicao-de-Conteudo-com-Slots" class="headerlink" title="Distribuição de Conteúdo com Slots"></a>Distribuição de Conteúdo com Slots</h2><p>Assim como em elementos HTML, muitas vezes é útil ser capaz de passar conteúdo para um componente, dessa forma:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">alert-box</span>&gt;</span>
+  Algo ruim aconteceu.
+<span class="hljs-tag">&lt;/<span class="hljs-name">alert-box</span>&gt;</span></code></pre>
+<p>Que renderizaria algo assim:</p>
+
+<div id="slots-demo" class="demo">
+  <alert-box>
+    Algo ruim aconteceu.
+  </alert-box>
+</div>
+<script>
+Vue.component('alert-box', {
+  template: '\
+    <div class="demo-alert-box">\
+      <strong>Erro!</strong>\
+      <slot></slot>\
+    </div>\
+  '
+})
+new Vue({ el: '#slots-demo' })
+</script>
+<style>
+.demo-alert-box {
+  padding: 10px 20px;
+  background: #f3beb8;
+  border: 1px solid #f09898;
+}
+</style>
+
+<p>Felizmente, isso é facilmente realizado com um elemento personalizado <code>&lt;slot&gt;</code>:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'alert-box'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;div class="demo-alert-box"&gt;
+      &lt;strong&gt;Erro!&lt;/strong&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+  `</span>
+&#125;)</code></pre>
+<p>Como você vê acima, nós só adicionamos o slot para aonde queremos que o conteúdo vá – e é isso!</p>
+<p>Isso é tudo que você precisa saber sobre slots por hora, mas assim que você terminar de ler essa página e se sentir confortável com o conteúdo, recomendamos retornar mais tarde para ler o guia completo em <a href="components-slots.html">Slots</a>.</p>
+<h2 id="Componentes-Dinamicos"><a href="#Componentes-Dinamicos" class="headerlink" title="Componentes Dinâmicos"></a>Componentes Dinâmicos</h2><p>Às vezes, é útil alternar dinamicamente entre componentes, como em uma interface de abas:</p>
+
+<div id="dynamic-component-demo" class="demo">
+  <button v-for="tab in tabs" v-bind:key="tab" class="dynamic-component-demo-tab-button" v-bind:class="{ 'dynamic-component-demo-tab-button-active': tab === currentTab }" v-on:click="currentTab = tab">
+    {{ tab }}
+  </button>
+  <component v-bind:is="currentTabComponent" class="dynamic-component-demo-tab"></component>
+</div>
+<script>
+Vue.component('tab-home', { template: '<div>Componente Home</div>' })
+Vue.component('tab-postagens', { template: '<div>Componente Postagens</div>' })
+Vue.component('tab-arquivado', { template: '<div>Componente Arquivado</div>' })
+new Vue({
+  el: '#dynamic-component-demo',
+  data: {
+    currentTab: 'Home',
+    tabs: ['Home', 'Postagens', 'Arquivado']
+  },
+  computed: {
+    currentTabComponent: function () {
+      return 'tab-' + this.currentTab.toLowerCase()
+    }
+  }
+})
+</script>
+<style>
+.dynamic-component-demo-tab-button {
+  padding: 6px 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #f0f0f0;
+  margin-bottom: -1px;
+  margin-right: -1px;
+}
+.dynamic-component-demo-tab-button:hover {
+  background: #e0e0e0;
+}
+.dynamic-component-demo-tab-button-active {
+  background: #e0e0e0;
+}
+.dynamic-component-demo-tab {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+</style>
+
+<p>O exemplo acima é possível por causa do elemento <code>&lt;component&gt;</code> com o atributo especial <code>is</code>:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Componente atualiza quando currentTabComponent muda --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"currentTabComponent"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span></code></pre>
+<p>No exemplo acima, <code>currentTabComponent</code> pode conter:</p>
+<ul>
+<li>o nome do componente registrado, ou</li>
+<li>o objeto de opções de um componente</li>
+</ul>
+<p>Veja <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-components" target="_blank" rel="noopener">esse exemplo</a> para experimentar com todo o código, ou <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-dynamic-components-with-binding" target="_blank" rel="noopener">essa versão</a> para um exemplo ligando ao objeto de opções de um componente em vez de seu nome registrado.</p>
+<p>Tenha em mente que esse atributo pode ser utilizado com elementos HTML comuns, porém, eles serão tratados como componentes, o que significa que todos os atributos <strong>serão vinculados como atributos do DOM</strong>. Para algumas propriedades, como <code>value</code>, funcionarem da maneira esperada, você terá que vincula-las usando o <a href="../api/#v-bind">modificador <code>.prop</code></a>.</p>
+<p>Isso é tudo que você precisa saber sobre componentes dinâmicos por hora mas, assim que você terminar de ler essa página e se sentir confortável com o conteúdo, recomendamos retornar mais tarde para ler o guia completo sobre componentes <a href="components-dynamic-async.html">Dinâmicos &amp; Assíncronos</a>.</p>
+<h2 id="Ressalvas-na-Analise-do-Template-DOM"><a href="#Ressalvas-na-Analise-do-Template-DOM" class="headerlink" title="Ressalvas na Análise do Template DOM"></a>Ressalvas na Análise do Template DOM</h2><p>Alguns elementos HTML, como <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;table&gt;</code> e <code>&lt;select&gt;</code> têm restrições do que pode aparecer dentro deles, e alguns elementos como <code>&lt;li&gt;</code>, <code>&lt;tr&gt;</code>, e <code>&lt;option&gt;</code> podem aparecer apenas dentro de certos elementos.</p>
+<p>Isso nos leva a problemas quando usamos componentes com element que tem tais restrições. Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">blog-post-row</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">blog-post-row</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+<p>O componente <code>&lt;blog-post-row&gt;</code> será renderizado antes do elemento <code>&lt;table&gt;</code> por ser um conteúdo inválido, causando erros na renderização. Felizmente, o atributo especial <code>is</code> oferece uma solução alternativa:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"blog-post-row"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+<p>Deve ser notado que <strong>essa limitação <em>não</em> se aplica se você está usando string templates de uma das seguintes fontes</strong>:</p>
+<ul>
+<li><em>Template Strings</em> (Ex: <code>template: &#39;...&#39;</code>)</li>
+<li><a href="single-file-components.html">Componentes Single-File (<code>.vue</code>)</a></li>
+<li><a href="components-edge-cases.html#X-Templates"><code>&lt;script type=&quot;text/x-template&quot;&gt;</code></a></li>
+</ul>
+<p>Isso é tudo que você precisa saber sobre componentes dinâmicos por hora – na verdade, esse é o fim da seção <em>Essenciais</em> do Vue. Parabéns! Ainda há mais a ser aprendido, mas antes, recomendamos que tire um tempo para brincar com o Vue você mesmo e criar alguma coisa divertida.</p>
+<p>Assim que você se sentir confortável com o conteúdo que vimos, recomendamos retornar mais tarde para ler o guia completo de componentes <a href="components-dynamic-async.html">Dinâmicos &amp; Assíncronos</a>, como também as outras páginas na seção <em>Componentes em Detalhes</em> da barra lateral.</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/forms.html">Interligações em Formulários</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/components-registration.html">Registro de Componentes</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Encontrou um erro ou quer contribuir com a documentação?
+    <a href="https://github.com/vuejs-br/br.vuejs.org/blob/master/src/v2/guide/components.md" rel="noopener" target="_blank">
+      Edite isto no Github!
+    </a>
+    Deploy feito via
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

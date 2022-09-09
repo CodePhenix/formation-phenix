@@ -1,0 +1,2121 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Vue 1.x からの移行 — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/migration.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vue 1.x からの移行 — Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue 1.x からの移行 — Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'jp.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">v2.x 以前のドキュメントです。</span>
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="検索">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学ぶ</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ドキュメント</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">ガイド</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">スタイルガイド</a></li>
+        <li><a href="/v2/examples/" class="nav-link">例</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">クックブック</a></li>
+      </ul>
+    </li>
+    <li><h4>ビデオコース</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">エコシステム</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ヘルプ</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">フォーラム</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">チャット(公式)</a></li>
+      <li><a href="https://join.slack.com/t/vuejs-jp/shared_invite/zt-vmg3iysl-~CPGAxFMWwa0Fnu2IqtMdQ" class="nav-link" target="_blank" rel="noopener">チャット(日本向け)</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">ミートアップ</a></li>
+    </ul></li>
+    <li><h4>開発ツール</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>コアライブラリ</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>ニュース</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">ウィークリーニュース</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">ロードマップ</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">イベント</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">ブログ(英語)</a></li>
+      <li><a href="/blog/" class="nav-link" target="_blank" rel="noopener">ブログ(日本語訳)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">ジョブ(海外)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV コミュニティ</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">チーム</a>
+</li>
+<li>
+  <a href="/contribution/" class="nav-link">貢献</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">リソース</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">パートナー</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">テーマ</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Browse packages for Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue を支援する</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#1回きりの支援" class="nav-link">1回きりの支援</a></li>
+    <li><a href="/support-vuejs/#継続的な支援" class="nav-link">継続的な支援</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Tシャツ ショップ</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">言語</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/migration.html" class="nav-link">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/migration.html" class="nav-link">中文</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/migration.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/migration.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/migration.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/migration.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/migration.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/migration.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/migration.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          ガイド
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>基本的な使い方</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">インストール</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">はじめに</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue インスタンス</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">テンプレート構文</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">算出プロパティとウォッチャ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">クラスとスタイルのバインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">条件付きレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">リストレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">イベントハンドリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">フォーム入力バインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">コンポーネントの基本</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>コンポーネントの詳細</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">コンポーネントの登録</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">プロパティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">カスタムイベント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">スロット</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">動的 & 非同期コンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">特別な問題に対処する</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>トランジションとアニメーション</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Enter/Leave とトランジション一覧</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">状態のトランジション</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>再利用と構成</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">ミックスイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">カスタムディレクティブ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">描画関数とJSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">プラグイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">フィルター</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>ツール</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">単一ファイルコンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">テスト</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript のサポート</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">プロダクション環境への配信</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>スケールアップ</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">ルーティング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">状態管理</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">サーバサイドレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">セキュリティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>内部</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">リアクティブの探求</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>移行</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link current">Vue 1.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x から 1.0 への移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>その他</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">他のフレームワークとの比較</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js コミュニティへ参加しましょう!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">チームに会おう</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar migration-guide">
+  <p class="tip warning v3-warning">
+    v2.x 以前のドキュメントです。
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Vue 1.x からの移行</h1>
+  
+  <p class="updated">最終更新日: 2020年3月7日</p>
+  
+  
+    <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><blockquote>
+<p>わお、このページは非常に長いですね！ということは、バージョン 2.0 は従来と全く異なっていて、私は全てを基礎からもう一度学ぶ必要があるのでしょう。その上で、移行は不可能ということでしょうか？</p>
+</blockquote>
+<p>よくぞ聞いてくれました！その答えは No です。 API のおおよそ 90% が同じで、かつ基本となるコンセプトは変わっていません。 このセクションは、非常に詳しい説明と、多くの例を提供したいため、非常に長いです。 ですが、安心してください、 <strong>このセクションは、上から下まで全て読むようなものではありません！</strong></p>
+<blockquote>
+<p>どこから移行をはじめるべきですか？</p>
+</blockquote>
+<ol>
+<li><p>現在のプロジェクト上で、<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行します。私たちは以前の Vue 開発を単純なコマンドライン インターフェースに最小構成で注意深く詰め込みました。それは、廃止された機能を認識するたびに移行をサジェストし、その上で詳しい情報へのリンクを提供します。</p>
+</li>
+<li><p>その後、このページのサイドバーの目次より、あなたが影響を受ける可能性のあるトピックを参照してください。移行ヘルパーが何も検出していない場合、それは素晴らしいことです。</p>
+</li>
+<li><p>もし、テストがある場合は、それらを実行し、失敗したものを参照してください。テストがない場合は、ブラウザ上でアプリケーションを開き、警告やエラーに対して、あなた自身の目で確認してください。</p>
+</li>
+<li><p>そろそろ、あなたのアプリケーションは完全に移行されるべきでしょう。もし、あなたがよりいっそう飢えている場合は、このページを残りの部分を読む、もしくは新しく、かつ改良されたガイドに「<a href="index.html">はじめに</a>」から飛び込むこともできます。あなたは既に基本となるコンセプトに精通しているので、多くの場合、拾い読みすることとなります。</p>
+</li>
+</ol>
+<blockquote>
+<p>Vue 1.x のアプリケーションを 2.0 に移行するにはどのくらいの時間がかかりますか？</p>
+</blockquote>
+<p>移行期間は、いくつかの要因に依存します:</p>
+<ul>
+<li><p>アプリケーションの規模（小〜中規模アプリケーションの場合、おそらく1日かからないでしょう）</p>
+</li>
+<li><p>新しい機能を使う場合は、何度も混乱したことがあるでしょう。😉 特に差別をしているわけではなく、 Vue 2.0 で作る際も、同様のことは起こるでしょう。</p>
+</li>
+<li><p>将来的に廃止される機能を使用している場合、大半は検索と置換でアップグレードできますが、一部は少し時間がかかるかもしれません。もしあなたが、現在のベストプラクティスを踏襲していない場合、 Vue 2.0 はあなたにそれを強制します。これは、長期的に見ると良いことですが、大幅(though possibly overdue)なリファクタリングを意味するかもしれません。</p>
+</li>
+</ul>
+<blockquote>
+<p>もし Vue 2.0 へアップグレードする場合、 Vuex および Vue Router もアップグレードする必要がありますか？</p>
+</blockquote>
+<p>Vue Router 2 は、Vue 2.0 のみに互換性があるため、アップグレードする必要があります。同様に、<a href="migration-vue-router.html">Vue-Router 向けの移行パス</a> に従う必要があります。<br>幸いなことに、ほとんどのアプリケーションは、ルーターに関するコードが多くないため、この作業が 1 時間以上かかることはおそらくありません。</p>
+<p>Vuex については、バージョン 0.8 は Vue 2.0 との互換性があるため、アップグレードは強制ではありません。<br>Vuex 2 に導入された、新たな機能やボイラープレートを使用したい場合でないかぎり、直ちにアップグレードする必要はないでしょう。</p>
+<h2 id="テンプレート"><a href="#テンプレート" class="headerlink" title="テンプレート"></a>テンプレート</h2><h3 id="フラグメントインスタンス-削除"><a href="#フラグメントインスタンス-削除" class="headerlink" title="フラグメントインスタンス 削除"></a>フラグメントインスタンス <sup>削除</sup></h3><p>すべてのコンポーネントは、1つのルート要素を持っている必要があります。フラグメントインスタンスは、もはや許されません。もし、あなたが以下のようなテンプレートを使用している場合:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>単に全体を新しい要素で囲うことを推奨します。<br>例えば、このような形となります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>アップグレード後に end-to-end のテストスイートや、それに準ずるアプリケーションを実行し、テンプレート内の複数のルート要素に対してのコンソールの警告を探します。</p>
+</div>
+
+<h2 id="ライフサイクルフック"><a href="#ライフサイクルフック" class="headerlink" title="ライフサイクルフック"></a>ライフサイクルフック</h2><h3 id="beforeCompile-削除"><a href="#beforeCompile-削除" class="headerlink" title="beforeCompile 削除"></a><code>beforeCompile</code> <sup>削除</sup></h3><p>代わりに、 <code>created</code> フックを使用します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、このフックを全て見つけます。</p>
+</div>
+
+<h3 id="compiled-置き換え"><a href="#compiled-置き換え" class="headerlink" title="compiled 置き換え"></a><code>compiled</code> <sup>置き換え</sup></h3><p>代わりに、新たに <code>mounted</code> フックを使用します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、このフックを全て見つけます。</p>
+</div>
+
+<h3 id="attached-削除"><a href="#attached-削除" class="headerlink" title="attached 削除"></a><code>attached</code> <sup>削除</sup></h3><p>他のフックで DOM チェックをカスタムして使用します。 例えば、以下の場合:</p>
+<pre><code class="hljs js">attached: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  doSomething()
+&#125;</code></pre>
+<p>このように置き換えます:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    doSomething()
+  &#125;)
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、このフックを全て見つけます。</p>
+</div>
+
+<h3 id="detached-削除"><a href="#detached-削除" class="headerlink" title="detached 削除"></a><code>detached</code> <sup>削除</sup></h3><p>他のフックで DOM チェックをカスタムして使用します。 例えば、以下の場合:</p>
+<pre><code class="hljs js">detached: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  doSomething()
+&#125;</code></pre>
+<p>このように置き換えます:</p>
+<pre><code class="hljs js">destroyed: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    doSomething()
+  &#125;)
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、このフックを全て見つけます。</p>
+</div>
+
+<h3 id="init-置き換え"><a href="#init-置き換え" class="headerlink" title="init 置き換え"></a><code>init</code> <sup>置き換え</sup></h3><p>代わりに新しい <code>beforeCreate</code> フックを使用します。これは本質的には同じものです。<br>他のライフサイクルメソッドとの整合性のために改名されました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、このフックを全て見つけます。</p>
+</div>
+
+<h3 id="ready-置き換え"><a href="#ready-置き換え" class="headerlink" title="ready 置き換え"></a><code>ready</code> <sup>置き換え</sup></h3><p>かわりに、新しい mounted フックを使用します。ただし、マウントされたとしてもドキュメントに存在する保証はありません。 そのため、<code>Vue.nextTick/vm.$nextTick</code> で包む必要があります。 例えば、以下のようになります:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// this.$el がドキュメント内にあることを前提としたコードを書きます</span>
+  &#125;)
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、このフックを全て見つけます。</p>
+</div>
+
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a><code>v-for</code></h2><h3 id="配列においての-v-for-の引数の順序-変更"><a href="#配列においての-v-for-の引数の順序-変更" class="headerlink" title="配列においての v-for の引数の順序 変更"></a>配列においての <code>v-for</code> の引数の順序 <sup>変更</sup></h3><p><code>index</code> を含む場合、引数を <code>(index, value)</code> の順序で使用していました。それは今は、 <code>(value, index)</code> となり、 JavaScript ネイティブの <code>forEach</code> や <code>map</code> と一貫性を持つようになりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、非推奨な引数の順序を見つけます。
+    <code>position</code> や <code>num</code> のような、あまり使われないような名称をインデックスの引数につけた場合、ヘルパーはそれを検出できないことがありますが、ご了承ください。
+  </p>
+</div>
+
+<h3 id="オブジェクトにおいての-v-for-の引数の順序-変更"><a href="#オブジェクトにおいての-v-for-の引数の順序-変更" class="headerlink" title="オブジェクトにおいての v-for の引数の順序 変更"></a>オブジェクトにおいての <code>v-for</code> の引数の順序 <sup>変更</sup></h3><p>プロパティ名/キーを含む場合、引数を <code>(name, value)</code> の順序で使用していました。それは今は、 <code>(value, name)</code> となり、 lodash などの一般的なオブジェクトのイテレータと一貫性を持つようになりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、非推奨な引数の順序を見つけます。
+    もしキーとなる引数に <code>name</code> や <code>property</code> のような、名称をつけていた場合、ヘルパーはそれを検出できないことがありますが、ご了承ください。
+  </p>
+</div>
+
+<h3 id="index-および-key-削除"><a href="#index-および-key-削除" class="headerlink" title="$index および $key 削除"></a><code>$index</code> および <code>$key</code> <sup>削除</sup></h3><p>暗黙的に割り当てられていた <code>$index</code> および <code>$key</code> 変数が、 <code>v-for</code> にて明示的にそれらを定義するために廃止されました。<br>これは、 Vue の経験が浅い開発者がネストされたループを扱う場合に、コードを読むことが容易になります。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、これらの非推奨な変数を見つけます。もし間違いがある場合以下のような、 <strong>console errors</strong> などが表示されます: <code>Uncaught ReferenceError: $index is not defined</code></p>
+</div>
+
+<h3 id="track-by-置き換え"><a href="#track-by-置き換え" class="headerlink" title="track-by 置き換え"></a><code>track-by</code> <sup>置き換え</sup></h3><p><code>track-by</code> は <code>key</code> に置き換えられました。<br>他の属性と同様に、 <code>v-bind</code> または <code>:</code> 接頭辞がない場合は文字列として処理されます。<br>殆どの場合、式として動的なバインディングを行いたいでしょう。その場合、例えば、以下の代わりに</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">track-by</span>=<span class="hljs-string">"id"</span>&gt;</span></code></pre>
+<p>このように使用します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item.id"</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>track-by</code> を見つけます。
+</p></div>
+
+<h3 id="v-for-の値の範囲-変更"><a href="#v-for-の値の範囲-変更" class="headerlink" title="v-for の値の範囲 変更"></a><code>v-for</code> の値の範囲 <sup>変更</sup></h3><p>以前は、 <code>v-for=&quot;number in 10&quot;</code> がもつ <code>number</code> は 0 ではじまり、9 で終わっていましたが、1 ではじまり、10 で終わるようになりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコードから <code>/\w+ in \d+/</code> の正規表現を探し出します。
+    そして、それが <code>v-for</code> 内で使われている場合、あなたが影響を受ける可能性があるかどうかを確認してください。
+  </p>
+</div>
+
+<h2 id="プロパティ"><a href="#プロパティ" class="headerlink" title="プロパティ"></a>プロパティ</h2><h3 id="coerce-プロパティオプション-削除"><a href="#coerce-プロパティオプション-削除" class="headerlink" title="coerce プロパティオプション 削除"></a><code>coerce</code> プロパティオプション <sup>削除</sup></h3><p>もしあなたがプロパティに対して <code>coerce</code> オプションを利用したい場合、その代わりとしてコンポーネント内の算出プロパティで算出された値で設定してください。例えば、以下の代わりに:</p>
+<pre><code class="hljs js">props: &#123;
+  <span class="hljs-attr">username</span>: &#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+    <span class="hljs-attr">coerce</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> value
+        .toLowerCase()
+        .replace(<span class="hljs-regexp">/\s+/</span>, <span class="hljs-string">'-'</span>)
+    &#125;
+  &#125;
+&#125;</code></pre>
+<p>このように使用します:</p>
+<pre><code class="hljs js">props: &#123;
+  <span class="hljs-attr">username</span>: <span class="hljs-built_in">String</span>,
+&#125;,
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">normalizedUsername</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.username
+      .toLowerCase()
+      .replace(<span class="hljs-regexp">/\s+/</span>, <span class="hljs-string">'-'</span>)
+  &#125;
+&#125;</code></pre>
+<p>これには、いくつかの利点があります:</p>
+<ul>
+<li>プロパティの元の値にアクセスし続けることができます。</li>
+<li>強制された値に別名をつけることによって、よりはっきりとプロパティで与えられた値とは違うことがわかるようになります。</li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>coerce</code> オプションを見つけます。</p>
+</div>
+
+<h3 id="twoWay-プロパティオプション-削除"><a href="#twoWay-プロパティオプション-削除" class="headerlink" title="twoWay プロパティオプション 削除"></a><code>twoWay</code> プロパティオプション <sup>削除</sup></h3><p>プロパティは今や、全て単方向となりました。<br>親スコープ内への副作用を生成するために、コンポーネントは暗黙のバインディングの代わりに、明示的にイベントを発生させる必要があります。<br>より詳細な情報については、以下を参照します:</p>
+<ul>
+<li><a href="components.html#カスタムイベント">カスタムイベント</a></li>
+<li><a href="components.html#カスタムイベントを使用したフォーム入力コンポーネント">カスタム入力コンポーネント</a> (コンポーネントイベントを使用)</li>
+<li><a href="state-management.html">状態管理</a></li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>twoWay</code> オプションを見つけます。</p>
+</div>
+
+<h3 id="v-bind-への-once-と-sync-修飾子-削除"><a href="#v-bind-への-once-と-sync-修飾子-削除" class="headerlink" title="v-bind への .once と .sync 修飾子 削除"></a><code>v-bind</code> への <code>.once</code> と <code>.sync</code> 修飾子 <sup>削除</sup></h3><p>プロパティは今や、全て単方向となりました。<br>親スコープ内への副作用を生成するために、コンポーネントは暗黙のバインディングの代わりに、明示的にイベントを発生させる必要があります。<br>より詳細な情報については、以下を参照します:</p>
+<ul>
+<li><a href="components.html#カスタムイベント">カスタムイベント</a></li>
+<li><a href="components.html#カスタムイベントを使用したフォーム入力コンポーネント">カスタム入力コンポーネント</a> (コンポーネントイベントを使用)</li>
+<li><a href="state-management.html">状態管理</a></li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>.once</code> と <code>.sync</code> 修飾子を見つけます。</p>
+</div>
+
+<h3 id="プロパティの変更-非推奨"><a href="#プロパティの変更-非推奨" class="headerlink" title="プロパティの変更 非推奨"></a>プロパティの変更 <sup>非推奨</sup></h3><p>ローカルでのプロパティの変更は、今はアンチパターンとみなされます。例えば、 プロパティを宣言した後に、コンポーネントに対して <code>this.myProp = &#39;someOtherValue&#39;</code> 設定することなどです。新しいレンダリングシステムによって、親コンポーネントを再描画するたびに、子コンポーネントのローカルな変更は上書きされます。</p>
+<p>プロパティの変更のユースケースのほとんどの場合は、以下のオプションのいずれかで置き換えることができます:</p>
+<ul>
+<li>デフォルト値を設定したデータプロパティ</li>
+<li>算出プロパティ</li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>アップグレード後に end-to-end のテストスイートや、それに準ずるアプリケーションを実行し、プロパティの変更に関するコンソールの警告を探します。</p>
+</div>
+
+<h3 id="ルートインスタンス上でのプロパティ置き換え"><a href="#ルートインスタンス上でのプロパティ置き換え" class="headerlink" title="ルートインスタンス上でのプロパティ置き換え"></a>ルートインスタンス上でのプロパティ<sup>置き換え</sup></h3><p>ルートの Vue インスタンス(言い換えれば、 <code>new Vue({ ... })</code> によって作成されたインスタンス)においては、 <code>props</code> の代わりに <code>propsData</code> を使用します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    もしあれば、 end-to-end のテストを走らせます。
+    失敗したテストについては、ルートインスタンスに渡されたプロパティはもはや動かないということをあなたに警告します。
+  </p>
+</div>
+
+<h2 id="算出プロパティ"><a href="#算出プロパティ" class="headerlink" title="算出プロパティ"></a>算出プロパティ</h2><h3 id="cache-false-非推奨"><a href="#cache-false-非推奨" class="headerlink" title="cache: false 非推奨"></a><code>cache: false</code> <sup>非推奨</sup></h3><p>将来のメジャーバージョンの Vue では、算出プロパティのキャッシュ無効化が削除されます。キャッシュされていない算出プロパティを、同じ結果を持つメソッドに置き換えます。</p>
+<p>例:</p>
+<pre><code class="hljs js">template: <span class="hljs-string">'&lt;p&gt;message: &#123;&#123; timeMessage &#125;&#125;&lt;/p&gt;'</span>,
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">timeMessage</span>: &#123;
+    <span class="hljs-attr">cache</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Date</span>.now() + <span class="hljs-keyword">this</span>.message
+    &#125;
+  &#125;
+&#125;</code></pre>
+<p>または、コンポーネントメソッドで:</p>
+<pre><code class="hljs js">template: <span class="hljs-string">'&lt;p&gt;message: &#123;&#123; getTimeMessage() &#125;&#125;&lt;/p&gt;'</span>,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">getTimeMessage</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Date</span>.now() + <span class="hljs-keyword">this</span>.message
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>cache: false</code>オプションを見つけます。</p>
+</div>
+
+<h2 id="組み込みディレクティブ"><a href="#組み込みディレクティブ" class="headerlink" title="組み込みディレクティブ"></a>組み込みディレクティブ</h2><h3 id="v-bind-においての-真-偽-変更"><a href="#v-bind-においての-真-偽-変更" class="headerlink" title="v-bind においての 真/偽 変更"></a><code>v-bind</code> においての 真/偽 <sup>変更</sup></h3><p><code>v-bind</code> を使用する時、偽となりうる値は <code>null</code>, <code>undefined</code>, そして <code>false</code> のみとなります。これは、 <code>0</code> や空の文字列は、真となりうる値として描画されることを意味します。例として、 <code>v-bind:draggable=&quot;&#39;&#39;&quot;</code> は <code>draggable=&quot;true&quot;</code> として描画されます。</p>
+<p>列挙された属性については、上記の偽となりうる値に加え、文字列の <code>&quot;false&quot;</code> は、 <code>attr=&quot;false&quot;</code> として描画されます。</p>
+<p class="tip">その他のディレクティブ(たとえば、 <code>v-if</code> や <code>v-show</code> )は、 JavaScript の一般的な真がまだ適用されます。</p>
+
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    もしあれば、 end-to-end のテストを走らせます。
+    失敗したテストについては、上記の変更によって影響を受ける可能性があり、その可能性があるアプリケーションの箇所を警告します。
+  </p>
+</div>
+
+<h3 id="コンポーネントにおける-v-on-を用いたネイティブイベントの購読-変更"><a href="#コンポーネントにおける-v-on-を用いたネイティブイベントの購読-変更" class="headerlink" title="コンポーネントにおける v-on を用いたネイティブイベントの購読 変更"></a>コンポーネントにおける <code>v-on</code> を用いたネイティブイベントの購読 <sup>変更</sup></h3><p>コンポーネントを使用している時、 <code>v-on</code> は、そのコンポーネントに向けて発生したカスタムイベントのみを購読するようになりました。ルート要素上でネイティブの DOM イベントを購読したい時は、 <code>.native</code> 修飾子によって実現できます。以下がその例です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">v-on:click.native</span>=<span class="hljs-string">"doSomething"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    もしあれば、 end-to-end のテストを走らせます。
+    失敗したテストについては、上記の変更によって影響を受ける可能性があり、その可能性があるアプリケーションの箇所を警告します。
+  </p>
+</div>
+
+<h3 id="v-model-の-debounce-削除"><a href="#v-model-の-debounce-削除" class="headerlink" title="v-model の debounce 削除"></a><code>v-model</code> の <code>debounce</code> <sup>削除</sup></h3><p>デバウンスは、 Ajax リクエストやその他の高負荷な処理の実装頻度を制限するために使用されます。Vue の <code>v-model</code> の <code>debounce</code> 属性パラメータは、非常に単純な用法を想定し、簡潔に作りましたが、それによって実際の状態の更新ではなく、自身をデバウンスする仕組みとなっています。これは、小さな違いではありますが、アプリケーションの規模が大きくなるに連れて、この手法には限界がきます。</p>
+<p>例えば、このように、検索ボックスを設計する際にこれらの限界が明らかになります:</p>
+
+<script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.js"></script>
+<div id="debounce-search-demo" class="demo">
+  <input v-model="searchQuery" placeholder="Type something">
+  <strong>{{ searchIndicator }}</strong>
+</div>
+<script>
+new Vue({
+  el: '#debounce-search-demo',
+  data: {
+    searchQuery: '',
+    searchQueryIsDirty: false,
+    isCalculating: false
+  },
+  computed: {
+    searchIndicator: function () {
+      if (this.isCalculating) {
+        return '⟳ Fetching new results'
+      } else if (this.searchQueryIsDirty) {
+        return '... Typing'
+      } else {
+        return '✓ Done'
+      }
+    }
+  },
+  watch: {
+    searchQuery: function () {
+      this.searchQueryIsDirty = true
+      this.expensiveOperation()
+    }
+  },
+  methods: {
+    expensiveOperation: _.debounce(function () {
+      this.isCalculating = true
+      setTimeout(function () {
+        this.isCalculating = false
+        this.searchQueryIsDirty = false
+      }.bind(this), 1000)
+    }, 500)
+  }
+})
+</script>
+
+<p>デバウンス属性を使用している場合、入力の状態に関するリアルタイムなアクセス権を失うため、「タイピング中」の状態を検出する方法がないと思います。<br>しかし、 Vue からデバウンス機能を切り離すことによって、将来的な開発での制限を取り除くことができます。</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--
+lodash もしくは他の専用のユーティリティライブラリのデバウンス機能を用いてデバウンスを行うことが最も良いでしょう。また、それを Vue ではあらゆる箇所で利用することが可能です。
+そしてそれは、テンプレート内に限った話ではありません。
+--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/lodash/4.13.1/lodash.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"debounce-search-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"searchQuery"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Type something"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>&#123;&#123; searchIndicator &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#debounce-search-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">searchQuery</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">searchQueryIsDirty</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">isCalculating</span>: <span class="hljs-literal">false</span>
+  &#125;,
+  <span class="hljs-attr">computed</span>: &#123;
+    <span class="hljs-attr">searchIndicator</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isCalculating) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'⟳ Fetching new results'</span>
+      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.searchQueryIsDirty) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'... Typing'</span>
+      &#125; <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'✓ Done'</span>
+      &#125;
+    &#125;
+  &#125;,
+  <span class="hljs-attr">watch</span>: &#123;
+    <span class="hljs-attr">searchQuery</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.searchQueryIsDirty = <span class="hljs-literal">true</span>
+      <span class="hljs-keyword">this</span>.expensiveOperation()
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-comment">// これが、実際のデバウンスが書かれているところです。</span>
+    <span class="hljs-attr">expensiveOperation</span>: _.debounce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.isCalculating = <span class="hljs-literal">true</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">this</span>.isCalculating = <span class="hljs-literal">false</span>
+        <span class="hljs-keyword">this</span>.searchQueryIsDirty = <span class="hljs-literal">false</span>
+      &#125;.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">1000</span>)
+    &#125;, <span class="hljs-number">500</span>)
+  &#125;
+&#125;)</code></pre>
+<p>この方法のもう1つの利点として、デバウンスが完全なるラッパー関数でないことが挙げられます。例えば、検索候補の為の API を叩く時、ユーザーが入力の手を止めてから候補を提供することは、理想的な体験とは言えません。その代わりに欲しいのは、スロットリング関数になるでしょう。現状、既にあなたが lodash のようなユーティリティライブラリを利用している場合、 <code>throttle</code> 関数を使用する形に置き換えます。これは、数分もあれば終わることです。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>debounce</code> 属性を見つけます。</p>
+</div>
+
+<h3 id="v-model-への-lazy-や-number-属性-置き換え"><a href="#v-model-への-lazy-や-number-属性-置き換え" class="headerlink" title="v-model への lazy や number 属性 置き換え"></a><code>v-model</code> への <code>lazy</code> や <code>number</code> 属性 <sup>置き換え</sup></h3><p><code>lazy</code> と <code>number</code> の属性値は修飾子となりました。それは、以下のように置き換えることを意味します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">lazy</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"age"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">number</span>&gt;</span></code></pre>
+<p>このように置き換えます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.lazy</span>=<span class="hljs-string">"name"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.number</span>=<span class="hljs-string">"age"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、これらの非推奨の属性を見つけます。</p>
+</div>
+
+<h3 id="v-model-においてのインライン-value-削除"><a href="#v-model-においてのインライン-value-削除" class="headerlink" title="v-model においてのインライン value 削除"></a><code>v-model</code> においてのインライン <code>value</code> <sup>削除</sup></h3><p><code>v-model</code> はもはや、 インラインの <code>value</code> 属性を尊重しません。予測可能性のため、それは代わりに、常に Vue インスタンスをデータをソースとして扱います。<br>これは、以下のような要素を意味します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"foo"</span>&gt;</span></code></pre>
+<p>このようなデータに裏付けられる場合:</p>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">text</span>: <span class="hljs-string">'bar'</span>
+&#125;</code></pre>
+<p>“foo” の代わりに “bar” が描画されます。これは、既に内容を持つ場合の <code>&lt;textarea&gt;</code> においても同じことが言えます。以下の場合:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"text"</span>&gt;</span>
+  hello world
+<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span></code></pre>
+<p><code>text</code> の初期値が “hello world” となることが確認できます。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>アップグレード後に end-to-end のテストスイートや、それに準ずるアプリケーションを実行し、 <code>v-model</code> においてのインライン value 属性に対してのコンソールの警告を探します。</p>
+</div>
+
+<h3 id="v-model-への-v-for-プリミティブ値の反復-削除"><a href="#v-model-への-v-for-プリミティブ値の反復-削除" class="headerlink" title="v-model への v-for プリミティブ値の反復 削除"></a><code>v-model</code> への <code>v-for</code> プリミティブ値の反復 <sup>削除</sup></h3><p>このようなケースは、もはや動作しません:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"str in strings"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"str"</span>&gt;</span></code></pre>
+<p>その理由は、以下の <code>&lt;input&gt;</code> にコンパイルされる JavaScript と同等の処理をおこなっているためです:</p>
+<pre><code class="hljs js">strings.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> createElement(<span class="hljs-string">'input'</span>, ...)
+&#125;)</code></pre>
+<p>これを見てわかるように、 <code>v-model</code> による双方向バインディングは、ここでは意味がありません。それは、関数内のローカルスコープのみの変数なので、イテレータにて <code>str</code> に別の値を設定した場合にも何もしません。</p>
+<p>代わりに、 <code>v-model</code> が、オブジェクトのフィールドを更新できるようにするためには、 <strong>オブジェクト</strong> の配列を使用する必要があります。例えば以下となります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"obj in objects"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"obj.str"</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    もしあれば、テストスイートを走らせます。
+    失敗したテストについては、ルートインスタンスに渡されたプロパティはもはや動かないということをあなたに警告します。
+  </p>
+</div>
+
+<h3 id="v-bind-style-においての-オブジェクトおよび-important-構文-削除"><a href="#v-bind-style-においての-オブジェクトおよび-important-構文-削除" class="headerlink" title="v-bind:style においての オブジェクトおよび !important 構文 削除"></a><code>v-bind:style</code> においての オブジェクトおよび <code>!important</code> 構文 <sup>削除</sup></h3><p>もはや、これは動かなくなります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-bind:style</span>=<span class="hljs-string">"&#123; color: myColor + ' !important' &#125;"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>もしあなたが本当に <code>!important</code> をオーバーライドする必要がある場合、文字列の構文として使用します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-bind:style</span>=<span class="hljs-string">"'color: ' + myColor + ' !important'"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、オブジェクトへのスタイルのバインディングにおいての <code>!important</code> を見つけます。</p>
+</div>
+
+<h3 id="v-el-と-v-ref-置き換え"><a href="#v-el-と-v-ref-置き換え" class="headerlink" title="v-el と v-ref 置き換え"></a><code>v-el</code> と <code>v-ref</code> <sup>置き換え</sup></h3><p>わかりやすくするために、 <code>v-el</code> と <code>v-ref</code> は コンポーネントのインスタンスよりアクセス可能な <code>$refs</code> として、 <code>ref</code> 属性に統合されました。これは、 <code>v-el:my-element</code> は <code>ref=&quot;myElement&quot;</code> となり、 <code>v-ref:my-component</code> もまた <code>ref=&quot;myComponent&quot;</code> となることを意味します。通常の要素で使用する場合、 <code>ref</code> は DOM 要素となり、コンポーネント内で使用する場合、 <code>ref</code> はコンポーネントのインスタンスになります。</p>
+<p><code>v-ref</code> は、もはやディレクティブではありません。しかし、特別な値で、動的な定義が可能となっています。これは、 <code>v-for</code> との組み合わせで使用する場合に、特に役にたちます。例えば、以下のような場合:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:ref</span>=<span class="hljs-string">"'item' + item.id"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>以前は、 <code>v-el</code> や <code>v-ref</code> と組み合わせた <code>v-for</code> の各項目に対して、一意な名前をつけること方法はなかったため、要素やコンポーネントの配列を生成していたと思います。各項目に同じ参照が与えられることによって、現在でもその動作を実現することが可能です。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"items"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>1.x とは異なり、これらの <code>$refs</code> は、それら自身の描画に登録および更新をおこなっているため、リアクティブではありません。それらを重複して反応させる際は、変更があるたびに描画します。</p>
+<p>一方で、 <code>$refs</code> は JavaScript によるプログラム的なアクセスとして主に利用するために設計されているため、テンプレートでそれらに依存することは推奨しません。それは、インスタンス自体に属していない状態を指すこととなるので、 Vue のデータ駆動な ViewModel の設計に違反することとなります。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>v-el</code> and <code>v-ref</code> を見つけます。
+</p></div>
+
+<h3 id="v-else-への-v-show-削除"><a href="#v-else-への-v-show-削除" class="headerlink" title="v-else への v-show 削除"></a><code>v-else</code> への <code>v-show</code> <sup>削除</sup></h3><p><code>v-else</code> はもはや、 <code>v-show</code> では動作しません。代わりに、 <code>v-if</code> の否定式を使用してください。例えば、このような場合代わりに:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"foo"</span>&gt;</span>Foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-else</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">"bar"</span>&gt;</span>Not foo, but bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>このように使用します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"foo"</span>&gt;</span>Foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"!foo &amp;&amp; bar"</span>&gt;</span>Not foo, but bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>v-else</code> への <code>v-show</code> を見つけます。</p>
+</div>
+
+<h2 id="カスタムディレクティブ-単純化"><a href="#カスタムディレクティブ-単純化" class="headerlink" title="カスタムディレクティブ 単純化"></a>カスタムディレクティブ <sup>単純化</sup></h2><p>ディレクティブはその責任範囲を大幅に削減しました: ディレクティブは、今やローレベルの直接な DOM 操作を適用するためにのみ使用されます。ほとんどの場合、メインのコード再利用可能にし、抽象化したコンポーネントを使用するべきです。</p>
+<p>顕著な違いとして、以下のようなものがあります:</p>
+<ul>
+<li>ディレクティブはもはや、インスタンスを持ちません。これは、もはや <code>this</code> 内部にディレクティブのフックがないことを意味します。その代わり、それらは引数として必要なものを全て受け取ります。もし、あなたが本当にフック間で状態を保持する必要がある場合、 <code>el</code> 上にて行うことができます。</li>
+<li><code>acceptStatement</code>, <code>deep</code>, <code>priority</code> などのようなオプションは全て非推奨となりました。</li>
+<li>一部のフックが異なる振るまいをおこなっており、また、新たなフックと対になっているものもあります。<code>twoWay</code> なディレクティブを置き換えるためには、<a href="#Two-Way-Filters-deprecated">この example</a> を参照してください。</li>
+</ul>
+<p>新しいディレクティブははるかにシンプルなので、幸いにも、より簡単に習得することができます。より多くを学ぶには、新しい <a href="custom-directive.html">カスタムディレクティブガイド</a> をお読みください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 定義済みのディレクティブを見つけます。
+    ヘルパーによって検出された箇所は、ほとんどの場合、将来的にコンポーネントにリファクタリングしたくなる部分となります。
+  </p>
+</div>
+
+<h3 id="literal-ディレクティブの修飾子-削除"><a href="#literal-ディレクティブの修飾子-削除" class="headerlink" title=".literal ディレクティブの修飾子 削除"></a><code>.literal</code> ディレクティブの修飾子 <sup>削除</sup></h3><p><code>.literal</code> 修飾子は、値として文字列リテラルを提供することによって、同じ事が容易に達成できるため、削除されました。</p>
+<p>例えば、以下のように更新できます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-my-directive.literal</span>=<span class="hljs-string">"foo bar baz"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>これは、以下のようにできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-my-directive</span>=<span class="hljs-string">"'foo bar baz'"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、ディレクティブの<code>`.literal`</code> 修飾子を見つけます。</p>
+</div>
+
+<h2 id="トランジション"><a href="#トランジション" class="headerlink" title="トランジション"></a>トランジション</h2><h3 id="transition-属性-置き換え"><a href="#transition-属性-置き換え" class="headerlink" title="transition 属性 置き換え"></a><code>transition</code> 属性 <sup>置き換え</sup></h3><p>Vue のトランジション機構は大幅な変更を遂げました。<code>transition</code> 属性ではなく、 <code>&lt;transition&gt;</code> および <code>&lt;transition-group&gt;</code> ラッパー要素を使用します。より多くを学ぶためには、新しい<a href="transitions.html">トランジションガイド</a>を読むことをおすすめします。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>transition</code> 属性を見つけます。</p>
+</div>
+
+<h3 id="再利用可能なトランジションへの-Vue-transition-置き換え"><a href="#再利用可能なトランジションへの-Vue-transition-置き換え" class="headerlink" title="再利用可能なトランジションへの Vue.transition 置き換え"></a>再利用可能なトランジションへの <code>Vue.transition</code> <sup>置き換え</sup></h3><p>新しいトランジション機構の <a href="../guide/transitions.html#Reusable-Transitions">再利用可能なトランジションへのコンポーネントの使用</a> によって実現することができます。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>Vue.transition</code> を見つけます。</p>
+</div>
+
+<h3 id="stagger-トランジション属性"><a href="#stagger-トランジション属性" class="headerlink" title="stagger トランジション属性 "></a><code>stagger</code> トランジション属性 <sup></sup></h3><p>もしあなたがリストのトランジションを遅延させたい場合、その要素の設定やデータのインデックス(もしくは同様の属性)にアクセスすることによって、そのタイミングを制御することができます。詳しくは、<a href="transitions.html#Staggering-List-Transitions">こちら</a>にあるサンプルを参照してください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>transition</code> 属性を見つけます。
+    アップデートの間に、(これはダジャレですが、)新たなかつスタガリングな遷移手法へ置き換えることが可能です。
+  </p>
+</div>
+
+<h2 id="イベント"><a href="#イベント" class="headerlink" title="イベント"></a>イベント</h2><h3 id="events-オプション削除"><a href="#events-オプション削除" class="headerlink" title="events オプション削除"></a><code>events</code> オプション<sup>削除</sup></h3><p><code>events</code> オプションは非推奨になりました。代わりに、イベントハンドラは <code>created</code> フックで登録すべきです。詳細な example 向けとして<a href="#dispatch-および-broadcast-非推奨"><code>$dispatch</code> と <code>$broadcast</code> のマイグレーションガイド</a> を確認してください。</p>
+<h3 id="Vue-directive-39-on-39-keyCodes-置き換え"><a href="#Vue-directive-39-on-39-keyCodes-置き換え" class="headerlink" title="Vue.directive(&#39;on&#39;).keyCodes 置き換え"></a><code>Vue.directive(&#39;on&#39;).keyCodes</code> <sup>置き換え</sup></h3><p><code>keyCodes</code> を設定するための、より新しくかつ簡潔な方法は、<code>Vue.config.keyCodes</code> を介して行うことです。例えば、以下のようなものとなります:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// v-on:keyup.f1 を有効化します。</span>
+Vue.config.keyCodes.f1 = <span class="hljs-number">112</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 古い <code>keyCode</code>の設定が用いられた属性見つけます。</p>
+</div>
+
+<h3 id="dispatch-および-broadcast-置き換え"><a href="#dispatch-および-broadcast-置き換え" class="headerlink" title="$dispatch および $broadcast 置き換え"></a><code>$dispatch</code> および <code>$broadcast</code> <sup>置き換え</sup></h3><p><code>$dispatch</code> および <code>$broadcast</code> については、 <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> などような、よりはっきりとしたコンポーネント間の通信及び状態管理のソリューションを支持するかたちで廃止となりました。</p>
+<p>これまでの問題として、コンポーネントツリーが肥大化した際、その動作を推論することが非常に困難となり、また、コンポーネントのツリー構造に依存する、非常に脆いイベントフローがありました。それは、単純にうまくスケールしませんし、後々に痛みを伴う変更となってはなりません。<code>$dispatch</code> および <code>$broadcast</code> に関しても、兄弟コンポーネント間の通信を解決するものではありません。</p>
+<p>これらの方法の最も一般的な用途の 1 つは、親とその直接の子供との間の通信です。このような場合、実際に <a href="components.html#カスタムイベントを使用したフォーム入力コンポーネント"><code>v-on</code>で子から <code>$emit</code> によって購読</a>できます。これにより、明示的に追加されたイベントの利便性を保つことができます。</p>
+<p>しかしながら、遠い子孫/祖先の間で通信するとき、<code>$emit</code> はあなたを助けないでしょう。代わりに、最も簡単なアップグレードは、集中型のイベントハブを使用することです。これはコンポーネントツリー内のどこにあっても（兄弟間だとしても）、コンポーネント間で通信できるという利点があります。Vue インスタンスは event emitter インタフェースを実装しているため、実際にはこの目的で空の Vue インスタンス (<code>$mount</code> で DOM にマウントしない状態のこと)を使用できます。</p>
+<p>例えば、このような ToDo アプリケーションがある場合:</p>
+<pre><code class="hljs undefined">Todos
+├─ NewTodoInput
+└─ Todo
+   └─ DeleteTodoButton</code></pre>
+<p>これらを単一のイベントハブによって、コンポーネント間の通信を管理することができるようになりました:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// これは、あらゆる場合に使用されるイベントハブです。</span>
+<span class="hljs-comment">// コンポーネントは、これを介して通信します。</span>
+<span class="hljs-keyword">var</span> eventHub = <span class="hljs-keyword">new</span> Vue()</code></pre>
+<p>そして、コンポーネントにて、それによって <code>$emit</code> や <code>$on</code> 、 <code>$off</code> を用いてイベントを発行させることや、新たに購読すること、そしてそれらを初期化することができます。</p>
+<p>以下がそれぞれの例となります:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// NewTodoInput</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">addTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    eventHub.$emit(<span class="hljs-string">'add-todo'</span>, &#123; <span class="hljs-attr">text</span>: <span class="hljs-keyword">this</span>.newTodoText &#125;)
+    <span class="hljs-keyword">this</span>.newTodoText = <span class="hljs-string">''</span>
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// DeleteTodoButton</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">deleteTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>&#123;
+    eventHub.$emit(<span class="hljs-string">'delete-todo'</span>, id)
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Todos</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  eventHub.$on(<span class="hljs-string">'add-todo'</span>, <span class="hljs-keyword">this</span>.addTodo)
+  eventHub.$on(<span class="hljs-string">'delete-todo'</span>, <span class="hljs-keyword">this</span>.deleteTodo)
+&#125;,
+<span class="hljs-comment">// 以下は、コンポーネントの削除前に</span>
+<span class="hljs-comment">// イベントリスナーをクリアするための良い手法です。</span>
+<span class="hljs-attr">beforeDestroy</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  eventHub.$off(<span class="hljs-string">'add-todo'</span>, <span class="hljs-keyword">this</span>.addTodo)
+  eventHub.$off(<span class="hljs-string">'delete-todo'</span>, <span class="hljs-keyword">this</span>.deleteTodo)
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">addTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">newTodo</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.todos.push(newTodo)
+  &#125;,
+  <span class="hljs-attr">deleteTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todoId</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.todos = <span class="hljs-keyword">this</span>.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> todo.id !== todoId
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<p>単純なシナリオ上では、 <code>$dispatch</code> および <code>$boardcast</code> を代替品に置き換えるパターンで動かすことができますが、より複雑なケースを想定して、 <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> のような専門的な状態管理層を設けることをおすすめします。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>$dispatch</code> and <code>$broadcast</code> を見つけます。</p>
+</div>
+
+<h2 id="フィルタ"><a href="#フィルタ" class="headerlink" title="フィルタ"></a>フィルタ</h2><h3 id="フィルタ外でのテキスト展開-削除"><a href="#フィルタ外でのテキスト展開-削除" class="headerlink" title="フィルタ外でのテキスト展開 削除"></a>フィルタ外でのテキスト展開 <sup>削除</sup></h3><p>フィルタは、今やテキスト内での補完(<code>{{ }}</code> タグ)のみで使用することができます。今までの <code>v-model</code> や <code>v-on</code> ディレクティブ上でのフィルタリングは、それ自体の利便性よりも、コードの複雑化につながることのほうが多いことに気がつきました。<code>v-for</code> 上でのリストのフィルタリングについては、それをコンポーネント上で再利用可能とするために、算出プロパティとして JavaScript 上のそのロジックを移動させるようにしても良いでしょう。</p>
+<p>行いたい処理がプレーンな JavaScript で実現可能な場合は、基本的には同じ結果をもたらすフィルタのような特殊な構文を導入しないようにしたいです。この項で紹介する方法によって、 Vue の内蔵のディレクティブフィルタを置き換えることができます。具体的な方法は以下のとおりです:</p>
+<h4 id="debounce-フィルタの置き換え"><a href="#debounce-フィルタの置き換え" class="headerlink" title="debounce フィルタの置き換え"></a><code>debounce</code> フィルタの置き換え</h4><p>このような記述の代わりに:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup</span>=<span class="hljs-string">"doStuff | debounce 500"</span>&gt;</span></code></pre>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">doStuff</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;
+&#125;</code></pre>
+<p><a href="https://lodash.com/docs/4.15.0#debounce" target="_blank" rel="noopener">lodash の <code>debounce</code> メソッド</a>(または可能ならば <a href="https://lodash.com/docs/4.15.0#throttle" target="_blank" rel="noopener"><code>throttle</code></a>)を直接メソッドに対して使用します。上記のような挙動を望む場合、以下のように書くことで達成できます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup</span>=<span class="hljs-string">"doStuff"</span>&gt;</span></code></pre>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">doStuff</span>: _.debounce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;, <span class="hljs-number">500</span>)
+&#125;</code></pre>
+<p>この方法に対するより詳細な利点は<a href="#v-model-の-debounce-削除">ここの <code>v-model</code> による example </a>を参照してください。</p>
+<h4 id="limitBy-フィルタの置き換え"><a href="#limitBy-フィルタの置き換え" class="headerlink" title="limitBy フィルタの置き換え"></a><code>limitBy</code> フィルタの置き換え</h4><p>このような記述の代わりに:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items | limitBy 10"</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>JavaScript 組み込みの <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice#Examples" target="_blank" rel="noopener"><code>.slice</code> メソッド</a>を算出プロパティへ使用します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in filteredItems"</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">filteredItems</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.items.slice(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
+  &#125;
+&#125;</code></pre>
+<h4 id="filterBy-フィルタの置き換え"><a href="#filterBy-フィルタの置き換え" class="headerlink" title="filterBy フィルタの置き換え"></a><code>filterBy</code> フィルタの置き換え</h4><p>このような記述の代わりに:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users | filterBy searchQuery in 'name'"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>JavaScript 組み込みの <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice#Examples" target="_blank" rel="noopener"><code>.filter</code> メソッド</a> を算出プロパティへ使用します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in filteredUsers"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">filteredUsers</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>
+    <span class="hljs-keyword">return</span> self.users.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> user.name.indexOf(self.searchQuery) !== <span class="hljs-number">-1</span>
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<p>算出プロパティに対しては、完全なるアクセス権があるため、 JavaScript 組み込みの <code>.filter</code> は、非常に複雑なフィルタリングの管理を行うことができます。例えば、もしあなたがすべてのアクティブユーザーを見つけるために、大文字小文字を区別せず、名前と E メールアドレスの両方を調べたい場合は、以下のようになります:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>
+self.users.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;
+  <span class="hljs-keyword">var</span> searchRegex = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(self.searchQuery, <span class="hljs-string">'i'</span>)
+  <span class="hljs-keyword">return</span> user.isActive &amp;&amp; (
+    searchRegex.test(user.name) ||
+    searchRegex.test(user.email)
+  )
+&#125;)</code></pre>
+<h4 id="orderBy-フィルタの置き換え"><a href="#orderBy-フィルタの置き換え" class="headerlink" title="orderBy フィルタの置き換え"></a><code>orderBy</code> フィルタの置き換え</h4><p>このような記述の代わりに:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users | orderBy 'name'"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>算出プロパティへ、<a href="https://lodash.com/docs/4.15.0#orderBy" target="_blank" rel="noopener">lodash の <code>orderBy</code></a> (もしくは <a href="https://lodash.com/docs/4.15.0#sortBy" target="_blank" rel="noopener"><code>sortBy</code></a>)を使用します。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in orderedUsers"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">orderedUsers</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> _.orderBy(<span class="hljs-keyword">this</span>.users, <span class="hljs-string">'name'</span>)
+  &#125;
+&#125;</code></pre>
+<p>複数のカラムを用いた並び替えも可能です:</p>
+<pre><code class="hljs js">_.orderBy(<span class="hljs-keyword">this</span>.users, [<span class="hljs-string">'name'</span>, <span class="hljs-string">'last_login'</span>], [<span class="hljs-string">'asc'</span>, <span class="hljs-string">'desc'</span>])</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 ディレクティブ内部で使用されているフィルタを見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="フィルタ引数の構文-変更"><a href="#フィルタ引数の構文-変更" class="headerlink" title="フィルタ引数の構文 変更"></a>フィルタ引数の構文 <sup>変更</sup></h3><p>JavaScript の関数を呼び出す際、引数のフィルタがより良い構文となります。例えば、スペースで区切る形には以下のように置き換えることができます。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; date | formatDate 'YY-MM-DD' timeZone &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>カッコで引数を囲んだ上で、カンマを用いて引数を区切ります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; date | formatDate('YY-MM-DD', timeZone) &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、古いフィルタが用いられているコードを見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="組み込みテキストフィルタ-削除"><a href="#組み込みテキストフィルタ-削除" class="headerlink" title="組み込みテキストフィルタ 削除"></a>組み込みテキストフィルタ <sup>削除</sup></h3><p>テキストを展開するためのフィルタは、現状はまだ利用できますが、すべてのフィルタが削除されました。それらの代わりに、（例えば日付のフォーマットには <a href="https://date-fns.org/" target="_blank" rel="noopener"><code>date-fns</code></a>、通貨処理には <a href="http://openexchangerates.github.io/accounting.js/" target="_blank" rel="noopener"><code>accounting</code></a> と言った形で) より専門的なライブラリの使用を推奨します。</p>
+<p>Vue に組み込まれたテキストフィルタ群は、それぞれ以下のように置き換えることができます。これらの例には、カスタムヘルパーや関数、メソッドの他、算出プロパティなどが含まれます。</p>
+<h4 id="json-フィルタの置き換え"><a href="#json-フィルタの置き換え" class="headerlink" title="json フィルタの置き換え"></a><code>json</code> フィルタの置き換え</h4><p>Vue がうまい具合に文字列や数値、配列からオブジェクトまで、自動的にフォーマットした上で出力するようになったため、あなたがデバッグする必要はありません。<br>もし、あなたが JavaScript の <code>JSON.stringify</code> と全く同じ機能が必要ならば、算出プロパティにて行うことが可能です。</p>
+<h4 id="capitalize-フィルタの置き換え"><a href="#capitalize-フィルタの置き換え" class="headerlink" title="capitalize フィルタの置き換え"></a><code>capitalize</code> フィルタの置き換え</h4><pre><code class="hljs js">text[<span class="hljs-number">0</span>].toUpperCase() + text.slice(<span class="hljs-number">1</span>)</code></pre>
+<h4 id="uppercase-フィルタの置き換え"><a href="#uppercase-フィルタの置き換え" class="headerlink" title="uppercase フィルタの置き換え"></a><code>uppercase</code> フィルタの置き換え</h4><pre><code class="hljs js">text.toUpperCase()</code></pre>
+<h4 id="lowercase-フィルタの置き換え"><a href="#lowercase-フィルタの置き換え" class="headerlink" title="lowercase フィルタの置き換え"></a><code>lowercase</code> フィルタの置き換え</h4><pre><code class="hljs js">text.toLowerCase()</code></pre>
+<h4 id="pluralize-フィルタの置き換え"><a href="#pluralize-フィルタの置き換え" class="headerlink" title="pluralize フィルタの置き換え"></a><code>pluralize</code> フィルタの置き換え</h4><p>npm 上にある <a href="https://www.npmjs.com/package/pluralize" target="_blank" rel="noopener">pluralize</a> パッケージによってこの目的を果たすことができますが、あなたがもし、特定の単語のみを複数形にしたい場合や、 <code>0</code> のようなケースの場合に特別な出力を行いたい場合は、例えば、以下のように簡単に独自の複数形にする関数を定義することができます。:</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pluralizeKnife</span> (<span class="hljs-params">count</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (count === <span class="hljs-number">0</span>) &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'no knives'</span>
+  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count === <span class="hljs-number">1</span>) &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'1 knife'</span>
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-keyword">return</span> count + <span class="hljs-string">'knives'</span>
+  &#125;
+&#125;</code></pre>
+<h4 id="currency-フィルタの置き換え"><a href="#currency-フィルタの置き換え" class="headerlink" title="currency フィルタの置き換え"></a><code>currency</code> フィルタの置き換え</h4><p>非常に単純な実装例として、このような形で実現することができます:</p>
+<pre><code class="hljs js"><span class="hljs-string">'$'</span> + price.toFixed(<span class="hljs-number">2</span>)</code></pre>
+<p>しかしながら、ほとんどの場合、これらは奇妙な動作をする場合があります(例えば、 0.035.toFixed(2) の丸め誤差が 0.04 として評価されるにも関わらず、 0.045 の丸め誤差が 0.04と評価されるなどです)。これらの問題を解消するためには、より確実な <a href="http://openexchangerates.github.io/accounting.js/" target="_blank" rel="noopener">通貨のフォーマット管理のライブラリ</a> などを使用します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、非推奨のフィルタを見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="Two-Way-フィルタ-置き換え"><a href="#Two-Way-フィルタ-置き換え" class="headerlink" title="Two-Way フィルタ 置き換え"></a>Two-Way フィルタ <sup>置き換え</sup></h3><p>あるユーザは、<code>v-model</code> で two-way フィルタを使い、非常に小さなコードで面白い入力を作成するのを楽しんでいます。しかしながら、<em>間違いなく</em>シンプルですが、two-way フィルタは複雑さを大幅に隠すことができ、状態の更新を遅らせることで不十分な UX を奨励します。代わりに、カスタム入力を作成するための、より明示的で機能豊富な方法として、入力をラップするコンポーネントが推奨されます。</p>
+<p>例として、two-way 通貨フィルタの移行について説明します:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>ほとんどの場合うまく動作しますが、遅延状態の更新によって異常な動作が発生する可能性があります。例えば、それらの入力の 1 つに <code>9.999</code> を入力してみてください。入力のフォーカスを失うと、その値は <code>$ 10.00</code> に更新されます。計算された合計を見ると、<code>9.999</code> がデータに格納されていることがわかります。ユーザーに見える現実のバージョンは同期していません！</p>
+<p>Vue 2.0 を使用してより堅牢なソリューションに移行するには、最初に新しい <code>&lt;currency-input&gt;</code> コンポーネントでこのフィルタをラップしましょう:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v2?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>これにより、フォーカスのある入力の内容を選択するなど、フィルタだけでカプセル化できなかった動作を追加できます。次のステップは、フィルタからビジネスロジックを抽出することです。以下では、すべてを外部<a href="https://gist.github.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e" target="_blank" rel="noopener"><code>currencyValidator</code> オブジェクト</a> にします:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v3?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>このようにモジュール性が向上すると、Vue 2.0 への移行が容易になるだけでなく、通貨の解析と書式設定も可能になります:</p>
+<ul>
+<li>Vue コードから単体でテストされたユニット</li>
+<li>API エンドポイントへのペイロードの検証など、アプリケーションの他の部分で使用される</li>
+</ul>
+<p>このバリデータを抽出することで、より堅牢なソリューションとしてより快適に構築できました。状態の不具合は解消されており、ユーザーが間違った入力を実際に行うことは不可能です。これは、ブラウザのネイティブ番号の入力と同様です。</p>
+<p>ただし、フィルタと Vue 1.0 の一般的な制限はありますので、Vue 2.0 へのアップグレードを完了しましょう:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>次のことに気付くかもしれません:</p>
+<ul>
+<li>two-way フィルタの隠された動作の代わりに、ライフサイクルフックと DOM イベントを使用して、入力のあらゆる側面がより明示的になります。</li>
+<li>私たちはカスタム入力に <code>v-model</code> を直接使うことができます。これは通常の入力と一貫性があるだけでなく、私たちのコンポーネントが Vuex に優しいことを意味します。</li>
+<li>返される値を必要とするフィルタオプションを使用しなくなったため、実際には非同期で通貨作業を行うことができます。つまり、通貨を使用しなければならないアプリがたくさんある場合、このロジックを簡単に共有してマイクロサービスにすることができます。</li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、ディレクティブにおいて <code>v-model</code> のように使用されているフィルタの example を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h2 id="スロット"><a href="#スロット" class="headerlink" title="スロット"></a>スロット</h2><h3 id="重複したスロット-削除"><a href="#重複したスロット-削除" class="headerlink" title="重複したスロット 削除"></a>重複したスロット <sup>削除</sup></h3><p>もはや、同じテンプレート内に、同名のスロットを持つことはサポートされません。スロットが描画されるとき、そのスロットは「使い果たされ」、同じレンダリングツリーの中で再度描画することはできません。もし、複数の場所で同一の内容を描画する必要がある場合は、プロパティとしてそのコンテンツを渡します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>アップグレード後に end-to-end のテストスイートや、それに準ずるアプリケーションを実行し、 <code>v-model</code> においての重複スロットに対してのコンソールの警告を探します。</p>
+</div>
+
+<h3 id="slot-属性のスタイリング-削除"><a href="#slot-属性のスタイリング-削除" class="headerlink" title="slot 属性のスタイリング 削除"></a><code>slot</code> 属性のスタイリング <sup>削除</sup></h3><p>名前付きスロットを経由して挿入されたコンテンツは、もはや <code>slot</code> 属性を保持しません。</p>
+<p>スタイル属性を付与したい場合は、なんらかのラップした要素に適用するか、複雑なユースケースの場合は、 <a href="render-function.html"><code>render</code> 関数</a> を用いて、プログラムにてコンテンツを変更してください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 名前付き slot を対象としているCSSのセレクタ(例えば、 <code>[slot="my-slot-name"]</code> など)を見つけます。</p>
+</div>
+
+<h2 id="特別な属性"><a href="#特別な属性" class="headerlink" title="特別な属性"></a>特別な属性</h2><h3 id="keep-alive-属性-置き換え"><a href="#keep-alive-属性-置き換え" class="headerlink" title="keep-alive 属性 置き換え"></a><code>keep-alive</code> 属性 <sup>置き換え</sup></h3><p><code>keep-alive</code> はもはや、特別な属性ではなく、 むしろ <code>&lt;transition&gt;</code> と同様に、コンポーネントのラッパーです。例えば以下の場合:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"view"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span></code></pre>
+<p>これによって、 <code>&lt;keep-alive&gt;</code> を複数条件下において使用することができます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todos.length &gt; 0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">no-todos-gif</span> <span class="hljs-attr">v-else</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">no-todos-gif</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span></code></pre>
+<p class="tip"><br>    <code>&lt;keep-alive&gt;</code> が複数の子要素を持っているとき、 <code>&lt;keep-alive&gt;</code> は単一の子要素のみを評価します。<br>    最初のひとつ目の要素以外は、単純に無視されます。<br></p>
+
+<p><code>&lt;transition&gt;</code> とともに用いるときは、それらをネストさせてください:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"view"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>keep-alive</code> 属性を見つけます。</p>
+</div>
+
+<h2 id="展開"><a href="#展開" class="headerlink" title="展開"></a>展開</h2><h3 id="属性内での展開-削除"><a href="#属性内での展開-削除" class="headerlink" title="属性内での展開 削除"></a>属性内での展開 <sup>削除</sup></h3><p>属性内での展開は、もはや有効ではありません。例えば、以下の場合:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-&#123;&#123; size &#125;&#125;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>いずれかのインライン式を使用するように更新する必要があります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:class</span>=<span class="hljs-string">"'btn btn-' + size"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>もしくはデータ/算出プロパティを使用します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:class</span>=<span class="hljs-string">"buttonClasses"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">buttonClasses</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'btn btn-'</span> + size
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、属性内で使用されている展開を見つけます。</p>
+</div>
+
+<h3 id="HTML-の展開-削除"><a href="#HTML-の展開-削除" class="headerlink" title="HTML の展開 削除"></a>HTML の展開 <sup>削除</sup></h3><p>新たな <a href="../api/#v-html"><code>v-html</code> ディレクティブ</a> を支持することによって、 HTML の展開(<code>{{{ foo }}}</code>) は非推奨となりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 HTML の展開が行われているコードを検索します。</p>
+</div>
+
+<h3 id="ワンタイムバインディング-置き換え"><a href="#ワンタイムバインディング-置き換え" class="headerlink" title="ワンタイムバインディング 置き換え"></a>ワンタイムバインディング <sup>置き換え</sup></h3><p>新たな <a href="../api/#v-once"><code>v-once</code> ディレクティブ</a> を支持することによって、ワンタイムバインディング  (<code>{{* foo }}</code>) は非推奨となりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、ワンタイムバインディングを見つけます。</p>
+</div>
+
+<h2 id="リアクティブ"><a href="#リアクティブ" class="headerlink" title="リアクティブ"></a>リアクティブ</h2><h3 id="vm-watch-変更"><a href="#vm-watch-変更" class="headerlink" title="vm.$watch 変更"></a><code>vm.$watch</code> <sup>変更</sup></h3><p><code>vm.$watch</code> を経由して作成されたウォッチャーは、関連するコンポーネントの描画の前に発火します。これは、不要な更新を避けることと、描画前にコンポーネントの状態を更新する機会を与えてくれます。例えば、コンポーネントのプロパティや、それらの値の変更をウォッチすることができます。</p>
+<p>これまで、 <code>vm.$watch</code> を利用することでコンポーネントのアップデート後に DOM に対して何らかの操作をしていた場合、それを <code>updated</code> ライフサイクルフックに置き換えることができます。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    もしあれば、 end-to-end のテストを走らせます。
+    失敗したテストについては、ウォッチャーが古い動作であることを警告します。
+  </p>
+</div>
+
+<h3 id="vm-set-変更"><a href="#vm-set-変更" class="headerlink" title="vm.$set 変更"></a><code>vm.$set</code> <sup>変更</sup></h3><p><code>vm.$set</code> は非推奨となっており、 <a href="../api/#Vue-delete"><code>Vue.set</code></a> という名称になっています。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、非推奨の用法を見つけます。</p>
+</div>
+
+<h3 id="vm-delete-変更"><a href="#vm-delete-変更" class="headerlink" title="vm.$delete 変更"></a><code>vm.$delete</code> <sup>変更</sup></h3><p><code>vm.$delete</code> は非推奨となっており、 <a href="../api/#Vue-delete"><code>Vue.delete</code></a> という名称になっています。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、非推奨の用法を見つけます。</p>
+</div>
+
+<h3 id="Array-prototype-set-削除"><a href="#Array-prototype-set-削除" class="headerlink" title="Array.prototype.$set  削除"></a><code>Array.prototype.$set</code>  <sup>削除</sup></h3><p>代わりに、 Vue.set を使用します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、配列に対しての <code>.$set</code> を見つけます。
+    そうすることで、メソッドが見つからないエラーがコンソールに出力されているので確認してください。
+  </p>
+</div>
+
+<h3 id="Array-prototype-remove-削除"><a href="#Array-prototype-remove-削除" class="headerlink" title="Array.prototype.$remove 削除"></a><code>Array.prototype.$remove</code> <sup>削除</sup></h3><p>例えば、代わりに <code>Array.prototype.splice</code> を使用します:</p>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">removeTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> index = <span class="hljs-keyword">this</span>.todos.indexOf(todo)
+    <span class="hljs-keyword">this</span>.todos.splice(index, <span class="hljs-number">1</span>)
+  &#125;
+&#125;</code></pre>
+<p>いっそのこと、削除メソッドに index を渡す方法も良いでしょう:</p>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">removeTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.todos.splice(index, <span class="hljs-number">1</span>)
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、配列に対しての <code>.$remove</code> を見つけます。
+    そうすることで、メソッドが見つからないエラーがコンソールに出力されているので確認してください。
+  </p>
+</div>
+
+<h3 id="Vue-インスタンス上での-Vue-set-および-Vue-delete-削除"><a href="#Vue-インスタンス上での-Vue-set-および-Vue-delete-削除" class="headerlink" title="Vue インスタンス上での Vue.set および Vue.delete 削除"></a>Vue インスタンス上での <code>Vue.set</code> および <code>Vue.delete</code> <sup>削除</sup></h3><p>Vue.set および Vue.delete はもはや、 Vue インスタンス上で動作することはできません。データオプション内で、全てのトップレベルのリアクティブなプロパティが必須となりました。もし、 Vue のインスタンス上で <code>$data</code> を削除したい場合、単に null を代入します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 Vue インスタンス上で使われている  <code>Vue.set</code> もしくは <code>Vue.delete</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleの警告</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="vm-data-の置き換え-削除"><a href="#vm-data-の置き換え-削除" class="headerlink" title="vm.$data の置き換え 削除"></a><code>vm.$data</code> の置き換え <sup>削除</sup></h3><p>現在では、コンポーネントのインスタンスのルートにある <code>$data</code> を書き換えることは禁止されています。これは、リアクティブなシステムの上での極端なケースを防ぎ、(特に型チェックシステム上での)コンポーネントの状態をより予測しやすくします。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$data</code> が上書きされている箇所を見つけます。
+    もし間違いがある場合、 <strong>consoleの警告</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="vm-get-削除"><a href="#vm-get-削除" class="headerlink" title="vm.$get 削除"></a><code>vm.$get</code> <sup>削除</sup></h3><p>リアクティブなデータを直接取得します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$get</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h2 id="DOM-を中心としたインスタンスメソッド"><a href="#DOM-を中心としたインスタンスメソッド" class="headerlink" title="DOM を中心としたインスタンスメソッド"></a>DOM を中心としたインスタンスメソッド</h2><h3 id="vm-appendTo-削除"><a href="#vm-appendTo-削除" class="headerlink" title="vm.$appendTo 削除"></a><code>vm.$appendTo</code> <sup>削除</sup></h3><p>ネイティブの DOM API を使用します:</p>
+<pre><code class="hljs js">myElement.appendChild(vm.$el)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$appendTo</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="vm-before-削除"><a href="#vm-before-削除" class="headerlink" title="vm.$before 削除"></a><code>vm.$before</code> <sup>削除</sup></h3><p>ネイティブの DOM API を使用します:</p>
+<pre><code class="hljs js">myElement.parentNode.insertBefore(vm.$el, myElement)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$before</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="vm-after-削除"><a href="#vm-after-削除" class="headerlink" title="vm.$after 削除"></a><code>vm.$after</code> <sup>削除</sup></h3><p>ネイティブの DOM API を使用します:</p>
+<pre><code class="hljs js">myElement.parentNode.insertBefore(vm.$el, myElement.nextSibling)</code></pre>
+<p>もし <code>myElement</code> が最後の要素の場合は、以下のように対処します:</p>
+<pre><code class="hljs js">myElement.parentNode.appendChild(vm.$el)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$after</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="vm-remove-削除"><a href="#vm-remove-削除" class="headerlink" title="vm.$remove 削除"></a><code>vm.$remove</code> <sup>削除</sup></h3><p>ネイティブの DOM API を使用します:</p>
+<pre><code class="hljs js">vm.$el.remove()</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$remove</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h2 id="メタインスタンスメソッド"><a href="#メタインスタンスメソッド" class="headerlink" title="メタインスタンスメソッド"></a>メタインスタンスメソッド</h2><h3 id="vm-eval-削除"><a href="#vm-eval-削除" class="headerlink" title="vm.$eval 削除"></a><code>vm.$eval</code> <sup>削除</sup></h3><p>この機能が実際に使用されることはありません。もしあなたがこの機能を利用する機会があり、それを回避する方法が思いつかない場合は、<a href="https://forum.vuejs.org/" target="_blank" rel="noopener">フォーラム</a>にてアイデアを募ってください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$eval</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="vm-interpolate-削除"><a href="#vm-interpolate-削除" class="headerlink" title="vm.$interpolate 削除"></a><code>vm.$interpolate</code> <sup>削除</sup></h3><p>この機能が実際に使用されることはありません。<br>もしあなたがこの機能を利用する機会があり、それを回避する方法が思いつかない場合は、<a href="https://forum.vuejs.org/" target="_blank" rel="noopener">フォーラム</a>にてアイデアを募ってください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$interpolate</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h3 id="vm-log-削除"><a href="#vm-log-削除" class="headerlink" title="vm.$log 削除"></a><code>vm.$log</code> <sup>削除</sup></h3><p>最適なデバッグのために、 <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> を利用してください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>vm.$log</code> を見つけます。
+    もし間違いがある場合、 <strong>consoleのエラー</strong>を参照してください。
+  </p>
+</div>
+
+<h2 id="インスタンス-DOM-オプション"><a href="#インスタンス-DOM-オプション" class="headerlink" title="インスタンス DOM オプション"></a>インスタンス DOM オプション</h2><h3 id="replace-false-削除"><a href="#replace-false-削除" class="headerlink" title="replace: false 削除"></a><code>replace: false</code> <sup>削除</sup></h3><p>コンポーネントは常に要素に紐付いて置き換えられます。 <code>replace:false</code> の挙動を再現するには、コンポーネントのルートを置き換えたい要素で囲みます。例えば、このような場合は:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div id="app"&gt; ... &lt;/div&gt;'</span>
+&#125;)</code></pre>
+<p>もしくは render 関数で行います:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">h</span>) </span>&#123;
+    h(<span class="hljs-string">'div'</span>, &#123;
+      <span class="hljs-attr">attrs</span>: &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-string">'app'</span>,
+      &#125;
+    &#125;, <span class="hljs-comment">/* ... */</span>)
+  &#125;
+&#125;)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>replace: false</code> を見つけます。</p>
+</div>
+
+<h2 id="グローバル設定"><a href="#グローバル設定" class="headerlink" title="グローバル設定"></a>グローバル設定</h2><h3 id="Vue-config-debug-削除"><a href="#Vue-config-debug-削除" class="headerlink" title="Vue.config.debug 削除"></a><code>Vue.config.debug</code> <sup>削除</sup></h3><p>警告に対して、必要に応じてデフォルトでスタックトレースが付随しています。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>Vue.config.debug</code> を見つけます。</p>
+</div>
+
+<h3 id="Vue-config-async-削除"><a href="#Vue-config-async-削除" class="headerlink" title="Vue.config.async 削除"></a><code>Vue.config.async</code> <sup>削除</sup></h3><p>非同期処理は現在では、描画性能のために必要とされます。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>Vue.config.async</code> を見つけます。</p>
+</div>
+
+<h3 id="Vue-config-delimiters-置き換え"><a href="#Vue-config-delimiters-置き換え" class="headerlink" title="Vue.config.delimiters 置き換え"></a><code>Vue.config.delimiters</code> <sup>置き換え</sup></h3><p><a href="../api/#delimiters">コンポーネントレベルのオプション</a> として作り直されました。これは、サードパーティのコンポーネントを壊すことなく、アプリケーション内で代替のデリミタを使用することができます。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>Vue.config.delimiters</code> を見つけます。</p>
+</div>
+
+<h3 id="Vue-config-unsafeDelimiters-削除"><a href="#Vue-config-unsafeDelimiters-削除" class="headerlink" title="Vue.config.unsafeDelimiters 削除"></a><code>Vue.config.unsafeDelimiters</code> <sup>削除</sup></h3><p><a href="#HTML-Interpolation-deprecated"><code>v-html</code> を支持すること</a> によって、 HTML の展開は非推奨となりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>
+    あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>Vue.config.delimiters</code> を見つけます。
+    その後、ヘルパーは <code>v-html</code> に置き換えることができる HTML の展開が行われているコードを検索します。
+  </p>
+</div>
+
+<h2 id="グローバル-API"><a href="#グローバル-API" class="headerlink" title="グローバル API"></a>グローバル API</h2><h3 id="Vue-extend-への-el-削除"><a href="#Vue-extend-への-el-削除" class="headerlink" title="Vue.extend への el 削除"></a><code>Vue.extend</code> への <code>el</code> <sup>削除</sup></h3><p>el オプションは、もはや <code>Vue.extend</code> で使用することはできません。これは、インスタンスの作成オプションとしてのみ有効です。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>アップグレード後に end-to-end のテストスイートやアプリケーションを実行し、 <code>Vue.extend</code> への <code>el</code> に関するコンソールの警告を探します。</p>
+</div>
+
+<h3 id="Vue-elementDirective-削除"><a href="#Vue-elementDirective-削除" class="headerlink" title="Vue.elementDirective 削除"></a><code>Vue.elementDirective</code> <sup>削除</sup></h3><p>代わりに components を使用します。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>Vue.elementDirective</code> を見つけます。</p>
+</div>
+
+<h3 id="Vue-partial-削除"><a href="#Vue-partial-削除" class="headerlink" title="Vue.partial 削除"></a><code>Vue.partial</code> <sup>削除</sup></h3><p>パーシャルは、プロパティを使用して、コンポーネント間のより明示的なデータフローを優先するため非推奨になりました。性能が重要な領域で部分的なものを使用している場合を除いて、単に<a href="components.html">通常のコンポーネント</a>を代わりに使用することを推奨します。部分的に <code>name</code> を動的に束縛する場合は、<a href="components.html#動的コンポーネント">動的コンポーネント</a>を使用できます。</p>
+<p>アプリケーションの性能に重大な影響を及ぼす部分でパーシャルを使用する場合は、<a href="render-function.html#関数型コンポーネント">関数型コンポーネント</a>にアップグレードする必要があります。それらはプレーンな JS / JSX ファイル (<code>.vue</code> ファイルではなく)になければならず、パーシャルと同様に、ステートレスでインスタンスレスです。これにより描画が非常に高速になります。</p>
+<p>パーシャル的なに関数型コンポーネントのメリットは、JavaScript のフルパワーにアクセスできるようになるため、より動的なものにできることです。しかし、この力にはコストがかかります。以前に描画関数を使ったコンポーネントフレームワークを使ったことがない人は、学習に少し時間がかかるかもしれません。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>あなたのコード上で<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a>を実行し、 <code>Vue.partial</code> を見つけます。</p>
+</div>
+
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/reactivity.html">リアクティブの探求</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/migration-vue-router.html">Vue Router 0.7.x からの移行</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    間違いを見つけた、またはドキュメントに貢献したいですか？
+    <a href="https://github.com/vuejs/jp.vuejs.org/blob/lang-ja/src/v2/guide/migration.md" rel="noopener" target="_blank">
+      GitHub で編集しましょう！
+    </a>
+    このサイトは
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>
+    でホストされています。
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '0a75952972806d9ad07e387d08e9cc4c',
+      indexName: 'vuejs_jp',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,568 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>
+      Color Wheel | Colorsinspo
+    </title>
+
+    <meta name="robots" content="index, follow">
+    <link rel="manifest" href="../menifest.json">
+    <link rel="shortcut icon" href="../static/img/colorsinspo-favicon.png" type="image/x-icon">
+    <link rel="canonical" href="https://colorsinspo.com/">
+
+    <!-- Third part -->
+    <meta name="p:domain_verify" content=" ">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="../gtag/js.js?id=UA-144013030-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-144013030-1");
+    </script>
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#0072EA">
+
+    <meta name="description" content="Color wheel is a tool that allow you to create color palette using color theories like Complementary, Monochromatic, Triad and Analogous, also you can use it to create custom palette.">
+
+    <!--Twitter Card data-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@colorsinspo">
+    <meta name="twitter:creator" content="@HexorialStudio">
+    <meta name="twitter:creator" content="@imdeepjoshi">
+    <meta name="twitter:creator" content="@itsmnthn">
+
+
+    <meta name="twitter:title" content="Colorsinspo - All in one resource for finding everything about colors">
+
+    <meta name="twitter:description" content="Colorsinspo is all in one resource to find everything about colors with extreme ease. Also, you will get Freebies, Inspirations, Color Tools, Gradients, and thousands of trendy hand-picked color palettes.">
+
+    <meta name="twitter:image" content="https://colorsinspo.com/static/img/twitter/colorsinspo-twitter-sumary-image.png">
+
+    <meta name="twitter:image:alt" content="Colorsinspo - collection of color palettes, gradients, solid colors, tools, freebies, tutorials, inspirations, games, articles, and theories">
+
+
+    <!--Open Graph data-->
+    <meta property="og:title" content="Colorsinspo - All in one resource for finding everything about colors">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://colorsinspo.com">
+    <meta property="og:image" content="https://colorsinspo.com/static/img/twitter/colorsinspo-twitter-sumary-image.png">
+    <meta property="og:description" content="Colorsinspo is all in one resource to find everything about colors with extreme ease. Also, you will get Freebies, Inspirations, Color Tools, Gradients, and thousands of trendy hand-picked color palettes.">
+    <meta property="og:site_name" content="Colorsinspo">
+    <meta property="fb:admins" content="456571361831177">
+
+    <!-- bootstrap and theme css -->
+    <link rel="stylesheet" href="../static/css/stylus.min.css">
+    <!-- component and overridden css -->
+    <link rel="stylesheet" href="../static/css/site.min.css">
+    <!-- font -->
+    <style data-meta="Font Sharp Grotesk">
+      @font-face {
+        font-family: Sharp Grotesk;
+        src: url("../static/fonts/sharp_grotesk/SharpGrotesk-Book20.otf")
+          format("truetype");
+        font-weight: 450;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: Sharp Grotesk;
+        src: url("../static/fonts/sharp_grotesk/SharpGrotesk-Medium20.otf")
+          format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      * {
+        font-family: Sharp Grotesk !important;
+      }
+
+      @media (min-width: 1281px) {
+        .sidebar-icon-only .sidebar {
+          position: fixed;
+        }
+
+        .sidebar {
+          position: fixed;
+        }
+
+        .main-panel {
+          margin: 0 auto;
+        }
+
+        .sidebar-icon-only .main-panel {
+          margin-left: 75px;
+        }
+      }
+
+      a:hover,
+      a:focus,
+      a:visited,
+      a:active {
+        text-decoration: none;
+        /* color: #ffffff; */
+      }
+    </style>
+    <!-- /font -->
+
+    <!-- Carbon ads css -->
+    <style>
+      .bottom-right {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 6px;
+        z-index: 999;
+      }
+
+      #carbonads {
+        max-width: 300px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        line-height: 1.5;
+      }
+
+      #carbonads > span {
+        position: relative;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.05);
+      }
+
+      .carbon-wrap {
+        display: flex;
+      }
+
+      .carbon-img {
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      .carbon-text {
+        color: #637381;
+        text-decoration: none;
+        font-size: 12px;
+      }
+
+      .carbon-poweredby {
+        position: absolute;
+        bottom: 10px;
+        left: 152px;
+        color: #c5cdd0;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        font-size: 8px;
+        line-height: 1;
+      }
+    </style>
+
+    <!-- ./ Carbon ads css -->
+
+    <!-- Top bar -->
+    <style>
+      .top-bar {
+        font-weight: 500;
+        position: fixed;
+        height: 60px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: #ffffff;
+        background-color: #400a35;
+        z-index: 1000;
+      }
+      .top-bar a {
+        color: #ed70ef;
+      }
+    </style>
+    <!-- ./Top bar -->
+
+    <!-- custom style block -->
+
+  </head>
+
+  <body class="pt-5">
+    <div class="container-scroller" style="margin-top: 58px">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="/">
+            <svg width="186" height="38" viewbox="0 0 186 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M56.464 30.736C60.656 30.736 63.024 28.72 63.056 23.888V20.656H58.64V23.6C58.64 25.84 58.128 26.864 56.496 26.864C54.768 26.864 54.288 25.808 54.288 23.44V14.288C54.288 11.92 54.8 10.832 56.464 10.832C58.224 10.832 58.64 11.696 58.64 14.096V16.592H63.024V13.776C63.024 9.136 60.912 7.12 56.496 7.12C52.464 7.12 50 9.328 50 14.032V23.76C50 28.592 52.176 30.736 56.464 30.736Z" fill="#262626"></path>
+              <path d="M71.1532 30.704C75.1532 30.704 77.2972 28.624 77.2972 24.336V18C77.2972 13.68 75.0892 11.536 71.1532 11.536C67.3452 11.536 65.0092 13.68 65.0092 18V24.336C65.0092 28.656 66.9932 30.704 71.1532 30.704ZM71.1532 27.088C69.7772 27.088 69.1052 26.128 69.1052 24.24V18.032C69.1052 16.016 69.7772 15.056 71.1532 15.056C72.6252 15.056 73.2012 16.016 73.2012 18.032V24.24C73.2012 26.128 72.5292 27.088 71.1532 27.088Z" fill="#262626"></path>
+              <path d="M79.6822 30.384H83.7782V6.384H79.6822V30.384Z" fill="#262626"></path>
+              <path d="M92.2684 30.704C96.2684 30.704 98.4124 28.624 98.4124 24.336V18C98.4124 13.68 96.2044 11.536 92.2684 11.536C88.4604 11.536 86.1244 13.68 86.1244 18V24.336C86.1244 28.656 88.1084 30.704 92.2684 30.704ZM92.2684 27.088C90.8924 27.088 90.2204 26.128 90.2204 24.24V18.032C90.2204 16.016 90.8924 15.056 92.2684 15.056C93.7404 15.056 94.3164 16.016 94.3164 18.032V24.24C94.3164 26.128 93.6444 27.088 92.2684 27.088Z" fill="#262626"></path>
+              <path d="M100.797 30.384H104.829V19.568C104.829 17.04 105.309 16.208 107.709 16.208H108.797V11.6H108.189C105.565 11.6 104.637 12.336 104.413 15.12L103.773 11.792H100.797V30.384Z" fill="#262626"></path>
+              <path d="M115.902 30.736C119.902 30.736 121.886 28.56 121.886 25.264V24.784C121.886 22.416 120.862 21.136 119.39 20.336C118.718 19.92 117.982 19.568 117.246 19.28C115.518 18.608 114.046 18.128 114.046 16.784V16.56C114.046 15.536 114.59 14.8 115.87 14.8C117.214 14.8 117.694 15.44 117.694 16.656V17.904H121.598V16.496C121.598 13.456 119.87 11.536 115.838 11.536C111.934 11.536 110.078 13.712 110.078 16.656V16.976C110.078 19.216 111.07 20.464 112.414 21.232C113.086 21.616 113.822 21.936 114.494 22.192C115.71 22.608 116.734 23.056 117.374 23.696C117.726 24.048 117.854 24.464 117.854 25.008V25.264C117.854 26.48 117.246 27.216 115.966 27.216C114.494 27.216 113.982 26.608 113.982 25.264V23.632H109.822V25.52C109.822 28.944 111.614 30.736 115.902 30.736Z" fill="#262626"></path>
+              <path d="M125.963 10.736C127.627 10.736 128.363 10.224 128.363 8.368C128.363 6.512 127.691 6 125.963 6C124.235 6 123.563 6.512 123.563 8.368C123.563 10.224 124.107 10.736 125.963 10.736ZM123.819 11.856V30.384H128.011V11.856C127.787 12.016 126.603 12.144 125.931 12.144C125.259 12.144 124.043 12.016 123.819 11.856Z" fill="#262626"></path>
+              <path d="M134.77 30.384V18.128C134.77 16.24 135.346 15.184 136.818 15.184C138.194 15.184 138.61 16.08 138.61 17.808V30.384H142.738V17.136C142.738 13.392 141.266 11.568 138.322 11.568C136.274 11.568 134.994 12.624 134.45 14.512L134.002 11.792H130.642V30.384H134.77Z" fill="#262626"></path>
+              <path d="M150.59 30.736C154.59 30.736 156.574 28.56 156.574 25.264V24.784C156.574 22.416 155.55 21.136 154.078 20.336C153.406 19.92 152.67 19.568 151.934 19.28C150.206 18.608 148.734 18.128 148.734 16.784V16.56C148.734 15.536 149.278 14.8 150.558 14.8C151.902 14.8 152.382 15.44 152.382 16.656V17.904H156.286V16.496C156.286 13.456 154.558 11.536 150.526 11.536C146.622 11.536 144.766 13.712 144.766 16.656V16.976C144.766 19.216 145.758 20.464 147.102 21.232C147.774 21.616 148.51 21.936 149.182 22.192C150.398 22.608 151.422 23.056 152.062 23.696C152.414 24.048 152.542 24.464 152.542 25.008V25.264C152.542 26.48 151.934 27.216 150.654 27.216C149.182 27.216 148.67 26.608 148.67 25.264V23.632H144.51V25.52C144.51 28.944 146.302 30.736 150.59 30.736Z" fill="#262626"></path>
+              <path d="M165.902 30.64C168.942 30.64 170.702 28.72 170.702 23.696V18.64C170.702 13.552 169.102 11.568 165.934 11.568C163.918 11.568 162.734 12.656 162.19 14.544L161.71 11.792H158.382V36.336H162.382V27.952C162.862 29.68 163.918 30.64 165.902 30.64ZM164.462 27.12C163.054 27.12 162.382 26.064 162.382 24.08V18.288C162.382 16.112 163.118 15.056 164.526 15.056C165.934 15.056 166.638 15.92 166.638 18.448V23.984C166.638 26.224 165.934 27.12 164.462 27.12Z" fill="#262626"></path>
+              <path d="M178.968 30.704C182.968 30.704 185.112 28.624 185.112 24.336V18C185.112 13.68 182.904 11.536 178.968 11.536C175.16 11.536 172.824 13.68 172.824 18V24.336C172.824 28.656 174.808 30.704 178.968 30.704ZM178.968 27.088C177.592 27.088 176.92 26.128 176.92 24.24V18.032C176.92 16.016 177.592 15.056 178.968 15.056C180.44 15.056 181.016 16.016 181.016 18.032V24.24C181.016 26.128 180.344 27.088 178.968 27.088Z" fill="#262626"></path>
+              <path d="M1.22804 17.4357C0.929197 20.9633 1.21875 24.5142 2.08526 27.9476L2.08485 27.9407C2.43225 29.5104 3.09954 30.9939 4.04644 32.3019C4.99333 33.6099 6.20022 34.7152 7.59429 35.551C8.98835 36.3868 10.5407 36.9359 12.1577 37.1651C13.7746 37.3944 15.4227 37.2991 17.0024 36.8849C23.7268 35.2973 29.798 31.7197 34.3962 26.6352C35.9035 24.9205 36.815 22.778 36.9977 20.5205C37.2214 17.5074 36.2231 14.5322 34.2211 12.2453C34.2211 12.2453 29.377 6.25357 18.1749 2.14226C13.0058 0.139756 7.07122 1.86793 4.19648 6.49959C3.88599 7.00005 3.61766 7.5246 3.39423 8.068L3.39382 8.061C2.18461 11.0581 1.45361 14.2201 1.22672 17.435" fill="url(#paint0_linear)"></path>
+              <g style="mix-blend-mode: overlay" filter="url(#filter0_f)">
+                <path d="M25.4429 20.947H17.2579C16.9711 20.947 16.7385 21.1796 16.7385 21.4664V29.6516C16.7336 29.8056 16.8032 29.9526 16.9255 30.0463C17.0371 30.1497 17.1921 30.1924 17.341 30.1605C21.7693 29.4502 25.2415 25.9779 25.9519 21.5495C25.9837 21.4006 25.9411 21.2456 25.8376 21.134C25.7439 21.0117 25.5969 20.9421 25.4429 20.947Z" fill="black" fill-opacity="0.5"></path>
+                <path d="M7.58345 20.9915L15.7683 21.0489C16.0551 21.0509 16.286 21.285 16.284 21.5718L16.227 29.7568C16.2309 29.9109 16.1603 30.0574 16.0373 30.1502C15.925 30.2529 15.7697 30.2944 15.621 30.2616C11.1978 29.5202 7.74978 26.0236 7.07031 21.5904C7.03951 21.4413 7.08322 21.2866 7.18745 21.1757C7.28202 21.054 7.42947 20.9855 7.58345 20.9915Z" fill="black" fill-opacity="0.5"></path>
+                <path d="M16.6743 19.9765V11.7913C16.6693 11.6373 16.739 11.4903 16.8613 11.3966C16.9729 11.2931 17.1279 11.2505 17.2768 11.2823C21.705 11.9926 25.1773 15.465 25.8876 19.8934C25.9195 20.0422 25.8768 20.1972 25.7734 20.3089C25.6797 20.4312 25.5327 20.5008 25.3787 20.4958H17.1937C16.9068 20.4958 16.6743 20.2633 16.6743 19.9765Z" fill="black" fill-opacity="0.5"></path>
+                <path d="M16.224 19.9765V11.7913C16.229 11.6373 16.1594 11.4903 16.037 11.3966C15.9254 11.2931 15.7704 11.2505 15.6215 11.2823C11.1933 11.9926 7.72098 15.465 7.01067 19.8934C6.97884 20.0422 7.02147 20.1972 7.12493 20.3089C7.21865 20.4312 7.36562 20.5008 7.51964 20.4958H15.7046C15.9915 20.4958 16.224 20.2633 16.224 19.9765Z" fill="black" fill-opacity="0.5"></path>
+              </g>
+              <g filter="url(#filter1_iiiii)">
+                <path d="M25.6361 19.6736H17.4511C17.1643 19.6736 16.9318 19.9061 16.9318 20.193V28.3781C16.9268 28.5321 16.9964 28.6791 17.1187 28.7728C17.2304 28.8763 17.3854 28.9189 17.5342 28.8871C21.9625 28.1768 25.4348 24.7044 26.1451 20.2761C26.1769 20.1272 26.1343 19.9722 26.0308 19.8606C25.9371 19.7382 25.7901 19.6686 25.6361 19.6736Z" fill="#14FF64"></path>
+                <path d="M7.77742 19.7181L15.9622 19.7754C16.249 19.7774 16.4799 20.0116 16.4779 20.2984L16.421 28.4834C16.4249 28.6374 16.3543 28.7839 16.2313 28.8768C16.1189 28.9795 15.9636 29.021 15.815 28.9881C11.3918 28.2468 7.94375 24.7502 7.26428 20.3169C7.23348 20.1679 7.27719 20.0132 7.38142 19.9023C7.47599 19.7806 7.62344 19.712 7.77742 19.7181Z" fill="#FE0BEA"></path>
+                <path d="M16.8685 18.7045V10.5193C16.8636 10.3653 16.9332 10.2183 17.0555 10.1246C17.1671 10.0211 17.3221 9.97851 17.471 10.0103C21.8993 10.7207 25.3715 14.193 26.0819 18.6214C26.1137 18.7702 26.0711 18.9253 25.9676 19.0369C25.8739 19.1592 25.7269 19.2288 25.5729 19.2239H17.3879C17.1011 19.2239 16.8685 18.9913 16.8685 18.7045Z" fill="#FFEA20"></path>
+                <path d="M16.4182 18.7045V10.5193C16.4232 10.3653 16.3536 10.2183 16.2312 10.1246C16.1196 10.0211 15.9646 9.97851 15.8158 10.0103C11.3875 10.7207 7.9152 14.193 7.20489 18.6214C7.17306 18.7702 7.21569 18.9252 7.31915 19.0369C7.41287 19.1592 7.55983 19.2288 7.71385 19.2239H15.8989C16.1857 19.2239 16.4182 18.9913 16.4182 18.7045Z" fill="#4EF2FF"></path>
+              </g>
+              <defs>
+                <filter id="filter0_f" x="5.98703" y="10.2586" width="20.9885" height="21.0274" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feflood flood-opacity="0" result="BackgroundImageFix"></feflood>
+                  <feblend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feblend>
+                  <fegaussianblur stddeviation="0.506667" result="effect1_foregroundBlur"></fegaussianblur>
+                </filter>
+                <filter id="filter1_iiiii" x="7.19458" y="6.2" width="18.9608" height="25.3326" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feflood flood-opacity="0" result="BackgroundImageFix"></feflood>
+                  <feblend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feblend>
+                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></fecolormatrix>
+                  <feoffset dy="2.53333"></feoffset>
+                  <fegaussianblur stddeviation="1.26667"></fegaussianblur>
+                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"></fecomposite>
+                  <fecolormatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"></fecolormatrix>
+                  <feblend mode="overlay" in2="shape" result="effect1_innerShadow"></feblend>
+                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></fecolormatrix>
+                  <feoffset dy="-5.06667"></feoffset>
+                  <fegaussianblur stddeviation="1.26667"></fegaussianblur>
+                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"></fecomposite>
+                  <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"></fecolormatrix>
+                  <feblend mode="overlay" in2="effect1_innerShadow" result="effect2_innerShadow"></feblend>
+                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></fecolormatrix>
+                  <feoffset dy="0.633333"></feoffset>
+                  <fegaussianblur stddeviation="0.95"></fegaussianblur>
+                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"></fecomposite>
+                  <fecolormatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0"></fecolormatrix>
+                  <feblend mode="overlay" in2="effect2_innerShadow" result="effect3_innerShadow"></feblend>
+                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></fecolormatrix>
+                  <feoffset dy="-3.8"></feoffset>
+                  <fegaussianblur stddeviation="3.8"></fegaussianblur>
+                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"></fecomposite>
+                  <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"></fecolormatrix>
+                  <feblend mode="overlay" in2="effect3_innerShadow" result="effect4_innerShadow"></feblend>
+                  <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></fecolormatrix>
+                  <feoffset dy="2.53333"></feoffset>
+                  <fegaussianblur stddeviation="2.53333"></fegaussianblur>
+                  <fecomposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"></fecomposite>
+                  <fecolormatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"></fecolormatrix>
+                  <feblend mode="overlay" in2="effect4_innerShadow" result="effect5_innerShadow"></feblend>
+                </filter>
+                <lineargradient id="paint0_linear" x1="17.9456" y1="1.05426" x2="20.0544" y2="36.9455" gradientunits="userSpaceOnUse">
+                  <stop stop-color="#0088EA"></stop>
+                  <stop offset="1" stop-color="#0033EA"></stop>
+                </lineargradient>
+              </defs>
+            </svg>
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="/">
+            <img height="38" width="38" src="../static/img/colorsinspo-mini.svg" alt="">
+          </a>
+        </div>
+
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="copy_msg" style="display: none" id="msg1">
+              Pretty Good Choice
+            </div>
+            <div class="copy_msg" style="display: none" id="msg2">
+              Fall in Love with Color
+            </div>
+            <div class="copy_msg" style="display: none" id="msg3">
+              Looks Amazing
+            </div>
+            <div class="copy_msg" style="display: none" id="msg4">
+              Pretty Good Color
+            </div>
+            <div class="copy_msg" style="display: none" id="msg5">
+              Hey Nice Choice
+            </div>
+            <div class="copy_msg" style="display: none" id="msg6">
+              Oh wow this is lit
+            </div>
+
+
+
+<div class="container" id="color-main">
+    <style>
+        #color-main {
+            background-color: #FDFDFD;
+        }
+        .canvas {
+            text-align: center;
+        }
+
+
+        /* rule box */
+
+        .rule-box {
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+            background-color: #444;
+        }
+
+        .rule-box h4 {
+            color: #BBB;
+            font-size: 14pt;
+            margin: 0;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        .color-rule {
+            display: inline-block;
+            border-bottom: 2px solid #DCDCDC;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        #rules {
+            justify-content: space-between;
+        }
+        #rules li {
+            margin: 10px;
+        }
+
+        #rules li a,
+        #left_action li a {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 26px;
+            box-shadow: none;
+            width: 100%;
+            border: 4px solid #ECECEC;
+            box-sizing: border-box;
+            color: #000000;
+        }
+
+        #rules li a:hover,
+        #left_action li a:hover {
+            background: #2F80ED;
+            color: #FFFFFF;
+            border: 4px solid #2F80ED;
+        }
+
+        #rules li a.active,
+        #rules li a.active:hover {
+            background: #2F80ED;
+            color: #FFFFFF;
+            border: 4px solid #2F80ED;
+        }
+
+        .samples .sample {
+            /* position: absolute; */
+            width: 100%;
+            height: 177px;
+            border-radius: 15.3383px;
+        }
+
+        #samples .hex {
+            width: 100%;
+            height: 70px;
+            text-align: center;
+            margin-top: 20px;
+            background: #F0F0F0;
+            border-radius: 9px;
+            border-style: none;
+        }
+
+        #color_assets div[class^="col"] {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+        .content-wrapper{padding:0 !important}
+    </style>
+    <div class="row">
+        <h1 class="page-title">Color Wheel</h1>
+    </div>
+    <div class="row">
+        <h2 class="page-sub-title">Color Wheel allows you to create color palettes based on color theories like Complementary, Monochromatic, Triad and Analogous.</h2>
+    </div>
+    <div class="row justify-content-around">
+        <!-- Color Rules -->
+        <div class="mt-5">
+            <div class="col-md-12 text-md-left text-sm-left text-center">
+                <!-- <h2 class="text-center color-rule">Color rules</h2> -->
+            </div>
+            <ul class="nav flex-column" id="rules">
+                <li class="nav-item active" data-type="1">
+                    <a class="btn btn-rounded active" data-toggle="tab" role="tab">Analogous</a>
+                </li>
+                <li class="nav-item" data-type="2">
+                    <a class="btn btn-rounded" data-toggle="tab" role="tab">Monochromatic</a>
+                </li>
+                <li class="nav-item" data-type="3">
+                    <a class="btn btn-rounded" data-toggle="tab" role="tab">Triad</a>
+                </li>
+                <li class="nav-item" data-type="4">
+                    <a class="btn btn-rounded" data-toggle="tab" role="tab">Complementary</a>
+                </li>
+                <li class="nav-item" data-type="5">
+                    <a class="btn btn-rounded" data-toggle="tab" role="tab">Custom</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Color Rules -->
+
+        <!-- Color wheel -->
+        <div class="canvas mt-5 flex-center">
+            <canvas id="picker" style="border-radius: 50%" data-s="380"></canvas>
+        </div>
+        <!-- Color wheel -->
+
+        <!-- Actions-->
+
+
+        <!-- Actions -->
+    </div>
+    <div class="container" id="color_assets">
+        <div class="row samples mt-5 justify-content-between" id="samples">
+            <div class="col" data-sample="3">
+                <div class="sample"></div>
+                <input type="text" class="hex">
+            </div>
+            <div class="col" data-sample="1">
+                <div class="sample"></div>
+                <input type="text" class="hex">
+            </div>
+            <div class="col" data-sample="0">
+                <div class="sample"></div>
+                <input type="text" class="hex">
+            </div>
+            <div class="col" data-sample="2">
+                <div class="sample"></div>
+                <input type="text" class="hex">
+
+            </div>
+            <div class="col" data-sample="4">
+                <div class="sample"></div>
+                <input type="text" class="hex">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+          </div>
+          <!-- content-wrapper ends -->
+          <footer class="footer">
+            <div class="d-sm-flex ml-0 ml-md-3 justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left footer-credit">
+                Terms of Use</a>
+              Privacy & Policy</a>
+                <span class="text-muted text-center text-sm-left footer-credit">Copyright © 2019 - 2021
+
+                  <strong>Hexorial Studio</strong></span>
+            </span>
+
+
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Buy us a Coffee</a></span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center footer-social">
+
+                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 5V19C21 20.1046 20.1046 21 19 21H15.25C14.9739 21 14.75 20.7761 14.75 20.5V14.5H17.09C17.3276 14.5 17.5325 14.3328 17.58 14.1L17.94 12.3C17.9549 12.2273 17.9366 12.1517 17.8903 12.0938C17.8439 12.0358 17.7742 12.0015 17.7 12H14.75V8.75C14.75 8.61193 14.8619 8.5 15 8.5H17.5C17.7761 8.5 18 8.27614 18 8V6.5C18 6.22386 17.7761 6 17.5 6H15C13.3431 6 12 7.34315 12 9V12H10.77C10.4939 12 10.27 12.2239 10.27 12.5V14C10.27 14.2761 10.4939 14.5 10.77 14.5H12V20.5C12 20.7761 11.7761 21 11.5 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5Z" fill="#565656"></path>
+                  </svg>
+                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 3H8C5.23858 3 3 5.23858 3 8V16C3 18.7614 5.23858 21 8 21H16C18.7614 21 21 18.7614 21 16V8C21 5.23858 18.7614 3 16 3ZM19.25 16C19.2445 17.7926 17.7926 19.2445 16 19.25H8C6.20735 19.2445 4.75549 17.7926 4.75 16V8C4.75549 6.20735 6.20735 4.75549 8 4.75H16C17.7926 4.75549 19.2445 6.20735 19.25 8V16ZM16.75 8.25C17.3023 8.25 17.75 7.80228 17.75 7.25C17.75 6.69772 17.3023 6.25 16.75 6.25C16.1977 6.25 15.75 6.69772 15.75 7.25C15.75 7.80228 16.1977 8.25 16.75 8.25ZM12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5027 10.8057 16.0294 9.65957 15.1849 8.81508C14.3404 7.97059 13.1943 7.49734 12 7.5ZM9.25 12C9.25 13.5188 10.4812 14.75 12 14.75C13.5188 14.75 14.75 13.5188 14.75 12C14.75 10.4812 13.5188 9.25 12 9.25C10.4812 9.25 9.25 10.4812 9.25 12Z" fill="#646464"></path>
+                  </svg>
+                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.97 6.46378C21.454 7.15213 20.8302 7.75258 20.1228 8.24195C20.1228 8.42177 20.1228 8.60158 20.1228 8.79139C20.1285 12.0568 18.8241 15.1879 16.5022 17.4828C14.1802 19.7777 11.0349 21.0443 7.77138 20.9988C5.88465 21.0051 4.02208 20.5743 2.32957 19.7401C2.23831 19.7003 2.17945 19.61 2.17979 19.5103V19.4005C2.17979 19.257 2.29603 19.1407 2.4394 19.1407C4.29402 19.0796 6.08246 18.4366 7.55171 17.3026C5.87303 17.2688 4.36265 16.2744 3.66756 14.7453C3.63245 14.6617 3.64338 14.5659 3.6964 14.4925C3.74943 14.419 3.83688 14.3785 3.92717 14.3856C4.43735 14.4369 4.95264 14.3894 5.44488 14.2458C3.59176 13.8611 2.19934 12.3227 2.00006 10.4397C1.99298 10.3494 2.03346 10.2619 2.10688 10.2088C2.1803 10.1558 2.27604 10.1448 2.35952 10.18C2.85682 10.3994 3.39365 10.515 3.93715 10.5196C2.31337 9.45384 1.61201 7.42672 2.22972 5.58469C2.29348 5.4057 2.44667 5.27347 2.63299 5.2366C2.81931 5.19972 3.01128 5.26365 3.13835 5.40487C5.32954 7.73695 8.34026 9.12662 11.5357 9.28088C11.4539 8.95427 11.4136 8.61862 11.4159 8.28191C11.4458 6.51636 12.5382 4.94357 14.1817 4.29986C15.8252 3.65615 17.6946 4.06893 18.9146 5.34494C19.7463 5.18651 20.5502 4.90716 21.301 4.51579C21.356 4.48145 21.4258 4.48145 21.4808 4.51579C21.5151 4.57081 21.5151 4.64058 21.4808 4.6956C21.1171 5.52835 20.5028 6.2268 19.7234 6.69355C20.4059 6.6144 21.0764 6.45341 21.7204 6.21404C21.7746 6.17713 21.8459 6.17713 21.9001 6.21404C21.9455 6.23482 21.9795 6.27457 21.993 6.32269C22.0064 6.37081 21.998 6.42242 21.97 6.46378Z" fill="#565656"></path>
+                  </svg>
+                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 12.0114C22 17.5279 17.5229 22 12 22C11.2425 22.0004 10.4875 21.9133 9.75003 21.7403C9.59803 21.7076 9.47132 21.6033 9.41003 21.4606C9.34047 21.3223 9.34047 21.1594 9.41003 21.0211L9.56003 20.7314C9.8173 20.2472 10.0058 19.7294 10.12 19.1932L10.78 16.0967C11.5655 16.8378 12.6212 17.2242 13.7 17.1655C16.79 17.1655 18.87 14.7483 18.87 11.1723C18.87 7.74624 15.87 5.17916 11.99 5.17916C8.11003 5.17916 5.11003 7.87609 5.11003 11.1723C5.12183 12.6933 5.7667 14.1408 6.89003 15.1678C7.01864 15.2951 7.20707 15.3412 7.38003 15.2876C7.55531 15.2404 7.68767 15.0965 7.72003 14.9181L7.92003 14.0191C7.94944 13.8667 7.90909 13.7091 7.81003 13.5896C7.2166 12.9384 6.88224 12.0928 6.87003 11.2123C6.87003 8.86496 9.16003 6.95714 11.99 6.95714C14.82 6.95714 17.11 8.7451 17.11 11.2123C17.11 13.2799 16.22 15.4774 13.7 15.4774C13.1303 15.5387 12.5597 15.3692 12.1161 15.0069C11.6725 14.6445 11.393 14.1196 11.34 13.5496L11.99 10.553C12.1472 10.044 12.0702 9.49162 11.78 9.04476C11.6061 8.7752 11.3193 8.59889 11 8.5653C9.53002 8.5653 9.45003 11.0325 9.45003 11.5619C9.44271 12.2114 9.49627 12.8602 9.61002 13.4997L8.33003 19.2631C8.22189 19.7514 8.17819 20.2518 8.20003 20.7514C8.20166 20.8618 8.14944 20.9662 8.06003 21.0311C7.96411 21.0864 7.84594 21.0864 7.75003 21.0311C3.25803 18.9244 0.992245 13.846 2.42731 9.10094C3.86238 4.35589 8.56412 1.37986 13.4725 2.10974C18.3809 2.83961 22.0109 7.05455 22 12.0114Z" fill="#646464"></path>
+                  </svg>
+                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.28 10.61C11.0003 10.9144 10.6595 11.1563 10.28 11.32C10.8621 11.5084 11.3651 11.8847 11.71 12.39C12.0501 12.9347 12.2206 13.5682 12.2 14.21C12.2134 14.9158 12.0224 15.6104 11.65 16.21C11.4214 16.5952 11.123 16.9343 10.77 17.21C10.3522 17.5194 9.87041 17.7313 9.36 17.83C8.78057 17.9459 8.1909 18.0029 7.6 18H2.75C2.33804 17.9946 2.00539 17.662 2 17.25V6.31003C2 5.89582 2.33579 5.56003 2.75 5.56003H8C9.24391 5.43362 10.4704 5.92721 11.28 6.88003C11.6684 7.43608 11.8682 8.10203 11.85 8.78003C11.8829 9.43831 11.6809 10.0869 11.28 10.61ZM7.19 7.72003H4.87V10.46H7.5C7.96025 10.4813 8.41734 10.374 8.82 10.15C9.17611 9.90771 9.36863 9.48802 9.32 9.06003C9.37492 8.57366 9.10765 8.10797 8.66 7.91003C8.18303 7.76984 7.68694 7.70572 7.19 7.72003ZM8.76 15.77C8.36418 15.9455 7.9323 16.0244 7.5 16H4.87V12.5H7.54C7.96722 12.4886 8.39235 12.5634 8.79 12.72C9.31713 12.984 9.63012 13.5426 9.58 14.13C9.65275 14.7903 9.33191 15.432 8.76 15.77ZM19.5 7.50003H15.5C15.2239 7.50003 15 7.27617 15 7.00003V6.50003C15 6.22389 15.2239 6.00003 15.5 6.00003H19.5C19.7761 6.00003 20 6.22389 20 6.50003V7.00003C20 7.27617 19.7761 7.50003 19.5 7.50003ZM21.86 13.74C21.9505 13.6461 22.0008 13.5205 22 13.39C22.0053 12.9653 21.9786 12.5407 21.92 12.12C21.8284 11.4602 21.5854 10.8304 21.21 10.28C20.8272 9.71704 20.2935 9.2734 19.67 9.00003C19.0116 8.71142 18.2988 8.56816 17.58 8.58003C16.3905 8.53172 15.2346 8.98103 14.39 9.82003C13.5167 10.7883 13.073 12.069 13.16 13.37C13.0324 14.7069 13.5352 16.0269 14.52 16.94C15.4106 17.6496 16.5216 18.0246 17.66 18C18.9093 18.0721 20.1282 17.5977 21 16.7C21.3639 16.3385 21.6379 15.8967 21.8 15.41C21.8356 15.341 21.8356 15.259 21.8 15.19C21.7551 15.1244 21.6795 15.0865 21.6 15.09H19.78C19.6124 15.0899 19.4553 15.1721 19.36 15.31C19.268 15.4572 19.1533 15.5888 19.02 15.7C18.648 15.9847 18.188 16.1298 17.72 16.11C17.2692 16.1252 16.8239 16.007 16.44 15.77C15.8152 15.3555 15.4603 14.6381 15.51 13.89H21.51C21.6417 13.8871 21.7671 13.8333 21.86 13.74ZM16.18 11.12C15.8294 11.5008 15.6118 11.985 15.56 12.5H19.58C19.5768 11.9646 19.3524 11.4543 18.96 11.09C18.5785 10.7581 18.0854 10.583 17.58 10.6C17.0614 10.5714 16.5542 10.7598 16.18 11.12Z" fill="#646464"></path>
+                  </svg>
+                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2915 3.03966C10.2853 3.06148 10.2719 3.15069 10.2618 3.23794C10.2224 3.57959 10.097 4.1969 9.99868 4.53382C9.60198 5.89248 8.7802 6.94087 7.64655 7.53451C7.48851 7.61729 7.27839 7.7176 7.1796 7.75748L7 7.82997V9.11097V10.392H7.88968H8.77934L8.79017 14.0483C8.79977 17.294 8.80632 17.7331 8.84848 17.958C8.98325 18.6773 9.19103 19.1017 9.65733 19.6104C10.3221 20.3355 11.1978 20.7732 12.3305 20.9464C12.8067 21.0192 13.8354 21.0176 14.342 20.9432C15.1745 20.8209 15.9645 20.5645 16.7773 20.1528L17 20.04V18.63V17.22L16.6782 17.4227C15.9786 17.8634 15.2885 18.0782 14.5718 18.0782C13.7542 18.0781 13.0984 17.7423 12.8222 17.1822C12.6296 16.7914 12.6037 16.3023 12.6036 13.049L12.6034 10.392H14.5431H16.4828V8.9802V7.56843H14.5431H12.6034V5.28421V3H11.4531C10.558 3 10.3003 3.00879 10.2915 3.03966Z" fill="#565656"></path>
+                  </svg>
+              </span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+
+    </div>
+    <!-- container-scroller -->
+
+    <!-- All:js -->
+    <script src="../static/js/vendor.bundle.base.min.js"></script>
+    <script src="../static/js/off-canvas.min.js"></script>
+    <script src="../static/js/hoverable-collapse.min.js"></script>
+    <script src="../static/js/misc.min.js"></script>
+    <script src="../static/js/clipboard.min.js"></script>
+    <script></script>
+
+    <!-- endAll:js -->
+    <!-- Custom js for this page -->
+
+
+<script type="text/javascript" src="../static/js/tools/colorwheel.min.js"></script>
+<script>
+    document.getElementById('fullscreen').addEventListener('click', function () {
+        toggleFullscreen(document.getElementById('color-main'));
+    });
+
+    document.getElementById('fullscreen').addEventListener('click', function () {
+        toggleFullscreen(document.getElementById('color-main'));
+    });
+</script>
+
+    <!-- End custom js for this page -->
+
+    <!-- Twitter universal website tag code -->
+    <script>
+      !(function (e, t, n, s, u, a) {
+        e.twq ||
+          ((s = e.twq = function () {
+            s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+          }),
+          (s.version = "1.1"),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = "//static.ads-twitter.com/uwt.js"),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+      })(window, document, "script");
+      // Insert Twitter Pixel ID and Standard Event data below
+      twq("init", "o2xxc");
+      twq("track", "PageView");
+    </script>
+    <!-- End Twitter universal website tag code -->
+  </body>
+</html>

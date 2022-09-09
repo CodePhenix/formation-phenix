@@ -9,7 +9,7 @@ section, a.section{
   text-align: center;
   text-decoration: none;
   padding:0;
-  height: 22em;
+  height: 28em;
   display: block;
 }
 
@@ -54,6 +54,32 @@ section li a{color:#fff;text-decoration: none;}
 section li a:hover{color:#fff;text-decoration: underline;}
 section i{color: white;font-size: 4em;}
 
+#alert{
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: -10em;
+  left: 0;
+  margin: 0;
+  background: #393e46 ;
+  color: white;
+  padding: 3%;
+  animation-name: popup;
+  animation-duration: 6s;
+
+}
+#alert p{text-align: center;margin:0;}
+#alert a{color:white;}
+#alert:hover{bottom:0 !important;animation-play-state:paused;}
+#alert span{color:#999}
+
+@keyframes popup {
+  0%{bottom:-10em;}
+  20%,70%{bottom:0;}
+  100%{bottom:-10em;}
+}
+
+
 
 /* RESPONSIVE */
 @media screen and (min-width: 768px){
@@ -95,5 +121,7 @@ section i{color: white;font-size: 4em;}
   a section:hover > div > div {
     padding-top:24%;
   }
+
+  #alert{padding: 2%;}
 
 }

@@ -1,0 +1,1231 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>TypeScript のサポート — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/typescript.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/typescript.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/typescript.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/typescript.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/typescript.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/typescript.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/typescript.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/typescript.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="TypeScript のサポート — Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TypeScript のサポート — Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'jp.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">v2.x 以前のドキュメントです。</span>
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="検索">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学ぶ</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ドキュメント</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">ガイド</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">スタイルガイド</a></li>
+        <li><a href="/v2/examples/" class="nav-link">例</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">クックブック</a></li>
+      </ul>
+    </li>
+    <li><h4>ビデオコース</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">エコシステム</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ヘルプ</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">フォーラム</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">チャット(公式)</a></li>
+      <li><a href="https://join.slack.com/t/vuejs-jp/shared_invite/zt-vmg3iysl-~CPGAxFMWwa0Fnu2IqtMdQ" class="nav-link" target="_blank" rel="noopener">チャット(日本向け)</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">ミートアップ</a></li>
+    </ul></li>
+    <li><h4>開発ツール</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>コアライブラリ</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>ニュース</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">ウィークリーニュース</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">ロードマップ</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">イベント</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">ブログ(英語)</a></li>
+      <li><a href="/blog/" class="nav-link" target="_blank" rel="noopener">ブログ(日本語訳)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">ジョブ(海外)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV コミュニティ</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">チーム</a>
+</li>
+<li>
+  <a href="/contribution/" class="nav-link">貢献</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">リソース</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">パートナー</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">テーマ</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Browse packages for Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue を支援する</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#1回きりの支援" class="nav-link">1回きりの支援</a></li>
+    <li><a href="/support-vuejs/#継続的な支援" class="nav-link">継続的な支援</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Tシャツ ショップ</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">言語</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/typescript.html" class="nav-link">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/typescript.html" class="nav-link">中文</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/typescript.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/typescript.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/typescript.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/typescript.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/typescript.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/typescript.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/typescript.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          ガイド
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>基本的な使い方</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">インストール</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">はじめに</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue インスタンス</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">テンプレート構文</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">算出プロパティとウォッチャ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">クラスとスタイルのバインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">条件付きレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">リストレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">イベントハンドリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">フォーム入力バインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">コンポーネントの基本</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>コンポーネントの詳細</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">コンポーネントの登録</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">プロパティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">カスタムイベント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">スロット</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">動的 & 非同期コンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">特別な問題に対処する</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>トランジションとアニメーション</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Enter/Leave とトランジション一覧</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">状態のトランジション</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>再利用と構成</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">ミックスイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">カスタムディレクティブ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">描画関数とJSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">プラグイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">フィルター</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>ツール</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">単一ファイルコンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">テスト</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link current">TypeScript のサポート</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">プロダクション環境への配信</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>スケールアップ</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">ルーティング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">状態管理</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">サーバサイドレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">セキュリティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>内部</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">リアクティブの探求</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>移行</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x から 1.0 への移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>その他</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">他のフレームワークとの比較</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js コミュニティへ参加しましょう!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">チームに会おう</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar typescript-guide">
+  <p class="tip warning v3-warning">
+    v2.x 以前のドキュメントです。
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>TypeScript のサポート</h1>
+  
+  <p class="updated">最終更新日: 2020年11月7日</p>
+  
+  
+    <blockquote>
+<p><a href="https://cli.vuejs.org" target="_blank" rel="noopener">Vue CLI</a> は、TypeScript ツールのサポートを組み込みで提供します。</p>
+</blockquote>
+<h2 id="NPM-パッケージ内の公式型宣言"><a href="#NPM-パッケージ内の公式型宣言" class="headerlink" title="NPM パッケージ内の公式型宣言"></a>NPM パッケージ内の公式型宣言</h2><p>静的型システムは、特にアプリケーションが成長するに伴い、多くの潜在的なランタイムエラーを防止するのに役立ちます。そのため、Vue は <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">TypeScript</a> 向けに<a href="https://github.com/vuejs/vue/tree/dev/types" target="_blank" rel="noopener">公式型宣言</a>を提供しており、Vue コアだけでなく <a href="https://github.com/vuejs/vue-router/tree/dev/types" target="_blank" rel="noopener">Vue Router</a> と <a href="https://github.com/vuejs/vuex/tree/dev/types" target="_blank" rel="noopener">Vuex</a> も同様に提供しています。</p>
+<p>これらは <a href="https://cdn.jsdelivr.net/npm/vue@2/types/" target="_blank" rel="noopener">NPM に公開</a>されており、そして最新の TypeScript は NPM パッケージ内の型宣言を解決する方法を知っています。つまり、NPM でインストールした時、TypeScript を Vue と共に使うための追加のツールを必要としません。</p>
+<h2 id="推奨構成"><a href="#推奨構成" class="headerlink" title="推奨構成"></a>推奨構成</h2><pre><code class="hljs js"><span class="hljs-comment">// tsconfig.json</span>
+&#123;
+  <span class="hljs-string">"compilerOptions"</span>: &#123;
+    <span class="hljs-comment">// これは Vue のブラウザサポートに合わせます</span>
+    <span class="hljs-string">"target"</span>: <span class="hljs-string">"es5"</span>,
+    <span class="hljs-comment">// これは `this` におけるデータプロパティに対して厳密な推論を可能にします</span>
+    <span class="hljs-string">"strict"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">// webpack 2 以降 または rollup を使用している場合、ツリーシェイキングを活用するために</span>
+    <span class="hljs-string">"module"</span>: <span class="hljs-string">"es2015"</span>,
+    <span class="hljs-string">"moduleResolution"</span>: <span class="hljs-string">"node"</span>
+  &#125;
+&#125;</code></pre>
+<p>コンポーネントメソッド内で <code>this</code> の型をチェックするには <code>strict: true</code> (もしくは最低でも <code>strict</code> フラグの一部の <code>noImplicitThis: true</code>) を含める必要があることに注意してください。</p>
+<p>より詳細なことについては <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank" rel="noopener">TypeScript compiler options docs</a> を見てください。</p>
+<h2 id="開発ツール"><a href="#開発ツール" class="headerlink" title="開発ツール"></a>開発ツール</h2><h3 id="プロジェクト作成"><a href="#プロジェクト作成" class="headerlink" title="プロジェクト作成"></a>プロジェクト作成</h3><p><a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">Vue CLI 3</a> は TypeScript を利用する新規のプロジェクトを生成する事ができます。次の手順で開始してください:</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># 1. インストールされていない場合、 Vue CLI をインストールしてください</span>
+npm install --global @vue/cli
+
+<span class="hljs-comment"># 2. 新規のプロジェクトを作成し、続いて "Manually select features" を選択して下さい</span>
+vue create my-project-name</code></pre>
+<h3 id="各エディタによるサポート"><a href="#各エディタによるサポート" class="headerlink" title="各エディタによるサポート"></a>各エディタによるサポート</h3><p>TypeScript による Vue アプリケーションを開発するために、すぐに利用できる TypeScript のサポートを提供する <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a> を使用することを強く勧めます。<a href="./single-file-components.html">単一ファイルコンポーネント</a> (SFC) を使用している場合、SFC 内部で TypeScript インターフェイスと他の多くの優れた機能を提供する素晴らしい <a href="https://github.com/vuejs/vetur" target="_blank" rel="noopener">Vetur 拡張</a> を入手してください。</p>
+<p><a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">WebStorm</a> も TypeScript と Vue.js の両方に対してすぐに利用できるサポートを提供しています。</p>
+<h2 id="基本的な使い方"><a href="#基本的な使い方" class="headerlink" title="基本的な使い方"></a>基本的な使い方</h2><p>Vue コンポーネントオプション内部で TypeScript が型を適切に推測できるようにするには、<code>Vue.component</code> または <code>Vue.extend</code> でコンポーネントを定義する必要があります:</p>
+<pre><code class="hljs ts"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+
+<span class="hljs-keyword">const</span> Component = Vue.extend(&#123;
+  <span class="hljs-comment">// 型推論を有効にする</span>
+&#125;)
+
+<span class="hljs-keyword">const</span> Component = &#123;
+  <span class="hljs-comment">// これは型推論を持っていません、</span>
+  <span class="hljs-comment">// なぜなら、これは Vue コンポーネントのオプションであるということを伝えることができないためです。</span>
+&#125;</code></pre>
+<h2 id="クラススタイル-Vue-コンポーネント"><a href="#クラススタイル-Vue-コンポーネント" class="headerlink" title="クラススタイル Vue コンポーネント"></a>クラススタイル Vue コンポーネント</h2><p>コンポーネントを宣言するときにクラスベース API を使用する場合は、公式にメンテナンスされている <a href="https://github.com/vuejs/vue-class-component" target="_blank" rel="noopener">vue-class-component</a> のデコレータを使用できます:</p>
+<pre><code class="hljs ts"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">import</span> Component <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-class-component'</span>
+
+<span class="hljs-comment">// @Component デコレータはクラスが Vue コンポーネントであることを示します</span>
+<span class="hljs-meta">@Component</span>(&#123;
+  <span class="hljs-comment">// ここではすべてのコンポーネントオプションが許可されています</span>
+  template: <span class="hljs-string">'&lt;button @click="onClick"&gt;Click!&lt;/button&gt;'</span>
+&#125;)
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> MyComponent <span class="hljs-keyword">extends</span> Vue &#123;
+  <span class="hljs-comment">// 初期データはインスタンスプロパティとして宣言できます</span>
+  message: <span class="hljs-built_in">string</span> = <span class="hljs-string">'Hello!'</span>
+
+  <span class="hljs-comment">// コンポーネントメソッドはインスタンスメソッドとして宣言できます</span>
+  onClick (): <span class="hljs-built_in">void</span> &#123;
+    <span class="hljs-built_in">window</span>.alert(<span class="hljs-keyword">this</span>.message)
+  &#125;
+&#125;</code></pre>
+<h2 id="プラグインで使用するための型拡張"><a href="#プラグインで使用するための型拡張" class="headerlink" title="プラグインで使用するための型拡張"></a>プラグインで使用するための型拡張</h2><p>プラグインは Vue のグローバル/インスタンスプロパティやコンポーネントオプションを追加することがあります。このような場合、TypeScript でそのプラグインを使用したコードをコンパイルするためには型定義が必要になります。幸い、TypeScript には<a href="https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation" target="_blank" rel="noopener">モジュール拡張 (Module Augmentation)</a> と呼ばれる、すでに存在する型を拡張する機能があります。</p>
+<p>例えば、<code>string</code> 型をもつ <code>$myProperty</code> インスタンスプロパティを定義するには:</p>
+<pre><code class="hljs ts"><span class="hljs-comment">// 1. 拡張した型を定義する前に必ず 'vue' をインポートするようにしてください</span>
+<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+
+<span class="hljs-comment">// 2. 拡張したい型が含まれるファイルを指定してください</span>
+<span class="hljs-comment">//    Vue のコンストラクタの型は types/vue.d.ts に入っています</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> 'vue/types/vue' &#123;
+  <span class="hljs-comment">// 3. 拡張した Vue を定義します</span>
+  <span class="hljs-keyword">interface</span> Vue &#123;
+    $myProperty: <span class="hljs-built_in">string</span>
+  &#125;
+&#125;</code></pre>
+<p>上記のコードを（<code>my-property.d.ts</code> のような）型定義ファイルとしてあなたのプロジェクトに含めると、Vue インスタンス上で <code>$myProperty</code> が使用できるようになります。</p>
+<pre><code class="hljs ts"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue()
+<span class="hljs-built_in">console</span>.log(vm.$myProperty) <span class="hljs-comment">// これはうまくコンパイルされる</span></code></pre>
+<p>追加でグローバルプロパティやコンポーネントオプションも定義することもできます:</p>
+<pre><code class="hljs ts"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+
+<span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> 'vue/types/vue' &#123;
+  <span class="hljs-comment">// `VueConstructor` インターフェイスにおいて</span>
+  <span class="hljs-comment">// グローバルプロパティを定義できます</span>
+  <span class="hljs-keyword">interface</span> VueConstructor &#123;
+    $myGlobal: <span class="hljs-built_in">string</span>
+  &#125;
+&#125;
+
+<span class="hljs-comment">// ComponentOptions は types/options.d.ts に定義されています</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> 'vue/types/options' &#123;
+  <span class="hljs-keyword">interface</span> ComponentOptions&lt;V <span class="hljs-keyword">extends</span> Vue&gt; &#123;
+    myOption?: <span class="hljs-built_in">string</span>
+  &#125;
+&#125;</code></pre>
+<p>上記の型定義は次のコードをコンパイルできるようにします:</p>
+<pre><code class="hljs ts"><span class="hljs-comment">// グローバルプロパティ</span>
+<span class="hljs-built_in">console</span>.log(Vue.$myGlobal)
+
+<span class="hljs-comment">// 追加のコンポーネントオプション</span>
+<span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  myOption: <span class="hljs-string">'Hello'</span>
+&#125;)</code></pre>
+<h2 id="戻り値の型にアノテーションをつける"><a href="#戻り値の型にアノテーションをつける" class="headerlink" title="戻り値の型にアノテーションをつける"></a>戻り値の型にアノテーションをつける</h2><p>Vue の宣言ファイルは循環的な性質を持つため、TypeScript は特定のメソッドの型を推論するのが困難な場合があります。この理由のため、<code>render</code> や <code>computed</code> のメソッドに戻り値の型のアノテーションを付ける必要があるかもしれません。</p>
+<pre><code class="hljs ts"><span class="hljs-keyword">import</span> Vue, &#123; VNode &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+
+<span class="hljs-keyword">const</span> Component = Vue.extend(&#123;
+  data () &#123;
+    <span class="hljs-keyword">return</span> &#123;
+      msg: <span class="hljs-string">'Hello'</span>
+    &#125;
+  &#125;,
+  methods: &#123;
+    <span class="hljs-comment">// 戻り値の型の `this` のために、アノテーションが必要です</span>
+    greet (): <span class="hljs-built_in">string</span> &#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.msg + <span class="hljs-string">' world'</span>
+    &#125;
+  &#125;,
+  computed: &#123;
+    <span class="hljs-comment">// アノテーションが必要です</span>
+    greeting(): <span class="hljs-built_in">string</span> &#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.greet() + <span class="hljs-string">'!'</span>
+    &#125;
+  &#125;,
+  <span class="hljs-comment">// `createElement` は推論されますが、`render` は戻り値の型が必要です</span>
+  render (createElement): VNode &#123;
+    <span class="hljs-keyword">return</span> createElement(<span class="hljs-string">'div'</span>, <span class="hljs-keyword">this</span>.greeting)
+  &#125;
+&#125;)</code></pre>
+<p>型推論やメンバの補完が機能していない場合、特定のメソッドにアノテーションを付けるとこれらの問題に対処できます。<code>--noImplicitAny</code> オプションを使用すると、これらのアノテーションが付けられていないメソッドの多くを見つけるのに役立ちます。</p>
+<h2 id="プロパティにアノテーションをつける"><a href="#プロパティにアノテーションをつける" class="headerlink" title="プロパティにアノテーションをつける"></a>プロパティにアノテーションをつける</h2><pre><code class="hljs ts"><span class="hljs-keyword">import</span> Vue, &#123; PropType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+
+<span class="hljs-keyword">interface</span> ComplexMessage &#123;
+  title: <span class="hljs-built_in">string</span>,
+  okMessage: <span class="hljs-built_in">string</span>,
+  cancelMessage: <span class="hljs-built_in">string</span>
+&#125;
+<span class="hljs-keyword">const</span> Component = Vue.extend(&#123;
+  props: &#123;
+    name: <span class="hljs-built_in">String</span>,
+    success: &#123; <span class="hljs-keyword">type</span>: <span class="hljs-built_in">String</span> &#125;,
+    callback: &#123;
+      <span class="hljs-keyword">type</span>: <span class="hljs-built_in">Function</span> <span class="hljs-keyword">as</span> PropType&lt;<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">void</span>&gt;
+    &#125;,
+    message: &#123;
+      <span class="hljs-keyword">type</span>: <span class="hljs-built_in">Object</span> <span class="hljs-keyword">as</span> PropType&lt;ComplexMessage&gt;,
+      required: <span class="hljs-literal">true</span>,
+      validator (message: ComplexMessage) &#123;
+        <span class="hljs-keyword">return</span> !!message.title;
+      &#125;
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<p>バリデータが型推論できないかメンバの補完が機能していない場合、期待される型引数付きでアノテーションするとこれらの問題に対処できます。</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/testing.html">テスト</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/deployment.html">プロダクション環境への配信</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    間違いを見つけた、またはドキュメントに貢献したいですか？
+    <a href="https://github.com/vuejs/jp.vuejs.org/blob/lang-ja/src/v2/guide/typescript.md" rel="noopener" target="_blank">
+      GitHub で編集しましょう！
+    </a>
+    このサイトは
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>
+    でホストされています。
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '0a75952972806d9ad07e387d08e9cc4c',
+      indexName: 'vuejs_jp',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

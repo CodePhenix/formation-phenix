@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<title>Contrast Ratio: Easily calculate color contrast ratios. Passing WCAG was never this easy!</title>
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" type="image/png" href="about:blank">
+
+</head>
+<body>
+
+<h1><a href="#"><div><span>Contrast</span></div> <div><strong>ratio</strong></div></a></h1>
+
+<label class="background">
+	<span>Background:</span>
+	<input id="background" value="white" autofocus="">
+	<output for="background foreground" class="rl" aria-live="polite" aria-label="Relative Luminance"></output>
+</label>
+
+<label class="foreground">
+	<span>Text color:</span>
+	<input id="foreground" value="hsla(200,0%,0%,.7)">
+	<output for="background foreground" class="rl" aria-live="polite" aria-label="Relative Luminance"></output>
+</label>
+
+<output for="background foreground" class="contrast" tabindex="0" aria-live="polite">
+	<strong>?</strong>
+	<span class="error"></span>
+</output>
+
+<section id="results">
+	<output for="background foreground" id="preciseContrast" aria-label="Precise contrast"></output>
+	<output for="background foreground" id="wcag"></output>
+</section>
+
+<section class="color-display" id="backgroundDisplay">
+	<h1>How to use</h1>
+	<p>As you type, the contrast ratio indicated will update. Hover over the circle to get more detailed information. When semi-transparent colors are involved as backgrounds, the contrast ratio will have an error margin, to account for the different colors they may be over.</p>
+	<p style="font-family: Garamond, 'Palatino Linotype', Georgia, serif;">This sample text attempts to visually demonstrate how readable this color combination is, for normal, <span style="font-style: italic;">italic</span>, <span style="font-weight: bold;">bold</span>, or <span style="font-style: italic; font-weight: bold;">bold italic</span> text of various sizes and font styles.</p>
+	<p style="font-size: 11pt;"><strong>Hint:</strong> Press the up and down keyboard arrows while over a number inside a functional color notation. Watch it increment/decrement. Try with the Shift or Alt key too!</p>
+	<footer>
+		By <a href="index-1.htm" rel="noopener" target="_blank">Lea Verou</a>
+		&bull; <a href="TR/WCAG/index.htm#contrast-minimum" rel="noopener" target="_blank">WCAG 2.1 on contrast ratio</a>
+
+	</footer>
+</section>
+<section class="color-display" id="foregroundDisplay">
+	<button id="swap">↔ Swap colors</button>
+</section>
+
+<footer></footer>
+
+<script src="incrementable/incrementable.js" id="incrementable" async=""></script>
+<script src="color.js"></script>
+<script src="contrast-ratio.js"></script>
+
+
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async="" defer="" src="buttons.js"></script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-117109922-1', 'auto');
+ga('send', 'pageview');
+</script>
+</body>
+</html>

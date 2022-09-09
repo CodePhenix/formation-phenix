@@ -1,0 +1,2048 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Migração do Vue 1.x — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/migration.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/migration.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Migração do Vue 1.x — Vue.js">
+    <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta property="og:image" content="https://br.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Migração do Vue 1.x — Vue.js">
+    <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'br.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Você está navegando a documentação da v2.x e anterior.</span>
+    <a href="https://vuejsbr-docs-next.netlify.app/">Clique aqui</a> para a documentação da v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Pesquisa">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Aprenda</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentação</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guia</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Guia de Estilos</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemplos</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Livro de Receitas</a></li>
+      </ul>
+    </li>
+    <li><h4>Cursos em Vídeo</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecossistema</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Ajuda</h4></li>
+    <li><ul>
+      <li class="inline"><a href="https://github.com/vuejs-br/forum" class="nav-link" target="_blank" rel="noopener">Fórum</a>
+      <a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat (Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/comunidades" class="nav-link" target="_blank" rel="noopener">Comunidades</a>
+			<a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+    <li><h4>Ferramentas</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliotecas Oficiais</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Atualize-se</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Notícias Semanais</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Eventos</a></li>
+			<li class="inline"><a href="https://twitter.com/vuejs_brasil" class="nav-link" target="_blank" rel="noopener">Twitter</a>
+			<a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="http://vuejs-brasil.com.br/" class="nav-link" target="_blank" rel="noopener">Blog</a>
+			<a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/vagas" class="nav-link" target="_blank" rel="noopener">Empregos</a>
+			<a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Equipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Recursos</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Parceiros</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Temas</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Lista Geral "Awesome Vue"</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Bibliotecas Recomendadas</a></li>
+    <li><a href="https://empresas-usando-vuejs.netlify.com/" class="nav-link" target="_blank" rel="noopener">Empresas usando Vue no Brasil</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Patrocine</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#Doacoes-Unicas" class="nav-link">Doações Únicas</a></li>
+    <li><a href="/support-vuejs/#Ajuda-Recorrente" class="nav-link">Ajuda Recorrente</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Loja de Camisetas</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Traduções</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/migration.html" class="nav-link">Chinês</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/migration.html" class="nav-link">Coreano</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/migration.html" class="nav-link">Francês</a></li>
+    <li><a href="https://vuejs.org/v2/guide/migration.html" class="nav-link">Inglês</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/migration.html" class="nav-link">Japonês</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/migration.html" class="nav-link">Português</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/migration.html" class="nav-link">Russo</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/migration.html" class="nav-link">Vietnamita</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/migration.html" class="nav-link">Espanhol</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/migration.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guia
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essenciais</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalação</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introdução</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">A Instância Vue</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaxe de Templates</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Dados Computados e Observadores</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Interligações de Classe e Estilo</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Renderização Condicional</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Renderização de Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Manipulação de Eventos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Interligações em Formulários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Básico sobre Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Componentes em Detalhes</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registro de Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Propriedades</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Eventos Personalizados</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dinâmicos & Assíncronos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Lidando com Casos Extremos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transições & Animações</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transições de Visibilidade e Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reuso & Composição</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Diretivas Personalizadas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Funções de Renderização & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filtros</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Ferramentas</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Componentes Single-File</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Publicando em Produção</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Escalonando</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Gerenciamento de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Segurança</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internamente</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migração</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link current">Migração do Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migração do Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migração do Vuex 0.6.x para 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Diversos</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Comparação com Outros Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Junte-se à Comunidade Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Conheça a Equipe</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar migration-guide">
+  <p class="tip warning v3-warning">
+    Você está navegando a documentação da v2.x e anterior.
+    Para a v3.x, <a href="https://vuejsbr-docs-next.netlify.app/">clique aqui</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Migração do Vue 1.x</h1>
+  
+  
+    <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><blockquote>
+<p>Wow - essa página é super longa! Isso significa que a versão 2.0 é completamente diferente, eu terei que aprender o básico de novo e a migração será praticamente impossivel?</p>
+</blockquote>
+<p>Fico feliz que você tenha perguntado! A resposta é não. Cerca de 90% da API é a mesma e os conceitos básicos não mudaram. É longo porque queremos oferecer explicações muito detalhadas e incluir muitos exemplos. Tenha certeza, <strong>isso não é algo que você precisa ler de cima para baixo!</strong></p>
+<blockquote>
+<p>Por onde devo começar em uma migração?</p>
+</blockquote>
+<ol>
+<li><p>Comece executando o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a>  em um projeto atual. Nós cuidadosamente minificamos e comprimimos um desenvolvedor sênior do Vue em uma interface de linha de comando simples. Sempre que eles reconhecem um recurso obsoleto, eles irão te informar, oferecer sugestões e fornecer links para mais informações.</p>
+</li>
+<li><p>Depois disso, navegue pela tabela de conteúdos desta página na barra lateral. Se você ver um tópico pelo o qual pode ser afetado, mas o assistente de migração não pegou, confira.</p>
+</li>
+<li><p>Se você tiver testes, execute-os e veja o que ainda falha. Se não tiver, basta abrir o app em seu navegador e ficar atento para avisos ou erros ao navegar.</p>
+</li>
+<li><p>Por enquanto, seu app deve ter migrado totalmente. Se você ainda deseja mais, pode ler o resto desta página - ou mergulhar no novo e melhorado <a href="index.html">guia de início</a>. Muitas partes serão elimináveis, já que você já está familiarizado com os conceitos básicos.</p>
+</li>
+</ol>
+<blockquote>
+<p>Quanto demorará para migrar um app Vue da versão 1.x para a 2.0?</p>
+</blockquote>
+<p>Depende de alguns fatores:</p>
+<ul>
+<li><p>O tamanho do seu app (app pequeno ou médio provavelmente será inferior a um dia)</p>
+</li>
+<li><p>Quantas vezes você se distrai e começa a brincar com um recurso novo e legal. 😉&nbsp;Não julgando, também aconteceu conosco enquanto construíamos a versão 2.0!</p>
+</li>
+<li><p>Quais recursos obsoletos você está usando. A maioria pode ser atualizada com encontrar-e-substituir, mas outros podem demorar alguns minutos. Se você não estiver seguindo as práticas recomendadas, o Vue 2.0 também tentará forçar você a fazê-lo. Isso é bom no longo prazo, mas também pode significar um refatoramento significativo (embora possivelmente em atraso).</p>
+</li>
+</ul>
+<blockquote>
+<p>Se eu atualizar para o Vue 2, também terei que atualizar o Vuex e o Vue Router?</p>
+</blockquote>
+<p>Somente o Vue Router 2 é compatível com o Vue 2, então sim, você também terá que seguir o <a href="migration-vue-router.html">caminho de migração do Vue Router</a>. Felizmente, a maioria dos apps não tem muito código de roteador, então provavelmente não demorará mais de uma hora.</p>
+<p>Quanto ao Vuex, até a versão 0.8 é compatível com o Vue 2, portanto, você não está obrigado a atualizar. A única razão pela qual você pode querer atualizar imediatamente é aproveitar os novos recursos do Vuex 2, como módulos e boilerplate reduzido.</p>
+<h2 id="Templates"><a href="#Templates" class="headerlink" title="Templates"></a>Templates</h2><h3 id="Instancias-de-Fragmento-removido"><a href="#Instancias-de-Fragmento-removido" class="headerlink" title="Instâncias de Fragmento removido"></a>Instâncias de Fragmento <sup>removido</sup></h3><p>Cada componente deve ter exatamente um elemento raiz. As instâncias de fragmento não são mais permitidas. Se você tem um template como este:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Recomenda-se envolver todo o conteúdo em um novo elemento, como este:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu conjunto de testes de ponta a ponta ou app após a atualização e procure <strong>avisos no console</strong> sobre vários elementos raiz em um template.</p>
+</div>
+
+<h2 id="Gatilhos-do-Ciclo-de-Vida"><a href="#Gatilhos-do-Ciclo-de-Vida" class="headerlink" title="Gatilhos do Ciclo de Vida"></a>Gatilhos do Ciclo de Vida</h2><h3 id="beforeCompile-removido"><a href="#beforeCompile-removido" class="headerlink" title="beforeCompile removido"></a><code>beforeCompile</code> <sup>removido</sup></h3><p>Use o gatilho <code>created</code> no lugar.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar todos os exemplos desse gatilho.</p>
+</div>
+
+<h3 id="compiled-substituido"><a href="#compiled-substituido" class="headerlink" title="compiled  substituído"></a><code>compiled</code>  <sup>substituído</sup></h3><p>Use o novo gatilho <code>mounted</code> no lugar.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar todos os exemplos desse gatilho.</p>
+</div>
+
+<h3 id="attached-removido"><a href="#attached-removido" class="headerlink" title="attached removido"></a><code>attached</code> <sup>removido</sup></h3><p>Use uma verificação personalizada no DOM em outros gatilhos. Por exemplo, para substituir:</p>
+<pre><code class="hljs js">attached: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  doSomething()
+&#125;</code></pre>
+<p>Você pode usar:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    doSomething()
+  &#125;)
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar todos os exemplos desse gatilho.</p>
+</div>
+
+<h3 id="detached-removido"><a href="#detached-removido" class="headerlink" title="detached removido"></a><code>detached</code> <sup>removido</sup></h3><p>Use uma verificação personalizada no DOM em outros gatilhos. Por exemplo, para substituir:</p>
+<pre><code class="hljs js">detached: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  doSomething()
+&#125;</code></pre>
+<p>Você pode usar:</p>
+<pre><code class="hljs js">destroyed: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    doSomething()
+  &#125;)
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar todos os exemplos desse gatilho.</p>
+</div>
+
+<h3 id="init-renomeado"><a href="#init-renomeado" class="headerlink" title="init renomeado"></a><code>init</code> <sup>renomeado</sup></h3><p>Use o novo gatilho <code>beforeCreate</code> em vez disso, que é essencialmente o mesmo. Foi renomeado para consistência com outros métodos do ciclo de vida.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar todos os exemplos desse gatilho.</p>
+</div>
+
+<h3 id="ready-substituido"><a href="#ready-substituido" class="headerlink" title="ready substituído"></a><code>ready</code> <sup>substituído</sup></h3><p>Use o novo gatilho <code>mounted</code> em vez disso. Deve notar-se que, com <code>mounted</code>, não há garantia de estar no documento pronto. Para isso, também inclua <code>Vue.nextTick</code>/<code>vm.$nextTick</code>. Por exemplo:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// código que assume que o this.$el está no documento</span>
+  &#125;)
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar todos os exemplos desse gatilho.</p>
+</div>
+
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a><code>v-for</code></h2><h3 id="Ordem-dos-Argumentos-para-Arrays-no-v-for-mudado"><a href="#Ordem-dos-Argumentos-para-Arrays-no-v-for-mudado" class="headerlink" title="Ordem dos Argumentos para Arrays no v-for mudado"></a>Ordem dos Argumentos para Arrays no <code>v-for</code> <sup>mudado</sup></h3><p>Ao incluir um <code>índice</code>, a ordem dos argumentos para arrays costumava ser <code>(índice, valor)</code>. Agora é <code>(valor, índice)</code> para ser mais consistente com os métodos de array nativos do JavaScript, como por exemplo, <code>forEach</code> e <code>map</code>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de ordem de argumentos obsoleta. Observe que, se você nomear seus argumentos de índice algo incomum como <code>position</code> ou <code>num</code>, o assistente não irá sinalizá-los.</p>
+</div>
+
+<h3 id="Ordem-dos-Argumentos-para-Objects-no-v-for-mudado"><a href="#Ordem-dos-Argumentos-para-Objects-no-v-for-mudado" class="headerlink" title="Ordem dos Argumentos para Objects no v-for mudado"></a>Ordem dos Argumentos para Objects no <code>v-for</code> <sup>mudado</sup></h3><p>Ao incluir um nome/chave de propriedade, a ordem dos argumentos para objetos costumava ser <code>(nome, valor)</code>. Agora é <code>(valor, nome)</code> para ser mais consistente com os iteradores de objetos comuns, como o <code>lodash</code>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de ordem de argumentos obsoleta. Observe que, se você nomear seus argumentos de chave como <code>name</code> ou <code>property</code>, o assistente não os sinalizará.</p>
+</div>
+
+<h3 id="index-e-key-removidos"><a href="#index-e-key-removidos" class="headerlink" title="$index e $key removidos"></a><code>$index</code> e <code>$key</code> <sup>removidos</sup></h3><p>As variáveis <code>$index</code> e <code>$key</code> implicitamente atribuídas foram removidas em favor de definí-las explicitamente no <code>v-for</code>. Isso torna o código mais fácil de ler para desenvolvedores menos experientes com Vue e também resulta em um comportamento muito mais claro ao lidar com loops aninhados.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos dessas variáveis removidas. Se você perder alguma, também poderá ver <strong>erros no console</strong>, como: <code>Uncaught ReferenceError: $index is not defined</code></p>
+</div>
+
+<h3 id="track-by-substituido"><a href="#track-by-substituido" class="headerlink" title="track-by substituído"></a><code>track-by</code> <sup>substituído</sup></h3><p><code>track-by</code> foi substituído por uma <code>key</code>, que funciona como qualquer outro atributo: sem o <code>v-bind:</code> ou o prefixo  <code>:</code>, é tratado como uma string literal. Na maioria dos casos, você desejará usar uma vinculação dinâmica que espera uma expressão completa ao invés de uma chave. Por exemplo, no lugar de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">track-by</span>=<span class="hljs-string">"id"</span>&gt;</span></code></pre>
+<p>Agora você irá escrever:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item.id"</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>track-by</code>.</p>
+</div>
+
+<h3 id="Intervalo-de-Valores-do-v-for-modificado"><a href="#Intervalo-de-Valores-do-v-for-modificado" class="headerlink" title="Intervalo de Valores do v-for modificado"></a>Intervalo de Valores do <code>v-for</code> <sup>modificado</sup></h3><p>Antes, <code>v-for=&quot;numero in 10&quot;</code> teria o <code>numero</code> começando em 0 e terminando em 9. Agora começa no 1 e termina no 10.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Procure na sua base de código pelo regex <code>/\w+ in \d+/</code>. Onde quer que apareça em um <code>v-for</code>, verifique se você pode ser afetado.</p>
+</div>
+
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><h3 id="Opcao-coerce-de-Props-removido"><a href="#Opcao-coerce-de-Props-removido" class="headerlink" title="Opção coerce de Props removido"></a>Opção <code>coerce</code> de Props <sup>removido</sup></h3><p>Se você quiser coagir uma prop, configure um valor computado local com base nisso. Por exemplo, em vez de:</p>
+<pre><code class="hljs js">props: &#123;
+  <span class="hljs-attr">username</span>: &#123;
+    <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>
+    <span class="hljs-attr">coerce</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> value
+        .toLowerCase()
+        .replace(<span class="hljs-regexp">/\s+/</span>, <span class="hljs-string">'-'</span>)
+    &#125;
+  &#125;
+&#125;</code></pre>
+<p>Você pode escrever:</p>
+<pre><code class="hljs js">props: &#123;
+  <span class="hljs-attr">username</span>: <span class="hljs-built_in">String</span>
+&#125;,
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">normalizedUsername</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.username
+      .toLowerCase()
+      .replace(<span class="hljs-regexp">/\s+/</span>, <span class="hljs-string">'-'</span>)
+  &#125;
+&#125;</code></pre>
+<p>Existem algumas vantagens:</p>
+<ul>
+<li>Você ainda tem acesso ao valor original do prop.</li>
+<li>Você é forçado a ser mais explícito, dando ao valor coagido um nome que o diferencia do valor passado na prop.</li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos da opção <code>coerce</code>.</p>
+</div>
+
+<h3 id="Opcao-twoWay-de-Props-removido"><a href="#Opcao-twoWay-de-Props-removido" class="headerlink" title="Opção twoWay de Props removido"></a>Opção <code>twoWay</code> de Props <sup>removido</sup></h3><p>Props agora estão sempre em sentido único. Para produzir efeitos colaterais no escopo dos pais, um componente precisa emitir um evento explicitamente em vez de depender da vinculação implícita. Para mais informações, veja:</p>
+<ul>
+<li><a href="components.html#Custom-Events">Eventos de componentes customizados</a></li>
+<li><a href="components.html#Form-Input-Components-using-Custom-Events">Componentes de inputs customizados</a> (usando eventos de componente)</li>
+<li><a href="state-management.html">Gerenciamento de estado global</a></li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos da opção <code>twoWay</code>.</p>
+</div>
+
+<h3 id="Modificadores-once-e-sync-no-v-bind-removido"><a href="#Modificadores-once-e-sync-no-v-bind-removido" class="headerlink" title="Modificadores .once e .sync no v-bind removido"></a>Modificadores <code>.once</code> e <code>.sync</code> no <code>v-bind</code> <sup>removido</sup></h3><p>Props agora estão sempre em sentido único. Para produzir efeitos colaterais no escopo dos pais, um componente precisa emitir um evento explicitamente em vez de depender da vinculação implícita. Para mais informações, veja:</p>
+<ul>
+<li><a href="components.html#Custom-Events">Eventos de componentes customizados</a></li>
+<li><a href="components.html#Form-Input-Components-using-Custom-Events">Componentes de inputs customizados</a> (usando eventos de componente)</li>
+<li><a href="state-management.html">Gerenciamento de estado global</a></li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos dos modificadores <code>.once</code> e <code>.sync</code>.</p>
+</div>
+
+<h3 id="Mutacao-de-Prop-descontinuado"><a href="#Mutacao-de-Prop-descontinuado" class="headerlink" title="Mutação de Prop descontinuado"></a>Mutação de Prop <sup>descontinuado</sup></h3><p>Mutar um prop local agora é considerado anti-padrão, por exemplo, declarando um suporte e em seguida, definindo <code>this.myProp = &#39;someOtherValue&#39;</code> no componente. Devido ao novo mecanismo de renderização, sempre que o componente pai voltar a renderizar, as alterações locais do componente filho serão substituídas.</p>
+<p>A maioria dos casos de mutar um prop pode ser substituído por uma dessas opções:</p>
+<ul>
+<li>uma propriedade <code>data</code>, com o prop usado para definir seu valor padrão</li>
+<li>uma propriedade computada</li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu teste de ponta a ponta ou app depois da atualização e procure por <strong>avisos no console</strong> sobre mutação de props.</p>
+</div>
+
+<h3 id="Props-em-uma-Instancia-Raiz-substituido"><a href="#Props-em-uma-Instancia-Raiz-substituido" class="headerlink" title="Props em uma Instância Raiz substituído"></a>Props em uma Instância Raiz <sup>substituído</sup></h3><p>Nas instâncias raiz do Vue (criadas com <code>new Vue ({ ... })</code>), você deve usar <code>propsData</code> ao invés de <code>props</code>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu teste de ponta a ponta, se você tem um. Os <strong>testes com falha</strong> devem alertar o fato de que props passadas para instâncias raiz não funcionam mais.</p>
+</div>
+
+<h2 id="Propriedades-Computadas"><a href="#Propriedades-Computadas" class="headerlink" title="Propriedades Computadas"></a>Propriedades Computadas</h2><h3 id="cache-false-descontinuado"><a href="#cache-false-descontinuado" class="headerlink" title="cache: false descontinuado"></a><code>cache: false</code> <sup>descontinuado</sup></h3><p>A invalidação de cache das propriedades computadas será removida nas futuras versões principais do Vue. Substitua quaisquer propriedade computada não cacheada por métodos, que terá o mesmo resultado.</p>
+<p>Por exemplo:</p>
+<pre><code class="hljs js">template: <span class="hljs-string">'&lt;p&gt;mensagem: &#123;&#123; timeMessage &#125;&#125;&lt;/p&gt;'</span>,
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">timeMessage</span>: &#123;
+    <span class="hljs-attr">cache</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Date</span>.now() + <span class="hljs-keyword">this</span>.message
+    &#125;
+  &#125;
+&#125;</code></pre>
+<p>Ou com métodos de componente:</p>
+<pre><code class="hljs js">template: <span class="hljs-string">'&lt;p&gt;mensagem: &#123;&#123; getTimeMessage() &#125;&#125;&lt;/p&gt;'</span>,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">getTimeMessage</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Date</span>.now() + <span class="hljs-keyword">this</span>.message
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos da opção <code>cache: false</code>.</p>
+</div>
+
+<h2 id="Diretivas-Nativas-do-Vue"><a href="#Diretivas-Nativas-do-Vue" class="headerlink" title="Diretivas Nativas do Vue"></a>Diretivas Nativas do Vue</h2><h3 id="Verdadeiro-Falso-com-v-bind-modificado"><a href="#Verdadeiro-Falso-com-v-bind-modificado" class="headerlink" title="Verdadeiro/Falso com v-bind modificado"></a>Verdadeiro/Falso com <code>v-bind</code> <sup>modificado</sup></h3><p>Quando usado com <code>v-bind</code>, os únicos valores falsos são agora: <code>null</code>, <code>undefined</code> e <code>false</code>. Isso significa que <code>0</code> e arrays vazios renderizarão como verdadeiro. Então, por exemplo, <code>v-bind: draggable = &quot;&#39;&#39;&quot;</code> renderizará como <code>draggable = &quot;true&quot;</code>.</p>
+<p>Para atributos enumerados, além dos valores falsos acima, a string <code>&quot;false&quot;</code> também será renderizada como <code>attr = &quot;false&quot;</code>.</p>
+<p class="tip">Observe que para outras diretivas (<code>v-if</code> e <code>v-show</code> por exemplo), o verdadeiro do Javascript normal ainda se aplica.</p>
+
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seus testes de ponta a ponta, se você tiver. Os <strong>testes com falha</strong> devem te alertar para qualquer parte do seu app que possa ser afetada por essa alteração.</p>
+</div>
+
+<h3 id="Escutando-Eventos-Nativos-nos-Componentes-com-v-on-modificado"><a href="#Escutando-Eventos-Nativos-nos-Componentes-com-v-on-modificado" class="headerlink" title="Escutando Eventos Nativos nos Componentes com v-on modificado"></a>Escutando Eventos Nativos nos Componentes com <code>v-on</code> <sup>modificado</sup></h3><p>Quando usando em um componente, <code>v-on</code> agora só escuta eventos customizados <code>$emit</code>idos por aquele componente. Para escutar um evento nativo do DOM no elemento raiz, você pode usar o modificador <code>.native</code>. Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">v-on:click.native</span>=<span class="hljs-string">"doSomething"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu teste de ponta a ponta, se você tiver um. Os <strong>testes com falha</strong> devem te alertar para qualquer parte do seu app que possa ser afetada por essa alteração.</p>
+</div>
+
+<h3 id="Atributo-debounce-de-Parametro-para-v-model-removido"><a href="#Atributo-debounce-de-Parametro-para-v-model-removido" class="headerlink" title="Atributo debounce de Parâmetro para v-model removido"></a>Atributo <code>debounce</code> de Parâmetro para <code>v-model</code> <sup>removido</sup></h3><p>Debounce é usado para limitar a frequência com que executamos os pedidos Ajax e outras operações custosas. O atributo <code>debounce</code> do Vue para <code>v-model</code> tornou isso fácil para casos muito simples, mas na verdade atrasa as <strong>atualizações de estado</strong> em vez das operações custosas. É uma diferença sutil, mas vem com limitações à medida que uma aplicação cresce.</p>
+<p>Essas limitações tornam-se aparentes ao projetar um indicador de pesquisa, como este por exemplo:</p>
+
+<script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.js"></script>
+<div id="debounce-search-demo" class="demo">
+  <input v-model="searchQuery" placeholder="Digite algo">
+  <strong>{{ searchIndicator }}</strong>
+</div>
+<script>
+new Vue({
+  el: '#debounce-search-demo',
+  data: {
+    searchQuery: '',
+    searchQueryIsDirty: false,
+    isCalculating: false
+  },
+  computed: {
+    searchIndicator: function () {
+      if (this.isCalculating) {
+        return '⟳ Buscando novos resultados'
+      } else if (this.searchQueryIsDirty) {
+        return '... Digitando'
+      } else {
+        return '✓ Pronto'
+      }
+    }
+  },
+  watch: {
+    searchQuery: function () {
+      this.searchQueryIsDirty = true
+      this.expensiveOperation()
+    }
+  },
+  methods: {
+    expensiveOperation: _.debounce(function () {
+      this.isCalculating = true
+      setTimeout(function () {
+        this.isCalculating = false
+        this.searchQueryIsDirty = false
+      }.bind(this), 1000)
+    }, 500)
+  }
+})
+</script>
+
+<p>Usando o atributo <code>debounce</code>, não haveria nenhuma maneira de detectar o estado “Digitação”, pois perdemos acesso ao estado em tempo real do input. Ao desacoplar a função de atraso do Vue no entanto, podemos atrasar apenas a operação que queremos limitar, eliminando os limites nos recursos que podemos desenvolver.</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--
+Usando a função `debounce` do lodash ou outra
+biblioteca de utilidades dedicada, sabemos que a
+implementação de atraso específica que usamos 
+será a melhor da sua classe - e podemos usá-la em QUALQUER lugar. 
+Não somente no nosso template.
+--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/lodash/4.13.1/lodash.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"debounce-search-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"searchQuery"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Digite algo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>&#123;&#123; searchIndicator &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#debounce-search-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">searchQuery</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">searchQueryIsDirty</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">isCalculating</span>: <span class="hljs-literal">false</span>
+  &#125;,
+  <span class="hljs-attr">computed</span>: &#123;
+    <span class="hljs-attr">searchIndicator</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isCalculating) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'⟳ Buscando novos resultados'</span>
+      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.searchQueryIsDirty) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'... Digitando'</span>
+      &#125; <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'✓ Pronto'</span>
+      &#125;
+    &#125;
+  &#125;,
+  <span class="hljs-attr">watch</span>: &#123;
+    <span class="hljs-attr">searchQuery</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.searchQueryIsDirty = <span class="hljs-literal">true</span>
+      <span class="hljs-keyword">this</span>.expensiveOperation()
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-comment">// É aqui que o debounce realmente deve ficar.</span>
+    <span class="hljs-attr">expensiveOperation</span>: _.debounce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.isCalculating = <span class="hljs-literal">true</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">this</span>.isCalculating = <span class="hljs-literal">false</span>
+        <span class="hljs-keyword">this</span>.searchQueryIsDirty = <span class="hljs-literal">false</span>
+      &#125;.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">1000</span>)
+    &#125;, <span class="hljs-number">500</span>)
+  &#125;
+&#125;)</code></pre>
+<p>Outra vantagem desta abordagem é que haverá momentos em que o <code>debounce</code> não é a função wrapper correta. Por exemplo, ao usar uma API para sugestões de pesquisa, esperar para oferecer sugestões até que o usuário pare de digitar por um período de tempo não é uma experiência ideal. O que você provavelmente quer, em vez disso, é uma função de <strong>limitação</strong>. Agora, já que você está usando uma biblioteca de utilidades como lodash, a refatoração para usar a função <code>throttle</code>, leva apenas alguns segundos.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos do atributo <code>debounce</code>.</p>
+</div>
+
+<h3 id="Atributos-lazy-ou-number-de-Parametros-para-v-model-substituido"><a href="#Atributos-lazy-ou-number-de-Parametros-para-v-model-substituido" class="headerlink" title="Atributos lazy ou number de Paramêtros para v-model substituído"></a>Atributos <code>lazy</code> ou <code>number</code> de Paramêtros para <code>v-model</code> <sup>substituído</sup></h3><p>Os atributos <code>lazy</code> e <code>number</code> agora são modificadores, para tornar mais claro o que isso significa, ao invés de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">lazy</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"age"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">number</span>&gt;</span></code></pre>
+<p>Você usará:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.lazy</span>=<span class="hljs-string">"name"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model.number</span>=<span class="hljs-string">"age"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos destes atributos.</p>
+</div>
+
+<h3 id="Atributo-value-com-v-model-removido"><a href="#Atributo-value-com-v-model-removido" class="headerlink" title="Atributo value com v-model removido"></a>Atributo <code>value</code> com <code>v-model</code> <sup>removido</sup></h3><p>Agora o <code>v-model</code> não se preocupa mais com o valor inicial do atributo <code>value</code>. Em vez disso, tratará os dados da instância Vue como a fonte da verdade.</p>
+<p>Isso significa que esse elemento:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"foo"</span>&gt;</span></code></pre>
+<p>apoiado por esses dados:</p>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">text</span>: <span class="hljs-string">'bar'</span>
+&#125;</code></pre>
+<p>vai renderizar um valor de “bar” ao invés de “foo”. O mesmo vale para <code>&lt;textarea&gt;</code> com conteúdo existente. Ao invés de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"text"</span>&gt;</span>
+  hello world
+<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span></code></pre>
+<p>Você deve garantir que seu valor inicial para <code>text</code> é “hello world”.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu teste de ponta a ponta, após atualizar o app e busque por <strong>avisos no console</strong> sobre linhas de atributo <code>value</code> com <code>v-model</code>.</p>
+</div>
+
+<h3 id="v-model-com-v-for-Iterando-Valores-Primitivos-removido"><a href="#v-model-com-v-for-Iterando-Valores-Primitivos-removido" class="headerlink" title="v-model com v-for Iterando Valores Primitivos removido"></a><code>v-model</code> com <code>v-for</code> Iterando Valores Primitivos <sup>removido</sup></h3><p>Casos como esse não funcionam mais:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"str in strings"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"str"</span>&gt;</span></code></pre>
+<p>A motivo é que este é o equivalente JavaScript para o qual o <code>&lt;input&gt;</code> compilaria:</p>
+<pre><code class="hljs js">strings.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> createElement(<span class="hljs-string">'input'</span>, ...)
+&#125;)</code></pre>
+<p>Como você pode ver, o vínculo bidirecional do <code>v-model</code> não faz sentido aqui. Definir <code>str</code> para outro valor na função de iteração não fará nada porque é apenas uma variável local no escopo da função.</p>
+<p>Em vez disso, você deve usar um array de <strong>objects</strong>  para que <code>v-model</code> possa atualizar o campo no objeto. Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"obj in objects"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"obj.str"</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu teste de ponta a ponta, se você tiver um. Os <strong>testes com falha</strong> devem te alertar para qualquer parte do seu app que possa ser afetada por essa alteração.</p>
+</div>
+
+<h3 id="v-bind-style-com-Sintaxe-de-Objeto-e-important-removido"><a href="#v-bind-style-com-Sintaxe-de-Objeto-e-important-removido" class="headerlink" title="v-bind:style com Sintaxe de Objeto e !important removido"></a><code>v-bind:style</code> com Sintaxe de Objeto e <code>!important</code> <sup>removido</sup></h3><p>Isso não irá mais funcionar:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-bind:style</span>=<span class="hljs-string">"&#123; color: myColor + ' !important' &#125;"</span>&gt;</span>Olá<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Se você realmente precisa substituir outro <code>!important</code>, você deve usar a sintaxe de string:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-bind:style</span>=<span class="hljs-string">"'color: ' + myColor + ' !important'"</span>&gt;</span>Olá<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de vinculação de estilo com <code>!important</code> em objetos.</p>
+</div>
+
+<h3 id="v-el-e-v-ref-subtituido"><a href="#v-el-e-v-ref-subtituido" class="headerlink" title="v-el e v-ref subtituído"></a><code>v-el</code> e <code>v-ref</code> <sup>subtituído</sup></h3><p>Para simplificar, <code>v-el</code> e <code>v-ref</code> foram incorporados no atributo <code>ref</code>, acessível em uma instância de componente por meio de <code>$refs</code>. Isso significa que <code>v-el:my-element</code> se tornaria <code>ref=&quot;myElement&quot;</code> e <code>v-ref:my-component</code> se tornaria <code>ref=&quot;myComponent&quot;</code>. Quando usado em um elemento normal, o <code>ref</code> será o elemento DOM, e quando usado em um componente, a <code>ref</code> será a instância do componente.</p>
+<p>Como o <code>v-ref</code> não é mais uma diretiva, mas um atributo especial, ele também pode ser definido dinamicamente. Isto é especialmente útil em combinação com <code>v-for</code>. Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:ref</span>=<span class="hljs-string">"'item' + item.id"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Anteriormente, <code>v-el</code>/<code>v-ref</code> combinado com <code>v-for</code> produziria um array de elementos/componentes, pois não havia como dar a cada item um nome único. Você ainda pode obter este comportamento dando a cada item o mesmo <code>ref</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"items"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Diferente das versões 1.x, esses <code>$refs</code> não são reativos, porque eles são registrados/atualizados durante o próprio processo de renderização. Fazê-los reativos exigiria renderizações duplicadas para cada mudança.</p>
+<p>Por outro lado, <code>$refs</code> são projetados principalmente para acesso programático em JavaScript - não é recomendado confiar neles em templates, pois isso significaria referir-se ao estado que não pertence à instância em si. Isso violaria o modelo de visão orientado por dados do Vue.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>v-el</code> e <code>v-ref</code>.</p>
+</div>
+
+<h3 id="v-else-com-v-show-removido"><a href="#v-else-com-v-show-removido" class="headerlink" title="v-else com v-show removido"></a><code>v-else</code> com <code>v-show</code> <sup>removido</sup></h3><p><code>v-else</code> não funciona mais com <code>v-show</code>. Use <code>v-if</code> com uma expressão de negação ao invés disso. Por exemplo, ao invés de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"foo"</span>&gt;</span>Foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-else</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">"bar"</span>&gt;</span>Não foo, mas bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Você pode usar:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"foo"</span>&gt;</span>Foo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"!foo &amp;&amp; bar"</span>&gt;</span>Não foo, mas bar<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>v-else</code> e <code>v-show</code>.</p>
+</div>
+
+<h2 id="Diretivas-Customizadas-simplificado"><a href="#Diretivas-Customizadas-simplificado" class="headerlink" title="Diretivas Customizadas simplificado"></a>Diretivas Customizadas <sup>simplificado</sup></h2><p>As diretivas têm um escopo de responsabilidade muito reduzido: agora são usadas apenas para a aplicação de manipulações DOM diretas de baixo nível. Na maioria dos casos, você preferirá usar componentes como a principal abstração de reuso de código.</p>
+<p>Algumas das diferenças mais notáveis incluem:</p>
+<ul>
+<li>As diretivas não têm mais instâncias. Isso significa que não há mais <code>this</code> dentro de diretivas gatilho. Em vez disso, eles recebem tudo o que podem precisar como argumentos. Se você realmente tem de persistir o estado através dos gatilhos, você pode fazer isso no <code>el</code>.</li>
+<li>Opções assim como <code>acceptStatement</code>, <code>deep</code>, <code>priority</code>, etc foram todas removidas. Para substituir as diretivas <code>twoWay</code>, veja <a href="#Two-Way-Filters-replaced">esse exemplo</a>.</li>
+<li>Alguns dos gatilhos atuais tem um comportamento diferente e também existem novos gatilhos.</li>
+</ul>
+<p>Felizmente, desde que as novas diretivas estão mais simples, você pode dominá-las mais facilmente. Leia o novo <a href="custom-directive.html">Guia de customização de diretivas</a> para aprender mais.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de diretivas definidas. O assistente sinalizará todos eles, é provável que na maioria dos casos você desejará refatorar para um componente.</p>
+</div>
+
+<h3 id="Modificador-de-Diretiva-literal-removido"><a href="#Modificador-de-Diretiva-literal-removido" class="headerlink" title="Modificador de Diretiva .literal removido"></a>Modificador de Diretiva <code>.literal</code> <sup>removido</sup></h3><p>O modificador <code>literal</code> foi removido pois o mesmo pode ser facilmente alcançado fornecendo uma string literal como valor.</p>
+<p>Por exemplo, você pode atualizar:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-my-directive.literal</span>=<span class="hljs-string">"foo bar baz"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>para:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-my-directive</span>=<span class="hljs-string">"'foo bar baz'"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos do modificador <code>.literal</code> em diretivas.</p>
+</div>
+
+<h2 id="Transicoes"><a href="#Transicoes" class="headerlink" title="Transições"></a>Transições</h2><h3 id="Atributo-transition-substituido"><a href="#Atributo-transition-substituido" class="headerlink" title="Atributo transition substituído"></a>Atributo <code>transition</code> <sup>substituído</sup></h3><p>O sistema de transições do Vue mudou um pouco drasticamente e agora usamos <code>&lt;transition&gt;</code> e <code>&lt;transition-group&gt;</code> como elementos wrapper, ao invés do atributo <code>transition</code>. É recomendado ler o novo <a href="transitions.html">Guia de transições</a> para aprendar mais.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos do atributo <code>transition</code>.</p>
+</div>
+
+<h3 id="Vue-transition-para-Transicoes-Reutilizaveis-substituido"><a href="#Vue-transition-para-Transicoes-Reutilizaveis-substituido" class="headerlink" title="Vue.transition para Transições Reutilizáveis substituído"></a><code>Vue.transition</code> para Transições Reutilizáveis <sup>substituído</sup></h3><p>Com o novo sistema de transições, agora você pode <a href="transitions.html#Reusable-Transitions">usar componentes para transições reutilizáveis</a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos do <code>Vue.transition</code>.</p>
+</div>
+
+<h3 id="Atributo-de-Transicao-stagger-removido"><a href="#Atributo-de-Transicao-stagger-removido" class="headerlink" title="Atributo de Transição stagger removido"></a>Atributo de Transição <code>stagger</code> <sup>removido</sup></h3><p>Se precisa escalonar as transições da lista, você pode controlar o tempo ajustando e acessando um <code>data-index</code> (ou atributo similar) em um elemento. Veja <a href="transitions.html#Staggering-List-Transitions">um exemplo aqui</a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos do atributo <code>transition</code>. Durante sua atualização, você pode fazer a transição (trocadilho muito intencional) para a nova estratégia de escalonação também.</p>
+</div>
+
+<h2 id="Eventos"><a href="#Eventos" class="headerlink" title="Eventos"></a>Eventos</h2><h3 id="Opcao-events-removido"><a href="#Opcao-events-removido" class="headerlink" title="Opção events removido"></a>Opção <code>events</code> <sup>removido</sup></h3><p>Agora os manipuladores de eventos devem ser registrados no gatilho <code>created</code> ao invés disso. Veja o <a href="#dispatch-and-broadcast-replaced">guia de migração para <code>$dispatch</code> e <code>$broadcast</code></a> para exemplo detalhado.</p>
+<h3 id="Vue-directive-39-on-39-keyCodes-substituido"><a href="#Vue-directive-39-on-39-keyCodes-substituido" class="headerlink" title="Vue.directive(&#39;on&#39;).keyCodes substituído"></a><code>Vue.directive(&#39;on&#39;).keyCodes</code> <sup>substituído</sup></h3><p>A nova e mais concisa maneira de configurar <code>keyCodes</code> é através de <code>Vue.config.keyCodes</code>. Por exemplo:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// ative v-on:keyup.f1</span>
+Vue.config.keyCodes.f1 = <span class="hljs-number">112</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos da antiga sintaxe de configuração <code>keyCode</code>.</p>
+</div>
+
+<h3 id="dispatch-e-broadcast-substituido"><a href="#dispatch-e-broadcast-substituido" class="headerlink" title="$dispatch e $broadcast substituído"></a><code>$dispatch</code> e <code>$broadcast</code> <sup>substituído</sup></h3><p><code>$dispatch</code> e <code>$broadcast</code> foram removidos em favor de uma comunicação mais explícita entre componentes e soluções de gerenciamento de estado mais sustentáveis, como o <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a>.</p>
+<p>O problema é que os fluxos de eventos que dependem da estrutura de árvore de um componente podem ser difíceis de serem entendidos e muito frágeis quando a árvore se torna grande. Eles não escalam bem e apenas o prepara para dor mais tarde. <code>$dispatch</code> e <code>$broadcast</code> também não resolvem a comunicação entre componentes irmãos.</p>
+<p>Um dos usos mais comuns para esses métodos é se comunicar entre um pai e seus filhos diretos. Nesses casos, você pode <a href="components.html#Form-Input-Components-using-Custom-Events">escutar um <code>$emit</code> de um filho com <code>v-on</code></a>. Isso permite que você mantenha a conveniência dos eventos com uma explicitação adicional.</p>
+<p>No entanto, quando se comunica entre descendentes distantes e ancestrais, <code>$emit</code> não irá ajudá-lo. Em vez disso, a atualização mais simples possível seria usar um <em>hub</em> de eventos centralizado. Isso tem o benefício adicional de permitir que você se comunique entre componentes, independentemente de onde eles estão na árvore de componentes - mesmo entre irmãos! Como as instâncias do Vue implementam uma interface de emissor de eventos, você pode usar uma instância do Vue vazia para esse propósito.</p>
+<p>Por exemplo, digamos que temos um app <em>ToDo</em> estruturado assim:</p>
+<pre><code class="hljs undefined">Todos
+├─ NewTodoInput
+└─ Todo
+   └─ DeleteTodoButton</code></pre>
+<p>Podemos gerenciar a comunicação entre componentes com este único <em>hub</em> de eventos:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Este é o hub de eventos que usaremos em cada</span>
+<span class="hljs-comment">// componente para se comunicar entre eles</span>
+<span class="hljs-keyword">var</span> eventHub = <span class="hljs-keyword">new</span> Vue()</code></pre>
+<p>Então, em nossos componentes podemos usar <code>$emit</code>, <code>$on</code>, <code>$off</code> para emitir eventos, escutar eventos e limpar os escutadores de eventos, respectivamente:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// NewTodoInput</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">addTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    eventHub.$emit(<span class="hljs-string">'add-todo'</span>, &#123; <span class="hljs-attr">text</span>: <span class="hljs-keyword">this</span>.newTodoText &#125;)
+    <span class="hljs-keyword">this</span>.newTodoText = <span class="hljs-string">''</span>
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// DeleteTodoButton</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">deleteTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>&#123;
+    eventHub.$emit(<span class="hljs-string">'delete-todo'</span>, id)
+  &#125;
+&#125;</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Todos</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  eventHub.$on(<span class="hljs-string">'add-todo'</span>, <span class="hljs-keyword">this</span>.addTodo)
+  eventHub.$on(<span class="hljs-string">'delete-todo'</span>, <span class="hljs-keyword">this</span>.deleteTodo)
+&#125;,
+<span class="hljs-comment">// É bom limpar os escutadores de evento</span>
+<span class="hljs-comment">// antes de um componente ser destruído.</span>
+<span class="hljs-attr">beforeDestroy</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  eventHub.$off(<span class="hljs-string">'add-todo'</span>, <span class="hljs-keyword">this</span>.addTodo)
+  eventHub.$off(<span class="hljs-string">'delete-todo'</span>, <span class="hljs-keyword">this</span>.deleteTodo)
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">addTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">newTodo</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.todos.push(newTodo)
+  &#125;,
+  <span class="hljs-attr">deleteTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todoId</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.todos = <span class="hljs-keyword">this</span>.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> todo.id !== todoId
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<p>Esse padrão pode servir como um substituto para <code>$dispatch</code> e <code>$broadcast</code> em cenários simples, mas para casos mais complexos, é recomendável usar uma camada de gerenciamento de estado dedicada, como o <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>$dispatch</code> e <code>$broadcast</code>.</p>
+</div>
+
+<h2 id="Filtros"><a href="#Filtros" class="headerlink" title="Filtros"></a>Filtros</h2><h3 id="Filtros-Fora-da-Interpolacao-de-Texto-removido"><a href="#Filtros-Fora-da-Interpolacao-de-Texto-removido" class="headerlink" title="Filtros Fora da Interpolação de Texto removido"></a>Filtros Fora da Interpolação de Texto <sup>removido</sup></h3><p>Os filtros agora só podem ser usados dentro das interpolações de texto (tags <code>{{ }}</code>). No passado, descobrimos que usar filtros dentro de diretivas, como <code>v-model</code>, <code>v-on</code>, etc levaram a mais complexidade do que o conveniente. Para a filtragem de lista no <code>v-for</code>, também é melhor mover essa lógica para JavaScript como propriedades computadas, para que também possa ser reutilizado em todo o seu componente.</p>
+<p>Em geral, sempre que algo puder ser alcançado em JavaScript simples, queremos evitar a introdução de uma sintaxe especial como filtros para cuidar da mesma preocupação. Veja como você pode substituir as diretivas internas de filtros do Vue:</p>
+<h4 id="Substituindo-o-Filtro-debounce"><a href="#Substituindo-o-Filtro-debounce" class="headerlink" title="Substituíndo o Filtro debounce"></a>Substituíndo o Filtro <code>debounce</code></h4><p>Ao invés de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup</span>=<span class="hljs-string">"doStuff | debounce 500"</span>&gt;</span></code></pre>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">doStuff</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;
+&#125;</code></pre>
+<p>Use o <a href="https://lodash.com/docs/4.15.0#debounce" target="_blank" rel="noopener"><code>debounce</code> do lodash</a> (ou possivelmente o <a href="https://lodash.com/docs/4.15.0#throttle" target="_blank" rel="noopener"><code>throttle</code></a>) para limitar diretamente a chamada do método custoso. Você pode alcançar o mesmo que acima, com isso:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-on:keyup</span>=<span class="hljs-string">"doStuff"</span>&gt;</span></code></pre>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">doStuff</span>: _.debounce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;, <span class="hljs-number">500</span>)
+&#125;</code></pre>
+<p>Para obter mais informações sobre as vantagens desta estratégia, veja <a href="#debounce-Param-Attribute-for-v-model-removed">o exemplo com <code>v-model</code></a>.</p>
+<h4 id="Substituindo-o-Filtro-limitBy"><a href="#Substituindo-o-Filtro-limitBy" class="headerlink" title="Substituíndo o Filtro limitBy"></a>Substituíndo o Filtro <code>limitBy</code></h4><p>Ao invés de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items | limitBy 10"</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Use o método do Javascript <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/slice#Examples" target="_blank" rel="noopener"><code>.slice</code></a> em uma propriedade computada:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in filteredItems"</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">filteredItems</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.items.slice(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
+  &#125;
+&#125;</code></pre>
+<h4 id="Substituindo-o-Filtro-filterBy"><a href="#Substituindo-o-Filtro-filterBy" class="headerlink" title="Substituíndo o Filtro filterBy"></a>Substituíndo o Filtro <code>filterBy</code></h4><p>Ao invés de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users | filterBy searchQuery in 'name'"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Use o método do Javascript <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Examples" target="_blank" rel="noopener"><code>.filter</code></a> em uma propriedade computada:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in filteredUsers"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">filteredUsers</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>
+    <span class="hljs-keyword">return</span> self.users.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> user.name.indexOf(self.searchQuery) !== <span class="hljs-number">-1</span>
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<p>O método nativo <code>filter</code> também pode gerenciar operações de filtragem muito mais complexas, porque você tem acesso ao poder total do JavaScript dentro das propriedades computadas. Por exemplo, se você quisesse encontrar todos os usuários ativos e buscar de forma insensível a maiúsculas e minúsculas ambos nome e email:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>
+self.users.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user</span>) </span>&#123;
+  <span class="hljs-keyword">var</span> searchRegex = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(self.searchQuery, <span class="hljs-string">'i'</span>)
+  <span class="hljs-keyword">return</span> user.isActive &amp;&amp; (
+    searchRegex.test(user.name) ||
+    searchRegex.test(user.email)
+  )
+&#125;)</code></pre>
+<h4 id="Substituindo-o-Filtro-orderBy"><a href="#Substituindo-o-Filtro-orderBy" class="headerlink" title="Substituíndo o Filtro orderBy"></a>Substituíndo o Filtro <code>orderBy</code></h4><p>Ao invés de:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in users | orderBy 'name'"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Use o <a href="https://lodash.com/docs/4.15.0#orderBy" target="_blank" rel="noopener"><code>orderBy</code> do lodash</a> (ou possivelmente o <a href="https://lodash.com/docs/4.15.0#sortBy" target="_blank" rel="noopener"><code>sortBy</code></a>) em uma propriedade computada:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"user in orderedUsers"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">orderedUsers</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> _.orderBy(<span class="hljs-keyword">this</span>.users, <span class="hljs-string">'name'</span>)
+  &#125;
+&#125;</code></pre>
+<p>Você pode até ordenar por múltiplas colunas:</p>
+<pre><code class="hljs js">_.orderBy(<span class="hljs-keyword">this</span>.users, [<span class="hljs-string">'name'</span>, <span class="hljs-string">'last_login'</span>], [<span class="hljs-string">'asc'</span>, <span class="hljs-string">'desc'</span>])</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de filtros sendo usados dentro de diretivas. Se você perder algum, também poderá ver <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="Sintaxe-de-Argumentos-para-Filtros-modificado"><a href="#Sintaxe-de-Argumentos-para-Filtros-modificado" class="headerlink" title="Sintaxe de Argumentos para Filtros modificado"></a>Sintaxe de Argumentos para Filtros <sup>modificado</sup></h3><p>A sintaxe para argumentos agora se alinha melhor com a invocação de função Javascript. Então ao invés de usar argumentos delimitados por espaço:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; date | formatDate 'YY-MM-DD' timeZone &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Nós cercamos os argumentos com parênteses e os delimitamos com vírgulas:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; date | formatDate('YY-MM-DD', timeZone) &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de filtros com a sintaxe antiga. Se você perder algum, também poderá ver <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="Filtros-de-Texto-Incorporados-removido"><a href="#Filtros-de-Texto-Incorporados-removido" class="headerlink" title="Filtros de Texto Incorporados removido"></a>Filtros de Texto Incorporados <sup>removido</sup></h3><p>Embora os filtros nas interpolações de texto ainda são permitidos, todos os filtros foram removidos. Em vez deles, é recomendável usar bibliotecas mais especializadas para resolver problemas em cada domínio (exemplos: <a href="https://date-fns.org/" target="_blank" rel="noopener"><code>date-fns</code></a> para formatar datas e <a href="http://openexchangerates.github.io/accounting.js/" target="_blank" rel="noopener"><code>accounting</code></a> para moedas.</p>
+<p>Para cada um dos filtros de texto internos do Vue, mostraremos como você pode substituí-los abaixo. O código de exemplo poderá estar em funções auxiliares, métodos ou propriedades computadas.</p>
+<h4 id="Substituindo-o-Filtro-json"><a href="#Substituindo-o-Filtro-json" class="headerlink" title="Substituíndo o Filtro json"></a>Substituíndo o Filtro <code>json</code></h4><p>Você não precisa mais depurar, já que o Vue formatará bem a saída para você automaticamente, seja uma string, número, array ou objeto comum. Porém, se você quiser exatamente a mesma funcionalidade que o <code>JSON.stringify</code> do JavaScript, você pode usá-lo em um método ou propriedade computada.</p>
+<h4 id="Substituindo-o-Filtro-capitalize"><a href="#Substituindo-o-Filtro-capitalize" class="headerlink" title="Substituíndo o Filtro capitalize"></a>Substituíndo o Filtro <code>capitalize</code></h4><pre><code class="hljs js">text[<span class="hljs-number">0</span>].toUpperCase() + text.slice(<span class="hljs-number">1</span>)</code></pre>
+<h4 id="Substituindo-o-Filtro-uppercase"><a href="#Substituindo-o-Filtro-uppercase" class="headerlink" title="Substituíndo o Filtro uppercase"></a>Substituíndo o Filtro <code>uppercase</code></h4><pre><code class="hljs js">text.toUpperCase()</code></pre>
+<h4 id="Substituindo-o-Filtro-lowercase"><a href="#Substituindo-o-Filtro-lowercase" class="headerlink" title="Substituíndo o Filtro lowercase"></a>Substituíndo o Filtro <code>lowercase</code></h4><pre><code class="hljs js">text.toLowerCase()</code></pre>
+<h4 id="Substituindo-o-Filtro-pluralize"><a href="#Substituindo-o-Filtro-pluralize" class="headerlink" title="Substituíndo o Filtro pluralize"></a>Substituíndo o Filtro <code>pluralize</code></h4><p>O pacote <a href="https://www.npmjs.com/package/pluralize" target="_blank" rel="noopener">pluralize</a> no NPM atende bem este propósito, mas se você quer apenas pluralizar uma palavra específica ou ter uma saída especial para casos como <code>0</code>, então também pode definir facilmente suas próprias funções de <code>pluralize</code>. Por exemplo:</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pluralizeKnife</span> (<span class="hljs-params">count</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (count === <span class="hljs-number">0</span>) &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'sem facas'</span>
+  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count === <span class="hljs-number">1</span>) &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'1 faca'</span>
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-keyword">return</span> count + <span class="hljs-string">'facas'</span>
+  &#125;
+&#125;</code></pre>
+<h4 id="Substituindo-o-Filtro-currency"><a href="#Substituindo-o-Filtro-currency" class="headerlink" title="Substituíndo o Filtro currency"></a>Substituíndo o Filtro <code>currency</code></h4><p>Para uma implementação muito ingênua, você poderia fazer algo como isto:</p>
+<pre><code class="hljs js"><span class="hljs-string">'R$'</span> + price.toFixed(<span class="hljs-number">2</span>)</code></pre>
+<p>Em muitos casos, porém, você ainda terá um comportamento estranho (exemplo: <code>0.035.toFixed(2)</code> arredonda para <code>0.04</code>, mas <code>0.045</code> arredonda para <code>0.04</code>). Para contornar esses problemas, você pode usar a biblioteca <a href="http://openexchangerates.github.io/accounting.js/" target="_blank" rel="noopener"><code>accounting</code></a> para formatar moedas de forma mais confiável.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de filtros de texto obsoletos. Se você perder algum, também poderá ver <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="Filtros-Bidirecionais-substituido"><a href="#Filtros-Bidirecionais-substituido" class="headerlink" title="Filtros Bidirecionais substituído"></a>Filtros Bidirecionais <sup>substituído</sup></h3><p>Alguns usuários gostaram de usar filtros bidirecionais com <code>v-model</code> para criar inputs interessantes com muito pouco código. Embora <em>aparentemente</em> simples no entanto, os filtros bidirecionais também podem ocultar uma grande complexidade - e até mesmo encorajar uma UX pobre ao atrasar as atualizações do estado. Em vez disso, os componentes que envolvem um input são recomendados como uma maneira mais explícita e rica em recursos para criar inputs personalizados.</p>
+<p>Como exemplo, agora vamos percorrer a migração de um filtro de moeda bidirecional:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>Na maior parte funciona bem, mas as atualizações de estado atrasadas podem causar um comportamento estranho. Por exemplo, tente digitar <code>9.999</code> em um desses inputs. Quando o input perde o foco, seu valor será atualizado para <code>$10.00</code>. Ao olhar para o total calculado no entanto, você verá que <code>9.999</code> é o que está armazenado em nossos dados. A versão da realidade que o usuário vê está fora de sincronia!</p>
+<p>Para iniciar a transição para uma solução mais robusta usando o Vue 2.0, primeiro envolva esse filtro em um novo componente <code>&lt;currency-input&gt;</code>:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v2?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>Isso nos permite adicionar um comportamento que um filtro por si só não poderia encapsular, como selecionar o conteúdo de um input no foco. Agora, o próximo passo será extrair a lógica de negócios do filtro. Abaixo, puxamos tudo para um objeto externo <a href="https://gist.github.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e" target="_blank" rel="noopener"><code>currencyValidator</code></a>:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-10-two-way-currency-filter-v3?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>Esse aumento da modularidade não só facilita a migração para a Vue 2, mas também permite que a análise e formatação da moeda sejam:</p>
+<ul>
+<li>testadas como unidades isoladas do seu código Vue</li>
+<li>usado por outras partes do seu app, como para validar a carga útil de uma ponta final de API</li>
+</ul>
+<p>Tendo este validador extraído, nós também construíremos isso mais confortavelmente em uma solução mais robusta. As peculiaridades do estado foram eliminadas e, na verdade, é impossível para os usuários inserirem algo errado, semelhante ao que o input numérico nativo do navegador tenta fazer.</p>
+<p>Ainda estamos limitados, porém, por filtros e pelo Vue 1.0 em geral, então vamos completar a atualização para o Vue 2.0:</p>
+<iframe src="https://codesandbox.io/embed/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-two-way-currency-filter?codemirror=1&hidedevtools=1&hidenavigation=1&theme=light" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="vue-20-template-compilation" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+<p>Você pode notar que:</p>
+<ul>
+<li>Todos os aspectos do nosso input são mais explícitos, usando gatilhos do ciclo de vida e eventos DOM no lugar do comportamento oculto dos filtros bidirecionais.</li>
+<li>Agora podemos usar o <code>v-model</code> diretamente em nossos inputs personalizados, o que não é apenas mais consistente com as inputs normais, mas também significa que nosso componente é amigável ao Vuex.</li>
+<li>Uma vez que não estamos mais usando opções de filtro que exigem um valor a ser retornado, nosso trabalho de moeda pode ser feito assincronamente. Isso significa que se tivéssemos muitos apps que precisassem trabalhar com moedas, poderíamos facilmente refatorar essa lógica em um microservice compartilhado.</li>
+</ul>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de filtros usados em diretivas como <code>v-model</code>. Se você perder algum, também poderá ver <strong>erros no console</strong>.</p>
+</div>
+
+<h2 id="Slots"><a href="#Slots" class="headerlink" title="Slots"></a>Slots</h2><h3 id="Slots-Duplicados-removido"><a href="#Slots-Duplicados-removido" class="headerlink" title="Slots Duplicados removido"></a>Slots Duplicados <sup>removido</sup></h3><p>Não é mais suportado ter vários <code>&lt;slot&gt;</code> com o mesmo nome no mesmo template. Quando um slot é renderizado, ele é “usado” e não pode ser renderizado em outro lugar na mesma árvore de renderização. Se você precisa renderizar o mesmo conteúdo em vários lugares, passe-o como uma prop.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu conjunto de testes de ponta a ponta ou app após a atualização e procure <strong>avisos no console</strong> sobre slots <code>v-model</code> duplicados.</p>
+</div>
+
+<h3 id="Estilizando-o-Atributo-slot-removido"><a href="#Estilizando-o-Atributo-slot-removido" class="headerlink" title="Estilizando o Atributo slot removido"></a>Estilizando o Atributo <code>slot</code> <sup>removido</sup></h3><p>Conteúdo inserido através de <code>&lt;slot&gt;</code> nomeado não preserva mais o atributo <code>slot</code>. Use um elemento wrapper para estilizá-los, ou para casos de uso avançados, modifique o conteúdo inserido programaticamente usando <a href="render-function.html">funções de renderização</a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar seletores CSS mirando slots nomeados (exemplo: <code>[slot="my-slot-name"]</code>).</p>
+</div>
+
+<h2 id="Atributos-Especiais"><a href="#Atributos-Especiais" class="headerlink" title="Atributos Especiais"></a>Atributos Especiais</h2><h3 id="Atributo-keep-alive-substituido"><a href="#Atributo-keep-alive-substituido" class="headerlink" title="Atributo keep-alive substituído"></a>Atributo <code>keep-alive</code> <sup>substituído</sup></h3><p><code>keep-alive</code> não é mais um atributo especial, mas sim um componente wrapper, semelhante a <code>&lt;transition&gt;</code>. Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"view"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span></code></pre>
+<p>Isso torna possível usar <code>&lt;keep-alive&gt;</code> em múltiplos filhos condicionais:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todos.length &gt; 0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">no-todos-gif</span> <span class="hljs-attr">v-else</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">no-todos-gif</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span></code></pre>
+<p class="tip">Quando <code>&lt;keep-alive&gt;</code> tem vários filhos, eventualmente somente um será avaliado. Qualquer filho que não seja o primeiro será ignorado.</p>
+
+<p>Quando usado em conjunto com <code>&lt;transition&gt;</code>, certifique-se de aninhá-lo dentro:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"view"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar atributos <code>keep-alive</code>.</p>
+</div>
+
+<h2 id="Interpolacao"><a href="#Interpolacao" class="headerlink" title="Interpolação"></a>Interpolação</h2><h3 id="Interpolacao-dentro-de-Atributos-removido"><a href="#Interpolacao-dentro-de-Atributos-removido" class="headerlink" title="Interpolação dentro de Atributos removido"></a>Interpolação dentro de Atributos <sup>removido</sup></h3><p>Interpolação com atributos não é mais válido. Por exemplo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-&#123;&#123; size &#125;&#125;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Deve ser atualizado para usar uma expressão inline:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:class</span>=<span class="hljs-string">"'btn btn-' + size"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Ou uma propriedade/dado computado:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:class</span>=<span class="hljs-string">"buttonClasses"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<pre><code class="hljs js">computed: &#123;
+  <span class="hljs-attr">buttonClasses</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'btn btn-'</span> + size
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de interpolação usada dentro de atributos.</p>
+</div>
+
+<h3 id="Interpolacao-HTML-removido"><a href="#Interpolacao-HTML-removido" class="headerlink" title="Interpolação HTML removido"></a>Interpolação HTML <sup>removido</sup></h3><p>Interpolações HTML (<code>{{{ foo }}}</code>)  foram removidas em favor da <a href="../api/#v-html">diretiva <code>v-html</code></a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar interpolações HTML.</p>
+</div>
+
+<h3 id="Vinculacoes-de-Vez-Unica-substituido"><a href="#Vinculacoes-de-Vez-Unica-substituido" class="headerlink" title="Vinculações de Vez Única substituído"></a>Vinculações de Vez Única <sup>substituído</sup></h3><p>Vinculações de vez única (<code>{{* foo }}</code>) foram substituídas pela nova <a href="../api/#v-once">diretiva <code>v-once</code></a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar vinculações de vez única.</p>
+</div>
+
+<h2 id="Reatividade"><a href="#Reatividade" class="headerlink" title="Reatividade"></a>Reatividade</h2><h3 id="vm-watch-modificado"><a href="#vm-watch-modificado" class="headerlink" title="vm.$watch modificado"></a><code>vm.$watch</code> <sup>modificado</sup></h3><p>Observadores criados via <code>vm.$watch</code> agora são disparados antes que os componentes associados re-renderizem. Isso lhe dá a chance de atualizar o estado antes do componente re-renderizar, evitando atualizações desnecessárias. Por exemplo, você pode assistir um prop de componente e atualizar os próprios dados do componente quando o prop mudar.</p>
+<p>Se você anteriormente confiava no <code>vm.$watch</code> para fazer algo com o DOM após as atualizações de um componente, você pode fazê-lo no gatilho <code>updated</code> do ciclo de vida.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu conjunto de testes de ponta a ponta, se você tem um. Os <strong>testes com falha</strong> alertarão para o fato de que um observador está confiando no comportamento antigo.</p>
+</div>
+
+<h3 id="vm-set-modificado"><a href="#vm-set-modificado" class="headerlink" title="vm.$set modificado"></a><code>vm.$set</code> <sup>modificado</sup></h3><p><code>vm.$set</code> agora é um apelido para <a href="../api/#Vue-set"><code>Vue.set</code></a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos do uso obsoleto.</p>
+</div>
+
+<h3 id="vm-delete-modificado"><a href="#vm-delete-modificado" class="headerlink" title="vm.$delete modificado"></a><code>vm.$delete</code> <sup>modificado</sup></h3><p><code>vm.$delete</code> agora é um apelido para <a href="../api/#Vue-delete"><code>Vue.delete</code></a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos do uso obsoleto.</p>
+</div>
+
+<h3 id="Array-prototype-set-removido"><a href="#Array-prototype-set-removido" class="headerlink" title="Array.prototype.$set removido"></a><code>Array.prototype.$set</code> <sup>removido</sup></h3><p>Use <code>Vue.set</code> ao invés disso. </p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>.$set</code> em um array. Se você perder algum, poderá ver os <strong>erros no console</strong> sobre o método ausente.</p>
+</div>
+
+<h3 id="Array-prototype-remove-removido"><a href="#Array-prototype-remove-removido" class="headerlink" title="Array.prototype.$remove removido"></a><code>Array.prototype.$remove</code> <sup>removido</sup></h3><p>Use <code>Array.prototype.splice</code> ao invés disso. Por exemplo:</p>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">removeTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">todo</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> index = <span class="hljs-keyword">this</span>.todos.indexOf(todo)
+    <span class="hljs-keyword">this</span>.todos.splice(index, <span class="hljs-number">1</span>)
+  &#125;
+&#125;</code></pre>
+<p>Ou melhor ainda, passe aos métodos de remoção um index:</p>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-attr">removeTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">index</span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.todos.splice(index, <span class="hljs-number">1</span>)
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>.$remove</code> em um array. Se você perder algum, poderá ver <strong>erros no console</strong> sobre o método ausente.</p>
+</div>
+
+<h3 id="Vue-set-e-Vue-delete-em-Instancias-Vue-removido"><a href="#Vue-set-e-Vue-delete-em-Instancias-Vue-removido" class="headerlink" title="Vue.set e Vue.delete em Instâncias Vue removido"></a><code>Vue.set</code> e <code>Vue.delete</code> em Instâncias Vue <sup>removido</sup></h3><p><code>Vue.set</code> e <code>Vue.delete</code> não funcionam mais em instâncias Vue. Agora é obrigatório declarar corretamente todas as propriedades reativas de nível superior na opção data. Se você quiser excluir propriedades em uma instância do Vue ou seu <code>$data</code>, defina-a como null.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>Vue.set</code> ou <code>Vue.delete</code> em uma instância Vue. Se você perder algum, eles dispararão <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="Substituindo-vm-data-removido"><a href="#Substituindo-vm-data-removido" class="headerlink" title="Substituíndo vm.$data removido"></a>Substituíndo <code>vm.$data</code> <sup>removido</sup></h3><p>Agora é proibido substituir uma instância raiz <code>$data</code> de um componente. Isso evita alguns casos de borda no sistema de reatividade e torna o estado do componente mais previsível (especialmente com sistemas de verificação de tipos).</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de sobrescrita do <code>vm.$data</code>. Se você perder algum, <strong>erros no console</strong> serão emitidos.</p>
+</div>
+
+<h3 id="vm-get-removido"><a href="#vm-get-removido" class="headerlink" title="vm.$get removido"></a><code>vm.$get</code> <sup>removido</sup></h3><p>Em vez disso, recupere dados reativos diretamente.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$get</code>. Se você perder algum, verá <strong>erros no console</strong>.</p>
+</div>
+
+<h2 id="Metodos-de-Instancia-Focados-no-DOM"><a href="#Metodos-de-Instancia-Focados-no-DOM" class="headerlink" title="Métodos de Instância Focados no DOM"></a>Métodos de Instância Focados no DOM</h2><h3 id="vm-appendTo-removido"><a href="#vm-appendTo-removido" class="headerlink" title="vm.$appendTo removido"></a><code>vm.$appendTo</code> <sup>removido</sup></h3><p>Use a API nativa do DOM:</p>
+<pre><code class="hljs js">myElement.appendChild(vm.$el)</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$appendTo</code>. Se você perder algum, verá <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="vm-before-removido"><a href="#vm-before-removido" class="headerlink" title="vm.$before removido"></a><code>vm.$before</code> <sup>removido</sup></h3><p>Use a API nativa do DOM:</p>
+<pre><code class="hljs js">myElement.parentNode.insertBefore(vm.$el, myElement)</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$before</code>. Se você perder algum, verá <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="vm-after-removido"><a href="#vm-after-removido" class="headerlink" title="vm.$after removido"></a><code>vm.$after</code> <sup>removido</sup></h3><p>Use a API nativa do DOM:</p>
+<pre><code class="hljs js">myElement.parentNode.insertBefore(vm.$el, myElement.nextSibling)</code></pre>
+<p>Ou se <code>myElement</code> for o último filho:</p>
+<pre><code class="hljs js">myElement.parentNode.appendChild(vm.$el)</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$after</code>. Se você perder algum, verá <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="vm-remove-removido"><a href="#vm-remove-removido" class="headerlink" title="vm.$remove removido"></a><code>vm.$remove</code> <sup>removido</sup></h3><p>Use a API nativa do DOM:</p>
+<pre><code class="hljs js">vm.$el.remove()</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$remove</code>. Se você perder algum, verá <strong>erros no console</strong>.</p>
+</div>
+
+<h2 id="Metodos-de-Meta-Instancia"><a href="#Metodos-de-Meta-Instancia" class="headerlink" title="Métodos de Meta-Instância"></a>Métodos de Meta-Instância</h2><h3 id="vm-eval-removido"><a href="#vm-eval-removido" class="headerlink" title="vm.$eval removido"></a><code>vm.$eval</code> <sup>removido</sup></h3><p>Nenhum uso real. Se acontecer de você contar com esse recurso de alguma forma e não sabe como contornar a falta dele, publique no <a href="https://forum.vuejs.org/" target="_blank" rel="noopener">fórum</a> para obter ideias.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$eval</code>. Se você perder algum, verá <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="vm-interpolate-removido"><a href="#vm-interpolate-removido" class="headerlink" title="vm.$interpolate removido"></a><code>vm.$interpolate</code> <sup>removido</sup></h3><p>Nenhum uso real. Se acontecer de você contar com esse recurso de alguma forma e não sabe como contornar a falta dele, publique no <a href="https://forum.vuejs.org/" target="_blank" rel="noopener">fórum</a> para obter ideias.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$interpolate</code>. Se você perder algum verá <strong>erros no console</strong>.</p>
+</div>
+
+<h3 id="vm-log-removido"><a href="#vm-log-removido" class="headerlink" title="vm.$log removido"></a><code>vm.$log</code> <sup>removido</sup></h3><p>Ao invés disso use o <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> para uma experiência de depuração otimizada.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>vm.$log</code>. Se você perder algum, verá <strong>erros no console</strong>.</p>
+</div>
+
+<h2 id="Opcoes-da-Instancia-DOM"><a href="#Opcoes-da-Instancia-DOM" class="headerlink" title="Opções da Instância DOM"></a>Opções da Instância DOM</h2><h3 id="replace-false-removido"><a href="#replace-false-removido" class="headerlink" title="replace: false removido"></a><code>replace: false</code> <sup>removido</sup></h3><p>Agora os componentes substituem sempre o elemento ao qual estão vinculados. Para simular o comportamento de <code>replace: false</code>, você pode envolver seu componente raiz com um elemento semelhante ao que você está substituíndo. Por exemplo:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div id="app"&gt; ... &lt;/div&gt;'</span>
+&#125;)</code></pre>
+<p>Ou com uma função de renderização:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">h</span>) </span>&#123;
+    h(<span class="hljs-string">'div'</span>, &#123;
+      <span class="hljs-attr">attrs</span>: &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-string">'app'</span>,
+      &#125;
+    &#125;, <span class="hljs-comment">/* ... */</span>)
+  &#125;
+&#125;)</code></pre>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>replace: false</code>.</p>
+</div>
+
+<h2 id="Configuracao-Global"><a href="#Configuracao-Global" class="headerlink" title="Configuração Global"></a>Configuração Global</h2><h3 id="Vue-config-debug-removido"><a href="#Vue-config-debug-removido" class="headerlink" title="Vue.config.debug removido"></a><code>Vue.config.debug</code> <sup>removido</sup></h3><p>Não é mais necessário, já que os avisos vêm com rastreamentos de pilha por padrão agora.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>Vue.config.debug</code>.</p>
+</div>
+
+<h3 id="Vue-config-async-removido"><a href="#Vue-config-async-removido" class="headerlink" title="Vue.config.async removido"></a><code>Vue.config.async</code> <sup>removido</sup></h3><p>Funcionamento assíncrono agora já é necessário para a performance de renderização.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>Vue.config.async</code>.</p>
+</div>
+
+<h3 id="Vue-config-delimiters-substituido"><a href="#Vue-config-delimiters-substituido" class="headerlink" title="Vue.config.delimiters substituído"></a><code>Vue.config.delimiters</code> <sup>substituído</sup></h3><p>Isso foi retrabalhado como uma <a href="../api/#delimiters">opção no nível de componente</a>. Isso permite que você use delimitadores alternativos dentro da sua aplicação sem quebrar componentes de terceiros.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>Vue.config.delimiters</code>.</p>
+</div>
+
+<h3 id="Vue-config-unsafeDelimiters-removido"><a href="#Vue-config-unsafeDelimiters-removido" class="headerlink" title="Vue.config.unsafeDelimiters removido"></a><code>Vue.config.unsafeDelimiters</code> <sup>removido</sup></h3><p>Interpolação do HTML já foi <a href="#HTML-Interpolation-removed">removida por causa do <code>v-html</code></a>.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>Vue.config.unsafeDelimiters</code>. Depois disso, o assistente também encontrará instâncias de interpolação HTML para que você possa substituí-las por <code>v-html</code>.</p>
+</div>
+
+<h2 id="API-Global"><a href="#API-Global" class="headerlink" title="API Global"></a>API Global</h2><h3 id="Vue-extend-com-el-removido"><a href="#Vue-extend-com-el-removido" class="headerlink" title="Vue.extend com el removido"></a><code>Vue.extend</code> com <code>el</code> <sup>removido</sup></h3><p>A opção <code>el</code> não pode mais ser usada no <code>Vue.extend</code>. Só é válida como uma opção na criação de instância.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute seu conjunto de testes de ponta a ponta ou app após a atualização e procure <strong>avisos no console</strong> sobre a opção <code>el</code> no <code>Vue.extend</code>.</p>
+</div>
+
+<h3 id="Vue-elementDirective-removido"><a href="#Vue-elementDirective-removido" class="headerlink" title="Vue.elementDirective removido"></a><code>Vue.elementDirective</code> <sup>removido</sup></h3><p>Use componentes ao invés disso.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>Vue.elementDirective</code>.</p>
+</div>
+
+<h3 id="Vue-partial-removido"><a href="#Vue-partial-removido" class="headerlink" title="Vue.partial removido"></a><code>Vue.partial</code> <sup>removido</sup></h3><p>Parciais foram removidos em favor de fluxo de dados mais explícito entre componentes, usando props. A menos que você esteja usando um <code>partial</code> em uma área crítica para desempenho, a recomendação é usar um <a href="components.html">componente normal</a> em vez disso. Se você estiver vinculando dinamicamente o <code>name</code> de um <code>partial</code>, poderá usar um <a href="components.html#Dynamic-Components">componente dinâmico</a>.</p>
+<p>Se você estiver usando <code>partial</code> em uma parte crítica para o desempenho do seu aplicativo, então você deve atualizar para <a href="render-function.html#Functional-Components">componentes funcionais</a>. Eles devem estar em um arquivo JS/JSX simples (em vez de um arquivo <code>.vue</code>) e são sem estados ou instâncias, como <code>partial</code>. Isso torna a renderização extremamente rápida.</p>
+<p>Um benefício de componentes funcionais sobre parciais é que eles podem ser muito mais dinâmicos, porque eles lhe permitem acessar todo o poder do JavaScript. No entanto, há um custo para este poder. Se você nunca usou um framework de componentes com funções de renderização antes, elas podem demorar um pouco mais para se aprender.</p>
+
+<div class="upgrade-path">
+  <h4>Caminho de atualização</h4>
+  <p>Execute o <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">assistente de migração</a> em sua base de código para encontrar exemplos de <code>Vue.partial</code>.</p>
+</div>
+
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/reactivity.html">Reatividade em Profundidade</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/migration-vue-router.html">Migração do Vue Router 0.7.x</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Encontrou um erro ou quer contribuir com a documentação?
+    <a href="https://github.com/vuejs-br/br.vuejs.org/blob/master/src/v2/guide/migration.md" rel="noopener" target="_blank">
+      Edite isto no Github!
+    </a>
+    Deploy feito via
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

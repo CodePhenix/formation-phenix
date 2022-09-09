@@ -1,0 +1,103 @@
+aside{ text-transform: capitalize;}
+aside ul{list-style: none;}
+aside ul a{text-decoration: none;color: #777;}
+aside ul a:hover, aside ul a.active{ color: #3f95ea;}
+
+section  {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: flex-start;
+ align-content: space-around;
+}
+  section a{
+
+    width: 100%;
+    margin: 1%;
+    /* background: #eee; */
+    border: 1px solid #3f95ea;
+    text-decoration: none;
+    transition: all .5s ease;
+    background: #3f95ea;
+    color: white;
+
+  }
+  section a:hover{
+    background: #393e46 ;
+
+  }
+  section a.active{display: block;}
+  article {
+    padding: 2em 1em 1em;
+    position: relative;
+  }
+  section a h3{
+    color: white;
+    transition: all .5s ease;
+  }
+  span.badge{
+    background-color: #393e46;
+    position: absolute;
+    top: -.5em;
+    right: -.5em;
+    font-size: .75em;
+    transition: all .5s ease;
+    text-transform: capitalize;
+  }
+    section a:hover span.badge{
+    background-color: #52d3aa;
+  }
+  cite{color: black;}
+
+    section a:hover cite{color: #52d3aa;}
+
+    section p span{color:#3f95ea;font-size: 2em;}
+
+
+    #search{position: relative;width: 100%;}
+    #searchbar{padding-right: 2em;font-size: 1.4em;width: 100%;}
+    .bi-search{position: absolute;right: .5em;font-size: 1.4em;}
+
+    .modal{
+      background: rgb(63, 149, 234);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal > div {
+      width: 80%;
+      background: white;
+      height: 80%;
+      overflow: auto;
+      padding: 4%;
+    }
+    .modal > button {
+      position: absolute;
+      right: 4%;
+      top: 4%;
+      background: #393e46;
+      color: white;
+      padding: .5em 1em;
+      border-radius: 100%;
+      border: 0;
+      transition: all .5s ease;
+    }
+    .modal > button:hover {
+      background: white;
+      color: black;
+
+    }
+
+
+
+    /* RESPONSIVE */
+    @media screen and (min-width: 768px){
+    /* Tablettes */
+        section a{
+          width: 47%;
+        }
+    }
+    @media screen and (min-width: 1024px){
+    /* Ordinateurs */
+        section a{
+          width: 31%;
+        }
+    }

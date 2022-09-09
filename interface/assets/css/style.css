@@ -21,6 +21,9 @@ header #git{
 header #git:hover{
   text-decoration: underline;
 }
+header #git span{
+  display: none;
+}
 header #git img{
   width: 28px;
   margin-left: 10px;
@@ -91,12 +94,18 @@ section{
   position:fixed;
   bottom:4%;
   right:2%;
-  padding:0 1%;
-  background: #52d3aa;
+  /* padding:0 1%; */
+  background: #393e46;
   color: #fff;
   font-weight: bold;
   font-size: 2em;
   z-index: 9999;
+  border-radius: 100%;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #back-to-top:hover{
   background: #3f95ea;
@@ -219,6 +228,9 @@ p{text-align: justify;}
 @media screen and (min-width: 768px){
 /*    body{font-size: calc(.8em + 1vw)} */
 header #git{width:20%;}
+header #git span{
+  display: inline;
+}
 
   main{
     display: flex;

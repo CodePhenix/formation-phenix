@@ -1,0 +1,1516 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Me-render Daftar — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/list.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/list.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/list.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/list.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/list.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/list.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/list.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Me-render Daftar — Vue.js">
+    <meta property="og:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta property="og:image" content="https://docs.vuejs.id//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Me-render Daftar — Vue.js">
+    <meta name="twitter:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="twitter:image" content="https://docs.vuejs.id/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js" rel="stylesheet" type="text/css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-166364803-2', 'docs.vuejs.id');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+          
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/list.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>Sponsor Spesial</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" class="logo">
+      <img src="/images/stdlib.png" alt="">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Petunjuk
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Esensial</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalasi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Perkenalan</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue Instance</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaks Templat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Properti Penghitung (Computed) dan Pengamat (Watchers)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Kelas and Binding Gaya</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Rendering Bersyarat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link current">Me-render Daftar</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Penanganan Event</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Form Input Bindings</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Komponen Dasar</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Komponen secara mendalam</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registrasi Komponen</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Custom Events</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slot</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Komponen yang Dinamis & Async</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Menangani Kasus Langka</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transisi & Animasi</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transisi Masuk/Keluar & Daftar Transisi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transisi State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Kebergunaan & Komposisi</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Direktif Kustom</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Fungsi Render & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugin</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filter</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Peralatan</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Komponen Berkas Tunggal</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Dukungan TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Penempatan Produksi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Peningkatan</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Pengelolaan State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Rendering di Sisi Server (SSR)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internal</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reaktivitas Secara Mendalam</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migrasi</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migrasi dari Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migrasi dari Vuex 0.6.x ke 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Meta</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Perbandingan dengan Kerangka Kerja yang Lain</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Gabung Komunitas Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Tim Inti Vuejs</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+
+<div class="content guide with-sidebar list-guide">
+  
+    
+      <div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+    
+  
+  
+    <h1>Me-render Daftar</h1>
+  
+  
+    <h2 id="Memetakan-sebuah-Array-dengan-Direktif-v-for"><a href="#Memetakan-sebuah-Array-dengan-Direktif-v-for" class="headerlink" title="Memetakan sebuah Array dengan Direktif v-for"></a>Memetakan sebuah Array dengan Direktif <code>v-for</code></h2><p>Kita bisa menggunakan perintah ‘v-for’ untuk mengeluarkan elemen yang berada didalam sebuah array. Direktif <code>v-for</code> ini memerlukan sebuah sintaksis spesial yaitu <code>item in items</code>, dimana <code>items</code> berarti data awalnya yang berada di dalam array dan <code>item</code> ini adalah sebuah <strong>alias</strong> untuk elemen array yang ingin di keluarkan.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span>&gt;</span>
+    &#123;&#123; item.message &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> example1 = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-1'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Foo'</span> &#125;,
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Bar'</span> &#125;
+    ]
+  &#125;
+&#125;)</code></pre>
+<p>Hasil:</p>
+
+<ul id="example-1" class="demo">
+  <li v-for="item in items">
+    {{item.message}}
+  </li>
+</ul>
+<script>
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  },
+  watch: {
+    items: function () {
+      smoothScroll.animateScroll(document.querySelector('#example-1'))
+    }
+  }
+})
+</script>
+
+<p>Di dalam direktif <code>v-for</code> kita bisa mengakses properti di induknya. Direktif <code>v-for</code> juga memiliki argumen kedua untuk menunjukkan indeks dari item sekarang.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(item, index) in items"</span>&gt;</span>
+    &#123;&#123; parentMessage &#125;&#125; - &#123;&#123; index &#125;&#125; - &#123;&#123; item.message &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> example2 = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-2'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">parentMessage</span>: <span class="hljs-string">'Parent'</span>,
+    <span class="hljs-attr">items</span>: [
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Foo'</span> &#125;,
+      &#123; <span class="hljs-attr">message</span>: <span class="hljs-string">'Bar'</span> &#125;
+    ]
+  &#125;
+&#125;)</code></pre>
+<p>Hasil:</p>
+
+<ul id="example-2" class="demo">
+  <li v-for="(item, index) in items">
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+  </li>
+</ul>
+<script>
+var example2 = new Vue({
+  el: '#example-2',
+  data: {
+    parentMessage: 'Parent',
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  },
+  watch: {
+    items: function () {
+      smoothScroll.animateScroll(document.querySelector('#example-2'))
+    }
+  }
+})
+</script>
+
+<p>Anda juga bisa menggunakan <code>of</code> sebagai pembatas dibandingkan dengan <code>in</code>, jadi lebih mirip dengan sintaksis perulangan milik JavaScript.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item of items"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<h2 id="Menggunakan-v-for-pada-sebuah-Objek"><a href="#Menggunakan-v-for-pada-sebuah-Objek" class="headerlink" title="Menggunakan v-for pada sebuah Objek"></a>Menggunakan <code>v-for</code> pada sebuah Objek</h2><p>Anda juga bisa menggunakan <code>v-for</code> untuk melakukan perulangan kedalam properti dari sebuah objek.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"v-for-object"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"value in object"</span>&gt;</span>
+    &#123;&#123; value &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#v-for-object'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">object</span>: &#123;
+      <span class="hljs-attr">firstName</span>: <span class="hljs-string">'John'</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Doe'</span>,
+      <span class="hljs-attr">age</span>: <span class="hljs-number">30</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<p>Hasil:</p>
+
+<ul id="v-for-object" class="demo">
+  <li v-for="value in object">
+    {{ value }}
+  </li>
+</ul>
+<script>
+new Vue({
+  el: '#v-for-object',
+  data: {
+    object: {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30
+    }
+  }
+})
+</script>
+
+<p>Anda bisa juga menyediakan argumen kedua untuk <em><code>key</code></em> nya:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(value, key) in object"</span>&gt;</span>
+  &#123;&#123; key &#125;&#125;: &#123;&#123; value &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<div id="v-for-object-value-key" class="demo">
+  <div v-for="(value, key) in object">
+    {{ key }}: {{ value }}
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#v-for-object-value-key',
+  data: {
+    object: {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30
+    }
+  }
+})
+</script>
+
+<p>Dan argumen lainnya untuk indeks:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(value, key, index) in object"</span>&gt;</span>
+  &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125;: &#123;&#123; value &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<div id="v-for-object-value-key-index" class="demo">
+  <div v-for="(value, key, index) in object">
+    {{ index }}. {{ key }}: {{ value }}
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#v-for-object-value-key-index',
+  data: {
+    object: {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30
+    }
+  }
+})
+</script>
+
+<p class="tip">Saat sedang melakukan perulangan pada sebuah objek, urutannya berdasarkan <em><code>key</code></em>, yang mana tidak dijamin akan konsisten pada saat diimplementasikan ke setiap mesin JavaScript.</p>
+
+<h2 id="key"><a href="#key" class="headerlink" title="key"></a><em><code>key</code></em></h2><p>Saat Vue melakukan update pada sekumpulan elemen yang dikeluarkan dari <code>v-for</code>, normalnya ia menggunakan “in-place patch” strategy. Jika urutan item di sekumpulan data berubah, daripada memindahkan elemen DOM untuk menyamakannya dengan urutan item dari data tersebut, Vue akan menambal setiap elemen pada tempatnya dan menyamakan dengan apa yang akan di keluarkan pada indeks tertentu. Ia memiliki sifat yang sama dengan <code>track-by=&quot;$index&quot;</code> pada Vue 1.x.</p>
+<p>Mode bawaan ini efisien, tapi hanya cocok <strong>saat sekumpulan elemen yang dikeluarkan tidak bergantung pada state dari child component atau state sementara dari DOM (contohnya, nilai/value dari form input)</strong>.</p>
+<p>Untuk memberikan petunjuk pada Vue supaya ia bisa mengikuti jejak pada setiap elemen yang memiliki identitas, dan hingga elemen yang ada bisa digunakan kembali dan diurutkan, Anda harus menggunakan sebuah <em><code>key</code></em> yang unik sebagai atribut pada setiap elemen. Nilai / value yang disarankan untuk <em><code>key</code></em> harus id yang unik pada setiap elemen. Atribut spesial ini secara kasar setara dengan <code>track-by</code> di 1.x, tapi ia bekerja seperti sebuah atribut, jadi Anda perlu menggunakan <code>v-bind</code> untuk mengikatnya ke nilai yang dinamis (berikut ini sintaksis singkatnya):</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"item.id"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- content --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>Direkomendasikan untuk menggunakan <em><code>key</code></em> saat menggunakan <code>v-for</code> jika memungkinkan, kecuali saat content yang dihasilkan dari perulangan sangat sederhana, atau Anda secara sengaja bergantung pada sifat bawaan supaya mendapatkan performa yang lebih baik.</p>
+<p>Sejak ini adalah mekanisme yang umum untuk Vue mengenali elemen, <em><code>key</code></em> ini juga memiliki kegunaan yang lain yang tidak secara spesifik terikat di <code>v-for</code>, kita akan mempelajarinya nanti di panduan ini.</p>
+<p class="tip">Jangan menggunakan nilai non-primitif seperti objek dan array sebagai <em><code>keys</code></em> dari <code>v-for</code>. Lebih baik gunakan nilai String atau Numeric</p>
+
+<h2 id="Deteksi-perubahan-pada-Array"><a href="#Deteksi-perubahan-pada-Array" class="headerlink" title="Deteksi perubahan pada Array"></a>Deteksi perubahan pada Array</h2><h3 id="Methods-Function-Perubahan"><a href="#Methods-Function-Perubahan" class="headerlink" title="Methods/Function Perubahan"></a>Methods/Function Perubahan</h3><p>Vue membungkus pengamat pada methods perubahan milik Array jadi ia akan langsung menjalankan sebuah perubahan tampilan. Methods yang dibungkus antara lain:</p>
+<ul>
+<li><code>push()</code></li>
+<li><code>pop()</code></li>
+<li><code>shift()</code></li>
+<li><code>unshift()</code></li>
+<li><code>splice()</code></li>
+<li><code>sort()</code></li>
+<li><code>reverse()</code></li>
+</ul>
+<p>Anda bisa membuka console dan bermain dengan contoh-contoh sebelumnya yaitu <code>items</code> pada array dengan memanggil methods/function perubahannya. Contohnya: <code>example1.items.push({ message: &#39;Baz&#39; })</code>.</p>
+<h3 id="Menggantikan-sebuah-Array"><a href="#Menggantikan-sebuah-Array" class="headerlink" title="Menggantikan sebuah Array"></a>Menggantikan sebuah Array</h3><p>Methods perubahan, seperti namanya, merubah array yang memanggil methods ini. Jika dibandingkan, ada juga methods yang tidak melakukan perubahan, contohnya <code>filter()</code>, <code>concat()</code> dan <code>slice()</code>, yang mana tidak merubah array asalnya tetapi <strong>selalu mengembalikan array baru</strong>. Saat menggunakan methods yang tidak melakukan perubahan, Anda bisa menggantikan array lama dengan array yang baru:</p>
+<pre><code class="hljs js">example1.items = example1.items.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> item.message.match(<span class="hljs-regexp">/Foo/</span>)
+&#125;)</code></pre>
+<p>Anda mungkin berfikir kalau ini akan membuat Vue menghilangkan DOM yang telah ada dan mengulang pengeluaran(me-render ulang) sejumlah elemen, untungnya tidak seperti itu. Vue menciptakan mesin yang pintar yang bisa memaksimalkan penggunaan elemen DOM secara berulang, jadi mengganti sebuah array terhadap array yang lain yang berisi objek yang tumpang tindih akan menjadi sangat efisien.</p>
+<h3 id="Peringatan"><a href="#Peringatan" class="headerlink" title="Peringatan"></a>Peringatan</h3><p>Karna ada batas di JavaScript sendiri, Vue <strong>tidak bisa</strong> mendeteksi perubahan berikut yang terjadi di array:</p>
+<ol>
+<li>Saat Anda langsung menetapkan sebuah elemen dengan indeksnya, contohnya <code>vm.items[indexOfItem] = newValue</code></li>
+<li>Saat Anda mengubah panjang array itu sendiri, contohnya <code>vm.items.length = newLength</code></li>
+</ol>
+<p>Contohnya: </p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>]
+  &#125;
+&#125;)
+vm.items[<span class="hljs-number">1</span>] = <span class="hljs-string">'x'</span> <span class="hljs-comment">// is NOT reactive</span>
+vm.items.length = <span class="hljs-number">2</span> <span class="hljs-comment">// is NOT reactive</span></code></pre>
+<p>Untuk mengatasi peringatan pertama, kedua kode dibawah akan menghasilkan sesuatu yang sama dengan <code>vm.items[indexOfItem] = newValue</code>, tetapi juga akan menjalankan perubahan state secara reaktif:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Vue.set</span>
+Vue.set(vm.items, indexOfItem, newValue)</code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// Array.prototype.splice</span>
+vm.items.splice(indexOfItem, <span class="hljs-number">1</span>, newValue)</code></pre>
+<p>Anda juga bisa menggunakan <a href="https://vuejs.org/v2/api/#vm-set"><code>vm.$set</code></a> methods dari instance, yang mana sebagai sebuah alias dari <code>Vue.set</code> yang global:</p>
+<pre><code class="hljs js">vm.$set(vm.items, indexOfItem, newValue)</code></pre>
+<p>Untuk mengatasi peringatan kedua, Anda cukup menggunakan <code>splice</code>:</p>
+<pre><code class="hljs js">vm.items.splice(newLength)</code></pre>
+<h2 id="Peringatan-Mendeteksi-Perubahan-Objek"><a href="#Peringatan-Mendeteksi-Perubahan-Objek" class="headerlink" title="Peringatan Mendeteksi Perubahan Objek"></a>Peringatan Mendeteksi Perubahan Objek</h2><p>Lagi, karna batasan dari JavaScript yang modern, <strong>Vue tidak bisa mendeteksi penambahan ataupun penghapusan sebuah properti</strong>. Contohnya:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
+  &#125;
+&#125;)
+<span class="hljs-comment">// `vm.a` is now reactive</span>
+
+vm.b = <span class="hljs-number">2</span>
+<span class="hljs-comment">// `vm.b` is NOT reactive</span></code></pre>
+<p>Vue tidak mengizinkan menambah sebuah properti yang reaktif pada root-level(Tingkat tertinggi) instance yang telah dibuat. Namun, mungkin saja menambah properti reaktif kedalam objek bersarang menggunakan method <code>Vue.set(object, key, value)</code>. Contonya:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">userProfile</span>: &#123;
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'Anika'</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<p>Anda bisa menambah sebuah properti <code>umur</code> baru kedalam objek bersarang <code>userProfile</code> dengan cara:</p>
+<pre><code class="hljs js">Vue.set(vm.userProfile, <span class="hljs-string">'age'</span>, <span class="hljs-number">27</span>)</code></pre>
+<p>Anda bisa menggunakan perintah <code>vm.$set</code> methods dari instance, yang mana adalah sebuah alias dari <code>Vue.set</code> yang global:</p>
+<pre><code class="hljs js">vm.$set(vm.userProfile, <span class="hljs-string">'age'</span>, <span class="hljs-number">27</span>)</code></pre>
+<p>Terkadang Anda mungkin ingin menetapkan beberapa properti baru berisi angka ke dalam objek yang telah ada, contohnya menggunakan perintah <code>Object.assign()</code> atau perintah <code>_.extend()</code>. Pada beberapa kasus, Anda harus membuat objek baru dengan properti dari kedua objek. Jadi daripada melakukan:</p>
+<pre><code class="hljs js"><span class="hljs-built_in">Object</span>.assign(vm.userProfile, &#123;
+  <span class="hljs-attr">age</span>: <span class="hljs-number">27</span>,
+  <span class="hljs-attr">favoriteColor</span>: <span class="hljs-string">'Vue Green'</span>
+&#125;)</code></pre>
+<p>Anda harus membuat baru, properti yang reaktif dengan:</p>
+<pre><code class="hljs js">vm.userProfile = <span class="hljs-built_in">Object</span>.assign(&#123;&#125;, vm.userProfile, &#123;
+  <span class="hljs-attr">age</span>: <span class="hljs-number">27</span>,
+  <span class="hljs-attr">favoriteColor</span>: <span class="hljs-string">'Vue Green'</span>
+&#125;)</code></pre>
+<h2 id="Menampilkan-Hasil-yang-sudah-di-Filter-di-Urut"><a href="#Menampilkan-Hasil-yang-sudah-di-Filter-di-Urut" class="headerlink" title="Menampilkan Hasil yang sudah di Filter/di Urut"></a>Menampilkan Hasil yang sudah di Filter/di Urut</h2><p>Terkadang kita ingin menampilkan sebuah array yang sudah di filter atau di urut tanpa mengubah data yang asli. Pada kasus ini, Anda bisa membuat sesuatu yang bernama computed properti yang mengembalikan array yang sudah di filter ataupun di urut.</p>
+<p>Contohnya: </p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"n in evenNumbers"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">numbers</span>: [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> ]
+&#125;,
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">evenNumbers</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.numbers.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">number</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> number % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<p>Pada situasi dimana computed properties tidak layak digunakan (contohnya didalam perulangan bersarang milik <code>v-for</code>), Anda bisa menggunakan methods ini:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"n in even(numbers)"</span>&gt;</span>&#123;&#123; n &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>
+<pre><code class="hljs js">data: &#123;
+  <span class="hljs-attr">numbers</span>: [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> ]
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">even</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">numbers</span>) </span>&#123;
+    <span class="hljs-keyword">return</span> numbers.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">number</span>) </span>&#123;
+      <span class="hljs-keyword">return</span> number % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<h2 id="Menggunakan-v-for-dengan-sebuah-Range"><a href="#Menggunakan-v-for-dengan-sebuah-Range" class="headerlink" title="Menggunakan v-for dengan sebuah Range"></a>Menggunakan <code>v-for</code> dengan sebuah Range</h2><p><code>v-for</code> bisa juga mengambil sebuah angka. pada kasus ini ia akan mengulangi elemen itu sesuai angka yang ditentukan.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"n in 10"</span>&gt;</span>&#123;&#123; n &#125;&#125; <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>Hasil:</p>
+
+<div id="range" class="demo">
+  <span v-for="n in 10">{{ n }} </span>
+</div>
+<script>
+  new Vue({ el: '#range' })
+</script>
+
+<h2 id="Menggunakan-v-for-pada-sebuah-lt-template-gt"><a href="#Menggunakan-v-for-pada-sebuah-lt-template-gt" class="headerlink" title="Menggunakan v-for pada sebuah &lt;template&gt;"></a>Menggunakan <code>v-for</code> pada sebuah <code>&lt;template&gt;</code></h2><p>Hampir sama dengan <code>v-if</code>, Anda juga bisa menggunakan <code>v-for</code> pada tag <code>&lt;template&gt;</code> untuk mengeluarkan sejumlah elemen. Contohnya</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"divider"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<h2 id="Menggunakan-v-for-dengan-v-if"><a href="#Menggunakan-v-for-dengan-v-if" class="headerlink" title="Menggunakan v-for dengan v-if"></a>Menggunakan <code>v-for</code> dengan <code>v-if</code></h2><p class="tip">Ketahuilah bahwa <strong>tidak</strong> direkomendasikan untuk menggunakan <code>v-if</code> dan <code>v-for</code> secara bersamaan. Ini bisa di lihat pada <a href="/v2/style-guide/#Avoid-v-if-with-v-for-essential">style guide</a></p>
+
+<p>Pada saat mereka ada dalam elemen yang sama, <code>v-for</code> memiliki prioritas yang lebih tinggi daripada <code>v-if</code>. Yang mana artinya <code>v-if</code> akan dijalankan pada setiap perulangan secara terpisah. Ini bisa berguna saat Anda hanya ingin mengeluarkan beberapa elemen saja, seperti ini:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in todos"</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"!todo.isComplete"</span>&gt;</span>
+  &#123;&#123; todo &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>
+<p>Yang diatas ini hanya mengeluarkan todos yang belum selesai.</p>
+<p>Jika sebaliknya, keinginanmu adalah untuk menghentikan perulangan secara bersyarat, Anda bisa meletakkan <code>v-if</code> pada pembungkus elemen (atau <a href="conditional.html#Conditional-Groups-with-v-if-on-lt-template-gt"><code>&lt;template&gt;</code></a>). Contohnya:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todos.length"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in todos"</span>&gt;</span>
+    &#123;&#123; todo &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-else</span>&gt;</span>No todos left!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<h2 id="Menggunakan-v-for-pada-sebuah-Component"><a href="#Menggunakan-v-for-pada-sebuah-Component" class="headerlink" title="Menggunakan v-for pada sebuah Component"></a>Menggunakan <code>v-for</code> pada sebuah Component</h2><blockquote>
+<p>Bagian ini diharuskan memahami <a href="components.html">Components</a>. Boleh melewatinya terlebih dahulu dan kembali lagi nanti.</p>
+</blockquote>
+<p>Anda bisa langsung menggunakan <code>v-for</code> pada sebuah component yang Anda buat, sama seperti elemen lainnya:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">"item.id"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+<blockquote>
+<p>Pada versi 2.2.0+, saat menggunakan <code>v-for</code> dengan sebuah component, sebuah <a href="list.html#key"><code>key</code></a> sekarang di haruskan ada.</p>
+</blockquote>
+<p>Namun, ia tidak mengirimkan data secara otomatis ke component itu, karna componentnya memiliki lingkup mereka sendiri. Jika ingin mengirimkan data hasil perulangan kedalam component, kita harus menggunakan props:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span>
+  <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(item, index) in items"</span>
+  <span class="hljs-attr">v-bind:item</span>=<span class="hljs-string">"item"</span>
+  <span class="hljs-attr">v-bind:index</span>=<span class="hljs-string">"index"</span>
+  <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item.id"</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+<p>Alasan untuk tidak langsung memasukkan <code>item</code> kedalam component karna itu membuat component tergabung dengan bagaimana <code>v-for</code> bekerja. Sedikit lebih jelas untuk dari mana datangnya data membuat component bisa digunakan berkali-kali pada situasi yang lain.</p>
+<p>Ada beberapa contoh dari aplikasi sederhana todo list:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"todo-list-example"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">v-on:submit.prevent</span>=<span class="hljs-string">"addNewTodo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"new-todo"</span>&gt;</span>Tambahkan sebuah todo<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+      <span class="hljs-attr">v-model</span>=<span class="hljs-string">"newTodoText"</span>
+      <span class="hljs-attr">id</span>=<span class="hljs-string">"new-todo"</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Makan Ayam"</span>
+    &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Tambah<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+      <span class="hljs-attr">is</span>=<span class="hljs-string">"todo-item"</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(todo, index) in todos"</span>
+      <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"todo.id"</span>
+      <span class="hljs-attr">v-bind:title</span>=<span class="hljs-string">"todo.title"</span>
+      <span class="hljs-attr">v-on:remove</span>=<span class="hljs-string">"todos.splice(index, 1)"</span>
+    &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p class="tip">Ketahuilah bahwa atribut <code>is=&quot;todo-item&quot;</code>. Ini lumayan penting di dalam template DOM, karna hanya sebuah elemen <code>&lt;li&gt;</code> itu sah-sah saja didalam elemen <code>&lt;ul&gt;</code>. Ia melakukan hal yang sama seperti <code>&lt;todo-item&gt;</code>, tapi bisa berpotensi menyebabkan browser mengeluarkan error. Lihat pada <a href="components.html#DOM-Template-Parsing-Caveats">DOM Template Parsing Caveats</a> untuk mempelajari lebih lanjut</p>
+
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'todo-item'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'\
+    &lt;li&gt;\
+      &#123;&#123; title &#125;&#125;\
+      &lt;button v-on:click="$emit(\'remove\')"&gt;Remove&lt;/button&gt;\
+    &lt;/li&gt;\
+  '</span>,
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'title'</span>]
+&#125;)
+
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#todo-list-example'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">newTodoText</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">todos</span>: [
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Do the dishes'</span>,
+      &#125;,
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Take out the trash'</span>,
+      &#125;,
+      &#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Mow the lawn'</span>
+      &#125;
+    ],
+    <span class="hljs-attr">nextTodoId</span>: <span class="hljs-number">4</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">addNewTodo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.todos.push(&#123;
+        <span class="hljs-attr">id</span>: <span class="hljs-keyword">this</span>.nextTodoId++,
+        <span class="hljs-attr">title</span>: <span class="hljs-keyword">this</span>.newTodoText
+      &#125;)
+      <span class="hljs-keyword">this</span>.newTodoText = <span class="hljs-string">''</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<div id="todo-list-example" class="demo">
+  <form v-on:submit.prevent="addNewTodo">
+    <label for="new-todo">Tambahkan sebuah todo</label>
+    <input v-model="newTodoText" id="new-todo" placeholder="Contohnya: Makan Ayam">
+    <button>Tambah</button>
+  </form>
+  <ul>
+    <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title" v-on:remove="todos.splice(index, 1)"></li>
+  </ul>
+</div>
+<script>
+Vue.component('todo-item', {
+  template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">Remove</button>\
+    </li>\
+  ',
+  props: ['title']
+})
+
+new Vue({
+  el: '#todo-list-example',
+  data: {
+    newTodoText: '',
+    todos: [
+      {
+        id: 1,
+        title: 'Do the dishes',
+      },
+      {
+        id: 2,
+        title: 'Take out the trash',
+      },
+      {
+        id: 3,
+        title: 'Mow the lawn'
+      }
+    ],
+    nextTodoId: 4
+  },
+  methods: {
+    addNewTodo: function () {
+      this.todos.push({
+        id: this.nextTodoId++,
+        title: this.newTodoText
+      })
+      this.newTodoText = ''
+    }
+  }
+})
+</script>
+
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/conditional.html">Rendering Bersyarat</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/events.html">Penanganan Event</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
+    Menemukan kesalahan atau ingin berkontribusi pada dokumentasi?
+    <a href="https://github.com/vuejs-id/docs/blob/master/src/v2/guide/list.md" target="_blank">
+        Sunting halaman ini di Github!
+    </a>
+  </div>
+</div>
+
+        
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] }
+      })
+    })
+    </script>
+
+    <!-- fastclick -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>
