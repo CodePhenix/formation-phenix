@@ -1,0 +1,8 @@
+﻿#demo-container {
+	text-align:center;
+	margin:40px 0;
+	background:#FFFFFF;
+}
+#demo-tooltip {
+	border-bottom:1px dotted #666
+}

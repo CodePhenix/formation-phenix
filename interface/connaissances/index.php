@@ -190,8 +190,29 @@
         source: "CodePhenix",
         href:"autre/codephenix/presentation-ui.pdf",
         sujet:  ["UI"],
-        new : true,
         intervenant : true
+      },
+      {
+        titre: "Règles WCAG",
+        source: "W3C",
+        href:"accessibilite/w3c/index-1.htm",
+        sujet:  ["accessibilite"],
+        new : true
+      },
+      {
+        titre: "Critères RGAA",
+        source: "numerique.gouv.fr",
+        href:"accessibilite/rgaa/index.htm",
+        sujet:  ["accessibilite"],
+        new : true
+      },
+      {
+        titre: "L'accessibilité",
+        source: "CodePhenix",
+        href:"accessibilite/accessibilite.pdf",
+        sujet:  ["accessibilite"],
+        intervenant : true,
+        new : true
       }
     ]
 

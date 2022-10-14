@@ -1,0 +1,44 @@
+Uri: https://angrytools.com/css-flex/
+File Name: C:\Downloaded Web Sites\angrytools.com\css-flex\index.htm
+Content Type: text/html
+
+Uri: https://angrytools.com/include/img/apple-touch-icon.png
+File Name: C:\Downloaded Web Sites\angrytools.com\include\img\apple-touch-icon.png
+Content Type: image/png
+
+Uri: https://angrytools.com/include/img/favicon-32x32.png
+File Name: C:\Downloaded Web Sites\angrytools.com\include\img\favicon-32x32.png
+Content Type: image/png
+
+Uri: https://angrytools.com/include/img/favicon-16x16.png
+File Name: C:\Downloaded Web Sites\angrytools.com\include\img\favicon-16x16.png
+Content Type: image/png
+
+Uri: https://angrytools.com/include/img/site.webmanifest
+File Name: C:\Downloaded Web Sites\angrytools.com\include\img\site.webmanifest
+Content Type: 
+
+Uri: https://angrytools.com/include/img/safari-pinned-tab.svg
+File Name: C:\Downloaded Web Sites\angrytools.com\include\img\safari-pinned-tab.svg
+Content Type: image/svg+xml
+
+Uri: https://angrytools.com/include/css/at-main.css?2262022
+File Name: C:\Downloaded Web Sites\angrytools.com\include\css\at-main.css
+Content Type: text/css
+
+Uri: https://angrytools.com/css-flex/css/css-flex.css?1.3
+File Name: C:\Downloaded Web Sites\angrytools.com\css-flex\css\css-flex.css
+Content Type: text/css
+
+Uri: https://angrytools.com/css-flex/js/css-flex.js?1.3
+File Name: C:\Downloaded Web Sites\angrytools.com\css-flex\js\css-flex.js
+Content Type: application/javascript
+
+Uri: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6313848393051024
+File Name: C:\Downloaded Web Sites\angrytools.com\pagead\js\f.txt
+Content Type: text/javascript
+
+Uri: https://angrytools.com/include/js/at-main.js?2262022
+File Name: C:\Downloaded Web Sites\angrytools.com\include\js\at-main.js
+Content Type: application/javascript
+

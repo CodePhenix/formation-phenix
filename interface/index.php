@@ -41,26 +41,18 @@
             </div>
           </div>
         </section>
+        <a class="section" href="outils/index.php">
         <section>
           <div>
             <div>
             <h2>Outils</h2>
-            <div>
-              <ul>
-                <li><a href="outils/cssgenerator/index.htm" target="_blank">CSS Generator</a></li>
-                <li><a href="outils/theappguruz/tag-tools/web/CSSAnimations/index.htm" target="_blank">Animation Generator</a></li>
-                <li><a href="http://codephenix.com:8456" target="_blank">Regular expression</a></li>
-                <li><a href="outils/icomoon/index.html" target="_blank">Icomoon</a></li>
-                <li><a href="outils/typo.php">Polices d'écriture</a></li>
-                <li><a href="http://codephenix.com:8500" target="_blank">Banque à idées</a></li>
-                <li><a href="outils/rgbacolorpicker.com/rgba-to-hex.htm" target="_blank">Rgba to hex</a></li>
-                <li><a href="outils/colorsinspo.com/color-tools/color-wheel.html" target="_blank">Color wheel</a></li>
-                <li><a href="outils/contrast-ratio/index.htm" target="_blank">Contrast ratio</a></li>
-              </ul>
-              </div>
+            <div style="margin-top: 7%;">
+                <i class="bi bi-tools" style="color: #4bafd1;background-color: white;border-radius: 100%;padding: 3% 6%;font-size: 2.2em;"></i>
+            </div>
             </div>
           </div>
         </section>
+        </a>
         <section>
           <div>
             <div>
@@ -69,11 +61,11 @@
               <ul>
                 <!-- class='new' -->
                 <li><a href="connaissances/index.php#SEO">SEO</a></li>
-                <li><a href="connaissances/index.php#accessibilite">Accessibilité</a></li>
+                <li><a class='new' href="connaissances/index.php#accessibilite">Accessibilité</a></li>
                 <li><a href="connaissances/index.php#UX">UX</a></li>
                 <li><a href="connaissances/index.php#web">Web</a></li>
                 <li><a href="connaissances/index.php#pro">Pro</a></li>
-                <li><a class='new' href="connaissances/index.php#autre">Autre</a></li>
+                <li><a href="connaissances/index.php#autre">Autre</a></li>
               </ul>
               </div>
             </div>
@@ -114,12 +106,11 @@
           </div>
         </section>
       <!-- <section id="alert">
-        <p><span>09/09/2022 : </span>
-          Nouveau contenu ajouté dans "<a href="connaissances/index.php#autre">connaissances à avoir</a>".
+        <p><span>07/10/2022 : </span>
+          Nouveau contenu ajouté dans "<a href="connaissances/index.php#accessibilite">connaissances à avoir</a>".
         </p>
-        <p>
-          Nouvel outils à disposition
-           <a target="_blank" href="outils/colorsinspo.com/color-tools/color-wheel.html">Color wheel</a>
+        <p>Nouvel outils à disposition
+           <a target="_blank" href="outils/contrast-ratio/index.htm">Contrast ratio</a>
         </p>
       </section> -->
     </main>
