@@ -13,103 +13,108 @@
     <main>
       <a href="#" id="back-to-top" class="btn btn-default">&uarr;</a>
       <aside>
-      <ol class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <li>
-          <button class="nav-link active" id="html-initiation-tab" data-bs-toggle="pill" data-bs-target="#html-initiation" type="button" role="tab" aria-controls="html-initiation" aria-selected="false">
-            HTML initiation
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="css-initiation-tab" data-bs-toggle="pill" data-bs-target="#css-initiation" type="button" role="tab" aria-controls="css-initiation" aria-selected="false">
-            CSS initiation
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="formulaires-tab" data-bs-toggle="pill" data-bs-target="#formulaires" type="button" role="tab" aria-controls="formulaires" aria-selected="false">
-            Les formulaires
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="positionnement-tab" data-bs-toggle="pill" data-bs-target="#positionnement" type="button" role="tab" aria-controls="positionnement" aria-selected="false">
-            Positionnement
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="responsive-tab" data-bs-toggle="pill" data-bs-target="#responsive" type="button" role="tab" aria-controls="responsive" aria-selected="false">
-            Responsive
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="css-animation-tab" data-bs-toggle="pill" data-bs-target="#css-animation" type="button" role="tab" aria-controls="css-animation" aria-selected="false">
-            Animation
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="validation1-tab" data-bs-toggle="pill" data-bs-target="#validation1" type="button" role="tab" aria-controls="validation1" aria-selected="false">
-            Validation des connaissances <small>HTML/CSS</small>
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="js-initiation-tab" data-bs-toggle="pill" data-bs-target="#js-initiation" type="button" role="tab" aria-controls="js-initiation" aria-selected="false">
-            Javascript initiation <small>(part 1)</small>
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="js-initiation2-tab" data-bs-toggle="pill" data-bs-target="#js-initiation2" type="button" role="tab" aria-controls="js-initiation2" aria-selected="false">
-            Javascript initiation <small>(part 2)</small>
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="js-formulaire-tab" data-bs-toggle="pill" data-bs-target="#js-formulaire" type="button" role="tab" aria-controls="js-formulaire" aria-selected="false">
-            Vérification d'un formulaire
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="bootstrap-tab" data-bs-toggle="pill" data-bs-target="#bootstrap" type="button" role="tab" aria-controls="bootstrap" aria-selected="false">
-            Bootstrap
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="js-temps-tab" data-bs-toggle="pill" data-bs-target="#js-temps" type="button" role="tab" aria-controls="js-temps" aria-selected="false">
-            Gestion du temps
-          </button>
-        </li>
-        <li>
-          <button  class="nav-link" id="validation2-tab" data-bs-toggle="pill" data-bs-target="#validation2" type="button" role="tab" aria-controls="validation2" aria-selected="false">
-            Validation des connaissances <small>JavaScript</small>
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="git-intro-tab" data-bs-toggle="pill" data-bs-target="#git-intro" type="button" role="tab" aria-controls="git-intro" aria-selected="false">
-            Git introduction
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="git-init-tab" data-bs-toggle="pill" data-bs-target="#git-init" type="button" role="tab" aria-controls="git-init" aria-selected="false">
-            Git initiation
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="git-group-tab" data-bs-toggle="pill" data-bs-target="#git-group" type="button" role="tab" aria-controls="git-group" aria-selected="false">
-            Travail en groupe
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="portfolio-tab" data-bs-toggle="pill" data-bs-target="#portfolio" type="button" role="tab" aria-controls="portfolio" aria-selected="false">
-            Portfolio
-          </button>
-        </li>
-        <li>
-          <button class="nav-link" id="avancee-tab" data-bs-toggle="pill" data-bs-target="#avancee" type="button" role="tab" aria-controls="avancee" aria-selected="false">
-            Connaissances avancées
-          </button>
-        </li>
+        <ol class="nav">
+          <li>Initiation
+            <ol>
+                <li>
+                  <button class="active" id="html-initiation">
+                    HTML
+                  </button>
+                </li>
+                <li>
+                  <button id="css-initiation">
+                    CSS
+                  </button>
+                </li>
+                <li>
+                  <button id="js-initiation">
+                    Javascript
+                  </button>
+                </li>
+            </ol>
+          </li>
+          <li>Approfondissement
+            <ol>
+                <li>
+                  <button id="positionnement">
+                    Positionnement <span class="tag">CSS</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="js-initiation2">
+                    Dynamisme <span class="tag">JS</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="responsive">
+                    Responsive <span class="tag">CSS</span>
+                  </button>
+                </li>
+            </ol>
+          </li>
+          <li>
+            <button id="bootstrap">
+              Bootstrap
+            </button>
+          </li>
+          <li>Animation
+            <ol>
+                <li>
+                  <button id="css-animation">
+                    Animation <span class="tag">CSS</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="js-temps">
+                    Gestion du temps <span class="tag">JS</span>
+                  </button>
+                </li>
+            </ol>
+          </li>
+          <li>Formulaire
+            <ol>
+                <li>
+                  <button id="formulaires">
+                    Structure <span class="tag">HTML</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="js-formulaire">
+                    Vérification <span class="tag">JS</span>
+                  </button>
+                </li>
+            </ol>
+          </li>
+          <li>Git
+            <ol>
+                <li>
+                  <button id="git-intro">
+                    Introduction
+                  </button>
+                </li>
+                <li>
+                  <button id="git-init">
+                    Initiation
+                  </button>
+                </li>
+                <li>
+                  <button id="git-group">
+                    Travail en groupe
+                  </button>
+                </li>
+            </ol>
+          </li>
+          <li>
+            <button id="portfolio">
+              Portfolio
+            </button>
+          </li>
       </ol>
       </aside>
       <!-- contenu -->
-      <section class="tab-content" id="v-pills-tabContent">
+      <section>
       <!-- HTML INITIATION-->
-        <article class="tab-pane fade show active" id="html-initiation" role="tabpanel" aria-labelledby="html-initiation-tab">
+        <article class="active" id="html-initiation-article">
           <h3>HTML initiation</h3>
            <iframe src="supports/html.pdf" title="HTML initiation"></iframe>
            <!--
@@ -122,7 +127,7 @@
            <h4>Quiz</h4>
           <a class="cta link" href="quiz/html-initiation.html"><span>Commencer le quiz d'initiation HTML</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
         </article>
-        <article class="tab-pane fade" id="css-initiation" role="tabpanel" aria-labelledby="css-initiation-tab">
+        <article id="css-initiation-article">
           <h3>CSS initiation</h3>
           <iframe src="supports/css.pdf" title="HTML initiation"></iframe>
           <h4>Demo CSS</h4>
@@ -154,7 +159,7 @@
             })
           </script>
         </article>
-        <article class="tab-pane fade" id="formulaires" role="tabpanel" aria-labelledby="formulaires-tab">
+        <article id="formulaires-article">
           <h3>HTML : <small>Les formulaires</small></h3>
           <iframe src="supports/formulaire.pdf" title="HTML les formulaires"></iframe>
           <h4>Exercice</h4>
@@ -162,7 +167,7 @@
           <p>Reproduisez le formulaire d'inscription, selon la maquette suivante :</p>
           <a class="cta dl" target="_blank" href="exercices/html-css/exercice-form.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
         </article>
-        <article class="tab-pane fade" id="positionnement" role="tabpanel" aria-labelledby="positionnement-tab">
+        <article id="positionnement-article">
           <h3>CSS : <small>Le positionnement des éléments</small></h3>
           <iframe src="supports/positionnement.pdf" title="HTML positionnement"></iframe>
           <h4>Fiche mémo</h4>
@@ -195,7 +200,7 @@
             </li>
           </ol>
         </article>
-        <article class="tab-pane fade" id="responsive" role="tabpanel" aria-labelledby="responsive-tab">
+        <article id="responsive-article">
           <h3>CSS : <small>Le responsive design</small></h3>
           <iframe src="supports/responsive.pdf" title="HTML responsive"></iframe>
           <h4>Exercice</h4>
@@ -221,7 +226,7 @@
           <a class="cta link" href="../connaissances/web/zenuacademie/statistiques/statistiques-utilisation-internet/index.htm"><span>Statistiques internet 2022</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
 
         </article>
-        <article class="tab-pane fade" id="css-animation" role="tabpanel" aria-labelledby="css-animation-tab">
+        <article id="css-animation-article">
             <h3>CSS : <small>Les animations</small></h3>
             <iframe src="supports/animation.pdf" title="CSS animation"></iframe>
             <h4>Exercices</h4>
@@ -252,7 +257,7 @@
               </li> -->
             </ol>
         </article>
-        <article class="tab-pane fade" id="validation1" role="tabpanel" aria-labelledby="validation1-tab">
+        <article id="validation1-article">
             <h3>Validation des connaissances : <small>HTML/CSS</small></h3>
             <h4>Exercices</h4>
                 <p>Reproduisez le site, selon la maquette en prenant en compte les précisions suivantes :</p>
@@ -269,7 +274,7 @@
             <h4>Quiz</h4>
             <a class="cta link" href="quiz/html-intermediaire.html"><span>Commencer le quiz intermédiaire HTML/CSS</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
         </article>
-        <article class="tab-pane fade" id="js-initiation" role="tabpanel" aria-labelledby="js-initiation-tab">
+        <article id="js-initiation-article">
           <h3>JavaScript initiation : <small>Première partie</small></h3>
            <iframe src="supports/javascript.pdf" title="JS initiation"></iframe>
            <h4>Exercices</h4>
@@ -298,7 +303,7 @@
               </li>
             </ol>
         </article>
-        <article class="tab-pane fade" id="js-initiation2" role="tabpanel" aria-labelledby="js-initiation2-tab">
+        <article id="js-initiation2-article">
           <h3>JavaScript initiation : <small>Deuxième partie</small></h3>
            <iframe src="supports/js2.pdf" title="JS initiation"></iframe>
            <h4>Exercices</h4>
@@ -333,7 +338,7 @@
            <h4>Quiz</h4>
              <a class="cta link" href="quiz/js-initiation.html"><span>Commencer le quiz d'initiation JavaScript</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
         </article>
-        <article class="tab-pane fade" id="js-formulaire" role="tabpanel" aria-labelledby="js-formulaire-tab">
+        <article id="js-formulaire-article">
           <h3>JavaScript : <small>Vérification d'un formulaire</small></h3>
            <iframe src="supports/verif-form.pdf" title="JS initiation"></iframe>
            <h4>Exercices</h4>
@@ -359,7 +364,7 @@
              </li>
            </ol>
         </article>
-        <article class="tab-pane fade" id="bootstrap" role="tabpanel" aria-labelledby="bootstrap-tab">
+        <article id="bootstrap-article">
           <h3>Bootstrap</h3>
           <ol>
               <li>
@@ -396,7 +401,7 @@
                 <a class="cta link" href="../documentations/bootstrap.php"><span>Accéder à la documentation Bootstrap</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
               </li>
         </article>
-        <article class="tab-pane fade" id="js-temps" role="tabpanel" aria-labelledby="js-temps-tab">
+        <article id="js-temps-article">
           <h3>JavaScript : <small>Gestion du temps</small></h3>
            <iframe src="supports/gestion-tps.pdf" title="JS Gestion du temps"></iframe>
            <h4>Exercices</h4>
@@ -418,7 +423,7 @@
              </li>
            </ol>
         </article>
-        <article class="tab-pane fade" id="validation2" role="tabpanel" aria-labelledby="validation2-tab">
+        <article id="validation2-article">
             <h3>Validation des connaissances : <small>JavaScipt</small></h3>
             <h4>Exercices</h4>
             <p>Réaliser un carousel, en prenant en compte les précisions suivantes :</p>
@@ -434,7 +439,7 @@
             <h4>Quiz</h4>
             <a class="cta link" href="quiz/js-intermediaire.html"><span>Commencer le quiz intermédiaire JavaScript</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
         </article>
-        <article class="tab-pane fade" id="git-intro" role="tabpanel" aria-labelledby="git-intro-tab">
+        <article id="git-intro-article">
             <h3>Git : <small>introduction</small></h3>
             <iframe src="supports/git-intro.pdf" title="Introduction à Git"></iframe>
             <h4>Exercices</h4>
@@ -455,7 +460,7 @@
                 <p>Dans votre dossier « Documents », créez un dossier « git » avec un sous-dossier « projet-git ». Créez à l'intérieur de celui-ci les fichiers « index.html » et « style.css ».
               </li>
             </article>
-        <article class="tab-pane fade" id="git-init" role="tabpanel" aria-labelledby="git-init-tab">
+        <article id="git-init-article">
             <h3>Git : <small>initiation</small></h3>
             <iframe src="supports/git-init.pdf" title="Introduction à Git"></iframe>
             <h4>Exercices</h4>
@@ -477,7 +482,7 @@
                 </li>
             </ol>
         </article>
-        <article class="tab-pane fade" id="git-group" role="tabpanel" aria-labelledby="git-group-tab">
+        <article id="git-group-article">
             <h3>Git : <small>travail en groupe</small></h3>
             <iframe src="supports/git-group.pdf" title="Introduction à Git"></iframe>
             <h4>Exercices</h4>
@@ -526,7 +531,7 @@
                 </li>
             </ol>
         </article>
-        <article class="tab-pane fade" id="portfolio" role="tabpanel" aria-labelledby="portfolio-tab">
+        <article id="portfolio-article">
           <h3>Félicitation !</h3>
           <p>Vous avez fini le programme, vous avez désormais toutes les notions de bases en HTML/CSS et JavaScript.
             Il est conseillé de mettre toutes ces compétences en pratique dans votre portfolio.</p>
@@ -550,7 +555,7 @@
             <a class="cta dl" target="_blank" href="../connaissances/UX/intervenant/Introduction au design - focus portfolio.pdf"><span>Voir des conseils en design UX</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
 
         </article>
-        <article class="tab-pane fade" id="avancee" role="tabpanel" aria-labelledby="avancee-tab">
+        <!-- <article id="avancee-article">
             <h3>Connaissances avancées</h3>
             <p>Dans cette partie certaines notions ne sont pas dans les cours précédents.
             À vous de chercher la solution avec les supports mis à disposition.</p>
@@ -580,19 +585,38 @@
                 <p>Ce projet est réalisable en groupe de deux personne, en utilsant Git.</p>
                 <a class="cta dl" target="_blank" href="exercices/js/projet-2048.pdf"><span>Voir les objectifs</span> <i class="bi bi-image"></i></a>
               </li>
-              <!-- <li>
+              <li>
                 <h6>Formulaire complexe <small>(Facultatif)</small></h6>
                 <p>Reproduisez le site, avec son formulaire dynamique.
                   Selon les maquettes et les instructions :</p>
                   <a class="cta dl" href="exercices/js/exercice-cocoplant.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
-              </li> -->
+              </li>
             </ol>
             <h4>Quiz</h4>
             <a class="cta link" href="quiz/quiz-avance.html"><span>Commencer le quiz avancé</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
-        </article>
+        </article> -->
       </section>
     </main>
-    <!-- Liaison au script Bootstrap -->
-    <script src="../assets/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        let articles = document.querySelectorAll("main article")
+        let links = document.querySelectorAll("aside li button")
+
+        for (var link of links){
+          link.addEventListener('click', function(){
+
+            for (var article of articles){
+              let tab = this.id+"-article"
+              article.classList.remove("active")
+              if(article.id==tab){
+                article.classList.add("active")
+              }
+            }
+            for (var link of links){
+              link.classList.remove("active")
+            }
+            this.classList.add("active")
+          })
+        }
+    </script>
   </body>
 </html>

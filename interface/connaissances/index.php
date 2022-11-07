@@ -196,23 +196,21 @@
         titre: "Règles WCAG",
         source: "W3C",
         href:"accessibilite/w3c/index-1.htm",
-        sujet:  ["accessibilite"],
-        new : true
+        sujet:  ["accessibilite"]
       },
       {
         titre: "Critères RGAA",
         source: "numerique.gouv.fr",
         href:"accessibilite/rgaa/index.htm",
-        sujet:  ["accessibilite"],
-        new : true
+        sujet:  ["accessibilite"]
       },
       {
         titre: "L'accessibilité",
         source: "CodePhenix",
         href:"accessibilite/accessibilite.pdf",
         sujet:  ["accessibilite"],
-        intervenant : true,
-        new : true
+        intervenant : true
+        // new : true
       }
     ]
 

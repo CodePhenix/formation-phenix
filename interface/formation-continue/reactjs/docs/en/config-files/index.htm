@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Config Files · Babel</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Configuration File Types"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Config Files · Babel"/><meta property="og:type" content="website"/><meta property="og:url" content="https://babeljs.io/"/><meta property="og:description" content="## Configuration File Types"/><meta property="og:image" content="https://babeljs.io/img/ogImage.png"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"/><link rel="alternate" type="application/atom+xml" href="https://babeljs.io/blog/atom.xml" title="Babel Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://babeljs.io/blog/feed.xml" title="Babel Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-114990275-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js" defer=""></script><script type="text/javascript" src="/js/code-blocks-buttons.js" defer=""></script><script type="text/javascript" src="/scripts/repl-page-hacks.js" defer=""></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link href='https://d33wubrfki0l68.cloudfront.net/css/dd8d7aea0f6e9f6a090eaed93f30139b69734d27/css/main.css' rel='stylesheet'/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="https://d33wubrfki0l68.cloudfront.net/7a197cfe44548cc1a3f581152af70a3051e11671/78df8/img/babel.svg" alt="Babel"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/" target="_self">Docs</a></li><li class=""><a href="/setup" target="_self">Setup</a></li><li class=""><a href="/repl" target="_self">Try it out</a></li><li class=""><a href="/videos" target="_self">Videos</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://opencollective.com/babel" target="_self">Donate</a></li><li class=""><a href="/team" target="_self">Team</a></li><li class=""><a href="https://github.com/babel/babel" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Config Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/">What is Babel?</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage">Usage Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/en/configuration">Configure Babel</a></li><li class="navListItem"><a class="navItem" href="/docs/en/learn">Learn ES2015</a></li><li class="navListItem"><a class="navItem" href="/docs/en/v7-migration">Upgrade to Babel 7</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Config Reference</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/config-files">Config Files</a></li><li class="navListItem"><a class="navItem" href="/docs/en/options">Config Options</a></li><li class="navListItem"><a class="navItem" href="/docs/en/presets">Presets</a></li><li class="navListItem"><a class="navItem" href="/docs/en/plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/en/plugins-list">Plugins List</a></li><li class="navListItem"><a class="navItem" href="/docs/en/assumptions">Compiler assumptions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Presets</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-env">@babel/preset-env</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-react">@babel/preset-react</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-typescript">@babel/preset-typescript</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-flow">@babel/preset-flow</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Misc</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/roadmap">Roadmap</a></li><li class="navListItem"><a class="navItem" href="/docs/en/caveats">Caveats</a></li><li class="navListItem"><a class="navItem" href="/docs/en/features-timeline">Features Timeline</a></li><li class="navListItem"><a class="navItem" href="/docs/en/faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/docs/en/editors">Editors</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration Packages</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/babel-cli">@babel/cli</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-polyfill">@babel/polyfill</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-plugin-transform-runtime">@babel/plugin-transform-runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-register">@babel/register</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-standalone">@babel/standalone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tooling Packages</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/babel-parser">@babel/parser</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-core">@babel/core</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-generator">@babel/generator</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-code-frame">@babel/code-frame</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-runtime">@babel/runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-template">@babel/template</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-traverse">@babel/traverse</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-types">@babel/types</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Helper Packages</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/babel-helper-compilation-targets">helper-compilation-targets</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-helper-module-imports">helper-module-imports</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/babel/website/blob/main/docs/config-files.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Config Files</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="configuration-file-types"></a><a href="#configuration-file-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration File Types</h2>
+<p>Babel has two parallel config file formats, which can be used together, or independently.</p>
+<p><details>
+<summary>History</summary></p>
+<table>
+<thead>
+<tr><th>Version</th><th>Changes</th></tr>
+</thead>
+<tbody>
+<tr><td><code>v7.8.0</code></td><td>Support <code>.babelrc.mjs</code> and <code>babel.config.mjs</code></td></tr>
+<tr><td><code>v7.7.0</code></td><td>Support <code>.babelrc.json</code>, <code>.babelrc.cjs</code>, <code>babel.config.json</code>, <code>babel.config.cjs</code></td></tr>
+</tbody>
+</table>
+<p></details></p>
+<ul>
+<li>Project-wide configuration
+<ul>
+<li><code>babel.config.*</code> files, with the following extensions: <code>.json</code>, <code>.js</code>, <code>.cjs</code>, <code>.mjs</code>.</li>
+</ul></li>
+<li>File-relative configuration
+<ul>
+<li><code>.babelrc.*</code> files, with the following extensions: <code>.json</code>, <code>.js</code>, <code>.cjs</code>, <code>.mjs</code>.</li>
+<li><code>.babelrc</code> file, with no extension.</li>
+<li><code>package.json</code> files, with a <code>&quot;babel&quot;</code> key.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="project-wide-configuration"></a><a href="#project-wide-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Project-wide configuration</h2>
+<p>New in Babel 7.x, Babel has a concept of a <a href="/docs/en/options#root">&quot;root&quot;</a> directory, which defaults
+to the current working directory. For project-wide configuration, Babel will automatically search
+for a <code>babel.config.json</code> file, or an equivalent one using the <a href="#supported-file-extensions">supported extensions</a>,
+in this root directory. Alternatively, users can use an explicit
+<a href="/docs/en/options#configfile">&quot;configFile&quot;</a> value to override the default config file search behavior.</p>
+<p>Because project-wide config files are separated from the physical location of the config
+file, they can be ideal for configuration that must apply broadly, even allowing
+plugins and presets to easily apply to files in <code>node_modules</code> or in symlinked packages,
+which were traditionally quite painful to configure in Babel 6.x.</p>
+<p>The primary downside of this project-wide config is that, because it relies on the working
+directory, it can be more painful to use in monorepos if the working directory is not the monorepo root.
+See the <a href="#monorepos">monorepo</a> documentation for examples of how to use config files in that context.</p>
+<p>Project-wide configs can also be disabled by setting <a href="/docs/en/options#configfile">&quot;configFile&quot;</a> to <code>false</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="file-relative-configuration"></a><a href="#file-relative-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File-relative configuration</h2>
+<p>Babel loads <code>.babelrc.json</code> files, or an equivalent one using the <a href="#supported-file-extensions">supported extensions</a>, by searching up the
+directory structure starting from the <a href="/docs/en/options#filename">&quot;filename&quot;</a> being compiled (limited by the caveats below).
+This can be powerful because it allows you to create independent configurations for subsections of
+a package. File-relative configurations are also <a href="/docs/en/options#merging">merged</a> over top of
+project-wide config values, making them potentially useful for specific overrides, though that can
+also be accomplished through <a href="/docs/en/options#overrides">&quot;overrides&quot;</a>.</p>
+<p>There are a few edge cases to consider when using a file-relative config:</p>
+<ul>
+<li>Searching will stop once a directory containing a <code>package.json</code> is found, so a relative config
+only applies within a single package.</li>
+<li>The <a href="/docs/en/options#filename">&quot;filename&quot;</a> being compiled must be inside of
+<a href="/docs/en/options#babelrcroots">&quot;babelrcRoots&quot;</a> packages, or else searching will be skipped entirely.</li>
+</ul>
+<p>These caveats mean that:</p>
+<ul>
+<li><code>.babelrc.json</code> files <em>only</em> apply to files within their own package</li>
+<li><code>.babelrc.json</code> files in packages that aren't Babel's 'root' are ignored unless you opt in
+with <a href="/docs/en/options#babelrcroots">&quot;babelrcRoots&quot;</a>.</li>
+</ul>
+<p>See the <a href="#monorepos">monorepo</a> documentation for more discussion on how to configure monorepos that have many packages.
+File-relative configs can also be disabled by setting <a href="/docs/en/options#babelrc">&quot;babelrc&quot;</a> to <code>false</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="6x-vs-7x-babelrc-loading"></a><a href="#6x-vs-7x-babelrc-loading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6.x vs 7.x <code>.babelrc</code> loading</h3>
+<p>Users coming from Babel 6.x will likely trip up on these two edge cases, which are new in Babel 7.x.
+These two restrictions were added to address common footguns in Babel 6.x:</p>
+<ul>
+<li><code>.babelrc</code> files applied to <code>node_modules</code> dependencies, often unexpectedly.</li>
+<li><code>.babelrc</code> files <em>failed</em> to apply to symlinked <code>node_modules</code> when people expected them to behave like normal dependencies.</li>
+<li><code>.babelrc</code> files <em>in</em> <code>node_modules</code> dependencies would be detected, even though the plugins and
+presets inside they were generally not installed, and may not even be valid in the version of
+Babel compiling the file.</li>
+</ul>
+<p>These cases will <em>primarily</em> cause issues for users with a monorepo structure, because if you
+have</p>
+<pre><code class="hljs css language-text">.babelrc
+packages/
+  mod1/
+    package.json
+    src/index.js
+  mod2/
+    package.json
+    src/index.js
+</code></pre>
+<p>the config will now be entirely ignored, because it is across a package boundary.</p>
+<p>One alternative would be to create a <code>.babelrc</code> in each sub-package that uses <a href="/docs/en/options#extends">&quot;extends&quot;</a> as</p>
+<pre><code class="hljs css language-json">{ <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"../../.babelrc"</span> }
+</code></pre>
+<p>Unfortunately, this approach can be a bit repetitive, and depending on how Babel is being used,
+could require setting <a href="/docs/en/options#babelrcroots">&quot;babelrcRoots&quot;</a>.</p>
+<p>Given that, it may be more desirable to rename the <code>.babelrc</code> to be a
+<a href="#project-wide-configuration">project-wide &quot;babel.config.json&quot;</a>. As mentioned in the project-wide
+section above, this may then require explicitly setting <a href="/docs/en/options#configfile">&quot;configFile&quot;</a>
+since Babel will not find the config file if the working directory isn't correct.</p>
+<h2><a class="anchor" aria-hidden="true" id="supported-file-extensions"></a><a href="#supported-file-extensions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported file extensions</h2>
+<p>Babel can be configured using any file extension natively supported by Node.js, as mentioned in <a href="#configuration-file-types">Configuration File Types</a> section:</p>
+<ul>
+<li><p><code>babel.config.json</code> and <code>.babelrc.json</code> are parsed as JSON5 and should contain an object matching
+the <a href="/docs/en/options">options</a> format that Babel accepts. They have been supported since <code>v7.7.0</code>.</p>
+<p>We recommend using this file type wherever possible: JS config files are
+handy if you have complex configuration that is conditional or otherwise computed at build time.
+However, the downside is that JS configs are less statically analyzable, and therefore have
+negative effects on cacheability, linting, IDE autocomplete, etc.
+Since <code>babel.config.json</code> and <code>.babelrc.json</code> are static JSON files, it allows other tools that
+use Babel such as bundlers to cache the results of Babel safely, which can be a huge build
+performance win.</p></li>
+<li><p><code>babel.config.cjs</code> and <code>.babelrc.cjs</code> allow you to define your configuration as CommonJS,
+using <code>module.exports</code>. They have been supported since <code>v7.7.0</code>.</p></li>
+<li><p><code>babel.config.mjs</code> and <code>.babelrc.mjs</code> use native ECMAScript modules. They are supported by Node.js 13.2+ (or older versions via the <code>--experimental-modules</code> flag).
+Please remember that native ECMAScript modules are asynchronous (that's why <code>import()</code> always
+returns a promise!): for this reason, <code>.mjs</code> config files will throw when calling Babel
+synchronously. They have been supported since <code>v7.8.0</code>.</p></li>
+<li><p><code>babel.config.js</code> and <code>.babelrc.js</code> behave like the <code>.mjs</code> equivalents when your <code>package.json</code>
+file contains the <a href="https://nodejs.org/api/esm.html#esm_code_package_json_code_code_type_code_field"><code>&quot;type&quot;: &quot;module&quot;</code></a>
+option, otherwise they are exactly the same as the <code>.cjs</code> files.</p></li>
+</ul>
+<p>JavaScript configuration files can either export an object, or a function that when called will
+return the generated configuration.
+Function-returning configs are given a few special powers because they can access an API exposed
+by Babel itself. See <a href="#config-function-api">Config Function API</a> for more information.</p>
+<blockquote>
+<p>For compatibility reasons, <code>.babelrc</code> is an alias for <code>.babelrc.json</code>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="monorepos"></a><a href="#monorepos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monorepos</h2>
+<p>Monorepo-structured repositories usually contain many packages, which means that they frequently
+run into the caveats mentioned in <a href="#file-relative-configuration">file-relative configuration</a>
+and config file loading in general. This section is aimed at helping users understand how
+to approach monorepo configuration.</p>
+<p>With monorepo setups, the core thing to understand is that Babel treats your working directory
+as its logical <a href="/docs/en/options#root">&quot;root&quot;</a>, which causes problems if you want to run Babel
+tools within a specific sub-package without having Babel apply to the repo as a whole.</p>
+<p>Separately, it is also important to decide if you want to use <a href="#file-relative-configuration"><code>.babelrc.json</code></a>
+files or just a central <a href="#project-wide-configuration"><code>babel.config.json</code></a>. <a href="#file-relative-configuration"><code>.babelrc.json</code></a>
+files are not required for subfolder-specific configuration like they were in Babel 6, so often
+they are not needed in Babel 7, in favor of <a href="#project-wide-configuration"><code>babel.config.json</code></a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="root-babelconfigjson-file"></a><a href="#root-babelconfigjson-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Root <code>babel.config.json</code> file</h3>
+<p>The first step in any monorepo structure should be to create a <a href="#project-wide-configuration"><code>babel.config.json</code></a>
+file in repository root. This establishes Babel's core concept of the base directory of your repository.
+Even if you want to use <a href="#file-relative-configuration"><code>.babelrc.json</code></a> files to configure each separate package,
+it is important to have as a place for repo-level options.</p>
+<p>You can often place all of your repo configuration in the root <a href="#project-wide-configuration"><code>babel.config.json</code></a>.
+With <a href="/docs/en/options#overrides">&quot;overrides&quot;</a>, you can easily
+specify configuration that only applies to certain subfolders of your repository, which can often be easier to
+follow than creating many <code>.babelrc.json</code> files across the repo.</p>
+<p>The first issue you'll likely run into is that by default, Babel expects to load <a href="#project-wide-configuration"><code>babel.config.json</code></a>
+files from the directory set as its <a href="/docs/en/options#root">&quot;root&quot;</a>, which means that if you create
+a <a href="#project-wide-configuration"><code>babel.config.json</code></a>, but run
+Babel inside an individual package, e.g.</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> packages/some-package;
+babel src -d dist
+</code></pre>
+<p>the <a href="/docs/en/options#root">&quot;root&quot;</a> Babel is using in that context is <em>not</em> your monorepo root,
+and it won't be able to find the <a href="#project-wide-configuration"><code>babel.config.json</code></a> file.</p>
+<p>If all of your build scripts run relative to your repository root, things should already work, but if
+you are running your Babel compilation process from within a subpackage, you need to tell Babel where
+to look for the config. There are a few ways to do that, but the recommended way is
+the <a href="/docs/en/options#rootmode">&quot;rootMode&quot;</a> option with <code>&quot;upward&quot;</code>, which will make Babel search from
+the working directory upward looking for your <a href="#project-wide-configuration"><code>babel.config.json</code></a> file,
+and will use its location as the <a href="/docs/en/options#root">&quot;root&quot;</a> value.</p>
+<p>One helpful way to test if your config is being detected is to place a <code>console.log()</code> call
+inside of it if it is a <a href="#project-wide-configuration"><code>babel.config.json</code></a> JavaScript file: the log will execute
+the first time Babel loads it.</p>
+<p>How you set this value varies by project, but here are a few examples:</p>
+<h4><a class="anchor" aria-hidden="true" id="cli"></a><a href="#cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI</h4>
+<pre><code class="hljs css language-bash">babel --root-mode upward src -d lib
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="babelregister"></a><a href="#babelregister" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@babel/register</h4>
+<pre><code class="hljs css language-js"><span class="hljs-built_in">require</span>(<span class="hljs-string">"@babel/register"</span>)({
+  <span class="hljs-attr">rootMode</span>: <span class="hljs-string">"upward"</span>,
+});
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="webpack"></a><a href="#webpack" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Webpack</h4>
+<pre><code class="hljs css language-js"><span class="hljs-built_in">module</span>: {
+  <span class="hljs-attr">rules</span>: [
+    {
+      <span class="hljs-attr">loader</span>: <span class="hljs-string">"babel-loader"</span>,
+      <span class="hljs-attr">options</span>: {
+        <span class="hljs-attr">rootMode</span>: <span class="hljs-string">"upward"</span>,
+      },
+    },
+  ];
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="jest"></a><a href="#jest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jest</h4>
+<p>Jest is often installed at the root of the monorepo and may not require configuration,
+but if it is installed per-package it can unfortunately be more complex to configure.</p>
+<p>The main part is creating a custom jest transformer file that wraps <code>babel-jest</code>'s default
+behavior in order to set the option, e.g.</p>
+<pre><code class="hljs css language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-built_in">require</span>(<span class="hljs-string">"babel-jest"</span>).default.createTransformer({
+  <span class="hljs-attr">rootMode</span>: <span class="hljs-string">"upward"</span>,
+});
+</code></pre>
+<p>and with that saved somewhere, you'd then use that file in the place of <code>babel-jest</code> in
+your Jest options via the <a href="https://jestjs.io/docs/en/configuration#transform-object-string-string">transform option</a>:</p>
+<pre><code class="hljs css language-json">"transform": {
+  "^.+\\.jsx?$": "./path/to/wrapper.js"
+},
+</code></pre>
+<p>so all JS files will be processed with your version of <code>babel-jest</code> with the option enabled.</p>
+<blockquote>
+<p>NOTE: When using <code>babel-jest</code> &lt; 27, you must omit the <code>.default</code> part: <code>require(&quot;babel-jest&quot;).createTransformer({ ...</code>.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="others"></a><a href="#others" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Others</h4>
+<p>There are tons of tools, but at the core of it is that they need the <code>rootMode</code> option enabled
+if the working directory is not already the monorepo root.</p>
+<h3><a class="anchor" aria-hidden="true" id="subpackage-babelrcjson-files"></a><a href="#subpackage-babelrcjson-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subpackage <code>.babelrc.json</code> files</h3>
+<p>Similar to the way <a href="#project-wide-configuration"><code>babel.config.json</code></a> files are required to be in the <a href="/docs/en/options#root">&quot;root&quot;</a>,
+<a href="#file-relative-configuration"><code>.babelrc.json</code></a> files must be in the root <em>package</em>, by default. This means that, the same way the
+working directory affects <a href="#project-wide-configuration"><code>babel.config.json</code></a> loading, it also affects <a href="#file-relative-configuration"><code>.babelrc.json</code></a> loading.</p>
+<p>Assuming you've already gotten your <a href="#project-wide-configuration"><code>babel.config.json</code></a> file loaded properly as discussed above,
+Babel will only process <a href="#file-relative-configuration"><code>.babelrc.json</code></a> files inside that root package (and not subpackages),
+so given for instance</p>
+<pre><code class="hljs css language-text">package.json
+babel.config.js
+packages/
+  mod/
+    package.json
+    .babelrc.json
+    index.js
+</code></pre>
+<p>compiling the <code>packages/mod/index.js</code> file will not load <code>packages/mod/.babelrc.json</code> because
+this <a href="#file-relative-configuration"><code>.babelrc.json</code></a> is within a sub-package, not the root package.</p>
+<p>To enable processing of that <a href="#file-relative-configuration"><code>.babelrc.json</code></a>, you will want to use the <a href="/docs/en/options#babelrcroots">&quot;babelrcRoots&quot;</a>
+option from inside your <a href="#project-wide-configuration"><code>babel.config.json</code></a> file to do</p>
+<pre><code class="hljs css language-js">babelrcRoots: [
+  <span class="hljs-string">"."</span>,
+  <span class="hljs-string">"packages/*"</span>,
+],
+</code></pre>
+<p>so that Babel will consider all <code>packages/*</code> packages as allowed to load <a href="#file-relative-configuration"><code>.babelrc.json</code></a> files,
+along with the original repo root.</p>
+<h2><a class="anchor" aria-hidden="true" id="config-function-api"></a><a href="#config-function-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config Function API</h2>
+<p>JS config files may export a function that will be passed config function API:</p>
+<pre><code class="hljs css language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">api</span>) </span>{
+  <span class="hljs-keyword">return</span> {};
+};
+</code></pre>
+<p>The <code>api</code> object exposes everything Babel itself exposes from its index module, along with
+config-file specific APIs:</p>
+<h3><a class="anchor" aria-hidden="true" id="apiversion"></a><a href="#apiversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>api.version</code></h3>
+<p>Type: <code>string</code><br /></p>
+<p>The version string for the Babel version that is loading the config file.</p>
+<h3><a class="anchor" aria-hidden="true" id="apicache"></a><a href="#apicache" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>api.cache</code></h3>
+<p>JS configs are great because they can compute a config on the fly, but the downside
+there is that it makes caching harder. Babel wants to avoid re-executing the
+config function every time a file is compiled, because then it would also need to
+re-execute any plugin and preset functions referenced in that config.</p>
+<p>To avoid this, Babel expects users of config functions to tell it how to manage
+caching within a config file.</p>
+<ul>
+<li><code>api.cache.forever()</code> - Permacache the computed config and never call the function again.</li>
+<li><code>api.cache.never()</code> - Do not cache this config, and re-execute the function every time.</li>
+<li><code>api.cache.using(() =&gt; process.env.NODE_ENV)</code> - Cache based on the value of <code>NODE_ENV</code>.
+Any time the <code>using</code> callback returns a value other than the one that was expected, the overall
+config function will be called again and a new entry will be added to the cache.</li>
+<li><code>api.cache.invalidate(() =&gt; process.env.NODE_ENV)</code> - Cache based on the value of <code>NODE_ENV</code>.
+Any time the <code>using</code> callback returns a value other than the one that was expected, the overall
+config function will be called again and all entries in the cache will be replaced with the result.</li>
+<li><code>api.cache(true)</code> - Same as <code>api.cache.forever()</code></li>
+<li><code>api.cache(false)</code> - Same as <code>api.cache.never()</code></li>
+</ul>
+<p>Since the actual callback result is used to check if the cache entry is valid, it is recommended
+that:</p>
+<ul>
+<li>Callbacks should be small and side-effect free.</li>
+<li>Callbacks should return values with the smallest range possible. For example, the
+<code>.using(() =&gt; process.env.NODE_ENV)</code> usage above is not ideal because it would create an unknown
+number of cache entries depending on how many values of <code>NODE_ENV</code> are detected. It would be
+safer to do <code>.using(() =&gt; process.env.NODE_ENV === &quot;development&quot;)</code> because then the cache entry
+can only ever be <code>true</code> or <code>false</code>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="apienv"></a><a href="#apienv" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>api.env(...)</code></h3>
+<p>Since <code>NODE_ENV</code> is a fairly common way to toggle behavior, Babel also includes an API function
+meant specifically for that. This API is used as a quick way to check the
+<a href="/docs/en/options#envname">&quot;envName&quot;</a> that Babel was loaded with, which takes <code>NODE_ENV</code> into account
+if no other overriding environment is set.</p>
+<p>It has a few different forms:</p>
+<ul>
+<li><code>api.env(&quot;production&quot;)</code> returns <code>true</code> if <code>envName === &quot;production&quot;</code>.</li>
+<li><code>api.env([&quot;development&quot;, &quot;test&quot;])</code> returns <code>true</code> if <code>[&quot;development&quot;, &quot;test&quot;].includes(envName)</code>.</li>
+<li><code>api.env()</code> returns the current <code>envName</code> string.</li>
+<li><code>api.env(envName =&gt; envName.startsWith(&quot;test-&quot;))</code> returns <code>true</code> if the env starts with &quot;test-&quot;.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> This function internally makes use of <a href="#apicache"><code>api.cache</code></a> mentioned above to ensure that Babel is aware that this build depends on a specific <code>envName</code>. You should not use it alongside with <code>api.cache.forever()</code> or <code>api.cache.never()</code>.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="apicallercb"></a><a href="#apicallercb" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>api.caller(cb)</code></h3>
+<p>This API is used as a way to access the <code>caller</code> data that has been passed to Babel.
+Since many instances of Babel may be running in the same process with different <code>caller</code>
+values, this API is designed to automatically configure <code>api.cache</code>, the same way <code>api.env()</code> does.</p>
+<p>The <code>caller</code> value is available as the first parameter of the callback function. It is best used
+with something like</p>
+<pre><code class="hljs css language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isBabelRegister</span>(<span class="hljs-params">caller</span>) </span>{
+  <span class="hljs-keyword">return</span> !!(caller &amp;&amp; caller.name === <span class="hljs-string">"@babel/register"</span>);
+}
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">api</span>) </span>{
+  <span class="hljs-keyword">const</span> isRegister = api.caller(isBabelRegister);
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-comment">// ...</span>
+  };
+};
+</code></pre>
+<p>to toggle configuration behavior based on a specific environment.</p>
+<h3><a class="anchor" aria-hidden="true" id="apiassertversionrange"></a><a href="#apiassertversionrange" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>api.assertVersion(range)</code></h3>
+<p>While <code>api.version</code> can be useful in general, it's sometimes nice to just declare your version.
+This API exposes a simple way to do that with:</p>
+<pre><code class="hljs css language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">api</span>) </span>{
+  api.assertVersion(<span class="hljs-string">"^7.2"</span>);
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-comment">// ...</span>
+  };
+};
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/v7-migration"><span class="arrow-prev">← </span><span>Upgrade to Babel 7</span></a><a class="docs-next button" href="/docs/en/options"><span>Config Options</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configuration-file-types">Configuration File Types</a></li><li><a href="#project-wide-configuration">Project-wide configuration</a></li><li><a href="#file-relative-configuration">File-relative configuration</a><ul class="toc-headings"><li><a href="#6x-vs-7x-babelrc-loading">6.x vs 7.x <code>.babelrc</code> loading</a></li></ul></li><li><a href="#supported-file-extensions">Supported file extensions</a></li><li><a href="#monorepos">Monorepos</a><ul class="toc-headings"><li><a href="#root-babelconfigjson-file">Root <code>babel.config.json</code> file</a></li><li><a href="#subpackage-babelrcjson-files">Subpackage <code>.babelrc.json</code> files</a></li></ul></li><li><a href="#config-function-api">Config Function API</a><ul class="toc-headings"><li><a href="#apiversion"><code>api.version</code></a></li><li><a href="#apicache"><code>api.cache</code></a></li><li><a href="#apienv"><code>api.env(...)</code></a></li><li><a href="#apicallercb"><code>api.caller(cb)</code></a></li><li><a href="#apiassertversionrange"><code>api.assertVersion(range)</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="https://d33wubrfki0l68.cloudfront.net/7a197cfe44548cc1a3f581152af70a3051e11671/78df8/img/babel.svg" alt="Babel" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/learn.html">Learn ES2015</a></div><div><h5>Community</h5><a href="/en/videos.html">Videos</a><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/babeljs" rel="noopener noreferrer" target="_blank">Stack Overflow</a><a href="https://babeljs.slack.com/">Slack Channel</a><a href="https://twitter.com/babeljs" rel="noopener noreferrer" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/babel">GitHub Org</a><a href="https://github.com/babel/babel">GitHub Repo</a><a href="https://github.com/babel/website">Website Repo</a><a href="https://old.babeljs.io">Old 6.x Site</a><a href="http://henryzoo.com/babel.github.io">Old 5.x Site</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'd42906b043c5422ea07b44fd49c40a0d',
+                indexName: 'babeljs',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

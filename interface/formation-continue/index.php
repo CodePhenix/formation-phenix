@@ -4,10 +4,9 @@
   	<meta charset="utf-8">
   	<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/cours.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/articles.css">
     <link rel="stylesheet" href="../assets/bootstrap/icons/icons-1.5.0/font/bootstrap-icons.css">
-  	<title>&lt;CodePhenix&gt; Cours</title>
+  	<title>&lt;CodePhenix&gt; Formation continue</title>
     <style>
     main{display: block;}
     section  {
@@ -116,7 +115,23 @@
         titre: "Inkscape",
         source: "Inkscape",
         href:"inkscape/index.htm"
+      },
+      {
+        titre: "threejs",
+        source: "threejs",
+        href:"threejs/docs/index.html"
       }
+      // ,
+      // {
+      //   titre: "React JS : Tutoriel",
+      //   source: "reactjs",
+      //   href:"reactjs/docs/getting-started.html"
+      // },
+      // {
+      //   titre: "React JS : Documentation",
+      //   source: "reactjs",
+      //   href:"reactjs/tutorial/tutorial.html"
+      // }
     ]
 
     construction();

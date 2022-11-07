@@ -16,7 +16,7 @@
         <section>
           <div>
             <div>
-            <h2>Cours et exercices</h2>
+            <h2>Programme<br>de formation</h2>
             <div>
               <div><i class="bi bi-arrow-right-circle-fill"></i></diV>
             </div>
@@ -41,13 +41,25 @@
             </div>
           </div>
         </section>
+        <a class="section" href="exercices/index.php">
+        <section>
+          <div>
+            <div>
+            <h2>Exercices</h2>
+            <div>
+                <i class="bi bi-pencil-fill icon-custom"></i>
+            </div>
+            </div>
+          </div>
+        </section>
+        </a>
         <a class="section" href="outils/index.php">
         <section>
           <div>
             <div>
             <h2>Outils</h2>
-            <div style="margin-top: 7%;">
-                <i class="bi bi-tools" style="color: #4bafd1;background-color: white;border-radius: 100%;padding: 3% 6%;font-size: 2.2em;"></i>
+            <div>
+                <i class="bi bi-tools icon-custom"></i>
             </div>
             </div>
           </div>
@@ -61,7 +73,7 @@
               <ul>
                 <!-- class='new' -->
                 <li><a href="connaissances/index.php#SEO">SEO</a></li>
-                <li><a class='new' href="connaissances/index.php#accessibilite">Accessibilité</a></li>
+                <li><a href="connaissances/index.php#accessibilite">Accessibilité</a></li>
                 <li><a href="connaissances/index.php#UX">UX</a></li>
                 <li><a href="connaissances/index.php#web">Web</a></li>
                 <li><a href="connaissances/index.php#pro">Pro</a></li>
@@ -75,7 +87,7 @@
         <section>
           <div>
             <div>
-            <h2>Formation continue</h2>
+            <h2>Formation<br>continue</h2>
             <div>
               <div><i class="bi bi-plus-circle-fill"></i></diV>
             </div>
@@ -84,14 +96,14 @@
         </section>
         </a>
         <!-- <a class="section" href="cours/quiz/quiz-continue.html"> -->
-        <section>
+        <!-- <section>
           <div>
             <div>
-            <h2>Quiz</h2>
+            <h2>Quiz</h2> -->
             <!-- <div>
               <div><i class="bi bi-question-circle-fill"></i></diV>
             </div> -->
-            <div>
+            <!-- <div>
               <ul>
                 <li><a href="cours/quiz/html-initiation.html">Initiation HTML</a></li>
                 <li><a href="cours/quiz/css-initiation.html">Initiation CSS</a></li>
@@ -104,7 +116,9 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
+
+
       <!-- <section id="alert">
         <p><span>07/10/2022 : </span>
           Nouveau contenu ajouté dans "<a href="connaissances/index.php#accessibilite">connaissances à avoir</a>".

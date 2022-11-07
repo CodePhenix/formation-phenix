@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/articles.css">
     <link rel="stylesheet" href="../assets/bootstrap/icons/icons-1.5.0/font/bootstrap-icons.css">
-  	<title>&lt;CodePhenix&gt; Connaissances</title>
+  	<title>&lt;CodePhenix&gt; Outils</title>
   </head>
 
   <body>

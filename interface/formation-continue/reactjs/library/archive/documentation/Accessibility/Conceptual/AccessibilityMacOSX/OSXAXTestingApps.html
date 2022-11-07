@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+  <title>Accessibility Programming Guide for OS X: Testing for Accessibility on OS X</title>
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1282/CSS/style-1.6.3.css" />
+  <link rel="stylesheet" type="text/css" href="../../../../Resources/1282/CSS/feedback-1.6.3.css" />
+  <meta charset='utf-8'> 
+<meta id="j-version" name="j-version" content="" />
+<meta id="build" name="build" content="c1e4c7a89af8f899a21cfa81fc33ba42" />
+<meta id="document-version" name="document-version" content="3.6.1" />
+<meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Technologies/Cocoa Layer/AppKit}, {Topic/User Experience/Accessibility}" />
+<meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40001078" />
+<meta id="chapterId" name="chapterId" content="TP40001078-CH210">
+<meta id="book-title" name="book-title" content="Accessibility Programming Guide for OS X" />
+<meta id="book-resource-type" name="book-resource-type" content="Guide" />
+<meta id="book-root" name="book-root" content="./" />
+<meta id="book-json" name="book-json" content="book.json">
+<meta id="date" name="date" content="2015-04-08" />
+<meta id="description" name="description" content="Explains how to use the accessibility features built into OS X." />
+<meta id="IndexTitle" name="IndexTitle" content="" />
+<meta id="resources-uri" name="resources-uri" content="../../../../Resources/1282">
+<link id="book-index-page" rel="Start" title="" type="text/html" href="./index.html">
+<!-- , next_chapter: next_chapter, previous_chapter: previous_chapter -->
+<link id="next-page" rel="Next" type="text/html" href="">
+<link id="previous-page" rel="Prev" type="text/html" href="">
+<meta id="devcenter" name="devcenter" content="<!-- DEVCENTER_NAME -->" />
+<meta id="devcenter-url" name="devcenter-url" content="<!-- DEVCENTER_URL -->" />
+<meta id="reflib" name="reflib" content="<!-- REFLIB_NAME -->" />
+
+<meta id="xcode-display" name="xcode-display" content="render" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta id="platforms" name="platforms" content="OS X">
+</head>
+
+  <body id="conceptual_flow_with_tasks" class="jazz">
+    
+    <header id="ios_header" class="hideOnPrint hideInXcode">
+  <div class="content-wrapper">
+    <p class="header-text">
+    	<a href="../../../../navigation/">Documentation Archive
+ 		</a>
+ </p>
+    <p id="wwdr"><img id="apple_logo" src="../../../../Resources/1282/Images/apple2.png" height="14px" width="12px" aria-hidden="true" /><a href="https://developer.apple.com">Developer</a></p>
+  </div>
+</header>
+
+    <section id="valence">
+  <div class="content-wrapper">
+    <p id="hierarchial_navigation">
+      <span id="book_title">Accessibility Programming Guide for OS X</span>
+    </p>
+    <form id="search" class="hideInXcode" method="get" action="/search/index.php" accept-charset="utf-8" autocomplete="off">
+  <input type="search" id="ssi_SearchField" placeholder="Search Documentation Archive" name="q" autocomplete="off" tabindex="2" />
+</form>
+
+      
+   
+   
+
+
+
+    <img id="shortstack" src="../../../../Resources/1282/Images/shortstack_2x.png"/>
+  </div>
+</section>
+    <div class="content-wrapper">
+      <nav id='navigator' class="partless book-parts hideInXcode" role="navigation">
+  <ul class="nav-parts">
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH254-SW1" class="part-name"><a href="index.html#//apple_ref/doc/uid/TP40001078-CH254-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH254-SW1">About OS X Accessibility</a>
+          <ul class="nav-chapters">
+            <li class="nav-chapter">
+              <a href="index.html#//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_1">About This Technology</a>
+            </li>
+            <li class="nav-chapter">
+              <a href="index.html#//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_2" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_2">At a Glance</a>
+            </li>
+            <li class="nav-chapter">
+              <a href="index.html#//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_3">How To Use This Document</a>
+            </li>
+            <li class="nav-chapter">
+              <a href="index.html#//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_4" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH254-DontLinkElementID_4">See Also</a>
+            </li>
+        </ul>
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH206-TPXREF101" class="part-name"><a href="OSXAXwhy.html#//apple_ref/doc/uid/TP40001078-CH206-TPXREF101" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH206-TPXREF101">Why Make Your App Accessible?</a>
+        <ul class="nav-chapters">
+            <li class="nav-chapter">
+            	<a href="OSXAXwhy.html#//apple_ref/doc/uid/TP40001078-CH206-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH206-SW1">Increase Your User Base</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="OSXAXwhy.html#//apple_ref/doc/uid/TP40001078-CH206-SW2" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH206-SW2">Enter New Markets</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="OSXAXwhy.html#//apple_ref/doc/uid/TP40001078-CH206-SW3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH206-SW3">Take Advantage of OS X Assistive Features</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="OSXAXwhy.html#//apple_ref/doc/uid/TP40001078-CH206-SW4" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH206-SW4">It’s Not Difficult</a>
+            </li>
+        </ul>
+      </li>
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH207-BABGJCGG" class="part-name"><a href="OSXAXDeveloping.html#//apple_ref/doc/uid/TP40001078-CH207-BABGJCGG" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH207-BABGJCGG">Designing an Accessible OS X App</a>
+        <ul class="nav-chapters">
+            <li class="nav-chapter">
+            	<a href="OSXAXDeveloping.html#//apple_ref/doc/uid/TP40001078-CH207-CEGDABDF" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH207-CEGDABDF">Basic Design Guidelines</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="OSXAXDeveloping.html#//apple_ref/doc/uid/TP40001078-CH207-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH207-SW1">Considering Specific Disabilities</a>
+            </li>
+        </ul>
+      </li>
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH208-TPXREF101" class="part-name"><a href="OSXAXmodel.html#//apple_ref/doc/uid/TP40001078-CH208-TPXREF101" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH208-TPXREF101">The OS X Accessibility Model</a>
+        <ul class="nav-chapters">
+            <li class="nav-chapter">
+            	<a href="OSXAXmodel.html#//apple_ref/doc/uid/TP40001078-CH208-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH208-SW1">Communicating with an Accessibility Client</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="OSXAXmodel.html#//apple_ref/doc/uid/TP40001078-CH208-SW2" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH208-SW2">The Accessibility Hierarchy</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="OSXAXmodel.html#//apple_ref/doc/uid/TP40001078-CH208-TPXREF108" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH208-TPXREF108">An Example of Accessibility</a>
+            </li>
+        </ul>
+      </li>
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH257-SW1" class="part-name"><a href="EnhancingtheAccessibilityofStandardAppKitControls.html#//apple_ref/doc/uid/TP40001078-CH257-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH257-SW1">Enhancing the Accessibility of Standard AppKit Controls</a>
+        <ul class="nav-chapters">
+            <li class="nav-chapter">
+            	<a href="EnhancingtheAccessibilityofStandardAppKitControls.html#//apple_ref/doc/uid/TP40001078-CH257-SW3" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH257-SW3">Enhancing the Default Behavior</a>
+            </li>
+        </ul>
+      </li>
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH256-SW1" class="part-name"><a href="ImplementingAccessibilityforCustomControls.html#//apple_ref/doc/uid/TP40001078-CH256-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH256-SW1">Implementing Accessibility for Custom Controls</a>
+        <ul class="nav-chapters">
+            <li class="nav-chapter">
+            	<a href="ImplementingAccessibilityforCustomControls.html#//apple_ref/doc/uid/TP40001078-CH256-SW2" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH256-SW2">Adopting a Role-Specific Protocol</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="ImplementingAccessibilityforCustomControls.html#//apple_ref/doc/uid/TP40001078-CH256-SW4" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH256-SW4">Customizing the Role</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="ImplementingAccessibilityforCustomControls.html#//apple_ref/doc/uid/TP40001078-CH256-SW6" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH256-SW6">Notifying the Accessibility Client</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="ImplementingAccessibilityforCustomControls.html#//apple_ref/doc/uid/TP40001078-CH256-SW7" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH256-SW7">Controls Without Views</a>
+            </li>
+        </ul>
+      </li>
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH210-TPXREF101" class="part-name"><a href="#//apple_ref/doc/uid/TP40001078-CH210-TPXREF101" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH210-TPXREF101">Testing for Accessibility on OS X</a>
+        <ul class="nav-chapters">
+            <li class="nav-chapter">
+            	<a href="#//apple_ref/doc/uid/TP40001078-CH210-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH210-SW1">Using the Accessibility Inspector</a>
+            </li>
+            <li class="nav-chapter">
+            	<a href="#//apple_ref/doc/uid/TP40001078-CH210-SW4" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH210-SW4">Using Accessibility Verifier</a>
+            </li>
+        </ul>
+      </li>
+      <li data-id="//apple_ref/doc/uid/TP40001078-CH253-CHDIGFBH" class="part-name"><a href="OSXAXKeyboardShortcuts.html#//apple_ref/doc/uid/TP40001078-CH253-CHDIGFBH" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH253-CHDIGFBH">Accessibility Keyboard Shortcuts</a>
+        <ul class="nav-chapters">
+        </ul>
+      </li>
+      <li data-id="revision-history" class="part-name"><a href="OSXAXRevisionHist.html#//apple_ref/doc/uid/TP40001078-CH204-CIHCAHEB" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH204-CIHCAHEB">Document Revision History</a>
+        <ul class="nav-chapters">
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+      <menu id="bashful" type="toolbar">
+  <div class="shield"></div>
+  <menuitem id="jump_to" class="menu-bar-item closed">
+  <span>On This Page</span>
+  <div class="chevron">
+    <div class="chevy chevron-left"></div>
+    <div class="chevy chevron-right"></div>
+  </div>
+  <menu type="list" class="details">
+      <ul class="list-bullet">
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40001078-CH210-SW1">Using the Accessibility Inspector</a>
+          </li>
+          <li class="item">
+            <a href="#//apple_ref/doc/uid/TP40001078-CH210-SW4">Using Accessibility Verifier</a>
+          </li>
+      </ul>
+  </menu>
+</menuitem>
+
+</menu>
+<div class="pixel-line"></div>
+<div class="rubber-band-gap"></div>
+<article class="chapter">
+  <a name="//apple_ref/doc/uid/TP40001078-CH210"></a><a name="//apple_ref/doc/uid/TP40001078-CH210-TPXREF101"></a>
+
+  <h2 class='chapter-name'>Testing for Accessibility on OS X</h2>
+
+
+  <section class="section">
+	<div id="intro_contents">
+  	<p class="para">
+  Whether you’re designing a new app or access-enabling an existing one, you should plan to test the accessibility of your product. Testing for accessibility is a bit different than standard user interface testing, and Apple provides a couple of tools that make the process easier. After you’ve discovered accessibility bugs with VoiceOver, inspect your app with these tools to resolve the problems.
+</p><p class="para">
+  App developers should read this chapter to find out how to exercise the accessibility of their apps.
+</p>
+	</div>
+</section>
+
+
+  <section class="section">
+  <a name="//apple_ref/doc/uid/TP40001078-CH210-SW1"></a>
+  <h3 class="section-name" tabindex="0">Using the Accessibility Inspector</h3>
+  <p class="para">
+  Apple provides the Accessibility Inspector testing tool that can be launched by choosing Xcode &gt; Open Developer Tool &gt; Accessibility Inspector in the menu bar or Dock. You can download Xcode from the Mac App Store for free. The Accessibility Inspector presents a utility window that displays the information properties (and values), action methods, and position in the accessibility hierarchy of the object currently under the mouse pointer. 
+</p><p class="para">
+  If you’re beginning to access-enable your app for assistive technologies like VoiceOver, try using the Accessibility Inspector to view the accessibility information other apps provide. Although the Accessibility Inspector is not an accessibility client, it uses the same APIs accessibility clients use to get information from the accessibility objects it encounters.
+</p><p class="para">
+  To use the Accessibility Inspector, first make sure that it has permission to control your computer. In Security &amp; Privacy preferences, open the Privacy pane. In the left column, select the Accessibility option. In the right column, make sure the Accessibility Inspector app is checked as shown in <span class="x-name-no-link">Figure 6-1</span>.
+</p><figure class="figure">
+  <a name="//apple_ref/doc/uid/TP40001078-CH210-SW5"></a>
+  <span class="caption"><strong class="caption-number">Figure 6-1</strong>Enabling the Accessibility Inspector</span>
+  <img src="art/Enabling Accessibility_2x.png" alt="image: ../art/Enabling Accessibility_2x.png" width="672" height="560" />
+</figure><p class="para">
+  Now, launch the Accessibility Inspector and move your mouse over the UI element you want to inspect. If you’re using VoiceOver to navigate, you can move the mouse to the VoiceOver cursor by pressing Control-Option-Command-F5. You can lock the Accessibility Inspector on the item under the mouse to examine its attributes, perform its actions, and access its parent and children (if any), by pressing Command-F7. When you do this, the Accessibility Inspector display pauses, allowing you to move the mouse without changing the object on which the tool is focused. In the main utility window, you can go to the object’s parent, children, or other related objects, such as the containing window or the top-level app (<code class="code-voice">AXApplication</code>). You can also perform the actions supported by the accessibility object, allowing you to see how these actions affect the values of various attributes and the app itself. If you click the rectangular button in the bottom-right corner of the Accessibility Inspector panel, you’ll see a light blue overlay over the locked UI element.
+</p><p class="para">
+  <span class="x-name-no-link">Figure 6-2</span> shows the Accessibility preferences icon locked. In this example, the <code class="code-voice">AXPress</code> action for the element is selected and can be activated by clicking the Perform Action button.
+</p><figure class="figure">
+  <a name="//apple_ref/doc/uid/TP40001078-CH210-SW2"></a>
+  <span class="caption"><strong class="caption-number">Figure 6-2</strong>The Accessibility Inspector locked on the Accessibility icon in System Preferences</span>
+  <img src="art/axo_accessibility_inspector_actions.png" alt="image: ../Art/axo_accessibility_inspector_actions.png" width="562" height="679" />
+</figure><p class="para">
+  The Accessibility Inspector also includes the ability to navigate the Accessibility tree hierarchy using visible buttons or keyboard commands. While holding the Control and Command keys, use the arrow keys to navigate. The up and down arrows navigate to parents or children, and the left and right arrows navigate to siblings of the current element.
+</p><p class="para">
+  You can use the Accessibility Inspector to modify any properties that are marked as writable, as denoted by a W in parentheses. For example, navigate up to the <code class="code-voice">AXWindow</code> attribute, and select its <code class="code-voice">AXPosition</code> property (see <span class="x-name-no-link">Figure 6-3</span>). Change the values of the X and Y text fields, and click the Set Value button. The window changes its position on the screen. You can also perform certain actions, such as <code class="code-voice">AXPress</code> and <code class="code-voice">AXShowMenu</code>, by selecting the action and clicking the Perform Action button.
+</p><figure class="figure">
+  <a name="//apple_ref/doc/uid/TP40001078-CH210-SW3"></a>
+  <span class="caption"><strong class="caption-number">Figure 6-3</strong>The Accessibility Inspector locked on the System Preferences main window</span>
+  <img src="art/axo_accessibility_inspector_writeable.png" alt="image: ../Art/axo_accessibility_inspector_writeable.png" width="557" height="673" />
+</figure><p class="para">
+  As you access-enable your app, use the Accessibility Inspector to make sure your objects contain the appropriate information. If you find that a specific object is not accessible, you can focus the Accessibility Inspector on that object, examine its information property values, and trigger its action methods to find the problem.
+</p>
+  
+</section>
+<section class="section">
+  <a name="//apple_ref/doc/uid/TP40001078-CH210-SW4"></a>
+  <h3 class="section-name" tabindex="0">Using Accessibility Verifier</h3>
+  <p class="para">
+  Apple provides the Accessibility Verifier tool that can be launched by choosing Accessibility Inspector &gt; Window &gt; Accessibility Verifier. Accessibility Verifier displays the accessibility hierarchy comprising all currently instantiated objects in the selected app. To use Accessibility Verifier, be sure to enable it in Security &amp; Privacy preferences.
+</p><p class="para">
+  Use Accessibility Verifier to perform any or all of the following tests (select the tests you want to run by clicking the Choose Tests button):
+</p><ul class="list-bullet">
+  <li class="item"><p class="para">
+  <strong class="inline-head">Parent/Child.</strong> This test checks the integrity of the accessibility hierarchy by making sure each parent-child pair forms a closed loop. For example, if a child listed in a parent object’s <code class="code-voice u-api"><a href="https://developer.apple.com/documentation/appkit/nsaccessibility/1535018-accessibilitychildren" class="urlLink">accessibilityChildren</a></code> property does not refer to that object as its parent, this parent-child pair is invalid. Invalid parent-child pairs can prevent an accessibility client from correctly traversing an app’s accessibility hierarchy.
+</p>
+</li><li class="item"><p class="para">
+  <strong class="inline-head">Window.</strong> This test checks that all objects contained in a window contain a reference to that window in their <code class="code-voice u-api"><a href="https://developer.apple.com/documentation/appkit/nsaccessibility/1535030-accessibilitywindow" class="urlLink">accessibilityWindow</a></code> property. An object contained in a window is not necessarily the child of that window, but it should refer to its containing window as a convenience for accessibility clients.
+</p>
+</li><li class="item"><p class="para">
+  <strong class="inline-head">Missing AXDescription.</strong> This test checks the element’s <code class="code-voice u-api"><a href="https://developer.apple.com/documentation/appkit/nsaccessibility/1534976-accessibilitylabel" class="urlLink">accessibilityLabel</a></code> property. All accessible elements must provide some context-specific, descriptive label.
+</p>
+</li><li class="item"><p class="para">
+  <strong class="inline-head">Role Verification.</strong> This test verifies that an accessibility object implements all the properties and methods required for its role.
+</p>
+</li>
+</ul><p class="para">
+  When you click Verify, Accessibility Verifier runs the tests you selected and displays the results for each. The problems are reported as warnings or errors, depending on their severity (you can filter the results by selecting a severity level in the Report Level pop-up menu).
+</p><p class="para">
+  Eliminating all errors and warnings that Accessibility Verifier displays does not guarantee a perfectly accessible app. Always test your app with various accessibility clients, such as VoiceOver, to make sure there are no problems.
+</p>
+  
+</section>
+
+  	
+ 	<section id="next_previous" class="">
+    		<p class="previous-link"><a href="ImplementingAccessibilityforCustomControls.html#//apple_ref/doc/uid/TP40001078-CH256-SW1" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH256-SW1">Implementing Accessibility for Custom Controls</a></p>
+  			<p class="next-link"><a href="OSXAXKeyboardShortcuts.html#//apple_ref/doc/uid/TP40001078-CH253-CHDIGFBH" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH253-CHDIGFBH">Accessibility Keyboard Shortcuts</a></p>
+
+    <p class="copyright">Copyright &#x00a9; 2018 Apple Inc. All rights reserved. 
+  <a class="link" href="http://www.apple.com/legal/terms/site.html" target="_blank" rel="external">Terms of Use</a> | 
+  <a class="link" href="http://www.apple.com/privacy/" target="_blank" rel="external">Privacy Policy</a> | 
+  <a href="OSXAXRevisionHist.html#//apple_ref/doc/uid/TP40001078-CH204-CIHCAHEB" data-renderer-version="2" data-id="//apple_ref/doc/uid/TP40001078-CH204-CIHCAHEB">Updated: 2015-04-08</a>
+</p>
+  </section>
+</article>
+
+    </div>
+    <div id='big_button'></div>
+    <footer id="footer">
+  <script src="../../../../Resources/1282/JavaScript/devpubs-1.6.3.js" type="text/javascript" charset="utf-8"></script>
+  <div id="_omniture_top">
+<!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+<script type="text/javascript">
+/* RSID: */
+var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+</script>
+
+<script type="text/javascript" src="https://www.apple.com/metrics/scripts/s_code_h.js"></script>
+<script type="text/javascript">
+s.pageName=AC.Tracking.pageName();
+s.channel="www.us.developer"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)</script>
+<!-- End SiteCatalyst code version: H.8. -->
+</div>
+
+</footer>
+
+    
+  </body>
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1" /> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2" /> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3" /> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo" /> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect" /> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples" /> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art" /> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo" /> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send" />
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+</div>
+</html>

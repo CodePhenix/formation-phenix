@@ -15,6 +15,14 @@ section, a.section{
 
 a.section section{width:100%;margin:0;}
 
+a h2+div{
+  margin-top: 7%;
+}
+
+.icon-custom{
+  color: #4bafd1;background-color: white;border-radius: 100%;padding: 3% 6%;font-size: 1.8em;
+}
+
 section > div, a.section > div{
   background-image: linear-gradient(160deg, rgba(63, 149, 233, .96), rgba(82, 211, 170, 0.96));
   height: 100%;
