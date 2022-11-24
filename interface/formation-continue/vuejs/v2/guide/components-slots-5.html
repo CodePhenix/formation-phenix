@@ -1,0 +1,1440 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Slots — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/components-slots.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Slots — Vue.js">
+    <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta property="og:image" content="https://br.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Slots — Vue.js">
+    <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'br.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Você está navegando a documentação da v2.x e anterior.</span>
+    <a href="https://vuejsbr-docs-next.netlify.app/">Clique aqui</a> para a documentação da v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Pesquisa">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Aprenda</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentação</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guia</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Guia de Estilos</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemplos</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Livro de Receitas</a></li>
+      </ul>
+    </li>
+    <li><h4>Cursos em Vídeo</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecossistema</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Ajuda</h4></li>
+    <li><ul>
+      <li class="inline"><a href="https://github.com/vuejs-br/forum" class="nav-link" target="_blank" rel="noopener">Fórum</a>
+      <a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat (Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/comunidades" class="nav-link" target="_blank" rel="noopener">Comunidades</a>
+			<a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+    <li><h4>Ferramentas</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliotecas Oficiais</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Atualize-se</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Notícias Semanais</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Eventos</a></li>
+			<li class="inline"><a href="https://twitter.com/vuejs_brasil" class="nav-link" target="_blank" rel="noopener">Twitter</a>
+			<a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="http://vuejs-brasil.com.br/" class="nav-link" target="_blank" rel="noopener">Blog</a>
+			<a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/vagas" class="nav-link" target="_blank" rel="noopener">Empregos</a>
+			<a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Equipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Recursos</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Parceiros</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Temas</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Lista Geral "Awesome Vue"</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Bibliotecas Recomendadas</a></li>
+    <li><a href="https://empresas-usando-vuejs.netlify.com/" class="nav-link" target="_blank" rel="noopener">Empresas usando Vue no Brasil</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Patrocine</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#Doacoes-Unicas" class="nav-link">Doações Únicas</a></li>
+    <li><a href="/support-vuejs/#Ajuda-Recorrente" class="nav-link">Ajuda Recorrente</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Loja de Camisetas</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Traduções</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/components-slots.html" class="nav-link">Chinês</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/components-slots.html" class="nav-link">Coreano</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components-slots.html" class="nav-link">Francês</a></li>
+    <li><a href="https://vuejs.org/v2/guide/components-slots.html" class="nav-link">Inglês</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components-slots.html" class="nav-link">Japonês</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components-slots.html" class="nav-link">Português</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components-slots.html" class="nav-link">Russo</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components-slots.html" class="nav-link">Vietnamita</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-slots.html" class="nav-link">Espanhol</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/components-slots.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guia
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essenciais</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalação</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introdução</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">A Instância Vue</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaxe de Templates</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Dados Computados e Observadores</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Interligações de Classe e Estilo</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Renderização Condicional</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Renderização de Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Manipulação de Eventos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Interligações em Formulários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Básico sobre Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Componentes em Detalhes</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registro de Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Propriedades</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Eventos Personalizados</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link current">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dinâmicos & Assíncronos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Lidando com Casos Extremos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transições & Animações</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transições de Visibilidade e Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reuso & Composição</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Diretivas Personalizadas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Funções de Renderização & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filtros</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Ferramentas</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Componentes Single-File</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Publicando em Produção</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Escalonando</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Gerenciamento de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Segurança</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internamente</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migração</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migração do Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migração do Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migração do Vuex 0.6.x para 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Diversos</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Comparação com Outros Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Junte-se à Comunidade Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Conheça a Equipe</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar components-slots-guide">
+  <p class="tip warning v3-warning">
+    Você está navegando a documentação da v2.x e anterior.
+    Para a v3.x, <a href="https://vuejsbr-docs-next.netlify.app/">clique aqui</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Slots</h1>
+  
+  
+    <blockquote>
+<p>Esta página assume que você já leu o <a href="components.html">Básico sobre Componentes</a>. Leia lá primeiro se você for novo com componentes.</p>
+</blockquote>
+<blockquote>
+<p>Na versão 2.6, Nós introduzimos uma nova sintaxe unificada (A diretiva <code>v-slot</code>) para os slots nomeados e com escopo. Ele substitui os atributos <code>slot</code> e <code>slot-scope</code>, os quais estão agora obsoletos, mas <em>não</em> foram removidos e ainda estão documentados <a href="#Sintaxe-Obsoleta">aqui</a>. Os fundamentos para a nova sintaxe estão descritos neste <a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a>.</p>
+</blockquote>
+<h2 id="Conteudo-do-Slot"><a href="#Conteudo-do-Slot" class="headerlink" title="Conteúdo do Slot"></a>Conteúdo do <em>Slot</em></h2><p><em>Vue</em> implementa uma <em>API</em> de distribuição de conteúdo que é modelada após o atual <a href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md" target="_blank" rel="noopener">detalhamento da especificação dos componentes da Web</a>, usando o elemento <code>&lt;slot&gt;</code> para servir como saída de distribuição de conteúdos.</p>
+<p>Isso permite que você componha componentes como esse:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  Seu Perfil
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>Então no <em>template</em> para <code>&lt;navigation-link&gt;</code>, você poderá ter:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+  <span class="hljs-attr">v-bind:href</span>=<span class="hljs-string">"url"</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+<p>Quando o componente renderizar, <code>&lt;slot&gt;&lt;/slot&gt;</code> será substituido por “Seu Perfil”. Slots podem conter qualquer tipo de código template, incluindo <em>HTML</em>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Adicionando ícones Font Awesome --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fa fa-user"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  Seu Perfil
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>Ou até mesmo outros componentes:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Usando um componente para adicionar um ícone --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">font-awesome-icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"user"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">font-awesome-icon</span>&gt;</span>
+  Seu Perfil
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>Se no <code>&lt;navigation-link&gt;</code>  <strong>não</strong> contém um elemento <code>&lt;slot&gt;</code>, qualquer conteúdo passado para ele simplesmente será descartado.</p>
+<h2 id="Escopo-de-compilacao"><a href="#Escopo-de-compilacao" class="headerlink" title="Escopo de compilação"></a>Escopo de compilação</h2><p>Quando você quer usar um dado dentro de um <em>slot</em>, como em:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  Logado como &#123;&#123; user.name &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>Esse <code>slot</code> tem acesso as mesmas propriedades da instância (isto é, ao mesmo “escopo”) como o resto do <em>template</em>. O <em>slot</em> <strong>não</strong> tem acesso ao escopo do <code>&lt;navigation-link&gt;</code>. Por exemplo, tentando acessar a <code>url</code> não funcionaria:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  Clicando aqui te enviará para: &#123;&#123; url &#125;&#125;
+  <span class="hljs-comment">&lt;!--
+  O `url` será undefined, porque esse conteúdo é passado
+  para &lt;navigation-link&gt;, em vez de definido dentro do componente &lt;navigation-link&gt;.
+  --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>Como regra, lembre-se de que:</p>
+<blockquote>
+<p>Tudo no <em>template</em> pai é compilado no escopo do pai; Tudo no <em>template</em> filho é compilado no escopo do filho.</p>
+</blockquote>
+<h2 id="Conteudo-de-Fallback"><a href="#Conteudo-de-Fallback" class="headerlink" title="Conteúdo de Fallback"></a>Conteúdo de <em>Fallback</em></h2><p>Há casos em que é útil especificar o conteúdo de <em>fallback</em> (isto é, padrão) para um <em>slot</em>, a ser renderizado somente quando nenhum conteúdo é fornecido. Por exemplo, no componente <code>&lt;submit-button&gt;</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Podemos querer que o texto “Enviar” seja renderizado dentro do <code>&lt;button&gt;</code> na maioria das vezes. para “Enviar” o conteúdo de <em>fallback</em>, podemos colocá-lo entre as <em>tags</em> <code>&lt;slot&gt;</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span>Enviar<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Agora, quando usamos <code>&lt;submit-button&gt;</code> no componente pai, sem fornecer conteúdo para o <em>slot</em>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">submit-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">submit-button</span>&gt;</span></code></pre>
+<p>Irá renderizar o conteúdo de <em>fallback</em>, “Enviar”:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  Enviar
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>Mas se nós fornecermos conteúdo:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">submit-button</span>&gt;</span>
+  Salvar
+<span class="hljs-tag">&lt;/<span class="hljs-name">submit-button</span>&gt;</span></code></pre>
+<p>Então, o conteúdo fornecido será renderizado:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  Salvar
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<h2 id="Slots-Nomeados"><a href="#Slots-Nomeados" class="headerlink" title="Slots Nomeados"></a>Slots Nomeados</h2><blockquote>
+<p>Atualizado em 2.6.0+. <a href="#Sintaxe-Obsoleta">Veja aqui</a> para a sintaxe obsoleta usando o atributo <code>slot</code>.</p>
+</blockquote>
+<p>Há momentos em que é útil ter múltiplos elementos slots. Por exemplo, em um componente <code>&lt;base-layout&gt;</code> com o seguinte template:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Nós queremos o cabeçalho aqui --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Nós queremos o conteúdo principal aqui --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Nós queremos o rodapé aqui --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>Para estes casos, o elemento <code>&lt;slot&gt;</code> tem um atributo especial chamado, <code>name</code>, que pode ser usado para definir <em>slots</em> adicionais:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"header"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"footer"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>Uma saída <code>&lt;slot&gt;</code> sem <code>name</code> tem implicitamente o nome <em>“default”</em>.</p>
+<p>Para fornecer conteúdo para <em>slots</em> nomeados, nós podemos usar a diretiva <code>v-slot</code> em um <code>&lt;template&gt;</code>, fornecendo o nome do <em>slot</em> como argumento do <code>v-slot</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Aqui pode estar um título da página<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Um parágrafo para o conteúdo principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>E um outro parágrafo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Aqui estão algumas informações de contato<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>Agora tudo dentro dos elementos <code>&lt;template&gt;</code> serão passados aos <em>slots</em> correspondentes. Qualquer conteúdo não envolvido por um <code>&lt;template&gt;</code> usando <code>v-slot</code> é assumido como sendo o <em>slot default</em>.</p>
+<p>No entanto, você ainda pode incluir o conteúdo do <em>slot default</em> em um <code>&lt;template&gt;</code> se você deseja ser explícito:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Aqui pode estar um título da página<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Um parágrafo para o conteúdo principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>E um outro parágrafo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Aqui estão algumas informações de contato<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>De qualquer forma, O <em>HTML</em> renderizado será:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Aqui pode estar um título da página<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Um parágrafo para o conteúdo principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>E um outro parágrafo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Aqui estão algumas informações de contato<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>Observe que <strong><code>v-slot</code> só pode ser adicionado a um <code>&lt;template&gt;</code></strong> (com <a href="#sintaxe-abreviada-para-slots-default">única exceção</a>), ao contrário dos  <a href="#Sintaxe-Obsoleta">atributos <code>slot</code></a>.</p>
+<h2 id="Slots-com-Escopo-Definido"><a href="#Slots-com-Escopo-Definido" class="headerlink" title="Slots com Escopo Definido"></a>Slots com Escopo Definido</h2><blockquote>
+<p>Atualizado em 2.6.0+. <a href="#Sintaxe-Obsoleta">Veja aqui</a> para a sintaxe obsoleta usando o atributo <code>slot-scope</code>.</p>
+</blockquote>
+<p>As vezes, é útil que o conteúdo do <em>slot</em> tenha acesso aos dados disponíveis apenas no componente filho. Por exemplo, imagine um componente <code>&lt;current-user&gt;</code> com o seguinte <em>template</em>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span>&#123;&#123; user.lastName &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+<p>Podemos querer substituir esse conteúdo de <em>fallback</em> para exibir o primeiro nome do usuário, em vez do último, assim:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Isso não funcionará, no entanto, porque somente o componente <code>&lt;current-user&gt;</code> tem acesso ao <code>user</code> e o conteúdo que estamos fornecendo é renderizado no pai.</p>
+<p>Para tornar <code>user</code> disponível para o conteúdo do <em>slot</em> no pai, podemos vincular <code>user</code> como um atributo do elemento <code>&lt;slot&gt;</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">v-bind:user</span>=<span class="hljs-string">"user"</span>&gt;</span>
+    &#123;&#123; user.lastName &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+<p>Atributos vinculados a um elemento <code>&lt;slot&gt;</code> são chamados de  <strong>props do <em>slot</em></strong>. Agora, no escopo pai, podemos usar o <code>v-slot</code> com um valor para definir um nome para as propriedades <em>slot</em> que fornecemos:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.user.firstName &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Neste exemplo, escolhemos nomear o objeto que contém todos os nossos props do <em>slot</em> <code>slotProps</code>, mas você pode usar qualquer nome que desejar.</p>
+<h3 id="Sintaxe-abreviada-para-slots-default"><a href="#Sintaxe-abreviada-para-slots-default" class="headerlink" title="Sintaxe abreviada para slots default"></a>Sintaxe abreviada para slots default</h3><p>Em casos como acima, quando <em>apenas</em> o <em>slot default</em> é fornecido, as <em>tags</em> do componente podem ser usadas como <em>template</em>. Isso nos permite usar o <code>v-slot</code> diretamente no componente:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+  &#123;&#123; slotProps.user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Isso pode ser encurtado ainda mais. Assim como o conteúdo não especificado é considerado como sendo o <em>slot default</em>, assume-se que o <code>v-slot</code> sem um argumento se refira ao <em>slot default</em>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+  &#123;&#123; slotProps.user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Observe que a sintaxe abreviada para o  <em>slot default</em> <strong>não pode</strong> ser misturada com slots nomeados, pois isso levaria a ambiguidade do escopo:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- INVÁLIDO, resultará em aviso --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+  &#123;&#123; slotProps.user.firstName &#125;&#125;
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:other</span>=<span class="hljs-string">"otherSlotProps"</span>&gt;</span>
+    slotProps NÃO está disponível aqui!
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Sempre que houver vários <em>slots</em>, use a sintaxe completa com base em <code>&lt;template&gt;</code> para <em>todos</em> os <em>slots</em>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.user.firstName &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:other</span>=<span class="hljs-string">"otherSlotProps"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<h3 id="Desestruturando-Props-do-Slot"><a href="#Desestruturando-Props-do-Slot" class="headerlink" title="Desestruturando Props do Slot"></a>Desestruturando Props do <em>Slot</em></h3><p>Internamente, os <code>slots</code> com escopo trabalham envolvendo seu conteúdo em uma função passando um único argumento:</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">slotProps</span>) </span>&#123;
+  <span class="hljs-comment">// ... conteúdo do slot ...</span>
+&#125;</code></pre>
+<p>Isso significa que o valor de <code>v-slot</code> pode realmente aceitar qualquer expressão JavaScript válida que possa aparecer na posição de argumento em uma definição de função. Então, em ambientes suportados (<a href="single-file-components.html">componentes single-file</a> ou <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao#Compatibilidade_do_navegador" target="_blank" rel="noopener">browsers modernos</a>), você também pode usar <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao#Desestrutura%C3%A7%C3%A3o_de_objeto" target="_blank" rel="noopener">desestruturação de objetos do ES2015</a> para usar props específicos de slots, assim:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Isso pode tornar o <em>template</em> bem mais limpo, especialmente quando o slot fornece muitas props. Também abre outras possibilidades, tais como renomear props, e.g. <code>user</code> para <code>person</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"&#123; user: person &#125;"</span>&gt;</span>
+  &#123;&#123; person.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Você pode até mesmo definir <em>fallbacks</em>, para serem usados no caso de um prop do <em>slot</em> ser <code>undefined</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"&#123; user = &#123; firstName: 'Guest' &#125; &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<h2 id="Slots-de-nomes-dinamicos"><a href="#Slots-de-nomes-dinamicos" class="headerlink" title="Slots de nomes dinâmicos"></a>Slots de nomes dinâmicos</h2><blockquote>
+<p>Novo na versão 2.6.0+</p>
+</blockquote>
+<p><a href="syntax.html#Argumentos-Dinamicos">Argumentos de diretiva dinâmicos</a> também funciona no <code>v-slot</code>, permitindo a definição de nomes de slots dinâmicos:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:</span>[<span class="hljs-attr">dynamicSlotName</span>]&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<h2 id="Forma-Abreviada-para-Slots-Nomeados"><a href="#Forma-Abreviada-para-Slots-Nomeados" class="headerlink" title="Forma Abreviada para Slots Nomeados"></a>Forma Abreviada para Slots Nomeados</h2><blockquote>
+<p>Novo na versão 2.6.0+</p>
+</blockquote>
+<p>Semelhante ao <code>v-on</code> e <code>v-bind</code>, <code>v-slot</code> também possui uma forma abreviada, substituindo tudo antes do argumento (<code>v-slot:</code>) pelo símbolo especial <code>#</code>. Por exemplo, <code>v-slot:header</code> pode ser reescrito como <code>#header</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Aqui pode estar um título da página<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Um parágrafo para o conteúdo principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>E um outro parágrafo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Aqui estão algumas informações de contato<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>No entanto, assim como com outras diretivas, a abreviação só está disponível quando um argumento é fornecido. Isso significa que a seguinte sintaxe é inválida:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Isso acionará um aviso --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>Em vez disso, você sempre deve especificar um nome para o <em>slot</em> se desejar usar o atalho:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #<span class="hljs-attr">default</span>=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<h2 id="Outros-exemplos"><a href="#Outros-exemplos" class="headerlink" title="Outros exemplos"></a>Outros exemplos</h2><p><strong>Props de <em>slot</em> nos permitem transformar slots em templates reutilizáveis que podem renderizar diferentes conteúdos com base na inserção de props.</strong> Isso é mais útil quando você está projetando um componente reutilizável que encapsula a lógica de dados, enquanto permite que o componente pai consumidor personalize parte de seu <em>layout</em>.</p>
+<p>Por exemplo, estamos implementando um componente <code>&lt;todo-list&gt;</code> que contém o <em>layout</em> e a lógica de filtragem para uma lista:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in filteredTodos"</span>
+    <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"todo.id"</span>
+  &gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>Em vez de codificar o conteúdo para cada <em>todo</em>, podemos deixar que o componente pai assuma o controle fazendo de todos <em>todo</em> um <em>slot</em>, então vinculando <code>todo</code> como uma prop de <em>slot</em>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in filteredTodos"</span>
+    <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"todo.id"</span>
+  &gt;</span>
+    <span class="hljs-comment">&lt;!--
+    Nós temos um slot para cada _todo_ passando o objeto
+    `todo` como uma prop de slot.
+    --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"todo"</span> <span class="hljs-attr">v-bind:todo</span>=<span class="hljs-string">"todo"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- conteúdo fallback --&gt;</span>
+      &#123;&#123; todo.text &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>Agora, quando usamos o componente <code>&lt;todo-list&gt;</code>, podemos opcionalmente definir um <code>&lt;template&gt;</code> alternativo para itens do <em>todo</em>, mas com acesso aos dados do filho:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">"todos"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:todo</span>=<span class="hljs-string">"&#123; todo &#125;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todo.isComplete"</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span></code></pre>
+<p>No entanto, mesmo isso apenas arranha a superfície do que <em>slots</em> com escopo são capazes de fazer. Para exemplos completos e reais de uso, recomendamos buscar mais sobre bibliotecas como <a href="https://github.com/Akryum/vue-virtual-scroller" target="_blank" rel="noopener">Vue Virtual Scroller</a>, <a href="https://github.com/posva/vue-promised" target="_blank" rel="noopener">Vue Promised</a>, e <a href="https://github.com/LinusBorg/portal-vue" target="_blank" rel="noopener">Portal Vue</a>.</p>
+<h2 id="Sintaxe-Obsoleta"><a href="#Sintaxe-Obsoleta" class="headerlink" title="Sintaxe Obsoleta"></a>Sintaxe Obsoleta</h2><blockquote>
+<p>A diretiva <code>v-slot</code> foi introduzida no Vue 2.6.0, oferecendo uma <em>API</em> melhorada e alternativa aos atributos <code>slot</code> e <code>slot-scope</code> ainda suportados. O raciocínio completo para introduzir o <code>v-slot</code> é descrito neste <a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a>. Os atributos <code>slot</code> e <code>slot-scope</code> continuarão a ser suportados em todas as futuras versões 2.X, mas serão oficialmente descontinuados e serão eventualmente removidos no Vue 3.</p>
+</blockquote>
+<h3 id="Slots-Nomeados-com-o-atributo-slot"><a href="#Slots-Nomeados-com-o-atributo-slot" class="headerlink" title="Slots Nomeados com o atributo slot"></a><em>Slots</em> Nomeados com o atributo <code>slot</code></h3><blockquote>
+<p><abbr title="Ainda suportado em todas as versões 2.X do Vue, mas não mais recomendada.">Obsoleta</abbr> no 2.6.0+. Veja <a href="#Slots-Nomeados">aqui</a> a nova e recomendada sintaxe.</p>
+</blockquote>
+<p>Para passar conteúdos para os <em>slots</em> nomeados a partir do pai, use o atributo especial <code>slot</code> no <code>&lt;template&gt;</code> (usando o componente <code>&lt;base-layout&gt;</code> descrito <a href="#slots-nomeados">aqui</a> como exemplo):</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"header"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Aqui pode ser o título da página<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Um parágrafo para o conteúdo principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>E um outro parágrafo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Aqui algumas informações de contato<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>Ou o atributo <code>slot</code> que também pode ser usado diretamente em um elemento normal:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"header"</span>&gt;</span>Aqui pode ser o título da página<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Um parágrafo para o conteúdo principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>E um outro parágrafo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>Aqui algumas informações de contato<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>Ainda pode haver um slot sem nome, que é o <strong><em>slot default</em></strong> que serve como um agrupador para qualquer conteúdo que esteja solto. Em ambos exemplos acima, o HTML renderizado seria:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Aqui pode ser o título da página<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Um parágrafo para o conteúdo principal.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>E um outro parágrafo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Aqui algumas informações de contato<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<h3 id="Slots-de-Escopo-Definido-com-o-atributo-slot-scope"><a href="#Slots-de-Escopo-Definido-com-o-atributo-slot-scope" class="headerlink" title="Slots de Escopo Definido com o atributo slot-scope"></a>Slots de Escopo Definido com o atributo <code>slot-scope</code></h3><blockquote>
+<p><abbr title="Ainda suportado em todas as versões 2.X do Vue, mas não mais recomendada.">Obsoleta</abbr> no 2.6.0+. Veja <a href="#Scoped-Slots">aqui</a> a nova e recomendada sintaxe.</p>
+</blockquote>
+<p>Para receber as props passadas para um <em>slot</em>, o componente pai pode usar o <code>&lt;template&gt;</code> com o atributo <code>slot-scope</code> (usando o <code>&lt;slot-exemplo&gt;</code> descrito no exemplo <a href="#Scoped-Slots">aqui</a>):</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"default"</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p>Aqui, o <code>slot-scope</code> declara o objeto props recebido como a variável <code>slotProps</code>, e o torna disponível dentro do escopo do <code>&lt;template&gt;</code>. Você pode nomear o <code>slotProps</code> da maneira que preferir, semelhante a argumentos de funções em JavaScript.</p>
+<p>Aqui <code>slot=default</code> pode ser omitido como está implicitado:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p>O atributo <code>slot-scope</code> também pode ser usado diretamente em elementos que não sejam <code>&lt;template&gt;</code> (incluindo componentes):</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p>O valor de <code>slot-scope</code> pode aceitar qualquer expressão JavaScript válida que pode aparecer na posição de argumento de uma definição de função. Isso significa que em ambientes suportados (<a href="single-file-components.html">single-file components</a> ou <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao#Compatibilidade_do_navegador" target="_blank" rel="noopener">browsers modernos</a>) você também pode usar <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Atribuicao_via_desestruturacao#Desestrutura%C3%A7%C3%A3o_de_objeto" target="_blank" rel="noopener">desestruturação de objetos do ES2015</a> na expressão, da seguinte forma:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; msg &#125;"</span>&gt;</span>
+    &#123;&#123; msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p>Usando o <code>&lt;todo-list&gt;</code> descrito <a href="#Outros-exemplos">aqui</a> como um exemplo, aqui está o uso equivalente usando <code>slot-scope</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">"todos"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"todo"</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; todo &#125;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todo.isComplete"</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span></code></pre>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components-custom-events.html">Eventos Personalizados</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/components-dynamic-async.html">Dinâmicos & Assíncronos</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Encontrou um erro ou quer contribuir com a documentação?
+    <a href="https://github.com/vuejs-br/br.vuejs.org/blob/master/src/v2/guide/components-slots.md" rel="noopener" target="_blank">
+      Edite isto no Github!
+    </a>
+    Deploy feito via
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+Uri: https://contrast-ratio.com/
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\index.htm
+Content Type: text/html
+
+Uri: https://contrast-ratio.com/style.css
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\style.css
+Content Type: text/css
+
+Uri: https://www.w3.org/TR/WCAG/
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\TR\WCAG\index.htm
+Content Type: text/html
+
+Uri: https://github.com/leaverou/contrast-ratio
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\leaverou\contrast-ratio.html
+Content Type: text/html
+
+Uri: https://cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=contrastratiocom
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\carbon.js
+Content Type: application/javascript
+
+Uri: https://contrast-ratio.com/color.js
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\color.js
+Content Type: application/javascript
+
+Uri: https://contrast-ratio.com/contrast-ratio.js
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\contrast-ratio.js
+Content Type: application/javascript
+
+Uri: https://buttons.github.io/buttons.js
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\buttons.js
+Content Type: application/javascript
+
+Uri: https://lea.verou.me/
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\index-1.htm
+Content Type: text/html
+
+Uri: https://projects.verou.me/incrementable/incrementable.js
+File Name: C:\Downloaded Web Sites\contrast-ratio.com\incrementable\incrementable.js
+Content Type: application/javascript
+

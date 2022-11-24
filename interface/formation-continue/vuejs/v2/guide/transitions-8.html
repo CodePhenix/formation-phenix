@@ -1,0 +1,2466 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Transisi Masuk/Keluar & Daftar Transisi — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/transitions.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Transisi Masuk/Keluar & Daftar Transisi — Vue.js">
+    <meta property="og:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta property="og:image" content="https://docs.vuejs.id//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Transisi Masuk/Keluar & Daftar Transisi — Vue.js">
+    <meta name="twitter:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="twitter:image" content="https://docs.vuejs.id/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js" rel="stylesheet" type="text/css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-166364803-2', 'docs.vuejs.id');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+          
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/transitions.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>Sponsor Spesial</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" class="logo">
+      <img src="/images/stdlib.png" alt="">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Petunjuk
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Esensial</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalasi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Perkenalan</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue Instance</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaks Templat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Properti Penghitung (Computed) dan Pengamat (Watchers)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Kelas and Binding Gaya</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Rendering Bersyarat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Me-render Daftar</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Penanganan Event</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Form Input Bindings</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Komponen Dasar</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Komponen secara mendalam</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registrasi Komponen</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Custom Events</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slot</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Komponen yang Dinamis & Async</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Menangani Kasus Langka</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transisi & Animasi</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link current">Transisi Masuk/Keluar & Daftar Transisi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transisi State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Kebergunaan & Komposisi</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Direktif Kustom</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Fungsi Render & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugin</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filter</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Peralatan</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Komponen Berkas Tunggal</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Dukungan TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Penempatan Produksi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Peningkatan</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Pengelolaan State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Rendering di Sisi Server (SSR)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internal</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reaktivitas Secara Mendalam</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migrasi</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migrasi dari Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migrasi dari Vuex 0.6.x ke 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Meta</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Perbandingan dengan Kerangka Kerja yang Lain</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Gabung Komunitas Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Tim Inti Vuejs</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+
+<div class="content guide with-sidebar transitions-guide">
+  
+    
+      <div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+    
+  
+  
+    <h1>Transisi Masuk/Keluar & Daftar Transisi</h1>
+  
+  
+    <h2 id="Ikhtisar"><a href="#Ikhtisar" class="headerlink" title="Ikhtisar"></a>Ikhtisar</h2><p>Vue menyediakan berbagai cara untuk menerapkan efek transisi ketika ada item yang dimasukan, diubah, atau dikeluarkan dari DOM. Hal ini termasuk alat untuk:</p>
+<ul>
+<li>secara otomatis menerapkan kelas untuk transisi dan animasi CSS</li>
+<li>Mengintegrasikan pustaka (<em>library</em>) CSS untuk animasi yang berasal dari pihak-ketiga, seperti Animate.css</li>
+<li>menggunakan JavaScript untuk memanipulasi DOM pada waktu transisi <em>hook</em> secara langsung</li>
+<li>Mengintegrasikan pustaka (<em>library</em>) JavaScript untuk animasi yang berasal dari pihak-ketiga, seperti Velocity.js</li>
+</ul>
+<p>Pada halaman ini, kita hanya akan membahas tentang transisi masuk, keluar, dan daftar, tetapi Anda bisa melihat bagian berikutnya untuk <a href="transitioning-state.html">mengatur transisi dari state</a>.</p>
+<h2 id="Transisi-Elemen-Komponen-Tunggal"><a href="#Transisi-Elemen-Komponen-Tunggal" class="headerlink" title="Transisi Elemen/Komponen Tunggal"></a>Transisi Elemen/Komponen Tunggal</h2><p>Vue menyediakan komponen pembungkus transisi (<em>transition wrapper component</em>), yang memperbolehkan Anda untuk menambahkan transisi masuk/keluar di setiap elemen atau komponen dalam konteks berikut:</p>
+<ul>
+<li>Me-<em>render</em> sesuai kondisi (menggunakan <code>v-if</code>)</li>
+<li>Menampilkan sesuai dengan kondisi (menggunakan <code>v-show</code>)</li>
+<li>Komponen dinamis (Dynamic components)</li>
+<li>komponen pada <em>root nodes</em></li>
+</ul>
+<p>Berikut ini adalah sebuah contoh transisi:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fade"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.fade-enter-active</span>, <span class="hljs-selector-class">.fade-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: opacity .<span class="hljs-number">5s</span>;
+&#125;
+<span class="hljs-selector-class">.fade-enter</span>, <span class="hljs-selector-class">.fade-leave-to</span> <span class="hljs-comment">/* .fade-leave-active di bawah versi 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="demo-transition">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#demo',
+  data: {
+    show: true
+  }
+})
+</script>
+<style>
+.demo-transition-enter-active, .demo-transition-leave-active {
+  transition: opacity .5s
+}
+.demo-transition-enter, .demo-transition-leave-to {
+  opacity: 0
+}
+</style>
+
+<p>Ketika sebuah elemen yang dibungkus di dalam komponen transisi dimasukkan atau dikeluarkan, inilah yang akan terjadi:</p>
+<ol>
+<li><p>Vue akan secara otomatis memeriksa apakah elemen sasaran telah menerapkan transisi atau animasi CSS.</p>
+</li>
+<li><p>Jika komponen transisi menyediakan <a href="#JavaScript-Hooks"><em>hook</em> JavaScript</a>, <em>hook</em> ini akan dipanggil pada waktu yang telah ditentukan.</p>
+</li>
+<li><p>Jika tidak ada transisi/animasi CSS yang terdeteksi dan tidak ada <em>hook</em> JavaScript yang tersedia, maka operasi DOM untuk memasukan dan/atau mengeluarkan akan dieksekusi secepatnya pada <em>frame</em> berikutnya. (Catatan: ini adalah <em>frame</em> animasi dari browser, berbeda dengan konsep <code>nextTick</code> pada Vue).</p>
+</li>
+</ol>
+<h3 id="Kelas-kelas-Transisi"><a href="#Kelas-kelas-Transisi" class="headerlink" title="Kelas-kelas Transisi"></a>Kelas-kelas Transisi</h3><p>Ada enam kelas yang diterapkan untuk transisi masuk/keluar.</p>
+<ol>
+<li><p><code>v-enter</code>: <em>State</em> (keadaan) awal untuk proses masuk. Ditambahkan sebelum elemen dimasukkan, dilepaskan satu <em>frame</em> setelah elemen dimasukkan.</p>
+</li>
+<li><p><code>v-enter-active</code>: <em>State</em> aktif untuk proses masuk. Diaplikasikan ketika seluruh fase proses transisi masuk. Ditambahkan sebelum elemen dimasukkan, dilepaskan ketika transisi/animasi selesai. Kelas ini dapat digunakan untuk menentukan durasi, penundaan (<em>delay</em>) dan kurva pelonggaran (<em>easing curve</em>) untuk transisi masuk.</p>
+</li>
+<li><p><code>v-enter-to</code>: <strong>Hanya tersedia pada versi 2.1.8+.</strong> <em>State</em> akhir untuk proses masuk. Ditambahkan satu <em>frame</em> setelah elemen dimasukkan (pada saat yang sama <code>v-enter</code> dilepaskan), dilepaskan ketika transisi/animasi selesai.</p>
+</li>
+<li><p><code>v-leave</code>: <em>State</em> awal untuk proses keluar. Ditambahkan secepatnya ketika transisi keluar dipicu, dilepaskan setelah satu <em>frame</em>.</p>
+</li>
+<li><p><code>v-leave-active</code>: <em>State</em> aktif untuk proses keluar. Diaplikasikan ketika seluruh proses transisi keluar. Ditambahkan secepatnya ketika transisi keluar dipicu, dilepaskan ketika transisi/animasi selesai. Kelas ini dapat digunakan untuk menentukan durasi, penundaan (<em>delay</em>) dan kurva pelonggaran (<em>easing curve</em>) untuk transisi kaluar.</p>
+</li>
+<li><p><code>v-leave-to</code>: <strong>Hanya tersedia pada versi 2.1.8+.</strong> <em>State</em> akhir untuk proses keluar. Ditambahkan satu frame setelah transisi keluar dipicu (pada saat yang sama <code>v-leave</code> dilepaskan), dilepaskan ketika transisi/animasi selesai.</p>
+</li>
+</ol>
+<p><img src="/images/transition.png" alt="Transition Diagram"></p>
+<p>Setiap kelas ini akan diawali dengan nama transisi. Di sini awalan <code>v-</code> adalah default jika Anda menggunakan elemen <code>&lt;transition&gt;</code> tanpa nama. Sebagai contoh jika Anda menggunakan <code>&lt;transition name=&quot;my-transition&quot;&gt;</code>, maka sebagai gantinya kelas <code>v-enter</code> akan menjadi <code>my-transition-enter</code>.</p>
+<p><code>v-enter-active</code> dan <code>v-leave-active</code> memberikan Anda kemampuan untuk menentukan kurva pelonggaran yang berbeda untuk transisi masuk/keluar, yang mana akan dapat Anda lihat contohnya pada bagian berikutnya.</p>
+<h3 id="Transisi-CSS"><a href="#Transisi-CSS" class="headerlink" title="Transisi CSS"></a>Transisi CSS</h3><p>Salah satu dari banyak tipe transisi yang umum menggunakan transisi CSS. Inilah salah satu contohnya:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle render
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"slide-fade"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-1'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-comment">/* Animasi Masuk dan Keluar bisa menggunakan fungsi */</span>
+<span class="hljs-comment">/* durasi dan pengaturan waktu yang berbeda.        */</span>
+<span class="hljs-selector-class">.slide-fade-enter-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">3s</span> ease;
+&#125;
+<span class="hljs-selector-class">.slide-fade-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">8s</span> <span class="hljs-built_in">cubic-bezier</span>(1.0, 0.5, 0.8, 1.0);
+&#125;
+<span class="hljs-selector-class">.slide-fade-enter</span>, <span class="hljs-selector-class">.slide-fade-leave-to</span>
+<span class="hljs-comment">/* .slide-fade-leave-active di bawah versi 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(10px);
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<div id="example-1" class="demo">
+  <button @click="show = !show">
+    Toggle render
+  </button>
+  <transition name="slide-fade">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#example-1',
+  data: {
+    show: true
+  }
+})
+</script>
+<style>
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+</style>
+
+<h3 id="Animasi-CSS"><a href="#Animasi-CSS" class="headerlink" title="Animasi CSS"></a>Animasi CSS</h3><p>Animasi CSS diaplikasikan dengan cara yang sama seperti transisi CSS, perbedaannya adalah bahwa <code>v-enter</code> tidak dilepaskan secepatnya setelah elemen dimasukkan, tetapi pada sebuah event <code>animationend</code>.</p>
+<p>Berikut ini adalah sebuah contoh, menghilangkan aturan prefix CSS supaya ringkas:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>Toggle show<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"bounce"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-2'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.bounce-enter-active</span> &#123;
+  <span class="hljs-attribute">animation</span>: bounce-in .<span class="hljs-number">5s</span>;
+&#125;
+<span class="hljs-selector-class">.bounce-leave-active</span> &#123;
+  <span class="hljs-attribute">animation</span>: bounce-in .<span class="hljs-number">5s</span> reverse;
+&#125;
+@<span class="hljs-keyword">keyframes</span> bounce-in &#123;
+  0% &#123;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(0);
+  &#125;
+  50% &#123;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(1.5);
+  &#125;
+  100% &#123;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(1);
+  &#125;
+&#125;</code></pre>
+
+<div id="example-2" class="demo">
+  <button @click="show = !show">Toggle show</button>
+  <transition name="bounce">
+    <p v-show="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+  </transition>
+</div>
+
+<style>
+  .bounce-enter-active {
+    -webkit-animation: bounce-in .5s;
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    -webkit-animation: bounce-in .5s reverse;
+    animation: bounce-in .5s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @-webkit-keyframes bounce-in {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+</style>
+<script>
+new Vue({
+  el: '#example-2',
+  data: {
+    show: true
+  }
+})
+</script>
+
+<h3 id="Kelas-Transisi-Kustom"><a href="#Kelas-Transisi-Kustom" class="headerlink" title="Kelas Transisi Kustom"></a>Kelas Transisi Kustom</h3><p>Anda juga bisa menentukan kelas transisi kustom dengan cara menyediakan atribut-atribut berikut:</p>
+<ul>
+<li><code>enter-class</code></li>
+<li><code>enter-active-class</code></li>
+<li><code>enter-to-class</code> (2.1.8+)</li>
+<li><code>leave-class</code></li>
+<li><code>leave-active-class</code></li>
+<li><code>leave-to-class</code> (2.1.8+)</li>
+</ul>
+<p>Atribut-atribut ini akan mengabaikan nama kelas konvensional. Hal ini berguna ketika Anda ingin mengkombinasikan sistem transisi Vue dengan sebuah pustaka animasi CSS yang sudah ada, seperti <a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">Animate.css</a>.</p>
+<p>Berikut contohnya:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/animate.css@3.5.1"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle render
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+    <span class="hljs-attr">name</span>=<span class="hljs-string">"custom-classes-transition"</span>
+    <span class="hljs-attr">enter-active-class</span>=<span class="hljs-string">"animated tada"</span>
+    <span class="hljs-attr">leave-active-class</span>=<span class="hljs-string">"animated bounceOutRight"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-3'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+
+<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+<div id="example-3" class="demo">
+  <button @click="show = !show">
+    Toggle render
+  </button>
+  <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#example-3',
+  data: {
+    show: true
+  }
+})
+</script>
+
+<h3 id="Menggunakan-Transisi-dan-Animasi-Bersama"><a href="#Menggunakan-Transisi-dan-Animasi-Bersama" class="headerlink" title="Menggunakan Transisi dan Animasi Bersama"></a>Menggunakan Transisi dan Animasi Bersama</h3><p>Vue perlu melampirkan pendengar event (<em>event listener</em>) agar bisa mengetahui ketika ada sebuah <em>event</em> yang telah selesai. Hal ini dapat berupa salah satu di antara <code>transitionend</code> atau <code>animationend</code>, tergantung dari tipe aturan css yang diterapkan. Jika Anda hanya menggunakan salah satu atau yang lain, Vue dapat secara otomatis mendeteksi tipe yang tepat.</p>
+<p>Bagaimanapun, dalam beberapa kasus Anda mungkin ingin menggunakan keduanya ke dalam elemen yang sama, sebagai contoh sebuah animasi CSS yang dipicu oleh Vue, bersamaan dengan efek transisi CSS saat <em>event</em> <em>hover</em>. Pada kasus ini, Anda harus secara eksplisit mendeklarasikan tipe yang Anda inginkan agar dapat dipantau oleh Vue pada attribut <code>type</code>, dengan nilai antara <code>animation</code> atau <code>transition</code>.</p>
+<h3 id="Durasi-Transisi-yang-Eksplisit"><a href="#Durasi-Transisi-yang-Eksplisit" class="headerlink" title="Durasi Transisi yang Eksplisit"></a>Durasi Transisi yang Eksplisit</h3><blockquote>
+<p>Baru di 2.2.0+</p>
+</blockquote>
+<p>Di banyak kasus, Vue secara otomatis bisa mengetahui apakah transisi telah selesai. Secara default, Vue menunggu <em>event</em> <code>transitionend</code> atau <code>animationend</code> yang pertama pada elemen transisi <em>root</em>. Namun, hal ini mungkin tidak selalu diharapkan - sebagai contoh, kita mungkin memiliki urutan koreografi transisi dimana beberapa elemen bersarang memiliki transisi yang tertunda atau durasi transisi yang lebih lama dibanding elemen transisi <em>root</em>.</p>
+<p>Pada kasus seperti itu Anda bisa menentukan durasi transisi yang eksplisit (dalam milliseconds) menggunakan prop <code>duration</code> pada komponen <code>&lt;transition&gt;</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">:duration</span>=<span class="hljs-string">"1000"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>Anda juga bisa menentukan nilai terpisah antara durasi masuk dan keluar:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">:duration</span>=<span class="hljs-string">"&#123; enter: 500, leave: 800 &#125;"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<h3 id="Hook-JavaScript"><a href="#Hook-JavaScript" class="headerlink" title="Hook JavaScript"></a>Hook JavaScript</h3><p>Anda juga bisa mendefinisikan <em>hook</em> JavaScript pada atribut:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+  <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+  <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+  <span class="hljs-attr">v-on:after-enter</span>=<span class="hljs-string">"afterEnter"</span>
+  <span class="hljs-attr">v-on:enter-cancelled</span>=<span class="hljs-string">"enterCancelled"</span>
+
+  <span class="hljs-attr">v-on:before-leave</span>=<span class="hljs-string">"beforeLeave"</span>
+  <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+  <span class="hljs-attr">v-on:after-leave</span>=<span class="hljs-string">"afterLeave"</span>
+  <span class="hljs-attr">v-on:leave-cancelled</span>=<span class="hljs-string">"leaveCancelled"</span>
+&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+methods: &#123;
+  <span class="hljs-comment">// --------</span>
+  <span class="hljs-comment">// KETIKA MASUK</span>
+  <span class="hljs-comment">// --------</span>
+
+  beforeEnter: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-comment">// *callback done* opsional ketika</span>
+  <span class="hljs-comment">// digunakan ketika dikombinasikan dengan CSS</span>
+  enter: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+    done()
+  &#125;,
+  <span class="hljs-attr">afterEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-attr">enterCancelled</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+
+  <span class="hljs-comment">// --------</span>
+  <span class="hljs-comment">// KETIKA KELUAR</span>
+  <span class="hljs-comment">// --------</span>
+
+  beforeLeave: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-comment">// *callback done* opsional ketika</span>
+  <span class="hljs-comment">// digunakan ketika dikombinasikan dengan CSS</span>
+  leave: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+    done()
+  &#125;,
+  <span class="hljs-attr">afterLeave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-comment">// leaveCancelled hanya tersedia dengan v-show</span>
+  leaveCancelled: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;
+&#125;</code></pre>
+<p>Hook-hook ini dapat dikombinasikan dengan transisi/animasi CSS atau digunakan sendiri.</p>
+<p class="tip">Ketika hanya menggunakan transisi dari JavaScript, <strong>callback <code>done</code> diwajibkan untuk hook <code>enter</code> dan <code>leave</code></strong>. Jika tidak, hook akan dipanggil secara sinkronis dan transisi akan selesai secepatnya.</p>
+
+<p class="tip">Salah satu ide yang bagus untuk secara eksplisit menambahkan <code>v-bind:css=&quot;false&quot;</code> untuk transisi yang dibuat hanya dengan JavaScript sehingga Vue dapat melewati proses  pendeteksian CSS. Hal ini juga bisa menghindari aturan CSS yang secara tidak sengaja ikut tercampur ke dalam transisi.</p>
+
+<p>Sekarang mari belajar lebih dalam melalui sebuah contoh. Ini adalah sebuah transisi JavaScript yang menggunakan Velocity.js:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--
+Velocity bekerja hampir seperti jQuery.animate dan merupakan
+opsi yang bagus untuk animasi menggunakan JavaScript
+--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-4"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+    <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+    <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+    <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+    <span class="hljs-attr">v-bind:css</span>=<span class="hljs-string">"false"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>
+      Demo
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-4'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">false</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      el.style.opacity = <span class="hljs-number">0</span>
+    &#125;,
+    <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      Velocity(el, &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">fontSize</span>: <span class="hljs-string">'1.4em'</span> &#125;, &#123; <span class="hljs-attr">duration</span>: <span class="hljs-number">300</span> &#125;)
+      Velocity(el, &#123; <span class="hljs-attr">fontSize</span>: <span class="hljs-string">'1em'</span> &#125;, &#123; <span class="hljs-attr">complete</span>: done &#125;)
+    &#125;,
+    <span class="hljs-attr">leave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      Velocity(el, &#123; <span class="hljs-attr">translateX</span>: <span class="hljs-string">'15px'</span>, <span class="hljs-attr">rotateZ</span>: <span class="hljs-string">'50deg'</span> &#125;, &#123; <span class="hljs-attr">duration</span>: <span class="hljs-number">600</span> &#125;)
+      Velocity(el, &#123; <span class="hljs-attr">rotateZ</span>: <span class="hljs-string">'100deg'</span> &#125;, &#123; <span class="hljs-attr">loop</span>: <span class="hljs-number">2</span> &#125;)
+      Velocity(el, &#123;
+        <span class="hljs-attr">rotateZ</span>: <span class="hljs-string">'45deg'</span>,
+        <span class="hljs-attr">translateY</span>: <span class="hljs-string">'30px'</span>,
+        <span class="hljs-attr">translateX</span>: <span class="hljs-string">'30px'</span>,
+        <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span>
+      &#125;, &#123; <span class="hljs-attr">complete</span>: done &#125;)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<div id="example-4" class="demo">
+  <button @click="show = !show">
+    Toggle
+  </button>
+  <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+    <p v-if="show">
+      Demo
+    </p>
+  </transition>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<script>
+new Vue({
+  el: '#example-4',
+  data: {
+    show: false
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+      el.style.transformOrigin = 'left'
+    },
+    enter: function (el, done) {
+      Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
+      Velocity(el, { fontSize: '1em' }, { complete: done })
+    },
+    leave: function (el, done) {
+      Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 })
+      Velocity(el, { rotateZ: '100deg' }, { loop: 2 })
+      Velocity(el, {
+        rotateZ: '45deg',
+        translateY: '30px',
+        translateX: '30px',
+        opacity: 0
+      }, { complete: done })
+    }
+  }
+})
+</script>
+
+<h2 id="Transisi-pada-Render-Awal"><a href="#Transisi-pada-Render-Awal" class="headerlink" title="Transisi pada Render Awal"></a>Transisi pada Render Awal</h2><p>Jika Anda juga ingin menerapkan transisi pada <em>render</em> awal pada sebuah node, Anda bisa menambahkan atribut <code>appear</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">appear</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>Secara default, ini akan menggunakan transisi yang telah ditentukan untuk masuk dan keluar. Namun jika Anda mau, Anda juga bisa menentukan kelas CSS kustom:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+  <span class="hljs-attr">appear</span>
+  <span class="hljs-attr">appear-class</span>=<span class="hljs-string">"custom-appear-class"</span>
+  <span class="hljs-attr">appear-to-class</span>=<span class="hljs-string">"custom-appear-to-class"</span> (<span class="hljs-attr">2.1.8</span>+)
+  <span class="hljs-attr">appear-active-class</span>=<span class="hljs-string">"custom-appear-active-class"</span>
+&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>dan hook JavaScript kustom:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+  <span class="hljs-attr">appear</span>
+  <span class="hljs-attr">v-on:before-appear</span>=<span class="hljs-string">"customBeforeAppearHook"</span>
+  <span class="hljs-attr">v-on:appear</span>=<span class="hljs-string">"customAppearHook"</span>
+  <span class="hljs-attr">v-on:after-appear</span>=<span class="hljs-string">"customAfterAppearHook"</span>
+  <span class="hljs-attr">v-on:appear-cancelled</span>=<span class="hljs-string">"customAppearCancelledHook"</span>
+&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<h2 id="Transisi-Antar-Elemen"><a href="#Transisi-Antar-Elemen" class="headerlink" title="Transisi Antar Elemen"></a>Transisi Antar Elemen</h2><p>Kita membahas <a href="#Transitioning-Between-Components">transisi antar komponen</a> nanti, tetapi Anda juga bisa melakukan transisi antar elemen mentah menggunakan <code>v-if</code>/<code>v-else</code>. Satu dari banyak transisi antara dua-elemen yang umum adalah antara penampung daftar (<em>list container</em>) dan pesan yang menjelaskan daftar kosong:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"items.length &gt; 0"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-else</span>&gt;</span>Sorry, no items found.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>Ini bekerja dengan baik, tetapi ada satu peringatan yang harus kita perhatikan:</p>
+<p class="tip">Ketika berpindah antar elemen yang memiliki <strong>nama tag yang sama</strong>, Anda harus memberi tahu Vue bahwa mereka adalah elemen yang berbeda dengan memberikan mereka atribut <code>key</code> yang unik. Jika tidak, kompiler Vue hanya mengganti isi dari elemen. Meskipun secara teknis tidak perlu, <strong>dianggap sebagai praktek yang baik untuk selalu memberikan kunci (key) pada banyak item di dalam komponen <code>&lt;transition&gt;</code>.</strong></p>
+
+<p>Sebagai contoh:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"isEditing"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"save"</span>&gt;</span>
+    Save
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-else</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"edit"</span>&gt;</span>
+    Edit
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>Dalam Kasus ini, Anda juga bisa menggunakan atribut <code>key</code> untuk bertransisi antara state yang berbeda pada elemen yang sama. Daripada menggunakan <code>v-if</code> dan <code>v-else</code>, contoh di atas bisa ditulis ulang menjadi:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"isEditing"</span>&gt;</span>
+    &#123;&#123; isEditing ? 'Save' : 'Edit' &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>Sebenarnya sangat memungkinkan untuk melakukan transisi antara elemen berapapun jumlahnya, baik dengan menggunakan banyak <code>v-if</code> atau menautkan elemen tunggal pada properti dinamis. Sebagai contoh:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"docState === 'saved'"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"saved"</span>&gt;</span>
+    Edit
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"docState === 'edited'"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"edited"</span>&gt;</span>
+    Save
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"docState === 'editing'"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"editing"</span>&gt;</span>
+    Cancel
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>Yang bisa ditulis ulang menjadi:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"docState"</span>&gt;</span>
+    &#123;&#123; buttonMessage &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+computed: &#123;
+  <span class="hljs-attr">buttonMessage</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.docState) &#123;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'saved'</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Edit'</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'edited'</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Save'</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'editing'</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Cancel'</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<h3 id="Mode-Transisi"><a href="#Mode-Transisi" class="headerlink" title="Mode Transisi"></a>Mode Transisi</h3><p>Meskipun demikian masih ada satu masalah. Coba tekan (click) tombol di bawah:</p>
+
+<div id="no-mode-demo" class="demo">
+  <transition name="no-mode-fade">
+    <button v-if="on" key="on" @click="on = false">
+      on
+    </button>
+    <button v-else="" key="off" @click="on = true">
+      off
+    </button>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#no-mode-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.no-mode-fade-enter-active, .no-mode-fade-leave-active {
+  transition: opacity .5s
+}
+.no-mode-fade-enter, .no-mode-fade-leave-active {
+  opacity: 0
+}
+</style>
+
+<p>Selama proses transisi antara tombol “on” dan tombol “off”, kedua tombol di-render - satu bertransisi keluar sementara yang lain bertransisi ke dalam. ini merupakan perilaku default dari <code>&lt;transition&gt;</code> - masuk dan keluar terjadi secara bersamaan.</p>
+<p>Kadang ini bekerja dengan baik, Seperti ketika item yang bertransisi benar-benar diposisikan satu di atas yang lain:</p>
+
+<div id="no-mode-absolute-demo" class="demo">
+  <div class="no-mode-absolute-demo-wrapper">
+    <transition name="no-mode-absolute-fade">
+      <button v-if="on" key="on" @click="on = false">
+        on
+      </button>
+      <button v-else="" key="off" @click="on = true">
+        off
+      </button>
+    </transition>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#no-mode-absolute-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.no-mode-absolute-demo-wrapper {
+  position: relative;
+  height: 18px;
+}
+.no-mode-absolute-demo-wrapper button {
+  position: absolute;
+}
+.no-mode-absolute-fade-enter-active, .no-mode-absolute-fade-leave-active {
+  transition: opacity .5s;
+}
+.no-mode-absolute-fade-enter, .no-mode-absolute-fade-leave-active {
+  opacity: 0;
+}
+</style>
+
+<p>Dan nanti mungkin juga ditranslasikan sehingga mereka terlihat seperti transisi <em>slide</em>.</p>
+
+<div id="no-mode-translate-demo" class="demo">
+  <div class="no-mode-translate-demo-wrapper">
+    <transition name="no-mode-translate-fade">
+      <button v-if="on" key="on" @click="on = false">
+        on
+      </button>
+      <button v-else="" key="off" @click="on = true">
+        off
+      </button>
+    </transition>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#no-mode-translate-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.no-mode-translate-demo-wrapper {
+  position: relative;
+  height: 18px;
+}
+.no-mode-translate-demo-wrapper button {
+  position: absolute;
+}
+.no-mode-translate-fade-enter-active, .no-mode-translate-fade-leave-active {
+  transition: all 1s;
+}
+.no-mode-translate-fade-enter, .no-mode-translate-fade-leave-active {
+  opacity: 0;
+}
+.no-mode-translate-fade-enter {
+  transform: translateX(31px);
+}
+.no-mode-translate-fade-leave-active {
+  transform: translateX(-31px);
+}
+</style>
+
+<p>Meskipun demikian transisi masuk dan keluar tidak selalu dibutuhkan, sehingga vue hanya menawarkan <strong>mode transisi</strong> sebagai alternatif:</p>
+<ul>
+<li><p><code>in-out</code>: Elemen baru melakukan transisi masuk terlebih dahulu, lalu ketika selesai, elemen ini melakukan transisi keluar.</p>
+</li>
+<li><p><code>out-in</code>: Elemen ini melakukan transisi keluar terlebih dahulu, lalu ketika selesai, elemen baru melakukan transisi masuk.</p>
+</li>
+</ul>
+<p>Sekarang mari ubah transisi untuk tombol on/off kita dengan <code>out-in</code>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">"out-in"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... the buttons ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+
+<div id="with-mode-demo" class="demo">
+  <transition name="with-mode-fade" mode="out-in">
+    <button v-if="on" key="on" @click="on = false">
+      on
+    </button>
+    <button v-else="" key="off" @click="on = true">
+      off
+    </button>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#with-mode-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.with-mode-fade-enter-active, .with-mode-fade-leave-active {
+  transition: opacity .5s
+}
+.with-mode-fade-enter, .with-mode-fade-leave-active {
+  opacity: 0
+}
+</style>
+
+<p>Dengan satu tambahan atribut, kita memperbaiki transisi asli tanpa harus menambahkan suatu gaya (styling) khusus.</p>
+<p>Mode <code>in-out</code> tidak sering digunakan, namun kadan dapat berguna untuk efek transisi yang sedikit berbeda. Mari kita coba untuk mengkombinasikannya dengan transisi slide-fade yang kita kerjakan sebelumnya:</p>
+
+<div id="in-out-translate-demo" class="demo">
+  <div class="in-out-translate-demo-wrapper">
+    <transition name="in-out-translate-fade" mode="in-out">
+      <button v-if="on" key="on" @click="on = false">
+        on
+      </button>
+      <button v-else="" key="off" @click="on = true">
+        off
+      </button>
+    </transition>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#in-out-translate-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.in-out-translate-demo-wrapper {
+  position: relative;
+  height: 18px;
+}
+.in-out-translate-demo-wrapper button {
+  position: absolute;
+}
+.in-out-translate-fade-enter-active, .in-out-translate-fade-leave-active {
+  transition: all .5s;
+}
+.in-out-translate-fade-enter, .in-out-translate-fade-leave-active {
+  opacity: 0;
+}
+.in-out-translate-fade-enter {
+  transform: translateX(31px);
+}
+.in-out-translate-fade-leave-active {
+  transform: translateX(-31px);
+}
+</style>
+
+<p>Cukup keren, bukan?</p>
+<h2 id="Transisi-Antar-Komponen"><a href="#Transisi-Antar-Komponen" class="headerlink" title="Transisi Antar Komponen"></a>Transisi Antar Komponen</h2><p>Transisi antar komponen bahkan lebih sederhana - kita bahkan tidak membutuhkan atribut <code>key</code>. Sebagai gantinya, kita membungkusnya dengan sebuah <a href="components.html#Dynamic-Components">komponen dinamis</a>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"component-fade"</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">"out-in"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"view"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#transition-components-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">view</span>: <span class="hljs-string">'v-a'</span>
+  &#125;,
+  <span class="hljs-attr">components</span>: &#123;
+    <span class="hljs-string">'v-a'</span>: &#123;
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;Component A&lt;/div&gt;'</span>
+    &#125;,
+    <span class="hljs-string">'v-b'</span>: &#123;
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;Component B&lt;/div&gt;'</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.component-fade-enter-active</span>, <span class="hljs-selector-class">.component-fade-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: opacity .<span class="hljs-number">3s</span> ease;
+&#125;
+<span class="hljs-selector-class">.component-fade-enter</span>, <span class="hljs-selector-class">.component-fade-leave-to</span>
+<span class="hljs-comment">/* .component-fade-leave-active di bawah versi 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<div id="transition-components-demo" class="demo">
+  <input v-model="view" type="radio" value="v-a" id="a" name="view"><label for="a">A</label>
+  <input v-model="view" type="radio" value="v-b" id="b" name="view"><label for="b">B</label>
+  <transition name="component-fade" mode="out-in">
+    <component v-bind:is="view"></component>
+  </transition>
+</div>
+<style>
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to {
+  opacity: 0;
+}
+</style>
+<script>
+new Vue({
+  el: '#transition-components-demo',
+  data: {
+    view: 'v-a'
+  },
+  components: {
+    'v-a': {
+      template: '<div>Component A</div>'
+    },
+    'v-b': {
+      template: '<div>Component B</div>'
+    }
+  }
+})
+</script>
+
+<h2 id="Transisi-Daftar"><a href="#Transisi-Daftar" class="headerlink" title="Transisi Daftar"></a>Transisi Daftar</h2><p>Sejauh ini, kita menangani transisi untuk:</p>
+<ul>
+<li>Node individual</li>
+<li>Banyak node dimana hanya 1 yang di-render dalam suatu waktu</li>
+</ul>
+<p>Jadi bagaimana ketika kita memiliki keselurahan daftar item yang ingin kita render secara bersamaan, sebagai contoh dengan <code>v-for</code>? Dalam kasus ini, kita akan menggunakan komponen <code>&lt;transition-group&gt;</code>.<br>Sebelum kita masuk pada sebuah contoh, ada beberapa hal yang penting untuk diketahui mengenai komponen ini:</p>
+<ul>
+<li>Tidak seperti <code>&lt;transition&gt;</code>, komponen ini me-render elemen yang nyata: secara default elemen <code>&lt;span&gt;</code>. Anda bisa mengganti elemen yang di-render dengan atribut <code>tag</code>.</li>
+<li><a href="#Transition-Modes">Mode transisi</a> tidak tersedia, karena kita sedang melakukan transisi antar elemen yang bertransisi secara eksklusif.</li>
+<li>Elemen-elemen di dalamnya <strong>selalu diwajibkan</strong> untuk memiliki atribut <code>key</code> yang unik.</li>
+</ul>
+<h3 id="Transisi-Masuk-Keluar-dan-Daftar"><a href="#Transisi-Masuk-Keluar-dan-Daftar" class="headerlink" title="Transisi Masuk/Keluar dan Daftar"></a>Transisi Masuk/Keluar dan Daftar</h3><p>Sekarang mari masuk pada sebuah contoh, bertransisi masuk dan keluar menggunakan kelas CSS yang sama seperti yang kita gunakan sebelumnya:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"add"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"remove"</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"list"</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"p"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-item"</span>&gt;</span>
+      &#123;&#123; item &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#list-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>],
+    <span class="hljs-attr">nextNum</span>: <span class="hljs-number">10</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">randomIndex</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-keyword">this</span>.items.length)
+    &#125;,
+    <span class="hljs-attr">add</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.nextNum++)
+    &#125;,
+    <span class="hljs-attr">remove</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">1</span>)
+    &#125;,
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.list-item</span> &#123;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+&#125;
+<span class="hljs-selector-class">.list-enter-active</span>, <span class="hljs-selector-class">.list-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">1s</span>;
+&#125;
+<span class="hljs-selector-class">.list-enter</span>, <span class="hljs-selector-class">.list-leave-to</span> <span class="hljs-comment">/* .list-leave-active di bawah versi 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(30px);
+&#125;</code></pre>
+
+<div id="list-demo" class="demo">
+  <button v-on:click="add">Add</button>
+  <button v-on:click="remove">Remove</button>
+  <transition-group name="list" tag="p">
+    <span v-for="item in items" :key="item" class="list-item">
+      {{ item }}
+    </span>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#list-demo',
+  data: {
+    items: [1,2,3,4,5,6,7,8,9],
+    nextNum: 10
+  },
+  methods: {
+    randomIndex: function () {
+      return Math.floor(Math.random() * this.items.length)
+    },
+    add: function () {
+      this.items.splice(this.randomIndex(), 0, this.nextNum++)
+    },
+    remove: function () {
+      this.items.splice(this.randomIndex(), 1)
+    },
+  }
+})
+</script>
+<style>
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
+
+<p>Ada satu masalah dengan contoh ini. Ketika Anda menambahkan atau menghapus item, item disekitarnya malah secara instan bergerak langsung ke tempatnya yang baru dan tidak bertransisi secara mulus. Kita akan memperbaikinya nanti.</p>
+<h3 id="Transisi-Daftar-Bergerak"><a href="#Transisi-Daftar-Bergerak" class="headerlink" title="Transisi Daftar Bergerak"></a>Transisi Daftar Bergerak</h3><p>Komponen <code>&lt;transition-group&gt;</code> memiliki trik lainnya. Ia tidak hanya menganimasi masuk dan keluar, tetapi juga mengganti posisi. Satu-satunya konsep baru yang perlu Anda ketahui untuk menggunakan fitur ini adalah tambahan <strong>kelas <code>v-move</code></strong>, yang mana ditambahkan ketika item berganti posisi. Seperti kelas yang lainnya, Prefixnya akan disesuaikan dengan nilai dari atribut <code>name</code> yang disediakan dan Anda juga bisa secara manual menentukan kelas dengan atribut <code>move-class</code>.</p>
+<p>Kelas ini berguna terutama untuk memnentukan pengaturan waktu transisi dan kurva pelonggaran, seperti yang akan Anda lihat di bawah:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flip-list-demo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"shuffle"</span>&gt;</span>Shuffle<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"flip-list"</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"ul"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item"</span>&gt;</span>
+      &#123;&#123; item &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#flip-list-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">shuffle</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items = _.shuffle(<span class="hljs-keyword">this</span>.items)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.flip-list-move</span> &#123;
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">1s</span>;
+&#125;</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+<div id="flip-list-demo" class="demo">
+  <button v-on:click="shuffle">Shuffle</button>
+  <transition-group name="flip-list" tag="ul">
+    <li v-for="item in items" :key="item">
+      {{ item }}
+    </li>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#flip-list-demo',
+  data: {
+    items: [1,2,3,4,5,6,7,8,9]
+  },
+  methods: {
+    shuffle: function () {
+      this.items = _.shuffle(this.items)
+    }
+  }
+})
+</script>
+<style>
+.flip-list-move {
+  transition: transform 1s;
+}
+</style>
+
+<p>Ini mungkin terlihat seperti sihir, tetapi dengan kemampuannya, Vue menggunakan teknik animasi yang disebut <a href="https://aerotwist.com/blog/flip-your-animations/" target="_blank" rel="noopener">FLIP</a> agar secara halus melakukan transisi elemen dari posisi lama ke posisi baru menggunakan perubahan bentuk.</p>
+<p>Kita dapat mengkombinasikan teknik ini dengan implementasi kita sebelumnya untuk menganimasikan setiap perubahan yang terjadi pada daftar kita!</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-complete-demo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"shuffle"</span>&gt;</span>Shuffle<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"add"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"remove"</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"list-complete"</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"p"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span>
+      <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item"</span>
+      <span class="hljs-attr">class</span>=<span class="hljs-string">"list-complete-item"</span>
+    &gt;</span>
+      &#123;&#123; item &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#list-complete-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>],
+    <span class="hljs-attr">nextNum</span>: <span class="hljs-number">10</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">randomIndex</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-keyword">this</span>.items.length)
+    &#125;,
+    <span class="hljs-attr">add</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.nextNum++)
+    &#125;,
+    <span class="hljs-attr">remove</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">1</span>)
+    &#125;,
+    <span class="hljs-attr">shuffle</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items = _.shuffle(<span class="hljs-keyword">this</span>.items)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.list-complete-item</span> &#123;
+  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">1s</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+&#125;
+<span class="hljs-selector-class">.list-complete-enter</span>, <span class="hljs-selector-class">.list-complete-leave-to</span>
+<span class="hljs-comment">/* .list-complete-leave-active below version 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(30px);
+&#125;
+<span class="hljs-selector-class">.list-complete-leave-active</span> &#123;
+  <span class="hljs-attribute">position</span>: absolute;
+&#125;</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+<div id="list-complete-demo" class="demo">
+  <button v-on:click="shuffle">Shuffle</button>
+  <button v-on:click="add">Add</button>
+  <button v-on:click="remove">Remove</button>
+  <transition-group name="list-complete" tag="p">
+    <span v-for="item in items" :key="item" class="list-complete-item">
+      {{ item }}
+    </span>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#list-complete-demo',
+  data: {
+    items: [1,2,3,4,5,6,7,8,9],
+    nextNum: 10
+  },
+  methods: {
+    randomIndex: function () {
+      return Math.floor(Math.random() * this.items.length)
+    },
+    add: function () {
+      this.items.splice(this.randomIndex(), 0, this.nextNum++)
+    },
+    remove: function () {
+      this.items.splice(this.randomIndex(), 1)
+    },
+    shuffle: function () {
+      this.items = _.shuffle(this.items)
+    }
+  }
+})
+</script>
+<style>
+.list-complete-item {
+  transition: all 1s;
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-complete-enter, .list-complete-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-complete-leave-active {
+  position: absolute;
+}
+</style>
+
+<p class="tip">Satu catatatn penting, bahwa transisi FLIP ini tidak bekerja dengan elemen-elemen yang diatur pada <code>display: inline</code>. Sebagai alternatif, Anda bisa menggunakan <code>display: inline-block</code> atau menempatkan elemen di dalam  konteks <em>flex</em>.</p>
+
+<p>Animasi FLIP ini juga tidak terbatas pada sumbu tunggal. Item-item dalam <em>grid</em> multidimensi bisa <a href="https://jsfiddle.net/chrisvfritz/sLrhk1bc/" target="_blank" rel="noopener">ditransisikan juga</a>:</p>
+
+<div id="sudoku-demo" class="demo">
+  <strong>Lazy Sudoku</strong>
+  <p>Terus tekan tombol shuffle sampai Anda menang.</p>
+  <button @click="shuffle">
+    Shuffle
+  </button>
+  <transition-group name="cell" tag="div" class="sudoku-container">
+    <div v-for="cell in cells" :key="cell.id" class="cell">
+      {{ cell.number }}
+    </div>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#sudoku-demo',
+  data: {
+    cells: Array.apply(null, { length: 81 })
+      .map(function (_, index) {
+        return {
+          id: index,
+          number: index % 9 + 1
+        }
+      })
+  },
+  methods: {
+    shuffle: function () {
+      this.cells = _.shuffle(this.cells)
+    }
+  }
+})
+</script>
+<style>
+.sudoku-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 238px;
+  margin-top: 10px;
+}
+.cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #aaa;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+.cell:nth-child(3n) {
+  margin-right: 0;
+}
+.cell:nth-child(27n) {
+  margin-bottom: 0;
+}
+.cell-move {
+  transition: transform 1s;
+}
+</style>
+
+<h3 id="Menggoyangkan-Transisi-Daftar"><a href="#Menggoyangkan-Transisi-Daftar" class="headerlink" title="Menggoyangkan Transisi Daftar"></a>Menggoyangkan Transisi Daftar</h3><p>Dengan berkomunikasi dengan transisi JavaScript, melalui atribut-atribut data, memungkinkan juga untuk menggoyang transisi dalam sebuah daftar:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"staggered-list-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"query"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span>
+    <span class="hljs-attr">name</span>=<span class="hljs-string">"staggered-fade"</span>
+    <span class="hljs-attr">tag</span>=<span class="hljs-string">"ul"</span>
+    <span class="hljs-attr">v-bind:css</span>=<span class="hljs-string">"false"</span>
+    <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+    <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+    <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(item, index) in computedList"</span>
+      <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item.msg"</span>
+      <span class="hljs-attr">v-bind:data-index</span>=<span class="hljs-string">"index"</span>
+    &gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#staggered-list-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">query</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">list</span>: [
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Bruce Lee'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Jackie Chan'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Chuck Norris'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Jet Li'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Kung Fury'</span> &#125;
+    ]
+  &#125;,
+  <span class="hljs-attr">computed</span>: &#123;
+    <span class="hljs-attr">computedList</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.list.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>&#123;
+        <span class="hljs-keyword">return</span> item.msg.toLowerCase().indexOf(vm.query.toLowerCase()) !== <span class="hljs-number">-1</span>
+      &#125;)
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      el.style.opacity = <span class="hljs-number">0</span>
+      el.style.height = <span class="hljs-number">0</span>
+    &#125;,
+    <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> delay = el.dataset.index * <span class="hljs-number">150</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        Velocity(
+          el,
+          &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">height</span>: <span class="hljs-string">'1.6em'</span> &#125;,
+          &#123; <span class="hljs-attr">complete</span>: done &#125;
+        )
+      &#125;, delay)
+    &#125;,
+    <span class="hljs-attr">leave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> delay = el.dataset.index * <span class="hljs-number">150</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        Velocity(
+          el,
+          &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">0</span> &#125;,
+          &#123; <span class="hljs-attr">complete</span>: done &#125;
+        )
+      &#125;, delay)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<div id="example-5" class="demo">
+  <input v-model="query">
+  <transition-group name="staggered-fade" tag="ul" v-bind:css="false" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+    <li v-for="(item, index) in computedList" v-bind:key="item.msg" v-bind:data-index="index">{{ item.msg }}</li>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#example-5',
+  data: {
+    query: '',
+    list: [
+      { msg: 'Bruce Lee' },
+      { msg: 'Jackie Chan' },
+      { msg: 'Chuck Norris' },
+      { msg: 'Jet Li' },
+      { msg: 'Kung Fury' }
+    ]
+  },
+  computed: {
+    computedList: function () {
+      var vm = this
+      return this.list.filter(function (item) {
+        return item.msg.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1
+      })
+    }
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+      el.style.height = 0
+    },
+    enter: function (el, done) {
+      var delay = el.dataset.index * 150
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 1, height: '1.6em' },
+          { complete: done }
+        )
+      }, delay)
+    },
+    leave: function (el, done) {
+      var delay = el.dataset.index * 150
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 0, height: 0 },
+          { complete: done }
+        )
+      }, delay)
+    }
+  }
+})
+</script>
+
+<h2 id="Transisi-yang-Dapat-Digunakan-Kembali-Reusable"><a href="#Transisi-yang-Dapat-Digunakan-Kembali-Reusable" class="headerlink" title="Transisi yang Dapat Digunakan Kembali (Reusable)"></a>Transisi yang Dapat Digunakan Kembali (Reusable)</h2><p>Transisi dapat digunakan kembali melalui sistem komponen Vue. Untuk membuat transisi yang dapat digunakan kembali, semua yang perlu Anda lakukan adalah menempatkan komponen <code>&lt;transition&gt;</code> atau <code>&lt;transition-group&gt;</code> pada root, lalu mengirimkan anak manapun ke dalam komponen transisi.</p>
+<p>Berikut sebuah contoh menggunakan komponen templat:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'my-special-transition'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'\
+    &lt;transition\
+      name="very-special-transition"\
+      mode="out-in"\
+      v-on:before-enter="beforeEnter"\
+      v-on:after-enter="afterEnter"\
+    &gt;\
+      &lt;slot&gt;&lt;/slot&gt;\
+    &lt;/transition&gt;\
+  '</span>,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;,
+    <span class="hljs-attr">afterEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<p>Dan <a href="render-function.html#Functional-Components">komponen fungsional</a> adalah yang paling cocok untuk tugas ini:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'my-special-transition'</span>, &#123;
+  <span class="hljs-attr">functional</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">createElement, context</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> data = &#123;
+      <span class="hljs-attr">props</span>: &#123;
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'very-special-transition'</span>,
+        <span class="hljs-attr">mode</span>: <span class="hljs-string">'out-in'</span>
+      &#125;,
+      <span class="hljs-attr">on</span>: &#123;
+        <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+          <span class="hljs-comment">// ...</span>
+        &#125;,
+        <span class="hljs-attr">afterEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+          <span class="hljs-comment">// ...</span>
+        &#125;
+      &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> createElement(<span class="hljs-string">'transition'</span>, data, context.children)
+  &#125;
+&#125;)</code></pre>
+<h2 id="Transisi-Dinamis"><a href="#Transisi-Dinamis" class="headerlink" title="Transisi Dinamis"></a>Transisi Dinamis</h2><p>Ya, bahkan transisi pada Vue digerakkan oleh data (data-driven)! Contoh paling dasar dari sebuah transisi dinamis adalah menautkan atribut <code>name</code> pada suatu properti dinamis.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">v-bind:name</span>=<span class="hljs-string">"transitionName"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>Hal ini sangat berguna ketika Anda telah mendefinisikan transisi/animasi CSS menggunakan konvensi kelas transisi Vue dan ingin bertukar dengan mereka.</p>
+<p>Setiap atribut transisi dapat terikat secara dinamis. Dan tidak hanya atribut. karena <em>hook</em> adalah sebuah <em>method</em>, mereka memiliki akses pada data apapun di dalam konteks. Itu berarti tergantung pada <em>state</em> komponen Anda, transisi JavaScript Anda bisa berperilaku berbeda.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dynamic-fade-demo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  Fade In: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"fadeInDuration"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">v-bind:max</span>=<span class="hljs-string">"maxFadeDuration"</span>&gt;</span>
+  Fade Out: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"fadeOutDuration"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">v-bind:max</span>=<span class="hljs-string">"maxFadeDuration"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+    <span class="hljs-attr">v-bind:css</span>=<span class="hljs-string">"false"</span>
+    <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+    <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+    <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">v-if</span>=<span class="hljs-string">"stop"</span>
+    <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"stop = false; show = false"</span>
+  &gt;</span>Start animating<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">v-else</span>
+    <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"stop = true"</span>
+  &gt;</span>Stop it!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#dynamic-fade-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">fadeInDuration</span>: <span class="hljs-number">1000</span>,
+    <span class="hljs-attr">fadeOutDuration</span>: <span class="hljs-number">1000</span>,
+    <span class="hljs-attr">maxFadeDuration</span>: <span class="hljs-number">1500</span>,
+    <span class="hljs-attr">stop</span>: <span class="hljs-literal">true</span>
+  &#125;,
+  <span class="hljs-attr">mounted</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.show = <span class="hljs-literal">false</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      el.style.opacity = <span class="hljs-number">0</span>
+    &#125;,
+    <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+      Velocity(el,
+        &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span> &#125;,
+        &#123;
+          <span class="hljs-attr">duration</span>: <span class="hljs-keyword">this</span>.fadeInDuration,
+          <span class="hljs-attr">complete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            done()
+            <span class="hljs-keyword">if</span> (!vm.stop) vm.show = <span class="hljs-literal">false</span>
+          &#125;
+        &#125;
+      )
+    &#125;,
+    <span class="hljs-attr">leave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+      Velocity(el,
+        &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span> &#125;,
+        &#123;
+          <span class="hljs-attr">duration</span>: <span class="hljs-keyword">this</span>.fadeOutDuration,
+          <span class="hljs-attr">complete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            done()
+            vm.show = <span class="hljs-literal">true</span>
+          &#125;
+        &#125;
+      )
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<div id="dynamic-fade-demo" class="demo">
+  Fade In: <input type="range" v-model="fadeInDuration" min="0" v-bind:max="maxFadeDuration">
+  Fade Out: <input type="range" v-model="fadeOutDuration" min="0" v-bind:max="maxFadeDuration">
+  <transition v-bind:css="false" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+    <p v-if="show">hello</p>
+  </transition>
+  <button v-if="stop" v-on:click="stop = false; show = false">Start animating</button>
+  <button v-else="" v-on:click="stop = true">Stop it!</button>
+</div>
+<script>
+new Vue({
+  el: '#dynamic-fade-demo',
+  data: {
+    show: true,
+    fadeInDuration: 1000,
+    fadeOutDuration: 1000,
+    maxFadeDuration: 1500,
+    stop: true
+  },
+  mounted: function () {
+    this.show = false
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+    },
+    enter: function (el, done) {
+      var vm = this
+      Velocity(el,
+        { opacity: 1 },
+        {
+          duration: this.fadeInDuration,
+          complete: function () {
+            done()
+            if (!vm.stop) vm.show = false
+          }
+        }
+      )
+    },
+    leave: function (el, done) {
+      var vm = this
+      Velocity(el,
+        { opacity: 0 },
+        {
+          duration: this.fadeOutDuration,
+          complete: function () {
+            done()
+            vm.show = true
+          }
+        }
+      )
+    }
+  }
+})
+</script>
+
+<p>Akhirnya, cara paling pamungkas untuk membuat transisi dinamis adalah melalui komponen yang menerima <em>props</em> untuk mengubah sifat alami dari transisi-transisi yang digunakan. Mungkin terdengar berlebihan, tetapi satu-satunya pembatas yang sesungguhnya hanyalah imajinasi Anda.</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components-edge-cases.html">Menangani Kasus Langka</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/transitioning-state.html">Transisi State</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
+    Menemukan kesalahan atau ingin berkontribusi pada dokumentasi?
+    <a href="https://github.com/vuejs-id/docs/blob/master/src/v2/guide/transitions.md" target="_blank">
+        Sunting halaman ini di Github!
+    </a>
+  </div>
+</div>
+
+        
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] }
+      })
+    })
+    </script>
+
+    <!-- fastclick -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>

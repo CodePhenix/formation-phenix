@@ -1,0 +1,112 @@
+Uri: https://colorsinspo.com/color-tools/color-wheel
+File Name: C:\Downloaded Web Sites\colorsinspo.com\color-tools\color-wheel.html
+Content Type: text/html
+
+Uri: https://colorsinspo.com/static/fonts/sharp_grotesk/SharpGrotesk-Book20.otf
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\fonts\sharp_grotesk\SharpGrotesk-Book20.otf
+Content Type: application/octet-stream
+
+Uri: https://colorsinspo.com/static/fonts/sharp_grotesk/SharpGrotesk-Medium20.otf
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\fonts\sharp_grotesk\SharpGrotesk-Medium20.otf
+Content Type: application/octet-stream
+
+Uri: https://colorsinspo.com/menifest.json
+File Name: C:\Downloaded Web Sites\colorsinspo.com\menifest.json
+Content Type: application/json
+
+Uri: https://colorsinspo.com/static/img/colorsinspo-favicon.png
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\img\colorsinspo-favicon.png
+Content Type: image/png
+
+Uri: https://colorsinspo.com/static/css/stylus.min.css
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\css\stylus.min.css
+Content Type: text/css
+
+Uri: https://colorsinspo.com/static/css/site.min.css
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\css\site.min.css
+Content Type: text/css
+
+Uri: https://spectrum.chat/colorsinspo
+File Name: C:\Downloaded Web Sites\colorsinspo.com\colorsinspo.html
+Content Type: text/html
+
+Uri: https://twitter.com/intent/tweet?url=https:%2F%2Fcolorsinspo.com&via=colorsinspo&text=Colorsinspo is the place to learn about colors by different experiences%2C get the right color palette from the thousands of palettes%2C use various approaches to select palettes%2C and a lot more.&hashtags=color%2Chue%2Cgradients%2Cinspiration%2Csolidcolor
+File Name: C:\Downloaded Web Sites\colorsinspo.com\intent\tweet.html
+Content Type: text/html
+
+Uri: https://hexorial.studio/?ref=colorsinspo
+File Name: C:\Downloaded Web Sites\colorsinspo.com\index.htm
+Content Type: text/html
+
+Uri: https://www.facebook.com/colorsinspo
+File Name: C:\Downloaded Web Sites\colorsinspo.com\colorsinspo-1.html
+Content Type: text/html
+
+Uri: https://twitter.com/colorsinspo
+File Name: C:\Downloaded Web Sites\colorsinspo.com\colorsinspo-2.html
+Content Type: text/html
+
+Uri: https://colorsinspo.tumblr.com/
+File Name: C:\Downloaded Web Sites\colorsinspo.com\index-1.htm
+Content Type: text/html
+
+Uri: https://www.googletagmanager.com/gtag/js?id=UA-144013030-1
+File Name: C:\Downloaded Web Sites\colorsinspo.com\gtag\js.js
+Content Type: application/javascript
+
+Uri: https://colorsinspo.com/static/img/colorsinspo-mini.svg
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\img\colorsinspo-mini.svg
+Content Type: image/svg+xml
+
+Uri: https://colorsinspo.com/static/img/search.svg
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\img\search.svg
+Content Type: image/svg+xml
+
+Uri: https://cdn.carbonads.com/carbon.js?serve=CE7D42Q7&placement=colorsinspocom
+File Name: C:\Downloaded Web Sites\colorsinspo.com\carbon.js
+Content Type: application/javascript
+
+Uri: https://colorsinspo.com/static/js/vendor.bundle.base.min.js
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\js\vendor.bundle.base.min.js
+Content Type: application/javascript
+
+Uri: https://colorsinspo.com/static/js/off-canvas.min.js
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\js\off-canvas.min.js
+Content Type: application/javascript
+
+Uri: https://colorsinspo.com/static/js/hoverable-collapse.min.js
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\js\hoverable-collapse.min.js
+Content Type: application/javascript
+
+Uri: https://colorsinspo.com/static/js/misc.min.js
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\js\misc.min.js
+Content Type: application/javascript
+
+Uri: https://colorsinspo.com/static/js/clipboard.min.js
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\js\clipboard.min.js
+Content Type: application/javascript
+
+Uri: https://colorsinspo.com/static/js/tools/colorwheel.min.js
+File Name: C:\Downloaded Web Sites\colorsinspo.com\static\js\tools\colorwheel.min.js
+Content Type: application/javascript
+
+Uri: https://xd.adobe.com/landing/plugin-download/en/index.html?pluginId=23858593
+File Name: C:\Downloaded Web Sites\colorsinspo.com\landing\plugin-download\en\index.html
+Content Type: text/html
+
+Uri: https://colorsinspo.us17.list-manage.com/subscribe?u=61955771edb9fce78189a3717&id=6ccd3ad786
+File Name: C:\Downloaded Web Sites\colorsinspo.com\subscribe.html
+Content Type: text/html
+
+Uri: https://www.instagram.com/colorsinspo_/
+File Name: C:\Downloaded Web Sites\colorsinspo.com\colorsinspo_\index.htm
+Content Type: text/html
+
+Uri: https://in.pinterest.com/colorsinspo/
+File Name: C:\Downloaded Web Sites\colorsinspo.com\colorsinspo\index.htm
+Content Type: text/html
+
+Uri: https://www.behance.net/colorsinspo/moodboards
+File Name: C:\Downloaded Web Sites\colorsinspo.com\colorsinspo\moodboards.html
+Content Type: text/html
+

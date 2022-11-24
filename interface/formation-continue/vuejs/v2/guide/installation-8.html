@@ -1,0 +1,1260 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Instalasi — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/installation.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/installation.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Instalasi — Vue.js">
+    <meta property="og:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta property="og:image" content="https://docs.vuejs.id//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Instalasi — Vue.js">
+    <meta name="twitter:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="twitter:image" content="https://docs.vuejs.id/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js" rel="stylesheet" type="text/css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-166364803-2', 'docs.vuejs.id');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+          
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/installation.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>Sponsor Spesial</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" class="logo">
+      <img src="/images/stdlib.png" alt="">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Petunjuk
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Esensial</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link current">Instalasi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Perkenalan</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue Instance</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaks Templat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Properti Penghitung (Computed) dan Pengamat (Watchers)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Kelas and Binding Gaya</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Rendering Bersyarat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Me-render Daftar</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Penanganan Event</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Form Input Bindings</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Komponen Dasar</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Komponen secara mendalam</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registrasi Komponen</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Custom Events</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slot</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Komponen yang Dinamis & Async</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Menangani Kasus Langka</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transisi & Animasi</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transisi Masuk/Keluar & Daftar Transisi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transisi State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Kebergunaan & Komposisi</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Direktif Kustom</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Fungsi Render & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugin</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filter</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Peralatan</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Komponen Berkas Tunggal</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Dukungan TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Penempatan Produksi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Peningkatan</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Pengelolaan State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Rendering di Sisi Server (SSR)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internal</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reaktivitas Secara Mendalam</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migrasi</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migrasi dari Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migrasi dari Vuex 0.6.x ke 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Meta</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Perbandingan dengan Kerangka Kerja yang Lain</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Gabung Komunitas Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Tim Inti Vuejs</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+
+<div class="content guide with-sidebar installation-guide">
+  
+    
+      <div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+    
+  
+  
+    <h1>Instalasi</h1>
+  
+  
+    <h3 id="Catatan-Kesesuaian"><a href="#Catatan-Kesesuaian" class="headerlink" title="Catatan Kesesuaian"></a>Catatan Kesesuaian</h3><p>Vue <strong>tidak</strong> mendukung IE8 ke bawah, karena ini menggunakan fitur ECMAScript 5 yang tidak mudah dikenali di IE8. Bagaimanapun ini mendukung semua <a href="https://caniuse.com/#feat=es5" target="_blank" rel="noopener">ECMAScript 5 peramban yang sesuai</a>.</p>
+<h3 id="Catatan-Rilis"><a href="#Catatan-Rilis" class="headerlink" title="Catatan Rilis"></a>Catatan Rilis</h3><p>Versi stabil terakhir: 2.5.16</p>
+<p>Catatan detil rilis untuk setiap versi tersedia di <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Vue-Devtools"><a href="#Vue-Devtools" class="headerlink" title="Vue Devtools"></a>Vue Devtools</h2><p>Ketika menggunakan Vue, kami menyarankan untuk menginstal juga <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a> di peramban Anda, memungkinkan Anda untuk menginspeksi dan awakutu aplikasi Vue Anda dengan antarmuka yang akrab pengguna.</p>
+<h2 id="Menyertakan-lt-script-gt-Langsung-pada-HTML"><a href="#Menyertakan-lt-script-gt-Langsung-pada-HTML" class="headerlink" title="Menyertakan &lt;script&gt; Langsung (pada HTML)"></a>Menyertakan <code>&lt;script&gt;</code> Langsung (pada HTML)</h2><p>Unduh dan menyertakan dengan tag script. <code>Vue</code> akan teregistrasi sebagai variabel global.</p>
+<p class="tip">Jangan gunakan versi yang sudah dikecilkan selama pengembangan. Anda akan melewatkan semua peringatan untuk kesalahan umum!</p>
+
+<div id="downloads"><br>  <a class="button" href="/js/vue.js" download="">Versi Pengembang</a><span class="light info">Dengan peringatan penuh dan mode awakutu</span><br><br>  <a class="button" href="/js/vue.min.js" download="">Versi Produksi</a><span class="light info">Peringatan dihilangkan, 30.90KB min+gzip</span><br></div>
+
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>Kami merekomendasikan untuk versi spesifik yang dapat Anda mutakhirkan secara manual:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>Untuk masa produksi, kami menyarankan untuk menggunakan angka versi dan bundel untuk menghindari perubahan signifikan pada versi terbaru:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>Jika kamu menggunakan ES Module asli, disediakan juga bundel kompatibel dengan ES Modules:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.esm.browser.js'</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>Anda dapat mencari sumber dari paket NPM di <a href="https://cdn.jsdelivr.net/npm/vue/" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/vue</a>.</p>
+<p>Vue juga tersedia di <a href="https://unpkg.com/vue@2.5.16/dist/vue.js" target="_blank" rel="noopener">unpkg</a> dan <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js" target="_blank" rel="noopener">cdnjs</a> (cdnjs membutuhkan waktu untuk singkronisasi mungkin rilis terakhir belum tersedia).</p>
+<p>Pastikan untuk membaca tentang <a href="#Explanation-of-Different-Builds">perbedaan <em>build</em> Vue</a> dan gunakan <strong>versi produksi</strong> dalam situs Anda yang telah terbit, mengganti <code>vue.js</code> dengan <code>vue.min.js</code>. Ini mengoptimalkan <em>build</em> yang lebih kecil untuk kecepatan dari pada pengalaman pengembangan.</p>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><p>NPM adalah metode instalasi yang disarankan ketika membangun aplikasi skala besar dengan Vue. Ini bersanding dengan baik dengan modul <em>bundler</em> seperti <a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack</a> atau <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a>. Vue juga menyediakan perangkat pendamping untuk pemrograman <a href="single-file-components.html">Berkas Komponen Tunggal</a>.</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># stabil terakhir</span>
+$ npm install vue</code></pre>
+<h2 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h2><p>Vue menyediakan sebuah <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">CLI ofisial</a> untuk perancah cepat Aplikasi Laman Tunggal. Ini menyediakan termasuk baterai membangun persiapan untuk alur kerja <em>frontend</em> modern. Ini hanya memakan beberapa waktu untuk bangun dan berjalan dengan <em>hot-reload</em>, <em>lint-on-save</em>, dan <em>production-ready</em> <em>builds</em>. Lihat <a href="https://cli.vuejs.org" target="_blank" rel="noopener">dokument Vue CLI</a> untuk lebih detil.</p>
+<p class="tip">CLI mengasumsikan pengetahuan sebelumnya tentang Node.js dan alat pembangun yang terkait. Jika Anda baru dalam Vue atau perangkat pembangun <em>front-end</em>, kami sangat menyarankan pergi ke <a href="./">petunjuk</a> tanpa perangkat pembangun apapun sebelum menggunakan CLI.</p>
+
+<div class="vue-mastery"><a href="https://www.vuemastery.com/courses/real-world-vue-js/vue-cli" target="_blank" rel="noopener" title="Vue CLI">Watch a video explanation on Vue Mastery</a></div>
+
+<h2 id="Explanation-of-Different-Builds"><a href="#Explanation-of-Different-Builds" class="headerlink" title="Explanation of Different Builds"></a>Explanation of Different Builds</h2><p>Di dalam <a href="https://cdn.jsdelivr.net/npm/vue/dist/" target="_blank" rel="noopener">direktori <code>dist/</code> dari paket NPM</a> Anda akan menemukan banyak perbedaan pembangun Vue.js. Ini gambaran umum dari perbedaan antara mereka:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>UMD</th>
+<th>CommonJS</th>
+<th>ES Module (for bundlers)</th>
+<th>ES Module (for browsers)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full</strong></td>
+<td>vue.js</td>
+<td>vue.common.js</td>
+<td>vue.esm.js</td>
+<td>vue.esm.browser.js</td>
+</tr>
+<tr>
+<td><strong>Runtime-only</strong></td>
+<td>vue.runtime.js</td>
+<td>vue.runtime.common.js</td>
+<td>vue.runtime.esm.js</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Full (production)</strong></td>
+<td>vue.min.js</td>
+<td>-</td>
+<td>-</td>
+<td>vue.esm.browser.min.js</td>
+</tr>
+<tr>
+<td><strong>Runtime-only (production)</strong></td>
+<td>vue.runtime.min.js</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Istilah"><a href="#Istilah" class="headerlink" title="Istilah"></a>Istilah</h3><ul>
+<li><p><strong>Full</strong>: pembangun yang berisi semua <em>compiler</em> dan <em>runtime</em>.</p>
+</li>
+<li><p><strong>Compiler</strong>: kode yang bertanggung jawab untuk mengkompilasi string templat menjadi fungsi render <em>Javascript</em>.</p>
+</li>
+<li><p><strong>Runtime</strong>: kode yang bertanggung jawab untuk membuat instan Vue, <em>rendering</em>, dan <em>patching</em> DOM virtual, dll. Pada dasarnya semua kecuali <em>compiler</em>.</p>
+</li>
+<li><p><strong><a href="https://github.com/umdjs/umd" target="_blank" rel="noopener">UMD</a></strong>: Bundel UMD dapat digunakan langsung pada browser dengan <em>tag</em> <code>&lt;script&gt;</code>. file standart dari jsDelivr CDN  <a href="https://cdn.jsdelivr.net/npm/vue" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue</a> merupakan <em>Runtime</em> + <em>Compiler</em> bundel UMD (<code>vue.js</code>).</p>
+</li>
+<li><p><strong><a href="http://wiki.commonjs.org/wiki/Modules/1.1" target="_blank" rel="noopener">CommonJS</a></strong>: Bundel CommonJS ditargetkan untuk digunakan oleh <em>bundler</em> lama seperti <a href="http://browserify.org/" target="_blank" rel="noopener">browserify</a> atau <a href="https://webpack.github.io" target="_blank" rel="noopener">webpack 1</a>. Standar pada <em>bundler</em> ini (<code>pkg.main</code>) merupakan  <em>Runtime only CommonJS</em> bundel (<code>vue.runtime.common.js</code>).</p>
+</li>
+<li><p><strong><a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="noopener">ES Module</a></strong>: mulai pada 2.6 Vue menyediakan dua bundel ES Modules (ESM):</p>
+<ul>
+<li><p>ESM untuk <em>bundlers</em>: dimaksudkan untuk digunakan dengan <em>bundler</em> modern seperti <a href="https://webpack.js.org" target="_blank" rel="noopener">webpack 2</a> atau <a href="https://rollupjs.org/" target="_blank" rel="noopener">Rollup</a>. Format ESM didesain secara statis dan dapat di analisis, sehingga <em>bundler</em> dapat mengambil keuntungan dari hal tersebut untuk melakukan <a href="https://www.keycdn.com/blog/tree-shaking" target="_blank" rel="noopener"><em>tree-shaking</em></a> dan meng-eliminasi kode yang tidak digunakan dari bundel finalmu. File standar untuk bundel ini (<code>pkg.module</code>) adalah <em>Runtime only ES Module</em> bundel (<code>vue.runtime.esm.js</code>).</p>
+</li>
+<li><p>ESM untuk browser (2.6+ only): dimaksudkan untuk impor modul langsung di browser modern  <code>&lt;script type=&quot;module&quot;&gt;</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Runtime-Compiler-vs-Runtime-only"><a href="#Runtime-Compiler-vs-Runtime-only" class="headerlink" title="Runtime + Compiler vs. Runtime-only"></a>Runtime + Compiler vs. Runtime-only</h3><p>If you need to compile templates on the client (e.g. passing a string to the <code>template</code> option, or mounting to an element using its in-DOM HTML as the template), you will need the compiler and thus the full build:</p>
+<p>Jika kamu membutuhkan untuk menyusun (<em>compile</em>) templat pada sisi klien (contoh: menggunakan <em>string</em>  pada opsi <code>template</code>, atau  memasang pada element menggukana <em>in-DOM HTML</em> sebagai templat), kamu membutuhkan penyusun (<em>compiler</em>) dan dengan demikian juga bundel penuh (<em>full-build</em>).</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Ini membutuhkan kompiler</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;&#123;&#123; hi &#125;&#125;&lt;/div&gt;'</span>
+&#125;)
+
+<span class="hljs-comment">// ini tidak</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  render (h) &#123;
+    <span class="hljs-keyword">return</span> h(<span class="hljs-string">'div'</span>, <span class="hljs-keyword">this</span>.hi)
+  &#125;
+&#125;)</code></pre>
+<p>Saat kamu menggunakan <code>vue-loader</code> atau <code>vueify</code>, templat di dalam <code>*.vue</code> file sudah dikompilasi ke bentuk JavaScript pada saat built time. Kamu tidak terlalu membutuhkan kompiler dalam bundel akhir, dan hanya menggunakan <em>runtime-only</em> bundel.</p>
+<p>Dikarenakan bundel <em>runtime-only</em> 30% lebih ringan daripada cara lain <code>full-build</code>, kamu harus menggunakannya disaat kamu bisa. Tapi jika kamu ingin menggunakan <code>full-build</code>, dapat dilakukan dengan menambahkan alias pada bundler.</p>
+<h4 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h4><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;
+  <span class="hljs-comment">// ...</span>
+  resolve: &#123;
+    <span class="hljs-attr">alias</span>: &#123;
+      <span class="hljs-string">'vue$'</span>: <span class="hljs-string">'vue/dist/vue.esm.js'</span> <span class="hljs-comment">// 'vue/dist/vue.common.js' untuk webpack versi 1</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<h4 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h4><pre><code class="hljs js"><span class="hljs-keyword">const</span> alias = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rollup-plugin-alias'</span>)
+
+rollup(&#123;
+  <span class="hljs-comment">// ...</span>
+  plugins: [
+    alias(&#123;
+      <span class="hljs-string">'vue'</span>: <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'vue/dist/vue.esm.js'</span>)
+    &#125;)
+  ]
+&#125;)</code></pre>
+<h4 id="Browserify"><a href="#Browserify" class="headerlink" title="Browserify"></a>Browserify</h4><p>Tambahkan pada <code>package.json</code> anda:</p>
+<pre><code class="hljs js">&#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-string">"browser"</span>: &#123;
+    <span class="hljs-string">"vue"</span>: <span class="hljs-string">"vue/dist/vue.common.js"</span>
+  &#125;
+&#125;</code></pre>
+<h4 id="Parcel"><a href="#Parcel" class="headerlink" title="Parcel"></a>Parcel</h4><p>Tambahkan pada <code>package.json</code> anda:</p>
+<pre><code class="hljs js">&#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-string">"alias"</span>: &#123;
+    <span class="hljs-string">"vue"</span> : <span class="hljs-string">"./node_modules/vue/dist/vue.common.js"</span>
+  &#125;
+&#125;</code></pre>
+<h3 id="Masa-Pengembangan-vs-Masa-Produksi-Development-vs-Production-Mode"><a href="#Masa-Pengembangan-vs-Masa-Produksi-Development-vs-Production-Mode" class="headerlink" title="Masa Pengembangan vs. Masa Produksi (Development vs. Production Mode)"></a>Masa Pengembangan vs. Masa Produksi (<em>Development vs. Production Mode</em>)</h3><p>Masa pengembangan/produksi merupakan hasil <code>hard-coded</code> bundel UMD: bundel yang tidak di minifikasi merupakan bundel masa pengembangan dan yang tidak di minifikasi merupakan bundel masa produksi.</p>
+<p>Bundel CommonJS dan ES Module dimaksudkan kepada pembuat bundel (<em>bundlers</em>), karena itu kita tidak menyediakan versi minifikasi untuk bundel tersebut (CommonJs dan ES Module). Kamu bertanggunag jawab atas bundel akhir untuk strategi minifikasi tersebut.</p>
+<p>Bundel CommonJS dan ES Module juga mempertahankan untuk memeriksa mentah <code>process.env.NODE_ENV</code> untuk menentukan mode mana yang digunakan saat apliaksi berjalan. Kamu harus menggunakan konfigurasi pembuat bundel (<em>bundler</em>) yang benar untuk menggantikan variabel ekosistem tersebut dikarekan untuk mengontrol di mode manakah Vue harus berjalan (Masa pengembangan/produksi). Mengganti <code>process.env.NODE_ENV</code> menggunakan <em>string literal</em> juga memungkinkan alat minifikasi (<em>minifiers</em>) seperti UglifyJS untuk membuang blok code pada masa pengembangan.</p>
+<h4 id="Webpack-1"><a href="#Webpack-1" class="headerlink" title="Webpack"></a>Webpack</h4><p>Di dalam Webpack 4+, kamu dapat menggunakan opsi <code>mode</code>:</p>
+<pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">'production'</span>
+&#125;</code></pre>
+<p>Untuk Webpack 3 dan sebelumnya, kamu harus menggunakan <a href="https://webpack.js.org/plugins/define-plugin/" target="_blank" rel="noopener"><em>DefinePlugin</em></a>:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>)
+
+<span class="hljs-built_in">module</span>.exports = &#123;
+  <span class="hljs-comment">// ...</span>
+  plugins: [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">new</span> webpack.DefinePlugin(&#123;
+      <span class="hljs-string">'process.env'</span>: &#123;
+        <span class="hljs-attr">NODE_ENV</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">'production'</span>)
+      &#125;
+    &#125;)
+  ]
+&#125;</code></pre>
+<h4 id="Rollup-1"><a href="#Rollup-1" class="headerlink" title="Rollup"></a>Rollup</h4><p>Gunakan <a href="https://github.com/rollup/rollup-plugin-replace" target="_blank" rel="noopener"><em>rollup-plugin-replace</em></a>:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> replace = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rollup-plugin-replace'</span>)
+
+rollup(&#123;
+  <span class="hljs-comment">// ...</span>
+  plugins: [
+    replace(&#123;
+      <span class="hljs-string">'process.env.NODE_ENV'</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">'production'</span>)
+    &#125;)
+  ]
+&#125;).then(...)</code></pre>
+<h4 id="Browserify-1"><a href="#Browserify-1" class="headerlink" title="Browserify"></a>Browserify</h4><p>Gunakan mode global <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener"><em>envify</em></a> untuk merubah bundel.</p>
+<pre><code class="hljs bash">NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m &gt; build.js</code></pre>
+<p>Lihat juga <a href="deployment.html">tips masa produksi dan pengembangan</a>.</p>
+<h3 id="Ekosistem-CSP"><a href="#Ekosistem-CSP" class="headerlink" title="Ekosistem CSP"></a>Ekosistem CSP</h3><p>Beberapa lingkungan, seperti Google Chrome Apps, mengharuskan Content Security Policy (CSP), dimana melarang penggunakan <code>new Function()</code> untuk mengevaluasi ekspresi (dalam hal ini <em>function expression</em>). Bundel akhir tergantung pada fitur ini untuk menyusun templat, jadi <em>bundler</em> tidak berguna sama sekali dalam ekosistem ini.</p>
+<p>Di sisi lain, <em>runtime-only</em> bundel merupakan bundel yang sesui untuk ekositem CSP. Saat menggunakan bundel <em>runtime-only</em> dengan <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="noopener">Webpack + Vueloader</a> atau <a href="https://github.com/vuejs-templates/browserify-simple" target="_blank" rel="noopener">Browserify + vueify</a> tempatmu akan disusun kedalam fungsi <code>render</code> yang dimana hal ini cocok untuk ekosistem CSP</p>
+<h2 id="Bundel-Pengembangan-Dev-Build"><a href="#Bundel-Pengembangan-Dev-Build" class="headerlink" title="Bundel Pengembangan (Dev Build)"></a>Bundel Pengembangan (<em>Dev Build</em>)</h2><p><strong>Penting</strong>: the built files in GitHub’s <code>/dist</code> folder are only checked-in during releases. To use Vue from the latest source code on GitHub, you will have to build it yourself!</p>
+<p>File bundel pada Github <code>/dist</code> folder hanya disusun (<em>compile</em>) saat rilis. Untuk menggunakan Vue dari kode sumber terakhir di Github, kamu harus menyusun-nya sendiri.</p>
+<pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/vuejs/vue.git node_modules/vue
+<span class="hljs-built_in">cd</span> node_modules/vue
+npm install
+npm run build</code></pre>
+<h2 id="Bower"><a href="#Bower" class="headerlink" title="Bower"></a>Bower</h2><p>Hanya bundel UMD saja yang disediakan dari Bower</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># versi stabil terakhir</span>
+$ bower install vue</code></pre>
+<h2 id="AMD-Module-Loaders"><a href="#AMD-Module-Loaders" class="headerlink" title="AMD Module Loaders"></a>AMD Module Loaders</h2><p>Semua bundel UMD bisa digunakan langsung sebagai modul AMD</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/index.html">Perkenalan</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
+    Menemukan kesalahan atau ingin berkontribusi pada dokumentasi?
+    <a href="https://github.com/vuejs-id/docs/blob/master/src/v2/guide/installation.md" target="_blank">
+        Sunting halaman ini di Github!
+    </a>
+  </div>
+</div>
+
+        
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] }
+      })
+    })
+    </script>
+
+    <!-- fastclick -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>

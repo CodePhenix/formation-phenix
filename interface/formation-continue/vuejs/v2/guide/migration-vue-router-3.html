@@ -1,0 +1,1449 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Vue Router 0.7.x からの移行 — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/migration-vue-router.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/migration-vue-router.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/migration-vue-router.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/migration-vue-router.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/migration-vue-router.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/migration-vue-router.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/migration-vue-router.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/migration-vue-router.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vue Router 0.7.x からの移行 — Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue Router 0.7.x からの移行 — Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'jp.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">v2.x 以前のドキュメントです。</span>
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="検索">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学ぶ</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ドキュメント</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">ガイド</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">スタイルガイド</a></li>
+        <li><a href="/v2/examples/" class="nav-link">例</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">クックブック</a></li>
+      </ul>
+    </li>
+    <li><h4>ビデオコース</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">エコシステム</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ヘルプ</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">フォーラム</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">チャット(公式)</a></li>
+      <li><a href="https://join.slack.com/t/vuejs-jp/shared_invite/zt-vmg3iysl-~CPGAxFMWwa0Fnu2IqtMdQ" class="nav-link" target="_blank" rel="noopener">チャット(日本向け)</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">ミートアップ</a></li>
+    </ul></li>
+    <li><h4>開発ツール</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>コアライブラリ</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>ニュース</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">ウィークリーニュース</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">ロードマップ</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">イベント</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">ブログ(英語)</a></li>
+      <li><a href="/blog/" class="nav-link" target="_blank" rel="noopener">ブログ(日本語訳)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">ジョブ(海外)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV コミュニティ</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">チーム</a>
+</li>
+<li>
+  <a href="/contribution/" class="nav-link">貢献</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">リソース</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">パートナー</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">テーマ</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Browse packages for Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue を支援する</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#1回きりの支援" class="nav-link">1回きりの支援</a></li>
+    <li><a href="/support-vuejs/#継続的な支援" class="nav-link">継続的な支援</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Tシャツ ショップ</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">言語</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">中文</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/migration-vue-router.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/migration-vue-router.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          ガイド
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>基本的な使い方</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">インストール</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">はじめに</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue インスタンス</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">テンプレート構文</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">算出プロパティとウォッチャ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">クラスとスタイルのバインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">条件付きレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">リストレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">イベントハンドリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">フォーム入力バインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">コンポーネントの基本</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>コンポーネントの詳細</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">コンポーネントの登録</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">プロパティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">カスタムイベント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">スロット</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">動的 & 非同期コンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">特別な問題に対処する</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>トランジションとアニメーション</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Enter/Leave とトランジション一覧</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">状態のトランジション</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>再利用と構成</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">ミックスイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">カスタムディレクティブ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">描画関数とJSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">プラグイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">フィルター</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>ツール</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">単一ファイルコンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">テスト</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript のサポート</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">プロダクション環境への配信</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>スケールアップ</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">ルーティング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">状態管理</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">サーバサイドレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">セキュリティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>内部</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">リアクティブの探求</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>移行</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link current">Vue Router 0.7.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x から 1.0 への移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>その他</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">他のフレームワークとの比較</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js コミュニティへ参加しましょう!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">チームに会おう</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar migration-vue-router-guide">
+  <p class="tip warning v3-warning">
+    v2.x 以前のドキュメントです。
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Vue Router 0.7.x からの移行</h1>
+  
+  <p class="updated">最終更新日: 2019年5月8日</p>
+  
+  
+    <blockquote>
+<p>Vue Router 2.0 は Vue 2.0 に対応する唯一のルータなので、 Vue を更新する場合には Vue Router も同様に更新する必要があります。2.0 のドキュメントに移行ガイドが用意されているのもそういう理由からです。新しい Vue Router を用いた包括的なドキュメントは <a href="https://router.vuejs.org/ja/" target="_blank" rel="noopener">Vue Router ドキュメント</a>を確認してください。</p>
+</blockquote>
+<h2 id="ルータの初期化"><a href="#ルータの初期化" class="headerlink" title="ルータの初期化"></a>ルータの初期化</h2><h3 id="router-start-置き換え"><a href="#router-start-置き換え" class="headerlink" title="router.start 置き換え"></a><code>router.start</code> <sup>置き換え</sup></h3><p>Vue Router でアプリケーションを初期化するための特別な API はなくなりました。以下の代わりに:</p>
+<pre><code class="hljs js">router.start(&#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;router-view&gt;&lt;/router-view&gt;'</span>
+&#125;, <span class="hljs-string">'#app'</span>)</code></pre>
+<p>Vue インスタンスに router プロパティを渡すだけです:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">router</span>: router,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;router-view&gt;&lt;/router-view&gt;'</span>
+&#125;)</code></pre>
+<p>または、Vue のランタイムのみのビルドを使用している場合は:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#app'</span>,
+  <span class="hljs-attr">router</span>: router,
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> h(<span class="hljs-string">'router-view'</span>)
+&#125;)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>router.start</code> がコールされる箇所を検出してください。</p>
+</div>
+
+<h2 id="ルートの定義"><a href="#ルートの定義" class="headerlink" title="ルートの定義"></a>ルートの定義</h2><h3 id="router-map-置き換え"><a href="#router-map-置き換え" class="headerlink" title="router.map 置き換え"></a><code>router.map</code> <sup>置き換え</sup></h3><p>ルートは <a href="httpa://router.vuejs.org/ja/essentials/getting-started.html#javascript" target="_blank" rel="noopener"><code>routes</code> オプション</a> に配列として定義されるようになりました。例えばこのようなルートの記述は:</p>
+<pre><code class="hljs js">router.map(&#123;
+  <span class="hljs-string">'/foo'</span>: &#123;
+    <span class="hljs-attr">component</span>: Foo
+  &#125;,
+  <span class="hljs-string">'/bar'</span>: &#123;
+    <span class="hljs-attr">component</span>: Bar
+  &#125;
+&#125;)</code></pre>
+<p>このように記述するようになります:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter(&#123;
+  <span class="hljs-attr">routes</span>: [
+    &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">'/foo'</span>, <span class="hljs-attr">component</span>: Foo &#125;,
+    &#123; <span class="hljs-attr">path</span>: <span class="hljs-string">'/bar'</span>, <span class="hljs-attr">component</span>: Bar &#125;
+  ]
+&#125;)</code></pre>
+<p>オブジェクトの反復走査はプロパティの順序にブラウザ毎の一貫性がないため、配列による記法を用いることで、より予測可能なルートのマッチングを実現しています。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>router.map</code> がコールされる箇所を検出してください。</p>
+</div>
+
+<h3 id="router-on-削除"><a href="#router-on-削除" class="headerlink" title="router.on 削除"></a><code>router.on</code> <sup>削除</sup></h3><p>アプリケーションの開始時に、機械的にルートを生成する必要がある場合、ルートの配列に対し動的に定義を追加することができます。例えば次のような形です:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// 通常のルート定義</span>
+<span class="hljs-keyword">var</span> routes = [
+  <span class="hljs-comment">// ...</span>
+]
+
+<span class="hljs-comment">// 動的に生成されるルート定義</span>
+marketingPages.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">page</span>) </span>&#123;
+  routes.push(&#123;
+    <span class="hljs-attr">path</span>: <span class="hljs-string">'/marketing/'</span> + page.slug
+    <span class="hljs-attr">component</span>: &#123;
+      <span class="hljs-attr">extends</span>: MarketingComponent
+      <span class="hljs-attr">data</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">page</span>: page &#125;
+      &#125;
+    &#125;
+  &#125;)
+&#125;)
+
+<span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> Router(&#123;
+  <span class="hljs-attr">routes</span>: routes
+&#125;)</code></pre>
+<p>ルータが初期化された後に新しいルートを追加する必要がある場合、加筆された新しいルート機構で、既存のものを置き換えることができます。</p>
+<pre><code class="hljs js">router.match = createMatcher(
+  [&#123;
+    <span class="hljs-attr">path</span>: <span class="hljs-string">'/my/new/path'</span>,
+    <span class="hljs-attr">component</span>: MyComponent
+  &#125;].concat(router.options.routes)
+)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>router.on</code> がコールされる箇所を検出してください。</p>
+</div>
+
+<h3 id="router-beforeEach-変更"><a href="#router-beforeEach-変更" class="headerlink" title="router.beforeEach 変更"></a><code>router.beforeEach</code> <sup>変更</sup></h3><p><code>router.beforeEach</code> は現在非同期に動作し、3番目の引数として <code>next</code> 関数を取ります。</p>
+<pre><code class="hljs js">router.beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">transition</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (transition.to.path === <span class="hljs-string">'/forbidden'</span>) &#123;
+    transition.abort()
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    transition.next()
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs js">router.beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">to, from, next</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> (to.path === <span class="hljs-string">'/forbidden'</span>) &#123;
+    next(<span class="hljs-literal">false</span>)
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    next()
+  &#125;
+&#125;)</code></pre>
+<h3 id="subRoutes-名前変更"><a href="#subRoutes-名前変更" class="headerlink" title="subRoutes 名前変更"></a><code>subRoutes</code> <sup>名前変更</sup></h3><p>Vue と他のルータライブラリとの一貫性のために、<a href="https://router.vuejs.org/ja/essentials/nested-routes.html" target="_blank" rel="noopener"><code>children</code>に名前が変更されました。</a> </p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>subRoutes</code> がコールされる箇所を検出してください。</p>
+</div>
+
+<h3 id="router-redirect-置き換え"><a href="#router-redirect-置き換え" class="headerlink" title="router.redirect 置き換え"></a><code>router.redirect</code> <sup>置き換え</sup></h3><p><a href="https://router.vuejs.org/ja/essentials/redirect-and-alias.html" target="_blank" rel="noopener">ルート定義におけるオプション</a> として記述するようになりました。よって、例えば次のような例は:</p>
+<pre><code class="hljs js">router.redirect(&#123;
+  <span class="hljs-string">'/tos'</span>: <span class="hljs-string">'/terms-of-service'</span>
+&#125;)</code></pre>
+<p><code>routes</code> 設定内にて次のように記述します:</p>
+<pre><code class="hljs js">&#123;
+  <span class="hljs-attr">path</span>: <span class="hljs-string">'/tos'</span>,
+  <span class="hljs-attr">redirect</span>: <span class="hljs-string">'/terms-of-service'</span>
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し<code>router.redirect</code> がコールされる箇所を検出してください。</p>
+</div>
+
+<h3 id="router-alias-置き換え"><a href="#router-alias-置き換え" class="headerlink" title="router.alias 置き換え"></a><code>router.alias</code> <sup>置き換え</sup></h3><p><a href="https://router.vuejs.org/ja/essentials/redirect-and-alias.html" target="_blank" rel="noopener">ルート定義におけるオプション</a> として記述するようになりました。よって、例えば次のような例は:</p>
+<pre><code class="hljs js">router.alias(&#123;
+  <span class="hljs-string">'/manage'</span>: <span class="hljs-string">'/admin'</span>
+&#125;)</code></pre>
+<p><code>routes</code> 設定内にて次のように記述します:</p>
+<pre><code class="hljs js">&#123;
+  <span class="hljs-attr">path</span>: <span class="hljs-string">'/admin'</span>,
+  <span class="hljs-attr">component</span>: AdminPanel,
+  <span class="hljs-attr">alias</span>: <span class="hljs-string">'/manage'</span>
+&#125;</code></pre>
+<p>複数のエイリアスが必要な場合、配列記法を用いることができます。</p>
+<pre><code class="hljs js">alias: [<span class="hljs-string">'/manage'</span>, <span class="hljs-string">'/administer'</span>, <span class="hljs-string">'/administrate'</span>]</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>router.alias</code> がコールされる箇所を検出してください。</p>
+</div>
+
+<h3 id="任意のルートプロパティ-置き換え"><a href="#任意のルートプロパティ-置き換え" class="headerlink" title="任意のルートプロパティ 置き換え"></a>任意のルートプロパティ <sup>置き換え</sup></h3><p>将来の機能との競合を避けるために、任意のルートプロパティのスコープを新しいメタプロパティの下に設定する必要があります。例えば、次のように定義したとします:</p>
+<pre><code class="hljs js"><span class="hljs-string">'/admin'</span>: &#123;
+  <span class="hljs-attr">component</span>: AdminPanel,
+  <span class="hljs-attr">requiresAuth</span>: <span class="hljs-literal">true</span>
+&#125;</code></pre>
+<p>次に、それを次のように更新します:</p>
+<pre><code class="hljs js">&#123;
+  <span class="hljs-attr">path</span>: <span class="hljs-string">'/admin'</span>,
+  <span class="hljs-attr">component</span>: AdminPanel,
+  <span class="hljs-attr">meta</span>: &#123;
+    <span class="hljs-attr">requiresAuth</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;</code></pre>
+<p>その後、ルート上でこのプロパティにアクセスすると、メタを通過します。例えば:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">if</span> (route.meta.requiresAuth) &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ガイド</a> を実行しメタの下でスコープされない任意のルートプロパティを利用している箇所を検出してください。</p>
+</div>
+
+<h3 id="クエリ内配列のための構文-削除"><a href="#クエリ内配列のための構文-削除" class="headerlink" title="[]クエリ内配列のための構文 削除"></a>[]クエリ内配列のための構文 <sup>削除</sup></h3><p>クエリパラメータに配列を渡すとき QueryString の構文はもはや <code>/foo?users[]=Tom&amp;users[]=Jerry</code> ではなく、その代わり、新しい構文は <code>/foo?users=Tom&amp;users=Jerry</code> となりました。 内部的には、 <code>$route.query.users</code> は以前として配列ですが、 もしクエリ内にパラメータが1個で: <code>/foo?users=Tom</code> 、このルートに直接アクセスしたとき、ルータは <code>users</code> を配列として期待しているかどうかを知る方法がありません。そのため、算出プロパティを追加し、 <code>$route.query.users</code><br>の全ての参照をそれに置き換えることを検討してください:</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">computed</span>: &#123;
+    <span class="hljs-comment">// users は常に配列となります</span>
+    users () &#123;
+      <span class="hljs-keyword">const</span> users = <span class="hljs-keyword">this</span>.$route.query.users
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.isArray(users) ? users : [users]
+    &#125;
+  &#125;
+&#125;</code></pre>
+<h2 id="ルートのマッチング"><a href="#ルートのマッチング" class="headerlink" title="ルートのマッチング"></a>ルートのマッチング</h2><p>より柔軟性を高めるために、ルートのマッチングの内部処理には、 <a href="https://github.com/pillarjs/path-to-regexp" target="_blank" rel="noopener">path-to-regexp</a> が利用されるようになりました。</p>
+<h3 id="1つ以上の名前付きパラメータ"><a href="#1つ以上の名前付きパラメータ" class="headerlink" title="1つ以上の名前付きパラメータ"></a>1つ以上の名前付きパラメータ</h3><p>構文に多少の変化があります。例えば <code>/category/*tags</code> は <code>/category/:tags+</code> に変更する必要があります。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ガイド</a> を実行し廃止された文法を利用している箇所を検出してください。</p>
+</div>
+
+<h2 id="リンク"><a href="#リンク" class="headerlink" title="リンク"></a>リンク</h2><h3 id="v-link-置き換え"><a href="#v-link-置き換え" class="headerlink" title="v-link 置き換え"></a><code>v-link</code> <sup>置き換え</sup></h3><p>Vue 2.0 におけるコンポーネントの機能の一環として、<code>v-link</code> ディレクティブは新しく <a href="https://router.vuejs.org/ja/api/router-link.html" target="_blank" rel="noopener"><code>&lt;router-link&gt;</code> コンポーネント</a> に置き換えられました。以下のような形で記述されたリンクは:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-link</span>=<span class="hljs-string">"'/about'"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+<p>次のように変更しなければなりません:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></code></pre>
+<p><code>&lt;router-link&gt;</code> では <code>target=&quot;_blank&quot;</code> はサポートされいないことに注意してください。新しいタブでリンクを開く必要がある場合は、<code>&lt;a&gt;</code> を代わりに使用しなければなりません。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>v-link</code> ディレクティブが使用されている箇所を検出してください。</p>
+</div>
+
+<h3 id="v-link-active-置き換え"><a href="#v-link-active-置き換え" class="headerlink" title="v-link-active 置き換え"></a><code>v-link-active</code> <sup>置き換え</sup></h3><p><a href="https://router.vuejs.org/ja/api/router-link.html" target="_blank" rel="noopener"><code>&lt;router-link&gt;</code> コンポーネント</a> でタグの指定が可能なため、 <code>v-link-active</code> ディレクティブは廃止されました。よって、例えば次のような例は:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-link-active</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-link</span>=<span class="hljs-string">"'/about'"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code></pre>
+<p>このような形になります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"li"</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/about"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></code></pre>
+<p><code>&lt;a&gt;</code> が実際のリンクとなり (正しい href をもっています), active クラスは外側の <code>&lt;li&gt;</code> に付与されます。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コード上で <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ガイド</a> を実行し <code>v-link-active</code> ディレクティブが使用されている箇所を検出してください。</p>
+</div>
+
+<h2 id="動的なナビゲーション"><a href="#動的なナビゲーション" class="headerlink" title="動的なナビゲーション"></a>動的なナビゲーション</h2><h3 id="router-go-変更"><a href="#router-go-変更" class="headerlink" title="router.go 変更"></a><code>router.go</code> <sup>変更</sup></h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="noopener">HTML5 History API</a> と一貫性を保つために、<code>router.go</code> は<a href="https://router.vuejs.org/ja/essentials/navigation.html#routergon" target="_blank" rel="noopener">戻る/進むナビゲーション</a>のために使用されます。<a href="https://router.vuejs.org/en/essentials/navigation.html#routerpushlocation" target="_blank" rel="noopener"><code>router.push</code></a> は特定のページに移動するために使用されます。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>router.push</code> の代わりに使用される <code>router.go</code> がコールされる箇所を検出してください。</p>
+</div>
+
+<h2 id="ルータオプション-モード"><a href="#ルータオプション-モード" class="headerlink" title="ルータオプション: モード"></a>ルータオプション: モード</h2><h3 id="hashbang-false-削除"><a href="#hashbang-false-削除" class="headerlink" title="hashbang: false 削除"></a><code>hashbang: false</code> <sup>削除</sup></h3><p>Google にURL をクロールさせるために Hashbangs を用いる必要はもはやなくなりました。よってハッシュの方式としてデフォルトではなくなり、オプションとして利用できなくなりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener"> 移行ヘルパー </a> を実行し <code>hashbang: false</code> オプションが利用されている箇所を検出してください。</p>
+</div>
+
+<h3 id="history-true-置き換え"><a href="#history-true-置き換え" class="headerlink" title="history: true 置き換え"></a><code>history: true</code> <sup>置き換え</sup></h3><p>ルーティングの動作に関するオプションは <a href="https://router.vuejs.org/ja/api/options.html#mode" target="_blank" rel="noopener"><code>mode</code> オプション</a> にまとめられました。このような記述は:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter(&#123;
+  <span class="hljs-attr">history</span>: <span class="hljs-string">'true'</span>
+&#125;)</code></pre>
+<p>次のように変更しなければなりません:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter(&#123;
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">'history'</span>
+&#125;)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>history: true</code> オプションが使用されている箇所を検出してください。</p>
+</div>
+
+<h3 id="abstract-true-置き換え"><a href="#abstract-true-置き換え" class="headerlink" title="abstract: true 置き換え"></a><code>abstract: true</code> <sup>置き換え</sup></h3><p>ルーティングの動作に関するオプションは <a href="https://router.vuejs.org/ja/api/options.html#mode" target="_blank" rel="noopener"><code>mode</code> オプション</a> にまとめられました。このような記述は:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter(&#123;
+  <span class="hljs-attr">abstract</span>: <span class="hljs-string">'true'</span>
+&#125;)</code></pre>
+<p>次のように変更しなければなりません:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter(&#123;
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">'abstract'</span>
+&#125;)</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>abstract: true</code> オプションが使用されている箇所を検出してください。</p>
+</div>
+
+<h2 id="その他のルートオプション"><a href="#その他のルートオプション" class="headerlink" title="その他のルートオプション"></a>その他のルートオプション</h2><h3 id="saveScrollPosition-置き換え"><a href="#saveScrollPosition-置き換え" class="headerlink" title="saveScrollPosition 置き換え"></a><code>saveScrollPosition</code> <sup>置き換え</sup></h3><p>関数を受け付ける <a href="https://router.vuejs.org/ja/advanced/scroll-behavior.html" target="_blank" rel="noopener"><code>scrollBehavior</code> オプション</a> に変更されました。スクロールの挙動は、ルートごとに完全にカスタマイズ可能になりました。これによってより多くの可能性がひらかれましたが、単に以前の挙動を再現したい場合もあるでしょう。これまで、次のように記述していた所は:</p>
+<pre><code class="hljs js">saveScrollPosition: <span class="hljs-literal">true</span></code></pre>
+<p>このように変更すれば、同じ動作が保たれます:</p>
+<pre><code class="hljs js">scrollBehavior: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">to, from, savedPosition</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> savedPosition || &#123; <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span> &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>saveScrollPosition: true</code> オプションを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="root-名前変更"><a href="#root-名前変更" class="headerlink" title="root 名前変更"></a><code>root</code> <sup>名前変更</sup></h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base" target="_blank" rel="noopener">HTML の <code>&lt;base&gt;</code> 要素</a>と合わせるため <code>base</code> に名称変更されました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>root</code> オプションを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="transitionOnLoad-削除"><a href="#transitionOnLoad-削除" class="headerlink" title="transitionOnLoad 削除"></a><code>transitionOnLoad</code> <sup>削除</sup></h3><p>Vue のトランジション機能に、<a href="transitions.html#Transitions-on-Initial-Render"><code>appear</code> トランジションの制御</a> が実装されたため、このオプションはもはや不要になりました。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>transitionOnLoad: true</code> オプションを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="suppressTransitionError-削除"><a href="#suppressTransitionError-削除" class="headerlink" title="suppressTransitionError 削除"></a><code>suppressTransitionError</code> <sup>削除</sup></h3><p>フックをよりシンプルにするために削除されました。どうしてもトランジションのエラーを抑制しなければならない場合 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch" target="_blank" rel="noopener"><code>try</code>…<code>catch</code></a> 構文を代わりに使用してください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>suppressTransitionError: true</code> オプションを使用している箇所を検出してください。</p>
+</div>
+
+<h2 id="ルートフック"><a href="#ルートフック" class="headerlink" title="ルートフック"></a>ルートフック</h2><h3 id="activate-置き換え"><a href="#activate-置き換え" class="headerlink" title="activate 置き換え"></a><code>activate</code> <sup>置き換え</sup></h3><p>代わりにコンポーネントにて <a href="https://router.vuejs.org/ja/advanced/navigation-guards.html#incomponent-guards" target="_blank" rel="noopener"><code>beforeRouteEnter</code></a> を使用してください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>activate</code> フックを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="canActivate-置き換え"><a href="#canActivate-置き換え" class="headerlink" title="canActivate 置き換え"></a><code>canActivate</code> <sup>置き換え</sup></h3><p>代わりに、ルート内で <a href="https://router.vuejs.org/ja/advanced/navigation-guards.html#perroute-guard" target="_blank" rel="noopener"><code>beforeEnter</code></a> を使用してください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>canActivate</code> フックを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="deactivate-削除"><a href="#deactivate-削除" class="headerlink" title="deactivate 削除"></a><code>deactivate</code> <sup>削除</sup></h3><p>代わりに、コンポーネントにて <a href="../api/#beforeDestroy"><code>beforeDestroy</code></a> を使用するか <a href="../api/#destroyed"><code>destroyed</code></a> フックを使用するようにしてください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>deactivate</code> フックを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="canDeactivate-削除"><a href="#canDeactivate-削除" class="headerlink" title="canDeactivate 削除"></a><code>canDeactivate</code> <sup>削除</sup></h3><p>代わりに、コンポーネント内で <a href="https://router.vuejs.org/ja/advanced/navigation-guards.html#incomponent-guards" target="_blank" rel="noopener"><code>beforeRouteLeave</code></a> を使用してください。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>canDeactivate</code> フックを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="canReuse-false-削除"><a href="#canReuse-false-削除" class="headerlink" title="canReuse: false 削除"></a><code>canReuse: false</code> <sup>削除</sup></h3><p>新しい Vue Router ではこれを使用する場面は無いでしょう。</p>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>canReuse: false</code> option.</p>
+</div>
+
+<h3 id="data-置き換え"><a href="#data-置き換え" class="headerlink" title="data 置き換え"></a><code>data</code> <sup>置き換え</sup></h3><p><code>$route</code> プロパティは常にリアクティブなため、ルートの変更は次のようにウォッチ機能を利用する事で検出できます:</p>
+<pre><code class="hljs js">watch: &#123;
+  <span class="hljs-string">'$route'</span>: <span class="hljs-string">'fetchData'</span>
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">fetchData</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>data</code> フックを使用している箇所を検出してください。</p>
+</div>
+
+<h3 id="loadingRouteData-削除"><a href="#loadingRouteData-削除" class="headerlink" title="$loadingRouteData 削除"></a><code>$loadingRouteData</code> <sup>削除</sup></h3><p>独自のプロパティを定義し (例えば <code>isLoading</code>), ルートのウォッチャーでローティングの状態を更新してください。例えば <a href="https://github.com/mzabriskie/axios" target="_blank" rel="noopener">axios</a>のデータを取り込む場合、次のような例になります:</p>
+<pre><code class="hljs js">data: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">posts</span>: [],
+    <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">fetchError</span>: <span class="hljs-literal">null</span>
+  &#125;
+&#125;,
+<span class="hljs-attr">watch</span>: &#123;
+  <span class="hljs-string">'$route'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>
+    self.isLoading = <span class="hljs-literal">true</span>
+    self.fetchData().then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      self.isLoading = <span class="hljs-literal">false</span>
+    &#125;)
+  &#125;
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">fetchData</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>
+    <span class="hljs-keyword">return</span> axios.get(<span class="hljs-string">'/api/posts'</span>)
+      .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>&#123;
+        self.posts = response.data.posts
+      &#125;)
+      .catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>&#123;
+        self.fetchError = error
+      &#125;)
+  &#125;
+&#125;</code></pre>
+
+<div class="upgrade-path">
+  <h4>移行ガイド</h4>
+  <p>コードに対し <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">移行ヘルパー</a> を実行し <code>$loadingRouteData</code> メタプロパティが使用されている箇所を検出してください。</p>
+</div>
+
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/migration.html">Vue 1.x からの移行</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/migration-vuex.html">Vuex 0.6.x から 1.0 への移行</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    間違いを見つけた、またはドキュメントに貢献したいですか？
+    <a href="https://github.com/vuejs/jp.vuejs.org/blob/lang-ja/src/v2/guide/migration-vue-router.md" rel="noopener" target="_blank">
+      GitHub で編集しましょう！
+    </a>
+    このサイトは
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>
+    でホストされています。
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '0a75952972806d9ad07e387d08e9cc4c',
+      indexName: 'vuejs_jp',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

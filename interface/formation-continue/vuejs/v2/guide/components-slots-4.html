@@ -1,0 +1,1222 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>슬롯(Slots) — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/components-slots.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="슬롯(Slots) — Vue.js">
+    <meta property="og:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta property="og:image" content="https://vuejs.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="슬롯(Slots) — Vue.js">
+    <meta name="twitter:description" content="Vue.js - 프로그레시브 자바스크립트 프레임워크">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    
+<link rel="stylesheet" href="/css/page.css">
+
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89623208-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  <meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="Vue.js" type="application/atom+xml">
+</head>
+  <body class="docs">
+    <div id="mobile-bar" style="pointer-events: none;" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    
+
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    
+<li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">배우기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>문서</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">가이드</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">스타일 가이드</a></li>
+        <li><a href="/v2/examples/" class="nav-link">예시</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">쿡북</a></li>
+        <li><a target="_blank" rel="noopener" href="https://v3.vuejs-korea.org/ko-KR/" class="nav-lin>">Vue.js 3 한국어문서</a></li>
+      </ul>
+    </li>
+    <li><h4>영상 강의</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown"
+            class="nav-link"
+            target="_blank" rel="sponsored noopener"
+          >
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">생태계</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>도움</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">포럼</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link"  target="_blank" rel="noopener">채팅</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">모임</a></li>
+    </ul></li>
+    <li><h4>도구</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">개발도구</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>코어 라이브러리</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 라우터</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue 서버 렌더러</a></li>
+    </ul></li>
+    <li><h4>뉴스</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">주간 뉴스</a></li>
+      <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank" rel="noopener">로드맵</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">이벤트</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">트위터</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">블로그</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">구인</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">개발 커뮤니티</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">팀</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">리소스</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">파트너</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">테마</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">쩌는 Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue 후원하기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">1회 후원하기</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">정기후원</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">티셔츠 샵</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">다른 언어로 보기</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-slots.html" class="nav-link" target="_blank" rel="noopener" rel="noopener">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>스페셜 스폰서</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/stdlib.png" alt="Standard Library">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          가이드
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>필수요소</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">설치방법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">시작하기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue 인스턴스</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">템플릿 문법</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">computed와 watch</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">클래스와 스타일 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">조건부 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">리스트 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">이벤트 핸들링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">폼 입력 바인딩</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>컴포넌트 톺아보기</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">컴포넌트 등록</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">커스텀 이벤트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link current">슬롯(Slots)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">동적 & 비동기 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">예외적인 상황들</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>트랜지션 & 애니메이션</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">진입/진출 그리고 리스트 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">상태 트랜지션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>재사용 & 컴포지션</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">믹스인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">사용자 지정 디렉티브</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Render Functions & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">플러그인</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">필터</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>도구</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">싱글 파일 컴포넌트</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">단위 테스팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript 지원</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">프로덕션 배포 팁</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>스케일링 업</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">라우팅</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">상태 관리</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">서버사이드 렌더링</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">보안</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>내부</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">반응형에 대해 깊이 알아보기</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>마이그레이션1</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x에서 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x으로 부터 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x에서 1.0로 마이그레이션</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>메타</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">다른 프레임워크와의 비교</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js 커뮤니티에 참여하세요!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">팀 구성원 만나기</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>플래티넘 스폰서</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    스폰서 되기
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar components-slots-guide">
+  
+    
+      
+<div id="ad">
+  <script
+    async
+    type="text/javascript"
+    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>슬롯(Slots)</h1>
+  
+  
+    <blockquote>
+<p>이 페이지는 여러분이 이미 <a href="components.html">컴포넌트 기초</a>를 읽었다고 가정하고 쓴 내용입니다. 컴포넌트가 처음이라면 기초 문서를 먼저 읽으시기 바랍니다.</p>
+</blockquote>
+<blockquote>
+<p>2.6.0 버전에서 ‘이름이 있는 슬롯’과 ‘범위를 가지는 슬롯’을 위한 새로운 통합 문법(‘v-slot’ 디렉티브)을 도입했습니다. 새 디렉티브가 <code>slot</code>과 <code>slot-scope</code> 속성을 대체하고 두 속성은 이제 사라질 예정입니다. 아직 삭제된 건 아니고 문서는 <a href="#%EC%82%AD%EC%A0%9C%EB%90%A0-%EB%AC%B8%EB%B2%95">여기</a>에서 볼 수 있습니다. 새 문법이 도입된 이유는 이 <a target="_blank" rel="noopener" href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md">RFC</a>에서 찾아볼 수 있습니다.(역자 주: 간략히 설명드리자면 기존 문법이 혼란스러운 부분이 있기 때문입니다. ‘이름이 있는 슬롯’과 ‘범위를 가지는 슬롯’을 동시에 쓸 때 좀 더 간결해지긴 하는데 슬롯 자체가 이해가 쉽지는 않습니다.)</p>
+</blockquote>
+<h2 id="슬롯에-들어가는-내용-Slot-Content"><a href="#슬롯에-들어가는-내용-Slot-Content" class="headerlink" title="슬롯에 들어가는 내용(Slot Content)"></a>슬롯에 들어가는 내용(Slot Content)</h2><p>Vue에 있는 컨텐트 배포 API는 <code>&lt;slot&gt;</code> 요소를 컨텐트 배포 통로로 사용하는 <a target="_blank" rel="noopener" href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md">Web Components spec draft</a>에서 영향을 받았습니다.(역자 주: 웹컴포넌트는 2011년에 최초로 제안된 개념으로 구글에서 주로 밀고 있습니다. 표준안만 나오면 가장 가볍고 보편적인 웹 프레임워크가 되었겠지만 브라우저 제작사들이 아직 표준안을 도출하지 못하고 있습니다. 대신 논의 과정에서 나온 여러 개념들이 리액트, 앵귤러, 뷰 등의 웹 프레임워크에 도입되어서 사용되고 있습니다.)</p>
+<p>그래서 아래와 같은 컴포넌트를 만들 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/profile&quot;</span>&gt;</span><br>  Your Profile<br><span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그리고 <code>&lt;navigation-link&gt;</code> 템플릿을 아래와 같이 만들 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span></span><br><span class="hljs-tag">  <span class="hljs-attr">v-bind:href</span>=<span class="hljs-string">&quot;url&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span></span><br><span class="hljs-tag">&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>컴포넌트를 렌더링할 때 <code>&lt;slot&gt;&lt;/slot&gt;</code>이 “Your Profile”로 교체됩니다. 슬롯에는 HTML 같은 템플릿 코드를 포함시킬 수 있기 때문입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/profile&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- Font Awesome 아이콘을 추가합시다 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa fa-user&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>  Your Profile<br><span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>다른 컴포넌트(역자 주: <code>&lt;font-awesome-icon&gt;</code>)도 가능합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/profile&quot;</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- 컴포넌트로 아이콘을 추가해봅시다 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">font-awesome-icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">font-awesome-icon</span>&gt;</span><br>  Your Profile<br><span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>만약 <code>&lt;navigation-link&gt;</code> 템플릿이 <code>&lt;slot&gt;</code> 요소를 가지고 있지 <strong>않다면</strong> 그 자리에 들어갔어야 할 모든 내용이 무시될 것입니다.</p>
+<h2 id="컴파일될-때의-범위-Compilation-Scope"><a href="#컴파일될-때의-범위-Compilation-Scope" class="headerlink" title="컴파일될 때의 범위(Compilation Scope)"></a>컴파일될 때의 범위(Compilation Scope)</h2><p>슬롯 안에 데이터 옵션을 사용하고 싶을 수 있습니다. 아래의 예를 봅시다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/profile&quot;</span>&gt;</span><br>  Logged in as &#123;&#123; user.name &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>여기서 슬롯은 같은 템플릿의 나머지와 똑같은 인스턴스 속성(즉 같은 “범위”)에 연결되어 있습니다. 슬롯이 <code>&lt;navigation-link&gt;</code>의 범위에 연결된 것이 아닌 거죠. 예를 들어 <code>url</code>에 접근하려고 하면 작동하지 않을 것입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/profile&quot;</span>&gt;</span><br>  Clicking here will send you to: &#123;&#123; url &#125;&#125;<br>  <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">  url은 undefined로 나올 겁니다. 이 데이터는 &lt;navigation-link&gt;로</span><br><span class="hljs-comment">  넘어가지만 &lt;navigation-link&gt; 컴포넌트 안에 정의되어 있지는</span><br><span class="hljs-comment">  않으니까요.</span><br><span class="hljs-comment">  --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이 규칙을 기억하세요.</p>
+<blockquote>
+<p>부모 템플릿 안에 있는 것들은 부모 컴포넌트의 범위에 컴파일되고 자식 템플릿 안에 있는 것들은 자식 컴포넌트의 범위에 컴파일됩니다.</p>
+</blockquote>
+<h2 id="기본값-지정-Fallback-Content"><a href="#기본값-지정-Fallback-Content" class="headerlink" title="기본값 지정(Fallback Content)"></a>기본값 지정(Fallback Content)</h2><p>아무 컨텐트도 전달되지 않았을 때 슬롯에 렌더링시킬 대비책(즉 기본값)을 지정해놓는 것이 유용한 경우가 있을 수 있습니다. <code>&lt;submit-button&gt;</code> 컴포넌트의 예를 살펴봅시다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>보통은 <code>&lt;button&gt;</code> 안에 “Submit” 텍스트가 들어가기를 원할 때가 많습니다. “Submit”을 기본값으로 만들기 위해서는 <code>&lt;slot&gt;</code> 태그 사이에 넣어야 합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이제 부모 컴포넌트의 <code>&lt;submit-button&gt;</code>를 사용할 때 아래와 같이 슬롯에 해당하는 아무 내용을 전달하지 않으면</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">submit-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">submit-button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>기본값인 “Submit”이 렌더링될 것입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><br>  Submit<br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>하지만 슬롯에 어떤 내용을 전달하면</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">submit-button</span>&gt;</span><br>  Save<br><span class="hljs-tag">&lt;/<span class="hljs-name">submit-button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>전달된 내용이 렌더링되겠죠.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><br>  Save<br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="이름이-있는-슬롯-Named-Slots"><a href="#이름이-있는-슬롯-Named-Slots" class="headerlink" title="이름이 있는 슬롯(Named Slots)"></a>이름이 있는 슬롯(Named Slots)</h2><blockquote>
+<p>2.6.0+에서 업데이트가 있었습니다. <a href="#%EC%82%AD%EC%A0%9C%EB%90%A0-%EB%AC%B8%EB%B2%95">여기</a>에서 <code>slot</code> 속성을 사용하는 기존의 문법을 보실 수 있습니다.</p>
+</blockquote>
+<p>여러 개의 슬롯을 쓰면 더 유용할 때가 있습니다. 예를 들어 <code>&lt;base-layout&gt;</code> 컴포넌트의 아래 템플릿을 봅시다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 헤더는 여기에 넣을 겁니다 --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 본문은 여기에 넣을 겁니다 --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 푸터는 여기에 넣을 겁니다 --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이런 경우를 위해서 <code>&lt;slot&gt;</code> 요소는 서로 다른 슬롯들을 정의할 때 쓸 수 있는 <code>name</code>이라는 특별한 속성을 가지고 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>name</code>이 지정되지 않은 <code>&lt;slot&gt;</code>에는 암묵적으로 “default” 값이 사용됩니다.</p>
+<p>이름이 있는 슬롯에 내용을 전달하려면 <code>&lt;template&gt;</code>에 <code>v-slot</code> 디렉티브를 쓰고 그 속성에 앞에서 지정한 ‘name’을 넣으면 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이제 <code>&lt;template&gt;</code> 요소들의 모든 내용물이 적절한 슬롯으로 전달되었습니다. <code>v-slot</code>을 쓴 <code>&lt;template&gt;</code>으로 싸여있지 않은  내용물들은 디폴트 슬롯에 해당되는 것으로 간주합니다.</p>
+<p>하지만 원한다면 명시적으로 <code>&lt;template&gt;</code>에 ‘default’를 표시하고 그 안에 내용을 넣을 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>양쪽 모두 렌더링된 HTML은 아래와 같게 됩니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>삭제될 예정인 <a href="#%EC%82%AD%EC%A0%9C%EB%90%A0-%EB%AC%B8%EB%B2%95"><code>slot</code> 속성</a>과 다르게 <strong><code>v-slot</code>만 <code>&lt;template&gt;</code> 태그에 추가할 수 있다는 점</strong>을 유의하시기 바랍니다.(예외가 <a href="#%EB%8B%A8%EB%8F%85-%EB%94%94%ED%8F%B4%ED%8A%B8-%EC%8A%AC%EB%A1%AF%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B6%95%EC%95%BD-%EB%AC%B8%EB%B2%95">하나</a> 있기는 합니다)</p>
+<h2 id="범위가-있는-슬롯-Scoped-Slots"><a href="#범위가-있는-슬롯-Scoped-Slots" class="headerlink" title="범위가 있는 슬롯(Scoped Slots)"></a>범위가 있는 슬롯(Scoped Slots)</h2><blockquote>
+<p>2.6.0+에서 업데이트가 있었습니다. <a href="#%EC%82%AD%EC%A0%9C%EB%90%A0-%EB%AC%B8%EB%B2%95">여기</a>에서 <code>slot-scope</code> 속성을 사용하는 기존의 문법을 보실 수 있습니다.</p>
+</blockquote>
+<p>어떨 때는 자식 컴포넌트에서만 접근할 수 있는 데이터에서 슬롯에 필요한 내용을 가져와야 할 수 있습니다. 아래 템플릿의 <code>&lt;current-user&gt;</code> 컴포넌트의 예를 살펴봅시다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span>&#123;&#123; user.lastName &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>아래와 같이 기본값을 사용자의 성말고 이름으로 바꾸고 싶을 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span><br>  &#123;&#123; user.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>하지만 이 파일은 작동하지 않습니다. 왜냐하면 <code>&lt;current-user&gt;</code> 컴포넌트만 <code>user</code>에 접근할 수 있는데 슬롯에 제공되는 내용들은 부모 컴포넌트에서 렌더링되기 때문입니다.</p>
+<p>부모 컴포넌트의 슬롯에서 <code>user</code>를 쓸려면 <code>user</code>를 <code>&lt;slot&gt;</code> 요소에 속성으로 연결해야 합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">v-bind:user</span>=<span class="hljs-string">&quot;user&quot;</span>&gt;</span><br>    &#123;&#123; user.lastName &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>&lt;slot&gt;</code> 요소에 연결된 속성을 **슬롯 속성(slot props)**라고 합니다. 이제 부모 컴포넌트의 범위(scope)에서 <code>v-slot</code>에 연결한 ‘슬롯 속성(slotProps)’를 쓸 수 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>    &#123;&#123; slotProps.user.firstName &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이번 사례에서 모든 ‘슬롯 속성’의 이름을 ‘slotProps’라고 썼는데 이 이름은 당연히 사용자가 원하는 대로 바꿀 수 있습니다.</p>
+<h3 id="단독-디폴트-슬롯을-위한-축약-문법-Abbreviated-Syntax-for-Lone-Default-Slots"><a href="#단독-디폴트-슬롯을-위한-축약-문법-Abbreviated-Syntax-for-Lone-Default-Slots" class="headerlink" title="단독 디폴트 슬롯을 위한 축약 문법(Abbreviated Syntax for Lone Default Slots)"></a>단독 디폴트 슬롯을 위한 축약 문법(Abbreviated Syntax for Lone Default Slots)</h3><p>위의 사례와 같이 제공된 내용이 디폴트 슬롯 <em>밖에</em> 없으면 컴포넌트의 태그를 슬롯의 템플릿으로 바로 쓸 수 있습니다. 즉 <code>v-slot</code>을 컴포넌트에다 쓸 수 있다는 것입니다.(역자 주: 바로 위의 <current-user> 컴포넌트 코드와 비교하세요.)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>  &#123;&#123; slotProps.user.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>더 짧게도 만들 수 있습니다. 앞에서 다뤘듯이 특정되지 않은 내용은 디폴트 슬롯에 해당하는 것으로 간주하기 때문에, 속성이 없는 <code>v-slot</code>도 디폴트 슬롯으로 간주합니다.(역자 주: 위의 코드에서는 ‘default’가 ‘name’속성입니다.)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>  &#123;&#123; slotProps.user.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>범위를 모호하게 만들기 때문에 디폴트 슬롯을 위한 축약 문법은 이름이 있는 슬롯들과 함께 쓸 수 <strong>없습니다</strong>.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 불가. 경고가 뜰 겁니다 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>  &#123;&#123; slotProps.user.firstName &#125;&#125;<br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:other</span>=<span class="hljs-string">&quot;otherSlotProps&quot;</span>&gt;</span><br>    slotProps is NOT available here<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>여러 개의 슬롯이 있을 때는 <code>&lt;template&gt;</code>에 기초한 문법 전체를 <em>모든</em> 슬롯에 쓰기 바랍니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>    &#123;&#123; slotProps.user.firstName &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:other</span>=<span class="hljs-string">&quot;otherSlotProps&quot;</span>&gt;</span><br>    ...<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="슬롯-속성-구조분해-Destructuring-Slot-Props"><a href="#슬롯-속성-구조분해-Destructuring-Slot-Props" class="headerlink" title="슬롯 속성 구조분해(Destructuring Slot Props)"></a>슬롯 속성 구조분해(Destructuring Slot Props)</h3><p>프레임워크 내부에서 ‘범위가 있는 슬롯’은 하나의 인수(역자 주: 슬롯 속성)를 가지는 함수로 슬롯에 들어가는 내용을 감싸는 방식으로 작동합니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">slotProps</span>) </span>&#123;<br>  <span class="hljs-comment">// ... slot content ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>v-slot</code>의 값은 함수 정의식의 인수 위치에서 가능한 어떤 종류의 자바스크립트 표현식도 다 가능합니다. 그러므로 (<a href="single-file-components.html">싱글 파일 컴포넌트</a>나 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Browser_compatibility">모던 브라우저</a>처럼) 지원되는 모든 환경에서 아래와 같이 특정 슬롯 속성을 추출하는 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring">ES2015 구조분해</a>를 할 수 있다는 뜻입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">&quot;&#123; user &#125;&quot;</span>&gt;</span><br>  &#123;&#123; user.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이를 통해서 템플릿을 더 깨끗하게 만들 수 있습니다. 특히 슬롯에서 다양한 슬롯 속성들을 쓸 경우에 그렇습니다. 또 다른 기능으로 <code>user</code>를 <code>person</code>으로 바꾸는 것처럼 속성의 이름을 다시 정할 수도 있죠.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">&quot;&#123; user: person &#125;&quot;</span>&gt;</span><br>  &#123;&#123; person.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>속성이 undefined이면 슬롯 슬롯에 들어갈 기본값을 정할 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">&quot;&#123; user = &#123; firstName: &#x27;Guest&#x27; &#125; &#125;&quot;</span>&gt;</span><br>  &#123;&#123; user.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="가변-슬롯-이름-Dynamic-Slot-Names"><a href="#가변-슬롯-이름-Dynamic-Slot-Names" class="headerlink" title="가변 슬롯 이름(Dynamic Slot Names)"></a>가변 슬롯 이름(Dynamic Slot Names)</h2><blockquote>
+<p>2.6.0+ 에서 추가</p>
+</blockquote>
+<p><a href="syntax.html#%EA%B0%80%EB%B3%80-%EC%9D%B8%EC%88%98">가변 디렉티브 인수</a>는 가변 슬롯 이름을 정의하는 방식으로 <code>v-slot</code>에서도 작동합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:</span>[<span class="hljs-attr">dynamicSlotName</span>]&gt;</span><br>    ...<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="이름이-있는-슬롯-디렉티브의-단축표기-Named-Slots-Shorthand"><a href="#이름이-있는-슬롯-디렉티브의-단축표기-Named-Slots-Shorthand" class="headerlink" title="이름이 있는 슬롯 디렉티브의 단축표기(Named Slots Shorthand)"></a>이름이 있는 슬롯 디렉티브의 단축표기(Named Slots Shorthand)</h2><blockquote>
+<p>2.6.0+ 에서 추가</p>
+</blockquote>
+<p><code>v-on</code>과 <code>v-bind</code>처럼 <code>v-slot</code>도 단축표기를 가지고 있습니다. 인수 앞에 쓰는 부분(<code>v-slot:</code>)을 특수 기호인 <code>#</code>으로 대체하는 것입니다. 예를 들어 <code>v-slot:header</code>는 <code>#header</code>로 쓸 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>하지만 다른 디렉티브와 마찬가지로 단축 표기는 오직 인수가 있을 때만 가능합니다. 즉 아래와 같은 문법은 불가능합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 이런 문법을 쓰면 경고가 나올 겁니다 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #=<span class="hljs-string">&quot;&#123; user &#125;&quot;</span>&gt;</span><br>  &#123;&#123; user.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>그리고 단축 표기를 쓰려면 반드시 슬롯의 이름을 특정해야 합니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #<span class="hljs-attr">default</span>=<span class="hljs-string">&quot;&#123; user &#125;&quot;</span>&gt;</span><br>  &#123;&#123; user.firstName &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="다른-사례들-Other-Examples"><a href="#다른-사례들-Other-Examples" class="headerlink" title="다른 사례들(Other Examples)"></a>다른 사례들(Other Examples)</h2><p><strong>슬롯 속성을 통해 슬롯을 입력되는 속성에 따라 다른 내용을 렌더링할 수 있는 재사용가능한 템플릿으로 변환할 수 있습니다.</strong> 부모 컴포넌트를 레이아웃 용도로만 사용하고 데이터 로직을 캡슐화한 재사용가능 컴포넌트를 디자인할 때 가장 유용한 방법입니다.</p>
+<p>아래에서 목록의 레이아웃과 필터링 로직을 담은 <code>&lt;todo-list&gt;</code> 컴포넌트를 쓸 것입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;todo in filteredTodos&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">&quot;todo.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    &#123;&#123; todo.text &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>각각의 할 일에 대해서 하드코딩된 내용을 쓰는 대신 모든 할일 들을 슬롯으로 만들어서 부모 컴포넌트가 관리할 수 있게 만들 수 있습니다. 그리고 <code>todo</code>를 슬롯 속성으로 연결시키는 거죠.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;todo in filteredTodos&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">&quot;todo.id&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">    각 할일에 대해 슬롯을 만들고</span><br><span class="hljs-comment">    `todo` 객체를 슬롯 속성으로 보냅니다.</span><br><span class="hljs-comment">    --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;todo&quot;</span> <span class="hljs-attr">v-bind:todo</span>=<span class="hljs-string">&quot;todo&quot;</span>&gt;</span><br>      <span class="hljs-comment">&lt;!-- 기본값 --&gt;</span><br>      &#123;&#123; todo.text &#125;&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>이제 <code>&lt;todo-list&gt;</code> 컴포넌트를 쓸 때 할일 아이템들을 위해서 자식 컴포넌트의 데이터에도 접근할 수 있는 대체 <code>&lt;template&gt;</code>을 따로 정의할 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">&quot;todos&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:todo</span>=<span class="hljs-string">&quot;&#123; todo &#125;&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;todo.isComplete&quot;</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    &#123;&#123; todo.text &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>하지만 이 정도는 범위가 있는 슬롯으로 무엇을 할 수 있는지 아주 조금 살펴본 것에 불과합니다. 실제로 범위가 있는 슬롯의 사용 예시를 보시려면 <a target="_blank" rel="noopener" href="https://github.com/Akryum/vue-virtual-scroller">Vue Virtual Scroller</a>, <a target="_blank" rel="noopener" href="https://github.com/posva/vue-promised">Vue Promised</a>, <a target="_blank" rel="noopener" href="https://github.com/LinusBorg/portal-vue">Portal Vue</a>같은 라이브러리들을 둘러볼 것을 추천드립니다.</p>
+<h2 id="삭제될-문법"><a href="#삭제될-문법" class="headerlink" title="삭제될 문법"></a>삭제될 문법</h2><blockquote>
+<p><code>v-slot</code> 디렉티브는 <code>slot</code>과 <code>slot-scope</code> 인수들을 대체하는, 더 발전된 API로 Vue 2.6.0에 도입되었습니다. 새 문법이 도입된 이유는 이 <a target="_blank" rel="noopener" href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md">RFC</a>에서 찾아볼 수 있습니다. <code>slot</code>과 <code>slot-scope</code> 인수는 앞으로도 2.x 버전에서는 계속 지원될 것입니다. 하지만 Vue 3에서는 공식적으로 삭제될 예정입니다.</p>
+</blockquote>
+<h3 id="slot-인수를-사용하는-이름이-있는-슬롯"><a href="#slot-인수를-사용하는-이름이-있는-슬롯" class="headerlink" title="slot 인수를 사용하는 이름이 있는 슬롯"></a><code>slot</code> 인수를 사용하는 이름이 있는 슬롯</h3><blockquote>
+<p>2.6.0+ 부터 <abbr title="모든 Vue 2.x 버전에서 지원되고 있으나 사용을 추천하지 않습니다.">지원 중단 예정</abbr>. <a href="#%EC%9D%B4%EB%A6%84%EC%9D%B4-%EC%9E%88%EB%8A%94-%EC%8A%AC%EB%A1%AF(Named-Slots)">여기</a>에서 권장되는 새 문법을 확인하세요.</p>
+</blockquote>
+<p>내용물을 부모 컴포넌트에서 이름이 있는 슬롯에 보내려면 <code>slot</code> 인수를 <code>&lt;template&gt;</code>에서 사용해야 합니다.(<a href="#%EC%9D%B4%EB%A6%84%EC%9D%B4-%EC%9E%88%EB%8A%94-%EC%8A%AC%EB%A1%AF(Named-Slots)">여기</a>에서 예시로 사용했던 <code>&lt;base-layout&gt;</code> 컴포넌트를 사용하겠습니다.)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>혹은 <code>slot</code> 인수를 일반 요소(element)에 바로 사용할 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>여전히 이름이 없는 슬롯이 하나 있는데 이를 <strong>디폴트 슬롯</strong>이라고 하고 해당하는 슬롯이 없는 모든 내용들이 여기에 들어갑니다. 위의 두 예시 모두 HTML로 렌더링하면 아래와 같습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here&#x27;s some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="slot-scope-인수를-사용하는-범위가-있는-슬롯"><a href="#slot-scope-인수를-사용하는-범위가-있는-슬롯" class="headerlink" title="slot-scope 인수를 사용하는 범위가 있는 슬롯"></a><code>slot-scope</code> 인수를 사용하는 범위가 있는 슬롯</h3><blockquote>
+<p>2.6.0+ 부터 <abbr title="모든 Vue 2.x 버전에서 지원되고 있으나 사용을 추천하지 않습니다.">지원 중단 예정</abbr>. <a href="#%EB%B2%94%EC%9C%84%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%8A%AC%EB%A1%AF(Scoped-Slots)">여기</a>에서 권장되는 새 문법을 확인하세요.</p>
+</blockquote>
+<p>슬롯으로 전달된 속성들을 받기 위해서 부모 컴포넌트는 <code>slot-scope</code> 인수와 함께 <code>&lt;template&gt;</code>을 사용할 수 있습니다.(<a href="#%EB%B2%94%EC%9C%84%EA%B0%80-%EC%9E%88%EB%8A%94-%EC%8A%AC%EB%A1%AF(Scoped-Slots)">여기</a>에서 예시로 사용했던 <code>&lt;slot-example&gt;</code> 컴포넌트를 사용하겠습니다.)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;default&quot;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>    &#123;&#123; slotProps.msg &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>여기서 <code>slot-scope</code>은 넘겨받은 속성들을 <code>slotProps</code> 변수로 선언하고 <code>&lt;template&gt;</code> 범위 안에서 사용할 수 있도록 만들었습니다. <code>slotProps</code>라는 이름은 자바스크립트에서 함수의 인수 이름을 정하듯이 자유롭게 정할 수 있습니다.</p>
+<p><code>slot=&quot;default&quot;</code>는 생략할 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>    &#123;&#123; slotProps.msg &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>slot-scope</code> 인수는 컴포넌트와 같이 <code>&lt;template&gt;</code> 요소가 아닌 곳에 바로 사용될 수도 있습니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;slotProps&quot;</span>&gt;</span><br>    &#123;&#123; slotProps.msg &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>v-slot</code>의 값은 함수 정의식의 인수 위치에서 가능한 어떤 종류의 자바스크립트 표현식도 다 가능합니다. 그러므로 (<a href="single-file-components.html">싱글 파일 컴포넌트</a>나 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Browser_compatibility">모던 브라우저</a>처럼) 지원되는 모든 환경에서 아래와 같이 특정 슬롯 속성을 추출하는 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring">ES2015 구조분해</a>를 할 수 있다는 뜻입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;&#123; msg &#125;&quot;</span>&gt;</span><br>    &#123;&#123; msg &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>아래는 <a href="#%EB%8B%A4%EB%A5%B8-%EC%82%AC%EB%A1%80%EB%93%A4(Other-Examples)">여기</a>에서 사례로 설명한 <code>&lt;todo-list&gt;</code>와 똑같은 사례입니다.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">&quot;todos&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;todo&quot;</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">&quot;&#123; todo &#125;&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;todo.isComplete&quot;</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    &#123;&#123; todo.text &#125;&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components-custom-events.html">커스텀 이벤트</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/components-dynamic-async.html">동적 & 비동기 컴포넌트</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    이 문서에 문제를 제보하거나 기여하고 싶은 부분이 있으십니까?
+    <a href="https://github.com/vuejs-kr/kr.vuejs.org/blob/master/src/v2/guide/components-slots.md" rel="noopener" target="_blank">
+      Github에서 이 페이지를 수정하세요!
+    </a>
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

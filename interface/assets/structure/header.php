@@ -1,6 +1,6 @@
 <header>
   <h1><a href="../index.php">&lt;CodePhenix&gt;</a></h1>
-  <a id="git" href="http://codephenix.com:2500" target="_blank">Accès à GitLab<img src="../assets/img/gitlab.png"></a>
+  <a id="git" href="http://codephenix.com:2500" target="_blank"><span>Accès à GitLab</span><img src="../assets/img/gitlab.png"></a>
 </header>
 <script>
   let header=document.querySelector("header");

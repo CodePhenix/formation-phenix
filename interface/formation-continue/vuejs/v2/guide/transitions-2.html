@@ -1,0 +1,2465 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Enter/Leave とトランジション一覧 — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/transitions.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/transitions.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Enter/Leave とトランジション一覧 — Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Enter/Leave とトランジション一覧 — Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'jp.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">v2.x 以前のドキュメントです。</span>
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="検索">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学ぶ</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ドキュメント</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">ガイド</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">スタイルガイド</a></li>
+        <li><a href="/v2/examples/" class="nav-link">例</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">クックブック</a></li>
+      </ul>
+    </li>
+    <li><h4>ビデオコース</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">エコシステム</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ヘルプ</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">フォーラム</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">チャット(公式)</a></li>
+      <li><a href="https://join.slack.com/t/vuejs-jp/shared_invite/zt-vmg3iysl-~CPGAxFMWwa0Fnu2IqtMdQ" class="nav-link" target="_blank" rel="noopener">チャット(日本向け)</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">ミートアップ</a></li>
+    </ul></li>
+    <li><h4>開発ツール</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>コアライブラリ</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>ニュース</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">ウィークリーニュース</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">ロードマップ</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">イベント</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">ブログ(英語)</a></li>
+      <li><a href="/blog/" class="nav-link" target="_blank" rel="noopener">ブログ(日本語訳)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">ジョブ(海外)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV コミュニティ</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">チーム</a>
+</li>
+<li>
+  <a href="/contribution/" class="nav-link">貢献</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">リソース</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">パートナー</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">テーマ</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Browse packages for Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue を支援する</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#1回きりの支援" class="nav-link">1回きりの支援</a></li>
+    <li><a href="/support-vuejs/#継続的な支援" class="nav-link">継続的な支援</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Tシャツ ショップ</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">言語</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/transitions.html" class="nav-link">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/transitions.html" class="nav-link">中文</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/transitions.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/transitions.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/transitions.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/transitions.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/transitions.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/transitions.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/transitions.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          ガイド
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>基本的な使い方</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">インストール</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">はじめに</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue インスタンス</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">テンプレート構文</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">算出プロパティとウォッチャ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">クラスとスタイルのバインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">条件付きレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">リストレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">イベントハンドリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">フォーム入力バインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">コンポーネントの基本</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>コンポーネントの詳細</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">コンポーネントの登録</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">プロパティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">カスタムイベント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">スロット</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">動的 & 非同期コンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">特別な問題に対処する</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>トランジションとアニメーション</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link current">Enter/Leave とトランジション一覧</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">状態のトランジション</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>再利用と構成</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">ミックスイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">カスタムディレクティブ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">描画関数とJSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">プラグイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">フィルター</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>ツール</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">単一ファイルコンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">テスト</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript のサポート</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">プロダクション環境への配信</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>スケールアップ</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">ルーティング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">状態管理</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">サーバサイドレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">セキュリティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>内部</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">リアクティブの探求</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>移行</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x から 1.0 への移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>その他</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">他のフレームワークとの比較</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js コミュニティへ参加しましょう!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">チームに会おう</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar transitions-guide">
+  <p class="tip warning v3-warning">
+    v2.x 以前のドキュメントです。
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Enter/Leave とトランジション一覧</h1>
+  
+  <p class="updated">最終更新日: 2020年2月25日</p>
+  
+  
+    <h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>Vue は、DOM からアイテムが追加、更新、削除されたときにトランジション効果を適用するための方法を複数提供しています:</p>
+<ul>
+<li>自動的に CSS トランジションやアニメーションのためのクラスを適用します。</li>
+<li>Animate.css のようなサードパーティの CSS アニメーションライブラリと連携します。</li>
+<li>トランジションフックが実行されている間、JavaScript を使って直接 DOM 操作を行います。</li>
+<li>Velocity.js のようなサードパーティの JavaScript アニメーションライブラリと連携します。</li>
+</ul>
+<p>このページでは、entering/leaving によるリストのトランジションについて扱いますが、次の章では、<a href="transitioning-state.html">状態のトランジション</a> について扱います。</p>
+<h2 id="単一要素-コンポーネントのトランジション"><a href="#単一要素-コンポーネントのトランジション" class="headerlink" title="単一要素/コンポーネントのトランジション"></a>単一要素/コンポーネントのトランジション</h2><p>Vue は、<code>transition</code> ラッパーコンポーネントを提供しています。このコンポーネントは、次のコンテキストにある要素やコンポーネントに entering/leaving トランジションを追加することを可能にします:</p>
+<ul>
+<li>条件付きの描画 (<code>v-if</code> を使用)</li>
+<li>条件付きの表示 (<code>v-show</code> を利用)</li>
+<li>動的コンポーネント</li>
+<li>コンポーネントルートノード (Component root nodes)</li>
+</ul>
+<p>これは、アクションのように見える非常にシンプルな例です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fade"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.fade-enter-active</span>, <span class="hljs-selector-class">.fade-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: opacity .<span class="hljs-number">5s</span>;
+&#125;
+<span class="hljs-selector-class">.fade-enter</span>, <span class="hljs-selector-class">.fade-leave-to</span> <span class="hljs-comment">/* .fade-leave-active below version 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="demo-transition">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#demo',
+  data: {
+    show: true
+  }
+})
+</script>
+<style>
+.demo-transition-enter-active, .demo-transition-leave-active {
+  transition: opacity .5s
+}
+.demo-transition-enter, .demo-transition-leave-to {
+  opacity: 0
+}
+</style>
+
+<p><code>transition</code> コンポーネントにラップされた要素が挿入あるいは削除されるとき、次のことが行われます:</p>
+<ol>
+<li><p>Vue は、対象の要素が CSS トランジションあるいはアニメーションが適用されるか自動的に察知します。それがない場合、適切なタイミングで、CSS トランジションのクラスを追加/削除します。</p>
+</li>
+<li><p>もし、トランジションコンポーネントが <a href="#JavaScript-フック">JavaScript フック</a> を提供している場合は、適切なタイミングでそれらのフックが呼ばれます。</p>
+</li>
+<li><p>もし、CSS トランジション/アニメーションが検出されず、JavaScript フックも提供されない場合、挿入、削除のいずれか、あるいは両方の DOM 操作を次のフレームでただちに実行します。(注意: ここでのフレームはブラウザのアニメーションフレームを指します。 Vue の <code>nextTick</code> のコンセプトのそれとは異なるものです)</p>
+</li>
+</ol>
+<h3 id="トランジションクラス"><a href="#トランジションクラス" class="headerlink" title="トランジションクラス"></a>トランジションクラス</h3><p>これらは、enter/leave トランジションのために適用される 6 つのクラスです。</p>
+<ol>
+<li><code>v-enter</code>: enter の開始状態。要素が挿入される前に適用され、要素が挿入された 1 フレーム後に削除されます。</li>
+<li><code>v-enter-active</code>: enter の活性状態。トランジションに入るフェーズ中に適用されます。要素が挿入される前に追加され、トランジション/アニメーションが終了すると削除されます。このクラスは、トランジションの開始に対して、期間、遅延、およびイージングカーブを定義するために使用できます。</li>
+<li><code>v-enter-to</code>: <strong>バージョン 2.1.8 以降でのみ利用可能です。</strong> enter の終了状態。要素が挿入された 1 フレーム後に追加され (同時に <code>v-enter</code> が削除されます)、トランジション/アニメーションが終了すると削除されます。</li>
+<li><code>v-leave</code>: leave の開始状態。トランジションの終了がトリガされるとき、直ちに追加され、1フレーム後に削除されます。</li>
+<li><code>v-leave-active</code>: leave の活性状態。トランジションが終わるフェーズ中に適用されます。leave トランジションがトリガされるとき、直ちに追加され、トランジション/アニメーションが終了すると削除されます。このクラスは、トランジションの終了に対して、期間、遅延、およびイージングカーブを定義するために使用できます。</li>
+<li><code>v-leave-to</code>: <strong>バージョン 2.1.8 以降でのみ利用可能です。</strong> leave の終了状態。leave トランジションがトリガされた 1 フレーム後に追加され (同時に <code>v-leave</code> が削除されます)、トランジション/アニメーションが終了すると削除されます。</li>
+</ol>
+<p><img src="/images/transition.png" alt="トランジションダイアグラム"></p>
+<p>各クラスは、トランジションの名前が先頭に付きます。<code>&lt;transition&gt;</code> 要素に名前がない場合は、デフォルトで <code>v-</code> が先頭に付きます。例えば、<code>&lt;transition name=&quot;my-transition&quot;&gt;</code> の場合は、<code>v-enter</code> クラスではなく、<code>my-transition-enter</code> となります。</p>
+<p><code>v-enter-active</code> と <code>v-leave-active</code> は、次のセクションの例で見ることができるような、enter/leave トランジションで異なるイージングカーブの指定を可能にします。</p>
+<h3 id="CSS-トランジション"><a href="#CSS-トランジション" class="headerlink" title="CSS トランジション"></a>CSS トランジション</h3><p>トランジションを実現する最も一般な方法として、CSS トランジションを使います。これはシンプルな例です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle render
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"slide-fade"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-1'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-comment">/* enter、 leave アニメーションで異なる間隔やタイミング関数を利用することができます */</span>
+<span class="hljs-selector-class">.slide-fade-enter-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">3s</span> ease;
+&#125;
+<span class="hljs-selector-class">.slide-fade-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">8s</span> <span class="hljs-built_in">cubic-bezier</span>(<span class="hljs-number">1.0</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.8</span>, <span class="hljs-number">1.0</span>);
+&#125;
+<span class="hljs-selector-class">.slide-fade-enter</span>, <span class="hljs-selector-class">.slide-fade-leave-to</span>
+<span class="hljs-comment">/* .slide-fade-leave-active below version 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">10px</span>);
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<div id="example-1" class="demo">
+  <button @click="show = !show">
+    Toggle render
+  </button>
+  <transition name="slide-fade">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#example-1',
+  data: {
+    show: true
+  }
+})
+</script>
+<style>
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+</style>
+
+<h3 id="CSS-アニメーション"><a href="#CSS-アニメーション" class="headerlink" title="CSS アニメーション"></a>CSS アニメーション</h3><p>CSS アニメーションは、CSS トランジションと同じように適用されますが、異なるのは <code>v-enter</code> が要素が挿入された直後に削除されないことです。しかし、<code>animationend</code> イベント時には削除されています。</p>
+<p>これは簡潔にするために CSS ルールの接頭辞を除いた例です。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>Toggle show<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"bounce"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-2'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.bounce-enter-active</span> &#123;
+  <span class="hljs-attribute">animation</span>: bounce-in .<span class="hljs-number">5s</span>;
+&#125;
+<span class="hljs-selector-class">.bounce-leave-active</span> &#123;
+  <span class="hljs-attribute">animation</span>: bounce-in .<span class="hljs-number">5s</span> reverse;
+&#125;
+<span class="hljs-keyword">@keyframes</span> bounce-in &#123;
+  0% &#123;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">0</span>);
+  &#125;
+  50% &#123;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.5</span>);
+  &#125;
+  100% &#123;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
+  &#125;
+&#125;</code></pre>
+
+<div id="example-2" class="demo">
+  <button @click="show = !show">Toggle show</button>
+  <transition name="bounce">
+    <p v-show="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+  </transition>
+</div>
+
+<style>
+  .bounce-enter-active {
+    -webkit-animation: bounce-in .5s;
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    -webkit-animation: bounce-in .5s reverse;
+    animation: bounce-in .5s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @-webkit-keyframes bounce-in {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+</style>
+<script>
+new Vue({
+  el: '#example-2',
+  data: {
+    show: true
+  }
+})
+</script>
+
+<h3 id="カスタムトランジションクラス"><a href="#カスタムトランジションクラス" class="headerlink" title="カスタムトランジションクラス"></a>カスタムトランジションクラス</h3><p>次の属性で、カスタムトランジションクラスを指定できます:</p>
+<ul>
+<li><code>enter-class</code></li>
+<li><code>enter-active-class</code></li>
+<li><code>enter-to-class</code> (2.1.8 以降のみ)</li>
+<li><code>leave-class</code></li>
+<li><code>leave-active-class</code></li>
+<li><code>leave-to-class</code> (2.1.8 以降のみ)</li>
+</ul>
+<p>これらは、クラス名の規約を上書きします。これは、Vue のトランジションシステムと <a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">Animate.css</a> のような既存の CSS アニメーションライブラリを組み合わせたいときに特に便利です。</p>
+<p>これが例になります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/animate.css@3.5.1"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle render
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+    <span class="hljs-attr">name</span>=<span class="hljs-string">"custom-classes-transition"</span>
+    <span class="hljs-attr">enter-active-class</span>=<span class="hljs-string">"animated tada"</span>
+    <span class="hljs-attr">leave-active-class</span>=<span class="hljs-string">"animated bounceOutRight"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-3'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>
+  &#125;
+&#125;)</code></pre>
+
+<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+<div id="example-3" class="demo">
+  <button @click="show = !show">
+    Toggle render
+  </button>
+  <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#example-3',
+  data: {
+    show: true
+  }
+})
+</script>
+
+<h3 id="トランジションとアニメーションを両方使う"><a href="#トランジションとアニメーションを両方使う" class="headerlink" title="トランジションとアニメーションを両方使う"></a>トランジションとアニメーションを両方使う</h3><p>Vue はトランジションが終了したことを把握するためのイベントリスナのアタッチを必要とします。イベントは、適用される CSS ルールに応じて <code>transitionend</code> か <code>animationend</code> のいずれかのタイプになります。あなたがトランジションとアニメーション、どちらか一方だけ使用する場合は、Vue は自動的に正しいタイプを判断することができます。</p>
+<p>しかし、例えば、ホバーの CSS トランジション効果と Vue による CSS アニメーションのトリガの両方を持つ場合など、時には、同じ要素に両方を使うこともあるかもしれません。これらのケースでは、Vue に扱って欲しいタイプを <code>type</code> 属性で明示的に宣言するべきでしょう。この属性の値は、<code>animation</code> あるいは <code>transition</code> を取ります。</p>
+<h3 id="明示的なトランジション期間の設定"><a href="#明示的なトランジション期間の設定" class="headerlink" title="明示的なトランジション期間の設定"></a>明示的なトランジション期間の設定</h3><blockquote>
+<p>2.2.0 から新規</p>
+</blockquote>
+<p>ほとんどの場合、 Vue は、自動的にトランジションが終了したことを見つけ出すことは可能です。デフォルトでは、 Vue はルート要素の初めの <code>transitionend</code> もしくは <code>animationend</code> イベントを待ちます。しかし、これが常に望む形とは限りません。例えば、幾つかの入れ子となっている内部要素にてトランジションの遅延がある場合や、ルートのトランジション要素よりも非常に長いトランジション期間を設けている場合の、一連のトランジションのまとまりなどです。</p>
+<p>このような場合 <code>&lt;transition&gt;</code> コンポーネントがもつ <code>duration</code> プロパティを利用することで、明示的に遷移にかかる時間（ミリ秒単位）を指定することが可能です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">:duration</span>=<span class="hljs-string">"1000"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>また、活性化時と終了時の期間を、個別に指定することも可能です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">:duration</span>=<span class="hljs-string">"&#123; enter: 500, leave: 800 &#125;"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<h3 id="JavaScript-フック"><a href="#JavaScript-フック" class="headerlink" title="JavaScript フック"></a>JavaScript フック</h3><p>属性で JavaScript フックを定義することができます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+  <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+  <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+  <span class="hljs-attr">v-on:after-enter</span>=<span class="hljs-string">"afterEnter"</span>
+  <span class="hljs-attr">v-on:enter-cancelled</span>=<span class="hljs-string">"enterCancelled"</span>
+
+  <span class="hljs-attr">v-on:before-leave</span>=<span class="hljs-string">"beforeLeave"</span>
+  <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+  <span class="hljs-attr">v-on:after-leave</span>=<span class="hljs-string">"afterLeave"</span>
+  <span class="hljs-attr">v-on:leave-cancelled</span>=<span class="hljs-string">"leaveCancelled"</span>
+&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-comment">// --------</span>
+  <span class="hljs-comment">// ENTERING</span>
+  <span class="hljs-comment">// --------</span>
+
+  <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-comment">// CSS と組み合わせて使う時、done コールバックはオプションです</span>
+  <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+    done()
+  &#125;,
+  <span class="hljs-attr">afterEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-attr">enterCancelled</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+
+  <span class="hljs-comment">// --------</span>
+  <span class="hljs-comment">// LEAVING</span>
+  <span class="hljs-comment">// --------</span>
+
+  <span class="hljs-attr">beforeLeave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-comment">// CSS と組み合わせて使う時、done コールバックはオプションです</span>
+  <span class="hljs-attr">leave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+    done()
+  &#125;,
+  <span class="hljs-attr">afterLeave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;,
+  <span class="hljs-comment">// v-show と共に使うときだけ leaveCancelled は有効です</span>
+  <span class="hljs-attr">leaveCancelled</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+    <span class="hljs-comment">// ...</span>
+  &#125;
+&#125;</code></pre>
+<p>これらのフックは、CSS トランジション/アニメーション、または別の何かと組み合わせて使うことができます。</p>
+<p class="tip">JavaScript のみを利用したトランジションの場合は、<strong><code>done</code> コールバックを <code>enter</code> と <code>leave</code> フックで呼ぶ必要があります</strong>。呼ばない場合は、フックは同期的に呼ばれ、トランジションはただちに終了します。</p>
+
+<p class="tip">JavaScript のみのトランジションのために明示的に <code>v-bind:css=&quot;false&quot;</code> を追加するのは良いアイデアです。これは、Vue に CSS 判定をスキップさせます。また、誤って CSS ルールがトランジションに干渉するのを防ぎます。</p>
+
+<p>今から例をみていきましょう。これは Velocity.js を使ったシンプルな JavaScript トランジションの例です:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--
+Velocity は jQuery.animate と非常によく似ています。
+JavaScript アニメーションのための良い選択です。
+--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"example-4"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"show = !show"</span>&gt;</span>
+    Toggle
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+    <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+    <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+    <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+    <span class="hljs-attr">v-bind:css</span>=<span class="hljs-string">"false"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>
+      Demo
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#example-4'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">false</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      el.style.opacity = <span class="hljs-number">0</span>
+      el.style.transformOrigin = <span class="hljs-string">'left'</span>
+    &#125;,
+    <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      Velocity(el, &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">fontSize</span>: <span class="hljs-string">'1.4em'</span> &#125;, &#123; <span class="hljs-attr">duration</span>: <span class="hljs-number">300</span> &#125;)
+      Velocity(el, &#123; <span class="hljs-attr">fontSize</span>: <span class="hljs-string">'1em'</span> &#125;, &#123; <span class="hljs-attr">complete</span>: done &#125;)
+    &#125;,
+    <span class="hljs-attr">leave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      Velocity(el, &#123; <span class="hljs-attr">translateX</span>: <span class="hljs-string">'15px'</span>, <span class="hljs-attr">rotateZ</span>: <span class="hljs-string">'50deg'</span> &#125;, &#123; <span class="hljs-attr">duration</span>: <span class="hljs-number">600</span> &#125;)
+      Velocity(el, &#123; <span class="hljs-attr">rotateZ</span>: <span class="hljs-string">'100deg'</span> &#125;, &#123; <span class="hljs-attr">loop</span>: <span class="hljs-number">2</span> &#125;)
+      Velocity(el, &#123;
+        <span class="hljs-attr">rotateZ</span>: <span class="hljs-string">'45deg'</span>,
+        <span class="hljs-attr">translateY</span>: <span class="hljs-string">'30px'</span>,
+        <span class="hljs-attr">translateX</span>: <span class="hljs-string">'30px'</span>,
+        <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span>
+      &#125;, &#123; <span class="hljs-attr">complete</span>: done &#125;)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<div id="example-4" class="demo">
+  <button @click="show = !show">
+    Toggle
+  </button>
+  <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+    <p v-if="show">
+      Demo
+    </p>
+  </transition>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<script>
+new Vue({
+  el: '#example-4',
+  data: {
+    show: false
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+      el.style.transformOrigin = 'left'
+    },
+    enter: function (el, done) {
+      Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
+      Velocity(el, { fontSize: '1em' }, { complete: done })
+    },
+    leave: function (el, done) {
+      Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 })
+      Velocity(el, { rotateZ: '100deg' }, { loop: 2 })
+      Velocity(el, {
+        rotateZ: '45deg',
+        translateY: '30px',
+        translateX: '30px',
+        opacity: 0
+      }, { complete: done })
+    }
+  }
+})
+</script>
+
+<h2 id="初期描画時のトランジション"><a href="#初期描画時のトランジション" class="headerlink" title="初期描画時のトランジション"></a>初期描画時のトランジション</h2><p>ノードの初期描画時にトランジションを適用したい場合は、<code>appear</code> 属性を追加することができます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">appear</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>デフォルトで、これは entering と leaving のために指定されたトランジションが使用されます。あるいは、カスタム CSS クラスを指定することもできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+  <span class="hljs-attr">appear</span>
+  <span class="hljs-attr">appear-class</span>=<span class="hljs-string">"custom-appear-class"</span>
+  <span class="hljs-attr">appear-to-class</span>=<span class="hljs-string">"custom-appear-to-class"</span> (<span class="hljs-attr">2.1.8</span> 以降から)
+  <span class="hljs-attr">appear-active-class</span>=<span class="hljs-string">"custom-appear-active-class"</span>
+&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>そして、カスタム JavaScript フックも指定できます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+  <span class="hljs-attr">appear</span>
+  <span class="hljs-attr">v-on:before-appear</span>=<span class="hljs-string">"customBeforeAppearHook"</span>
+  <span class="hljs-attr">v-on:appear</span>=<span class="hljs-string">"customAppearHook"</span>
+  <span class="hljs-attr">v-on:after-appear</span>=<span class="hljs-string">"customAfterAppearHook"</span>
+  <span class="hljs-attr">v-on:appear-cancelled</span>=<span class="hljs-string">"customAppearCancelledHook"</span>
+&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>上の例で、<code>appear</code> 属性と <code>v-on:appear</code> フックのどちらも appear トランジションを引き起こします。</p>
+<h2 id="要素間のトランジション"><a href="#要素間のトランジション" class="headerlink" title="要素間のトランジション"></a>要素間のトランジション</h2><p>あとで <a href="#コンポーネント間のトランジション">コンポーネント間のトランジション</a> について説明しますが、<code>v-if</code>/<code>v-else</code> を使った通常の要素同士でもトランジションできます。最も共通の2つの要素のトランジションの例として、リストコンテナとリストが空と説明するメッセージの間で行うものがあります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"items.length &gt; 0"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-else</span>&gt;</span>Sorry, no items found.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>これは動きますが、注意すべき点がひとつあります:</p>
+<p class="tip"><strong>同じタグ名</strong>を持つ要素同士でトグルするとき、それらに <code>key</code> 属性を指定することで、個別の要素であることを Vue に伝えなければいけません。そうしないと、 Vue のコンパイラは効率化のために要素の内容だけを置き換えようとします。技術的には不要な場合でも、<strong>常に <code>&lt;transition&gt;</code> コンポーネント内の複数のアイテムを区別しようとすることは、よい習慣です</strong></p>
+
+<p>例:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"isEditing"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"save"</span>&gt;</span>
+    Save
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-else</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"edit"</span>&gt;</span>
+    Edit
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>このケースでは、他にも <code>key</code> 属性を同一要素の異なる状態のトランジションのために使うこともできます。<code>v-if</code> と <code>v-else</code> を使う代わりに、以下のように書きかえることができます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"isEditing"</span>&gt;</span>
+    &#123;&#123; isEditing ? 'Save' : 'Edit' &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p><code>v-if</code> を複数使ったり、ひとつの要素に対して動的プロパティでバインディングを行ういずれの場合でも、複数個の要素を対象にトランジションすることが可能です。例:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"docState === 'saved'"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"saved"</span>&gt;</span>
+    Edit
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"docState === 'edited'"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"edited"</span>&gt;</span>
+    Save
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"docState === 'editing'"</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"editing"</span>&gt;</span>
+    Cancel
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>このようにも書き換えることもできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"docState"</span>&gt;</span>
+    &#123;&#123; buttonMessage &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-comment">// ...</span>
+<span class="hljs-attr">computed</span>: &#123;
+  <span class="hljs-attr">buttonMessage</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.docState) &#123;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'saved'</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Edit'</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'edited'</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Save'</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'editing'</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">'Cancel'</span>
+    &#125;
+  &#125;
+&#125;</code></pre>
+<h3 id="トランジションモード"><a href="#トランジションモード" class="headerlink" title="トランジションモード"></a>トランジションモード</h3><p>まだひとつ問題が残っています。以下のボタンをクリックしてください:</p>
+
+<div id="no-mode-demo" class="demo">
+  <transition name="no-mode-fade">
+    <button v-if="on" key="on" @click="on = false">
+      on
+    </button>
+    <button v-else="" key="off" @click="on = true">
+      off
+    </button>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#no-mode-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.no-mode-fade-enter-active, .no-mode-fade-leave-active {
+  transition: opacity .5s
+}
+.no-mode-fade-enter, .no-mode-fade-leave-active {
+  opacity: 0
+}
+</style>
+
+<p>それは、”on” ボタンと “off” ボタン間でトランジションを行うとき、片方のボタンがトランジションアウトして、別の片方がトランジションインするとき、両方のボタンが描画されてしまうことです。これは、<code>&lt;transition&gt;</code> のデフォルトの振る舞いです - entering と leaving は同時に起きます。</p>
+<p>時には、これで問題なく、うまく動作する場合があります。例えば、位置が絶対位置で指定されているアイテムのトランジションを行うような場合です:</p>
+
+<div id="no-mode-absolute-demo" class="demo">
+  <div class="no-mode-absolute-demo-wrapper">
+    <transition name="no-mode-absolute-fade">
+      <button v-if="on" key="on" @click="on = false">
+        on
+      </button>
+      <button v-else="" key="off" @click="on = true">
+        off
+      </button>
+    </transition>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#no-mode-absolute-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.no-mode-absolute-demo-wrapper {
+  position: relative;
+  height: 18px;
+}
+.no-mode-absolute-demo-wrapper button {
+  position: absolute;
+}
+.no-mode-absolute-fade-enter-active, .no-mode-absolute-fade-leave-active {
+  transition: opacity .5s;
+}
+.no-mode-absolute-fade-enter, .no-mode-absolute-fade-leave-active {
+  opacity: 0;
+}
+</style>
+
+<p>また、スライドのようなトランジションを行う場合も同様です:</p>
+
+<div id="no-mode-translate-demo" class="demo">
+  <div class="no-mode-translate-demo-wrapper">
+    <transition name="no-mode-translate-fade">
+      <button v-if="on" key="on" @click="on = false">
+        on
+      </button>
+      <button v-else="" key="off" @click="on = true">
+        off
+      </button>
+    </transition>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#no-mode-translate-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.no-mode-translate-demo-wrapper {
+  position: relative;
+  height: 18px;
+}
+.no-mode-translate-demo-wrapper button {
+  position: absolute;
+}
+.no-mode-translate-fade-enter-active, .no-mode-translate-fade-leave-active {
+  transition: all 1s;
+}
+.no-mode-translate-fade-enter, .no-mode-translate-fade-leave-active {
+  opacity: 0;
+}
+.no-mode-translate-fade-enter {
+  transform: translateX(31px);
+}
+.no-mode-translate-fade-leave-active {
+  transform: translateX(-31px);
+}
+</style>
+
+<p>ただ、同時に entering と leaving が行われることは必ずしも望ましくないこともあります。このために Vue は代替となる <strong>トランジションモード </strong> を提供しています:</p>
+<ul>
+<li><p><code>in-out</code>: 最初に新しい要素がトランジションして、それが完了したら、現在の要素がトランジションアウトする。</p>
+</li>
+<li><p><code>out-in</code>: 最初に現在の要素がトランジションアウトして、それが完了したら、新しい要素がトランジションインする。</p>
+</li>
+</ul>
+<p>今から、<code>out-in</code> を使って、先程の on/off ボタンのトランジションを書き換えてみましょう:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">"out-in"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... the buttons ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+
+<div id="with-mode-demo" class="demo">
+  <transition name="with-mode-fade" mode="out-in">
+    <button v-if="on" key="on" @click="on = false">
+      on
+    </button>
+    <button v-else="" key="off" @click="on = true">
+      off
+    </button>
+  </transition>
+</div>
+<script>
+new Vue({
+  el: '#with-mode-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.with-mode-fade-enter-active, .with-mode-fade-leave-active {
+  transition: opacity .5s
+}
+.with-mode-fade-enter, .with-mode-fade-leave-active {
+  opacity: 0
+}
+</style>
+
+<p>特別なスタイルの追加無しで、ひとつのシンプルな属性を追加するだけでオリジナルのトランジションを修正できました。</p>
+<p><code>in-out</code> モードは使用されることは多くありませんが、微妙に異なるトランジション効果を実現するために有用です。前の例のスライドフェードトランジションと組み合わせてみましょう:</p>
+
+<div id="in-out-translate-demo" class="demo">
+  <div class="in-out-translate-demo-wrapper">
+    <transition name="in-out-translate-fade" mode="in-out">
+      <button v-if="on" key="on" @click="on = false">
+        on
+      </button>
+      <button v-else="" key="off" @click="on = true">
+        off
+      </button>
+    </transition>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#in-out-translate-demo',
+  data: {
+    on: false
+  }
+})
+</script>
+<style>
+.in-out-translate-demo-wrapper {
+  position: relative;
+  height: 18px;
+}
+.in-out-translate-demo-wrapper button {
+  position: absolute;
+}
+.in-out-translate-fade-enter-active, .in-out-translate-fade-leave-active {
+  transition: all .5s;
+}
+.in-out-translate-fade-enter, .in-out-translate-fade-leave-active {
+  opacity: 0;
+}
+.in-out-translate-fade-enter {
+  transform: translateX(31px);
+}
+.in-out-translate-fade-leave-active {
+  transform: translateX(-31px);
+}
+</style>
+
+<p>かなり良いと思いませんか？</p>
+<h2 id="コンポーネント間のトランジション"><a href="#コンポーネント間のトランジション" class="headerlink" title="コンポーネント間のトランジション"></a>コンポーネント間のトランジション</h2><p>コンポーネント間のトランジションは、 <code>key</code> 属性が必要ではないのでさらに単純です。代わりに、ただ <a href="components.html#動的コンポーネント">動的コンポーネント</a> でラップするだけです:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"component-fade"</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">"out-in"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">v-bind:is</span>=<span class="hljs-string">"view"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#transition-components-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">view</span>: <span class="hljs-string">'v-a'</span>
+  &#125;,
+  <span class="hljs-attr">components</span>: &#123;
+    <span class="hljs-string">'v-a'</span>: &#123;
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;Component A&lt;/div&gt;'</span>
+    &#125;,
+    <span class="hljs-string">'v-b'</span>: &#123;
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;Component B&lt;/div&gt;'</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.component-fade-enter-active</span>, <span class="hljs-selector-class">.component-fade-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: opacity .<span class="hljs-number">3s</span> ease;
+&#125;
+<span class="hljs-selector-class">.component-fade-enter</span>, <span class="hljs-selector-class">.component-fade-leave-to</span>
+<span class="hljs-comment">/* .component-fade-leave-active for below version 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<div id="transition-components-demo" class="demo">
+  <input v-model="view" type="radio" value="v-a" id="a" name="view"><label for="a">A</label>
+  <input v-model="view" type="radio" value="v-b" id="b" name="view"><label for="b">B</label>
+  <transition name="component-fade" mode="out-in">
+    <component v-bind:is="view"></component>
+  </transition>
+</div>
+<style>
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to {
+  opacity: 0;
+}
+</style>
+<script>
+new Vue({
+  el: '#transition-components-demo',
+  data: {
+    view: 'v-a'
+  },
+  components: {
+    'v-a': {
+      template: '<div>Component A</div>'
+    },
+    'v-b': {
+      template: '<div>Component B</div>'
+    }
+  }
+})
+</script>
+
+<h2 id="リストトランジション"><a href="#リストトランジション" class="headerlink" title="リストトランジション"></a>リストトランジション</h2><p>ここまでで、次のトランジションを扱えるようになりました:</p>
+<ul>
+<li>独立したノード</li>
+<li>一度に 1 つのみ描画される複数ノード</li>
+</ul>
+<p>それでは、例えば、<code>v-for</code> のように同時に描画したいリストのアイテムがある場合はどうすればよいでしょう？この場合は、<code>&lt;transition-group&gt;</code> コンポーネントを使うことができます。例を詳しく見ていく前に、このコンポーネントについて知っておくべき幾つかの重要なことをあげておきましょう。</p>
+<ul>
+<li><code>&lt;transition&gt;</code> と異なり、実際に要素を描画する: <code>&lt;span&gt;</code> がデフォルトです。この要素は、<code>tag</code> 属性で変えることができます。</li>
+<li><a href="#トランジションモード">トランジションモード</a> は利用できません。もはや相互に排他的な要素を交互に利用する事が無いためです。</li>
+<li>中の要素は、<code>key</code> 属性を持つことが <strong>必須</strong> です。</li>
+<li>CSS トランジションクラスは、グループ/コンテナ要素自身ではなく、中の要素に適用されます。</li>
+</ul>
+<h3 id="リスト-Entering-Leaving-トランジション"><a href="#リスト-Entering-Leaving-トランジション" class="headerlink" title="リスト Entering/Leaving トランジション"></a>リスト Entering/Leaving トランジション</h3><p>では、シンプルな例をみていきましょう。これまでに使っていたものと同じ CSS クラスを entering と leaving のトランジションで使います:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"add"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"remove"</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"list"</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"p"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list-item"</span>&gt;</span>
+      &#123;&#123; item &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#list-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>],
+    <span class="hljs-attr">nextNum</span>: <span class="hljs-number">10</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">randomIndex</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-keyword">this</span>.items.length)
+    &#125;,
+    <span class="hljs-attr">add</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.nextNum++)
+    &#125;,
+    <span class="hljs-attr">remove</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">1</span>)
+    &#125;,
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.list-item</span> &#123;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+&#125;
+<span class="hljs-selector-class">.list-enter-active</span>, <span class="hljs-selector-class">.list-leave-active</span> &#123;
+  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">1s</span>;
+&#125;
+<span class="hljs-selector-class">.list-enter</span>, <span class="hljs-selector-class">.list-leave-to</span> <span class="hljs-comment">/* .list-leave-active for below version 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">30px</span>);
+&#125;</code></pre>
+
+<div id="list-demo" class="demo">
+  <button v-on:click="add">Add</button>
+  <button v-on:click="remove">Remove</button>
+  <transition-group name="list" tag="p">
+    <span v-for="item in items" :key="item" class="list-item">
+      {{ item }}
+    </span>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#list-demo',
+  data: {
+    items: [1,2,3,4,5,6,7,8,9],
+    nextNum: 10
+  },
+  methods: {
+    randomIndex: function () {
+      return Math.floor(Math.random() * this.items.length)
+    },
+    add: function () {
+      this.items.splice(this.randomIndex(), 0, this.nextNum++)
+    },
+    remove: function () {
+      this.items.splice(this.randomIndex(), 1)
+    },
+  }
+})
+</script>
+<style>
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
+
+<p>この例にはひとつ問題があります。アイテムを追加、削除するとき、周りのアイテムはスムーズにトランジションするのではなく、新しい位置にカチッと収まってしまうことです。それは後ほど修正します。</p>
+<h3 id="リスト移動トランジション"><a href="#リスト移動トランジション" class="headerlink" title="リスト移動トランジション"></a>リスト移動トランジション</h3><p><code>&lt;transition-group&gt;</code> コンポーネントは、別の秘策を持っています。 entering と leaving のアニメーションだけでなく、位置の変化も同様にアニメーションできます。この新しい機能を使うために知らないといけない新しいコンセプトは、アイテムの位置が変わる時に追加される<strong><code>v-move</code> クラス</strong>だけです。他のクラスと同様に、接頭辞は <code>name</code> 属性値と一致しますし、<code>move-class</code> 属性でクラスを指定することもできます。</p>
+<p>以下で分かるように、このクラスは主にトランジションのタイミングやイージングカーブを指定するのに便利です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flip-list-demo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"shuffle"</span>&gt;</span>Shuffle<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"flip-list"</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"ul"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span> <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item"</span>&gt;</span>
+      &#123;&#123; item &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#flip-list-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">shuffle</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items = _.shuffle(<span class="hljs-keyword">this</span>.items)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.flip-list-move</span> &#123;
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">1s</span>;
+&#125;</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+<div id="flip-list-demo" class="demo">
+  <button v-on:click="shuffle">Shuffle</button>
+  <transition-group name="flip-list" tag="ul">
+    <li v-for="item in items" :key="item">
+      {{ item }}
+    </li>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#flip-list-demo',
+  data: {
+    items: [1,2,3,4,5,6,7,8,9]
+  },
+  methods: {
+    shuffle: function () {
+      this.items = _.shuffle(this.items)
+    }
+  }
+})
+</script>
+<style>
+.flip-list-move {
+  transition: transform 1s;
+}
+</style>
+
+<p>これは魔法のように見えるかもしれませんが、内部で Vue は transforms を使って、前の位置から新しい位置へ要素を滑らかにトランジションさせるために <a href="https://aerotwist.com/blog/flip-your-animations/" target="_blank" rel="noopener">FLIP</a> と呼ばれる単純なアニメーションテクニックを使っています。</p>
+<p>これまでの実装とこのテクニックを組み合わせることで、リストに対する全ての変更をアニメーションさせることができます！</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"list-complete-demo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"shuffle"</span>&gt;</span>Shuffle<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"add"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"remove"</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"list-complete"</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">"p"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"item in items"</span>
+      <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item"</span>
+      <span class="hljs-attr">class</span>=<span class="hljs-string">"list-complete-item"</span>
+    &gt;</span>
+      &#123;&#123; item &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#list-complete-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">items</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>],
+    <span class="hljs-attr">nextNum</span>: <span class="hljs-number">10</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">randomIndex</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-keyword">this</span>.items.length)
+    &#125;,
+    <span class="hljs-attr">add</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.nextNum++)
+    &#125;,
+    <span class="hljs-attr">remove</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items.splice(<span class="hljs-keyword">this</span>.randomIndex(), <span class="hljs-number">1</span>)
+    &#125;,
+    <span class="hljs-attr">shuffle</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">this</span>.items = _.shuffle(<span class="hljs-keyword">this</span>.items)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.list-complete-item</span> &#123;
+  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">1s</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;
+&#125;
+<span class="hljs-selector-class">.list-complete-enter</span>, <span class="hljs-selector-class">.list-complete-leave-to</span>
+<span class="hljs-comment">/* .list-complete-leave-active for below version 2.1.8 */</span> &#123;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">30px</span>);
+&#125;
+<span class="hljs-selector-class">.list-complete-leave-active</span> &#123;
+  <span class="hljs-attribute">position</span>: absolute;
+&#125;</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+<div id="list-complete-demo" class="demo">
+  <button v-on:click="shuffle">Shuffle</button>
+  <button v-on:click="add">Add</button>
+  <button v-on:click="remove">Remove</button>
+  <transition-group name="list-complete" tag="p">
+    <span v-for="item in items" :key="item" class="list-complete-item">
+      {{ item }}
+    </span>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#list-complete-demo',
+  data: {
+    items: [1,2,3,4,5,6,7,8,9],
+    nextNum: 10
+  },
+  methods: {
+    randomIndex: function () {
+      return Math.floor(Math.random() * this.items.length)
+    },
+    add: function () {
+      this.items.splice(this.randomIndex(), 0, this.nextNum++)
+    },
+    remove: function () {
+      this.items.splice(this.randomIndex(), 1)
+    },
+    shuffle: function () {
+      this.items = _.shuffle(this.items)
+    }
+  }
+})
+</script>
+<style>
+.list-complete-item {
+  transition: all 1s;
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-complete-enter, .list-complete-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-complete-leave-active {
+  position: absolute;
+}
+</style>
+
+<p class="tip">一点、FLIP トランジションは <code>display: inline</code> が指定されていると動かないことに注意しましょう。 代わりに <code>display: inline-block</code> を使うか、flex コンテキストに要素を置き換えることで動かすことができます。</p>
+
+<p>FLIP アニメーションは、単一の軸だけに限定されるものではありません。多次元のグリッドにあるアイテムも <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-list-move-transitions" target="_blank" rel="noopener">同じように簡単に</a> トランジションできます:</p>
+
+<div id="sudoku-demo" class="demo">
+  <strong>Lazy Sudoku</strong>
+  <p>Keep hitting the shuffle button until you win.</p>
+  <button @click="shuffle">
+    Shuffle
+  </button>
+  <transition-group name="cell" tag="div" class="sudoku-container">
+    <div v-for="cell in cells" :key="cell.id" class="cell">
+      {{ cell.number }}
+    </div>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#sudoku-demo',
+  data: {
+    cells: Array.apply(null, { length: 81 })
+      .map(function (_, index) {
+        return {
+          id: index,
+          number: index % 9 + 1
+        }
+      })
+  },
+  methods: {
+    shuffle: function () {
+      this.cells = _.shuffle(this.cells)
+    }
+  }
+})
+</script>
+<style>
+.sudoku-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 238px;
+  margin-top: 10px;
+}
+.cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #aaa;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+.cell:nth-child(3n) {
+  margin-right: 0;
+}
+.cell:nth-child(27n) {
+  margin-bottom: 0;
+}
+.cell-move {
+  transition: transform 1s;
+}
+</style>
+
+<h3 id="スタッガリングリストトランジション"><a href="#スタッガリングリストトランジション" class="headerlink" title="スタッガリングリストトランジション"></a>スタッガリングリストトランジション</h3><p>data 属性を介して、JavaScript トランジションとやりとりを行うことで、リスト内の遷移をずらすことが可能です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"staggered-list-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"query"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-group</span>
+    <span class="hljs-attr">name</span>=<span class="hljs-string">"staggered-fade"</span>
+    <span class="hljs-attr">tag</span>=<span class="hljs-string">"ul"</span>
+    <span class="hljs-attr">v-bind:css</span>=<span class="hljs-string">"false"</span>
+    <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+    <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+    <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(item, index) in computedList"</span>
+      <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"item.msg"</span>
+      <span class="hljs-attr">v-bind:data-index</span>=<span class="hljs-string">"index"</span>
+    &gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#staggered-list-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">query</span>: <span class="hljs-string">''</span>,
+    <span class="hljs-attr">list</span>: [
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Bruce Lee'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Jackie Chan'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Chuck Norris'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Jet Li'</span> &#125;,
+      &#123; <span class="hljs-attr">msg</span>: <span class="hljs-string">'Kung Fury'</span> &#125;
+    ]
+  &#125;,
+  <span class="hljs-attr">computed</span>: &#123;
+    <span class="hljs-attr">computedList</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.list.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>&#123;
+        <span class="hljs-keyword">return</span> item.msg.toLowerCase().indexOf(vm.query.toLowerCase()) !== <span class="hljs-number">-1</span>
+      &#125;)
+    &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      el.style.opacity = <span class="hljs-number">0</span>
+      el.style.height = <span class="hljs-number">0</span>
+    &#125;,
+    <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> delay = el.dataset.index * <span class="hljs-number">150</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        Velocity(
+          el,
+          &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">height</span>: <span class="hljs-string">'1.6em'</span> &#125;,
+          &#123; <span class="hljs-attr">complete</span>: done &#125;
+        )
+      &#125;, delay)
+    &#125;,
+    <span class="hljs-attr">leave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> delay = el.dataset.index * <span class="hljs-number">150</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        Velocity(
+          el,
+          &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">0</span> &#125;,
+          &#123; <span class="hljs-attr">complete</span>: done &#125;
+        )
+      &#125;, delay)
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<div id="example-5" class="demo">
+  <input v-model="query">
+  <transition-group name="staggered-fade" tag="ul" v-bind:css="false" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+    <li v-for="(item, index) in computedList" v-bind:key="item.msg" v-bind:data-index="index">{{ item.msg }}</li>
+  </transition-group>
+</div>
+<script>
+new Vue({
+  el: '#example-5',
+  data: {
+    query: '',
+    list: [
+      { msg: 'Bruce Lee' },
+      { msg: 'Jackie Chan' },
+      { msg: 'Chuck Norris' },
+      { msg: 'Jet Li' },
+      { msg: 'Kung Fury' }
+    ]
+  },
+  computed: {
+    computedList: function () {
+      var vm = this
+      return this.list.filter(function (item) {
+        return item.msg.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1
+      })
+    }
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+      el.style.height = 0
+    },
+    enter: function (el, done) {
+      var delay = el.dataset.index * 150
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 1, height: '1.6em' },
+          { complete: done }
+        )
+      }, delay)
+    },
+    leave: function (el, done) {
+      var delay = el.dataset.index * 150
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 0, height: 0 },
+          { complete: done }
+        )
+      }, delay)
+    }
+  }
+})
+</script>
+
+<h2 id="トランジションの再利用"><a href="#トランジションの再利用" class="headerlink" title="トランジションの再利用"></a>トランジションの再利用</h2><p>Vue のコンポーネントシステムを通して、トランジションを再利用することができます。再利用できるトランジションを生成するには、ルートに <code>&lt;transition&gt;</code> や <code>&lt;transition-group&gt;</code> を配置しなければいけません。そして、トランジションコンポーネントに子を渡します。</p>
+<p>ここにテンプレートを使ったコンポーネントの例があります:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'my-special-transition'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'\
+    &lt;transition\
+      name="very-special-transition"\
+      mode="out-in"\
+      v-on:before-enter="beforeEnter"\
+      v-on:after-enter="afterEnter"\
+    &gt;\
+      &lt;slot&gt;&lt;/slot&gt;\
+    &lt;/transition&gt;\
+  '</span>,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;,
+    <span class="hljs-attr">afterEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      <span class="hljs-comment">// ...</span>
+    &#125;
+  &#125;
+&#125;)</code></pre>
+<p>そして、<a href="render-function.html#関数型コンポーネント">関数型コンポーネント</a>は、このタスクにとてもよく適しています:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'my-special-transition'</span>, &#123;
+  <span class="hljs-attr">functional</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">createElement, context</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> data = &#123;
+      <span class="hljs-attr">props</span>: &#123;
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'very-special-transition'</span>,
+        <span class="hljs-attr">mode</span>: <span class="hljs-string">'out-in'</span>
+      &#125;,
+      <span class="hljs-attr">on</span>: &#123;
+        <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+          <span class="hljs-comment">// ...</span>
+        &#125;,
+        <span class="hljs-attr">afterEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+          <span class="hljs-comment">// ...</span>
+        &#125;
+      &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> createElement(<span class="hljs-string">'transition'</span>, data, context.children)
+  &#125;
+&#125;)</code></pre>
+<h2 id="動的トランジション"><a href="#動的トランジション" class="headerlink" title="動的トランジション"></a>動的トランジション</h2><p>はい、Vue ではトランジションさえも、データドリブンです！動的トランジションの最も基本的な例は、<code>name</code> 属性を動的プロパティとして束縛することでしょう。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">v-bind:name</span>=<span class="hljs-string">"transitionName"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+<p>これは、Vue のトランジションクラス規約を使って CSS トランジション/アニメーションを定義したとき、それらをシンプルに切り替える場合に便利でしょう。</p>
+<p>任意のトランジション属性を動的に束縛できますが、それは属性だけに限りません。イベントフックはメソッドなので、コンテキストのいかなるデータにもアクセスできます。これは、コンポーネントの状態に応じて、JavaScript トランジションが異なる振る舞いをすることを意味します。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dynamic-fade-demo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span>
+  Fade In: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"fadeInDuration"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">v-bind:max</span>=<span class="hljs-string">"maxFadeDuration"</span>&gt;</span>
+  Fade Out: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"fadeOutDuration"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">v-bind:max</span>=<span class="hljs-string">"maxFadeDuration"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+    <span class="hljs-attr">v-bind:css</span>=<span class="hljs-string">"false"</span>
+    <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+    <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+    <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+  &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"show"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">v-if</span>=<span class="hljs-string">"stop"</span>
+    <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"stop = false; show = false"</span>
+  &gt;</span>Start animating<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">v-else</span>
+    <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">"stop = true"</span>
+  &gt;</span>Stop it!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">el</span>: <span class="hljs-string">'#dynamic-fade-demo'</span>,
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">show</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">fadeInDuration</span>: <span class="hljs-number">1000</span>,
+    <span class="hljs-attr">fadeOutDuration</span>: <span class="hljs-number">1000</span>,
+    <span class="hljs-attr">maxFadeDuration</span>: <span class="hljs-number">1500</span>,
+    <span class="hljs-attr">stop</span>: <span class="hljs-literal">true</span>
+  &#125;,
+  <span class="hljs-attr">mounted</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.show = <span class="hljs-literal">false</span>
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>&#123;
+      el.style.opacity = <span class="hljs-number">0</span>
+    &#125;,
+    <span class="hljs-attr">enter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+      Velocity(el,
+        &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">1</span> &#125;,
+        &#123;
+          <span class="hljs-attr">duration</span>: <span class="hljs-keyword">this</span>.fadeInDuration,
+          <span class="hljs-attr">complete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            done()
+            <span class="hljs-keyword">if</span> (!vm.stop) vm.show = <span class="hljs-literal">false</span>
+          &#125;
+        &#125;
+      )
+    &#125;,
+    <span class="hljs-attr">leave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el, done</span>) </span>&#123;
+      <span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">this</span>
+      Velocity(el,
+        &#123; <span class="hljs-attr">opacity</span>: <span class="hljs-number">0</span> &#125;,
+        &#123;
+          <span class="hljs-attr">duration</span>: <span class="hljs-keyword">this</span>.fadeOutDuration,
+          <span class="hljs-attr">complete</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            done()
+            vm.show = <span class="hljs-literal">true</span>
+          &#125;
+        &#125;
+      )
+    &#125;
+  &#125;
+&#125;)</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<div id="dynamic-fade-demo" class="demo">
+  Fade In: <input type="range" v-model="fadeInDuration" min="0" v-bind:max="maxFadeDuration">
+  Fade Out: <input type="range" v-model="fadeOutDuration" min="0" v-bind:max="maxFadeDuration">
+  <transition v-bind:css="false" v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave">
+    <p v-if="show">hello</p>
+  </transition>
+  <button v-if="stop" v-on:click="stop = false; show = false">Start animating</button>
+  <button v-else="" v-on:click="stop = true">Stop it!</button>
+</div>
+<script>
+new Vue({
+  el: '#dynamic-fade-demo',
+  data: {
+    show: true,
+    fadeInDuration: 1000,
+    fadeOutDuration: 1000,
+    maxFadeDuration: 1500,
+    stop: true
+  },
+  mounted: function () {
+    this.show = false
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+    },
+    enter: function (el, done) {
+      var vm = this
+      Velocity(el,
+        { opacity: 1 },
+        {
+          duration: this.fadeInDuration,
+          complete: function () {
+            done()
+            if (!vm.stop) vm.show = false
+          }
+        }
+      )
+    },
+    leave: function (el, done) {
+      var vm = this
+      Velocity(el,
+        { opacity: 0 },
+        {
+          duration: this.fadeOutDuration,
+          complete: function () {
+            done()
+            vm.show = true
+          }
+        }
+      )
+    }
+  }
+})
+</script>
+
+<p>動的なトランジションを作成する究極の方法は、プロパティでトランジションの性質を変えながら試行錯誤することです。小さく聞こえるかもしれませんが、本当の限界はあなたの想像力だけなのです。</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components-edge-cases.html">特別な問題に対処する</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/transitioning-state.html">状態のトランジション</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    間違いを見つけた、またはドキュメントに貢献したいですか？
+    <a href="https://github.com/vuejs/jp.vuejs.org/blob/lang-ja/src/v2/guide/transitions.md" rel="noopener" target="_blank">
+      GitHub で編集しましょう！
+    </a>
+    このサイトは
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>
+    でホストされています。
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '0a75952972806d9ad07e387d08e9cc4c',
+      indexName: 'vuejs_jp',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

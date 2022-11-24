@@ -1,0 +1,1197 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Comparação com Outros Frameworks — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/comparison.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/comparison.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Comparação com Outros Frameworks — Vue.js">
+    <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta property="og:image" content="https://br.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Comparação com Outros Frameworks — Vue.js">
+    <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
+    <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'br.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">Você está navegando a documentação da v2.x e anterior.</span>
+    <a href="https://vuejsbr-docs-next.netlify.app/">Clique aqui</a> para a documentação da v3.x.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Pesquisa">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Aprenda</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentação</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guia</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Guia de Estilos</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Exemplos</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Livro de Receitas</a></li>
+      </ul>
+    </li>
+    <li><h4>Cursos em Vídeo</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecossistema</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Ajuda</h4></li>
+    <li><ul>
+      <li class="inline"><a href="https://github.com/vuejs-br/forum" class="nav-link" target="_blank" rel="noopener">Fórum</a>
+      <a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat (Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/comunidades" class="nav-link" target="_blank" rel="noopener">Comunidades</a>
+			<a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+    <li><h4>Ferramentas</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Bibliotecas Oficiais</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Atualize-se</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Notícias Semanais</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Eventos</a></li>
+			<li class="inline"><a href="https://twitter.com/vuejs_brasil" class="nav-link" target="_blank" rel="noopener">Twitter</a>
+			<a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="http://vuejs-brasil.com.br/" class="nav-link" target="_blank" rel="noopener">Blog</a>
+			<a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+			<li class="inline"><a href="https://github.com/vuejs-br/vagas" class="nav-link" target="_blank" rel="noopener">Empregos</a>
+			<a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">(Internacional)</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Equipe</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Recursos</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Parceiros</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Temas</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Lista Geral "Awesome Vue"</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Bibliotecas Recomendadas</a></li>
+    <li><a href="https://empresas-usando-vuejs.netlify.com/" class="nav-link" target="_blank" rel="noopener">Empresas usando Vue no Brasil</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Patrocine</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#Doacoes-Unicas" class="nav-link">Doações Únicas</a></li>
+    <li><a href="/support-vuejs/#Ajuda-Recorrente" class="nav-link">Ajuda Recorrente</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Loja de Camisetas</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Traduções</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/comparison.html" class="nav-link">Chinês</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/comparison.html" class="nav-link">Coreano</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/comparison.html" class="nav-link">Francês</a></li>
+    <li><a href="https://vuejs.org/v2/guide/comparison.html" class="nav-link">Inglês</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/comparison.html" class="nav-link">Japonês</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/comparison.html" class="nav-link">Português</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/comparison.html" class="nav-link">Russo</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/comparison.html" class="nav-link">Vietnamita</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/comparison.html" class="nav-link">Espanhol</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/comparison.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guia
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essenciais</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalação</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introdução</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">A Instância Vue</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaxe de Templates</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Dados Computados e Observadores</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Interligações de Classe e Estilo</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Renderização Condicional</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Renderização de Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Manipulação de Eventos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Interligações em Formulários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Básico sobre Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Componentes em Detalhes</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registro de Componentes</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Propriedades</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Eventos Personalizados</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dinâmicos & Assíncronos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">Lidando com Casos Extremos</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transições & Animações</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transições de Visibilidade e Listas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reuso & Composição</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Diretivas Personalizadas</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Funções de Renderização & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filtros</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Ferramentas</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Componentes Single-File</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Publicando em Produção</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Escalonando</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Gerenciamento de Estado</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Segurança</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internamente</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migração</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migração do Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migração do Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migração do Vuex 0.6.x para 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Diversos</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link current">Comparação com Outros Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Junte-se à Comunidade Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Conheça a Equipe</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Patrocinadores Platina</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.daskeyboard.com/?utm_source=vuejs&utm_medium=sponsorship" target="_blank" rel="sponsored noopener" class="logo" style="margin-top: 15px">
+      <img src="/images/daskeyboard.png" alt="Das Keyboard">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Seja um Patrocinador
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar comparison-guide">
+  <p class="tip warning v3-warning">
+    Você está navegando a documentação da v2.x e anterior.
+    Para a v3.x, <a href="https://vuejsbr-docs-next.netlify.app/">clique aqui</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Comparação com Outros Frameworks</h1>
+  
+  
+    <p>Esta é definitivamente a página mais difícil de ser escrita do guia, mas sentimos que é importante. É muito provável que você já teve problemas, tentou resolvê-los e já usou outra biblioteca para resolvê-los. Você está aqui pois quer saber se Vue pode resolver seus problemas específicos de uma forma melhor. É isto que esperamos lhe responder.</p>
+<p>Nós também tentamos arduamente evitar arbitrariedade. Como a equipe responsável, obviamente gostamos muito do Vue. Há problemas que acreditamos que ele resolva melhor do que qualquer outra opção existente. Se não acreditássemos nisso, não estaríamos trabalhando nele. Entretanto, queremos ser justos e precisos. Nos esforçamos para listar também onde outras bibliotecas oferecem vantagens significativas, como o vasto ecossistema React de renderizadores alternativos ou o suporte retroativo do Knockout até IE6.</p>
+<p>Nós também gostaríamos de <strong>sua</strong> ajuda para manter este documento atualizado, afinal o mundo JavaScript se move rápido! Se você perceber alguma inconsistência ou algo que não parece estar certo, por favor, nos mantenha a par <a href="https://github.com/vuejs/vuejs.org/issues/new?title=Inaccuracy+in+comparisons+guide" target="_blank" rel="noopener">informando um problema</a>.</p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>React e Vue compartilham muitas similaridades. Ambos:</p>
+<ul>
+<li>utilizam a abordagem de DOM virtual</li>
+<li>provêm componentes visuais reativos e combináveis</li>
+<li>mantêm o foco na biblioteca principal, com preocupações como roteamento e gerenciamento de estado global tratadas por bibliotecas companheiras</li>
+</ul>
+<p>Sendo tão similares em escopo, desprendemos mais tempo para refinar esta comparação em relação às outras. Queremos garantir não somente precisão técnica, mas também equilíbrio. Apontamos onde React supera Vue, por exemplo, na riqueza de seu ecossistema e na abundância de renderizadores personalizados.</p>
+<p>Com isso dito, é inevitável que a comparação pareça tendenciosa ao Vue para alguns usuários do React, pois muitos dos assuntos explorados são de certo modo subjetivos. Reconhecemos a existência de variadas preferências técnicas, e esta comparação tem como objetivo principal delinear as razões pelas quais Vue poderia ser uma escolha melhor se suas preferências coincidirem com as nossas.</p>
+<p>Alguma das seções abaixo podem estar levemente desatualizadas por causa de recentes atualizações no React 16+, então estamos planejando trabalhar com a comunidade React para renovar esta seção em um futuro próximo.</p>
+<h3 id="Desempenho-em-Execucao"><a href="#Desempenho-em-Execucao" class="headerlink" title="Desempenho em Execução"></a>Desempenho em Execução</h3><p>Tanto React quanto Vue são excepcionalmente e similarmente rápidos, então desempenho não deve ser um fator decisivo para uma escolha entre eles. Para métricas específicas, pode dar uma olhada neste <a href="https://stefankrause.net/js-frameworks-benchmark8/table.html" target="_blank" rel="noopener">comparativo independente</a>, que foca no desempenho bruto de renderização/atualização com árvores de componentes bem simples.</p>
+<h4 id="Esforcos-de-Otimizacao"><a href="#Esforcos-de-Otimizacao" class="headerlink" title="Esforços de Otimização"></a>Esforços de Otimização</h4><p>No React, quando o estado de um componente muda, ele aciona também a renderização de toda a árvore de componentes filhos. Para evitar renderizações desnecessárias de componentes filhos, você precisa utilizar um <code>PureComponent</code> ou implementar <code>shouldComponentUpdate</code> sempre que puder. Você também pode precisar utilizar estruturas de dados imutáveis para tornar suas mudanças de estado mais amigáveis a otimizações. Entretanto, em certos casos pode não ser possível se apoiar nestas otimizações, pois <code>PureComponent</code> e <code>shouldComponentUpdate</code> assumem que o resultado da renderização de toda a árvore interna sempre é determinado pelas propriedades do componente corrente. Se este não for seu caso, tais otimizações podem levar a estado inconsistente no DOM.</p>
+<p>No Vue, as dependências de um componente são automaticamente observadas durante sua renderização, desta forma o sistema sabe precisamente quais componentes precisam ser renderizados quando o estado muda. Pode-se considerar que cada componente já tem <code>shouldComponentUpdate</code> automaticamente implementado para você, e sem os problemas com componentes filhos.</p>
+<p>De forma geral, isto remove a necessidade de conhecimento de toda uma gama de otimizações de desempenho das responsabilidades do desenvolvedor, permitindo-o focar mais em construir a aplicação em si enquanto ela cresce.</p>
+<h3 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML &amp; CSS"></a>HTML &amp; CSS</h3><p>No React, tudo é exclusivamente JavaScript. Não apenas as estruturas HTML são expressas através de JSX, mas tendências recentes também apontam para colocar o gerenciamento CSS dentro do JavaScript. Esta abordagem tem seus próprios benefícios, mas também vem com várias contra-partidas que podem não aparecer de cara para todos os desenvolvedores.</p>
+<p>Vue abraça as tecnologias Web clássicas e constrói em cima delas. Para mostrar o que isso significa, mergulharemos em alguns exemplos.</p>
+<h4 id="JSX-vs-Templates"><a href="#JSX-vs-Templates" class="headerlink" title="JSX vs. Templates"></a>JSX vs. Templates</h4><p>No React, todos os componentes expressam sua interface com funções <code>render</code> usando JSX, uma sintaxe declarativa estilo XML, embutida dentro do JavaScript.</p>
+<p>A utilização de <em>render functions</em> com JSX oferece algumas vantagens:</p>
+<ul>
+<li><p>Você pode usar o poder total de uma linguagem de programação (JavaScript) para construir sua camada visual. Isto inclui variáveis temporárias, fluxos de controle e referenciamento direto a valores JavaScript no escopo.</p>
+</li>
+<li><p>Ferramentas de suporte (como <em>linting</em>, checagem de tipos, <em>autocomplete</em> de código) para JSX estão um pouco mais avançadas do que atualmente temos para <em>templates</em> Vue.</p>
+</li>
+</ul>
+<p>No Vue, também temos <a href="render-function.html">funções de renderização</a> e até mesmo <a href="render-function.html#JSX">suporte a JSX</a>, afinal às vezes você precisa deste poder. Entretanto, oferecemos para a experiência padrão o uso de <em>templates</em> como uma alternativa mais simples. Qualquer HTML válido é um <em>template</em> Vue válido, o que leva a algumas vantagens próprias:</p>
+<ul>
+<li><p>Para muitos desenvolvedores habituados a trabalhar com HTML, <em>templates</em> parecem mais naturais para ler e escrever. A preferência pode ser algo subjetivo, mas se isto torna o desenvolvedor mais produtivo, então o benefício é objetivo.</p>
+</li>
+<li><p>Utilizar <em>templates</em> baseados em HTML torna mais fácil migrar progressivamente aplicações existentes para tirar vantagens dos recursos de reatividade do Vue.</p>
+</li>
+<li><p>Também pode ser muito mais simples para <em>designers</em> e desenvolvedores menos experientes compreenderem o código e começarem a participar.</p>
+</li>
+<li><p>Pode-se inclusive utilizar pré-processadores como Pug (anteriormente denominado Jade) para a autoria de seus <em>templates</em> Vue.</p>
+</li>
+</ul>
+<p>Alguns argumentam que você precisaria aprender uma nova sintaxe específica de um único domínio para ser capaz de escrever <em>templates</em> - nós acreditamos que este argumento é superficial, na melhor das hipóteses. Primeiramente, usar JSX não significa que o desenvolvedor não precisa aprender algo - sendo uma sintaxe adicional por cima do JavaScript puro, pode ser fácil de aprender para aqueles familiarizados com JavaScript, mas ainda assim há uma curva de aprendizado. Similarmente, usar <em>templates</em> também é apenas uma sintaxe adicional por cima do HTML puro, inclusive com uma curva de aprendizado bem menor para aqueles familiarizados com HTML. E com este novo conhecimento “específico”, ajudamos os desenvolvedores a fazer mais com menos código (por exemplo, modificadores <code>v-on</code>). A mesma tarefa pode envolver muito mais código quando usamos JSX ou funções de renderização.</p>
+<p>Em um nível mais alto, podemos dividir componentes em duas categorias: de apresentação ou de lógica. Recomendamos utilizar <em>templates</em> para componentes de apresentação e funções de renderização ou JSX para componentes de lógica. O percentual destes componentes depende do tipo de aplicação que você está construindo, mas normalmente observamos que componentes de apresentação são muito mais comuns.</p>
+<h4 id="CSS-com-Escopo-por-Componente"><a href="#CSS-com-Escopo-por-Componente" class="headerlink" title="CSS com Escopo por Componente"></a>CSS com Escopo por Componente</h4><p>A menos que você distribua componentes entre vários arquivos (por exemplo, com <a href="https://github.com/gajus/react-css-modules" target="_blank" rel="noopener">CSS Modules</a>), usar CSS com escopo no React frequentemente se baseia em soluções CSS-no-JS (por exemplo, com <a href="https://github.com/styled-components/styled-components" target="_blank" rel="noopener">styled-components</a> e <a href="https://github.com/emotion-js/emotion" target="_blank" rel="noopener">emotion</a>). Isto introduz um novo paradigma de estilização orientada a componente, diferente do processo de autoria de CSS normal. Adicionalmente, ainda que haja suporte para extrair CSS em um arquivo único durante o <em>build</em>, ainda é comum que um <em>runtime</em> precise ser incluído no pacote para que a estilização ocorra corretamente. Embora você ganhe acesso ao dinamismo do JavaScript enquanto constrói seus estilos, por outro lado você obtém um tamanho de pacote e um custo de execução maiores.</p>
+<p>Se você é um fã de CSS-no-JS, muitas bibliotecas populares deste tipo suportam Vue (por exemplo, com <a href="https://github.com/styled-components/vue-styled-components" target="_blank" rel="noopener">styled-components-vue</a> e <a href="https://github.com/egoist/vue-emotion" target="_blank" rel="noopener">vue-emotion</a>). A principal diferença entre React e Vue neste âmbito é que o método padrão de estilização no Vue é através das familiares <em>tags</em> <code>style</code> em <a href="single-file-components.html">Componentes Single-File</a>.</p>
+<p><a href="single-file-components.html">Componentes Single-File</a> lhe oferecem acesso completo ao CSS no mesmo arquivo que o restante do código de seu componente.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">250px</span>) &#123;
+    <span class="hljs-selector-class">.list-container</span><span class="hljs-selector-pseudo">:hover</span> &#123;
+      <span class="hljs-attribute">background</span>: orange;
+    &#125;
+  &#125;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+<p>O atributo opcional <code>scoped</code> automaticamente cria escopo ao CSS de seu componente adicionando um atributo único (por exemplo, <code>data-v-21e5b78</code>) aos elementos e compilando <code>.list-container:hover</code> para algo como <code>.list-container[data-v-21e5b78]:hover</code>.</p>
+<p>Por fim, a estilização em Componentes Single-File no Vue é muito flexível. Através do <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="noopener">vue-loader</a>, você pode utilizar qualquer pré-processador, pós-processador ou mesmo integração profunda com <a href="https://vue-loader.vuejs.org/en/features/css-modules.html" target="_blank" rel="noopener">CSS Modules</a> - tudo dentro de seu elemento <code>&lt;style&gt;</code>.</p>
+<h3 id="Escalabilidade"><a href="#Escalabilidade" class="headerlink" title="Escalabilidade"></a>Escalabilidade</h3><h4 id="Ampliando-a-Escala"><a href="#Ampliando-a-Escala" class="headerlink" title="Ampliando a Escala"></a>Ampliando a Escala</h4><p>Para aplicações grandes, tanto Vue quanto React oferecem soluções de roteamento robustas. A comunidade React também tem sido muito inovadora em termos de soluções de gerenciamento de estado (como Flux/Redux). Esses padrões de gerenciamento de estado e até <a href="https://yarnpkg.com/en/packages?q=redux%20vue&amp;p=1" target="_blank" rel="noopener">o próprio Redux</a> podem ser integrados facilmente em aplicações Vue. Na verdade, neste modelo, Vue até deu um passo adiante com o <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a>, uma solução de gerenciamento de estado inspirada em Elm, que se integra profundamente com o Vue, a qual nós acreditamos que oferece uma experiência de desenvolvimento superior.</p>
+<p>Outra importante diferença entre os dois ecossistemas é que as bibliotecas companheiras do Vue para gerenciamento de estado e roteamento (dentre <a href="https://github.com/vuejs" target="_blank" rel="noopener">outras preocupações</a>) são oficialmente suportadas e mantidas sempre atualizadas em relação à biblioteca principal. Ao contrário disso, React escolhe deixar tais preocupações para a comunidade, criando um ecossistema mais fragmentado. Por outro lado, por ser mais popular, o ecossistema React é consideravelmente mais rico do que o do Vue.</p>
+<p>Por fim, Vue oferece um <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">CLI gerador de projetos</a> que torna trivialmente simples iniciar um novo projeto usando um interativo processo construção com uma ferramenta do tipo <em>wizard</em>. Você pode até mesmo usá-lo para <a href="https://cli.vuejs.org/guide/prototyping.html#instant-prototyping" target="_blank" rel="noopener">prototipação rápida</a> de um componente. React também está fazendo avanços nesta área com o <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="noopener">create-react-app</a>, mas atualmente tem algumas limitações:</p>
+<ul>
+<li>Não permite nenhuma configuração durante a geração do projeto, enquanto o Vue CLI executa sobre uma dependência de <em>runtime</em> atualizável, que pode ser extendida através de <a href="https://cli.vuejs.org/guide/plugins-and-presets.html#plugins" target="_blank" rel="noopener">plugins</a>.</li>
+<li>Oferece um único modelo de projeto, assumindo que você está criando uma aplicação <em>single-page</em>, enquanto Vue oferece grande variedade de opções padrão, para vários propósitos e sistemas de <em>build</em>.</li>
+<li>Não permite criar projetos a partir de modelos construídos por outros desenvolvedores, ao contrário dos <a href="https://cli.vuejs.org/guide/plugins-and-presets.html#presets" target="_blank" rel="noopener">presets</a> do Vue CLI, que podem ser muito úteis especialmente em ambientes empresariais com padrões estabelecidos.</li>
+</ul>
+<p>É importante notar, no entanto, que muitas dessas limitações são decisões de projeto intencionais tomadas pela equipe do create-react-app, as quais têm suas vantagens. Por exemplo, enquanto as necessidades de seu projeto são bem simples e você não precisa “ejetar” para customizar o processo de <em>build</em>, é possível mantê-lo atualizado como uma dependência. Você pode ler mais sobre esta <a href="https://github.com/facebookincubator/create-react-app#philosophy" target="_blank" rel="noopener">filosofia diferente aqui</a>.</p>
+<h4 id="Reduzindo-a-Escala"><a href="#Reduzindo-a-Escala" class="headerlink" title="Reduzindo a Escala"></a>Reduzindo a Escala</h4><p>React é conhecido por sua curva de aprendizado. Antes que você possa realmente começar, você precisa saber sobre JSX e provavelmente ES2015+, uma vez que muitos exemplos React usam sintaxe de classes. Você também precisa aprender sobre processos de transpilação, pois embora você possa tecnicamente usar Babel para compilar código em tempo real diretamente no navegador, não é algo recomendado para a produção.</p>
+<p>Enquanto Vue escala ascendentemente tão bem quanto o React, ele também é capaz de reduzir a escala tão bem quanto jQuery. É isso mesmo - tudo que você precisa fazer é colocar uma única <em>tag</em> <code>&lt;script&gt;</code> na página:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>Então você pode começar a escrever código Vue e ainda distribuir a versão minificada em produção sem se sentir culpado ou ter que se preocupar sobre problemas de performance.</p>
+<p>E já que você não precisa obrigatoriamente saber sobre JSX, ES2015 ou sistemas de <em>build</em> para começar com o Vue, leva tipicamente menos de um dia para os desenvolvedores lerem os pontos mais importantes <a href="/guide">no guia</a> e aprenderem o suficiente para criar aplicações não triviais.</p>
+<h3 id="Renderizacao-Nativa"><a href="#Renderizacao-Nativa" class="headerlink" title="Renderização Nativa"></a>Renderização Nativa</h3><p>React Native lhe permite escrever aplicativos nativamente renderizados para iOS e Android usando o mesmo modelo de componentes do React. É ótimo que, como desenvolvedor, você possa aplicar o conhecimento de um <em>framework</em> entre múltiplas plataformas. Nesta frente, Vue possui uma colaboração oficial com <a href="https://weex.apache.org/" target="_blank" rel="noopener">Weex</a>, um <em>framework</em> de UI multiplataforma criado por Alibaba Group e sendo incubado pela Apache Software Foundation (ASF). Weex lhe permite utilizar a mesma sintaxe de componentes Vue para criar componentes que podem ser renderizados não apenas no navegador, mas também nativamente em iOS e Android!</p>
+<p>No presente momento, Weex ainda é um projeto em desenvolvimento ativo e não está tão maduro e testado na prática quanto o ReactNative, mas o desenvolvimento é dirigido às necessidades de produção do maior negócio de comércio eletrônico do mundo, e a equipe Vue colaborará ativamente com a equipe Weex para garantir a experiência mais suave possível aos desenvolvedores Vue.</p>
+<p>Outra opção é o <a href="https://nativescript-vue.org/" target="_blank" rel="noopener">NativeScript-Vue</a>, um plugin <a href="https://www.nativescript.org/" target="_blank" rel="noopener">NativeScript</a> para construir aplicativos verdadeiramente nativos usando o Vue.js.</p>
+<h3 id="Utilizando-MobX"><a href="#Utilizando-MobX" class="headerlink" title="Utilizando MobX"></a>Utilizando MobX</h3><p>MobX se tornou bem popular na comunidade React e, de fato, utiliza um sistema de reatividade quase idêntico ao Vue. De forma simplista, o fluxo de trabalho React + MobX pode ser pensado como um Vue com código mais prolixo. Por isso, se você estiver usando essa combinação e estiver gostando, saltar para o Vue é, provavelmente, o próximo passo lógico.</p>
+<h3 id="Preact-e-Outras-Bibliotecas-no-Estilo-React"><a href="#Preact-e-Outras-Bibliotecas-no-Estilo-React" class="headerlink" title="Preact e Outras Bibliotecas no Estilo React"></a>Preact e Outras Bibliotecas no Estilo React</h3><p>Bibliotecas no estilo do React geralmente tentam compartilhar o máximo de suas APIs e ecossistemas com o React até onde for viável. Por essa razão, a grande maioria das comparações acima também se aplicarão a elas. A principal diferença será tipicamente um ecossistema reduzido, muitas vezes significativamente, comparado ao React. Como essas bibliotecas não podem ser 100% compatíveis com tudo no ecossistema React, algumas bibliotecas de ferramentas e complementares podem não ser utilizáveis. Ou, mesmo que pareçam funcionar, elas podem quebrar a qualquer momento, a menos que sua biblioteca específica no estilo do React seja oficialmente compatível com o React.</p>
+<h2 id="AngularJS-Angular-1"><a href="#AngularJS-Angular-1" class="headerlink" title="AngularJS (Angular 1)"></a>AngularJS (Angular 1)</h2><p>Um pouco da sintaxe Vue é muito similar ao Angular (por exemplo, <code>v-if</code> vs. <code>ng-if</code>). Isto ocorre pois acreditamos que há muitas coisas que o AngularJS resolveu corretamente, as quais serviram de inspiração para o Vue bem no início de seu desenvolvimento. Entretanto, também há muitas dores que vêm com o AngularJS, onde o Vue tentou oferecer melhorias significativas.</p>
+<h3 id="Complexidade"><a href="#Complexidade" class="headerlink" title="Complexidade"></a>Complexidade</h3><p>Vue é muito mais simples que o AngularJS, tanto em termos de API quanto de <em>design</em>. Aprender o suficiente para construir aplicações não triviais tipicamente leva menos de um dia, o que não é verdade para o AngularJS.</p>
+<h3 id="Flexibilidade-e-Modularidade"><a href="#Flexibilidade-e-Modularidade" class="headerlink" title="Flexibilidade e Modularidade"></a>Flexibilidade e Modularidade</h3><p>AngularJS tem fortes opiniões sobre como as aplicações devem ser estruturadas, enquanto Vue é uma solução mais flexível e modular. Ainda que isto torne Vue mais adaptável a uma ampla variedade de projetos, reconhecemos que às vezes é útil ter algumas decisões já tomadas para você, para que possa simplesmente sair codificando.</p>
+<p>É por isso que oferecemos um sistema completo para o rápido desenvolvimento do Vue.js. O <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="noopener">Vue CLI</a> pretende ser a linha de base de ferramentas padrão para o ecossistema Vue. Ele garante que as várias ferramentas de construção funcionem perfeitamente em conjunto com os padrões sensatos, para que você possa se concentrar em escrever seu aplicativo, em vez de gastar horas brigando com configurações. Ao mesmo tempo, ainda oferece a flexibilidade de ajustar a configuração de cada ferramenta para necessidades específicas.</p>
+<h3 id="Interligacao-com-Dados"><a href="#Interligacao-com-Dados" class="headerlink" title="Interligação com Dados"></a>Interligação com Dados</h3><p>AngularJS adota a abordagem de <em>two-way binding</em> entre escopos, enquanto Vue força um fluxo de dados de mão única entre componentes. Isto permite que o fluxo de dados seja mais compreensível em aplicações não triviais.</p>
+<h3 id="Diretivas-vs-Componentes"><a href="#Diretivas-vs-Componentes" class="headerlink" title="Diretivas vs. Componentes"></a>Diretivas vs. Componentes</h3><p>Vue possui uma clara separação entre diretivas e componentes. Diretivas existem somente para encapsular lógica de manipulação do DOM, enquanto componentes são unidades auto-contidas que possuem sua própria lógica de dados e de apresentação. No AngularJS, diretivas fazem de tudo e componentes são apenas um tipo específico de diretiva.</p>
+<h3 id="Desempenho-em-Execucao-1"><a href="#Desempenho-em-Execucao-1" class="headerlink" title="Desempenho em Execução"></a>Desempenho em Execução</h3><p>Vue tem melhor desempenho e é muito, muito mais fácil de otimizar, por não utilizar verificação suja de alterações de dados no escopo (<em>dirty checking</em>). AngularJS torna-se lento quando há um grande número de observadores (<em>watchers</em>), pois a cada vez que qualquer coisa muda no escopo, todos esses observadores precisam ser reavaliados. Além disso, este laço de verificação suja (chamado <em>digest cycle</em>), pode ter que executar várias vezes para “estabilizar” se algum observador aciona outra atualização. Usuários do AngularJS por vezes têm de recorrer a técnicas esotéricas para contornar este ciclo e, em algumas situações, não há simplesmente nenhuma maneira de otimizar um escopo com muitos observadores.</p>
+<p>O Vue definitivamente não sofre com isso, pois usa um sistema de observação por rastreamento de dependências transparente, com enfileiramento assíncrono - todas as alterações disparam de forma independente, a menos que tenham dependências explícitas.</p>
+<p>Curiosamente, há algumas semelhanças na forma como Angular 2 e Vue estão lidando com estes problemas existentes no AngularJS.</p>
+<h2 id="Angular-previamente-denominado-Angular-2"><a href="#Angular-previamente-denominado-Angular-2" class="headerlink" title="Angular (previamente denominado Angular 2)"></a>Angular (previamente denominado Angular 2)</h2><p>Temos uma seção separada para Angular por ser, de fato, um <em>framework</em> completamente diferente do AngularJS. Por exemplo, possui um sistema de componentes de primeira classe, muitos detalhes de implementação foram totalmente reescritos, e a API também mudou drasticamente.</p>
+<h3 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h3><p>Angular essencialmente requer a utilização de TypeScript, dado que quase toda sua documentação e recursos de aprendizado são baseados nesta linguagem. TypeScript tem seus benefícios - checagem estática de tipos pode ser muito útil para aplicações de larga escala, e pode ser um grande bônus de produtividade para desenvolvedores acostumados com Java e C#.</p>
+<p>Entretanto, nem todo mundo quer TypeScript. Em muitos casos de menor escala, introduzir um sistema de tipagem pode resultar em mais sobrecarga do que ganho de produtividade. Nestes casos você estaria melhor seguindo com Vue, afinal utilizar Angular sem TypeScript pode ser desafiador.</p>
+<p>Por fim, ainda que não tão profundamente integrado com TypeScript quanto Angular, Vue também oferece <a href="https://github.com/vuejs/vue/tree/dev/types" target="_blank" rel="noopener">tipagem oficial</a> e <a href="https://github.com/vuejs/vue-class-component" target="_blank" rel="noopener">decorador oficial</a> para aqueles que desejarem utilizar TypeScript com Vue. Também estamos ativamente colaborando com os times do TypeScript e do VSCode da Microsoft para melhorar a experiência TS/IDE para os usuários Vue + TS.</p>
+<h3 id="Desempenho-em-Execucao-2"><a href="#Desempenho-em-Execucao-2" class="headerlink" title="Desempenho em Execução"></a>Desempenho em Execução</h3><p>Ambos os <em>frameworks</em> são excepcionalmente rápidos, com métricas muito similares nos <em>benchmarks</em>. Você pode <a href="https://stefankrause.net/js-frameworks-benchmark8/table.html" target="_blank" rel="noopener">navegar por métricas específicas</a> para uma comparação mais granular, mas desempenho provavelmente não é um fator decisivo entre ambos.</p>
+<h3 id="Tamanho"><a href="#Tamanho" class="headerlink" title="Tamanho"></a>Tamanho</h3><p>Versões recentes do Angular, com <a href="https://en.wikipedia.org/wiki/Ahead-of-time_compilation" target="_blank" rel="noopener">compilação AOT</a> (<em>Ahead-Of-Time</em>) e <a href="https://en.wikipedia.org/wiki/Tree_shaking" target="_blank" rel="noopener">tree-shaking</a>, tem sido capazes de derrubar o tamanho do pacote consideravelmente. Todavia, um projeto Vue 2 cheio de recursos com Vuex + Vue Router incluídos (~30KB depois de gzip) ainda é significativamente mais leve do que uma aplicação padrão, compilada AOT, gerada pelo <code>angular-cli</code> (~65KB após gzip).</p>
+<h3 id="Flexibilidade"><a href="#Flexibilidade" class="headerlink" title="Flexibilidade"></a>Flexibilidade</h3><p>Vue é muito menos opinativo que Angular, oferecendo suporte oficial a vários sistemas de <em>build</em>, sem restrições sobre como você estrutura sua aplicação. Muitos desenvolvedores gostam desta liberdade, enquanto outros preferem ter somente “O Jeito Certo” de construir qualquer aplicação.</p>
+<h3 id="Curva-de-Aprendizado"><a href="#Curva-de-Aprendizado" class="headerlink" title="Curva de Aprendizado"></a>Curva de Aprendizado</h3><p>Para começar com Vue, tudo que você precisa é familiaridade com HTML e JavaScript versão ES5 (ou seja, JavaScript puro). Com estas habilidades básicas, você pode começar a construir aplicações não triviais com menos de um dia de leitura <a href="/guide">do guia</a>.</p>
+<p>A curva de aprendizado do Angular é muito mais acentuada. A superfície da API do <em>framework</em> é enorme e o usuário precisará se familiarizar com muito mais conceitos antes de se tornar produtivo. A complexidade do Angular deve-se em grande parte ao seu objetivo de projetar somente aplicações grandes e complexas - mas isso torna o <em>framework</em> muito mais difícil para desenvolvedores menos experientes começarem.</p>
+<h2 id="Ember"><a href="#Ember" class="headerlink" title="Ember"></a>Ember</h2><p>Ember é um <em>framework</em> completo projetado para ser altamente opinativo. Ele fornece uma série de convenções estabelecidas e, uma vez que você fique bastante familiarizado com elas, pode se tornar muito produtivo. No entanto, também significa que a curva de aprendizado é elevada e a flexibilidade é sofrível. É uma escolha para você colocar na balança entre adotar um <em>framework</em> fortemente opinativo ou uma biblioteca com um conjunto de ferramentas de baixo acoplamento que funcionam em conjunto. Este último cenário lhe dá mais liberdade, mas também requer que você tome mais decisões arquitetônicas.</p>
+<p>Com isto dito, seria provavelmente mais adequado uma comparação entre o núcleo do Vue e as camadas de <a href="https://guides.emberjs.com/v2.7.0/templates/handlebars-basics/" target="_blank" rel="noopener">templates</a> e de <a href="https://guides.emberjs.com/v2.7.0/object-model/" target="_blank" rel="noopener">modelo de objetos</a> do Ember:</p>
+<ul>
+<li><p>Vue oferece reatividade não obstrusiva em objetos JavaScript tradicionais e propriedades computadas totalmente automáticas. No Ember, você precisa envolver qualquer coisa em Objetos Ember e manualmente declarar dependências para propriedades computadas.</p>
+</li>
+<li><p>A sintaxe de <em>templates</em> do Vue se arma com o poder total de expressões JavaScript, enquanto a sintaxe de expressões e <em>helpers</em> do Handlebars é bastante limitada.</p>
+</li>
+<li><p>Em termos de performance, Vue supera Ember <a href="https://stefankrause.net/js-frameworks-benchmark8/table.html" target="_blank" rel="noopener">por uma margem justa</a>, mesmo após a atualização mais recente do motor Glimmer no Ember 3.x. Vue realiza atualizações em lote automaticamente, enquanto no Ember você precisa lidar manualmente com laços de execução em situações de desempenho crítico.</p>
+</li>
+</ul>
+<h2 id="Knockout"><a href="#Knockout" class="headerlink" title="Knockout"></a>Knockout</h2><p>Knockout foi um pioneiro nas áreas de MVVM e rastreamento de dependências e seu sistema de reatividade é muito semelhante ao Vue. O <a href="http://knockoutjs.com/documentation/browser-support.html" target="_blank" rel="noopener">suporte a navegadores</a> é muito impressionante considerando tudo o que faz, suportando retroativamente até o IE6! Vue, por outro lado, suporta apenas IE9 e superiores.</p>
+<p>Com o tempo, porém, o desenvolvimento do Knockout começou a diminuir e está começando a dar sinais de sua idade. Por exemplo, seu sistema de componentes carece de um conjunto completo de eventos de ciclo de vida e, embora seja um caso muito comum, a interface para passagem de elementos filhos a um componente pai se mostra um pouco desajeitada em comparação com o <a href="components.html#Content-Distribution-with-Slots">Vue</a>.</p>
+<p>Nos parece que existem também diferenças filosóficas na concepção da API que, se você estiver curioso, podem ser demonstradas pela forma como cada um lida com a criação de uma <a href="https://gist.github.com/chrisvfritz/9e5f2d6826af00fcbace7be8f6dccb89" target="_blank" rel="noopener">lista de tarefas simples</a>. É definitivamente um tanto subjetivo, mas muitos consideram a API do Vue menos complexo e melhor estruturada.</p>
+<h2 id="Polymer"><a href="#Polymer" class="headerlink" title="Polymer"></a>Polymer</h2><p>Polymer é outro projeto patrocinado por Google e, de fato, também foi uma fonte de inspiração para o Vue. Componentes Vue podem ser vagamente comparados com elementos customizados Polymer, e ambos fornecem um estilo de desenvolvimento semelhante. A maior diferença é que o Polymer é construído sobre os mais recentes recursos de Web Components e, portanto, requer <em>polyfills</em> não triviais para funcionar (com um desempenho degradado) em navegadores que não suportam esses recursos de forma nativa. Em contraste, Vue funciona sem qualquer dependência externa ou <em>polyfills</em> até o IE9.</p>
+<p>No Polymer, a equipe fez também um sistema de <em>data-binding</em> muito limitado, a fim de compensar o desempenho. Por exemplo, as únicas expressões suportados em <em>templates</em> Polymer são de negação booleana e chamadas simples de métodos. Sua implementação de propriedades computadas também não é muito flexível.</p>
+<h2 id="Riot"><a href="#Riot" class="headerlink" title="Riot"></a>Riot</h2><p>Riot 3.0 fornece um modelo de desenvolvimento baseado em componentes similar (os quais são chamados de <em>tag</em> no Riot), com uma API mínima e belamente concebida. Riot e Vue provavelmente compartilham muitas filosofias de <em>design</em>. No entanto, apesar de ser um pouco mais pesado que Riot, Vue oferece algumas vantagens significativas:</p>
+<ul>
+<li>Melhor desempenho. Riot <a href="https://v3.riotjs.now.sh/compare/#virtual-dom-vs-expressions-binding" target="_blank" rel="noopener">atravessa a árvore DOM</a> ao invés de utilizar DOM virtual, portanto sofre dos mesmos problemas de desempenho do AngularJS.</li>
+<li>Mais maturidade no suporte a ferramentas de <em>build</em>. Vue oferece suporte oficial a <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="noopener">webpack</a> e <a href="https://github.com/vuejs/vueify" target="_blank" rel="noopener">Browserify</a>, enquanto Riot deixa para a comunidade a integração com sistemas de <em>build</em>.</li>
+</ul>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/migration-vuex.html">Migração do Vuex 0.6.x para 1.0</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/join.html">Junte-se à Comunidade Vue.js!</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Encontrou um erro ou quer contribuir com a documentação?
+    <a href="https://github.com/vuejs-br/br.vuejs.org/blob/master/src/v2/guide/comparison.md" rel="noopener" target="_blank">
+      Edite isto no Github!
+    </a>
+    Deploy feito via
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

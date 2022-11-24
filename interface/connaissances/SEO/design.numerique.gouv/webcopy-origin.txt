@@ -1,0 +1,144 @@
+Uri: https://design.numerique.gouv.fr/outils/memo-dev/
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\outils\memo-dev\index.htm
+Content Type: text/html
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.ce0531f.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.ce0531f.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.ac8d93a.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.ac8d93a.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.b9532cc.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.b9532cc.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.f22e9f3.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.f22e9f3.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.62d22cb.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.62d22cb.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.1539b60.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.1539b60.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.dc0cdc5.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.dc0cdc5.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/static/favicon.7b22250.1a617801bebe978574e8619de17b6dd0.png
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\static\favicon.7b22250.1a617801bebe978574e8619de17b6dd0.png
+Content Type: image/png
+
+Uri: https://design.numerique.gouv.fr/assets/css/utility.min.css
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\css\utility.min.css
+Content Type: text/css
+
+Uri: https://design.numerique.gouv.fr/assets/css/dsfr.min.css
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\css\dsfr.min.css
+Content Type: text/css
+
+Uri: https://design.numerique.gouv.fr/assets/css/0.styles.9d1c0393.css
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\css\0.styles.9d1c0393.css
+Content Type: text/css
+
+Uri: https://design.numerique.gouv.fr/assets/js/app.785db8b5.js
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\js\app.785db8b5.js
+Content Type: application/javascript
+
+Uri: https://design.numerique.gouv.fr/assets/js/page--src--pages--outils--memo-dev-vue.d3ba595f.js
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\assets\js\page--src--pages--outils--memo-dev-vue.d3ba595f.js
+Content Type: application/javascript
+
+Uri: https://disic.github.io/guide-integrateur/index.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\index.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/1-gabarit-general.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\1-gabarit-general.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/2-navigation.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\2-navigation.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/3-contenus.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\3-contenus.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/4-tableaux.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\4-tableaux.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/5-liens.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\5-liens.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/6-formulaires.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\6-formulaires.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/7-focus.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\7-focus.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/8-distinction-fond-forme.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\8-distinction-fond-forme.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/9-images.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\9-images.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/10-infos-forme-couleur.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\10-infos-forme-couleur.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/11-agrandissement-des-caracteres.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\11-agrandissement-des-caracteres.html
+Content Type: text/html
+
+Uri: https://disic.github.io/guide-integrateur/12-multimedia.html
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\guide-integrateur\12-multimedia.html
+Content Type: text/html
+
+Uri: https://twitter.com/design_gouv/
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\design_gouv\index.htm
+Content Type: text/html
+
+Uri: https://www.instagram.com/design_gouv/
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\design_gouv\index-1.htm
+Content Type: text/html
+
+Uri: https://github.com/DISIC/design.numerique.gouv.fr
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\DISIC\design.numerique.gouv.fr.html
+Content Type: text/html
+
+Uri: https://github.com/etalab/licence-ouverte/blob/master/LO.md
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\etalab\licence-ouverte\blob\master\LO.md.html
+Content Type: text/html
+
+Uri: https://consent.youtube.com/ml?continue=https://www.youtube.com/c/DesignGouv?cbrd%3D1&gl=FR&hl=fr&pc=yt&uxe=eomty&src=1
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\ml.html
+Content Type: text/html
+
+Uri: https://www.numerique.gouv.fr/
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\index.htm
+Content Type: text/html
+
+Uri: https://www.legifrance.gouv.fr/
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\index-1.htm
+Content Type: text/html
+
+Uri: https://www.service-public.fr/
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\index-2.htm
+Content Type: text/html
+
+Uri: https://www.data.gouv.fr/fr/
+File Name: C:\Downloaded Web Sites\design.numerique.gouv.fr\fr\index.htm
+Content Type: text/html
+

@@ -21,6 +21,9 @@ header #git{
 header #git:hover{
   text-decoration: underline;
 }
+header #git span{
+  display: none;
+}
 header #git img{
   width: 28px;
   margin-left: 10px;
@@ -87,16 +90,31 @@ section{
   font-weight: 700;
   border-radius: .4em;
 }
+.tag{
+  background: #ccc;
+  color: white;
+  margin: 0 .4em;
+  padding: 0.2em 0.4em;
+  font-size: 0.7em;
+  font-weight: 700;
+  border-radius: .4em;
+}
 #back-to-top{
   position:fixed;
   bottom:4%;
   right:2%;
-  padding:0 1%;
-  background: #52d3aa;
+  /* padding:0 1%; */
+  background: #393e46;
   color: #fff;
   font-weight: bold;
   font-size: 2em;
   z-index: 9999;
+  border-radius: 100%;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #back-to-top:hover{
   background: #3f95ea;
@@ -219,6 +237,9 @@ p{text-align: justify;}
 @media screen and (min-width: 768px){
 /*    body{font-size: calc(.8em + 1vw)} */
 header #git{width:20%;}
+header #git span{
+  display: inline;
+}
 
   main{
     display: flex;
@@ -243,5 +264,45 @@ header #git{width:20%;}
   section {
     width:60%;
     margin-right: 20%;
+  }
+}
+
+
+/*ANIMATIONS*/
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  }
+  50% {
+  -webkit-transform: none;
+  transform: none;
+  }
+  100%{
+      opacity: 1;
+  }
+ }
+@keyframes fadeInRight {
+  0% {
+  opacity: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  }
+  50% {
+  -webkit-transform: none;
+  transform: none;
+  }
+  100%{
+      opacity: 1;
   }
 }

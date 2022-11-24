@@ -192,6 +192,12 @@
                     </tr>
                   </tbody>
               </table>
+              <figure>
+                <a target="_blank" href="../assets/img/documentation/schema-git-add.png">
+                  <img src="../assets/img/documentation/schema-git-add.png">
+                </a>
+                  <figcaption>Schéma récapitulatif et explicatif des points de sauvegardes sous git.</figcaption>
+              </figure>
             </article>
             <article class="tab-pane fade" id="branch" role="tabpanel" aria-labelledby="branch-tab">
               <h3>Système de branche</h3>
@@ -231,6 +237,12 @@
                     </tr>
                   </tbody>
               </table>
+              <figure>
+                <a target="_blank" href="../assets/img/documentation/schema-git-branch.png">
+                  <img src="../assets/img/documentation/schema-git-branch.png">
+                </a>
+                  <figcaption>Schéma récapitulatif et explicatif d'utilisation d'une branche sous git.</figcaption>
+              </figure>
             </article>
             <article class="tab-pane fade" id="remote" role="tabpanel" aria-labelledby="remote-tab">
               <h3>Travail distant</h3>
@@ -258,10 +270,22 @@
                     </tr>
                   </tbody>
               </table>
+              <figure>
+                <a target="_blank" href="../assets/img/documentation/schema-git-remote.png">
+                  <img src="../assets/img/documentation/schema-git-remote.png">
+                </a>
+                  <figcaption>Schéma récapitulatif et explicatif d'un projet distant sous git.</figcaption>
+              </figure>
             </article>
             <article class="tab-pane fade" id="group" role="tabpanel" aria-labelledby="group-tab">
               <h3>Travail en groupe</h3>
               <p>Une fois que votre projet est sur un remote et que votre branche est crée. Votre méthode de travail à distance ressemblera à peu près à cela :</p>
+              <figure>
+                <a target="_blank" href="../assets/img/documentation/schema-git.jpg">
+                  <img src="../assets/img/documentation/schema-git.jpg">
+                </a>
+              </figure>
+
               <ul>
                 <li>Je modifie du code.</li>
                 <li>Je commit <code>git commit -m "mon message"</code></li>

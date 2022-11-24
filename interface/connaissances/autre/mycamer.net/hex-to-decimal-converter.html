@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="favicon.ico" />
+<style>body{padding:0;margin:0;background-color:#EAEBE7;color:#111;text-align:center;margin-top:10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:110%;line-height:1.6em;}.example,pre{font-family:monospace;background-color:#fffff0;overflow:auto;border-radius:5px;-webkit-border-radius:5px;border:1px solid #ddd;padding:10px;}#container{margin:10px auto;max-width:990px;color:#111;text-align:left;background:inherit}#header{width:99%;padding:1px;margin-top:1px;text-align:center;background:inherit}#content{width:97%;padding:15px;background-color:#fff;color:#111;box-shadow:0 1px 2px rgba(0, 0, 0, 0.3);}.addiv{margin:15px 0;text-align:center;}.fourdiv{width:25%;float:left;display:inline-block;}.halfdiv{width:50%;float:left;display:inline-block;}label{display:block;margin:2px;}#loading p{margin:0;color:#777;font-size:14px;}.social{margin:5px 0}.share-on-twitter{background:#00838f}.share-on-facebook{background:#3B5997}.social a:hover{color:#fff;text-shadow:none}.social .button{color:#fff;padding:4px 6px;border-radius:4px;font-size:75%;margin-right:4px;text-shadow:0 1px 2px #333}.social .scount{border:1px solid #aaa;margin-right:4px;padding:7px 4px;font-size:85%;background-color:#f5f5f5;color:#555}.tablo{width:90%;border-collapse:collapse;margin:1px;vertical-align:top}.tablo th{background-color:#00838f;padding:3px;color:#fff;text-align:center;border:solid 1px #ccc}.tablo td{padding:3px;text-align:center;border:solid 1px #ccc;}#footer{font-size:.8em;color:#555;padding:1px;margin-top:10px;text-align:center}#baseresult{background-color:#ffffcf;color:#111;border:1px solid #DDDDDD;line-height:34px;border-radius:5px;-webkit-border-radius:5px;margin-bottom: 15px;min-height: 34px;padding: 10px;text-align: center;font-size:1.5rem;}h1{color:#111;font-size:1.6em;margin:7px 2px}h3{margin:15px 0 10px 0}p{margin:10px 0;}a{color:#06c;text-decoration:none}a:hover{color:#111;}#content form{min-height:92px;background-color:#F0F8DA;padding:10px;border:1px solid #BFCB9C;border-radius:5px;-webkit-border-radius:5px;} ul{margin:2px 0 5px 5px;padding-left:12px;}li{list-style-type:square;margin:2px 5px;}li a{pading:3px 0;}img{border:0}.date{color:#777;display:block;margin-bottom:10px;font-size:90%;}input,button,textarea{font-family:"Courier New", Courier, monospace;font-size:16px;;padding:5px;border:1px solid #8E996D;border-radius: 5px;-webkit-border-radius: 5px;} textarea{font-size:1em;padding:4px;margin:2px 5px;width:95%;} button,input[type="button"]{background:#7dbd2a;margin:2px 5px;background-image:-webkit-linear-gradient(top,#7dbd2a,#7e961c);background-image:-moz-linear-gradient(top,#7dbd2a,#7e961c);background-image:-ms-linear-gradient(top,#7dbd2a,#7e961c);background-image:-o-linear-gradient(top,#7dbd2a,#7e961c);background-image:linear-gradient(to bottom,#7dbd2a,#7e961c);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;color:#fff;padding:7px 15px 7px 15px;text-decoration:none;border:1px solid #345109;}input[type="button"]:hover{background:#9bc930;text-decoration:none}.clear{clear:both}@media screen and (max-width:760px){#container{width:95%}}@media screen and (max-width:650px){#content{width:auto;float:none;margin:2px 0;padding:5px}h1{font-size:1.4em}.fourdiv,.halfdiv{width:100% !important;}}@media screen and (max-width:480px){html{-webkit-text-size-adjust:none}.fourdiv,.halfdiv{width:100% !important;}}
+h5 {font-size:1.2rem;font-weight:400;margin:10px 0}.bigFont{display:block;font-size:1.2rem;font-weight:400;margin:10px 0}
+.comments {padding:2px;}
+.comaut {font-weight:bold}
+.comcon .date {
+    color: #555;
+    font-size: 85%;
+    float: right;
+}
+.comcon p {
+    border-top: 1px solid #eee;
+    clear: left;
+    padding-top: 5px;
+}
+.comcon {
+    background-color: #fff;
+    overflow: auto;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 15px 0;
+    box-shadow: 0 1px 7px rgba(0,0,0,.2);
+}
+.margin10 { margin:10px 0; }
+.center { text-align:center; }
+.stickyAd {
+    position: fixed;
+    left: 5px;
+    top: 100px;
+}
+
+.stickyAdMobile {
+    position: sticky;
+    bottom: 0;
+    left:0;
+    right:0; 
+background-color:#fff
+}
+
+@media screen and (max-width: 1180px) {
+    .stickyAd {
+        display: none !important;
+    }
+   
+    #container {
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 1180px) and (max-width:1330px) {
+    #container {
+        margin: 0 0 10px 170px;
+    }
+}
+</style>
+
+<!-- OneTrust Cookies Consent Notice start for www.binaryhexconverter.com -->
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="7f654090-8f07-4aee-990c-a58a3b8e1aa8" ></script>
+<script type="text/javascript">
+    function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.binaryhexconverter.com -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84677098-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-84677098-6');
+</script>
+<script src="https://cdn.adapex.io/hb/aaw.bhc.js" async></script>
+
+<title>Hexadecimal to Decimal Converter</title>
+
+<meta name="description" content="Hexadecimal to decimal converter helps you to calculate decimal value from a hex number up to 16 characters length, and hex to dec conversion table." />
+
+</head>
+  
+  <body>
+
+<div id="container">
+
+<div id="header">
+<a href="https://www.binaryhexconverter.com/" title="Home of binaryhexconverter.com">
+<img src="/logo.png" srcset="/logo.png 1x,/logo2x.png 2x" loading="lazy" alt="Binary Hex Converter Logo" width="120" height="40" />
+</a>
+</div>
+
+<div id="content">
+<div class="margin10 center">
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_728v_1'></div>
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_Mob_300v_1'></div>
+</div>
+<h1>Hexadecimal to Decimal Converter</h1>
+<p>
+    To use this online <strong>hex to decimal converter</strong> tool, 
+    type a hex value like 1E into the left field below, and then hit the Convert button.
+    You can convert up to 16 hex characters (max. value of 7fffffffffffffff) to decimal</em>.
+</p>
+
+<div class="social">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.binaryhexconverter.com%2Fhex-to-decimal-converter" rel="noopener" target="_blank" class="button share-on-facebook" title="Share on Facebook">Facebook</a>
+<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.binaryhexconverter.com%2Fhex-to-decimal-converter&amp;via=BinHexConverter" rel="noopener" target="_blank" class="button share-on-twitter" title="Share on Twitter">Twitter</a>
+</div><form name="converterForm" id="converterForm" method="post">
+    <div class="halfdiv">
+        <label for="tabin">Hex Value (max. 7fffffffffffffff)</label>
+<textarea name="tabin" id="tabin" rows="2" required></textarea>  
+<button type="submit">Convert</button>
+    </div>
+    
+    <div class="halfdiv">
+        <label for="resulttxt">Decimal Value</label>
+        <textarea name="resulttxt" cols="38" rows="2" id="resulttxt" title="decimal value converted from hex"></textarea>
+        
+<span>swap conversion:</span> <a href="decimal-to-hex-converter" title="Decimal To Hex Converter">Decimal to Hex</a>
+    </div>
+    <div class="clear"></div>    
+</form>
+
+    <span class="bigFont">Hex to decimal conversion result in base numbers</span>
+<div id="baseresult">
+</div>
+<div class="margin10 center">
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_728v_2'></div>
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_Mob_300v_2'></div>
+</div>
+
+<h2>How to Calculate Hexadecimal to Decimal</h2>
+<p>
+    Hex is a base 16 number and decimal is a base 10 number. We need to know the decimal equivalent of every hex number digit. 
+    See below of the page to check the hex to decimal chart. <br />
+    Here are the steps to convert hex to decimal:
+</p>
+<ul>
+    <li>Get the decimal equivalent of hex from table.</li>
+    <li>Multiply every digit with 16 power of digit location. <br />
+        (zero based, 7DE: E location is 0, D location is 1 and the 7 location is 2)</li>
+    <li>Sum all the multipliers.</li>
+</ul>
+<span>Here is an example:</span><br />
+<pre>
+7DE is a hex number
+7DE = (7 * 16<sup>2</sup>) + (13 * 16<sup>1</sup>) + (14 * 16<sup>0</sup>) 
+7DE = (7 * 256) + (13 * 16) + (14 * 1) 
+7DE = 1792 + 208 + 14 
+7DE = 2014 (in decimal number)
+</pre>
+
+
+<h2>Hexadecimal System (Hex System)</h2><p>The <strong>hexadecimal system (shortly hex)</strong>, uses the number 16 as its base (radix). As a base-16 numeral system, it uses 16 symbols. These are the 10 decimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) and the first six letters of the English alphabet (A, B, C, D, E, F). The letters are used because of the need to represent the values 10, 11, 12, 13, 14 and 15 each in one single symbol.</p><p>Hex is used in mathematics and information technologies as a more friendly way to represent binary numbers. Each hex digit represents four binary digits; therefore, hex is a language to write binary in an abbreviated form.</p><p>Four binary digits (also called nibbles) make up half a byte. This means one byte can carry binary values from 0000 0000 to 1111 1111. In hex, these can be represented in a friendlier fashion, ranging from 00 to FF.</p><p>In html programming, colors can be represented by a 6-digit hexadecimal number: FFFFFF represents white whereas 000000 represents black.</p><div class="margin10 center">
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_728v_3'></div>
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_Mob_300v_3'></div>
+</div>
+<h2>Decimal System</h2>
+<p><strong>The decimal numeral system</strong> is the most commonly used and the standard system in daily life. It uses the number 10 as its base (radix). Therefore, it has 10 symbols: The numbers from 0 to 9; namely 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.</p>
+<p>As one of the oldest known numeral systems, the <strong>decimal numeral system</strong> has been used by many ancient civilizations. The difficulty of representing very large numbers in the decimal system was overcome by the Hindu–Arabic numeral system. The Hindu-Arabic numeral system gives positions to the digits in a number and this method works by using powers of the base 10; digits are raised to the n<sup>th</sup> power, in accordance with their position.</p>
+<p>For instance, take the number 2345.67 in the decimal system: </p>
+<ul>
+    <li>The digit 5 is in the position of ones (10<sup>0</sup>, which equals 1),</li>
+    <li>4 is in the position of tens (10<sup>1</sup>)</li>
+    <li>3 is in the position of hundreds (10<sup>2</sup>)</li>
+    <li>2 is in the position of thousands (10<sup>3</sup>)</li>
+    <li>Meanwhile, the digit 6 after the decimal point is in the tenths (1/10, which is 10<sup>-1</sup>) and 7 is in the hundredths (1/100, which is 10<sup>-2</sup>) position</li>
+    <li>Thus, the number 2345.67 can also be represented as follows: 
+        (2 * 10<sup>3</sup>) + (3 * 10<sup>2</sup>) + (4 * 10<sup>1</sup>) + (5 * 10<sup>0</sup>) + (6 * 10<sup>-1</sup>) + (7 * 10<sup>-2</sup>)</li>
+</ul>
+<h4>Hex to decimal conversion examples</h4>
+<ul>
+<li>(1D9)<sub>16</sub> = (473)<sub>10</sub></li> 
+<li>(80E1)<sub>16</sub> = (32993)<sub>10</sub></li>
+<li>(10CE)<sub>16</sub> = (4302)<sub>10</sub></li>
+</ul>
+
+<br />
+<div class="margin10 center">
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_728v_4'></div>
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_Mob_300v_4'></div>
+</div>
+<h4>Hexadecimal to Decimal Conversion Chart</h4>
+
+<div class="fourdiv">
+<table class="tablo">
+<tr>
+<th>Hexadecimal</th><th>Decimal</th>
+</tr>
+<tr><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td></tr><tr><td>3</td><td>3</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>5</td></tr><tr><td>6</td><td>6</td></tr><tr><td>7</td><td>7</td></tr><tr><td>8</td><td>8</td></tr><tr><td>9</td><td>9</td></tr><tr><td>A</td><td>10</td></tr><tr><td>B</td><td>11</td></tr><tr><td>C</td><td>12</td></tr><tr><td>D</td><td>13</td></tr><tr><td>E</td><td>14</td></tr><tr><td>F</td><td>15</td></tr><tr><td>10</td><td>16</td></tr><tr><td>11</td><td>17</td></tr><tr><td>12</td><td>18</td></tr><tr><td>13</td><td>19</td></tr><tr><td>14</td><td>20</td></tr><tr><td>15</td><td>21</td></tr><tr><td>16</td><td>22</td></tr><tr><td>17</td><td>23</td></tr><tr><td>18</td><td>24</td></tr><tr><td>19</td><td>25</td></tr><tr><td>1A</td><td>26</td></tr><tr><td>1B</td><td>27</td></tr><tr><td>1C</td><td>28</td></tr><tr><td>1D</td><td>29</td></tr><tr><td>1E</td><td>30</td></tr><tr><td>1F</td><td>31</td></tr><tr><td>20</td><td>32</td></tr><tr><td>21</td><td>33</td></tr><tr><td>22</td><td>34</td></tr><tr><td>23</td><td>35</td></tr><tr><td>24</td><td>36</td></tr><tr><td>25</td><td>37</td></tr><tr><td>26</td><td>38</td></tr><tr><td>27</td><td>39</td></tr><tr><td>28</td><td>40</td></tr><tr><td>29</td><td>41</td></tr><tr><td>2A</td><td>42</td></tr><tr><td>2B</td><td>43</td></tr><tr><td>2C</td><td>44</td></tr><tr><td>2D</td><td>45</td></tr><tr><td>2E</td><td>46</td></tr><tr><td>2F</td><td>47</td></tr><tr><td>30</td><td>48</td></tr><tr><td>31</td><td>49</td></tr><tr><td>32</td><td>50</td></tr><tr><td>33</td><td>51</td></tr><tr><td>34</td><td>52</td></tr><tr><td>35</td><td>53</td></tr><tr><td>36</td><td>54</td></tr><tr><td>37</td><td>55</td></tr><tr><td>38</td><td>56</td></tr><tr><td>39</td><td>57</td></tr><tr><td>3A</td><td>58</td></tr><tr><td>3B</td><td>59</td></tr><tr><td>3C</td><td>60</td></tr><tr><td>3D</td><td>61</td></tr><tr><td>3E</td><td>62</td></tr><tr><td>3F</td><td>63</td></tr><tr><td>40</td><td>64</td></tr></table>
+</div>
+<div class="fourdiv">
+<table class="tablo">
+<tr>
+<th>Hexadecimal</th><th>Decimal</th>
+</tr>
+<tr><td>41</td><td>65</td></tr><tr><td>42</td><td>66</td></tr><tr><td>43</td><td>67</td></tr><tr><td>44</td><td>68</td></tr><tr><td>45</td><td>69</td></tr><tr><td>46</td><td>70</td></tr><tr><td>47</td><td>71</td></tr><tr><td>48</td><td>72</td></tr><tr><td>49</td><td>73</td></tr><tr><td>4A</td><td>74</td></tr><tr><td>4B</td><td>75</td></tr><tr><td>4C</td><td>76</td></tr><tr><td>4D</td><td>77</td></tr><tr><td>4E</td><td>78</td></tr><tr><td>4F</td><td>79</td></tr><tr><td>50</td><td>80</td></tr><tr><td>51</td><td>81</td></tr><tr><td>52</td><td>82</td></tr><tr><td>53</td><td>83</td></tr><tr><td>54</td><td>84</td></tr><tr><td>55</td><td>85</td></tr><tr><td>56</td><td>86</td></tr><tr><td>57</td><td>87</td></tr><tr><td>58</td><td>88</td></tr><tr><td>59</td><td>89</td></tr><tr><td>5A</td><td>90</td></tr><tr><td>5B</td><td>91</td></tr><tr><td>5C</td><td>92</td></tr><tr><td>5D</td><td>93</td></tr><tr><td>5E</td><td>94</td></tr><tr><td>5F</td><td>95</td></tr><tr><td>60</td><td>96</td></tr><tr><td>61</td><td>97</td></tr><tr><td>62</td><td>98</td></tr><tr><td>63</td><td>99</td></tr><tr><td>64</td><td>100</td></tr><tr><td>65</td><td>101</td></tr><tr><td>66</td><td>102</td></tr><tr><td>67</td><td>103</td></tr><tr><td>68</td><td>104</td></tr><tr><td>69</td><td>105</td></tr><tr><td>6A</td><td>106</td></tr><tr><td>6B</td><td>107</td></tr><tr><td>6C</td><td>108</td></tr><tr><td>6D</td><td>109</td></tr><tr><td>6E</td><td>110</td></tr><tr><td>6F</td><td>111</td></tr><tr><td>70</td><td>112</td></tr><tr><td>71</td><td>113</td></tr><tr><td>72</td><td>114</td></tr><tr><td>73</td><td>115</td></tr><tr><td>74</td><td>116</td></tr><tr><td>75</td><td>117</td></tr><tr><td>76</td><td>118</td></tr><tr><td>77</td><td>119</td></tr><tr><td>78</td><td>120</td></tr><tr><td>79</td><td>121</td></tr><tr><td>7A</td><td>122</td></tr><tr><td>7B</td><td>123</td></tr><tr><td>7C</td><td>124</td></tr><tr><td>7D</td><td>125</td></tr><tr><td>7E</td><td>126</td></tr><tr><td>7F</td><td>127</td></tr><tr><td>80</td><td>128</td></tr></table>
+</div>
+<div class="fourdiv">
+<table class="tablo">
+<tr>
+<th>Hexadecimal</th><th>Decimal</th>
+</tr>
+<tr><td>81</td><td>129</td></tr><tr><td>82</td><td>130</td></tr><tr><td>83</td><td>131</td></tr><tr><td>84</td><td>132</td></tr><tr><td>85</td><td>133</td></tr><tr><td>86</td><td>134</td></tr><tr><td>87</td><td>135</td></tr><tr><td>88</td><td>136</td></tr><tr><td>89</td><td>137</td></tr><tr><td>8A</td><td>138</td></tr><tr><td>8B</td><td>139</td></tr><tr><td>8C</td><td>140</td></tr><tr><td>8D</td><td>141</td></tr><tr><td>8E</td><td>142</td></tr><tr><td>8F</td><td>143</td></tr><tr><td>90</td><td>144</td></tr><tr><td>91</td><td>145</td></tr><tr><td>92</td><td>146</td></tr><tr><td>93</td><td>147</td></tr><tr><td>94</td><td>148</td></tr><tr><td>95</td><td>149</td></tr><tr><td>96</td><td>150</td></tr><tr><td>97</td><td>151</td></tr><tr><td>98</td><td>152</td></tr><tr><td>99</td><td>153</td></tr><tr><td>9A</td><td>154</td></tr><tr><td>9B</td><td>155</td></tr><tr><td>9C</td><td>156</td></tr><tr><td>9D</td><td>157</td></tr><tr><td>9E</td><td>158</td></tr><tr><td>9F</td><td>159</td></tr><tr><td>A0</td><td>160</td></tr><tr><td>A1</td><td>161</td></tr><tr><td>A2</td><td>162</td></tr><tr><td>A3</td><td>163</td></tr><tr><td>A4</td><td>164</td></tr><tr><td>A5</td><td>165</td></tr><tr><td>A6</td><td>166</td></tr><tr><td>A7</td><td>167</td></tr><tr><td>A8</td><td>168</td></tr><tr><td>A9</td><td>169</td></tr><tr><td>AA</td><td>170</td></tr><tr><td>AB</td><td>171</td></tr><tr><td>AC</td><td>172</td></tr><tr><td>AD</td><td>173</td></tr><tr><td>AE</td><td>174</td></tr><tr><td>AF</td><td>175</td></tr><tr><td>B0</td><td>176</td></tr><tr><td>B1</td><td>177</td></tr><tr><td>B2</td><td>178</td></tr><tr><td>B3</td><td>179</td></tr><tr><td>B4</td><td>180</td></tr><tr><td>B5</td><td>181</td></tr><tr><td>B6</td><td>182</td></tr><tr><td>B7</td><td>183</td></tr><tr><td>B8</td><td>184</td></tr><tr><td>B9</td><td>185</td></tr><tr><td>BA</td><td>186</td></tr><tr><td>BB</td><td>187</td></tr><tr><td>BC</td><td>188</td></tr><tr><td>BD</td><td>189</td></tr><tr><td>BE</td><td>190</td></tr><tr><td>BF</td><td>191</td></tr><tr><td>C0</td><td>192</td></tr></table>
+</div>
+<div class="fourdiv">
+<table class="tablo">
+<tr>
+<th>Hexadecimal</th><th>Decimal</th>
+</tr>
+<tr><td>C1</td><td>193</td></tr><tr><td>C2</td><td>194</td></tr><tr><td>C3</td><td>195</td></tr><tr><td>C4</td><td>196</td></tr><tr><td>C5</td><td>197</td></tr><tr><td>C6</td><td>198</td></tr><tr><td>C7</td><td>199</td></tr><tr><td>C8</td><td>200</td></tr><tr><td>C9</td><td>201</td></tr><tr><td>CA</td><td>202</td></tr><tr><td>CB</td><td>203</td></tr><tr><td>CC</td><td>204</td></tr><tr><td>CD</td><td>205</td></tr><tr><td>CE</td><td>206</td></tr><tr><td>CF</td><td>207</td></tr><tr><td>D0</td><td>208</td></tr><tr><td>D1</td><td>209</td></tr><tr><td>D2</td><td>210</td></tr><tr><td>D3</td><td>211</td></tr><tr><td>D4</td><td>212</td></tr><tr><td>D5</td><td>213</td></tr><tr><td>D6</td><td>214</td></tr><tr><td>D7</td><td>215</td></tr><tr><td>D8</td><td>216</td></tr><tr><td>D9</td><td>217</td></tr><tr><td>DA</td><td>218</td></tr><tr><td>DB</td><td>219</td></tr><tr><td>DC</td><td>220</td></tr><tr><td>DD</td><td>221</td></tr><tr><td>DE</td><td>222</td></tr><tr><td>DF</td><td>223</td></tr><tr><td>E0</td><td>224</td></tr><tr><td>E1</td><td>225</td></tr><tr><td>E2</td><td>226</td></tr><tr><td>E3</td><td>227</td></tr><tr><td>E4</td><td>228</td></tr><tr><td>E5</td><td>229</td></tr><tr><td>E6</td><td>230</td></tr><tr><td>E7</td><td>231</td></tr><tr><td>E8</td><td>232</td></tr><tr><td>E9</td><td>233</td></tr><tr><td>EA</td><td>234</td></tr><tr><td>EB</td><td>235</td></tr><tr><td>EC</td><td>236</td></tr><tr><td>ED</td><td>237</td></tr><tr><td>EE</td><td>238</td></tr><tr><td>EF</td><td>239</td></tr><tr><td>F0</td><td>240</td></tr><tr><td>F1</td><td>241</td></tr><tr><td>F2</td><td>242</td></tr><tr><td>F3</td><td>243</td></tr><tr><td>F4</td><td>244</td></tr><tr><td>F5</td><td>245</td></tr><tr><td>F6</td><td>246</td></tr><tr><td>F7</td><td>247</td></tr><tr><td>F8</td><td>248</td></tr><tr><td>F9</td><td>249</td></tr><tr><td>FA</td><td>250</td></tr><tr><td>FB</td><td>251</td></tr><tr><td>FC</td><td>252</td></tr><tr><td>FD</td><td>253</td></tr><tr><td>FE</td><td>254</td></tr><tr><td>FF</td><td>255</td></tr></table>
+</div>
+<div class="clear"></div> 
+<div class="margin10 center">
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_728v_5'></div>
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_Mob_300v_5'></div>
+</div>
+<br /><div class="comments" id="comments">
+<h5>Recent Comments</h5>
+<div class="comcon"><span class="comaut">Guest</span> <span class="date">2022-06-07 03:31:06</span><br /><p>EXCELLENT SITE!</p></div><div class="comcon"><span class="comaut">Carlos</span> <span class="date">2022-05-16 17:22:14</span><br /><p>Thanx I helped an I am so glad that I found this website</p></div><div class="comcon"><span class="comaut">heck</span> <span class="date">2022-05-14 13:33:35</span><br /><p>helps with wireshark ports</p></div><div class="comcon"><span class="comaut">RICHARD</span> <span class="date">2022-03-10 06:47:23</span><br /><p>THIS IS EXCELLENT WORK</p></div><div class="comcon"><span class="comaut">BRUH</span> <span class="date">2022-03-10 06:07:33</span><br /><p>Very good site for cheating</p></div><div class="comcon"><span class="comaut">Pierre</span> <span class="date">2022-02-22 10:23:14</span><br /><p>Very usefull. You'ld make the same as standalone (more convenient!)<br />
+Thanks a lot!</p></div><div class="comcon"><span class="comaut">Frank</span> <span class="date">2022-02-06 07:34:59</span><br /><p>Amazing, thank you.</p></div><div class="comcon"><span class="comaut">kawee</span> <span class="date">2022-01-06 03:03:31</span><br /><p>very useful and helpful site,keep on walking, cheers !!!</p></div><div class="comcon"><span class="comaut">Zulfikar</span> <span class="date">2021-12-16 01:16:37</span><br /><p>Do you know what is the following thing: 27A708891C53E6140DAB3D2BEF ?<br />
+It is π (Pi)  - you just need to move the decimal point.   :-)</p></div><div class="comcon"><span class="comaut">tomwoods</span> <span class="date">2021-12-10 05:37:35</span><br /><p>A nice project. Extremely helpful !</p></div><div class="comcon"><span class="comaut">Guest</span> <span class="date">2021-11-06 04:03:11</span><br /><p>Very helpful to make my assignment</p></div><div class="comcon"><span class="comaut">Guest</span> <span class="date">2021-10-25 14:20:27</span><br /><p>Thanks I couldn’t really calculate the decimal equivalent of a number on the bus</p></div><div class="comcon"><span class="comaut">Guest</span> <span class="date">2021-09-24 04:33:06</span><br /><p>Replying to Apagador: Decimal here means the decimal number system aka number system of base 10. It doesn't mean numbers with a decimal point. In computers the decimal point is called floating point and float type numbers (numbers with decimal point which you are talking about) can only be converted in floating point notation.<br />
+<br />
+The usual assumed notation is not floating point and this site doesn't claim to use floating point notation <br />
+<br />
+Hope that clears it :D</p></div><div class="comcon"><span class="comaut">Wolf</span> <span class="date">2021-09-14 14:43:07</span><br /><p>Thank you! you made me understand Hex and decimal even more.</p></div><div class="comcon"><span class="comaut">Guest2</span> <span class="date">2021-08-01 23:24:40</span><br /><p>Thank you. Your site helped me confirm an error in calculation in my text book.</p></div><div class="comcon"><span class="comaut">Ashfana shaikh</span> <span class="date">2021-07-07 06:09:15</span><br /><p>Thanks a lot sir i am searching every where but you have given the best convertion in overall google website thank you so much</p></div><div class="comcon"><span class="comaut">Guest</span> <span class="date">2021-06-25 16:21:13</span><br /><p>Thanks a lot! Helped with my confusion a lot!!!</p></div><div class="comcon"><span class="comaut">Phil</span> <span class="date">2021-06-02 14:55:10</span><br /><p>Thanks ! Nice tool, helped me to understand windows power plan.</p></div><div class="comcon"><span class="comaut">Guest</span> <span class="date">2021-05-31 09:11:50</span><br /><p>how we calculate hexadecimals like that 0xa0000001 in decimal is there any short trick?</p></div><div class="comcon"><span class="comaut">Aasad</span> <span class="date">2021-05-02 11:19:27</span><br /><p>Hey this is very helpful. thanks for making this tool</p></div><form id="frmcomment" class="shadow">
+<fieldset><legend>Share Your Comments</legend>
+<label for="commentname">Name (optional)</label>
+<input id="commentname" name="commentname" type="text" maxlength="150" placeholder="Your name" />
+<label for="commenttext">Comment</label>
+<textarea id="commenttext" name="commenttext" class="full-width" placeholder="Your comment" rows="4" required></textarea>
+<button type="submit" id="sendcomment">Send</button>
+</fieldset>
+</form>
+<div id="message" class="shadow" style="color:#fff;background-color:#689f38;padding:5px;margin: 5px 10px;"></div>
+</div>
+<script>var yid = 'hex-to-decimal-converter';
+function pscm(e){e.preventDefault&&e.preventDefault();var t=document.getElementById("commentname").value,n=document.getElementById("commenttext").value;if(n.length>2048)return alert("Sorry your comment is too long."),!1;var m=new XMLHttpRequest,o="commentname="+encodeURIComponent(t)+"&yid="+encodeURIComponent(yid)+"&commenttext="+encodeURIComponent(n);return m.open("POST","/_yrme",!0),m.setRequestHeader("Content-type","application/x-www-form-urlencoded"),m.onreadystatechange=function(){4===m.readyState&&200===m.status?(document.getElementById("message").innerHTML="Your comment saved successfully and will be published after it is approved.",document.getElementById("commentname").value="",document.getElementById("commenttext").value=""):document.getElementById("message").innerHTML="There was an error, please try again later.",document.getElementById("message").style.visibility="visible"},m.send(o),!1}document.getElementById("message").style.visibility="hidden";var frmcomment=document.getElementById("frmcomment");frmcomment.attachEvent?frmcomment.attachEvent("submit",pscm):frmcomment.addEventListener("submit",pscm);</script></div>
+<div id="footer">
+<p>&copy; 2009-2022 www.BinaryHexConverter.com | <a href="/privacy" title="Privacy">Privacy Policy</a>
+| <a href="/contact" title="Contact Us">Contact Us</a> |
+<a href="https://twitter.com/BinHexConverter" title="Binary Hex Converter on Twitter" rel="noopener" target="_blank">@BinHexConverter</a>
+</p>
+<a href="https://play.google.com/store/apps/details?id=com.deve.binaryhexconverter" rel="noopener" target="_blank" style="margin-left:7px;">
+  <img alt="Android app on Google Play"
+       src="/img/android-app-badge.png" loading="lazy" width="150" height="58" />
+</a>
+</div>
+<div class="stickyAd">
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_160v_Sticky'></div>
+</div>
+<div class="stickyAdMobile center">
+<div data-aaad='true' data-aa-adunit='/22247219933/BHC_Mob_300v_sticky'></div>
+</div>
+
+<script src="/bignumber.min.js"></script>
+<script src="bhc.js?v=23"></script>
+
+</div>
+
+
+  </body>
+</html>

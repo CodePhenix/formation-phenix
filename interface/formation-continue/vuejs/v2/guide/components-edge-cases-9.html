@@ -1,0 +1,1299 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Menangani Kasus Langka — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components-edge-cases.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Menangani Kasus Langka — Vue.js">
+    <meta property="og:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta property="og:image" content="https://docs.vuejs.id//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Menangani Kasus Langka — Vue.js">
+    <meta name="twitter:description" content="Vue.js - Kerangka Kerja JavaScript nan Progresif">
+    <meta name="twitter:image" content="https://docs.vuejs.id/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js" rel="stylesheet" type="text/css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-166364803-2', 'docs.vuejs.id');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png" alt="vue logo">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+          
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Pelajari</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Petunjuk</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/style-guide/" class="nav-link">Panduan Gaya</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Contoh</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link">Buku Petunjuk</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ekosistem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Pertolongan</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank">Pertemuan</a></li>
+    </ul></li>
+    <li><h4>Alat</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Pustaka Inti</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>Berita</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Berita Mingguan</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank">Peta Langkah</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank">Kegiatan</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank">Lowongan Kerja</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank">Komunitas DEV</a></li>
+    </ul></li>
+    <li><h4>Daftar Sumber Daya</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/vuejs" class="nav-link" target="_blank">Repo Resmi</a></li>
+      <li><a href="https://curated.vuejs.org/" class="nav-link" target="_blank">Kurasi Vue</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank">Awesome Vue</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Tim</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Dukung Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Donasi Sekali</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Donasi Berulang</a></li>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Toko Kaos</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Terjemahan</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">한국어</a></li>
+    <li><a href="https://vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">English</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link" target="_blank">Español</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+      <div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>Sponsor Spesial</span>
+    <div>
+    <a href="https://stdlib.com/" target="_blank" class="logo">
+      <img src="/images/stdlib.png" alt="">
+    </a>
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Petunjuk
+          
+            <select class="version-select">
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Esensial</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Instalasi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Perkenalan</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue Instance</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Sintaks Templat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Properti Penghitung (Computed) dan Pengamat (Watchers)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Kelas and Binding Gaya</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Rendering Bersyarat</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">Me-render Daftar</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Penanganan Event</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Form Input Bindings</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Komponen Dasar</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Komponen secara mendalam</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Registrasi Komponen</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Custom Events</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slot</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Komponen yang Dinamis & Async</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link current">Menangani Kasus Langka</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transisi & Animasi</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Transisi Masuk/Keluar & Daftar Transisi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transisi State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Kebergunaan & Komposisi</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Direktif Kustom</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Fungsi Render & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugin</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filter</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Peralatan</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Komponen Berkas Tunggal</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">Dukungan TypeScript</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Penempatan Produksi</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Peningkatan</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">Pengelolaan State</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Rendering di Sisi Server (SSR)</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internal</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reaktivitas Secara Mendalam</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migrasi</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migrasi dari Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migrasi dari Vuex 0.6.x ke 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Meta</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Perbandingan dengan Kerangka Kerja yang Lain</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Gabung Komunitas Vue.js!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Tim Inti Vuejs</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Sponsor Platinum</span>
+    <div>
+    <a href="https://moduscreate.com/?utm_source=Vue&utm_medium=Partnership&utm_campaign=VueShip" target="_blank" class="logo">
+      <img src="/images/modus.png" alt="Modus">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit.png" alt="Bit">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png" alt="Tooltwist">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" class="logo">
+      <img src="/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" class="logo">
+      <img src="/images/nativescript.png" alt="NativeScript">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Menjadi Sponsor
+  </a>
+</div>
+
+
+
+<div class="content guide with-sidebar components-edge-cases-guide">
+  
+    
+      <div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+    
+  
+  
+    <h1>Menangani Kasus Langka</h1>
+  
+  
+    <blockquote>
+<p>Halaman ini menganggap Anda sudah membaca <a href="components.html">Dasar Komponen</a>. Baca dulu jika Anda baru mengenal komponen.</p>
+</blockquote>
+<p class="tip">Semua fitur pada halaman ini mendokumentasikan penanganan kasus langka, berarti situasi yang tidak biasa yang kadang-kadang membutuhkan sedikit mengubah aturan Vue. Namun perhatikan, bahwa semua fitur memiliki kelemahan atau situasi di mana mereka bisa berbahaya. Semua itu dicatat dalam setiap kasus, jadi ingatlah ketika memutuskan untuk menggunakan setiap fitur.</p>
+
+
+<h2 id="Akses-Elemen-amp-Komponen"><a href="#Akses-Elemen-amp-Komponen" class="headerlink" title="Akses Elemen &amp; Komponen"></a>Akses Elemen &amp; Komponen</h2><p>Dalam kebanyakan kasus, yang terbaik adalah menghindari menjangkau ke instance komponen lainnya atau memanipulasi elemen DOM secara manual. Namun, ada kasus-kasus di mana itu harus dilakukan.</p>
+<h3 id="Mengakses-Instance-Root"><a href="#Mengakses-Instance-Root" class="headerlink" title="Mengakses Instance Root"></a>Mengakses Instance Root</h3><p>Dalam setiap subkomponen dari <em>instance</em> <code>new Vue</code>, <em>instance</em> <em>root</em> ini dapat diakses dengan properti <code>$root</code>. Misalnya, dalam <em>instance</em> <em>root</em> ini:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Contoh root Vue</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">foo</span>: <span class="hljs-number">1</span>
+  &#125;,
+  <span class="hljs-attr">computed</span>: &#123;
+    <span class="hljs-attr">bar</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">/* ... */</span> &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">baz</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">/* ... */</span> &#125;
+  &#125;
+&#125;)</code></pre>
+<p>Semua subkomponen sekarang dapat mengakses instance ini dan menggunakannya sebagai <em>store</em> global:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Mendapatkan data root</span>
+<span class="hljs-keyword">this</span>.$root.foo
+
+<span class="hljs-comment">// Menetapkan data root</span>
+<span class="hljs-keyword">this</span>.$root.foo = <span class="hljs-number">2</span>
+
+<span class="hljs-comment">// Akses root computed properties</span>
+<span class="hljs-keyword">this</span>.$root.bar
+
+<span class="hljs-comment">// Memanggil root methods</span>
+<span class="hljs-keyword">this</span>.$root.baz()</code></pre>
+<p class="tip">Ini dapat memudahkan untuk demo atau aplikasi yang sangat kecil dengan beberapa komponen. Namun cara ini tidak berskala dengan baik ke aplikasi skala menengah atau besar, jadi kami sangat menyarankan menggunakan <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> Untuk mengelola state pada umumnya.</p>
+
+<h3 id="Mengakses-instance-induk-komponen"><a href="#Mengakses-instance-induk-komponen" class="headerlink" title="Mengakses instance induk komponen"></a>Mengakses <em>instance</em> induk komponen</h3><p>Mirip dengan <code>$root</code>, properti <code>$parent</code> dapat digunakan untuk mengakses <em>instance</em> induk dari anak. Sebagai alternatif untuk yang malas mengoper data dengan props.</p>
+<p class="tip">Dalam kebanyakan kasus, menjangkau komponen induk membuat aplikasi Anda lebih sulit untuk di-<i>debug</i> dan dipahami, terlebih jika Anda mutasi data dalam induk. Saat melihat komponen itu nanti, akan sangat sulit untuk mencari tahu dari mana asal mutasi itu.</p>
+
+<p>Namun ada beberapa kasus, khususnya pustaka komponen yang dibagikan, saat ini <em>mungkin</em> tepat. Misalnya, dalam komponen abstrak yang berinteraksi dengan API JavaScript alih-alih merender HTML, seperti komponen Google Maps untuk hipotetis ini:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">google-map-markers</span> <span class="hljs-attr">v-bind:places</span>=<span class="hljs-string">"iceCreamShops"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">google-map-markers</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">google-map</span>&gt;</span></code></pre>
+<p>Komponen <code>&lt;google-map&gt;</code> mungkin mendefinisikan properti <code>map</code> yang aksesnya diperlukan oleh semua subkomponen. Dalam kasus ini <code>&lt;google-map-markers&gt;</code> mungkin ingin mengakses <code>map</code> itu dengan sesuatu seperti <code>this.$parent.getMap</code>, untuk menambahkan satu set <em>markers</em> ke dalamnya. Anda dapat melihat pola ini <a href="https://jsfiddle.net/chrisvfritz/ttzutdxh/" target="_blank" rel="noopener">beraksi di sini</a>.</p>
+<p>Ingatlah, komponen yang dibangun dengan pola ini masih rapuh. Sebagai contoh, bayangkan kita menambahkan komponen <code>&lt;google-map-region&gt;</code> baru dan ketika <code>&lt;google-map-markers&gt;</code> muncul di dalamnya, komponen tersebut seharusnya hanya <em>render</em> <em>markers</em> yang terdapat di wilayah tersebut.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">google-map-region</span> <span class="hljs-attr">v-bind:shape</span>=<span class="hljs-string">"cityBoundaries"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">google-map-markers</span> <span class="hljs-attr">v-bind:places</span>=<span class="hljs-string">"iceCreamShops"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">google-map-markers</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">google-map-region</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">google-map</span>&gt;</span></code></pre>
+<p>Kemudian di dalam <code>&lt;google-map-markers&gt;</code> Anda mungkin akan melakukan hack seperti ini:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">this</span>.$parent.map || <span class="hljs-keyword">this</span>.$parent.$parent.map</code></pre>
+<p>Hal ini dengan cepat tak terkendali. Oleh sebab itu untuk menyediakan konteks informasi yang diturunkan ke komponen semaunya, kami menawarkan <a href="#Dependency-Injection"><em>dependency injection</em></a>.</p>
+<h3 id="Mengakses-Instance-Komponen-Anak-amp-Elemen-Anak"><a href="#Mengakses-Instance-Komponen-Anak-amp-Elemen-Anak" class="headerlink" title="Mengakses Instance Komponen Anak &amp; Elemen Anak"></a>Mengakses <em>Instance</em> Komponen Anak &amp; Elemen Anak</h3><p>Meskipun ada <em>props</em> dan <em>events</em>, terkadang Anda mungkin masih perlu mengakses langsung komponen anak dalam JavaScript. Untuk mencapai ini, Anda dapat menetapkan ID referensi ke komponen anak menggunakan atribut <code>ref</code>. Sebagai contoh:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"usernameInput"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">base-input</span>&gt;</span></code></pre>
+<p>Sekarang di komponen tempat Anda mendefinisikan <code>ref</code>, Anda dapat menggunakannya:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">this</span>.$refs.usernameInput</code></pre>
+<p>Untuk mengakses instance <code>&lt;base-input&gt;</code>. Hal ini mungkin berguna saat Anda mau, sebagai contoh, secara terprogram memfokuskan input dari induk. Dalam kasus ini, komponen <code>&lt;base-input&gt;</code> juga dapat menggunakan <code>ref</code> untuk menyediakan akses ke elemen tertentu di dalamnya, seperti:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"input"</span>&gt;</span></code></pre>
+<p>Dan bahkan mendefinisikan metode untuk digunakan oleh induk:</p>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-comment">// Digunakan untuk memfokuskan input dari induk</span>
+  focus: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.$refs.input.focus()
+  &#125;
+&#125;</code></pre>
+<p>Dengan demikian memungkinkan komponen induk untuk memfokuskan input di dalam <code>&lt;base-input&gt;</code> dengan:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">this</span>.$refs.usernameInput.focus()</code></pre>
+<p>Ketika <code>ref</code> digunakan bersama dengan <code>v-for</code>, referensi yang Anda dapatkan akan berupa array yang mengandung komponen turunan yang mencerminkan sumber data.</p>
+<p class="tip"><code>$refs</code> hanya diisi setelah komponen telah di-render, dan mereka tidak reaktif. Ini hanya dimaksudkan sebagai jalan keluar untuk manipulasi komponen anak secara langsung - Anda harus menghindari mengakses <code>$refs</code> dari dalam templat dan properti computed.</p>
+
+<h3 id="Dependency-Injection"><a href="#Dependency-Injection" class="headerlink" title="Dependency Injection"></a>Dependency Injection</h3><p>Sebelumnya, ketika kami jelaskan <a href="#Mengakses-*instance*-induk-komponen">Mengakses <em>instance</em> induk komponen</a>, kami menunjukkan contoh seperti ini:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">google-map-region</span> <span class="hljs-attr">v-bind:shape</span>=<span class="hljs-string">"cityBoundaries"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">google-map-markers</span> <span class="hljs-attr">v-bind:places</span>=<span class="hljs-string">"iceCreamShops"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">google-map-markers</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">google-map-region</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">google-map</span>&gt;</span></code></pre>
+<p>Dalam komponen ini, semua keturunan dari <code>&lt;google-map&gt;</code> membutuhkan akses ke metode <code>getMap</code>, untuk mengetahui peta mana yang harus berinteraksi. Sayangnya, menggunakan properti <code>$parent</code> tidak berskala dengan baik untuk komponen yang bersarang lebih dalam. Di situlah <em>dependency injection</em> dapat bermanfaat, menggunakan dua opsi baru <em>instance</em>: <code>provide</code> dan<code>inject</code>.</p>
+<p>Opsi <code>provide</code> memungkinkan kita untuk menentukan data/metode yang ingin kita <strong>berikan</strong> untuk komponen turunan. Dalam kasus ini, itulah metode <code>getMap</code> di dalam<code>&lt;google-map&gt;</code>:</p>
+<pre><code class="hljs js">provide: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">getMap</span>: <span class="hljs-keyword">this</span>.getMap
+  &#125;
+&#125;</code></pre>
+<p>Kemudian pada keturunannya, kita bisa menggunakan opsi <code>inject</code> untuk menerima properti tertentu yang ingin kita tambahkan ke <em>instance</em> tersebut:</p>
+<pre><code class="hljs js">inject: [<span class="hljs-string">'getMap'</span>]</code></pre>
+<p>Anda dapat melihat <a href="https://jsfiddle.net/chrisvfritz/tdv8dt3s/" target="_blank" rel="noopener">contoh lengkap disini</a>. Keuntungan dibanding menggunakan <code>$parent</code> adalah bahwa kita dapat mengakses <code>getMap</code> dalam <em>semua</em> komponen turunan, tanpa memaparkan seluruh instance dari <code>&lt;google-map&gt;</code>. Ini memungkinkan kita lebih aman untuk terus mengembangkan komponen tersebut, tanpa ada rasa takut kita dapat mengubah/menghapus sesuatu yang digunakan komponen anak. Antarmuka antara komponen ini tetap jelas, sama seperti dengan <code>props</code>.</p>
+<p>Bahkan, Anda bisa menganggap <em>dependency injection</em> sebagai semacam <em>“props jarak jauh”</em>, kecuali:</p>
+<ul>
+<li>komponen leluhur tidak perlu tahu keturunan mana yang menggunakan properti yang disediakannya</li>
+<li>komponen turunan tidak perlu tahu dari mana properti yang dioper berasal</li>
+</ul>
+<p class="tip">Namun, ada kelemahan untuk <i>dependency injection</i>. <i>Dependency injection</i> memasangkan komponen dalam aplikasi Anda dengan cara mereka saat diatur, membuat <i>refactoring</i> menjadi lebih sulit. Properti yang disediakan juga tidak reaktif. Hal ini dengan sengaja dilakukan, karena perkembangan menggunakan mereka untuk membuat data <i>store</i> terpusat sama buruknya dengan <a href="#Mengakses-Instance-Root">menggunakan <code>$root</code></a> untuk tujuan yang sama. Jika properti yang ingin Anda bagikan spesifik untuk applikasi Anda, atau jika Anda ingin memperbarui data yang disediakan di dalam leluhur, maka itu pertanda baik bahwa Anda mungkin membutuhkan solusi manajemen <i>state</i> seperti <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> sebagai gantinya.</p>
+
+<p>Belajar lebih tentang <em>dependency injection</em> di <a href="https://vuejs.org/v2/api/#provide-inject">the API doc</a>.</p>
+<h2 id="Event-Listeners-Terprogram"><a href="#Event-Listeners-Terprogram" class="headerlink" title="Event Listeners Terprogram"></a><em>Event Listeners</em> Terprogram</h2><p>Sejauh ini, Anda telah melihat penggunaan <code>$emit</code>, dipantau dengan <code>v-on</code>, tetapi <em>instance</em> Vue juga menawarkan metode lain di antarmuka <em>event</em>. Kita dapat:</p>
+<ul>
+<li>Pantau sebuah <em>event</em> dengan <code>$on(eventName, eventHandler)</code></li>
+<li>Pantau sekali <em>event</em> dengan<code>$once(eventName, eventHandler)</code></li>
+<li>Berhenti pantau <em>event</em> dengan <code>$off(eventName, eventHandler)</code></li>
+</ul>
+<p>Anda biasanya tidak harus menggunakan ini, tetapi mereka tersedia untuk kasus-kasus ketika Anda perlu secara manual mendengarkan <em>event</em> pada instance komponen. Mereka juga dapat berguna sebagai alat organisasi kode. Sebagai contoh, Anda mungkin sering melihat pola ini untuk diintegrasikan dengan pustaka pihak ke-3:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Pasang datepicker ke input sekali</span>
+<span class="hljs-comment">// pasang ke DOM.</span>
+mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-comment">// Pikaday adalah pustaka data pihak ketiga</span>
+  <span class="hljs-keyword">this</span>.picker = <span class="hljs-keyword">new</span> Pikaday(&#123;
+    <span class="hljs-attr">field</span>: <span class="hljs-keyword">this</span>.$refs.input,
+    <span class="hljs-attr">format</span>: <span class="hljs-string">'YYYY-MM-DD'</span>
+  &#125;)
+&#125;,
+<span class="hljs-comment">// Tepat sebelum komponen dihancurkan,</span>
+<span class="hljs-comment">// juga menghancurkan datepicker.</span>
+beforeDestroy: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.picker.destroy()
+&#125;</code></pre>
+<p>Ini memiliki dua masalah potensial:</p>
+<ul>
+<li>Membutuhkan penyimpanan <code>picker</code> ke instance komponen, bila memungkinkan, hanya kait siklus hidup <a href="https://docs.vuejs.id/v2/api/#Options-Lifecycle-Hooks" target="_blank" rel="noopener">(lifecycle hooks)</a> yang memerlukan akses ke sana. Ini tidak buruk, tetapi bisa dianggap berantakan.</li>
+<li>Kode pengaturan kita disimpan terpisah dari kode pembersihan kita, membuatnya lebih sulit untuk secara terprogram membersihkan apa pun yang kita atur.</li>
+</ul>
+<p>Anda bisa menyelesaikan kedua masalah dengan <em>Event Listeners</em> Terprogram:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">var</span> picker = <span class="hljs-keyword">new</span> Pikaday(&#123;
+    <span class="hljs-attr">field</span>: <span class="hljs-keyword">this</span>.$refs.input,
+    <span class="hljs-attr">format</span>: <span class="hljs-string">'YYYY-MM-DD'</span>
+  &#125;)
+
+  <span class="hljs-keyword">this</span>.$once(<span class="hljs-string">'hook:beforeDestroy'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    picker.destroy()
+  &#125;)
+&#125;</code></pre>
+<p>Dengan menggunakan strategi ini, kita bahkan dapat menggunakan Pikaday dengan beberapa elemen input, dengan setiap instance baru secara otomatis membersihkannya sendiri:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.attachDatepicker(<span class="hljs-string">'startDateInput'</span>)
+  <span class="hljs-keyword">this</span>.attachDatepicker(<span class="hljs-string">'endDateInput'</span>)
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">attachDatepicker</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">refName</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> picker = <span class="hljs-keyword">new</span> Pikaday(&#123;
+      <span class="hljs-attr">field</span>: <span class="hljs-keyword">this</span>.$refs[refName],
+      <span class="hljs-attr">format</span>: <span class="hljs-string">'YYYY-MM-DD'</span>
+    &#125;)
+
+    <span class="hljs-keyword">this</span>.$once(<span class="hljs-string">'hook:beforeDestroy'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      picker.destroy()
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<p>Lihat <a href="https://jsfiddle.net/chrisvfritz/1Leb7up8/" target="_blank" rel="noopener">fiddle ini</a> untuk kode lengkap. Perhatikan, namun, bahwa jika Anda harus melakukan banyak pengaturan dan pembersihan dalam satu komponen, solusi terbaik biasanya adalah membuat lebih banyak komponen modular. Dalam hal ini, kami sarankan untuk membuat komponen <code>&lt;input-datepicker&gt;</code> yang dapat digunakan kembali.</p>
+<p>Untuk mempelajari lebih lanjut tentang <em>Listeners</em> Terprogram, lihat API untuk <a href="https://vuejs.org/v2/api/#Instance-Methods-Events">Metode <em>Events Instance</em></a>.</p>
+<p class="tip">Perhatikan bahwa sistem <i>event</i> Vue berbeda dari <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget" target="_blank" rel="noopener">API EventTarget browser</a>. Walaupun mereka bekerja dengan cara yang sama, <code>$emit</code>, <code>$on</code>, dan <code>$off</code> <strong>bukan</strong> alias untuk <code>dispatchEvent</code>, <code>addEventListener</code>, dan <code>removeEventListener</code>.</p>
+
+<h2 id="Komponen-Sirkuler-Circular-Component"><a href="#Komponen-Sirkuler-Circular-Component" class="headerlink" title="Komponen Sirkuler (Circular Component)"></a>Komponen Sirkuler (Circular Component)</h2><h3 id="Komponen-Rekursif-Recursive-Component"><a href="#Komponen-Rekursif-Recursive-Component" class="headerlink" title="Komponen Rekursif (Recursive Component)"></a>Komponen Rekursif (Recursive Component)</h3><p>Komponen dapat secara rekursif memanggil dirinya sendiri dalam templatnya sendiri. Namun, mereka hanya dapat melakukannya dengan opsi <code>name</code>:</p>
+<pre><code class="hljs js">name: <span class="hljs-string">'unique-name-of-my-component'</span></code></pre>
+<p>Ketika Anda mendaftarkan komponen secara global menggunakan <code>Vue.component</code>, ID global secara otomatis ditetapkan sebagai opsi <code>nama</code> komponen.</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'unique-name-of-my-component'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<p>Jika Anda tidak hati-hati, komponen rekursif juga dapat menyebabkan loop tak terbatas:</p>
+<pre><code class="hljs js">name: <span class="hljs-string">'stack-overflow'</span>,
+<span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;&lt;stack-overflow&gt;&lt;/stack-overflow&gt;&lt;/div&gt;'</span></code></pre>
+<p>Komponen seperti di atas akan menghasilkan kesalahan <a href="https://developer.mozilla.org/en-US/docs/Glossary/Call_stack" target="_blank" rel="noopener">“max stack size exceeded”</a>, jadi pastikan pemanggilan rekursif bersifat kondisional (yaitu menggunakan <code>v-if</code> yang akhirnya akan menjadi <code>false</code>).</p>
+<h3 id="Circular-References-Antara-Komponen"><a href="#Circular-References-Antara-Komponen" class="headerlink" title="Circular References Antara Komponen"></a><em>Circular References</em> Antara Komponen</h3><p>Katakanlah Anda sedang membangun pohon direktori file, seperti di <em>Finder</em> atau File <em>Explorer</em>. Anda mungkin memiliki komponen <code>tree-folder</code> dengan templat ini:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; folder.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tree-folder-contents</span> <span class="hljs-attr">:children</span>=<span class="hljs-string">"folder.children"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Kemudian komponen <code>tree-folder-content</code> dengan templat ini:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"child in children"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tree-folder</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"child.children"</span> <span class="hljs-attr">:folder</span>=<span class="hljs-string">"child"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-else</span>&gt;</span>&#123;&#123; child.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>Ketika Anda teliti, Anda akan melihat bahwa komponen ini sebenarnya akan menjadi keturunan <em>dan</em> leluhur satu sama lain di pohon <em>render</em> - sebuah paradoks! Saat mendaftarkan komponen secara global dengan <code>Vue.component</code>, Paradoks ini secara otomatis deselesaikan untuk anda. Jika itu Anda, maka Anda bisa berhenti membaca disini</p>
+<p>Namun, jika Anda melakukan <em>requiring/importing</em> komponen menggunakan <strong>sistem modul</strong>, misalnya melalui <em>Webpack</em> atau <em>Browserify</em>, Anda akan mendapatkan kesalahan:</p>
+<pre><code class="hljs undefined">Failed to mount component: template or render function not defined.</code></pre>
+<p>Untuk menjelaskan apa yang terjadi, sebut saja komponen kita A dan B. Sistem modul melihat bahwa ia membutuhkan A, tetapi pertama A membutuhkan B, tetapi B membutuhkan A, tetapi A membutuhkan B, dan seterusnya. komponen tersebut terjebak dalam satu lingkaran, tidak tahu bagaimana menyelesaikan kedua komponen tanpa terlebih dahulu menyelesaikan yang lain. Untuk memperbaikinya, kita perlu memberikan sistem modul titik di mana ia dapat mengatakan, “<em>Pada akhirnya</em> A membutuhkan B, tapi kita tidak perlu menyelesaikan B dulu.”</p>
+<p>Dalam kasus kita, mari kita buat titk itu menjadi komponen <code>tree-folder</code>. Kita tahu anak yang menciptakan paradoks adalah komponen <code>tree-folder-contents</code>, jadi kita akan menunggu sampai kait siklus hidup <em>(lifecycle hooks)</em> <code>beforeCreate</code> untuk mendaftarkannya:</p>
+<pre><code class="hljs js">beforeCreate: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$options.components.TreeFolderContents = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./tree-folder-contents.vue'</span>).default
+&#125;</code></pre>
+<p>Atau sebagai alternatif, Anda bisa menggunakan <code>Import</code> asinkron <em>Webpack</em> ketika Anda mendaftarkan komponen secara lokal:</p>
+<pre><code class="hljs js">components: &#123;
+  <span class="hljs-attr">TreeFolderContents</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./tree-folder-contents.vue'</span>)
+&#125;</code></pre>
+<p>Masalah terpecahkan!</p>
+<h2 id="Definisi-Templat-Alternatif"><a href="#Definisi-Templat-Alternatif" class="headerlink" title="Definisi Templat Alternatif"></a>Definisi Templat Alternatif</h2><h3 id="Templat-Inline"><a href="#Templat-Inline" class="headerlink" title="Templat Inline"></a>Templat <em>Inline</em></h3><p>Ketika atribut khusus <code>inline-template</code> ada pada komponen turunan, komponen akan menggunakan konten dalamnya sebagai templatnya, dari pada memperlakukannya sebagai konten yang didistribusikan. Ini memungkinkan pembuatan template yang lebih fleksibel.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">inline-template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>These are compiled as the component's own template.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Not parent's transclusion content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+<p>Template <em>inline</em> Anda harus didefinisikan di dalam elemen DOM yang dilampirkan Vue.</p>
+<p class="tip">Namun, <code>inline-template</code> membuat cakupan template Anda lebih sulit untuk dipikirkan. Sebagai praktik terbaik, kita lebih suka mendefinisikan templat di dalam komponen menggunakan opsi <code>template</code> atau dalam <code>&lt;elemen templat&gt;</code> dalam file <code>.vue</code>.</p>
+
+<h3 id="X-Templates"><a href="#X-Templates" class="headerlink" title="X-Templates"></a>X-Templates</h3><p>Cara lain untuk mendefinisikan template adalah di dalam elemen skrip dengan tipe <code>text/x-template</code>, lalu merujuk template dengan id. Sebagai contoh:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/x-template"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hello-world-template"</span>&gt;</span><span class="xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello hello hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'hello-world'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'#hello-world-template'</span>
+&#125;)</code></pre>
+<p><em>x-template</em> Anda harus didefinisikan di luar elemen DOM yang dilampirkan Vue.</p>
+<p class="tip">Ini dapat berguna untuk demo dengan template besar atau dalam aplikasi yang sangat kecil, tetapi sebaliknya harus dihindari, karena mereka memisahkan templat dari sisa definisi komponen.</p>
+
+<h2 id="Mengontrol-Pembaruan"><a href="#Mengontrol-Pembaruan" class="headerlink" title="Mengontrol Pembaruan"></a>Mengontrol Pembaruan</h2><p>Berkat sistem Reaktivitas Vue, Vue selalu tahu kapan harus memperbarui (jika Anda menggunakannya dengan benar). Namun ada kasus langka, ketika Anda mungkin ingin memaksakan pembaruan, meskipun faktanya tidak ada data reaktif yang berubah. Lalu ada kasus lain ketika Anda mungkin ingin mencegah pembaruan yang tidak perlu.</p>
+<h3 id="Memaksa-Pembaruan"><a href="#Memaksa-Pembaruan" class="headerlink" title="Memaksa Pembaruan"></a>Memaksa Pembaruan</h3><p class="tip">Jika Anda merasa perlu memaksakan pembaruan di Vue, dalam 99,99% kasus, Anda membuat kesalahan di suatu tempat.</p>
+
+<p>Anda mungkin tidak memperhitungkan perubahan peringatan <a href="https://vuejs.org/v2/guide/list.html#Caveats">dengan array</a> atau <a href="https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats">objek</a>, atau Anda mungkin mengandalkan <em>state</em> yang tidak dilacak oleh sistem reaktivitas Vue, misalnya dengan <code>data</code>.</p>
+<p>Namun, jika Anda telah mengesampingkan hal di atas dan menemukan diri Anda dalam situasi yang sangat langka karena harus memaksa pembaruan secara manual, Anda dapat melakukannya dengan <a href="../api/#vm-forceUpdate"><code>$forceUpdate</code></a>.</p>
+<h3 id="Komponen-Statis-Murah-dengan-v-once"><a href="#Komponen-Statis-Murah-dengan-v-once" class="headerlink" title="Komponen Statis Murah dengan v-once"></a>Komponen Statis Murah dengan <code>v-once</code></h3><p><em>Rendering</em> elemen HTML biasa sangat cepat di Vue, tetapi terkadang Anda mungkin memiliki komponen yang mengandung <strong>banyak</strong> konten statis. Dalam kasus ini, Anda dapat memastikan bahwa itu hanya dievaluasi sekali dan kemudian di-<em>cache</em> dengan menambahkan direktif <code>v-once</code> ke elemen root, seperti ini:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'terms-of-service'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;div v-once&gt;
+      &lt;h1&gt;Terms of Service&lt;/h1&gt;
+      ... a lot of static content ...
+    &lt;/div&gt;
+  `</span>
+&#125;)</code></pre>
+<p class="tip">Sekali lagi, cobalah untuk tidak terlalu sering menggunakan pola ini. Meskipun nyaman dalam kasus-kasus langka ketika Anda harus membuat banyak konten statis, hal ini tidak perlu kecuali Anda benar-benar melihat rendering lambat – ditambah, itu bisa menyebabkan banyak kebingungan nantinya. Sebagai contoh, bayangkan pengembang lain yang tidak terbiasa dengan <code>v-once</code> atau hanya melewatkannya di templat. Mereka mungkin menghabiskan waktu berjam-jam untuk mencari tahu mengapa templat tidak diperbarui dengan benar.</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components-dynamic-async.html">Komponen yang Dinamis & Async</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/transitions.html">Transisi Masuk/Keluar & Daftar Transisi</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
+    Menemukan kesalahan atau ingin berkontribusi pada dokumentasi?
+    <a href="https://github.com/vuejs-id/docs/blob/master/src/v2/guide/components-edge-cases.md" target="_blank">
+        Sunting halaman ini di Github!
+    </a>
+  </div>
+</div>
+
+        
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '85cc3221c9f23bfbaa4e3913dd7625ea',
+      indexName: 'vuejs',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] }
+      })
+    })
+    </script>
+
+    <!-- fastclick -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>

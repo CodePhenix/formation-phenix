@@ -1,0 +1,1435 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>スロット — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components-slots.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/components-slots.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="スロット — Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="スロット — Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://jp.vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'jp.vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs">
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">v2.x 以前のドキュメントです。</span>
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="検索">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">学ぶ</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ドキュメント</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">ガイド</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">スタイルガイド</a></li>
+        <li><a href="/v2/examples/" class="nav-link">例</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">クックブック</a></li>
+      </ul>
+    </li>
+    <li><h4>ビデオコース</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">エコシステム</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>ヘルプ</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">フォーラム</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">チャット(公式)</a></li>
+      <li><a href="https://join.slack.com/t/vuejs-jp/shared_invite/zt-vmg3iysl-~CPGAxFMWwa0Fnu2IqtMdQ" class="nav-link" target="_blank" rel="noopener">チャット(日本向け)</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">ミートアップ</a></li>
+    </ul></li>
+    <li><h4>開発ツール</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>コアライブラリ</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/ja/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>ニュース</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">ウィークリーニュース</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">ロードマップ</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">イベント</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">ブログ(英語)</a></li>
+      <li><a href="/blog/" class="nav-link" target="_blank" rel="noopener">ブログ(日本語訳)</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">ジョブ(海外)</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV コミュニティ</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">チーム</a>
+</li>
+<li>
+  <a href="/contribution/" class="nav-link">貢献</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">リソース</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">パートナー</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">テーマ</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Browse packages for Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Vue を支援する</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#1回きりの支援" class="nav-link">1回きりの支援</a></li>
+    <li><a href="/support-vuejs/#継続的な支援" class="nav-link">継続的な支援</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">Tシャツ ショップ</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">言語</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://vuejs.org/v2/guide/components-slots.html" class="nav-link">English</a></li>
+    <li><a href="https://cn.vuejs.org/v2/guide/components-slots.html" class="nav-link">中文</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components-slots.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/components-slots.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components-slots.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components-slots.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components-slots.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-slots.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/components-slots.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      <div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+      
+        <h2>
+          
+          ガイド
+          
+            <select class="version-select">
+              <option value="v3">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>基本的な使い方</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">インストール</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">はじめに</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">Vue インスタンス</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">テンプレート構文</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">算出プロパティとウォッチャ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">クラスとスタイルのバインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">条件付きレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">リストレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">イベントハンドリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">フォーム入力バインディング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">コンポーネントの基本</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>コンポーネントの詳細</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">コンポーネントの登録</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">プロパティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">カスタムイベント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link current">スロット</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">動的 & 非同期コンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link">特別な問題に対処する</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>トランジションとアニメーション</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Enter/Leave とトランジション一覧</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">状態のトランジション</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>再利用と構成</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">ミックスイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">カスタムディレクティブ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">描画関数とJSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">プラグイン</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">フィルター</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>ツール</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">単一ファイルコンポーネント</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">テスト</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript のサポート</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">プロダクション環境への配信</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>スケールアップ</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">ルーティング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">状態管理</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">サーバサイドレンダリング</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">セキュリティ</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>内部</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">リアクティブの探求</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>移行</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Vue 1.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Vue Router 0.7.x からの移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Vuex 0.6.x から 1.0 への移行</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>その他</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">他のフレームワークとの比較</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Vue.js コミュニティへ参加しましょう!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">チームに会おう</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>プラチナスポンサー</span>
+    <div>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://jp.code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    スポンサーになる
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar components-slots-guide">
+  <p class="tip warning v3-warning">
+    v2.x 以前のドキュメントです。
+    v3.x のドキュメントを見たい場合は<a href="https://v3.ja.vuejs.org/">こちら</a>
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>スロット</h1>
+  
+  <p class="updated">最終更新日: 2019年2月20日</p>
+  
+  
+    <blockquote>
+<p>このページは <a href="components.html">コンポーネントの基本</a> を読まれていることが前提になっています。コンポーネントを扱った事のない場合はこちらのページを先に読んでください。</p>
+</blockquote>
+<blockquote>
+<p>バージョン 2.6.0 で、名前付きスロットとスコープ付きスロットに対する新しい統一構文 (<code>v-slot</code> ディレクティブ) が導入されました。<code>slot</code> および <code>slot-scope</code> 属性は非推奨となり置き換えられますが、まだ削除は <em>されず</em> 、ドキュメントも <a href="#非推奨の構文">ここ</a> にあります。新しい構文を導入する理由は、この <a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a> に記述されています。</p>
+</blockquote>
+<h2 id="スロットコンテンツ"><a href="#スロットコンテンツ" class="headerlink" title="スロットコンテンツ"></a>スロットコンテンツ</h2><p>Vue には <a href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md" target="_blank" rel="noopener">Web Components spec draft</a> にヒントを得たコンテンツ配信 API が実装されており、 <code>&lt;slot&gt;</code> 要素をコンテンツ配信の受け渡し口として利用します。</p>
+<p>これを使うことで次のようなコンポーネントを作成することが出来ます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  Your Profile
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>そして、 <code>&lt;navigation-link&gt;</code> のテンプレートはこうなります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+  <span class="hljs-attr">v-bind:href</span>=<span class="hljs-string">"url"</span>
+  <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+<p>コンポーネントを描画する時、 <code>&lt;slot&gt;&lt;/slot&gt;</code> は「Your Profile」に置換されるでしょう。スロットには HTML を含む任意のテンプレートを入れることが出来ます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Font Awesome のアイコンを追加 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fa fa-user"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  Your Profile
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>または、他のコンポーネントを入れることも出来ます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- コンポーネントを使ってアイコンを追加 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">font-awesome-icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"user"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">font-awesome-icon</span>&gt;</span>
+  Your Profile
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>もしも <code>&lt;navigation-link&gt;</code> のテンプレートが <code>&lt;slot&gt;</code> 要素を含ま <strong>ない</strong> 場合、開始タグと終了タグの間にある任意のコンテンツは破棄されます。</p>
+<h2 id="コンパイルスコープ"><a href="#コンパイルスコープ" class="headerlink" title="コンパイルスコープ"></a>コンパイルスコープ</h2><p>スロットの中でデータを扱いたい場合はこうします:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  Logged in as &#123;&#123; user.name &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>このスロットは、テンプレートの残りの部分と同じインスタンスプロパティ (つまり、同じ “スコープ”) にアクセスできます。<code>&lt;navigation-link&gt;</code> のスコープにアクセスすることは <strong>できません</strong>。例えば、<code>url</code> へのアクセスは動作しないでしょう:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-link</span> <span class="hljs-attr">url</span>=<span class="hljs-string">"/profile"</span>&gt;</span>
+  Clicking here will send you to: &#123;&#123; url &#125;&#125;
+  <span class="hljs-comment">&lt;!--
+  `url` は undefined になります。というのも、このコンテンツは
+  &lt;navigation-link&gt; コンポーネント _の中で_ 定義されるのではなく、
+  &lt;navigation-link&gt; コンポーネント _に_ 渡されるからです。
+  --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-link</span>&gt;</span></code></pre>
+<p>ルールとしては、以下を覚えておいてください:</p>
+<blockquote>
+<p>親テンプレート内の全てのものは親のスコープでコンパイルされ、子テンプレート内の全てのものは子のスコープでコンパイルされる。</p>
+</blockquote>
+<h2 id="フォールバックコンテンツ"><a href="#フォールバックコンテンツ" class="headerlink" title="フォールバックコンテンツ"></a>フォールバックコンテンツ</h2><p>スロットに対して、コンテンツがない場合にだけ描画されるフォールバック (つまり、デフォルトの) コンテンツを指定すると便利な場合があります。例えば、<code>&lt;submit-button&gt;</code> コンポーネントにおいて:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>ほとんどの場合には <code>&lt;button&gt;</code> の中に「Submit」という文字を描画したいかもしれません。「Submit」をフォールバックコンテンツにするには、<code>&lt;slot&gt;</code> タグの中に記述します。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>そして、親コンポーネントからスロットのコンテンツを指定せずに <code>&lt;submit-button&gt;</code> を使うと:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">submit-button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">submit-button</span>&gt;</span></code></pre>
+<p>フォールバックコンテンツの「Submit」が描画されます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  Submit
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p>しかし、もしコンテンツを指定すると:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">submit-button</span>&gt;</span>
+  Save
+<span class="hljs-tag">&lt;/<span class="hljs-name">submit-button</span>&gt;</span></code></pre>
+<p>指定されたコンテンツが代わりに描画されます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+  Save
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<h2 id="名前付きスロット"><a href="#名前付きスロット" class="headerlink" title="名前付きスロット"></a>名前付きスロット</h2><blockquote>
+<p>2.6.0 から更新。<code>slot</code> 属性を使った非推奨の構文については、<a href="#非推奨の構文">こちらを参照</a></p>
+</blockquote>
+<p>複数のスロットがあると便利なときもあります。例えば、<code>&lt;base-layout&gt;</code> コンポーネントが下記のようなテンプレートだとしましょう:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ここにヘッダコンテンツ --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ここにメインコンテンツ --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ここにフッターコンテンツ --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>こういった場合のために、 <code>&lt;slot&gt;</code> 要素は <code>name</code> という特別な属性を持っていて、追加のスロットを定義できます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"header"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"footer"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p><code>name</code> のない <code>&lt;slot&gt;</code> 要素は、暗黙的に「default」という名前を持ちます。</p>
+<p>名前付きスロットにコンテンツを指定するには、<code>&lt;template&gt;</code> に対して <code>v-slot</code> ディレクティブを使って、スロット名を引数として与えます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>これにより、<code>&lt;template&gt;</code> 要素の中身はすべて対応するスロットに渡されます。<code>v-slot</code> を使った <code>&lt;template&gt;</code> で囲まれていないコンテンツは、デフォルトスロットに対するものだとみなされます。</p>
+<p>しかし、明示的に指定したいなら、デフォルトスロットのコンテンツを <code>&lt;template&gt;</code> で囲むこともできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>いずれにせよ、描画される HTML は次のようになります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p>非推奨になった <a href="#非推奨の構文"><code>slot</code> 属性</a> とは異なり、<strong><code>v-slot</code> は <code>&lt;template&gt;</code> だけに追加できる</strong> (<a href="#デフォルトスロットしかない場合の省略記法">1つだけ例外</a> あり) 点に注意してください。</p>
+<h2 id="スコープ付きスロット"><a href="#スコープ付きスロット" class="headerlink" title="スコープ付きスロット"></a>スコープ付きスロット</h2><blockquote>
+<p>2.6.0 から更新。<code>slot-scope</code> 属性を使った非推奨の構文については、<a href="#非推奨の構文">こちらを参照</a></p>
+</blockquote>
+<p>スロットコンテンツから、子コンポーネントの中だけで利用可能なデータにアクセスできると便利なことがあります。例えば、以下のようなテンプレートの <code>&lt;current-user&gt;</code> コンポーネントを考えてみてください:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span>&#123;&#123; user.lastName &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+<p>ここで、ユーザーの名字の代わりに名前を表示するよう、このフォールバックコンテンツを置き換えたいと思うかもしれません:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>しかし、これは動作しません。というのも、<code>user</code> にアクセスすることができるのは <code>&lt;current-user&gt;</code> コンポーネントだけですが、ここで指定しているコンテンツは親コンポーネントで描画されるからです。</p>
+<p>親コンポーネント内でスロットコンテンツとして <code>user</code> を使えるようにするためには、<code>&lt;slot&gt;</code> 要素の属性として <code>user</code> をバインドします:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">v-bind:user</span>=<span class="hljs-string">"user"</span>&gt;</span>
+    &#123;&#123; user.lastName &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+<p><code>&lt;slot&gt;</code> 要素にバインドされた属性は、<strong>スロットプロパティ</strong> と呼ばれます。親スコープ内で <code>v-slot</code> の値として名前を指定することで、スロットプロパティを受け取ることができます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.user.firstName &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>この例では、すべてのスロットプロパティを保持するオブジェクトの名前を <code>slotProps</code> にしましたが、あなたの好きな名前を使うことができます。</p>
+<h3 id="デフォルトスロットしかない場合の省略記法"><a href="#デフォルトスロットしかない場合の省略記法" class="headerlink" title="デフォルトスロットしかない場合の省略記法"></a>デフォルトスロットしかない場合の省略記法</h3><p>上の例のようにデフォルトスロット <em>だけの</em> 場合は、コンポーネントのタグをスロットのテンプレートとして使うことができます。つまり、コンポーネントに対して <code>v-slot</code> を直接使えます。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+  &#123;&#123; slotProps.user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>さらに短くすることもできます。未指定のコンテンツがデフォルトスロットのものとみなされるのと同様に、引数のない <code>v-slot</code> もデフォルトコンテンツを参照しているとみなされます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+  &#123;&#123; slotProps.user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>デフォルトスロットに対する省略記法は、名前付きスロットと混在させることが <strong>できない</strong> 点に注意してください。スコープの曖昧さにつながるためです:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 不正。警告が出る --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+  &#123;&#123; slotProps.user.firstName &#125;&#125;
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:other</span>=<span class="hljs-string">"otherSlotProps"</span>&gt;</span>
+    slotProps is NOT available here
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>複数のスロットがある場合は常に <em>すべての</em> スロットに対して <code>&lt;template&gt;</code> ベースの構文を使用してください:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:default</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.user.firstName &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:other</span>=<span class="hljs-string">"otherSlotProps"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<h3 id="スロットプロパティの分割代入"><a href="#スロットプロパティの分割代入" class="headerlink" title="スロットプロパティの分割代入"></a>スロットプロパティの分割代入</h3><p>内部的には、スコープ付きスロットはスロットコンテンツを単一引数の関数で囲むことで動作させています。</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">slotProps</span>) </span>&#123;
+  <span class="hljs-comment">// ... slot content ...</span>
+&#125;</code></pre>
+<p>これは、<code>v-slot</code> の値が関数定義の引数部分で有効な任意の JavaScript 式を受け付けることを意味します。そのため、サポートされている環境 (<a href="single-file-components.html">単一ファイルコンポーネント</a> または <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E5%AE%9F%E8%A3%85%E7%8A%B6%E6%B3%81" target="_blank" rel="noopener">モダンブラウザ</a>) では、特定のスロットプロパティを取得するために <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#object_destructuring" target="_blank" rel="noopener">ES2015 の分割代入</a> を使うこともできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>こうするとテンプレートはよりきれいになります。特に、スロットが多くのプロパティを提供している場合はそうです。また、プロパティをリネームする (例えば、<code>user</code> から <code>person</code>) など別の可能性も開けます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"&#123; user: person &#125;"</span>&gt;</span>
+  &#123;&#123; person.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>スロットプロパティが未定義だった場合のフォールバックを定義することさえできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> <span class="hljs-attr">v-slot</span>=<span class="hljs-string">"&#123; user = &#123; firstName: 'Guest' &#125; &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<h2 id="動的なスロット名"><a href="#動的なスロット名" class="headerlink" title="動的なスロット名"></a>動的なスロット名</h2><blockquote>
+<p>2.6.0 で新規追加</p>
+</blockquote>
+<p><a href="syntax.html#動的引数">ディレクティブの動的引数</a> は <code>v-slot</code> でも動作し、動的なスロット名の定義が可能です:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:</span>[<span class="hljs-attr">dynamicSlotName</span>]&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<h2 id="名前付きスロットの省略記法"><a href="#名前付きスロットの省略記法" class="headerlink" title="名前付きスロットの省略記法"></a>名前付きスロットの省略記法</h2><blockquote>
+<p>2.6.0 で新規追加</p>
+</blockquote>
+<p><code>v-on</code> や <code>v-bind</code> と同様に <code>v-slot</code> にも省略記法があり、引数の前のすべての部分 (<code>v-slot:</code>) を特別な記号 <code>#</code> で置き換えます。例えば、<code>v-slot:header</code> は <code>#header</code> に書き換えることができます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>しかし、ほかのディレクティブと同様に、省略記法は引数がある場合にのみ利用できます。これは、次のような構文が不正ということを意味します:</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- これは警告を引き起こす --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<p>代わりに、省略記法を使いたい場合には、常にスロット名を指定する必要があります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">current-user</span> #<span class="hljs-attr">default</span>=<span class="hljs-string">"&#123; user &#125;"</span>&gt;</span>
+  &#123;&#123; user.firstName &#125;&#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">current-user</span>&gt;</span></code></pre>
+<h2 id="その他の例"><a href="#その他の例" class="headerlink" title="その他の例"></a>その他の例</h2><p><strong>スロットプロパティを使えば、入力プロパティに応じて異なるコンテンツを描画する再利用可能なテンプレートにスロットを変えることができます。</strong> これは、データロジックをカプセル化する一方で親コンポーネントによるレイアウトのカスタマイズを許すような、再利用可能なコンポーネントを設計しているときに特に便利です。</p>
+<p>例えば、リストのレイアウトと絞り込みロジックを含む <code>&lt;todo-list&gt;</code> コンポーネントを実装しているとします:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in filteredTodos"</span>
+    <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"todo.id"</span>
+  &gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>それぞれの todo に対するコンテンツをハードコーディングする代わりに、todo ごとにスロットを作成し、スロットプロパティとして <code>todo</code> をバインドすることで、親コンポーネントから制御できるようにします:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+    <span class="hljs-attr">v-for</span>=<span class="hljs-string">"todo in filteredTodos"</span>
+    <span class="hljs-attr">v-bind:key</span>=<span class="hljs-string">"todo.id"</span>
+  &gt;</span>
+    <span class="hljs-comment">&lt;!--
+    それぞれの todo のためのスロットがあり、 `todo` オブジェクトを
+    スロットのプロパティとして渡している
+    --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"todo"</span> <span class="hljs-attr">v-bind:todo</span>=<span class="hljs-string">"todo"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- フォールバックコンテンツ --&gt;</span>
+      &#123;&#123; todo.text &#125;&#125;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>この <code>&lt;todo-list&gt;</code> コンポーネントを利用する時、子からのデータにはアクセスしながらも、todo アイテムに対して代わりの <code>&lt;template&gt;</code> を定義することができます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">"todos"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-slot:todo</span>=<span class="hljs-string">"&#123; todo &#125;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todo.isComplete"</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span></code></pre>
+<p>しかし、これでもスコープ付きスロットが可能にすることの表面を走り書きした程度にすぎません。実世界の強力な利用例については、<a href="https://github.com/Akryum/vue-virtual-scroller" target="_blank" rel="noopener">Vue Virtual Scroller</a> や <a href="https://github.com/posva/vue-promised" target="_blank" rel="noopener">Vue Promised</a>, <a href="https://github.com/LinusBorg/portal-vue" target="_blank" rel="noopener">Portal Vue</a> といったライブラリを見てみることをおすすめします。</p>
+<h2 id="非推奨の構文"><a href="#非推奨の構文" class="headerlink" title="非推奨の構文"></a>非推奨の構文</h2><blockquote>
+<p>Vue 2.6.0 で <code>v-slot</code> ディレクティブが導入され、まだサポートされているものの <code>slot</code> および <code>slot-scope</code> 属性に代わる改善された API を提供しています。<code>v-slot</code> を導入する理由は、この <a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a> に完全に記述されています。<code>slot</code> および <code>slot-scope</code> 属性は今後の 2.x リリースで引き続きサポートされますが、公式に非推奨となり、Vue 3 では削除されるでしょう。</p>
+</blockquote>
+<h3 id="slot-属性による名前付きスロット"><a href="#slot-属性による名前付きスロット" class="headerlink" title="slot 属性による名前付きスロット"></a><code>slot</code> 属性による名前付きスロット</h3><blockquote>
+<p>2.6.0 以降では <abbr title="すべての Vue 2.x バージョンでは引き続きサポートされますが、推奨されていません。">非推奨</abbr>。推奨される新しい構文については、<a href="#名前付きスロット">こちら</a> を参照。</p>
+</blockquote>
+<p>親から名前付きスロットにコンテンツを渡すには、<code>&lt;template&gt;</code> に対して特別な <code>slot</code> 属性を使います (例として、<a href="#名前付きスロット">ここ</a> で説明した <code>&lt;base-layout&gt;</code> コンポーネントを使用):</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"header"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>あるいは、<code>slot</code> 属性を通常の要素に直接指定することもできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"header"</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">base-layout</span>&gt;</span></code></pre>
+<p>名前のないスロットは <strong>デフォルトスロット</strong> となり、スロットの指定がないコンテンツをすべて受け取ります。上のどちらの例も、描画される HTML は次のようになります:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Here might be a page title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph for the main content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And another one.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Here's some contact info<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<h3 id="slot-scope-属性によるスコープ付きスロット"><a href="#slot-scope-属性によるスコープ付きスロット" class="headerlink" title="slot-scope 属性によるスコープ付きスロット"></a><code>slot-scope</code> 属性によるスコープ付きスロット</h3><blockquote>
+<p>2.6.0 以降では <abbr title="すべての Vue 2.x バージョンでは引き続きサポートされますが、推奨されていません。">非推奨</abbr>。推奨される新しい構文については、<a href="#スコープ付きスロット">こちら</a> を参照。</p>
+</blockquote>
+<p>スロットに渡されたプロパティを受け取るには、親コンポーネントは <code>&lt;template&gt;</code> に対して <code>slot-scope</code> 属性を使えます (例として、<a href="#スコープ付きスロット">ここ</a> で説明した <code>&lt;slot-example&gt;</code> を使用):</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"default"</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p>ここで、<code>slot-scope</code> はプロパティを受け取るオブジェクトを <code>slotProps</code> 変数として宣言し、<code>&lt;template&gt;</code> の中で利用できるようにしています。JavaScript の関数引数の名前と同じように、<code>slotProps</code> の代わりに好きな名前を使うことができます。</p>
+<p><code>slot=&quot;default&quot;</code> は省略することもできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p><code>slot-scope</code> 属性は、<code>&lt;template&gt;</code> 要素以外 (コンポーネントも含む) に対して直接指定することもできます:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"slotProps"</span>&gt;</span>
+    &#123;&#123; slotProps.msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p><code>slot-scope</code> の値は、関数定義の引数部分で有効な任意の JavaScript 式を受け付けることができます。これは、サポートされている環境 (<a href="single-file-components.html">単一ファイルコンポーネント</a> または <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E5%AE%9F%E8%A3%85%E7%8A%B6%E6%B3%81" target="_blank" rel="noopener">モダンブラウザ</a>) では、式に <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#object_destructuring" target="_blank" rel="noopener">ES2015 の分割代入</a> が使えることを意味します:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">slot-example</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; msg &#125;"</span>&gt;</span>
+    &#123;&#123; msg &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">slot-example</span>&gt;</span></code></pre>
+<p><a href="#その他の例">ここ</a> で説明した <code>&lt;todo-list&gt;</code> を例にすると、<code>slot-scope</code> で同等のことをするには次のようにします:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">todo-list</span> <span class="hljs-attr">v-bind:todos</span>=<span class="hljs-string">"todos"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"todo"</span> <span class="hljs-attr">slot-scope</span>=<span class="hljs-string">"&#123; todo &#125;"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"todo.isComplete"</span>&gt;</span>✓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    &#123;&#123; todo.text &#125;&#125;
+  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">todo-list</span>&gt;</span></code></pre>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components-custom-events.html">カスタムイベント</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/components-dynamic-async.html">動的 & 非同期コンポーネント</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    間違いを見つけた、またはドキュメントに貢献したいですか？
+    <a href="https://github.com/vuejs/jp.vuejs.org/blob/lang-ja/src/v2/guide/components-slots.md" rel="noopener" target="_blank">
+      GitHub で編集しましょう！
+    </a>
+    このサイトは
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>
+    でホストされています。
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+      appId: 'BH4D9OD16A',
+      apiKey: '0a75952972806d9ad07e387d08e9cc4c',
+      indexName: 'vuejs_jp',
+      inputSelector: selector,
+      algoliaOptions: { facetFilters: ["version:" + version] },
+      autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+    </script>
+  </body>
+</html>

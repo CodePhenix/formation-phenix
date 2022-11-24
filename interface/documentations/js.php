@@ -175,11 +175,11 @@
                   </tr>
                   <tr>
                     <td><code>push</code></td>
-                    <td>Ajoute un élément au début du tableau.</td>
+                    <td>Ajoute un élément en fin de tableau.</td>
                   </tr>
                   <tr>
                     <td><code>unshift</code></td>
-                    <td>Ajoute un élément en fin de tableau.</td>
+                    <td>Ajoute un élément au début du tableau.</td>
                   </tr>
                   <tr>
                     <td><code>pop()</code></td>

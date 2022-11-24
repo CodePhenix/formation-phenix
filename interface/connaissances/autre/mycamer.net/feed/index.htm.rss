@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Technique de pointe</title>
+	<atom:link href="https://mycamer.net/feed/" rel="self" type="application/rss+xml" />
+	<link>https://mycamer.net</link>
+	<description>Blog de nouvelle technologies</description>
+	<lastBuildDate>Wed, 17 Aug 2022 11:45:38 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.0.1</generator>
+
+<image>
+	<url>https://mycamer.net/wp-content/uploads/2021/03/favicon-75x75.png</url>
+	<title>Technique de pointe</title>
+	<link>https://mycamer.net</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Agents pathogènes nocifs éliminés par la technologie de la lumière pulsée</title>
+		<link>https://mycamer.net/agents-pathogenes-nocifs-elimines-par-la-technologie-de-la-lumiere-pulsee/</link>
+					<comments>https://mycamer.net/agents-pathogenes-nocifs-elimines-par-la-technologie-de-la-lumiere-pulsee/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2022 11:45:38 +0000</pubDate>
+				<category><![CDATA[Actualité]]></category>
+		<category><![CDATA[Technologies]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21933</guid>
+
+					<description><![CDATA[Une technique de désinfection des aliments à base de lumière a réussi à éliminer plusieurs agents pathogènes nocifs dans une nouvelle étude menée par des chercheurs de Penn State. La technique de la lumière pulsée est prometteuse en tant qu&#8217;alternative efficace aux technologies antimicrobiennes à base de produits chimiques, de chaleur et d&#8217;eau couramment utilisées [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p></p>
+<div>
+<p>Une technique de désinfection des aliments à base de lumière a réussi à éliminer plusieurs agents pathogènes nocifs dans une nouvelle étude menée par des chercheurs de Penn State. </p>
+<p>La technique de la lumière pulsée est prometteuse en tant qu&#8217;alternative efficace aux technologies antimicrobiennes à base de produits chimiques, de chaleur et d&#8217;eau couramment utilisées dans l&#8217;industrie alimentaire &#8211; et pourrait être applicable plus généralement dans des environnements aseptisés tels que les hôpitaux, les installations de traitement de l&#8217;eau et les usines pharmaceutiques, selon les chercheurs. </p>
+<p>Les Centers for Disease Control estiment que plus de neuf millions de personnes tombent malades, 56 000 sont hospitalisées et 1 300 meurent chaque année aux États-Unis en raison de maladies d&#8217;origine alimentaire.  Malgré les améliorations technologiques et une réglementation accrue, la contamination des aliments reste un problème mondial avec des implications majeures pour la santé publique, a expliqué Ali Demirci, professeur de génie agricole et biologique à Penn State et membre de l&#8217;équipe de recherche. </p>
+<p>&#8220;Toute amélioration pour prévenir la maladie ou sauver des vies serait le meilleur résultat de cette recherche&#8221;, a déclaré Demirci.  &#8220;Nous voulons réduire à zéro le nombre de décès dus aux maladies d&#8217;origine alimentaire.&#8221; </p>
+<p>L&#8217;étude, récemment publiée dans le Journal of Food Engineering, a révélé que des impulsions ciblées de lumière à large spectre ont établi une réponse germicide chez E. coli, Salmonella Typhimurium, Listeria monocytogenes, Bacillus cereus, Aspergillus niger spores et Penicillium roqueforti spores.  L&#8217;étude a également défini le spectre et les caractéristiques énergétiques de la lumière pulsée et a constaté que le rayonnement ultraviolet jouait un rôle important dans le processus. </p>
+<p>Les travaux ont été menés dans le laboratoire de Demirci en collaboration avec Ed Mills, professeur agrégé de sciences de la viande, et Josh Cassar, ancien doctorant en sciences animales, qui a depuis obtenu son diplôme et travaille comme consultant en sécurité alimentaire. </p>
+<p>« Je suis retourné à Penn State pour des études supérieures après avoir travaillé pour un transformateur de volaille, donc pour moi, la recherche était très appliquée ;  nous voulions mettre cette technique sur le marché », a déclaré Cassar.  &#8220;En termes de mise en œuvre de la technologie, nous avons continué à collaborer avec des entreprises partenaires pour intégrer cette technique dans leurs installations.&#8221; </p>
+<p>Au cours des deux dernières décennies, le laboratoire a appliqué la technique à une gamme d&#8217;aliments, notamment des fruits, des graines, des céréales, du fromage, du lait, du jus de pomme et de multiples produits à base de volaille.  L&#8217;équipe a même simulé les conditions de production pour tester la technologie sur des œufs, en utilisant un convoyeur conçu pour tester le processus dans un environnement industriel, avec des lampes flash au xénon conçues pour fonctionner à l&#8217;échelle commerciale. </p>
+<p>L&#8217;équipe a déclaré qu&#8217;elle espérait que cette technologie serait adoptée par l&#8217;industrie alimentaire le plus tôt possible en raison de son fort potentiel pour aider à rendre les aliments plus sûrs à consommer. </p>
+<p>Depuis les années 1960, l&#8217;industrie alimentaire utilise la lumière ultraviolette (UV) de faible intensité comme traitement antimicrobien, a expliqué Mills.  Les producteurs de viande utilisaient de faibles niveaux de lumière UV dans les installations de vieillissement de la viande, mais la technique ne pouvait être utilisée qu&#8217;à faible intensité sur une longue période. </p>
+<p>&#8220;C&#8217;est un système complètement différent&#8221;, a déclaré Mills.  &#8220;Nous utilisons la lumière pulsée au lieu de la lumière continue, qui tire parti de l&#8217;énergie stockée dans une impulsion, afin que nous puissions fournir plus de puissance en moins de temps.&#8221; </p>
+<p>La technique de l&#8217;équipe est conçue pour être déployée sur un convoyeur alimentaire, où des impulsions lumineuses seraient appliquées au produit lors de son passage.  Le traitement délivre une intensité de lumière plus élevée, car il est pulsé, ce qui entraîne une plus grande réduction microbienne dans un laps de temps plus court que le traitement à la lumière UV conventionnel, a expliqué Mills. </p>
+<p>&#8220;L&#8217;analogie que j&#8217;utilise est un barrage dans une rivière&#8221;, a déclaré Demirci.  &#8220;Vous ouvrez les vannes et il y a un éclair d&#8217;énergie.  C&#8217;est ce que nous faisons avec la lumière. </p>
+<p>La lumière pulsée est une technologie émergente, qui pourrait servir d&#8217;alternative aux interventions antimicrobiennes actuelles dans l&#8217;industrie alimentaire, mais pourrait également être appliquée plus largement dans d&#8217;autres applications antimicrobiennes, a expliqué Cassar.   </p>
+<p>&#8220;La lumière pulsée est un autre outil dans la boîte à outils&#8221;, a-t-il déclaré.  «Lorsqu&#8217;il est utilisé dans un cadre approprié, il peut compenser un désinfectant chimique ou un désinfectant à base d&#8217;eau.  Comme pour toute nouvelle technologie, elle continuera à se développer et nous espérons qu&#8217;elle nous fournira un outil efficace et efficient pour l&#8217;assainissement dans une gamme d&#8217;environnements et d&#8217;industries.</p>
+<p><b>Référence: </b>Cassar JR, Mills EW, Demirci A. Caractérisation de la lumière pulsée pour l&#8217;inactivation microbienne. <i>J Food Eng</i>.  2022;334:111152.  est ce que je:<a target="_blank" href="https://doi.org/10.1016/j.jfoodeng.2022.111152" style="background-color: rgb(255, 255, 255);" rel="noopener">10.1016/j.jfoodeng.2022.111152</a></p>
+<p><i><span style="font-size: 14px;">Cet article a été republié à partir de ce qui suit <a target="_blank" href="https://www.psu.edu/news/research/story/pulsed-light-technology-effectively-kills-harmful-pathogens-new-study/" rel="noopener">matériaux</a>.  Remarque : le matériel peut avoir été modifié pour la longueur et le contenu.  Pour plus d&#8217;informations, veuillez contacter la source citée.</span></i></p>
+</div>
+<div>
+<p>Une technique de désinfection des aliments à base de lumière a réussi à éliminer plusieurs agents pathogènes nocifs dans une nouvelle étude menée par des chercheurs de Penn State. </p>
+<p>La technique de la lumière pulsée est prometteuse en tant qu&#8217;alternative efficace aux technologies antimicrobiennes à base de produits chimiques, de chaleur et d&#8217;eau couramment utilisées dans l&#8217;industrie alimentaire &#8211; et pourrait être applicable plus généralement dans des environnements aseptisés tels que les hôpitaux, les installations de traitement de l&#8217;eau et les usines pharmaceutiques, selon les chercheurs. </p>
+<p>Les Centers for Disease Control estiment que plus de neuf millions de personnes tombent malades, 56 000 sont hospitalisées et 1 300 meurent chaque année aux États-Unis en raison de maladies d&#8217;origine alimentaire.  Malgré les améliorations technologiques et une réglementation accrue, la contamination des aliments reste un problème mondial avec des implications majeures pour la santé publique, a expliqué Ali Demirci, professeur de génie agricole et biologique à Penn State et membre de l&#8217;équipe de recherche. </p>
+<p>&#8220;Toute amélioration pour prévenir la maladie ou sauver des vies serait le meilleur résultat de cette recherche&#8221;, a déclaré Demirci.  &#8220;Nous voulons réduire à zéro le nombre de décès dus aux maladies d&#8217;origine alimentaire.&#8221; </p>
+<p>L&#8217;étude, récemment publiée dans le Journal of Food Engineering, a révélé que des impulsions ciblées de lumière à large spectre ont établi une réponse germicide chez E. coli, Salmonella Typhimurium, Listeria monocytogenes, Bacillus cereus, Aspergillus niger spores et Penicillium roqueforti spores.  L&#8217;étude a également défini le spectre et les caractéristiques énergétiques de la lumière pulsée et a constaté que le rayonnement ultraviolet jouait un rôle important dans le processus. </p>
+<p>Les travaux ont été menés dans le laboratoire de Demirci en collaboration avec Ed Mills, professeur agrégé de sciences de la viande, et Josh Cassar, ancien doctorant en sciences animales, qui a depuis obtenu son diplôme et travaille comme consultant en sécurité alimentaire. </p>
+<p>« Je suis retourné à Penn State pour des études supérieures après avoir travaillé pour un transformateur de volaille, donc pour moi, la recherche était très appliquée ;  nous voulions mettre cette technique sur le marché », a déclaré Cassar.  &#8220;En termes de mise en œuvre de la technologie, nous avons continué à collaborer avec des entreprises partenaires pour intégrer cette technique dans leurs installations.&#8221; </p>
+<p>Au cours des deux dernières décennies, le laboratoire a appliqué la technique à une gamme d&#8217;aliments, notamment des fruits, des graines, des céréales, du fromage, du lait, du jus de pomme et de multiples produits à base de volaille.  L&#8217;équipe a même simulé les conditions de production pour tester la technologie sur des œufs, en utilisant un convoyeur conçu pour tester le processus dans un environnement industriel, avec des lampes flash au xénon conçues pour fonctionner à l&#8217;échelle commerciale. </p>
+<p>L&#8217;équipe a déclaré qu&#8217;elle espérait que cette technologie serait adoptée par l&#8217;industrie alimentaire le plus tôt possible en raison de son fort potentiel pour aider à rendre les aliments plus sûrs à consommer. </p>
+<p>Depuis les années 1960, l&#8217;industrie alimentaire utilise la lumière ultraviolette (UV) de faible intensité comme traitement antimicrobien, a expliqué Mills.  Les producteurs de viande utilisaient de faibles niveaux de lumière UV dans les installations de vieillissement de la viande, mais la technique ne pouvait être utilisée qu&#8217;à faible intensité sur une longue période. </p>
+<p>&#8220;C&#8217;est un système complètement différent&#8221;, a déclaré Mills.  &#8220;Nous utilisons la lumière pulsée au lieu de la lumière continue, qui tire parti de l&#8217;énergie stockée dans une impulsion, afin que nous puissions fournir plus de puissance en moins de temps.&#8221; </p>
+<p>La technique de l&#8217;équipe est conçue pour être déployée sur un convoyeur alimentaire, où des impulsions lumineuses seraient appliquées au produit lors de son passage.  Le traitement délivre une intensité de lumière plus élevée, car il est pulsé, ce qui entraîne une plus grande réduction microbienne dans un laps de temps plus court que le traitement à la lumière UV conventionnel, a expliqué Mills. </p>
+<p>&#8220;L&#8217;analogie que j&#8217;utilise est un barrage dans une rivière&#8221;, a déclaré Demirci.  &#8220;Vous ouvrez les vannes et il y a un éclair d&#8217;énergie.  C&#8217;est ce que nous faisons avec la lumière. </p>
+<p>La lumière pulsée est une technologie émergente, qui pourrait servir d&#8217;alternative aux interventions antimicrobiennes actuelles dans l&#8217;industrie alimentaire, mais pourrait également être appliquée plus largement dans d&#8217;autres applications antimicrobiennes, a expliqué Cassar.   </p>
+<p>&#8220;La lumière pulsée est un autre outil dans la boîte à outils&#8221;, a-t-il déclaré.  «Lorsqu&#8217;il est utilisé dans un cadre approprié, il peut compenser un désinfectant chimique ou un désinfectant à base d&#8217;eau.  Comme pour toute nouvelle technologie, elle continuera à se développer et nous espérons qu&#8217;elle nous fournira un outil efficace et efficient pour l&#8217;assainissement dans une gamme d&#8217;environnements et d&#8217;industries.</p>
+<p><b>Référence: </b>Cassar JR, Mills EW, Demirci A. Caractérisation de la lumière pulsée pour l&#8217;inactivation microbienne. <i>J Food Eng</i>.  2022;334:111152.  est ce que je:<a target="_blank" href="https://doi.org/10.1016/j.jfoodeng.2022.111152" style="background-color: rgb(255, 255, 255);" rel="noopener">10.1016/j.jfoodeng.2022.111152</a></p>
+<p><i><span style="font-size: 14px;">Cet article a été republié à partir de ce qui suit <a target="_blank" href="https://www.psu.edu/news/research/story/pulsed-light-technology-effectively-kills-harmful-pathogens-new-study/" rel="noopener">matériaux</a>.  Remarque : le matériel peut avoir été modifié pour la longueur et le contenu.  Pour plus d&#8217;informations, veuillez contacter la source citée.</span></i></p>
+</div>
+<p> &#8212;  to <a href="https://www.technologynetworks.com/analysis/news/harmful-pathogens-eliminated-by-pulsed-light-technology-364805 ">www.technologynetworks.com </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/agents-pathogenes-nocifs-elimines-par-la-technologie-de-la-lumiere-pulsee/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Amazon Web Services continue d&#8217;héberger des fichiers pour l&#8217;escroquerie CBD</title>
+		<link>https://mycamer.net/amazon-web-services-continue-dheberger-des-fichiers-pour-lescroquerie-cbd/</link>
+					<comments>https://mycamer.net/amazon-web-services-continue-dheberger-des-fichiers-pour-lescroquerie-cbd/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2022 08:45:34 +0000</pubDate>
+				<category><![CDATA[Language HTML5]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21925</guid>
+
+					<description><![CDATA[Bien qu&#8217;ils aient été avertis à deux reprises par Snopes par e-mail, Amazon Web Services (AWS) continue d&#8217;héberger des fichiers associés à une fausse escroquerie de parrainage de célébrités impliquant des gommes CBD et la star de la musique country Reba McEntire. McEntire n&#8217;a rien à voir avec l&#8217;arnaque, car son image et sa ressemblance [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div data-component="content-body">
+							<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></p>
+<p>Bien qu&#8217;ils aient été avertis à deux reprises par Snopes par e-mail, Amazon Web Services (AWS) continue d&#8217;héberger des fichiers associés à une fausse escroquerie de parrainage de célébrités impliquant des gommes CBD et la star de la musique country Reba McEntire.  McEntire n&#8217;a rien à voir avec l&#8217;arnaque, car son image et sa ressemblance sont utilisées sans son autorisation.  Nous avons précédemment déposé <a target="_blank" href="https://www.snopes.com/news/2022/08/03/reba-mcentire-sad-news/" rel="noreferrer noopener">deux</a> <a target="_blank" href="https://www.snopes.com/fact-check/reba-mcentire-cbd-keto/" rel="noreferrer noopener">rapports</a> sur le sujet.</p>
+<h4 id="h-cbd-and-keto-gummies-scams">Escroqueries CBD et Keto Gummies</h4>
+<p>Pendant des années, les escroqueries en ligne impliquant <a target="_blank" href="https://www.snopes.com/tag/cbd/" rel="noreferrer noopener">CDB</a> et <a target="_blank" href="https://www.snopes.com/tag/keto/" rel="noreferrer noopener">céto</a> l&#8217;huile et les gommes ont tourmenté Internet.  Tel <a target="_blank" href="https://www.snopes.com/tag/scams/" rel="noreferrer noopener">escroqueries</a> ont amené les clients à commander les produits avec la fausse croyance qu&#8217;ils fonctionnent comme un <a target="_blank" href="https://www.alzheimers.org.uk/about-dementia/treatments/alternative-therapies/cannabis-cbd-oil-and-dementia" rel="noreferrer noopener">remède contre la démence</a> et maladies, et qu&#8217;une ou plusieurs célébrités éminentes telles que <a target="_blank" href="https://www.snopes.com/fact-check/winfrey-goldberg-cbd/" rel="noreferrer noopener">Oprah Winfrey</a> et le <a target="_blank" href="https://www.snopes.com/fact-check/shark-tank-cbd-gummies/" rel="noreferrer noopener">casting de l&#8217;émission télévisée &#8220;Shark Tank&#8221;</a> les avait approuvés.</p>
+<p>Dans le passé, nous avons trouvé des rapports de clients facturés plus que ce qui leur avait été promis, selon <a target="_blank" href="https://www.hometownstation.com/news-articles/baypark-cbd-gummies-reviews-cost-scam-bay-park-cbd-gummies-shark-tank-410466" rel="noreferrer noopener">commentaires trouvés sous de fausses critiques</a> (<a target="_blank" href="https://archive.ph/wC5Pt" rel="noreferrer noopener">archivé</a>) et d&#8217;autres sources.  Les clients ont également déclaré avoir eu des difficultés à joindre les entreprises concernées afin de traiter un remboursement ou un retour.  Par exemple, sur les pages de commande de produits CBD et céto gélifiés, nous avons été témoins de numéros de téléphone mystérieusement absents d&#8217;endroits spécifiques où ils devraient apparaître dans les documents de conditions générales.</p>
+<h4>Voici ce qu&#8217;AWS héberge</h4>
+<p>Les types de fichiers associés au <a target="_blank" href="https://www.snopes.com/tag/reba-mcentire" rel="noreferrer noopener">McEntire</a> Les escroqueries aux bonbons CBD hébergées par Amazon incluent des images (.jpg et .png), JavaScript (.js) et des feuilles de style en cascade (.css).  Ensemble, ces fichiers constituent certains des composants d&#8217;un faux article (<a target="_blank" href="https://archive.ph/vS87q" rel="noreferrer noopener">archivé</a>) qui a été conçu par des escrocs pour ressembler à FoxNews.com.  Les escrocs semblaient avoir créé le faux article de Fox News comme un signal de confiance aux utilisateurs susceptibles de croire qu&#8217;il avait une quelconque légitimité.  L&#8217;article affirmait à tort que McEntire approuvait les bonbons au CBD comme une &#8220;solution&#8221; pour &#8220;inverser&#8221; la démence.  Fox News n&#8217;a rien à voir avec l&#8217;arnaque.</p>
+<figure class="wp-block-image size-full el-img Media-wrapper  Media-figure"><a target="_blank" href="https://www.snopes.com/tachyon/2022/08/reba-fake-fox-news.jpg" class="el-img Media-anchor" rel="noopener"><img loading="lazy" width="2120" height="1303" src="https://www.snopes.com/tachyon/2022/08/reba-fake-fox-news.jpg" alt="Reba McEntire CBD Gummies et keto gélifiés sont des arnaques et elle n'a jamais approuvé Natures Only CBD Gummies ou tout autre produit similaire." class="wp-image-439410 Media--image" srcset="https://www.snopes.com/tachyon/2022/08/reba-fake-fox-news.jpg?resize=2120%2C1303&amp;zoom=1 2120w, https://www.snopes.com/tachyon/2022/08/reba-fake-fox-news.jpg?resize=2120%2C1303&amp;zoom=0.5 1060w, https://www.snopes.com/tachyon/2022/08/reba-fake-fox-news.jpg?resize=2120%2C1303&amp;zoom=0.25 530w" sizes="(max-width: 2120px) 100vw, 2120px"/></a><figcaption>Cet article a été créé par des escrocs pour apparaître comme s&#8217;il provenait de FoxNews.com.  En réalité, Fox News n&#8217;a rien à voir avec tout cela.  Il est possible que les origines de l&#8217;escroquerie soient en Chine, selon plusieurs indicateurs que nous avons trouvés.</figcaption></figure>
+<p>L&#8217;un des fichiers hébergés par Amazon (<a target="_blank" href="https://web.archive.org/web/20220802223254/https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/rebainterview.jpg" rel="noreferrer noopener">archivé</a>) a montré un faux <a target="_blank" href="https://www.snopes.com/tag/fox-news/" rel="noreferrer noopener">Fox News</a> titre sur les gommes CBD avec McEntire assis sur le plateau de l&#8217;émission télévisée Bravo d&#8217;Andy Cohen, &#8220;Regardez ce qui se passe en direct&#8221;.</p>
+<figure class="wp-block-image size-full el-img Media-wrapper  Media-figure"><a target="_blank" href="https://www.snopes.com/tachyon/2022/08/reba-fake-interview.jpg" class="el-img Media-anchor" rel="noopener"><img loading="lazy" width="990" height="660" src="https://www.snopes.com/tachyon/2022/08/reba-fake-interview.jpg" alt="Reba McEntire CBD Gummies et keto gélifiés sont des arnaques et elle n'a jamais approuvé Natures Only CBD Gummies ou tout autre produit similaire." class="wp-image-439400 Media--image" srcset="https://www.snopes.com/tachyon/2022/08/reba-fake-interview.jpg?resize=990%2C660&amp;zoom=1 990w, https://www.snopes.com/tachyon/2022/08/reba-fake-interview.jpg?resize=990%2C660&amp;zoom=0.5 495w, https://www.snopes.com/tachyon/2022/08/reba-fake-interview.jpg?resize=990%2C660&amp;zoom=0.25 248w" sizes="(max-width: 990px) 100vw, 990px"/></a><figcaption>C&#8217;était l&#8217;une des nombreuses images hébergées dans le faux article créé par les escrocs pour donner l&#8217;impression qu&#8217;il provenait de FoxNews.com.</figcaption></figure>
+<h4>Contacter Amazon RP</h4>
+<p>Nous avons d&#8217;abord contacté l&#8217;équipe des relations publiques d&#8217;Amazon par e-mail le 8 août. Un porte-parole de l&#8217;entreprise a répondu le même jour et nous a mis en contact avec un <a target="_blank" href="https://aws.amazon.com/aup/" rel="noreferrer noopener">page</a> qui détaillent les politiques d&#8217;utilisation acceptables pour <a target="_blank" href="https://www.snopes.com/tag/amazon-web-services/" rel="noreferrer noopener">AWS</a>.  La page comprenait également un lien où le contenu enfreignant la politique pouvait être signalé.  Cependant, le formulaire sur la page nécessitait certaines données que nous n&#8217;avions pas et ne pouvait donc pas être soumis.</p>
+<p>Nous avons alors tendu la main à <a target="_blank" href="https://www.snopes.com/tag/amazon/" rel="noreferrer noopener">Amazone</a> par e-mail une deuxième fois le 12 août. Nous avons exprimé notre urgence quant à ce que cette affaire impliquait, affirmant que ce type d&#8217;escroquerie s&#8217;attaque souvent aux personnes âgées et aux personnes handicapées, selon les histoires que nous avons lues.  Cependant, nous n&#8217;avons pas reçu de réponse au cours des quatre jours suivants.</p>
+<h4>Liste des fichiers hébergés par AWS</h4>
+<p>Amazon héberge les fichiers suivants pour l&#8217;escroquerie McEntire CBD gummies :</p>
+<blockquote class="wp-block-quote">
+<p>https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/logo.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/links.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/mobile.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/share2.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/rebamain.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/rebainterview.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/330.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/331.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/km.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/d3.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/bottle/Natures%20One%20CBD%20Gummies.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/button.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/pp1.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/pp3.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/pp5.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/pp2.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/pp6.png<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/side1.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/side3.jpg<br />https://landingpagecache.s3.us-west-1.amazonaws.com/CBD/US/SS/Fox-Reba/translateelement.css<br />https://landingpagecache.s3.us-west-1.amazonaws.com/disable-devtool.min.js</p>
+</blockquote>
+<p>Cette histoire sera mise à jour si nous recevons plus de détails.</p>
+<blockquote class="wp-block-quote">
+<p><strong>Sources:</strong></p>
+<p>&#8220;Politique d&#8217;utilisation acceptable d&#8217;AWS.&#8221; <em>Amazon Web Services, Inc.</em>https://aws.amazon.com/aup/.</p>
+<p>“Avis sur Baypark CBD Gummies (coût et arnaque) Bay Park CBD Gummies Shark Tank.” <em>Gare de la ville natale |  KHTS FM 98.1 et AM 1220</em>21 mars 2022, https://www.hometownstation.com/news-articles/baypark-cbd-gummies-reviews-cost-scam-bay-park-cbd-gummies-shark-tank-410466.</p>
+<p>&#8220;Cannabis, huile de CBD et démence.&#8221; <em>Société Alzheimer</em>https://www.alzheimers.org.uk/about-dementia/treatments/alternative-therapies/cannabis-cbd-oil-and-dementia.</p>
+</blockquote></div>
+
+<p> &#8212;  to <a href="https://www.snopes.com/news/2022/08/16/amazon-cbd-scam/ ">www.snopes.com </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/amazon-web-services-continue-dheberger-des-fichiers-pour-lescroquerie-cbd/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Les images de Prince de Warhol : commentaire social ou violation du droit d&#8217;auteur ?</title>
+		<link>https://mycamer.net/les-images-de-prince-de-warhol-commentaire-social-ou-violation-du-droit-dauteur/</link>
+					<comments>https://mycamer.net/les-images-de-prince-de-warhol-commentaire-social-ou-violation-du-droit-dauteur/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2022 04:33:32 +0000</pubDate>
+				<category><![CDATA[portrait]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21922</guid>
+
+					<description><![CDATA[WASHINGTON — La Cour suprême, qui n&#8217;a pas hésité à revendiquer une expertise dans toutes sortes de domaines, se tournera bientôt vers la critique d&#8217;art. Cet automne, les juges seront confrontés à une question qui hante depuis longtemps les tribunaux : que penser de l&#8217;art d&#8217;Andy Warhol. Warhol, selon les tribunaux, est un cas particulier. [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">WASHINGTON — La Cour suprême, qui n&#8217;a pas hésité à revendiquer une expertise dans toutes sortes de domaines, se tournera bientôt vers la critique d&#8217;art.  Cet automne, les juges seront confrontés à une question qui hante depuis longtemps les tribunaux : que penser de l&#8217;art d&#8217;Andy Warhol.</p>
+<p class="css-at9mc1 evys1bk0">Warhol, selon les tribunaux, est un cas particulier.</p>
+<p class="css-at9mc1 evys1bk0">En 2001, par exemple, <a target="_blank" class="css-yywogo" href="https://scholar.google.com/scholar_case?case=6376074772628774470&amp;hl=en&amp;as_sdt=2&amp;as_vis=1&amp;oi=scholarr" title="" rel="noopener noreferrer">la Cour suprême de Californie a statué</a> qu&#8217;un artiste nommé Gary Saderup ne pouvait pas vendre des dessins au fusain des Trois Stooges sans la permission de leurs héritiers, affirmant que les images violaient une loi de l&#8217;État sur l&#8217;utilisation commerciale des ressemblances de célébrités.</p>
+<p class="css-at9mc1 evys1bk0">Dans un étrange aparté, le juge Stanley Mosk, écrivant pour le tribunal, s&#8217;est arrêté pour dire que l&#8217;affaire aurait pu se dérouler différemment si Warhol avait été l&#8217;accusé.  Ses images sérigraphiées de Marilyn Monroe, Elizabeth Taylor et Elvis Presley, a écrit le juge, &#8220;pourraient bien avoir droit à la protection du premier amendement&#8221;.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">&#8220;Grâce à la distorsion et à la manipulation minutieuse du contexte&#8221;, a expliqué le juge Mosk, &#8220;Warhol a pu transmettre un message qui allait au-delà de l&#8217;exploitation commerciale des images de célébrités et est devenu une forme de commentaire social ironique sur la déshumanisation de la célébrité elle-même.&#8221;</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">L&#8217;année dernière, en <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/opinions/20pdf/18-956_d18f.pdf" title="" rel="noopener noreferrer">une affaire de code informatique</a>, le juge Stephen G. Breyer a également pensé discuter de la question connexe de savoir comment la défense d&#8217;utilisation équitable aux revendications de droit d&#8217;auteur pourrait s&#8217;appliquer aux images de Warhol des boîtes de soupe Campbell et d&#8217;œuvres similaires &#8211; une question qui n&#8217;est pas à distance devant le tribunal.  &#8220;Une &#8216;peinture artistique&#8217; pourrait, par exemple, entrer dans le cadre de l&#8217;utilisation équitable même si elle reproduit précisément un logo publicitaire protégé par le droit d&#8217;auteur pour faire un commentaire sur le consumérisme&#8221;, a écrit le juge Breyer, citant un traité.</p>
+<p class="css-at9mc1 evys1bk0">La nouvelle affaire concerne Warhol lui-même.  Le 12 octobre, les juges examineront s&#8217;il a violé la loi fédérale sur le droit d&#8217;auteur en basant un portrait du musicien Prince sur le travail d&#8217;un photographe de premier plan.</p>
+<p class="css-at9mc1 evys1bk0">Dans le processus, ils devront décider si les altérations de la photographie par Warhol l&#8217;ont transformée en quelque chose de différent.  Ils peuvent décider, comme <a target="_blank" class="css-yywogo" href="https://www.fjc.gov/history/judges/koeltl-john-george" title="" rel="noopener noreferrer">Juge John G. Koeltl</a> du tribunal de district fédéral de Manhattan l&#8217;a fait, que Warhol avait <a target="_blank" class="css-yywogo" href="https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1:2017cv02532/472094/84/" title="" rel="noopener noreferrer">créé quelque chose de nouveau</a> en donnant à la photographie un nouveau sens.</p>
+<p class="css-at9mc1 evys1bk0">Ou la Cour suprême peut décider, comme l&#8217;a fait la Cour d&#8217;appel des États-Unis pour le deuxième circuit, que les juges doivent comparer la similitude des deux œuvres et <a target="_blank" class="css-yywogo" href="https://www.courthousenews.com/wp-content/uploads/2021/03/prince-warhol-ca2.pdf" title="" rel="noopener noreferrer">laisser l&#8217;interprétation de leur signification à d&#8217;autres</a>.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">&#8220;Le juge de district ne devrait pas assumer le rôle de critique d&#8217;art et chercher à déterminer l&#8217;intention ou la signification des œuvres en cause&#8221;, <a target="_blank" class="css-yywogo" href="https://www.fjc.gov/history/judges/lynch-gerard-e" title="" rel="noopener noreferrer">Juge Gérard E. Lynch</a> a écrit pour le panneau.  &#8220;Il en est ainsi à la fois parce que les juges ne sont généralement pas aptes à porter des jugements esthétiques et parce que de telles perceptions sont intrinsèquement subjectives.&#8221;</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">L&#8217;affaire, Fondation Andy Warhol pour les arts visuels c. Goldsmith, n° 21-869, est née d&#8217;une mission de routine dans un magazine.</p>
+<p class="css-at9mc1 evys1bk0">En 1981, Newsweek a demandé à Lynn Goldsmith, une photographe rock à succès, de prendre des photos de Prince en concert et dans son studio.  Le magazine a publié une photo de concert et Mme Goldsmith a conservé les portraits.</p>
+<p class="css-at9mc1 evys1bk0">Trois ans plus tard, à peu près au moment où Prince a sorti &#8220;Purple Rain&#8221;, Vanity Fair a engagé Warhol pour créer une image pour accompagner <a target="_blank" class="css-yywogo" href="https://archive.vanityfair.com/article/1984/11/purple-fame" title="" rel="noopener noreferrer">un article intitulé « Purple Fame</a>.”  Le magazine a versé 400 $ à Mme Goldsmith pour obtenir une licence sur l&#8217;un de ses portraits de 1981 en tant que &#8220;référence d&#8217;artiste&#8221;, acceptant de la créditer et de ne l&#8217;utiliser que dans le cadre d&#8217;un seul numéro.</p>
+<p class="css-at9mc1 evys1bk0">Dans une série de 16 images, Warhol a modifié la photographie de diverses manières, notamment en la recadrant et en la colorant pour créer ce que les avocats de sa fondation ont décrit comme « une apparence plate, impersonnelle, désincarnée, semblable à un masque ».  Vanity Fair en a dirigé un.</p>
+<p class="css-at9mc1 evys1bk0">Warhol est décédé en 1987 et sa fondation a pris possession de son travail, y compris les 16 images de ce qu&#8217;on a appelé la série Prince.  Les œuvres de la série se sont vendues à six chiffres, ce qui est modeste selon les standards de Warhol. <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/DocketPDF/21/21-869/227689/20220610142915753_2022-06-10%20No.%2021-869%20AWF%20Brief%20for%20Petitioner%20with%20addendum.pdf" title="" rel="noopener noreferrer">Le mémoire de la fondation devant la Cour suprême</a> a déclaré que les ventes aux enchères de l&#8217;œuvre de Warhol au cours de la décennie se terminant en 2014 ont dépassé 3 milliards de dollars.</p>
+<p class="css-at9mc1 evys1bk0">À la mort de Prince en 2016, la société mère de Vanity Fair, Condé Nast, a publié un numéro spécial célébrant sa vie.  Il a payé 10 250 $ à la fondation pour utiliser une image différente de la série Prince pour la couverture.  Mme Goldsmith n&#8217;a reçu ni argent ni crédit.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">Un litige a suivi, dont une grande partie portait sur la question de savoir si Warhol avait transformé la photographie de Mme Goldsmith.  La <a target="_blank" class="css-yywogo" href="https://www.law.cornell.edu/supct/html/92-1292.ZO.html" title="" rel="noopener noreferrer">La Cour suprême a dit</a> qu&#8217;une œuvre est transformatrice si elle &#8220;ajoute quelque chose de nouveau, avec un objectif supplémentaire ou un caractère différent, modifiant le premier avec une nouvelle expression, un sens ou un message&#8221;.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">Dans leurs <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/DocketPDF/21/21-869/227689/20220610142915753_2022-06-10%20No.%2021-869%20AWF%20Brief%20for%20Petitioner%20with%20addendum.pdf" title="" rel="noopener noreferrer">Mémoire de la Cour suprême,</a> les avocats de la fondation ont demandé aux juges de statuer que les œuvres ultérieures sont protégées en vertu de la doctrine de l&#8217;utilisation équitable chaque fois qu&#8217;elles ajoutent une nouvelle signification ou un nouveau message.</p>
+<p class="css-at9mc1 evys1bk0">Mais cela soulève une foule de difficultés.  Qui peut dire ce qu&#8217;est une œuvre d&#8217;art ?  Quelle quantité de nouveau sens est nécessaire ?  Et qu&#8217;adviendra-t-il de ce que la loi sur le droit d&#8217;auteur appelle les « œuvres dérivées », comme les adaptations cinématographiques de romans ?</p>
+<p class="css-at9mc1 evys1bk0">Dans <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/DocketPDF/21/21-869/232977/20220808150341382_Goldsmith%20Brief%20for%20Respondents%20-%20Final.pdf" title="" rel="noopener noreferrer">un mémoire déposé la semaine dernière</a>les avocats de Mme Goldsmith ont demandé une &#8220;enquête holistique&#8221; équilibrant <a target="_blank" class="css-yywogo" href="https://www.copyright.gov/title17/92chap1.html#107" title="" rel="noopener noreferrer">les quatre facteurs</a> prévues dans la Loi sur le droit d&#8217;auteur pour évaluer l&#8217;utilisation loyale.  Cette approche soulève une série de questions différentes, notamment celle de savoir si le manque de directives judiciaires claires empêcherait les artistes de construire et de commenter le travail de leurs prédécesseurs, une pratique presque aussi ancienne que l&#8217;art lui-même.</p>
+<p class="css-at9mc1 evys1bk0">Les juges peuvent alors n&#8217;avoir d&#8217;autre choix que de se prononcer sur la signification d&#8217;un portrait de Prince.</p>
+<p class="css-at9mc1 evys1bk0">Il y a plus d&#8217;un siècle, en <a target="_blank" class="css-yywogo" href="https://casetext.com/case/george-bleistein-v-donaldson-lithographing-company" title="" rel="noopener noreferrer">un autre cas de droit d&#8217;auteur</a>le juge Oliver Wendell Holmes Jr. a déclaré que les juges devraient être prudents lorsque l&#8217;art était en cause.</p>
+<p class="css-at9mc1 evys1bk0">&#8220;Ce serait une entreprise dangereuse pour des personnes formées uniquement au droit&#8221;, écrit-il, &#8220;de se constituer en juges définitifs de la valeur des illustrations picturales&#8221;.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+
+<p></p>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">WASHINGTON — La Cour suprême, qui n&#8217;a pas hésité à revendiquer une expertise dans toutes sortes de domaines, se tournera bientôt vers la critique d&#8217;art.  Cet automne, les juges seront confrontés à une question qui hante depuis longtemps les tribunaux : que penser de l&#8217;art d&#8217;Andy Warhol.</p>
+<p class="css-at9mc1 evys1bk0">Warhol, selon les tribunaux, est un cas particulier.</p>
+<p class="css-at9mc1 evys1bk0">En 2001, par exemple, <a target="_blank" class="css-yywogo" href="https://scholar.google.com/scholar_case?case=6376074772628774470&amp;hl=en&amp;as_sdt=2&amp;as_vis=1&amp;oi=scholarr" title="" rel="noopener noreferrer">la Cour suprême de Californie a statué</a> qu&#8217;un artiste nommé Gary Saderup ne pouvait pas vendre des dessins au fusain des Trois Stooges sans la permission de leurs héritiers, affirmant que les images violaient une loi de l&#8217;État sur l&#8217;utilisation commerciale des ressemblances de célébrités.</p>
+<p class="css-at9mc1 evys1bk0">Dans un étrange aparté, le juge Stanley Mosk, écrivant pour le tribunal, s&#8217;est arrêté pour dire que l&#8217;affaire aurait pu se dérouler différemment si Warhol avait été l&#8217;accusé.  Ses images sérigraphiées de Marilyn Monroe, Elizabeth Taylor et Elvis Presley, a écrit le juge, &#8220;pourraient bien avoir droit à la protection du premier amendement&#8221;.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">&#8220;Grâce à la distorsion et à la manipulation minutieuse du contexte&#8221;, a expliqué le juge Mosk, &#8220;Warhol a pu transmettre un message qui allait au-delà de l&#8217;exploitation commerciale des images de célébrités et est devenu une forme de commentaire social ironique sur la déshumanisation de la célébrité elle-même.&#8221;</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">L&#8217;année dernière, en <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/opinions/20pdf/18-956_d18f.pdf" title="" rel="noopener noreferrer">une affaire de code informatique</a>, le juge Stephen G. Breyer a également pensé discuter de la question connexe de savoir comment la défense d&#8217;utilisation équitable aux revendications de droit d&#8217;auteur pourrait s&#8217;appliquer aux images de Warhol des boîtes de soupe Campbell et d&#8217;œuvres similaires &#8211; une question qui n&#8217;est pas à distance devant le tribunal.  &#8220;Une &#8216;peinture artistique&#8217; pourrait, par exemple, entrer dans le cadre de l&#8217;utilisation équitable même si elle reproduit précisément un logo publicitaire protégé par le droit d&#8217;auteur pour faire un commentaire sur le consumérisme&#8221;, a écrit le juge Breyer, citant un traité.</p>
+<p class="css-at9mc1 evys1bk0">La nouvelle affaire concerne Warhol lui-même.  Le 12 octobre, les juges examineront s&#8217;il a violé la loi fédérale sur le droit d&#8217;auteur en basant un portrait du musicien Prince sur le travail d&#8217;un photographe de premier plan.</p>
+<p class="css-at9mc1 evys1bk0">Dans le processus, ils devront décider si les altérations de la photographie par Warhol l&#8217;ont transformée en quelque chose de différent.  Ils peuvent décider, comme <a target="_blank" class="css-yywogo" href="https://www.fjc.gov/history/judges/koeltl-john-george" title="" rel="noopener noreferrer">Juge John G. Koeltl</a> du tribunal de district fédéral de Manhattan l&#8217;a fait, que Warhol avait <a target="_blank" class="css-yywogo" href="https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1:2017cv02532/472094/84/" title="" rel="noopener noreferrer">créé quelque chose de nouveau</a> en donnant à la photographie un nouveau sens.</p>
+<p class="css-at9mc1 evys1bk0">Ou la Cour suprême peut décider, comme l&#8217;a fait la Cour d&#8217;appel des États-Unis pour le deuxième circuit, que les juges doivent comparer la similitude des deux œuvres et <a target="_blank" class="css-yywogo" href="https://www.courthousenews.com/wp-content/uploads/2021/03/prince-warhol-ca2.pdf" title="" rel="noopener noreferrer">laisser l&#8217;interprétation de leur signification à d&#8217;autres</a>.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">&#8220;Le juge de district ne devrait pas assumer le rôle de critique d&#8217;art et chercher à déterminer l&#8217;intention ou la signification des œuvres en cause&#8221;, <a target="_blank" class="css-yywogo" href="https://www.fjc.gov/history/judges/lynch-gerard-e" title="" rel="noopener noreferrer">Juge Gérard E. Lynch</a> a écrit pour le panneau.  &#8220;Il en est ainsi à la fois parce que les juges ne sont généralement pas aptes à porter des jugements esthétiques et parce que de telles perceptions sont intrinsèquement subjectives.&#8221;</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">L&#8217;affaire, Fondation Andy Warhol pour les arts visuels c. Goldsmith, n° 21-869, est née d&#8217;une mission de routine dans un magazine.</p>
+<p class="css-at9mc1 evys1bk0">En 1981, Newsweek a demandé à Lynn Goldsmith, une photographe rock à succès, de prendre des photos de Prince en concert et dans son studio.  Le magazine a publié une photo de concert et Mme Goldsmith a conservé les portraits.</p>
+<p class="css-at9mc1 evys1bk0">Trois ans plus tard, à peu près au moment où Prince a sorti &#8220;Purple Rain&#8221;, Vanity Fair a engagé Warhol pour créer une image pour accompagner <a target="_blank" class="css-yywogo" href="https://archive.vanityfair.com/article/1984/11/purple-fame" title="" rel="noopener noreferrer">un article intitulé « Purple Fame</a>.”  Le magazine a versé 400 $ à Mme Goldsmith pour obtenir une licence sur l&#8217;un de ses portraits de 1981 en tant que &#8220;référence d&#8217;artiste&#8221;, acceptant de la créditer et de ne l&#8217;utiliser que dans le cadre d&#8217;un seul numéro.</p>
+<p class="css-at9mc1 evys1bk0">Dans une série de 16 images, Warhol a modifié la photographie de diverses manières, notamment en la recadrant et en la colorant pour créer ce que les avocats de sa fondation ont décrit comme « une apparence plate, impersonnelle, désincarnée, semblable à un masque ».  Vanity Fair en a dirigé un.</p>
+<p class="css-at9mc1 evys1bk0">Warhol est décédé en 1987 et sa fondation a pris possession de son travail, y compris les 16 images de ce qu&#8217;on a appelé la série Prince.  Les œuvres de la série se sont vendues à six chiffres, ce qui est modeste selon les standards de Warhol. <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/DocketPDF/21/21-869/227689/20220610142915753_2022-06-10%20No.%2021-869%20AWF%20Brief%20for%20Petitioner%20with%20addendum.pdf" title="" rel="noopener noreferrer">Le mémoire de la fondation devant la Cour suprême</a> a déclaré que les ventes aux enchères de l&#8217;œuvre de Warhol au cours de la décennie se terminant en 2014 ont dépassé 3 milliards de dollars.</p>
+<p class="css-at9mc1 evys1bk0">À la mort de Prince en 2016, la société mère de Vanity Fair, Condé Nast, a publié un numéro spécial célébrant sa vie.  Il a payé 10 250 $ à la fondation pour utiliser une image différente de la série Prince pour la couverture.  Mme Goldsmith n&#8217;a reçu ni argent ni crédit.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">Un litige a suivi, dont une grande partie portait sur la question de savoir si Warhol avait transformé la photographie de Mme Goldsmith.  La <a target="_blank" class="css-yywogo" href="https://www.law.cornell.edu/supct/html/92-1292.ZO.html" title="" rel="noopener noreferrer">La Cour suprême a dit</a> qu&#8217;une œuvre est transformatrice si elle &#8220;ajoute quelque chose de nouveau, avec un objectif supplémentaire ou un caractère différent, modifiant le premier avec une nouvelle expression, un sens ou un message&#8221;.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<div>
+<div class="css-53u6y8">
+<p class="css-at9mc1 evys1bk0">Dans leurs <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/DocketPDF/21/21-869/227689/20220610142915753_2022-06-10%20No.%2021-869%20AWF%20Brief%20for%20Petitioner%20with%20addendum.pdf" title="" rel="noopener noreferrer">Mémoire de la Cour suprême,</a> les avocats de la fondation ont demandé aux juges de statuer que les œuvres ultérieures sont protégées en vertu de la doctrine de l&#8217;utilisation équitable chaque fois qu&#8217;elles ajoutent une nouvelle signification ou un nouveau message.</p>
+<p class="css-at9mc1 evys1bk0">Mais cela soulève une foule de difficultés.  Qui peut dire ce qu&#8217;est une œuvre d&#8217;art ?  Quelle quantité de nouveau sens est nécessaire ?  Et qu&#8217;adviendra-t-il de ce que la loi sur le droit d&#8217;auteur appelle les « œuvres dérivées », comme les adaptations cinématographiques de romans ?</p>
+<p class="css-at9mc1 evys1bk0">Dans <a target="_blank" class="css-yywogo" href="https://www.supremecourt.gov/DocketPDF/21/21-869/232977/20220808150341382_Goldsmith%20Brief%20for%20Respondents%20-%20Final.pdf" title="" rel="noopener noreferrer">un mémoire déposé la semaine dernière</a>les avocats de Mme Goldsmith ont demandé une &#8220;enquête holistique&#8221; équilibrant <a target="_blank" class="css-yywogo" href="https://www.copyright.gov/title17/92chap1.html#107" title="" rel="noopener noreferrer">les quatre facteurs</a> prévues dans la Loi sur le droit d&#8217;auteur pour évaluer l&#8217;utilisation loyale.  Cette approche soulève une série de questions différentes, notamment celle de savoir si le manque de directives judiciaires claires empêcherait les artistes de construire et de commenter le travail de leurs prédécesseurs, une pratique presque aussi ancienne que l&#8217;art lui-même.</p>
+<p class="css-at9mc1 evys1bk0">Les juges peuvent alors n&#8217;avoir d&#8217;autre choix que de se prononcer sur la signification d&#8217;un portrait de Prince.</p>
+<p class="css-at9mc1 evys1bk0">Il y a plus d&#8217;un siècle, en <a target="_blank" class="css-yywogo" href="https://casetext.com/case/george-bleistein-v-donaldson-lithographing-company" title="" rel="noopener noreferrer">un autre cas de droit d&#8217;auteur</a>le juge Oliver Wendell Holmes Jr. a déclaré que les juges devraient être prudents lorsque l&#8217;art était en cause.</p>
+<p class="css-at9mc1 evys1bk0">&#8220;Ce serait une entreprise dangereuse pour des personnes formées uniquement au droit&#8221;, écrit-il, &#8220;de se constituer en juges définitifs de la valeur des illustrations picturales&#8221;.</p>
+</div>
+<aside class="css-ew4tgv" aria-label="companion column"/></div>
+<p> &#8212;  to <a href="https://www.nytimes.com/2022/08/15/us/warhol-prince-supreme-court-copyright.html ">www.nytimes.com </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/les-images-de-prince-de-warhol-commentaire-social-ou-violation-du-droit-dauteur/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>India&#8217;s Best Top 20+ Web Hosting Service Provider Company</title>
+		<link>https://mycamer.net/indias-best-top-20-web-hosting-service-provider-company/</link>
+					<comments>https://mycamer.net/indias-best-top-20-web-hosting-service-provider-company/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2022 02:30:30 +0000</pubDate>
+				<category><![CDATA[Astuces]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21919</guid>
+
+					<description><![CDATA[Web Hosting Service, To make our website active and live on the Internet, we need a WebHost Server, for which we buy WebHost Server from the Hosting Service Provider company. Today we will talk about which  India’s best Top 20+ Web Hosting Service Provider company. First of all, be sure to know what is web hosting and what [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div>
+<p><em><strong>Web Hosting Service</strong></em>, To make our website active and live on the Internet, we need a WebHost Server, for which we buy WebHost Server from the Hosting Service Provider company. Today we will talk about which  <strong>India’s best Top 20+ Web Hosting Service Provider company. </strong>First of all, be sure to know what is web hosting and what are the types of it, only then buy hosting for your website.</p>
+<p>If we talk about a few years ago, only a few companies used to provide web hosting service, but in today’s time you will find thousands of companies from where you can buy web host servers, and all the companies themselves. No.1 and says best. Now selecting one of these is a very difficult and confusing task   , before knowing <strong>which is the best web hosting company in India,</strong> let us know what things we should keep in mind while buying a web host server</p>
+<p>Selecting a good web host company for your website is the hardest part. You will find many positive reviews of every company on the internet. Today I will tell you some such important things that must be checked before buying hosting.</p>
+<p><strong>Support: – </strong> When you have any problems related to hosting, then Tech Support Team should solve your problem as soon as possible <strong>. </strong></p>
+<p><strong>Uptime:- </strong>  Buy hosting for your website from where they guarantee to give 99.9% Uptime.</p>
+<p><strong>Security: – </strong>  For any website, its data is very important. Therefore, take hosting only from those companies that use SSL service. You will find many companies which do not use SSL certificate, this type of website can be easily hacked by hackers, due to which your data can also be stolen.</p>
+<p><strong>Speed:- </strong>  Hosting server speed should be fast, due to low server speed, page loading will be slow, slow server is not good for SEO and your customers / visitors.</p>
+<p><strong>Backup and Recovery  <em>: – </em></strong>  If your website gets hacked or files get corrupted, in such a situation, to keep your data safe, buy hosting from those who provide the service of Daily / Weekly Backup of your website data in a full way.</p>
+<p><strong>Free Trial:- </strong> While buying Hosting, say once about Free Trial, after using Free Trial of Hosting, it will be easier to understand its service.</p>
+<p><strong>Money Back Guarantee:-  </strong>Buy Hosting from a company that gives 100% Money Back Guarantee, so that even after buying Hosting, if you feel that the service of this company is not good, then you can get your money back.</p>
+<h2 class="has-black-color has-text-color"><span id="What_are_the_Best_Web_Hosting_Service">What are the Best Web Hosting Service?</span></h2>
+<p>You can call them the best who provide you the convenience like reliable site speed, strong security, uptime, ease of use and integration that your website needs. <strong>Best Web Hosting Services</strong></p>
+<p>Based on my experience these are the best hosting providers; Bluehost, Hostinger, GreenGeeks, WP Engine, HostGator, and Siteground.</p>
+<p>Many hosting companies give you step by step introductory discounts so that you can get started easily.</p>
+<p><strong>Following are some of my top Web Hosting Service providers: </strong></p>
+<ul>
+<li><strong><a target="_blank" href="https://clnk.in/r56T" rel="noopener">Bluehost</a></strong></li>
+<li><strong><a target="_blank" href="https://linksredirect.com/?cid=164632&amp;source=linkkit&amp;url=https%3A%2F%2Fwww.hostgator.com%2F" rel="noopener">HostGator</a></strong></li>
+<li><strong>Nexcess</strong></li>
+<li><strong>HostPapa</strong></li>
+<li><strong>GreenGeeks</strong></li>
+<li><strong><a target="_blank" href="https://linksredirect.com/?cid=164632&amp;source=linkkit&amp;url=https%3A%2F%2Fwww.hostinger.com%2F" rel="noopener">Hostinger</a></strong></li>
+<li><strong>WP Engine</strong></li>
+<li><strong>Siteground</strong></li>
+<li><strong>Cloudways</strong></li>
+<li><strong>Dreamhost</strong></li>
+<li><strong>Page</strong></li>
+<li><strong>Liquid Web</strong></li>
+<li><strong>Kinsta</strong></li>
+<li><strong>A2 Hosting</strong></li>
+<li><strong>Inmotion Hosting</strong></li>
+<li><strong>AccuWeb Hosting</strong></li>
+<li><strong>WebHostingPad</strong></li>
+<li><strong><a target="_blank" href="https://linksredirect.com/?cid=164632&amp;source=linkkit&amp;url=https%3A%2F%2Fwww.namecheap.com%2F" rel="noopener">Namecheap</a></strong></li>
+<li><strong>Domain.com</strong></li>
+<li><strong>GoDaddy Web Hosting</strong></li>
+<li><strong>WordPressVIP</strong></li>
+<li><strong>EasyWP</strong></li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="1_Bluehost">1. Bluehost</span></h2>
+<figure class="wp-block-image"><img alt="Bluehost review in hindi" title="21+ Best Web Hosting Services |  Best Web Hosting Services in Hindi 2" src="https://www.bloggingcity.in/wp-content/uploads/2021/06/Bluehost-Web-Hos-min-1024x508.jpg" class="wp-image-3597 lazyload" bad-src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/><noscript><img src="https://www.bloggingcity.in/wp-content/uploads/2021/06/Bluehost-Web-Hos-min-1024x508.jpg" alt="Bluehost review in hindi" class="wp-image-3597" title="21+ Best Web Hosting Services |  Best Web Hosting Services in Hindi 2"/></noscript></figure>
+<p><strong><a target="_blank" href="https://clnk.in/r56T" rel="noopener">Bluehost</a></strong> is the best web hosting service provider in the world, powering over 2 million websites ($2.95/month).</p>
+<p>In my view, Bluehost is the #1 hosting platform that gives you features like free domain, free SSL, one-click WordPress install, FTP, and 24/7 customer support. Their plans start at $2.95 per month (63% off) and also offer a 30-day money back guarantee. </p>
+<p>It is an all-encompassing platform built for WordPress that powers over 2 million websites. Their easy-to-use interface lets you sign in, choose your domain, and install WordPress in one click, choose your theme and choose your website.</p>
+<p>It was founded in 1996 and today has more than 750 employees. What makes Bluehost reliable is their 99.99% uptime.</p>
+<p>With the average load time being less than half a second, understanding the speed of the site will not be a problem. With our WordPress site and their cheapest plan, we took advantage of some handy plugins and were able to bring our site speed up to 100%.</p>
+<p>The main reasons they sold for me were security and integration with Cloudflare (a Content Delivery Network CDN). CDN protects your site from DDoS attacks and fake traffic from various sources.</p>
+<p>Using a CDN also increases site speed so you can host your web files on their World Wide Network of servers. This service reduces the time it takes to get data from your server based on the visitor’s location.</p>
+<p>If you are reading other web hosting comparisons and looking for additional features, BlueHost also integrates with various software in its MOJO marketplace. For example if you are a customer need shopping cart software or e-commerce functionality then the software is easy to install. </p>
+<p>After all they are the “official” web hosting platform recommended by WordPress.org. <strong>Best Web Hosting Services</strong></p>
+<h2 class="has-black-color has-text-color"><span id="How_to_get_started"><strong>How to get started: </strong></span></h2>
+<ol>
+<li>Go to Bluehost.com and click on <em>Get Started</em></li>
+<li>Choose the plan you want to take ($2.95 per month is the cheapest)</li>
+<li>Enter new name or choose yourself</li>
+<li>Enter information like account information, plan, billing</li>
+<li>Add-ons <em>Sitelock Security </em>and uncheck the Codeguard <em>Basic </em></li>
+<li><em>Click on Submit</em> . Now you are ready for launch </li>
+</ol>
+<p>I would suggest you to start with their basic plan of $2.95/month as this plan is 63% less than their regular plan.</p>
+<h2 class="has-black-color has-text-color"><span id="How_to_make_the_most_of_savings"><strong>How to make the most of savings:</strong></span></h2>
+<p> </p>
+<ul>
+<li><strong>Plan:</strong> Basic plan starts from $2.95/month</li>
+<li><strong>Time period:</strong> 36 months</li>
+<li><strong>Total rate at checkout:</strong> $106.20</li>
+<li><strong>Savings:</strong> $181.44</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="2_HostGator">2. HostGator </span></h2>
+<figure class="wp-block-image"><img alt="Best Web hosting Hostgator Home Page India" title="21+ Best Web Hosting Services |  Best Web Hosting Services in Hindi 3" src="https://www.bloggingcity.in/wp-content/uploads/2021/06/Buy-The-Best-Web-1-1024x470.jpg" class="wp-image-3619 lazyload" bad-src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/><noscript><img src="https://www.bloggingcity.in/wp-content/uploads/2021/06/Buy-The-Best-Web-1-1024x470.jpg" alt="Best Web hosting Hostgator Home Page India" class="wp-image-3619" title="21+ Best Web Hosting Services |  Best Web Hosting Services in Hindi 3"/></noscript></figure>
+<p>Cheapest Web Hosting Service ($2.78/month) <strong>Best Web Hosting Services in Hindi</strong></p>
+<p>Houston-based HostGator is a well-known hosting provider ( HostGator is also in India) hosting 9 million websites. This is notable in the list of cheap providers with plans starting at <strong>$2.78 per month. If you choose the 36-month plan, you can save up to 30-60%.</strong></p>
+<p>You can read our comparison review of HostGator to Bluehost and GoDaddy for more information.</p>
+<p>Their average speed is barely under a second, so they are not the fastest option, but better than average. They also hit 99.98% Uptime, which is better than the industry average of 99.94%.</p>
+<p>They ease the website building process with simple drag and drop functionality and the ability to add unlimited domains to your account. They’ll also help you migrate for free within the first 30 days of your sign-up.</p>
+<p>Via live chat, e-mail and phone</p>
+<p>HostGator provides you 24/7 customer support and their response time is also very good.</p>
+<p>They offer 3 main plans. Which <strong>are Hatchling, Baby and Business. </strong>The higher tier plans include dedicated IP addresses and SEO tools to increase your online presence.</p>
+<p>If you are not satisfied with their service, there is a 45-day refund guarantee.</p>
+<p><strong>how to get started: </strong></p>
+<ol>
+<li>Go to HostGator.com and click on <em>Get Started</em></li>
+<li>choose your domain </li>
+<li>Select Billing cycle. Choose to save more – $2.78/month for 36 months</li>
+<li>Fill <em>in Billing info</em></li>
+<li><em>Click Checkout</em> and you are ready</li>
+</ol>
+<p>We would recommend you to choose the $2.78/month and Hatchling plan.</p>
+<p><strong>How to save</strong></p>
+<ul>
+<li><strong>Plan: </strong>Hatchling<strong> </strong></li>
+<li><strong>Term:</strong> 36 months</li>
+<li><strong>Total cost checkout: </strong>$100.08</li>
+<li><strong>Savings: </strong>$150.12</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="3_Nexcess">3. Nexcess</span></h2>
+<p>Best WordPress Hosting Provider $19 per month.</p>
+<p>Nexcess is a fully managed WordPress hosting provider powering over 500,000 websites. They also provide hosting for many other platforms like e-commerce stores.</p>
+<p> Nexcess is a great option for an e-commerce website because here you get everything you need for a fast site. </p>
+<p>With the basic plan of 2TB bandwidth, you get free SSL certificate, automatic image compression, compatibility with php7.</p>
+<p> Also free WordPress migration is available with all their plans. </p>
+<p>You will not need any special skills to build a WordPress website because Nexcess provides stencils for fast site building. If you are in any doubt, Nexcess’s customer support is always there for you. WordPress experts are available all the time via phone or live chat.</p>
+<p> Its other major features are:</p>
+<ul>
+<li>advanced caching</li>
+<li>daily backup</li>
+<li>Image lazy loading</li>
+<li>Unlimited E-mail Accounts</li>
+<li>WordPress core plugins and updates</li>
+<li>Site staging (clone of your live website) on 1 click</li>
+<li>In-built CDN with 22 locations</li>
+<li>Unlimited traffic</li>
+<li>always monitoring security</li>
+<li>24/7/365 customer support </li>
+</ul>
+<p>Visual regression testing is also available to ensure that you do not stare at your code structure and features. </p>
+<p>Hosting plans also operate with plugins like iThemes security Pro, WP merge, Visual Compare, TinyPNG and Qubely Pro.</p>
+<p><strong>Pricing Plans :</strong></p>
+<p>Nexcess offers seven pricing plans:</p>
+<ul>
+<li><strong>Spark</strong> – $19/month (1 website, 15 GB storage, 2 TB bandwidth)</li>
+<li><strong>Maker</strong> – $79/month (up to 5 sites, 40 GB storage, 3 TB bandwidth)</li>
+<li><strong>Designer</strong> – $109/month (up to 10 sites, 60 GB storage, 4 TB bandwidth)</li>
+<li><strong>Builder</strong> – $149/month (up to 25 sites, 100 GB storage, 5 TB bandwidth)</li>
+<li><strong>Producer</strong> – $299/month (up to 50 sites, 300 GB storage, 5 TB bandwidth)</li>
+<li><strong>Executive</strong> – $549/month (up to 100 sites, 500 GB storage, 10 TB bandwidth)</li>
+<li><strong>Enterprise</strong> – $999/month (up to 250 sites, 800 GB storage, 10 TB bandwidth)</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="4_HostPapa">4. HostPapa</span></h2>
+<p>Fast, Reliable Web Hosting for Small Business ($2.95 per month) <strong>Best Web Hosting Services</strong></p>
+<p>At HostPapa you get everything a small business needs to run their website and they currently <strong>have 70% off on their plans.</strong></p>
+<p>In their services, you get services like hosting, domain registration, 400+ business apps to connect and an easy drag and drop website builder or WordPress installation depending on your preference.</p>
+<p>HostPapa has three main plans ranging <strong>from $2.95 to </strong><strong>$11.95 per month</strong> . You have to make sure you turn off their other extras at checkout or else they can add up to $39.90 per year.</p>
+<p><strong>Their most popular plan is the Business Plan (on sale $2.95 per month),</strong> which is ideal for small business owners and includes unlimited websites and unlimited SSD storage and unlimited bandwidth.</p>
+<p><strong>How to make the most of savings:</strong></p>
+<ul>
+<li><strong>Plan:</strong> Business at $2.95 per month</li>
+<li><strong>Term:</strong> 36 months</li>
+<li><strong>Total cost checkout:</strong> $106.20</li>
+<li><strong>Savings:</strong> $433.44</li>
+</ul>
+<h2><span id="5_GreenGeeks">5. GreenGeeks</span></h2>
+<p><strong>Best Green Web Host ($2.95/month) </strong><strong>Best Web Hosting Services</strong></p>
+<p>GreenGeeks is an eco-friendly web host with more than 10 years of experience. They claim both 99.95% uninterrupted time and less than 500 ms load time.</p>
+<p>They have data centers in the US, Canada and the Netherlands, notably in Chicago, Phoenix, Toronto, Montreal and Amsterdam, creating a strong international setup.</p>
+<p> If you are looking for an environmentally conscious host, GreenGeeks can be an interesting option.</p>
+<p>GreenGeeks has confirmed that they buy 3x the amount of wind energy credits based on the energy used to power their platform. It is a green power partner with the US Environmental Protection Agency (EPA). </p>
+<p> If you sign up for their services you get unlimited file storage, bandwidth and email accounts plus you can take advantage of their superior performance and you will also get a free domain.</p>
+<p>They give a befitting reply to dedicated servers like WHM/cpanel. </p>
+<p><strong>Their hosting account isolation setup is a matter of fascination.</strong></p>
+<p>They provision accounts with dedicated computing resources and secure virtual file system (secure VFS) using VPS, container based approach. Secured vFS ensures that accounts are unable to access other accounts and protects your site from malware and other malicious activities.</p>
+<p>They have a slightly higher $9.95 renewal fee compared to their $2.95 eco-site light introductory price but you can set the price for 3 years. </p>
+<p>Save $252.00 (70%) by paying $116.15 at checkout with their promo code 10GREENGREEN.</p>
+<p><strong>How to save more:</strong></p>
+<ul>
+<li><strong>Plan:</strong> EcoSite Lite at $2.95/month</li>
+<li><strong>Term:</strong> 36 Months</li>
+<li><strong>Net worth at checkout:</strong> $116.15</li>
+<li><strong>Savings:</strong> $225.85</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="6_Hostinger">6. Hostinger</span></h2>
+<p> <strong>Fast &amp; Affordable Best Web Hosting Services </strong><strong>at 90% Discount ($0.99 per month)</strong><strong/></p>
+<p><a target="_blank" href="https://linksredirect.com/?cid=164632&amp;source=linkkit&amp;url=https%3A%2F%2Fwww.hostinger.com%2F" rel="noopener">Hostinger</a>‘s speed and price make it a great hosting company. <strong>They are currently offering a massive 90% percent discount</strong> on paid plans with prices starting at $0.99 per month . You can get 4 years web hosting for $47.52.</p>
+<p>Using <a target="_blank" href="https://linksredirect.com/?cid=164632&amp;source=linkkit&amp;url=https%3A%2F%2Fwww.hostinger.com%2F" rel="noopener">Hostinger</a>, developers can learn to code and experiment with PHP, FTP, cPanel and MySQL at no extra cost. By using free hosting sites and learning PHP, you can build a free WordPress site and improve your skills at the same time. This is great for beginners. </p>
+<p>They have a 24/7 multilingual (20+ languages) customer success team that solves all your problems with live chat in less than 2 minutes.</p>
+<p><strong>It is also the fastest web hosting provider with an average page load speed of less than 200ms and an uptime guarantee of 99.9%.</strong></p>
+<p>Hostinger has a custom, easy to use dashboard- hPanel. The design is clean and straightforward which is what you need when building a site. Apart from this they are selling on a large scale by offering free SSL certificates and domains.</p>
+<p>Hostinger offers a free WordPress site with one click installation so you can start your blog in minutes. They also have their own Zyro website builder with 1000’s of templates. </p>
+<p>Follow these to avail their services easily </p>
+<ul>
+<li>Go to Hostinger.com and click on Get Started </li>
+<li>Choose your hosting plan The $0.99 per month plan is the best savings for 48 months </li>
+<li>Enter your email and create a password </li>
+<li>Choose either WordPress or Build Your Site</li>
+<li> Edit and publish your site </li>
+</ul>
+<p>If you want a powerful host on a budget with the fastest loading times and an incredible <strong>90% discount</strong> , I suggest you start with Hostinger for $ <strong>0.99/month ($47.52 for a full four years of hosting) .</strong></p>
+<p> <strong>How to save the most:</strong></p>
+<ul>
+<li><strong>Plan:</strong> Single Shared Hosting at $0.99/month</li>
+<li><strong>Term:</strong> 48 months</li>
+<li><strong>Checkout total cost :</strong> $47.52</li>
+<li><strong>Savings: </strong>$432</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="7_WP_Engine">7. WP Engine</span></h2>
+<p><strong>Best Professional and Enterprise Hosting $31.50 per Month </strong><strong>Best Web Hosting Services</strong></p>
+<p><strong/>WP engine is a managed hosting company based in downtown <strong>Austin TX . </strong>It mainly focuses on speed, security, and scalability. Their managed hosting is specially made for WordPress sites and comes at high prices. This hosting keeps your WordPress site live.</p>
+<p><strong>Where the WP engine is better, the speed of the site increases. </strong></p>
+<p>Other providers offer customized servers but don’t use more plugins there. WP engines use a server network with more aggressive caching than other providers. You cannot install any other caching plugins in WordPress because their caching is personal.</p>
+<p>It also gives you daily backup. They also have reliable customer service and high-end custom plans for the enterprise. However, you can use it according to your needs but you have to weigh the pros and cons.</p>
+<p>Their Startup plan starts at $31.50 per month which gets you features like 25k visits per month, 50gb bandwidth, CDN and SSL, and robust performance tools. Each program comes with a Content Delivery Network (CDN) for faster load times and a staging environment so you can test things before they go live.</p>
+<p>If you are looking for best premium managed web hosting companies then why not give WP engine a chance and get 10% off on your first payment.</p>
+<p><strong>How to save:</strong></p>
+<ul>
+<li><strong>Plan:</strong> $31.50/month</li>
+<li><strong>Term:</strong> Monthly</li>
+<li>on <strong>Checkout total cost: </strong>$31.50</li>
+<li><strong>Savings: </strong>$3.50</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="8_SiteGround">8. SiteGround </span></h2>
+<p>SiteGround has been providing hosting services since the year 2014 and they pride themselves on their customer support.</p>
+<p>According to a report of the year 2018 their client satisfaction rate is 98%. They will be available to you 24/7 via chat and answer your phone calls within seconds. </p>
+<p>Apart from customer service, SiteGround’s performance is also beneficial. His uptime in 2018 was 99.99%. They have built their platform on Linux containers which remains stable despite many traffic spikes. Their page load time is also under 750ms. it’s quite good .</p>
+<p>It doesn’t matter if you don’t want to pay for 3 or more years. They also have plans for 1 year in which they also give a discount. Basic plans start at $3.95/month (plus $14.95 to be paid as setup fee) in which you get many features like Let’s Encrypt SSL, daily auto backups, unmetered traffic, and 10,000 visitors/month. </p>
+<p>If you are troubled by lousy service and want to work with the best customer support team in the industry, then give SiteGround a try. I hope you won’t be disappointed.</p>
+<p><strong>How to save:</strong></p>
+<ul>
+<li><strong>Plan:</strong> StartUp at $3.95/month + $14.95 setup free</li>
+<li><strong>Term:</strong> 12 months</li>
+<li><strong>Checkout Total cost: </strong>$62.35</li>
+<li><strong>Savings: </strong>$81.53</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="9_Cloudways">9. Cloudways</span></h2>
+<p>As its name suggests, Cloudways uses a scalable in-built cloud platform for speed and simplicity. </p>
+<p>It is a robust hosting service for web developers, since, it allows PHP developers to deploy containerized applications and other advanced features. Cloudways supports several high performance technologies to support PHP7. For example – HTTP/2, Nginx, and Redis. </p>
+<p>Cloudways customers can add a cloud server to their account at any time. You can also set up a virtual cloud server in a few minutes. The most talked about content management system (CMS) on Cloudways is WordPress, Drupal, Magento.</p>
+<p>You have to pay according to the server specs and cloud provider you choose. Starts from lowest ($10/month). And also gives 3 days free trial which is a very short trial. But it gives you enough time to test its functionality.</p>
+<p>If you are looking for security, then they also give SSL certificates along with domain mapping.</p>
+<p>If you are an experienced developer and want control over your website, then Cloudways is made for you. You can try it without any worry.</p>
+<h2 class="has-black-color has-text-color"><span id="10_DreamHost">10. DreamHost</span></h2>
+<p><strong>Fast, secure web hosting at $2.59/month</strong></p>
+<p>DreamHost manages over 1.5 million sites. It is good for WordPress hosting. You also get 97 days money back guarantee along with 100% uptime guarantee.</p>
+<p>Here you get all the sites pre-installed and also get free SSL certificate and WordPress firewall for extra security. Through VPS Basic, you get two virtual private servers, so that you can increase your speed, scalability and performance.</p>
+<p>They also have multiple caching layers, auto-scaled memory and isolated servers for more speed.</p>
+<p>Also, all customers get in-built server caching and static IP. This server is very fast in responding to web requests with Apache and PHP WordPress stack as proxy.</p>
+<p><strong>You can get started with DreamHost Shared Starter Plan starting from $2.95 per month.</strong></p>
+<p>For this you will need to sign up first. After that enter your domain information. If you do not want email then do not choose Dreamshield Protection and 1 Mailbox. </p>
+<p><strong>How to save more:</strong></p>
+<ul>
+<li><strong>Plan:</strong> Shared Starter at $2.5/month</li>
+<li><strong>Term:</strong> 36 months</li>
+<li><strong>Checkout total cost:</strong> $93.24</li>
+<li><strong>Savings: </strong>$99.91</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="11_Page">11. Page</span></h2>
+<p><strong>Best Web Hosting Services for Local Businesses ($1.99/month)</strong></p>
+<p>iPage is best to build, market, and grow small business website because here you get easy website tool at low cost.  </p>
+<p>This can be a better option in your budget because here you get access to website builder and WordPress or Weebly so that you can build an e-commerce site. </p>
+<p>If you are looking for a cheap option, I would not recommend you to choose iPage or Weebly at all. With an entry level set of e-commerce tools and stable performance, iPage gives you everything you need to get set up online. </p>
+<p>You get free online store, PayPal integration and 6 different options for shopping cart software here. </p>
+<p>Their website builder is limited to only 6 pages. But there are hundreds of templates and themes that integrate with content management systems (CMS) like Joomla and WordPress.</p>
+<p>They also offer free custom websites, email addresses, and free ad credits for $200 for search engines like Google and Bing.</p>
+<p><strong>How To Save: </strong><strong>Best Web Hosting Services</strong></p>
+<ul>
+<li><strong>Plan:</strong> web hosting plan at $1.99/month</li>
+<li><strong>Term:</strong> 36 months</li>
+<li><strong>Total cost at checkout:</strong> $7.64</li>
+<li><strong>Savings: </strong>$216</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="12_Liquid_Web">12. Liquid Web</span></h2>
+<p><strong>Best fully managed web hosting and phone support for business at $19.33/month </strong></p>
+<p>Liquid Web is known as “all the managed hosting you’ll ever need.” They are mainly known for their managed hosting service. If you want to work with the most helpful hosting provider and never worry about updating plugins again, read on.</p>
+<p> Firstly, their 24/7 customer support comes with a 59-second unbeatable guarantee. I tested it three times, and it was successful every time. The first time I called, I got a reply in 44 seconds. The second time took 32 seconds. In the end, the third time took 48 seconds.</p>
+<p>If you are looking for a variety of hosting options, Liquid Web has 6+ hosting options depending on your needs. If you are starting a new site, their managed hosting service starts from $19.33/month. With this plan, you get one website, 20 GB SSD storage, 5 TB bandwidth, a free staging environment and backup every 30 days.</p>
+<p>If you are starting a small or medium size business then you will need Managed Cloud, VPS Hosting Platform or Liquid Web excels. </p>
+<p><strong>How to save:</strong></p>
+<ul>
+<li><strong>Plans: </strong>Managed WordPress Hosting – Personal (Annual) $19.33/माह पर</li>
+<li><strong>Term:</strong> 12 months</li>
+<li><strong>Total cost at checkout: </strong>$232.00</li>
+<li><strong>Savings: </strong>$116.00</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="13_Kinsta">13. Kinsta</span></h2>
+<p><strong>Best Premium WordPress Hosting with Migration Support at $25/month </strong></p>
+<p>Kinsta was launched in 2013 with the aim of becoming the best WordPress site in the world. Their primary focus is working with WordPress experts to deliver speed, security, and stability that match industry standards. </p>
+<p>There is a user friendly dashboard where you can view multiple sites, analytics reports, manage users, and resource usage at once. </p>
+<p>Kinsta’s Starter Plan starts at $30 per month ($25/year) where you get features like WordPress install, 20,000 site visits, free SSL and CDN, and 5 GB of disk space.</p>
+<p>If you have a more substantial business, then you need to increase the hosting according to your needs, they have 10 different plans. These increase the number of your websites, SSD storage and monthly visitors.</p>
+<p>All plans come with free unlimited migrations from different hosts, automatic daily backups, manual backup points, 24/7 support, and their white-labeled cache plugin.</p>
+<p>If you choose their $60/month Pro Plan then you get many extra hosting features along with free White Glove Migration. With the help of these features, you can fill the form and their team of engineers sets up the site for you. </p>
+<p>If you are serious about WordPress speed and security then Kinsta is for you. If you are an agency developer, and your</p>
+<p>If you want to host the site for the client then Kinsta is a better option.</p>
+<p><strong>Here’s how to save:</strong></p>
+<ul>
+<li><strong>Plan:</strong> Starter (Annual) $25/month </li>
+<li><strong>Term:</strong> 12 months</li>
+<li><strong>Checkout at Total cost:</strong> $300</li>
+<li><strong>Savings:</strong> $60</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="14_A2_Hosting">14. A2 Hosting </span></h2>
+<p><strong>Fastest Web Hosting with 51% discount ($3.92/month)</strong></p>
+<p>A2 Hosting was launched by Ann Arbor in the year 2001. This is one of the fastest web hosting. By using Turbo servers or giving free 20x page load time to the users which helps in their speed and it plays an important role in Google’s ranking.</p>
+<p>Rankings, bounce rate time, time on page and conversion rates affect site speed. Site speed plays an important role while choosing any web hosting.</p>
+<p>Like many other hosts, you can install WordPress, Joomala, Drupal and many more content management systems (CMS) here with a single click. They provide facilities like free migration services, free SSD, SSH, PHP 7 and global servers to store your files and distribute them to visitors.</p>
+<p>A2 Hosting works on both Linux and Windows. Also, Let’s Encrypt, Single-site, Wildcard, Premium SSL, Advanced SSL with SSL certificates also provides. </p>
+<p><strong>How to save:</strong></p>
+<ul>
+<li><strong>Plan:</strong> Lite Web Hosting $3.92/month</li>
+<li><strong>Term:</strong> 36 months (3 years)</li>
+<li><strong>Total cost upon checkout:</strong> $140.94</li>
+<li><strong>Savings: </strong>$146.70</li>
+</ul>
+<h3><span id="15_Inmotion_Hosting">15. Inmotion Hosting</span></h3>
+<p><strong>Cheapest Managed WordPress Hosting at just $4.99/month</strong> ; <strong>Best Web Hosting Services in Hindi</strong></p>
+<p>Inmotion Hosting is one such hosting platform that you can trust. It has an A+ rating from the Better Business Bureau, and is 15-year-old CNET-certified. They offer shared, dedicated, reseller, virtual private server (VPS), cPanel, WordPress hosting and integration, and many more free tools that help you sell online.</p>
+<p>They are also fast and reliable with secure servers, hacking protections, custom firewalls, DDoS protections. </p>
+<p>Their shared plans start at $4.99 per month with 37% discount. With this WordPress plan you will get 20,000 monthly visitors, 40GB solid-state storage one website and unlimited emails.</p>
+<p>They are known for their managed security, managed updates and speed optimization. In security management, you get the facility of hack and malware protection and automatic backups. Speed ​​optimization offers 10x faster speeds than average shared plans, free SSD storage and PHP 7 on cloud linux platform with NGINX. </p>
+<p>Overall Inmotion Hosting is a good option if you are looking for WordPress site speed without the high price tag. They also have 90 days money back guarantee that too without any hassle.</p>
+<p><strong>How to save more:</strong></p>
+<ul>
+<li><strong>Plan:</strong> WordPress Hosting WP-1000S at $4.99/month</li>
+<li><strong>Term:</strong> 36 months</li>
+<li><strong>Total cost upon checkout:</strong> $179.64</li>
+<li><strong>Savings:</strong> $10</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="16_AccuWeb_Hosting">16. AccuWeb Hosting</span></h2>
+<p>AccuWeb Hosting is known for its shared, reseller and VPS hosting options in Windows and Linux. It was founded in 2003 and is headquartered in New Jersey. Microsoft approved it as a WebMatrix Compatible Hosting company, they are recommended to use because of their ASP.NET components.</p>
+<p>They are known for their speed, add-ons and additional RAM and all these features make them a configurable host in the market. If you choose their dedicated server plans then you will get more customization.</p>
+<p>These controls range from the make and model of the processor to the amount of RAM, the number of hard drives, and more. Their pricing structure is tied according to your need, you can raise or lower it according to your needs.</p>
+<p>You can start with their basic shared web package which is $2.99 ​​per month and their VPS plans start from $10/month. Features like 100% Purse SSD Storage, Windows Server 2016 OS, and quick setup are available in this plan.</p>
+<p>If you are looking for an affordable, dedicated VPS solution for your business, then an AccuWeb can be a solid choice for you.</p>
+<h2 class="has-black-color has-text-color"><span id="17_WebHostingPad">17. WebHostingPad</span></h2>
+<p>WebHostingPad is a full-service web hosting provider that gives you 99.9% uptime, 1-click WordPress install, a website builder, and free SSL certificates. You also get a free domain name for the first one year. </p>
+<p>Their web hosting plans use a scalable structure so that you can scale up as your website grows. </p>
+<p>WebHostingPad has several ecommerce-ready storefronts so you can sell online. They have free analytics tools with the help of which you can track website visitors and their behavior on your site.</p>
+<p><strong>The most popular is their Power Plan ($1.99/month) where you get everything for free:</strong></p>
+<ul>
+<li>free domain name</li>
+<li>free SSL certificate</li>
+<li>Unlimited hosting storage</li>
+<li>Unlimited bandwidth</li>
+<li>Unlimited email account</li>
+</ul>
+<p>If you run a WordPress site, you will find it beneficial to choose their <strong>Power Plan + WordPress Pro</strong> , as you get 2x computing power, automatic malware scans and removals, and automatic account backups there.</p>
+<p>WebHostingPad is an affordable web hosting company where you get everything you need. </p>
+<p><strong>You can start at $1.99/month, which is 60% less than their regular price ($4.49/month)</strong> ; <strong>Best Web Hosting Services</strong></p>
+<h2 class="has-black-color has-text-color"><span id="18_Namecheap">18. Namecheap</span></h2>
+<p><strong>Multiple Hosting Options and EasyWP at just $2.88/month</strong></p>
+<p>Namecheap company was established in the year 2000 which manages more than 10 million domains. They offer various hosting options like shared, reseller, dedicated, VPS, and WordPress hosting (starting from $2.88/month) along with domain registration.</p>
+<p>They have a new service called EasyWP, which starts at $3.88 per month and makes WordPress sites super fast to set-up. I tested it myself and set up a website within two minutes.</p>
+<p>Along with all their main packages, they offer features like free backups, free website migration, 24/7 support, and 14-day money-back guarantee.</p>
+<p>Their shared hosting plan is a bit more expensive than the rest of the cheaper options. </p>
+<h2 class="has-black-color has-text-color"><span id="19_Domaincom">19. Domain.com</span></h2>
+<p>Founded in the year 2000, Domain.com is number 1 in the domain registration and hosting space. It specializes in providing facilities like affordable websites, hosting, email, SSL certificates, web design, and online marketing services. </p>
+<p>Domain.com’s WP Starter plan starts at $3.75/month, where you get a custom control panel, unlimited storage, unlimited bandwidth, free pre-installed themes and plugins, and a .blog domain. This plan comes pre-installed with W3 Total Cache plugin which is a very good caching plugin for site speed. </p>
+<p>It comes with Jetpack which has very comprehensive features for WordPress, but it comes with site speed issues. I would recommend you not to take Jetpack if you choose WP Starter Plan. Instead, you can choose any faster plugins with the same functionality.</p>
+<p>Overall, Domain.com is an encompassing website solution and is perfect for beginners. </p>
+<p>I would recommend you to go with <strong>WP Essential Plan</strong> as it supports dedicated WordPress.</p>
+<h2 class="has-black-color has-text-color"><span id="20_GoDaddy_Web_Hosting">20. GoDaddy Web Hosting</span></h2>
+<p><strong>Best host for add-ons ($5.99/month)</strong></p>
+<p>GoDaddy is a host that provides you web hosting solutions for Windows and Linux users and assigns sites to a unique DNS that helps you find users online. Their plans range from $5.99 to $89.99/month.</p>
+<p>Their plans are budget friendly. Where you get dedicated servers for business hosting, VPS, power and control </p>
+<p>Some of their best features are Odin Plesk, a Windows control panel that lets you manage servers, applications, and users. Their Economy plan allows hosting a website, while plans like Deluxe, Ultimate, Maximum allow hosting unlimited sites.</p>
+<p>If you want to visit GoDaddy from another hosting site, you will need to upload your website files to their servers which is via control center and FTP. They have very helpful Malware scanners which will scan your site. Protects from being hacked.</p>
+<p>They live up to the promise of covering the technical aspects of your sites which other hosting providers do not do. They take care of your software update setup and security patches so that your website runs optimally. Because their support is improving very fast, they will solve all your problems.</p>
+<p>GoDaddy has impressive features regarding WordPress site management. Although its features are not sufficient for the security of large companies, but they serve small businesses well.</p>
+<p>According to the plan you choose, here you get multisite management console and SSD storage. They protect you from DDoS attacks and with the help of their interactive walkthrough, you can solve WordPress problems. </p>
+<p>Apart from the annual plan, you get a free domain name registration and a staging environment to test any changes available on the specific plans. They offer a video library for tutorials to help beginners.</p>
+<p>GoDaddy gives you a guarantee of 99.9% uptime. Here you get minimum $ 15 / month for hosting.</p>
+<p>Their starting price is $3.66. Media Temple gives power to their support, which was acquired by GoDaddy in 2013. Their team is available through e-mail, chat or phone, which gives you relief from your problems.</p>
+<p>You can initially choose the Economy plan which starts from $5.99/month for up to 36 months. <strong>Best Web Hosting Services </strong></p>
+<h2 class="has-black-color has-text-color"><span id="21_WordPress_VIP">21. WordPress VIP</span></h2>
+<p>WordPress VIP is an enterprise level content platform that hosts content sites like CNN, People, Time, and Spotify. There are many such things in it which are not in other hosting company.</p>
+<p>Apart from all the standard features like 1 click setup, enhanced speed and customized panel, this plan offers advanced features such as integration with Facebook Instant Article and Google AMP. You also get an integrated A/B testing and multilingual support here.</p>
+<p>This hosting service works best for top sites that are already popular and need advanced tools to be ahead in this race. Because of this, their service is very selective, and you can never signup for an account. You will have to submit an application which will be reviewed first by the technical team.</p>
+<p>No outright price of the hosting service is indicated as they tailor the service according to the requirements of the specific website. In this way, the price plan depends on what is best for that particular site. As per the information we have, standard setups range from $2,500 to $5,000 per month and support up to five websites with unlimited resources. </p>
+<p><strong>In addition, they have a one-time installation fee for new websites, which is approximately $10,000.</strong></p>
+<p>WordPress VIP offers everything a web developer wants, but all these advanced functionality and amazing features are overkill for an average website owner. Price is also a major deterrent, and no small business owner would be willing to pay for it. It is just an option for WordPress users -VIP, which takes them to the next level of web service.</p>
+<h2 class="has-black-color has-text-color"><span id="22_EasyWP">22. EasyWP</span></h2>
+<p>Namecheap is an emerging domain and hosting service provider on the Internet. EasyWP is their latest managed WordPress hosting service.</p>
+<p>EasyWP setup WP with one click, due to which you do not have to deal with control panel and complicated configuration. Using it will save your money and time and you will get a better experience. Their cloud service is modern which can easily handle heavy visitor count. </p>
+<p>Their service comes in three different tiers which are <strong>EasyWP Starter, EasyWP Turbo, and EasyWP Supersonic. </strong>Its starter plan is quite cost-effective which gives you 10 GB storage and can handle 50k followers per month as well.</p>
+<p>For the first amount $1 has to be paid and then $3.88 for monthly. The Turbo plan costs $34.88 when billed annually and $2, then $7.88 monthly. It comes with 50 GB storage and can handle 200k visitors per month.</p>
+<p>The Supersonic plan offers 100GB of storage and can handle 500k visitors per month. The initial price of $3 is followed by a monthly payment of $11.88 and an annual payment of $49.88.</p>
+<ul>
+<li>To get started with Namecheap login to Namecheap account and create new account </li>
+<li>After this choose your website name or create your own </li>
+<li>Then you click on continue and launch your site </li>
+<li>Apart from this, there are also many advanced options such as Theme, which you are using, but it is on one click. I got my WordPress site ready within 30 seconds</li>
+<li> You get a temporary domain for free and you can access sFTP</li>
+<li> Finally it has a single dashboard which can be used to manage all your sites. </li>
+<li>Also you can use Easy WP Optimizer WordPress plugin to optimize, backup and restore your database within WordPress quickly.</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="Which_is_the_Best_Cheap_Web_Hosting">Which is the Best Cheap Web Hosting?</span></h2>
+<p>Our best web hosting plans range between $0.80 to $3.95 per month. These affordable plans offer you huge discounts and different term lengths. For example, you might get a price of $1.99, but then you have to signup for that for three years – if you only want to pay for 12 months, the price goes up.</p>
+<p>Also, if their renewal price is much higher than their discount rate, then proceed only after considering this.</p>
+<p>This ranking on this page is based on their value, if you want to know more about them then read our review.</p>
+<h2 class="has-black-color has-text-color"><span id="Top_cheap_web_hosting_according_to_me"><strong>Top cheap web hosting according to me: </strong></span></h2>
+<ul>
+<li><strong>Hostinger</strong></li>
+<li><strong>Page</strong></li>
+<li><strong>DreamHost</strong></li>
+<li><strong>HostGator</strong></li>
+<li><strong>Bluehost</strong></li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="1_Hostinger_single_shared_hosting">1. Hostinger single shared hosting</span></h2>
+<p><strong>For 4 years at a fee of only $0.80/month</strong></p>
+<p><strong/>Hostinger ranks #1 on this list as the cheapest web host due to <strong>90% off and $0.80/month hosting for 48 months .</strong></p>
+<p>Mostly, the cheaper options offer lower site performance – but that’s not the case here. They are one of the fastest hosts, whose page load time is less than 380ms. With their $0.80 plan, you get one website, one email address, 1 MySQL database, 10GB disk space and tech support.</p>
+<p><strong>Total cost: $38.40 for 48 months </strong></p>
+<h2 class="has-black-color has-text-color"><span id="2_iPage_go_plan">2. iPage go plan </span></h2>
+<p><strong>$1.99/month for 36 months</strong></p>
+<p>For years iPage has been running its cheap $1.99 introductory plan. They have higher renewal fees from $7.99 to $9.99/month, so keep that in mind when signing up.</p>
+<p> iPage does not match the speed of other alternatives, the page load time is more than twice that of Hostinger. Overall, they have a decent amount of features available for a cheap host with unlimited disk space, unlimited MySQL database and unmetered bandwidth.</p>
+<p><strong>Total cost:</strong> $71.64 for 36 months</p>
+<h2 class="has-black-color has-text-color"><span id="3_DreamHost_Shared_Starter">3. DreamHost Shared Starter</span></h2>
+<p><strong>$2.59/month for 36 months</strong></p>
+<p>DreamHost is different from other cheaper options as their renewal fee is similar to your intro offer. They upgraded this plan to include only one free domain name, which cost $9.95/year.</p>
+<p> You also get unlimited traffic and bandwidth, SSD storage and pre-installed WordPress. Their site speed is also better than average, under 750ms.</p>
+<p><strong>Total cost:</strong> $93.24/month for 36 months</p>
+<h2 class="has-black-color has-text-color"><span id="4_HostGator_Cloud_Hatchling_Plan">4. HostGator Cloud Hatchling Plan </span></h2>
+<p><strong>$2.78/month for 36 months</strong></p>
+<p>This plan is very good with 99.98% operational time and less than 450ms load time. By purchasing their hatchling plan, you get a website, unmetered bandwidth and disk space, technical support and $100 Google/Bing ads credit.</p>
+<p>This plan renews at $6.95/month, which is a huge improvement over their previous renewal rate (10.95 – $19.95/month).</p>
+<p><strong>Total cost:</strong> $100.08 for 36 months</p>
+<h2 class="has-black-color has-text-color"><span id="5_BlueHost_Basic_Shared_Hosting">5. BlueHost Basic Shared Hosting</span></h2>
+<p><strong>$3.95/month for 36 months</strong></p>
+<p>This plan is a good, cheap web hosting option with a mix of features, security and support.</p>
+<p>With their Basic plan, you get features like one domain, five parked domains, 25 subdomains, 50GB SSD storage and standard performance. They also have the best speed at less than 420ms. This plan is currently 50% off and is renewed at its regular rate of $7.99/month.</p>
+<p><strong>Total cost:</strong> $142.20 up to 36 months</p>
+<h2 class="has-black-color has-text-color"><span id="What_is_the_Best_Free_Web_Hosting">What is the Best Free Web Hosting?</span></h2>
+<p>Some companies provide free hosting service, I do not recommend it because you do not get good performance there. If you sign up for free website hosting and feel that it is a bad experience, you can migrate to expensive add ons or legitimate paid options.</p>
+<p> It’s not worth anything else.</p>
+<p>While these options may not be the best for your website, if you are a developer, you can learn a lot with the help of free tools.</p>
+<p>Ultimately, I would recommend avoiding these free providers and going with a high quality option like Hostinger with 90% discount.</p>
+<p>Here is an overview of the best free web hosting along with the most popular platforms reviewed and compared:</p>
+<ul>
+<li>000webhost</li>
+<li>Infinityfree</li>
+<li>x10Hosting.com</li>
+<li>AwardSpace</li>
+<li>Freehostia</li>
+<li>FreeHosting.com</li>
+<li>Google Cloud Web Hosting</li>
+</ul>
+<h3 class="has-black-color has-text-color"><span id="1_000webhost">1. 000webhost </span></h3>
+<p>000webhost is a free version of Hostinger, and was launched around 2007. They do not impose any ads on their users like some other services, and also they offer paid plans. They offer up to two websites, 1,000MB storage, an impressive 10GB bandwidth, and a free control panel.</p>
+<p>In their dashboard, you can control things like redirects, phpMyAdmin, web based file manager, free website builder, and password protected directory.</p>
+<p> One of the main downsides to 000webhost is that there’s definitely an hour of downtime per day, so your site is up about 95.8% per day—if everything else runs well. <strong>Best Web Hosting Services</strong></p>
+<h3 class="has-black-color has-text-color"><span id="2_Infinityfree">2. Infinityfree</span></h3>
+<p>InfinityFree is one of the most popular free tools and has a lot of great features. They have been active for over six years, and claim to have over 200,000 users, script installers, impressive 50,000 daily hits.</p>
+<p>You can have as many domains as you want and can access up to 10 email addresses. Surprisingly, they also include a free DNS service, SSL, and Cloudflare CDN. However, the “unlimited bandwidth” they promise comes with certain rules and regulations that can affect the types of files you can upload.</p>
+<p> If these features aren’t strong enough for you, they have an affordable plan for $5.90/month that reduces page load times, InfinityFree.</p>
+<h3 class="has-black-color has-text-color"><span id="3_x10hostingcom">3. x10hosting.com</span></h3>
+<p>x10Hosting has been in the world of free hosting for more than ten years. They provide “unlimited” disk space and bandwidth. However, they also have a High Resource Usage Policy, which allows high resource consuming sites to throttle or suspend them.</p>
+<p>They have excellent average server response time under 350ms and strong speed metrics.</p>
+<h3><span id="4_AwardSpace">4. AwardSpace</span></h3>
+<p><strong>Best Web Hosting Services</strong>; AwardSpace.com provides both free and premium web hosting to over 2.5 million users. With their open plan, you get 100% ad free hosting, one-click CMS and 24/7 technical support. However, the free plans only give you 1GB of disk space and 5GB of bandwidth, forcing users to sign up for one of the premium plans.</p>
+<p> The biggest drawback of AwardSpace is their inadequate load times of over 1.5 seconds.</p>
+<h3 class="has-black-color has-text-color"><span id="5_Freehostia">5. Freehostia</span></h3>
+<p>Freehostia offers its users free plans that include 250MB disk space, 6GB monthly bandwidth, app installer, three email accounts, and MySQL and PHP compatibility. They also provide 24/7 support for their users as well as guarantee 99.9% uptime – not bad for a free service.</p>
+<p>Freehostia has a load balanced cluster platform, which offers stronger server speeds than many one-server hosting solutions. If you are looking for a robust solution, they have virtual private server from $14/month, semi dedicated server from $29.95/month and dedicated server from $65/month.</p>
+<p>Their free hosting plans have very restrictive limitations. 250MB of storage space is not enough for many developers to add images and text.</p>
+<h3><span id="6_FreeHostingcom">6. FreeHosting.com </span></h3>
+<p><strong>Best Web Hosting Services</strong>; Freehosting.com is the best in the list of free hosts due to unmetered bandwidth. They give their users 10GB server space, a free email account, a MySQL database, a domain (your own). Free subdomains are also available. </p>
+<p>They have a simple drag and drop site builder with 170 pre designed templates. Powerful app installer lets you add up to 350 applications at once. </p>
+<p>If their free plans don’t include everything you need, you can opt for their paid plan at $7.99/month. With the paid hosting option, you can add multi sites, receive multiple emails, and get unlimited disk space.</p>
+<p>One big aspect of FreeHosting is their site speed – around two seconds on average. With site speed being a ranking factor on Google, we would choose any other option for free hosting.</p>
+<h3 class="has-black-color has-text-color"><span id="7_Google_Cloud_Web_Hosting">7. Google Cloud Web Hosting</span></h3>
+<p>Google offers free hosting with a pay per use model for small businesses, so you start paying only after your site is active. Their Google Cloud Platform is a private network that is available in over 200 countries.</p>
+<p> With the cloud computing market reaching $258 billion in 2019, Google is investing heavily in the future of its cloud hosting (has spent $30 billion so far).</p>
+<p>One user said, “I tried the WordPress and Google combo, and the results were amazing. Our test site can handle over 70,000 requests per second without the user noticing anything.</p>
+<p>It’s performance is impressive and worth a look, although they are not technically free, pay-per-use models. </p>
+<h2 class="has-black-color has-text-color"><span id="Should_I_avoid_free_website_hosting">Should I avoid free website hosting?</span></h2>
+<p>I believe that you should not go with the free option and go with Reputable paid host such as- Hostinger, their services are $0.80 per month.</p>
+<p>Free web hosts give you a free start and then push you towards the upgrade paid plan. By avoiding this, I would advise you to choose a cheap, premium web host according to your needs. </p>
+<p>When you have the best host like 000webhost, then you should not go anywhere else towards the free cheap plan. If you are serious about your business then hosting should be an important option for you. It affects all your site speed, uptime, security and features. Make your website safe for the future by making small investment, not just running after cheap.</p>
+<h2 class="has-black-color has-text-color"><span id="What_is_the_Best_Web_Hosting_for_Small_Business">What is the Best Web Hosting for Small Business?</span></h2>
+<p>If you have your own company then here are some top priority that you need to keep in mind while choosing your host. If you choose a less than reputable provider then your site may be down, hacked and you may have server issues. Now that 84% of communication is visual, you should choose top-notch website and hosting. </p>
+<p>That’s why you should keep these three things in mind when choosing a host for your website: <strong>security, reliability, price</strong></p>
+<p>Some of our top picks for small business:</p>
+<h3 class="has-black-color has-text-color"><span id="1Bluehost_Plus_Plan">1.Bluehost Plus Plan</span></h3>
+<p>Overall this is the best plan for small business as it works well with all packages of WordPress Press. It is secure, reliable, and reasonable. </p>
+<p>If you are a beginner then you should choose its basic plan.</p>
+<p>You can choose their Plus Plan according to the scale of your company. This package gives you unlimited domains, SPAM support, and SSL certificate for just $11/month. </p>
+<p>If you run big enterprises then you should choose Cloud and VPS plan. With this you will get storage, unlimited bandwidth, faster load time.</p>
+<h3 class="has-black-color has-text-color"><span id="2_HostGator_Baby_Plan">2. HostGator Baby Plan</span></h3>
+<p>With 8 million domains, 99.99% uptime guarantee, this plan is the best choice for small business. You get it with reliable, easy control panel and money back guarantee if it does not fulfill the uptime promise mentioned by them. </p>
+<p>They have 3 paid plans, Hatchling, Baby, Business, you can choose the plan according to your need. Hatchling Plan is available at $2.75/month which has basic features. The Baby plan is $3.95/month.</p>
+<p>If you are looking for the best hosting option then I would recommend that you choose the highest tier plan. Their business plan starts at $9.95 per month and gives you a free SSL certificate, a dedicated IP address and free SEO tools.</p>
+<h3 class="has-black-color has-text-color"><span id="3_iPage_for_business">3. iPage for business</span></h3>
+<p>iPage is my #3 choice because of its website builder, Weebly access, and free ad credits from Google and Bing PPC ads.</p>
+<p>Emerging companies including e-commerce companies should avoid choosing iPage. However, if you are a local shop that wants to grow quickly then this is a great option.</p>
+<p>Between free domain and website, email address and ad credit, you can’t go wrong at this price point. I have heard complaints about their customer service team for lack of promptness. Although they have cheaper plans, I recommend other options.</p>
+<h2 class="has-black-color has-text-color"><span id="What_is_Web_Hosting">What is Web Hosting?</span></h2>
+<p>Web hosting is a service that allows websites to serve resources on the Internet with the ability to be available anywhere on the World Wide Web. These companies buy or lease servers in Internet-connected data centers and sell space on these servers. A data center’s web server may contain one or more websites. If you have shared shared hosting, dedicated hosting or VPS hosting then the operating system settings will be different.</p>
+<p>Websites are a bunch of files – HTML files, CSS files, images, and photos etc. All data resides in a folder on a computer connected to the Internet. That computer is a “server” because it displays files when people visit.</p>
+<p>When Internet users want to visit a website, they simply type the web address in their browser. Their computer is then immediately connected to the server and the webpage (files) are delivered through the browser.</p>
+<p>To create a website, you need both a domain and a hosting account. If you don’t have a domain, you can buy one as an add-ons.</p>
+<p>You can use different domain registrar and web hosting companies. You have to point your domain to your web host by editing the DNS records. If you buy domain name and website hosting from the same company, then you will not have to change your domain settings.</p>
+<p>But for example, if you already have a website with GoDaddy and you want to host with another provider, you’ll need to change your DNS records.</p>
+<p><strong>Other things that you need to keep in mind while choosing a provider:</strong></p>
+<ul>
+<li>Know your hosting needs</li>
+<li>Consider server reliability and uptime guarantees</li>
+<li>If scalability is important then check out hosting upgrade options</li>
+<li>Check out sign up price vs renewle price, as they can be very different</li>
+<li>Research the control panel for ease of use</li>
+<li>Make sure the hosting platform has the following features: one click installer, FTP and STFP access, .htaccess files, disk space and data transfer capacity</li>
+<li>Research site speed, page load time, if they integrate with Content Delivery Network (CDN)</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="How_many_types_of_Web_Hosting_Service_are_there">How many types of Web Hosting Service are there?</span></h2>
+<h3 class="has-black-color has-text-color"><span id="1Cloud_Hosting">1.Cloud Hosting</span></h3>
+<p>Cloud hosting is a new type of hosting that uses a network of virtual servers that store your files in the cloud instead of on a server. This type of hosting is great for reducing security and DDoS attacks, as it is much harder to hack multiple servers and entry points than a single server.</p>
+<p>Cloud hosting plans are pay-as-you-go – since they are virtual they are not consuming resources when they are not in use. Another advantage of this pay-as-you-go model is that you can easily upgrade your services in a specific time if you expect an increase in traffic.</p>
+<p>One advantage of cloud hosting is that as your traffic grows, you can add more virtual server resources to your website. This flexibility allows you to increase bandwidth as your online business grows.</p>
+<p>For example, if you use shared hosting and your server goes down, then your website is completely damaged. However, with cloud hosting on multiple servers , if one server fails, your site will not be down.</p>
+<p>Cloud hosting rates can range from $40 to $100/month or more</p>
+<h3 class="has-black-color has-text-color"><span id="2_Shared_Web_Hosting_Service">2. Shared Web Hosting Service</span></h3>
+<p>Shared web hosting is when multiple websites reside on a single server. This type of hosting is one of the most popular and inexpensive options, as multiple sites can share server resources owned by the web host.</p>
+<p> One downside of shared hosting is sharing resources. On the same server on which you are getting 1 ton traffic and at the same time, overloading the server can slow down your site. A server cannot have unlimited websites – there are safeguards against this, but still, it is one of the slower options due to shared resources.</p>
+<p>This type of hosting is great for new websites that don’t have a ton of content.</p>
+<p>Since this hosting is on a simultaneous server with other websites, and you share limited resources, performance may suffer. However, you shouldn’t notice much of a drop in improvement as a new site.</p>
+<p>It can cost $2-$30/month. </p>
+<h3 class="has-black-color has-text-color"><span id="3_VPS_Hosting">3. VPS Hosting</span></h3>
+<p>VPS hosting refers to a virtual private server.</p>
+<p> When taking advantage of VPS hosting, a single server acts like a series of separate servers. With a VPS, you get a dedicated segment of shared server resources, so your hosting is not affected by other sites on your server. This gives you your own server space, and less other websites sharing the resource.</p>
+<p> VPS hosting is a bit more expensive than shared hosting, but gives you more resources and increases your traffic as an option to grow your website. In other words, if you are generating more traffic and your online business is growing, it will not hold you back. </p>
+<p>The cost of this hosting usually ranges between $20 to 150 per month.</p>
+<h3 class="has-black-color has-text-color"><span id="4_WordPress_Hosting">4. WordPress Hosting</span></h3>
+<p>WordPress provides you with its own hosting, and you can set up your website and domain on WordPress.com. However, it is a striped-down version of WordPress that doesn’t have the special plugins, themes, or more in-depth settings that you need to build a great website.</p>
+<p>WordPress sites are generally faster than shared hosting due to their native integration and expert support team.</p>
+<p>WordPress is also working with other platforms like BigCommerce to bring deeper e-commerce functionality to its offerings. 39% of e-commerce merchants reported that they have recently lost money due to performance or stability problems. Combining the front and functionality of WordPress with the back and power of the e-commerce platform is a great option to increase growth.</p>
+<p>WordPress Hosting Can Cost From $5 To 100 Per Month</p>
+<h3 class="has-black-color has-text-color"><span id="5_Dedicated_Server_Hosting">5. Dedicated Server Hosting</span></h3>
+<p>Dedicated Server Hosting is the process of leasing out the entire server and managing all your web hosting yourself. If you have an important website for a large organization, this higher cost option gives you the most control over your hosting.</p>
+<p>With complete control over your server, you can install highly complex programs, scripts and applications that are not possible with shared hosting. One drawback is that if you don’t have the technical knowledge to manage and run your own server, you can run into trouble. You will either have to deal with the problem of website downtime or hire a specialist to fix your problems.</p>
+<p>Dedicated Server Hosting costs $120 per month or more.</p>
+<h3 class="has-black-color has-text-color"><span id="6_Resell_Web_Hosting_Service">6. Resell Web Hosting Service</span></h3>
+<p>Reseller programs allow developers or digital agencies to resell white-labeled hosting on plans that they have. For example, if you have ten customers, you can buy a high-tier hosting package, and then resell the hosting to your customers on a monthly fixed credit.</p>
+<p>Companies like SiteGround and WP Engine offer reseller plans, which usually include a management panel, billing software, and automated reports.</p>
+<p>The price of reseller hosting is around $20-75 depending on the features and bandwidth.</p>
+<h3 class="has-black-color has-text-color"><span id="7_Colocation_Web_Hosting_Service">7. Colocation Web Hosting Service</span></h3>
+<p>When you colocate, you rent space from the data center. You need to provide your own server hardware, and they provide security, cooling, power, and an internet connection. Apart from paying for the rack space, you also pay for the usage of your bandwidth every month.</p>
+<p>Due to the need for technical knowledge, the potential for website downtime if something goes wrong, and the high cost, colocation web hosting cannot be recommended for beginners or small businesses.</p>
+<h3 class="has-black-color has-text-color"><span id="8_Ecommerce_Hosting">8. Ecommerce Hosting</span></h3>
+<p>If you are managing an online store, you can choose any e-commerce platform like BigCommerce and Shopify.</p>
+<p>These separate self-hosted platforms will host your entire site for you. Also, if you are using WordPress, you can pay for official hosting like Hostinger and then connect WordPress with an e-commerce plugin like WooCommerce or BigCommerce.</p>
+<p> E-commerce hosting is an option offered by hosts like WP Engine that gives the ability to sell your site online.</p>
+<p>Things to keep in mind when choosing an e-commerce host:</p>
+<ul>
+<li> Shopping cart software</li>
+<li> PCI compliant servers</li>
+<li> SSL and security to handle transactions</li>
+<li> customer database</li>
+<li> Less downtime, because you’ll never want to lose revenue</li>
+<li> fast server response time</li>
+</ul>
+<h2 class="has-black-color has-text-color"><span id="Can_You_Start_Hosting_on_AWS">Can You Start Hosting on AWS?</span></h2>
+<p>Today Amazon is one of the largest e-commerce platforms in the world, but did you know that it offers the best web service today? Well, Amazon is a secure cloud service platform that provides computing power and other functionality to help businesses grow. Out of all these services, we are more interested in their hosting services and can you start WordPress hosting on AWS.</p>
+<p>You can host your site on AWS as it gives top-notch reliability and uptime. Almost all its data center locations have 100% uptime, and the websites hosted there never go down. It is fast becoming a popular cloud hosting option for businesses, as giants like Facebook host most of their business infrastructure on their cloud.</p>
+<p>It’s worth noting that setting up your site on AWS isn’t easy. You have to learn complex code to set up and manage a site. They also have a managed option which minimizes your required technical work. The security services provided by AWS are astonishing. Here your site attack will always be safe.</p>
+<p>AWS charges for its hosting service on a pay-as-you-go basis. You will be billed based on your traffic and spikes can increase the bill.</p>
+<h2 class="has-black-color has-text-color"><span id="Who_is_the_Fastest_Web_Hosting_Service_Site">Who is the Fastest Web Hosting Service Site?</span></h2>
+<p>Keep speed in mind while choosing your preferred hosting plan. You can get an average fast hosting service that handles your regular traffic well, but what if your favorite hits the day and traffic spikes? Not all plans can handle it. It helps to keep a few factors in mind while choosing the fastest hosting.</p>
+<p>Your audience is an important determiner as they have a direct impact on speed. If the server can’t handle the numbers then traffic spikes can take your site down. Thus, always choose a hosting plan that can handle your traffic even at high traffic levels.</p>
+<p>Server location also affects the speed. Often overlooked, a CDN ensures that the server you choose is close to the general location of the audience. A cheaper option will affect the speed of your site.</p>
+<p>This is good for the fastest hosting service, but always think before choosing one, choose the one that is fast for your site and audience:</p>
+<ol>
+<li> SiteGround</li>
+<li> Hostinger</li>
+<li>A2 Turbo</li>
+<li>Inmotion Hosting</li>
+<li>Kinsta</li>
+<li>Liquid Web</li>
+</ol>
+<h2 class="has-black-color has-text-color"><span id="Best_Web_Hosting_Service_sites_in_India">Best Web Hosting Service sites in India</span></h2>
+<p>there are many web hosting provider companies in the country and abroad which provide much better hosting. You can buy according to your needs. But if you want to take hosting service from India then you will be in profit. Because hosting server plays an important role in accessing the website. The greater the distance of your system from the hosting server, the more time you will take to access it.</p>
+<p>If you want to take web hosting from India, then there are many web hosting sites in India which provide you the best service. If we talk about some reliable providers, then they are the following:</p>
+<h3 class="has-black-color has-text-color"><span id="SCALAHOSTING">SCALAHOSTING</span></h3>
+<p>Top features:</p>
+<ul>
+<li>Bangalore Data Center</li>
+<li>₹72.10 (Trail Month)</li>
+<li>30 days refund policy</li>
+<li>Best technological innovation</li>
+</ul>
+<h3><span id="HostGator">HostGator</span></h3>
+<p>Top features:</p>
+<ul>
+<li>Mumbai data center</li>
+<li>₹149/month</li>
+<li>45 days return policy</li>
+<li>Best in India with Datacenter </li>
+</ul>
+<h3><span id="Tyro">Tyro</span></h3>
+<p>Top features:</p>
+<ul>
+<li>₹40/month</li>
+<li>1GB SSD Disk storage</li>
+<li>Unlimited Bandwidth</li>
+<li>Control panel</li>
+<li>3 MySQL DB</li>
+<li>Free SSL Certificate</li>
+</ul>
+<h3><span id="Turbo">Turbo</span></h3>
+<p>Top features:</p>
+<ul>
+<li>₹130/month</li>
+<li>GIT access </li>
+<li>SSH access</li>
+<li>Unlimited MySQL DB</li>
+<li>Free SSL certificate</li>
+</ul>
+<h3><span id="BigRock">BigRock</span></h3>
+<p>Top features:</p>
+<ul>
+<li>₹99/- 149/month</li>
+<li>99.9% uptime</li>
+<li>in built cPanel</li>
+<li>20 GB HHD space</li>
+<li>100 GB data transfer</li>
+</ul>
+<p>In India, you do not need any card for hosting, you can buy hosting with the help of internet banking.</p>
+<h2 class="has-black-color has-text-color"><span id="Frequently_Asked_Questions_FAQs_about_Web_Hosting">Frequently Asked Questions (FAQs) about Web Hosting</span></h2>
+<div class="schema-faq wp-block-yoast-faq-block">
+<div class="schema-faq-section" id="faq-question-1660629060392"><strong class="schema-faq-question"><strong>Where is web hosting used?</strong></strong></p>
+<p class="schema-faq-answer">Web hosting is a service that provides shared or dedicated hosting, the most commonly used for creating websites. <br />Software can also store and host files, email addresses and other content.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629091569"><strong class="schema-faq-question"><strong>Which is the most secure web hosting?</strong></strong></p>
+<p class="schema-faq-answer">If you want to keep your site safe from malicious attacks and potential threats, my choices are WP Engine, SiteGround, BlueHost, HostGator and Inmotion Hosting. <br />They provide excellent security and customer support.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629111210"><strong class="schema-faq-question"><strong>What is the difference between Domain and Hosting?</strong></strong></p>
+<p class="schema-faq-answer">Web hosting is an account on a server that stores website files on the Internet, while a top-level-domain (TLD) is a leased-readable term (for example, Google.com) that directs users to an IP address. Sends.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629129460"><strong class="schema-faq-question"><strong>What is the difference between Server and Host?</strong></strong></p>
+<p class="schema-faq-answer">The difference between server and host is that the server is a hardware device that stores and manages the files in the network and the host is a service provider that provides the technology required to view the server files on the computer.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629147262"><strong class="schema-faq-question"><strong>Is WordPress a web host?</strong></strong></p>
+<p class="schema-faq-answer">WordPress is a content management system, CMS that allows users to create custom websites. </p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629164333"><strong class="schema-faq-question"><strong>How many types of hosting are there?</strong></strong></p>
+<p class="schema-faq-answer">6 Main hosting are– shared, virtual, dedicated, cloud, managed, colocation.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629222728"><strong class="schema-faq-question"><strong>Can I host a website without a domain?</strong></strong></p>
+<p class="schema-faq-answer">You can use free host to create website without domain. <br />But you have to use a subdomain on their server – “mywebsitename.wordpress.com”. <br />Choosing a paid provider is a better option so that you can fully manage your domain and website.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629244373"><strong class="schema-faq-question"><strong>What is Localhost?</strong></strong></p>
+<p class="schema-faq-answer">“Localhost” is a term for the local computer on which the program runs. The local computer’s IP address is 127.0.0.1 – a “loopback” address that sends information back to the local machine.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629459733"><strong class="schema-faq-question"><strong>Is shared hosting secure?</strong></strong></p>
+<p class="schema-faq-answer">Shared hosting is not the most secure hosting, but it can be secure if you are careful. Since you share the server location with other websites, attacks on other sites can affect your own sites. It is important for you site to use security tools and plugins.  </p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629484681"><strong class="schema-faq-question"><strong>Is it worth paying for web hosting?</strong><br /></strong></p>
+<p class="schema-faq-answer">Absolutely, you should invest in hosting service as the free options are very limited and provide less services. This may include interruptions unless you “pay-as-you-go” for bandwidth and uptime. With so many cheap options, it’s important to invest in a website and take it seriously.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629673283"><strong class="schema-faq-question"><strong>How much money will it take to host a website for a year?</strong></strong></p>
+<p class="schema-faq-answer">To run a website, you need to invest in hosting and name. <br />In the end, your name may only cost you $10 per year and get you a low-cost plan for $2.75/month. <br />This total cost for the year would be $43. <br />If you pay for an expensive website name and high-end hosting package, your cost could be in the thousands.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629729204"><strong class="schema-faq-question"><strong>Can we upgrade our hosting plan anytime?</strong></strong></p>
+<p class="schema-faq-answer">Yes, as with many hosting services, you are allowed to upgrade your plan at any time. You can either do it yourself in the dashboard or contact us for assistance. I suggest you take your plan from day one so that in future you don’t need to upgrade your plan.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660629990786"><strong class="schema-faq-question"><strong>Is domain privacy worth the cost?</strong></strong></p>
+<p class="schema-faq-answer">If you want to avoid identity theft, domain privacy is worth it. <br />Without it, anyone can view your WHOIS data and expose all of your sensitive information such as your name and contact information such as your address and phone number. <br />If you do not want this information to be available to anyone online, you should choose privacy protection when registering your site through a host.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630032712"><strong class="schema-faq-question"><strong>Do I really need SiteLock?</strong></strong></p>
+<p class="schema-faq-answer">SiteLock is a cloud based security tool that acts as a malware scanner. There are many high quality security plugins like Wordfence and BulletProof Security. <br />So, you don’t need SiteLock security up-sell and you can get better and cheaper option.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630064328"><strong class="schema-faq-question"><strong>Is it worth taking BlueHost CodeGuard? </strong></strong></p>
+<p class="schema-faq-answer">Bluehost backs up your site on its cheapest plan. <br />With their Choice Plus plan, you get CodeGuard for free, which is a more customized, advanced backup plan.</p>
+<p>There are also many other backup plugins that you can use for websites like UpDraftPlus, VaultPress, and BackupBuddy. <br />CodeGuard is not worth increasing your monthly cost. <br />You can find better options.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630237575"><strong class="schema-faq-question"><strong>Can I pay someone to maintain my hosting?</strong></strong></p>
+<p class="schema-faq-answer">Every website requires routine maintenance and software updates. <br />Many web developing companies provide this service to the website owner. <br />Prices vary depending on the size and complexity of the site, but typically range from as little as $30 for a large, custom site to as much as $1,000.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630266063"><strong class="schema-faq-question"><strong>What is the cost of using WordPress?</strong></strong></p>
+<p class="schema-faq-answer">You can use WordPress’s .com site and run your website with a free subdomain. <br />The best option for having your own site is to use a third-party web host for the low cost of around $2.95 per month.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630365309"><strong class="schema-faq-question"><strong>Can Google host my website?</strong></strong></p>
+<p class="schema-faq-answer">Google does not provide hosting service directly, but it does provide options to maintain the presence of the website. </p>
+<p>You can link to a Google domain using a third-party provider. <br />You can also use their Web Forwarding feature to redirect traffic to your existing website.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630396807"><strong class="schema-faq-question"><strong>What is Hostname and IP Address?</strong></strong></p>
+<p class="schema-faq-answer">Hostname is a word label used to identify a device connected to a computer network on the World Wide Web. <br />They are part of the DNS system, separated from the host-label by a “dot” or period. Hostnames are sent to an Internet Protocol (IP) address, which is the numerical value of a device. <br />These two work together to service and manage all the websites online.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630690496"><strong class="schema-faq-question"><strong>Can I host my own website?</strong></strong></p>
+<p class="schema-faq-answer">To host your own website, you will need to use a Windows or Linux computer and place the HTML and CSS files in a folder and then use the tool to post them online. <br />I would not advise you to do this as it will cause you a lot of security and performance problems.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630736807"><strong class="schema-faq-question"><strong>Which are the free Web Hosting Service sites?</strong></strong></p>
+<p class="schema-faq-answer">Although there are many free web hosting sites but if we talk about 10 top free web hosting then they are</p>
+<p>Infinityfree</p>
+<p>Bluehost</p>
+<p>Weebly</p>
+<p>GoDaddy</p>
+<p>Google Cloud Hosting</p>
+<p>DreamHost</p>
+<p>Hostinger</p>
+<p>Wix</p>
+<p>000WebHost</p>
+<p>iPage</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630833286"><strong class="schema-faq-question"><strong>Which are the free web hosting sites in India?</strong></strong></p>
+<p class="schema-faq-answer">There are many completely free web hosting sites in India. <br />But talking about top 10 – InfinityFree.net, FreeHosting.com, FreeHostia.com, 000WebHost.com, x10hosting.com, Googiehost, Awardspace, FreeHosting.io, Byet.host, Hostinger.com.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630861757"><strong class="schema-faq-question">Web Hosting Service Comparison- wrap up</strong></p>
+<p class="schema-faq-answer">When choosing a website hosting provider: focus on security, reliability, speed and tech support. <br />I hope this guide has given you some context.</p>
+</div>
+<div class="schema-faq-section" id="faq-question-1660630900915"><strong class="schema-faq-question"><strong>If you are looking for the best Web Hosting Service platform, I recommend BlueHost and you can get started at just $2.95/month (63% off).</strong></strong></p>
+<p class="schema-faq-answer">Ultimately, a best host focuses on site speed, security and easy-to-use, so you can focus on growing your business, not tackling the situation.<br />Hope you have enjoyed reading this post <br />If you have any question or suggestion then do not forget to comment below. <br />Your heart to read this post? <br />Thanks deeply!</p>
+</div>
+</div>
+</div>
+
+<p> &#8212;  to <a href="https://therealityhunt.live/indias-best-top-20-web-hosting-service-provider-company/ ">therealityhunt.live </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/indias-best-top-20-web-hosting-service-provider-company/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Détenu arrêté pour avoir un téléphone portable en prison</title>
+		<link>https://mycamer.net/detenu-arrete-pour-avoir-un-telephone-portable-en-prison/</link>
+					<comments>https://mycamer.net/detenu-arrete-pour-avoir-un-telephone-portable-en-prison/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2022 02:21:29 +0000</pubDate>
+				<category><![CDATA[Mobile]]></category>
+		<category><![CDATA[Détenu arrêté pour avoir un téléphone portable en prison]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21916</guid>
+
+					<description><![CDATA[&#13; Miroir d&#8217;Ahmedabad &#13; 17-08-2022 06:00 &#13; &#8211;> &#13; Miroir d&#8217;Ahmedabad &#13; 17-08-2022 06:00 &#13; &#8211;> &#8212; to ahmedabadmirror.com]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div>
+<div class="article-meta">
+<ul class="list-inline">&#13;</p>
+<li class="posted-by"><i class="fa fa-user"/>Miroir d&#8217;Ahmedabad</li>
+<p>&#13;</p>
+<li class="publish-date"><i class="fa fa-clock-o"/>  17-08-2022 06:00</li>
+<p>&#13;
+                  </ul>
+</p></div>
+<p>                 <!--   --></p></div>
+<p>  &#8211;>
+                     </p></div>
+
+<p></p>
+<div>
+<div class="article-meta">
+<ul class="list-inline">&#13;</p>
+<li class="posted-by"><i class="fa fa-user"/>Miroir d&#8217;Ahmedabad</li>
+<p>&#13;</p>
+<li class="publish-date"><i class="fa fa-clock-o"/>  17-08-2022 06:00</li>
+<p>&#13;
+                  </ul>
+</p></div>
+<p>                 <!--   --></p></div>
+<p>  &#8211;>
+                     </p></div>
+<p>   &#8212;  to <a href="https://ahmedabadmirror.com/inmate-booked-for-having-mobile-phone-in-prison/81842596.html ">ahmedabadmirror.com </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/detenu-arrete-pour-avoir-un-telephone-portable-en-prison/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Cette horrible publicité oubliée reflète la &#8220;jossification&#8221; dévorante des jeux vidéo</title>
+		<link>https://mycamer.net/cette-horrible-publicite-oubliee-reflete-la-jossification-devorante-des-jeux-video/</link>
+					<comments>https://mycamer.net/cette-horrible-publicite-oubliee-reflete-la-jossification-devorante-des-jeux-video/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Tue, 16 Aug 2022 23:43:40 +0000</pubDate>
+				<category><![CDATA[Actualité]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21913</guid>
+
+					<description><![CDATA[A présent, vous l&#8217;avez probablement vu : la jeune héroïne du prochain jeu Forspoken se fraye un chemin à travers des champs vides et enferme les méchants dans des piliers de cendres, plaisantant tout le long. &#8220;Alors, laissez-moi clarifier les choses…&#8221;, commence-t-elle, adoptant le ton ironique et moqueur de tant de héros de la culture [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div data-content-element-selector="p, .js-buylink-item-container" data-allowed-classes-selector="js-buylink-item-container">
+<p dir="ltr">A présent, vous l&#8217;avez probablement vu : la jeune héroïne du prochain jeu Forspoken se fraye un chemin à travers des champs vides et enferme les méchants dans des piliers de cendres, plaisantant tout le long.  &#8220;Alors, laissez-moi clarifier les choses…&#8221;, commence-t-elle, adoptant le ton ironique et moqueur de tant de héros de la culture pop contemporaine.  Ajoutez quelques mentions de &#8220;dragons effrayants&#8221; et de &#8220;tuer des bêtes gonflées&#8221;, et vous avez l&#8217;étoffe d&#8217;un mème Internet instantané.</p>
+<p dir="ltr">Il n&#8217;a pas fallu longtemps aux gens pour commencer à faire des blagues aux dépens de la publicité.  Le créateur de contenu et doubleur ProZD a été l&#8217;un des premiers à participer à l&#8217;action :</p>
+<p dir="ltr">FunnyWes de Bloodborne PSX a mis au point une version amusante du jeu bien-aimé de FromSoftware :</p>
+<p dir="ltr">Et mon préféré est cette contribution de BobVids sur le thème de Tony Hawk :</p>
+<p dir="ltr">Dans l&#8217;ensemble, il est tentant de rire de ces mèmes loufoques et de passer à autre chose.  Après tout, la communauté du jeu trouvera quelque chose de nouveau et d&#8217;embarrassant à rire dans les prochains jours.  Et puisque le jeu est encore au four, nous n&#8217;avons aucune idée si cette publicité reflétera le produit final.  Mais, pour moi, l&#8217;écriture regrettable dans cette publicité parle d&#8217;un problème plus important dans la production de jeux, qui bouillonne depuis cinq à dix ans.  Je parle de l&#8217;abject&#8221;<a target="_blank" href="https://www.urbandictionary.com/define.php?term=Jossification" data-target="true" rel="noopener nofollow">Jossification</a>&#8221; qui s&#8217;est emparé du jeu à sa racine, en particulier dans l&#8217;espace triple-A.</p>
+<p dir="ltr">Si vous jouez à beaucoup de jeux vidéo, vous avez probablement remarqué que le ton et l&#8217;écriture des personnages des blockbusters à gros budget sont devenus remarquablement similaires ces dernières années.  Ou, pour le dire d&#8217;une manière moins charitable, il y a un sentiment aigu que beaucoup de jeux se contentent du générique au lieu de se différencier réellement du reste du pack.  Le style d&#8217;écriture des grands jeux vidéo s&#8217;est installé sur le malaise sarcastique et rempli de plaisanteries popularisé pour la première fois par Joss Whedon dans des émissions comme Buffy contre les vampires et Firefly.</p>
+<p dir="ltr">Par exemple, comparez les bandes-annonces révélatrices du prochain Saints Row et de l&#8217;exclusivité retardée d&#8217;Arkane Redfall, chacune datant d&#8217;il y a environ un an.  Bien qu&#8217;ils soient très différents dans le genre et la présentation générale, les deux jeux ont un ton étrangement similaire, rempli de plaisanteries pleines d&#8217;esprit, de non-séquences, de gags visuels et, bien sûr, de nombreuses plaisanteries.  &#8220;Dormez bien&#8221;, dit notre intrépide tireur d&#8217;élite avant de faire des trous dans cinq vampires.  &#8220;Ugh, ce n&#8217;est TELLEMENT pas professionnel&#8221;, plaisante l&#8217;un de nos adorables perdants en apprenant que le gang qu&#8217;ils sont sur le point de voler a tiré sur le marchand d&#8217;armes qui livrait les marchandises.</p>
+<p>          <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/3pWjcqXnP2g" height="100%" width="100%" scrolling="no" frameborder="" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></p>
+<p>          <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/YgjzDJA1o1E" height="100%" width="100%" scrolling="no" frameborder="" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></p>
+<p dir="ltr">Maintenant, il n&#8217;y a rien de mal à injecter un peu de légèreté dans votre jeu.  De par leur nature même, les jeux vidéo sont souvent ridicules, et l&#8217;humour au bon moment peut grandement contribuer à atténuer certains des aspects les plus ennuyeux d&#8217;une longue campagne.  (Et, pour être juste envers ces deux jeux, ils présentent tous les deux une bien meilleure écriture que cette maudite publicité Forspoken.) Mais ces derniers temps, on a l&#8217;impression que chaque jeu a exactement le même sens de l&#8217;humour : violent, mais pas graphique ;  maladroit, mais pas absurde ;  irrévérencieux, mais jamais transgressif.  On ne sait pas exactement quels sont les objets de ces punchlines, sauf peut-être le concept de quiconque prenant quoi que ce soit au sérieux.</p>
+<p dir="ltr">Le contrecoup de ce genre de style d&#8217;écriture smarmy et sur le nez se prépare depuis longtemps dans certains quartiers d&#8217;Internet, en particulier dans les communautés cinématographiques.  La critique autoritaire est peut-être mieux résumée par la récente mémification de la boutade : &#8220;Eh bien, ça vient d&#8217;arriver !&#8221;</p>
+<p dir="ltr">Malgré le fait que cette phrase ne semble réellement apparaître dans aucun film Marvel réel, elle est devenue un raccourci pour le cliché, les blagues usées que certaines personnes attribuent au MCU.  La ligne elle-même est la philosophie essentielle du scénariste et réalisateur de The Avengers Joss Whedon : Peu importe ce qui vient de se passer, nous pouvons faire une blague référentielle stupide à ses dépens et effacer instantanément toute tension dramatique.  (Pour mémoire, quelqu&#8217;un dit en fait: &#8220;Il est juste derrière moi, n&#8217;est-ce pas?&#8221; dans Thor: Love and Thunder. C&#8217;est Taika Waititi pour vous.)</p>
+<p dir="ltr">Que vous aimiez ce style d&#8217;écriture dépendra en fin de compte de vos goûts personnels.  Pourtant, même si vous aimez quelque chose, il y a une limite ultime à cet amour.  Personne ne veut manger de pizza à chaque repas.  Pour moi, le principal problème avec le fait de s&#8217;appuyer tout le temps sur la plaisanterie Whedon-esque est qu&#8217;il prive chaque situation d&#8217;enjeux.  La peur, la colère, la haine, l&#8217;amour &#8211; cela aplatit toutes les extrémités de l&#8217;émotion humaine en un sourire suffisant et un « à vous ».  Écrivain d&#8217;horreur noté <a target="_blank" href="https://twitter.com/scumbelievable/status/1557249382227083264" rel="noopener">Gretchen Felker Martin</a> a récemment décrit le style de Whedon comme &#8220;rouler des yeux devant les visions les plus profondes d&#8217;extase et d&#8217;horreur que l&#8217;univers a à offrir&#8221;, et je pense que c&#8217;est une excellente façon de le dire.</p>
+<p dir="ltr">L&#8217;étude de cas la plus intéressante dans la Jossification en cours de l&#8217;industrie est peut-être survenue en 2018, lorsque Destiny 2 a tué Exo Cayde-6, le favori des fans, dans l&#8217;extension Forsaken.  Exprimé par Nathan Fillion, collaborateur fréquent de Whedon, Cayde-6 a servi d&#8217;incarnation ambulante du style d&#8217;écriture léger du jeu.  La mort de Cayde a été considérée par de nombreux fans comme un pas vers un style plus sérieux en accord avec les traditions importantes du jeu et des thèmes plus profonds.  Lors du lancement de Destiny 2, le sens de l&#8217;humour de Cayde-6 était à l&#8217;avant-plan, conduisant à un changement de ton plus Jossifié que tous les fans n&#8217;ont pas apprécié.  Grâce à ce déménagement, Destiny a réussi à explorer un territoire plus réfléchi dans le domaine axé sur les traumatismes. <a target="_blank" href="https://www.gamespot.com/articles/how-destiny-2-unexpectedly-became-a-game-about-dealing-with-trauma/1100-6504642/" rel="noopener">Saison des hantés</a>.  Quelle que soit la façon dont vous le voyez, il était certainement intéressant de voir un développeur de jeux vidéo populaire reprendre le concept de plaisanteries inactives et mettre deux trous dans sa tête.</p>
+<p dir="ltr">Dans l&#8217;ensemble, je ne pense pas que les auteurs de jeux vidéo devraient s&#8217;efforcer d&#8217;instituer une nouvelle vague de dialogue sombre et sérieux &#8211; ou du moins, pas tous à la fois.  Cependant, j&#8217;aimerais voir plus de jeux s&#8217;inspirer d&#8217;indies bien écrites axées sur l&#8217;humour comme Disco Elysium, Hades et même Cruelty Squad.  La nouvelle conception de Disco Elysium de donner à chacune des émotions de votre personnage une voix unique la fait ressortir dans l&#8217;espace, avec son penchant vers le surréaliste.  Cruelty Squad dépeint un monde absurde et laid déchiré par le capitalisme qui est si profondément cynique qu&#8217;il parvient à susciter des rires de ventre.  Et bien que Hades ait sa juste part de plaisanteries Tumblr-y, chacun de ses personnages mémorables a une voix et une personnalité si fortes qu&#8217;il parvient à clouer l&#8217;atterrissage.</p>
+<figure data-align="center" data-size="large" data-img-src="https://www.gamespot.com/a/uploads/original/1596/15969599/4022031-cayde.jpg" data-ref-id="1300-4022031" data-ratio="0.5625" data-width="1280" data-embed-type="image" style="width: 1280px"><a target="_blank" class="fluid-height" style="padding-bottom:56.3%" href="https://www.gamespot.com/a/uploads/original/1596/15969599/4022031-cayde.jpg" data-ref-id="1300-4022031" rel="noopener"><img alt="La punchline ambulante Cayde-6 était un favori des fans, et sa mort est l'un des meilleurs moments de l'histoire de Destiny" src="https://www.gamespot.com/a/uploads/original/1596/15969599/4022031-cayde.jpg" srcset="https://www.gamespot.com/a/uploads/original/1596/15969599/4022031-cayde.jpg 1280w, https://www.gamespot.com/a/uploads/scale_medium/1596/15969599/4022031-cayde.jpg 480w" sizes="(max-width: 1280px) 100vw, 1280px" data-width="1280"/></a><figcaption>La punchline ambulante Cayde-6 était un favori des fans, et sa mort est l&#8217;un des meilleurs moments de l&#8217;histoire de Destiny</figcaption></figure>
+<p dir="ltr">Tous les jeux n&#8217;ont pas besoin d&#8217;avoir une écriture primée, mais un peu de diversité dans le ton, le genre et l&#8217;humour irait très loin.  C&#8217;est en grande partie pourquoi The Witcher 3 est un si bon RPG, et j&#8217;espère que certains développeurs apprendront de son exemple.  Le dialogue dans cette annonce Forspoken a peut-être attiré la colère des jokers en ligne, mais il n&#8217;y a rien de particulièrement mauvais ou répréhensible à ce sujet.  L&#8217;écriture Whedon-esque est apparue comme avant-gardiste et fraîche à son époque, mais le temps a passé, et elle semble maintenant générique et banale sans le traitement approprié.</p>
+<p dir="ltr">Indépendamment de ce que les développeurs pensent de ce style, il est clair qu&#8217;une partie assez importante du public est prête à se moquer de ses excès à l&#8217;occasion.  En tant que tel, si vous écrivez des jeux vidéo, vous feriez mieux d&#8217;affiner vos one-liners, car les créateurs de contenu viennent pour vous.</p>
+<p dir="ltr">La véritable tragédie de toute cette débâcle est que les images de Forsaken dans la publicité semblent en fait assez convaincantes, du moins selon les normes des jeux en monde ouvert à gros budget d&#8217;aujourd&#8217;hui : options de traversée dynamiques, combat satisfaisant.  Si seulement Square Enix avait mis en ligne une version sans son.</p>
+</p></div>
+<p>GameSpot peut percevoir une commission sur les offres de vente au détail.</p>
+<p>
+    <span data-nosnippet="">Les produits discutés ici ont été choisis indépendamment par nos éditeurs.  GameSpot peut obtenir une part des revenus si vous achetez quelque chose présenté sur notre site.<br />
+    </span>
+  </p>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br />
+<br /></p>
+<p> &#8212;  to <a href="https://www.gamespot.com/articles/that-awful-forspoken-ad-reflects-the-all-consuming-jossification-of-video-games/1100-6506544/ ">www.gamespot.com </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/cette-horrible-publicite-oubliee-reflete-la-jossification-devorante-des-jeux-video/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>COD Warzone Down ce 16 août avec le code d&#8217;erreur 11328, Raven enquête</title>
+		<link>https://mycamer.net/cod-warzone-down-ce-16-aout-avec-le-code-derreur-11328-raven-enquete/</link>
+					<comments>https://mycamer.net/cod-warzone-down-ce-16-aout-avec-le-code-derreur-11328-raven-enquete/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Tue, 16 Aug 2022 21:14:29 +0000</pubDate>
+				<category><![CDATA[Actualité]]></category>
+		<category><![CDATA[Technologies]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21910</guid>
+
+					<description><![CDATA[Il semble que (Call of Duty) des rapports de panne de COD Warzone fassent surface ce 16 août, les joueurs signalant que le code d&#8217;erreur 11328 s&#8217;affiche! Ce temps d&#8217;arrêt s&#8217;applique à toutes les plateformes (confirmé). État et mises à jour du serveur COD Warzone Down pour le 16 août : Plusieurs personnes sur le subreddit [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div id="post-192980192980">
+<div class="mt-3">
+<div class="post-thumbnail"> <img width="1920" height="1080" src="https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Zone de guerre COD vers le bas" loading="lazy" srcset="https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2.jpg 1920w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-300x169.jpg 300w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-600x338.jpg 600w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-768x432.jpg 768w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-1536x864.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px"/></div>
+</div>
+<div class="entry-content mp1st-single-content">
+<p>Il semble que (Call of Duty) des rapports de panne de COD Warzone fassent surface ce 16 août, les joueurs signalant que le code d&#8217;erreur 11328 s&#8217;affiche!  Ce temps d&#8217;arrêt s&#8217;applique à toutes les plateformes (confirmé).</p>
+<h3>État et mises à jour du serveur COD Warzone Down pour le 16 août :</h3>
+<p>Plusieurs personnes sur le subreddit du jeu ont posté que c&#8217;était en panne pour elles :</p>
+<blockquote class="reddit-card">
+<p> <a target="_blank" href="https://www.reddit.com/r/CODWarzone/comments/wq166c/error_code_11328/?ref_source=embed&amp;ref=share" rel="noopener">Code d&#8217;erreur 11328</a> de <a target="_blank" href="https://www.reddit.com/r/CODWarzone/" rel="noopener">CODWarzone</a></p>
+</blockquote>
+<p>En plus de cela, le Call of Duty <a target="_blank" href="https://downdetector.com/status/call-of-duty/" rel="noopener">Site de Downdetector</a> a également vu une augmentation massive des rapports récemment.  Sur Twitter, Raven Software a reconnu la panne et a déclaré qu&#8217;il enquêtait.</p>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+<p lang="en" dir="ltr"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2757.png" alt="❗" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Nous étudions actuellement les problèmes de connexion au serveur.</p>
+<p>Nous fournirons une mise à jour dès que possible !</p>
+<p>– Logiciel Raven (@RavenSoftware) <a target="_blank" href="https://twitter.com/RavenSoftware/status/1559605411694755842?ref_src=twsrc%5Etfw" rel="noopener">16 août 2022</a></p>
+</blockquote>
+<p>Comme toujours, s&#8217;il y a des mises à jour des serveurs, nous nous assurerons de mettre à jour cet article en conséquence.  Si vous pouvez vous connecter au jeu, laissez un commentaire ci-dessous et indiquez-nous sur quelle plateforme vous vous trouvez et dans quelle région.</p>
+<p>Pour le dernier patch de Warzone qui a été publié le 8 août, dirigez-vous vers <a target="_blank" href="https://mp1st.com/news/modern-warfare-cod-warzone-update-1-61-released-this-august-8" rel="noopener">ici</a>.</p>
+</div>
+</div>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br />
+<br /></p>
+<p></p>
+<div id="post-192980192980">
+<div class="mt-3">
+<div class="post-thumbnail"> <img width="1920" height="1080" src="https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Zone de guerre COD vers le bas" loading="lazy" srcset="https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2.jpg 1920w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-300x169.jpg 300w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-600x338.jpg 600w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-768x432.jpg 768w, https://mp1st.com/wp-content/uploads/2022/07/warzone-terminator-2-1536x864.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px"/></div>
+</div>
+<div class="entry-content mp1st-single-content">
+<p>Il semble que (Call of Duty) des rapports de panne de COD Warzone fassent surface ce 16 août, les joueurs signalant que le code d&#8217;erreur 11328 s&#8217;affiche!  Ce temps d&#8217;arrêt s&#8217;applique à toutes les plateformes (confirmé).</p>
+<h3>État et mises à jour du serveur COD Warzone Down pour le 16 août :</h3>
+<p>Plusieurs personnes sur le subreddit du jeu ont posté que c&#8217;était en panne pour elles :</p>
+<blockquote class="reddit-card">
+<p> <a target="_blank" href="https://www.reddit.com/r/CODWarzone/comments/wq166c/error_code_11328/?ref_source=embed&amp;ref=share" rel="noopener">Code d&#8217;erreur 11328</a> de <a target="_blank" href="https://www.reddit.com/r/CODWarzone/" rel="noopener">CODWarzone</a></p>
+</blockquote>
+<p>En plus de cela, le Call of Duty <a target="_blank" href="https://downdetector.com/status/call-of-duty/" rel="noopener">Site de Downdetector</a> a également vu une augmentation massive des rapports récemment.  Sur Twitter, Raven Software a reconnu la panne et a déclaré qu&#8217;il enquêtait.</p>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+<p lang="en" dir="ltr"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2757.png" alt="❗" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Nous étudions actuellement les problèmes de connexion au serveur.</p>
+<p>Nous fournirons une mise à jour dès que possible !</p>
+<p>– Logiciel Raven (@RavenSoftware) <a target="_blank" href="https://twitter.com/RavenSoftware/status/1559605411694755842?ref_src=twsrc%5Etfw" rel="noopener">16 août 2022</a></p>
+</blockquote>
+<p>Comme toujours, s&#8217;il y a des mises à jour des serveurs, nous nous assurerons de mettre à jour cet article en conséquence.  Si vous pouvez vous connecter au jeu, laissez un commentaire ci-dessous et indiquez-nous sur quelle plateforme vous vous trouvez et dans quelle région.</p>
+<p>Pour le dernier patch de Warzone qui a été publié le 8 août, dirigez-vous vers <a target="_blank" href="https://mp1st.com/news/modern-warfare-cod-warzone-update-1-61-released-this-august-8" rel="noopener">ici</a>.</p>
+</div>
+</div>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> &#8212;  to <a href="https://mp1st.com/news/cod-warzone-down-this-august-16-with-error-code-11328-raven-investigating ">mp1st.com </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/cod-warzone-down-ce-16-aout-avec-le-code-derreur-11328-raven-enquete/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Un adjoint témoigne qu&#8217;il a envoyé des photos de Kobe Crash au flic pendant qu&#8217;ils jouaient à &#8220;Call Of Duty&#8221;</title>
+		<link>https://mycamer.net/un-adjoint-temoigne-quil-a-envoye-des-photos-de-kobe-crash-au-flic-pendant-quils-jouaient-a-call-of-duty/</link>
+					<comments>https://mycamer.net/un-adjoint-temoigne-quil-a-envoye-des-photos-de-kobe-crash-au-flic-pendant-quils-jouaient-a-call-of-duty/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Tue, 16 Aug 2022 20:29:31 +0000</pubDate>
+				<category><![CDATA[Jeu vidéo]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21907</guid>
+
+					<description><![CDATA[Révélation étonnante dans la salle d&#8217;audience lors de la Kobe Bryant cas de procès photo mardi &#8230; un adjoint a témoigné qu&#8217;il avait envoyé à un autre flic des photos graphiques du site de l&#8217;accident alors que les deux étaient au milieu d&#8217;une session de jeu &#8220;Call Of Duty&#8221;. Michel Russel – un adjoint du [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div>
+<section id="cb-a2f843c526a7ab69a3b7acc5fec6079f" class="canvas-block canvas-block-permalink canvas-image-block canvas-image-block-permalink canvas-image-block--sports  canvas-block-is-first ">
+<div class="image-block">
+                  <a target="_blank" class="js-click-image js-track-link image-lightbox-preview" data-node-ref="tmz:image-asset:image_jpg_20220816_d9903f64415f45389d8cdc367d8c45d2" data-container-ref="tmz:article:a6f35a0e-a811-467b-b1a4-24b36ba37d07" data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;image&quot;}" rel="noopener"></p>
+<div class="img-wrapper">
+<p>                    <img class="img-fluid image-block__img-fluid img-aspect-auto" src="https://imagez.tmz.com/image/d9/4by3/2022/08/16/d9903f64415f45389d8cdc367d8c45d2_md.jpg" loading="lazy" alt=""/>
+                </div>
+<p>                  </a>
+      </div>
+</section>
+<p><!--/#cb-a2f843c526a7ab69a3b7acc5fec6079f--></p>
+<section id="cb-432ad9006f96f6791516a39eae9df409" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Révélation étonnante dans la salle d&#8217;audience lors de la <a target="_blank" href="https://www.tmz.com/people/kobe-bryant/" rel="noopener"><strong>Kobe Bryant</strong></a>  cas de procès photo mardi &#8230; un adjoint a témoigné qu&#8217;il avait envoyé à un autre flic des photos graphiques du site de l&#8217;accident alors que les deux étaient au milieu d&#8217;une session de jeu &#8220;Call Of Duty&#8221;.</p>
+</section>
+<p><!--/#cb-432ad9006f96f6791516a39eae9df409--></p>
+<section id="cb-f8e333520b862e344f1afa237f65d452" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p><strong>Michel Russel</strong> – un adjoint du département du shérif du comté de Los Angeles – dit que l&#8217;échange des photos a eu lieu peu de temps après la légende des Lakers et sa fille, <a target="_blank" href="https://www.tmz.com/people/gianna-bryant/" rel="noopener"><strong>Gianna</strong></a>a péri dans le tragique, <a target="_blank" href="https://www.tmz.com/2020/01/26/kobe-bryant-killed-dead-helicopter-crash-in-calabasas/" rel="noopener"><strong>Crash d&#8217;hélicoptère en janvier 2020</strong></a>.</p>
+</section>
+<p><!--/#cb-f8e333520b862e344f1afa237f65d452--></p>
+<section id="cb-573c09f1ba7ec05b7caae669bbecc048" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Russell, qui a affirmé qu&#8217;il avait initialement reçu les photos de son collègue député <strong>Joey Cruz</strong> heures après le naufrage, a déclaré avoir participé à une soirée jeux vidéo avec l&#8217;adjoint de Santa Clarita <strong>Ben Sanchez</strong> Le jour suivant.</p>
+</section>
+<p><!--/#cb-573c09f1ba7ec05b7caae669bbecc048--></p>
+<section id="cb-2fbbb941101e44872710c4a7dad56d8b" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Pendant que les deux jouaient au jeu de tir à la première personne, Russell a témoigné qu&#8217;il avait dit à Sanchez qu&#8217;il avait les photos, puis lui avait demandé s&#8217;il voulait les voir.  Quand le flic a dit oui, Russell a dit qu&#8217;il les avait envoyés.</p>
+</section>
+<p><!--/#cb-2fbbb941101e44872710c4a7dad56d8b--></p>
+<section id="cb-2e2d854dc5f0170b14105022a55258d3" class="canvas-block canvas-block-permalink canvas-gallery-block canvas-gallery-block-permalink canvas-gallery-block--default  ">
+</section>
+<p><!--/#cb-2e2d854dc5f0170b14105022a55258d3--></p>
+<section id="cb-9e24def346d21d44c638f823f4e9f440" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Russell a admis devant le tribunal qu&#8217;il n&#8217;avait rien à faire de cela.  Il a également témoigné qu&#8217;il n&#8217;avait reçu rien de plus qu&#8217;un commentaire mineur en guise de punition.</p>
+</section>
+<p><!--/#cb-9e24def346d21d44c638f823f4e9f440--></p>
+<section id="cb-e7e75c6797c0089da2aa27551ba5938b" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Cruz, quant à lui, a également témoigné devant le tribunal mardi … et a admis avoir également montré les photos à un barman.</p>
+</section>
+<p><!--/#cb-e7e75c6797c0089da2aa27551ba5938b--></p>
+<section id="cb-7777a2deb3c5502ed433ac2f8826d102" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Cruz a dit qu&#8217;il l&#8217;avait fait pour soulager le stress auquel il était confronté en raison de la situation – et a témoigné qu&#8217;il avait des remords pour tout cela.</p>
+</section>
+<p><!--/#cb-7777a2deb3c5502ed433ac2f8826d102--></p>
+<section id="cb-d6ae909ae6e362aece94fcb2ac88f467" class="canvas-block canvas-block-permalink canvas-image-block canvas-image-block-permalink canvas-image-block--sports  ">
+<div class="image-block">
+                  <a target="_blank" class="js-click-image js-track-link image-lightbox-preview" data-node-ref="tmz:image-asset:image_jpg_20220816_0122ec9f4da0451492f8f523a0b82973" data-container-ref="tmz:article:a6f35a0e-a811-467b-b1a4-24b36ba37d07" data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;image&quot;}" rel="noopener"></p>
+<div class="img-wrapper">
+<p>                    <img class="img-fluid image-block__img-fluid img-aspect-auto" src="https://imagez.tmz.com/image/01/4by3/2022/08/16/0122ec9f4da0451492f8f523a0b82973_md.jpg" loading="lazy" alt=""/>
+                </div>
+<p>                  </a>
+      </div>
+</section>
+<p><!--/#cb-d6ae909ae6e362aece94fcb2ac88f467--></p>
+<section id="cb-3121875f762fb272fb0461180677ddc9" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p><a target="_blank" href="https://www.tmz.com/people/vanessa-bryant/" rel="noopener"><strong>Vanessa Bryant</strong></a>, <a target="_blank" href="https://www.tmz.com/2020/09/22/vanessa-bryant-sues-la-sheriff-alex-villanueva-kobe-gianna-crash/" rel="noopener"><strong>qui poursuit</strong></a>  car, entre autres choses, la détresse émotionnelle était présente au tribunal – bien qu&#8217;elle ait quitté la pièce pendant au moins une partie du témoignage de Cruz.</p>
+</section>
+<p><!--/#cb-3121875f762fb272fb0461180677ddc9--></p>
+<section id="cb-3b68e7b4d3e8933ea5277e17572bf704" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  canvas-block-is-last " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Le procès devrait se poursuivre tout au long de cette semaine.</p>
+</section>
+<p><!--/#cb-3b68e7b4d3e8933ea5277e17572bf704--></p></div>
+
+<p></p>
+<div>
+<section id="cb-a2f843c526a7ab69a3b7acc5fec6079f" class="canvas-block canvas-block-permalink canvas-image-block canvas-image-block-permalink canvas-image-block--sports  canvas-block-is-first ">
+<div class="image-block">
+                  <a target="_blank" class="js-click-image js-track-link image-lightbox-preview" data-node-ref="tmz:image-asset:image_jpg_20220816_d9903f64415f45389d8cdc367d8c45d2" data-container-ref="tmz:article:a6f35a0e-a811-467b-b1a4-24b36ba37d07" data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;image&quot;}" rel="noopener"></p>
+<div class="img-wrapper">
+<p>                    <img class="img-fluid image-block__img-fluid img-aspect-auto" src="https://imagez.tmz.com/image/d9/4by3/2022/08/16/d9903f64415f45389d8cdc367d8c45d2_md.jpg" loading="lazy" alt=""/>
+                </div>
+<p>                  </a>
+      </div>
+</section>
+<p><!--/#cb-a2f843c526a7ab69a3b7acc5fec6079f--></p>
+<section id="cb-432ad9006f96f6791516a39eae9df409" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Révélation étonnante dans la salle d&#8217;audience lors de la <a target="_blank" href="https://www.tmz.com/people/kobe-bryant/" rel="noopener"><strong>Kobe Bryant</strong></a>  cas de procès photo mardi &#8230; un adjoint a témoigné qu&#8217;il avait envoyé à un autre flic des photos graphiques du site de l&#8217;accident alors que les deux étaient au milieu d&#8217;une session de jeu &#8220;Call Of Duty&#8221;.</p>
+</section>
+<p><!--/#cb-432ad9006f96f6791516a39eae9df409--></p>
+<section id="cb-f8e333520b862e344f1afa237f65d452" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p><strong>Michel Russel</strong> – un adjoint du département du shérif du comté de Los Angeles – dit que l&#8217;échange des photos a eu lieu peu de temps après la légende des Lakers et sa fille, <a target="_blank" href="https://www.tmz.com/people/gianna-bryant/" rel="noopener"><strong>Gianna</strong></a>a péri dans le tragique, <a target="_blank" href="https://www.tmz.com/2020/01/26/kobe-bryant-killed-dead-helicopter-crash-in-calabasas/" rel="noopener"><strong>Crash d&#8217;hélicoptère en janvier 2020</strong></a>.</p>
+</section>
+<p><!--/#cb-f8e333520b862e344f1afa237f65d452--></p>
+<section id="cb-573c09f1ba7ec05b7caae669bbecc048" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Russell, qui a affirmé qu&#8217;il avait initialement reçu les photos de son collègue député <strong>Joey Cruz</strong> heures après le naufrage, a déclaré avoir participé à une soirée jeux vidéo avec l&#8217;adjoint de Santa Clarita <strong>Ben Sanchez</strong> Le jour suivant.</p>
+</section>
+<p><!--/#cb-573c09f1ba7ec05b7caae669bbecc048--></p>
+<section id="cb-2fbbb941101e44872710c4a7dad56d8b" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Pendant que les deux jouaient au jeu de tir à la première personne, Russell a témoigné qu&#8217;il avait dit à Sanchez qu&#8217;il avait les photos, puis lui avait demandé s&#8217;il voulait les voir.  Quand le flic a dit oui, Russell a dit qu&#8217;il les avait envoyés.</p>
+</section>
+<p><!--/#cb-2fbbb941101e44872710c4a7dad56d8b--></p>
+<section id="cb-2e2d854dc5f0170b14105022a55258d3" class="canvas-block canvas-block-permalink canvas-gallery-block canvas-gallery-block-permalink canvas-gallery-block--default  ">
+</section>
+<p><!--/#cb-2e2d854dc5f0170b14105022a55258d3--></p>
+<section id="cb-9e24def346d21d44c638f823f4e9f440" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Russell a admis devant le tribunal qu&#8217;il n&#8217;avait rien à faire de cela.  Il a également témoigné qu&#8217;il n&#8217;avait reçu rien de plus qu&#8217;un commentaire mineur en guise de punition.</p>
+</section>
+<p><!--/#cb-9e24def346d21d44c638f823f4e9f440--></p>
+<section id="cb-e7e75c6797c0089da2aa27551ba5938b" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Cruz, quant à lui, a également témoigné devant le tribunal mardi … et a admis avoir également montré les photos à un barman.</p>
+</section>
+<p><!--/#cb-e7e75c6797c0089da2aa27551ba5938b--></p>
+<section id="cb-7777a2deb3c5502ed433ac2f8826d102" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Cruz a dit qu&#8217;il l&#8217;avait fait pour soulager le stress auquel il était confronté en raison de la situation – et a témoigné qu&#8217;il avait des remords pour tout cela.</p>
+</section>
+<p><!--/#cb-7777a2deb3c5502ed433ac2f8826d102--></p>
+<section id="cb-d6ae909ae6e362aece94fcb2ac88f467" class="canvas-block canvas-block-permalink canvas-image-block canvas-image-block-permalink canvas-image-block--sports  ">
+<div class="image-block">
+                  <a target="_blank" class="js-click-image js-track-link image-lightbox-preview" data-node-ref="tmz:image-asset:image_jpg_20220816_0122ec9f4da0451492f8f523a0b82973" data-container-ref="tmz:article:a6f35a0e-a811-467b-b1a4-24b36ba37d07" data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;image&quot;}" rel="noopener"></p>
+<div class="img-wrapper">
+<p>                    <img class="img-fluid image-block__img-fluid img-aspect-auto" src="https://imagez.tmz.com/image/01/4by3/2022/08/16/0122ec9f4da0451492f8f523a0b82973_md.jpg" loading="lazy" alt=""/>
+                </div>
+<p>                  </a>
+      </div>
+</section>
+<p><!--/#cb-d6ae909ae6e362aece94fcb2ac88f467--></p>
+<section id="cb-3121875f762fb272fb0461180677ddc9" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p><a target="_blank" href="https://www.tmz.com/people/vanessa-bryant/" rel="noopener"><strong>Vanessa Bryant</strong></a>, <a target="_blank" href="https://www.tmz.com/2020/09/22/vanessa-bryant-sues-la-sheriff-alex-villanueva-kobe-gianna-crash/" rel="noopener"><strong>qui poursuit</strong></a>  car, entre autres choses, la détresse émotionnelle était présente au tribunal – bien qu&#8217;elle ait quitté la pièce pendant au moins une partie du témoignage de Cruz.</p>
+</section>
+<p><!--/#cb-3121875f762fb272fb0461180677ddc9--></p>
+<section id="cb-3b68e7b4d3e8933ea5277e17572bf704" class="canvas-block canvas-block-permalink canvas-text-block canvas-text-block-permalink canvas-text-block--default  canvas-block-is-last " data-context="{&quot;section&quot;:&quot;permalink&quot;,&quot;name&quot;:&quot;text_block&quot;}">
+<p>Le procès devrait se poursuivre tout au long de cette semaine.</p>
+</section>
+<p><!--/#cb-3b68e7b4d3e8933ea5277e17572bf704--></p></div>
+<p> &#8212;  to <a href="https://www.tmz.com/2022/08/16/deputy-testifies-sent-kobe-crash-pics-cop-while-they-played-call-of-duty/ ">www.tmz.com </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/un-adjoint-temoigne-quil-a-envoye-des-photos-de-kobe-crash-au-flic-pendant-quils-jouaient-a-call-of-duty/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Le cabinet KP satisfait de la loi et de l&#8217;ordre dans toute la province</title>
+		<link>https://mycamer.net/le-cabinet-kp-satisfait-de-la-loi-et-de-lordre-dans-toute-la-province/</link>
+					<comments>https://mycamer.net/le-cabinet-kp-satisfait-de-la-loi-et-de-lordre-dans-toute-la-province/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Tue, 16 Aug 2022 18:44:29 +0000</pubDate>
+				<category><![CDATA[Language HTML5]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21904</guid>
+
+					<description><![CDATA[PESHAWAR : Le cabinet du Khyber Pakhtunkhwa a passé en revue mardi la situation générale de l&#8217;ordre public dans la province et s&#8217;est déclaré satisfait des mesures prises par la police et les forces de sécurité. La réunion du cabinet, présidée par le ministre en chef Mahmood Khan, a également été suivie par le secrétaire [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div>
+<p>PESHAWAR : Le cabinet du Khyber Pakhtunkhwa a passé en revue mardi la situation générale de l&#8217;ordre public dans la province et s&#8217;est déclaré satisfait des mesures prises par la police et les forces de sécurité.</p>
+<p>La réunion du cabinet, présidée par le ministre en chef Mahmood Khan, a également été suivie par le secrétaire en chef provincial, l&#8217;inspecteur général de la police, le secrétaire en chef supplémentaire, le membre principal du Conseil des recettes et les secrétaires administratifs de divers ministères.</p>
+<p>Plus tard, lors d&#8217;une conférence de presse après la réunion, l&#8217;assistant spécial du ministre en chef chargé de l&#8217;information, l&#8217;avocat Muhammad Ali Saif, a déclaré que la situation de l&#8217;ordre public survenue à Swat il y a quelques jours avait été résolue avec efficacité grâce aux mesures opportunes adoptées par les forces de l&#8217;ordre.  &#8220;Nous assurons qu&#8217;il n&#8217;y a rien à craindre car le gouvernement maintiendra son pouvoir à tout prix et aucun compromis ne sera fait sur la solidarité du pays, la sécurité du peuple&#8221;, a assuré Saif.</p>
+<p>Il a qualifié les reportages sur les cachettes des militants à Swat de &#8220;faux et fabriqués&#8221;, affirmant que le cessez-le-feu avec le TTP est intact.  Il a ajouté que certains groupes sont hostiles à l&#8217;accord de paix du TTP et que leur implication dans les incidents liés au terrorisme dans la province ne peut être exclue.</p>
+<p>L&#8217;avocat Saif a informé que le cabinet avait approuvé l&#8217;augmentation des taux de salaire minimum à Rs26000 par mois pour différentes catégories de travailleurs travaillant dans tous les établissements industriels gouvernementaux de la province à compter du 1er juillet 2022. Il a déclaré que le gouvernement du KP était conscient des difficultés rencontrées par la communauté ouvrière en raison d&#8217;une inflation élevée et de prendre toutes les mesures possibles dans la limite des ressources disponibles pour venir en aide au segment opprimé de la société.</p>
+<p>Le cabinet a également approuvé la prolongation du mandat de Mukhtiar Khan du district d&#8217;Usharai Dara Dir Upper pour deux années supplémentaires en tant que membre non officiel du comité des prix de la Forest Development Corporation (FDC) afin de gérer en douceur les affaires du comité.</p>
+<p>De même, le cabinet a approuvé la déclaration de la zone de Bashqar Gol du district de Upper Chitral comme réserve de biosphère en vertu de la loi de 2015 sur la faune et la biodiversité du KP (protection, préservation, conservation et gestion). La réserve de biosphère comprend 89 374 hectares qui fournissent un habitat de choix à certains des animaux sauvages, notamment le léopard des neiges, l&#8217;ours brun de l&#8217;Himalaya, le lynx de l&#8217;Himalaya, le lièvre du Cap, le renard roux, le bouquetin de l&#8217;Himalaya et le loup tibétain, etc.</p>
+<p>Le cabinet provincial a déclaré Shahi Nagar Ghoor Dara de la sous-division Daggar de Buner, dans la division de la faune de Buner, comme réserve de chasse communautaire en vertu de la loi de 2015 sur la faune et la biodiversité.</p>
+<p>Le cabinet a également approuvé les règles KPFactories, 2022 pour réglementer les questions relatives au travail dans les usines.  Le cabinet a également autorisé le retrait de son approbation antérieure concernant la nomination de Manzoor Ahmad au poste de directeur général de KP Transmission and Grid System Company (KPT&#038;GSC) et a autorisé le département de l&#8217;énergie et de l&#8217;électricité à lancer une nouvelle annonce pour ledit poste conformément au procédure établie.</p>
+<p>Le cabinet provincial a approuvé le prix de soutien minimum de la récolte de blé 2022-23 à Rs2600/40kg, tel qu&#8217;établi par le comité de production des coûts sur la base d&#8217;une enquête menée dans toute la province.  Le prix de soutien minimum de la récolte de blé pour la dernière année 2021-22 était de Rs2200/40kg.  Les recommandations du gouvernement provincial seront désormais partagées avec le ministère fédéral de la sécurité alimentaire nationale et de la recherche.</p>
+<p>Le cabinet a également approuvé la création du Darul Aman Crisis Center à la place du Working Women Hostel Hayatabad, la régularisation des employés du District Governance and Community Development, Khyber Pakhtunkhwa Mines Rules, 2022 et la fourniture de 107 acres de terrain pour la clôture de sécurité du Mohmand. Endiguer.</p>
+<p>Se référant aux demandes des candidats à savoir la tenue simultanée des examens PMS et CSS, le cabinet a décidé de renvoyer l&#8217;affaire à la Commission de la fonction publique du KP pour qu&#8217;elle révise le calendrier des examens PMS permettant aux candidats de se présenter aux deux examens.</p>
+</p>
+</div>
+
+<p> &#8212;  to <a href="https://www.pakistantoday.com.pk/2022/08/16/kp-cabinet-satisfied-with-law-and-order-across-kp/ ">www.pakistantoday.com.pk </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/le-cabinet-kp-satisfait-de-la-loi-et-de-lordre-dans-toute-la-province/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Subventions de transport technologique accordées à la Californie et au Kansas</title>
+		<link>https://mycamer.net/subventions-de-transport-technologique-accordees-a-la-californie-et-au-kansas/</link>
+					<comments>https://mycamer.net/subventions-de-transport-technologique-accordees-a-la-californie-et-au-kansas/#respond</comments>
+		
+		<dc:creator><![CDATA[Caleb]]></dc:creator>
+		<pubDate>Tue, 16 Aug 2022 17:43:29 +0000</pubDate>
+				<category><![CDATA[Actualité]]></category>
+		<category><![CDATA[Technologies]]></category>
+		<guid isPermaLink="false">https://mycamer.net/?p=21901</guid>
+
+					<description><![CDATA[La Federal Highway Administration a accordé près de 10 millions de dollars en Subventions pour le déploiement de technologies avancées de transport et de gestion de la congestion pour des projets liés au camionnage en Californie et au Kansas. Le programme de déploiement des technologies avancées de transport et de gestion de la congestion finance [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p> <br />
+</p>
+<div>
+<p>La Federal Highway Administration a accordé près de 10 millions de dollars en <a target="_blank" href="https://ops.fhwa.dot.gov/fastact/atcmtd/2021/awards/index.htm" rel="noopener">Subventions pour le déploiement de technologies avancées de transport et de gestion de la congestion</a> pour des projets liés au camionnage en Californie et au Kansas.</p>
+<p>Le programme de déploiement des technologies avancées de transport et de gestion de la congestion finance les premiers déploiements de technologies tournées vers l&#8217;avenir qui peuvent servir de modèles nationaux, selon la FHWA.  La loi bipartite sur les infrastructures poursuit le programme de 2022 à 2026 au même niveau de financement en mettant davantage l&#8217;accent sur le transport rural, le transport en commun, le transport adapté et la protection de l&#8217;environnement.</p>
+<p>Le projet de loi sur les infrastructures ajoute plusieurs nouvelles activités éligibles, telles que les technologies de transport avancées pour améliorer l&#8217;évacuation et l&#8217;intervention d&#8217;urgence par les autorités fédérales, étatiques et locales ;  les systèmes intégrés de gestion des corridors ;  des systèmes avancés de réservation de stationnement ou de tarification variable ;  et les technologies qui améliorent la tarification de la congestion et les communications automatisées des véhicules.</p>
+<h3><strong>Projet de corridor technologique de fret rural des Grandes Plaines</strong></h3>
+<p>Près de 7 millions de dollars sont accordés au projet de corridor technologique de fret rural des Grandes Plaines du ministère des Transports du Kansas.</p>
+<p>Selon la FHWA, le projet a fait progresser les technologies pour fournir des informations sur le trafic, la météo et d&#8217;autres informations opérationnelles aux camionneurs commerciaux.</p>
+<p>Le projet de corridor technologique de fret rural des Grandes Plaines du KDOT devrait améliorer la sécurité et la productivité économique sur l&#8217;US 83, un corridor à deux voies essentiel au transport de marchandises au Kansas.  Le projet installe 100 miles de câbles à fibres optiques et des technologies avancées pour fournir des informations sur le trafic, la météo et d&#8217;autres informations opérationnelles au camionnage commercial afin d&#8217;optimiser l&#8217;acheminement du fret.</p>
+<p>&#8220;(Ces) subventions favorisent les innovations qui aident à élargir l&#8217;accès aux transports pour les communautés des zones rurales et des villes, à améliorer la connectivité et à préparer les systèmes de transport américains pour l&#8217;avenir&#8221;, a déclaré l&#8217;administratrice par intérim de la FHWA, Stephanie Pollack, dans un communiqué.  &#8220;Le projet du Kansas utilisera des technologies de pointe pour aider à améliorer les opérations de fret.&#8221;</p>
+<h3><strong>Projet de passerelle du port de Los Angeles</strong></h3>
+<p>La FHWA accorde également 3 millions de dollars au port de Los Angeles 3 millions de dollars pour son projet Gateway.</p>
+<p>Le projet de passerelle du port de Los Angeles déploie des technologies de pointe pour améliorer les activités de camionnage, de factage et d&#8217;opérateur de terminal.</p>
+<p>Plus précisément, le projet de passerelle du port de Los Angeles mettra en œuvre des applications d&#8217;intelligence artificielle basées sur le cloud pour aider à rationaliser et à planifier l&#8217;organisation des retours de marchandises et de vides.  L&#8217;application introduit de nouveaux moyens pour aider les propriétaires de marchandises directes, les camionneurs et les chauffeurs de factage et réduire la congestion au port. <strong><em>LL</em></strong></p>
+</p>
+</div>
+
+<p></p>
+<div>
+<p>La Federal Highway Administration a accordé près de 10 millions de dollars en <a target="_blank" href="https://ops.fhwa.dot.gov/fastact/atcmtd/2021/awards/index.htm" rel="noopener">Subventions pour le déploiement de technologies avancées de transport et de gestion de la congestion</a> pour des projets liés au camionnage en Californie et au Kansas.</p>
+<p>Le programme de déploiement des technologies avancées de transport et de gestion de la congestion finance les premiers déploiements de technologies tournées vers l&#8217;avenir qui peuvent servir de modèles nationaux, selon la FHWA.  La loi bipartite sur les infrastructures poursuit le programme de 2022 à 2026 au même niveau de financement en mettant davantage l&#8217;accent sur le transport rural, le transport en commun, le transport adapté et la protection de l&#8217;environnement.</p>
+<p>Le projet de loi sur les infrastructures ajoute plusieurs nouvelles activités éligibles, telles que les technologies de transport avancées pour améliorer l&#8217;évacuation et l&#8217;intervention d&#8217;urgence par les autorités fédérales, étatiques et locales ;  les systèmes intégrés de gestion des corridors ;  des systèmes avancés de réservation de stationnement ou de tarification variable ;  et les technologies qui améliorent la tarification de la congestion et les communications automatisées des véhicules.</p>
+<h3><strong>Projet de corridor technologique de fret rural des Grandes Plaines</strong></h3>
+<p>Près de 7 millions de dollars sont accordés au projet de corridor technologique de fret rural des Grandes Plaines du ministère des Transports du Kansas.</p>
+<p>Selon la FHWA, le projet a fait progresser les technologies pour fournir des informations sur le trafic, la météo et d&#8217;autres informations opérationnelles aux camionneurs commerciaux.</p>
+<p>Le projet de corridor technologique de fret rural des Grandes Plaines du KDOT devrait améliorer la sécurité et la productivité économique sur l&#8217;US 83, un corridor à deux voies essentiel au transport de marchandises au Kansas.  Le projet installe 100 miles de câbles à fibres optiques et des technologies avancées pour fournir des informations sur le trafic, la météo et d&#8217;autres informations opérationnelles au camionnage commercial afin d&#8217;optimiser l&#8217;acheminement du fret.</p>
+<p>&#8220;(Ces) subventions favorisent les innovations qui aident à élargir l&#8217;accès aux transports pour les communautés des zones rurales et des villes, à améliorer la connectivité et à préparer les systèmes de transport américains pour l&#8217;avenir&#8221;, a déclaré l&#8217;administratrice par intérim de la FHWA, Stephanie Pollack, dans un communiqué.  &#8220;Le projet du Kansas utilisera des technologies de pointe pour aider à améliorer les opérations de fret.&#8221;</p>
+<h3><strong>Projet de passerelle du port de Los Angeles</strong></h3>
+<p>La FHWA accorde également 3 millions de dollars au port de Los Angeles 3 millions de dollars pour son projet Gateway.</p>
+<p>Le projet de passerelle du port de Los Angeles déploie des technologies de pointe pour améliorer les activités de camionnage, de factage et d&#8217;opérateur de terminal.</p>
+<p>Plus précisément, le projet de passerelle du port de Los Angeles mettra en œuvre des applications d&#8217;intelligence artificielle basées sur le cloud pour aider à rationaliser et à planifier l&#8217;organisation des retours de marchandises et de vides.  L&#8217;application introduit de nouveaux moyens pour aider les propriétaires de marchandises directes, les camionneurs et les chauffeurs de factage et réduire la congestion au port. <strong><em>LL</em></strong></p>
+</p>
+</div>
+<p> &#8212;  to <a href="https://landline.media/california-kansas-receive-trucking-related-federal-technology-grants/ ">landline.media </a></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://mycamer.net/subventions-de-transport-technologique-accordees-a-la-californie-et-au-kansas/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

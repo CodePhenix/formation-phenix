@@ -1,0 +1,1355 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="with-v3-banner">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <title>Handling Edge Cases — Vue.js</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/components-edge-cases.html">
+    <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/guide/components-edge-cases.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Handling Edge Cases — Vue.js">
+    <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta property="og:image" content="https://vuejs.org/images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Handling Edge Cases — Vue.js">
+    <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
+    <meta name="twitter:image" content="https://vuejs.org/images/logo.png">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <link rel="icon" href="/images/logo.svg">
+
+    <meta name="msapplication-TileColor" content="#4fc08d">
+    <meta name="theme-color" content="#4fc08d">
+
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto|Roboto Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&text=Vue.js&display=swap" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/vue.js"></script>
+
+    
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "guide"
+    </script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46852172-1', 'vuejs.org');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- vimeo analytics -->
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+  </head>
+  <body class="docs" data-v3-url="">
+
+    
+      <a id="vs" class="vs-hidden" href="https://vueschool.io/sales/price-increase-22?friend=vuejs" target="_blank" rel="noreferrer">
+  <div class="vs-iso">
+    <img src="/images/banners/vs-iso.svg">
+  </div>
+  <div class="vs-logo">
+    <img src="/images/banners/vs-logo.svg">
+  </div>
+  <div class="vs-core">
+    <div class="vs-slogan">
+      <div class="vs-slogan-up">
+        Get up to <strong>40% off</strong> your Vue School Subscription
+      </div>
+      <div class="vs-slogan-down">
+        Time Limited Offer
+      </div>
+    </div>
+    <div class="vs-button">
+      <div class="vs-button-inside">
+        GET OFFER
+      </div>
+    </div>
+  </div>
+  <div id="vs-close" class="vs-close">
+    <img src="/images/banners/close.svg" alt="Close">
+  </div>
+</a>
+
+    
+
+    <div id="mobile-bar">
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div>
+  <div id="v3-banner">
+    <span class="hidden-sm">You’re browsing the documentation for v2.x and earlier.</span>
+    <a href="https://vuejs.org/">Click here</a> for v3.x documentation.
+  </div>
+
+  <header id="header">
+    <a id="logo" href="/">
+      <img src="/images/logo.svg" alt="Vue logo">
+      <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input" aria-label="Search">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Learn</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Documentation</h4></li>
+    <li>
+      <ul>
+        <li><a href="/v2/guide/" class="nav-link current">Guide</a></li>
+        <li><a href="/v2/api/" class="nav-link">API</a></li>
+        <li><a href="/v2/style-guide/" class="nav-link">Style Guide</a></li>
+        <li><a href="/v2/examples/" class="nav-link">Examples</a></li>
+        <li><a href="/v2/cookbook/" class="nav-link">Cookbook</a></li>
+      </ul>
+    </li>
+    <li><h4>Video Courses</h4></li>
+    <li>
+      <ul>
+        <li>
+          <a href="https://www.vuemastery.com/courses/" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue Mastery
+          </a>
+        </li>
+        <li>
+          <a href="https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown" class="nav-link" target="_blank" rel="sponsored noopener">
+            Vue School
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Chat</a></li>
+      <li><a href="https://events.vuejs.org/meetups/" class="nav-link" target="_blank" rel="noopener">Meetups</a></li>
+    </ul></li>
+    <li><h4>Tooling</h4></li>
+    <li>
+      <ul>
+        <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link" target="_blank" rel="noopener">Devtools</a></li>
+        <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue CLI</a></li>
+        <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank" rel="noopener">Vue Loader</a></li>
+      </ul>
+    </li>
+    <li><h4>Core Libraries</h4></li>
+    <li><ul>
+      <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Router</a></li>
+      <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vuex</a></li>
+      <li><a href="https://v2.ssr.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Vue Server Renderer</a></li>
+    </ul></li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank" rel="noopener">Weekly News</a></li>
+      <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link" target="_blank" rel="noopener">Roadmap</a></li>
+      <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank" rel="noopener">Events</a></li>
+      <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link" target="_blank" rel="noopener">Jobs</a></li>
+      <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank" rel="noopener">DEV Community</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Team</a>
+</li>
+<li class="nav-dropdown-container resources">
+  <a href="#" class="nav-link">Resources</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/resources/partners.html" class="nav-link">Partners</a></li>
+    <li><a href="/resources/themes.html" class="nav-link">Themes</a></li>
+    <li><a href="https://github.com/vuejs/awesome-vue" class="nav-link" target="_blank" rel="noopener">Awesome Vue</a></li>
+    <li><a href="https://awesomejs.dev/for/vue/" class="nav-link" target="_blank" rel="noopener">Browse packages for Vue</a></li>
+  </ul>
+</li>
+
+<!-- <li>
+  <a href="/partners" class="nav-link ">Partners</a>
+</li> -->
+<li class="nav-dropdown-container support-vue">
+  <a href="/support-vuejs/" class="nav-link">Support Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">One-time Donations</a></li>
+    <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Recurring Pledges</a></li>
+    <li><a href="https://vue.threadless.com" target="_blank" rel="noopener" class="nav-link">T-Shirt Shop</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container language">
+  <a class="nav-link">Translations</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">中文</a></li>
+    <li><a href="https://jp.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/guide/components-edge-cases.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/guide/components-edge-cases.html" class="nav-link">Bahasa Indonesia</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+  </header>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+  
+
+<div class="sidebar">
+  <div class="sidebar-inner">
+    
+    <div class="list">
+      
+
+<div id="sidebar-sponsors-special">
+  <div class="main-sponsor">
+    <span>Special Sponsor</span>
+    <div>
+    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/hbuilder.png" alt="HBuilder">
+    </a>
+    </div>
+  </div>
+</div>
+<div id="sidebar-sponsors-platinum-left">
+  <div class="main-sponsor">
+    <span>Platinum Sponsors</span>
+    <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Become a Sponsor
+  </a>
+</div>
+
+
+      
+        <h2>
+          
+          Guide
+          
+            <select class="version-select">
+              <option value="">3.x</option>
+              <option value="SELF" selected>2.x</option>
+              <option value="v1">1.0</option>
+              <option value="012">0.12</option>
+              <option value="011">0.11</option>
+            </select>
+          
+        </h2>
+        <ul class="menu-root">
+  
+    
+    
+      
+        <li><h3>Essentials</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/installation.html" class="sidebar-link">Installation</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/index.html" class="sidebar-link">Introduction</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/instance.html" class="sidebar-link">The Vue Instance</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/syntax.html" class="sidebar-link">Template Syntax</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/computed.html" class="sidebar-link">Computed Properties and Watchers</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/class-and-style.html" class="sidebar-link">Class and Style Bindings</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/conditional.html" class="sidebar-link">Conditional Rendering</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/list.html" class="sidebar-link">List Rendering</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/events.html" class="sidebar-link">Event Handling</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/forms.html" class="sidebar-link">Form Input Bindings</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components.html" class="sidebar-link">Components Basics</a>
+    </li>
+  
+    
+    
+      
+      
+        <li><h3>Components In-Depth</h3></li>
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-registration.html" class="sidebar-link">Component Registration</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-props.html" class="sidebar-link">Props</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-custom-events.html" class="sidebar-link">Custom Events</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-slots.html" class="sidebar-link">Slots</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-dynamic-async.html" class="sidebar-link">Dynamic & Async Components</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/components-edge-cases.html" class="sidebar-link current">Handling Edge Cases</a>
+    </li>
+  
+    
+    
+      
+      
+      
+        <li><h3>Transitions & Animation</h3></li>
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitions.html" class="sidebar-link">Enter/Leave & List Transitions</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/transitioning-state.html" class="sidebar-link">State Transitions</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+        <li><h3>Reusability & Composition</h3></li>
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/mixins.html" class="sidebar-link">Mixins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/custom-directive.html" class="sidebar-link">Custom Directives</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/render-function.html" class="sidebar-link">Render Functions & JSX</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/plugins.html" class="sidebar-link">Plugins</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/filters.html" class="sidebar-link">Filters</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+        <li><h3>Tooling</h3></li>
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/single-file-components.html" class="sidebar-link">Single File Components</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/testing.html" class="sidebar-link">Testing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript Support</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/deployment.html" class="sidebar-link">Production Deployment</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+        <li><h3>Scaling Up</h3></li>
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/state-management.html" class="sidebar-link">State Management</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/ssr.html" class="sidebar-link">Server-Side Rendering</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/security.html" class="sidebar-link">Security</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Internals</h3></li>
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/reactivity.html" class="sidebar-link">Reactivity in Depth</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Migrating</h3></li>
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration.html" class="sidebar-link">Migration from Vue 1.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vue-router.html" class="sidebar-link">Migration from Vue Router 0.7.x</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/migration-vuex.html" class="sidebar-link">Migration from Vuex 0.6.x to 1.0</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><h3>Meta</h3></li>
+      
+    
+    <li>
+      <a href="/v2/guide/comparison.html" class="sidebar-link">Comparison with Other Frameworks</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/join.html" class="sidebar-link">Join the Vue.js Community!</a>
+    </li>
+  
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    <li>
+      <a href="/v2/guide/team.html" class="sidebar-link">Meet the Team</a>
+    </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+<div id="sidebar-sponsors-platinum-right">
+  <div class="main-sponsor">
+    <span>Platinum Sponsors</span>
+    <div>
+    <a href="https://www.vuemastery.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vuemastery.png" alt="VueMastery">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vueschool.png" alt="VueSchool">
+    </a>
+    <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/vehikl.png" alt="Vehikl">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/storyblok.png" alt="Storyblok">
+    </a>
+    <a href="https://ionicframework.com/vue?utm_source=partner&utm_medium=referral&utm_campaign=vuesponsorship&utm_content=vuedocs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/ionic.png?v2" alt="Ionic">
+    </a>
+    <a href="https://nuxtjs.org/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/nuxt.png" alt="Nuxt">
+    </a>
+    <a href="https://www.refurbed.org/?utm_source=vuejs" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/refurbed.png" alt="Refurbed">
+    </a>
+    <a href="https://buttercms.com/vuejs-cms/?utm_source=vuejs.org&utm_medium=banner&utm_campaign=sponsorship" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/buttercms.svg" alt="ButterCMS">
+    </a>
+    <a href="https://www.sanofi.com/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/sanofi.png" alt="Sanofi">
+    </a>
+    <a href="https://code-dict.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="https://sponsors.vuejs.org/images/codedict.svg" alt="CodeDict">
+    </a>
+    </div>
+  </div>
+  <a class="become-backer" href="/support-vuejs">
+    Become a Sponsor
+  </a>
+</div>
+
+
+
+
+<div class="content guide with-sidebar components-edge-cases-guide">
+  <p class="tip warning v3-warning">
+    You’re browsing the documentation for v2.x and earlier.
+    For v3.x, <a href="https://vuejs.org/">click here</a>.
+  </p>
+
+  
+    
+      
+<div id="ad">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg" id="_carbonads_js">
+  </script>
+</div>
+
+
+    
+  
+  
+    <h1>Handling Edge Cases</h1>
+  
+  
+    <blockquote>
+<p>This page assumes you’ve already read the <a href="components.html">Components Basics</a>. Read that first if you are new to components.</p>
+</blockquote>
+<p class="tip">All the features on this page document the handling of edge cases, meaning unusual situations that sometimes require bending Vue’s rules a little. Note however, that they all have disadvantages or situations where they could be dangerous. These are noted in each case, so keep them in mind when deciding to use each feature.</p>
+
+<h2 id="Element-amp-Component-Access"><a href="#Element-amp-Component-Access" class="headerlink" title="Element &amp; Component Access"></a>Element &amp; Component Access</h2><p>In most cases, it’s best to avoid reaching into other component instances or manually manipulating DOM elements. There are cases, however, when it can be appropriate.</p>
+<h3 id="Accessing-the-Root-Instance"><a href="#Accessing-the-Root-Instance" class="headerlink" title="Accessing the Root Instance"></a>Accessing the Root Instance</h3><p>In every subcomponent of a <code>new Vue</code> instance, this root instance can be accessed with the <code>$root</code> property. For example, in this root instance:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// The root Vue instance</span>
+<span class="hljs-keyword">new</span> Vue(&#123;
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">foo</span>: <span class="hljs-number">1</span>
+  &#125;,
+  <span class="hljs-attr">computed</span>: &#123;
+    <span class="hljs-attr">bar</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">/* ... */</span> &#125;
+  &#125;,
+  <span class="hljs-attr">methods</span>: &#123;
+    <span class="hljs-attr">baz</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">/* ... */</span> &#125;
+  &#125;
+&#125;)</code></pre>
+<p>All subcomponents will now be able to access this instance and use it as a global store:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Get root data</span>
+<span class="hljs-keyword">this</span>.$root.foo
+
+<span class="hljs-comment">// Set root data</span>
+<span class="hljs-keyword">this</span>.$root.foo = <span class="hljs-number">2</span>
+
+<span class="hljs-comment">// Access root computed properties</span>
+<span class="hljs-keyword">this</span>.$root.bar
+
+<span class="hljs-comment">// Call root methods</span>
+<span class="hljs-keyword">this</span>.$root.baz()</code></pre>
+<p class="tip">This can be convenient for demos or very small apps with a handful of components. However, the pattern does not scale well to medium or large-scale applications, so we strongly recommend using <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> to manage state in most cases.</p>
+
+<h3 id="Accessing-the-Parent-Component-Instance"><a href="#Accessing-the-Parent-Component-Instance" class="headerlink" title="Accessing the Parent Component Instance"></a>Accessing the Parent Component Instance</h3><p>Similar to <code>$root</code>, the <code>$parent</code> property can be used to access the parent instance from a child. This can be tempting to reach for as a lazy alternative to passing data with a prop.</p>
+<p class="tip">In most cases, reaching into the parent makes your application more difficult to debug and understand, especially if you mutate data in the parent. When looking at that component later, it will be very difficult to figure out where that mutation came from.</p>
+
+<p>There are cases however, particularly shared component libraries, when this <em>might</em> be appropriate. For example, in abstract components that interact with JavaScript APIs instead of rendering HTML, like these hypothetical Google Maps components:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">google-map-markers</span> <span class="hljs-attr">v-bind:places</span>=<span class="hljs-string">"iceCreamShops"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">google-map-markers</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">google-map</span>&gt;</span></code></pre>
+<p>The <code>&lt;google-map&gt;</code> component might define a <code>map</code> property that all subcomponents need access to. In this case <code>&lt;google-map-markers&gt;</code> might want to access that map with something like <code>this.$parent.getMap</code>, in order to add a set of markers to it. You can see this pattern <a href="https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-accessing-parent-component-instance" target="_blank" rel="noopener">in action here</a>.</p>
+<p>Keep in mind, however, that components built with this pattern are still inherently fragile. For example, imagine we add a new <code>&lt;google-map-region&gt;</code> component and when <code>&lt;google-map-markers&gt;</code> appears within that, it should only render markers that fall within that region:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">google-map-region</span> <span class="hljs-attr">v-bind:shape</span>=<span class="hljs-string">"cityBoundaries"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">google-map-markers</span> <span class="hljs-attr">v-bind:places</span>=<span class="hljs-string">"iceCreamShops"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">google-map-markers</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">google-map-region</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">google-map</span>&gt;</span></code></pre>
+<p>Then inside <code>&lt;google-map-markers&gt;</code> you might find yourself reaching for a hack like this:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">this</span>.$parent.map || <span class="hljs-keyword">this</span>.$parent.$parent.map</code></pre>
+<p>This has quickly gotten out of hand. That’s why to provide context information to descendent components arbitrarily deep, we instead recommend <a href="#Dependency-Injection">dependency injection</a>.</p>
+<h3 id="Accessing-Child-Component-Instances-amp-Child-Elements"><a href="#Accessing-Child-Component-Instances-amp-Child-Elements" class="headerlink" title="Accessing Child Component Instances &amp; Child Elements"></a>Accessing Child Component Instances &amp; Child Elements</h3><p>Despite the existence of props and events, sometimes you might still need to directly access a child component in JavaScript. To achieve this you can assign a reference ID to the child component using the <code>ref</code> attribute. For example:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">base-input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"usernameInput"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">base-input</span>&gt;</span></code></pre>
+<p>Now in the component where you’ve defined this <code>ref</code>, you can use:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">this</span>.$refs.usernameInput</code></pre>
+<p>to access the <code>&lt;base-input&gt;</code> instance. This may be useful when you want to, for example, programmatically focus this input from a parent. In that case, the <code>&lt;base-input&gt;</code> component may similarly use a <code>ref</code> to provide access to specific elements inside it, such as:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"input"</span>&gt;</span></code></pre>
+<p>And even define methods for use by the parent:</p>
+<pre><code class="hljs js">methods: &#123;
+  <span class="hljs-comment">// Used to focus the input from the parent</span>
+  <span class="hljs-attr">focus</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">this</span>.$refs.input.focus()
+  &#125;
+&#125;</code></pre>
+<p>Thus allowing the parent component to focus the input inside <code>&lt;base-input&gt;</code> with:</p>
+<pre><code class="hljs js"><span class="hljs-keyword">this</span>.$refs.usernameInput.focus()</code></pre>
+<p>When <code>ref</code> is used together with <code>v-for</code>, the ref you get will be an array containing the child components mirroring the data source.</p>
+<p class="tip"><code>$refs</code> are only populated after the component has been rendered, and they are not reactive. It is only meant as an escape hatch for direct child manipulation - you should avoid accessing <code>$refs</code> from within templates or computed properties.</p>
+
+<h3 id="Dependency-Injection"><a href="#Dependency-Injection" class="headerlink" title="Dependency Injection"></a>Dependency Injection</h3><p>Earlier, when we described <a href="#Accessing-the-Parent-Component-Instance">Accessing the Parent Component Instance</a>, we showed an example like this:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">google-map</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">google-map-region</span> <span class="hljs-attr">v-bind:shape</span>=<span class="hljs-string">"cityBoundaries"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">google-map-markers</span> <span class="hljs-attr">v-bind:places</span>=<span class="hljs-string">"iceCreamShops"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">google-map-markers</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">google-map-region</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">google-map</span>&gt;</span></code></pre>
+<p>In this component, all descendants of <code>&lt;google-map&gt;</code> needed access to a <code>getMap</code> method, in order to know which map to interact with. Unfortunately, using the <code>$parent</code> property didn’t scale well to more deeply nested components. That’s where dependency injection can be useful, using two new instance options: <code>provide</code> and <code>inject</code>.</p>
+<p>The <code>provide</code> options allows us to specify the data/methods we want to <strong>provide</strong> to descendent components. In this case, that’s the <code>getMap</code> method inside <code>&lt;google-map&gt;</code>:</p>
+<pre><code class="hljs js">provide: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">getMap</span>: <span class="hljs-keyword">this</span>.getMap
+  &#125;
+&#125;</code></pre>
+<p>Then in any descendants, we can use the <code>inject</code> option to receive specific properties we’d like to add to that instance:</p>
+<pre><code class="hljs js">inject: [<span class="hljs-string">'getMap'</span>]</code></pre>
+<p>You can see the <a href="https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-dependency-injection" target="_blank" rel="noopener">full example here</a>. The advantage over using <code>$parent</code> is that we can access <code>getMap</code> in <em>any</em> descendant component, without exposing the entire instance of <code>&lt;google-map&gt;</code>. This allows us to more safely keep developing that component, without fear that we might change/remove something that a child component is relying on. The interface between these components remains clearly defined, just as with <code>props</code>.</p>
+<p>In fact, you can think of dependency injection as sort of “long-range props”, except:</p>
+<ul>
+<li>ancestor components don’t need to know which descendants use the properties it provides</li>
+<li>descendant components don’t need to know where injected properties are coming from</li>
+</ul>
+<p class="tip">However, there are downsides to dependency injection. It couples components in your application to the way they’re currently organized, making refactoring more difficult. Provided properties are also not reactive. This is by design, because using them to create a central data store scales just as poorly as <a href="#Accessing-the-Root-Instance">using <code>$root</code></a> for the same purpose. If the properties you want to share are specific to your app, rather than generic, or if you ever want to update provided data inside ancestors, then that’s a good sign that you probably need a real state management solution like <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener">Vuex</a> instead.</p>
+
+<p>Learn more about dependency injection in <a href="/v2/api/#provide-inject">the API doc</a>.</p>
+<h2 id="Programmatic-Event-Listeners"><a href="#Programmatic-Event-Listeners" class="headerlink" title="Programmatic Event Listeners"></a>Programmatic Event Listeners</h2><p>So far, you’ve seen uses of <code>$emit</code>, listened to with <code>v-on</code>, but Vue instances also offer other methods in its events interface. We can:</p>
+<ul>
+<li>Listen for an event with <code>$on(eventName, eventHandler)</code></li>
+<li>Listen for an event only once with <code>$once(eventName, eventHandler)</code></li>
+<li>Stop listening for an event with <code>$off(eventName, eventHandler)</code></li>
+</ul>
+<p>You normally won’t have to use these, but they’re available for cases when you need to manually listen for events on a component instance. They can also be useful as a code organization tool. For example, you may often see this pattern for integrating a 3rd-party library:</p>
+<pre><code class="hljs js"><span class="hljs-comment">// Attach the datepicker to an input once</span>
+<span class="hljs-comment">// it's mounted to the DOM.</span>
+<span class="hljs-attr">mounted</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-comment">// Pikaday is a 3rd-party datepicker library</span>
+  <span class="hljs-keyword">this</span>.picker = <span class="hljs-keyword">new</span> Pikaday(&#123;
+    <span class="hljs-attr">field</span>: <span class="hljs-keyword">this</span>.$refs.input,
+    <span class="hljs-attr">format</span>: <span class="hljs-string">'YYYY-MM-DD'</span>
+  &#125;)
+&#125;,
+<span class="hljs-comment">// Right before the component is destroyed,</span>
+<span class="hljs-comment">// also destroy the datepicker.</span>
+<span class="hljs-attr">beforeDestroy</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.picker.destroy()
+&#125;</code></pre>
+<p>This has two potential issues:</p>
+<ul>
+<li>It requires saving the <code>picker</code> to the component instance, when it’s possible that only lifecycle hooks need access to it. This isn’t terrible, but it could be considered clutter.</li>
+<li>Our setup code is kept separate from our cleanup code, making it more difficult to programmatically clean up anything we set up.</li>
+</ul>
+<p>You could resolve both issues with a programmatic listener:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">var</span> picker = <span class="hljs-keyword">new</span> Pikaday(&#123;
+    <span class="hljs-attr">field</span>: <span class="hljs-keyword">this</span>.$refs.input,
+    <span class="hljs-attr">format</span>: <span class="hljs-string">'YYYY-MM-DD'</span>
+  &#125;)
+
+  <span class="hljs-keyword">this</span>.$once(<span class="hljs-string">'hook:beforeDestroy'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    picker.destroy()
+  &#125;)
+&#125;</code></pre>
+<p>Using this strategy, we could even use Pikaday with several input elements, with each new instance automatically cleaning up after itself:</p>
+<pre><code class="hljs js">mounted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.attachDatepicker(<span class="hljs-string">'startDateInput'</span>)
+  <span class="hljs-keyword">this</span>.attachDatepicker(<span class="hljs-string">'endDateInput'</span>)
+&#125;,
+<span class="hljs-attr">methods</span>: &#123;
+  <span class="hljs-attr">attachDatepicker</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">refName</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> picker = <span class="hljs-keyword">new</span> Pikaday(&#123;
+      <span class="hljs-attr">field</span>: <span class="hljs-keyword">this</span>.$refs[refName],
+      <span class="hljs-attr">format</span>: <span class="hljs-string">'YYYY-MM-DD'</span>
+    &#125;)
+
+    <span class="hljs-keyword">this</span>.$once(<span class="hljs-string">'hook:beforeDestroy'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+      picker.destroy()
+    &#125;)
+  &#125;
+&#125;</code></pre>
+<p>See <a href="https://codesandbox.io/s/github/vuejs/v2.vuejs.org/tree/master/src/v2/examples/vue-20-programmatic-event-listeners" target="_blank" rel="noopener">this example</a> for the full code. Note, however, that if you find yourself having to do a lot of setup and cleanup within a single component, the best solution will usually be to create more modular components. In this case, we’d recommend creating a reusable <code>&lt;input-datepicker&gt;</code> component.</p>
+<p>To learn more about programmatic listeners, check out the API for <a href="/v2/api/#Instance-Methods-Events">Events Instance Methods</a>.</p>
+<p class="tip">Note that Vue’s event system is different from the browser’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget" target="_blank" rel="noopener">EventTarget API</a>. Though they work similarly, <code>$emit</code>, <code>$on</code>, and <code>$off</code> are <strong>not</strong> aliases for <code>dispatchEvent</code>, <code>addEventListener</code>, and <code>removeEventListener</code>.</p>
+
+<h2 id="Circular-References"><a href="#Circular-References" class="headerlink" title="Circular References"></a>Circular References</h2><h3 id="Recursive-Components"><a href="#Recursive-Components" class="headerlink" title="Recursive Components"></a>Recursive Components</h3><p>Components can recursively invoke themselves in their own template. However, they can only do so with the <code>name</code> option:</p>
+<pre><code class="hljs js">name: <span class="hljs-string">'unique-name-of-my-component'</span></code></pre>
+<p>When you register a component globally using <code>Vue.component</code>, the global ID is automatically set as the component’s <code>name</code> option.</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'unique-name-of-my-component'</span>, &#123;
+  <span class="hljs-comment">// ...</span>
+&#125;)</code></pre>
+<p>If you’re not careful, recursive components can also lead to infinite loops:</p>
+<pre><code class="hljs js">name: <span class="hljs-string">'stack-overflow'</span>,
+<span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;&lt;stack-overflow&gt;&lt;/stack-overflow&gt;&lt;/div&gt;'</span></code></pre>
+<p>A component like the above will result in a “max stack size exceeded” error, so make sure recursive invocation is conditional (i.e. uses a <code>v-if</code> that will eventually be <code>false</code>).</p>
+<h3 id="Circular-References-Between-Components"><a href="#Circular-References-Between-Components" class="headerlink" title="Circular References Between Components"></a>Circular References Between Components</h3><p>Let’s say you’re building a file directory tree, like in Finder or File Explorer. You might have a <code>tree-folder</code> component with this template:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; folder.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tree-folder-contents</span> <span class="hljs-attr">:children</span>=<span class="hljs-string">"folder.children"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p>Then a <code>tree-folder-contents</code> component with this template:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"child in children"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tree-folder</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"child.children"</span> <span class="hljs-attr">:folder</span>=<span class="hljs-string">"child"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-else</span>&gt;</span>&#123;&#123; child.name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+<p>When you look closely, you’ll see that these components will actually be each other’s descendent <em>and</em> ancestor in the render tree - a paradox! When registering components globally with <code>Vue.component</code>, this paradox is resolved for you automatically. If that’s you, you can stop reading here.</p>
+<p>However, if you’re requiring/importing components using a <strong>module system</strong>, e.g. via Webpack or Browserify, you’ll get an error:</p>
+<pre><code class="hljs undefined">Failed to mount component: template or render function not defined.</code></pre>
+<p>To explain what’s happening, let’s call our components A and B. The module system sees that it needs A, but first A needs B, but B needs A, but A needs B, etc. It’s stuck in a loop, not knowing how to fully resolve either component without first resolving the other. To fix this, we need to give the module system a point at which it can say, “A needs B <em>eventually</em>, but there’s no need to resolve B first.”</p>
+<p>In our case, let’s make that point the <code>tree-folder</code> component. We know the child that creates the paradox is the <code>tree-folder-contents</code> component, so we’ll wait until the <code>beforeCreate</code> lifecycle hook to register it:</p>
+<pre><code class="hljs js">beforeCreate: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">this</span>.$options.components.TreeFolderContents = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./tree-folder-contents.vue'</span>).default
+&#125;</code></pre>
+<p>Or alternatively, you could use Webpack’s asynchronous <code>import</code> when you register the component locally:</p>
+<pre><code class="hljs js">components: &#123;
+  <span class="hljs-attr">TreeFolderContents</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./tree-folder-contents.vue'</span>)
+&#125;</code></pre>
+<p>Problem solved!</p>
+<h2 id="Alternate-Template-Definitions"><a href="#Alternate-Template-Definitions" class="headerlink" title="Alternate Template Definitions"></a>Alternate Template Definitions</h2><h3 id="Inline-Templates"><a href="#Inline-Templates" class="headerlink" title="Inline Templates"></a>Inline Templates</h3><p>When the <code>inline-template</code> special attribute is present on a child component, the component will use its inner content as its template, rather than treating it as distributed content. This allows more flexible template-authoring.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">my-component</span> <span class="hljs-attr">inline-template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>These are compiled as the component's own template.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Not parent's transclusion content.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">my-component</span>&gt;</span></code></pre>
+<p>Your inline template needs to be defined inside the DOM element to which Vue is attached.</p>
+<p class="tip">However, <code>inline-template</code> makes the scope of your templates harder to reason about. As a best practice, prefer defining templates inside the component using the <code>template</code> option or in a <code>&lt;template&gt;</code> element in a <code>.vue</code> file.</p>
+
+<h3 id="X-Templates"><a href="#X-Templates" class="headerlink" title="X-Templates"></a>X-Templates</h3><p>Another way to define templates is inside of a script element with the type <code>text/x-template</code>, then referencing the template by an id. For example:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/x-template"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hello-world-template"</span>&gt;</span><span class="xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello hello hello<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'hello-world'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'#hello-world-template'</span>
+&#125;)</code></pre>
+<p>Your x-template needs to be defined outside the DOM element to which Vue is attached.</p>
+<p class="tip">These can be useful for demos with large templates or in extremely small applications, but should otherwise be avoided, because they separate templates from the rest of the component definition.</p>
+
+<h2 id="Controlling-Updates"><a href="#Controlling-Updates" class="headerlink" title="Controlling Updates"></a>Controlling Updates</h2><p>Thanks to Vue’s Reactivity system, it always knows when to update (if you use it correctly). There are edge cases, however, when you might want to force an update, despite the fact that no reactive data has changed. Then there are other cases when you might want to prevent unnecessary updates.</p>
+<h3 id="Forcing-an-Update"><a href="#Forcing-an-Update" class="headerlink" title="Forcing an Update"></a>Forcing an Update</h3><p class="tip">If you find yourself needing to force an update in Vue, in 99.99% of cases, you’ve made a mistake somewhere.</p>
+
+<p>You may not have accounted for change detection caveats <a href="/v2/guide/list.html#Caveats">with arrays</a> or <a href="/v2/guide/list.html#Object-Change-Detection-Caveats">objects</a>, or you may be relying on state that isn’t tracked by Vue’s reactivity system, e.g. with <code>data</code>.</p>
+<p>However, if you’ve ruled out the above and find yourself in this extremely rare situation of having to manually force an update, you can do so with <a href="../api/#vm-forceUpdate"><code>$forceUpdate</code></a>.</p>
+<h3 id="Cheap-Static-Components-with-v-once"><a href="#Cheap-Static-Components-with-v-once" class="headerlink" title="Cheap Static Components with v-once"></a>Cheap Static Components with <code>v-once</code></h3><p>Rendering plain HTML elements is very fast in Vue, but sometimes you might have a component that contains <strong>a lot</strong> of static content. In these cases, you can ensure that it’s only evaluated once and then cached by adding the <code>v-once</code> directive to the root element, like this:</p>
+<pre><code class="hljs js">Vue.component(<span class="hljs-string">'terms-of-service'</span>, &#123;
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;div v-once&gt;
+      &lt;h1&gt;Terms of Service&lt;/h1&gt;
+      ... a lot of static content ...
+    &lt;/div&gt;
+  `</span>
+&#125;)</code></pre>
+<p class="tip">Once again, try not to overuse this pattern. While convenient in those rare cases when you have to render a lot of static content, it’s simply not necessary unless you actually notice slow rendering – plus, it could cause a lot of confusion later. For example, imagine another developer who’s not familiar with <code>v-once</code> or simply misses it in the template. They might spend hours trying to figure out why the template isn’t updating correctly.</p>
+
+  
+  
+    <div class="guide-links">
+      
+      
+        <span>← <a href="/v2/guide/components-dynamic-async.html">Dynamic & Async Components</a></span>
+      
+      
+      
+        <span style="float: right;"><a href="/v2/guide/transitions.html">Enter/Leave & List Transitions</a> →</span>
+      
+    </div>
+  
+  <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div id="bsa-native"></div>
+<script>
+_bsa.init('custom', 'CKYD62QM', 'placement:vuejsorg',
+  {
+    target: '#bsa-native',
+    template: '<a class="native-box" href="##statlink##"><div class="native-sponsor">Sponsor</div><div class="native-text"><strong>##company##</strong> — ##description##</div></a>'
+  }
+);
+</script>
+
+
+    Caught a mistake or want to contribute to the documentation?
+    <a href="https://github.com/vuejs/v2.vuejs.org/blob/master/src/v2/guide/components-edge-cases.md" rel="noopener" target="_blank">
+      Edit this on GitHub!
+    </a>
+    Deployed on
+    <a href="https://url.netlify.com/HJ8X2mxP8" rel="noopener" target="_blank">
+      Netlify
+    </a>.
+  </div>
+</div>
+
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/search.css">
+    <script src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script>
+    [
+      '#search-query-nav',
+      '#search-query-sidebar',
+      '#search-query-menu'
+    ].forEach(function (selector) {
+      if (!document.querySelector(selector)) return
+      // search index defaults to v2
+      var match = window.location.pathname.match(/^\/(v\d+)/)
+      var version = match ? match[1] : 'v2'
+      docsearch({
+        appId: 'ML0LEBN7FQ',
+        apiKey: 'f49cbd92a74532cc55cfbffa5e5a7d01',
+        indexName: 'vuejs',
+        inputSelector: selector,
+        algoliaOptions: { facetFilters: ["version:" + version] },
+        autocompleteOptions: { hint: false, appendTo: 'body'}
+      })
+    })
+
+    // unregister service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister()
+        }
+      })
+    }
+    </script>
+    <script src="/js/v3-notice.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+# Contributors by commit history
+https://github.com/mdn/translated-content/commits/main/files/fr/web/api/indexeddb_api/using_indexeddb/index.md
+
+# Original Wiki contributors
+JNa0
+wbamberg
+loella16
+P45QU10U
+SphinxKnight
+zap221
