@@ -60,7 +60,13 @@ Pour participer, veuillez contacter Brieuc Le Bars (lebars.brieuc@gmail.com), qu
 
 
 
+## Aspects techniques
 
+### Lancer avec Docker
+
+```sh
+docker run -d -p 80:80 --name appache-php -v "$PWD":/var/www/html php:7.4-apache
+```
 
 
 
