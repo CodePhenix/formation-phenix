@@ -63,6 +63,7 @@
             </article>
           </section>
     </main>
+    <?php include '../assets/structure/footer.php' ;?>
     <script>
 
     const fontCats = ["sans-serif","serif", "calligraphic", "handdrawn", "retro", "comic" ,"blackletter", "autre" ]

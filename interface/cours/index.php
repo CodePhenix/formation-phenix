@@ -118,14 +118,14 @@
           <h3>HTML initiation</h3>
            <iframe src="supports/html.pdf" title="HTML initiation"></iframe>
            <!--
-           <a class="cta dl" href="download/templates-cv.zip"><span>Télécharger des exemples de CV</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+           <a class="cta dl" href="../assets/download/templates-cv.zip"><span>Télécharger des exemples de CV</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
          -->
             <h4>Exercice</h4>
             <p><b><u>Astuce pour bien réussir</u> : Utilisez la sémantique des balises, sectionnez votre page et utilisez la notion de parent/enfant.</b></p>
             <p>À l'aide du cours, reproduisez le CV selon la maquette ci-dessous : </p>
-            <a class="cta dl" target="_blank" href="exercices/html-css/initiation-html.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
-           <h4>Quiz</h4>
-          <a class="cta link" href="quiz/html-initiation.html"><span>Commencer le quiz d'initiation HTML</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+            <a class="cta dl" target="_blank" href="exercices/1-1-1-initiation-html.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+           <!-- <h4>Quiz</h4>
+          <a class="cta link" href="quiz/html-initiation.html"><span>Commencer le quiz d'initiation HTML</span> <i class="bi bi-arrow-right-circle-fill"></i></a> -->
         </article>
         <article id="css-initiation-article">
           <h3>CSS initiation</h3>
@@ -138,18 +138,18 @@
               <h6>Mise en forme</h6>
               <p><b><u>Astuce pour bien réussir</u> : Utilisez les bons sélecteurs en prenant en compte l'importance et l'héritage CSS. </b></p>
               <p>À l'aide du cours, mettez en forme le CV de l'exercice précédent, selon la maquette ci-dessous : </p>
-              <a class="cta dl" target="_blank" href="exercices/html-css/initiation-css.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+              <a class="cta dl" target="_blank" href="exercices/1-2-1-initiation-css.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
             </li>
             <li>
               <h6>CSS DINER</h6>
               <p>Cet exercice va vous permettre de vous exercer et d'apprendre les différents sélecteurs CSS. <br>
               <b>Les niveaux de 1 à 17 puis de 27 à 29 sont important à connaître</b>.</p>
               <p><small style="color:red">Attention, le nom des balises dans cet exercice ne sont pas de vrai nom de balise.</small></p>
-              <a target="_blank" class="cta link" href="exercices/html-css/css-diner/index.html"><span>Commencer l'exercice</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+              <a target="_blank" class="cta link" href="exercices/css-diner/index.html"><span>Commencer l'exercice</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
             </li>
           </ol>
-          <h4>Quiz</h4>
-            <a class="cta link" href="quiz/css-initiation.html"><span>Commencer le quiz d'initiation CSS</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+          <!-- <h4>Quiz</h4>
+            <a class="cta link" href="quiz/css-initiation.html"><span>Commencer le quiz d'initiation CSS</span> <i class="bi bi-arrow-right-circle-fill"></i></a> -->
           <script>
             let zenGarden = document.querySelector('.zen-garden'),
                 body = document.querySelector('body');
@@ -163,9 +163,11 @@
           <h3>HTML : <small>Les formulaires</small></h3>
           <iframe src="supports/formulaire.pdf" title="HTML les formulaires"></iframe>
           <h4>Exercice</h4>
-          <p><b><u>Astuce pour bien réussir</u> : faites attention à bien utiliser les attributs liés aux balises d'un formulaire. </b></p>
+          <!-- <p><b><u>Astuce pour bien réussir</u> : faites attention à bien utiliser les attributs liés aux balises d'un formulaire. </b></p>
           <p>Reproduisez le formulaire d'inscription, selon la maquette suivante :</p>
-          <a class="cta dl" target="_blank" href="exercices/html-css/exercice-form.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+          <a class="cta dl" target="_blank" href="exercices/html-css/exercice-form.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a> -->
+          <p>À partir des maquettes, réalisez un formulaire d'inscription.</p>
+          <a class="cta dl" href="exercices/5-1-1-formulaire.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
         </article>
         <article id="positionnement-article">
           <h3>CSS : <small>Le positionnement des éléments</small></h3>
@@ -185,18 +187,34 @@
               <h6>Construire une box</h6>
               <p>Construisez, une box qui contient un formulaire de contact (tous les champs sont obligatoires) et positionnez la selon la maquette suivante :</p>
               <a class="cta dl" target="_blank" href="exercices/html-css/exercice-box.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
-            </li> -->
+            </li>
             <li>
               <h6>Construire et positionner les éléments</h6>
               <p>Faite une barre de navigation fixée dans la page, en placant le titre du site et le menu.
                 Puis centrer un formulaire de contact dans la page (tous les champs sont obligatoires).
                 Positionnez les éléments selon la maquette suivante :</p>
-              <a class="cta dl" target="_blank" href="exercices/html-css/exercice-positionement.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+              <a class="cta dl" target="_blank" href="exercices/html-css/exercice-positionnement.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+            </li> -->
+            <li>
+              <h6>Faire un site à partir d'une maquette : MyFood</h6>
+              <p>
+                Le header sera fixe dans la page, au click sur le menu burger, une fenêtre s'ouvre avec les liens de navigation et le bouton pour fermer cette fenêtre.
+                Selon les maquettes mobile :
+              </p>
+              <a class="cta dl" href="exercices/2-1-1-positionnement.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
             </li>
             <li>
               <h6>Flexfroggy</h6>
               <p>Cet exercice va vous permettre de vous exercer et d'apprendre les différentes propriétés liées au <code>display flex;</code></p>
-              <a target="_blank" class="cta link" href="exercices/html-css/flexfroggy/index.html"><span>Commencer l'exercice</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+              <a target="_blank" class="cta link" href="exercices/flexfroggy/index.html"><span>Commencer l'exercice</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </li>
+            <li>
+              <h6>Faire un site à partir d'une maquette : Analytics</h6>
+              <p>
+                Le header sera fixe dans la page, au click sur le menu burger, une fenêtre s'ouvre avec les liens de navigation et le bouton pour fermer cette fenêtre.
+                Selon les maquettes mobile :
+              </p>
+              <a class="cta dl" href="exercices/2-1-3-positionnement.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
             </li>
           </ol>
         </article>
@@ -204,10 +222,30 @@
           <h3>CSS : <small>Le responsive design</small></h3>
           <iframe src="supports/responsive.pdf" title="HTML responsive"></iframe>
           <h4>Exercice</h4>
-          <h6>Refaire une maquette</h6>
-          <p>Reproduisez le site en responsive (mobile first), selon la maquette :</p>
-          <a class="cta dl" href="exercices/html-css/exercice-positions.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
-
+          <ol>
+            <!-- <li>
+              <h6>Menu responsive</h6>
+              <p>
+                À partir de l'exercice sur le menu burger, faite en sorte que la navigation apparaisse pour la version ordinateur.
+                Comme dans l'exemple :
+               </p>
+               <a class="cta dl" target="_blank" href=""><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+            </li> -->
+            <li>
+              <h6>Site responsive : MyFood</h6>
+              <p>
+                À partir de l'exercice sur le positionnement du site myFood, Adaptez-le pour les versions tablettes et ordinateur, selon la maquette :
+              </p>
+              <a class="cta dl" target="_blank" href="exercices/2-3-1-myfood-maquette-ordinateur.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+            </li>
+            <li>
+              <h6>Site responsive : Analitycs</h6>
+              <p>
+                À partir de l'exercice sur le positionnement du site Analytics, Adaptez-le pour les versions tablettes et ordinateur, selon la maquette :
+              </p>
+              <a class="cta dl" target="_blank" href="exercices/2-3-2-analytics-maquette-ordinateur.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+            </li>
+          </ol>
           <!-- <ol>
             <li>
               <h6>Adaptive design avec media query</h6>
@@ -230,32 +268,50 @@
             <h3>CSS : <small>Les animations</small></h3>
             <iframe src="supports/animation.pdf" title="CSS animation"></iframe>
             <h4>Exercices</h4>
-            <ol>
-              <!-- <li>
+            <h6>Animation des éléments d'un site : Analitycs</h6>
+            <p>En reprennant le site analytics, ajoutez les transitions et animations suivantes :</p>
+              <ul>
+                <li>Au click sur le menu, la navigation apparait de gauche à droite et un fond s'affiche progressivement.</li>
+                <li>Les barres de pourcentages sont animées, elles augmentent progressivement de zéro jusqu'au pourcentage indiqué, puis le numéro du pourcentage apparait.</li>
+                <li>En vue ordinateur seulement :
+                  <ul>
+                    <li>Pour les encadrés de couleurs, on ne voit que l'icone, puis au survol de la souris apparaissent les informations (intitulé et chiffre).</li>
+                    <li>Le fond des tableaux devient gris foncé au survol de la souris.</li>
+                    <li>Sur le bouton "more countries", au survol de la souris le fond devient gris claire et l'icone part vers la droite.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p>Comme dans l'exemple :</p>
+              <a class="cta dl" target="_blank" href="exercices/4-1-1-nav-animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+
+            <!--<ol>
+               <li>
                 <h6>Ajouter une transition</h6>
                 <p>En reprenant l'exercice précédent : au survol sur un élément du "menu", faites apparaitre l'initulé de celui-ci.</p>
                 <a class="cta dl" target="_blank" href="exercices/html-css/exercice-hover.png"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
               </li> -->
-              <li>
+
+              <!-- <li>
                 <h6>Menu déroulant</h6>
-                <p>En reprenant le menu de l'exercice sur le positionnement.
-                  Ajoutez une transition au sruvol de la souris, pour obtenir un menu déroulant.
-                  Comme dans l'exemple :</p>
+                <p>
+                  Construisez une navigation et ajoutez une transition au sruvol de la souris, pour obtenir un menu déroulant.
+                  Comme dans l'exemple :
+                </p>
                   <a class="cta dl" target="_blank" href="exercices/html-css/exercice-transition.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
-              </li>
-              <li>
+              </li> -->
+
+              <!-- <li>
                 <h6>Apparition d'un élément</h6>
-                <p>En reprenant la box de l'exercice sur le positionnement.
-                  Ajoutez une animation à l'apparition de celle-ci.
+                <p>En reprennant l'exercice précédent, au click sur le bouton faite apparaitre un élément avec une animation.
                   Comme dans l'exemple :</p>
                   <a class="cta dl" target="_blank" href="exercices/html-css/exercice-animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
-              </li>
+              </li> -->
               <!-- <li>
                 <h6>Faire une animation</h6>
                 <p>Reproduisez l'animation suivante :</p>
                   <a class="cta dl" target="_blank" href="exercices/html-css/animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
-              </li> -->
-            </ol>
+              </li>
+            </ol> -->
         </article>
         <article id="validation1-article">
             <h3>Validation des connaissances : <small>HTML/CSS</small></h3>
@@ -271,25 +327,26 @@
                 </ul>
                 <br>
                 <a class="cta dl" href="exercices/html-css/exercice-validation1.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
-            <h4>Quiz</h4>
-            <a class="cta link" href="quiz/html-intermediaire.html"><span>Commencer le quiz intermédiaire HTML/CSS</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+            <!-- <h4>Quiz</h4>
+            <a class="cta link" href="quiz/html-intermediaire.html"><span>Commencer le quiz intermédiaire HTML/CSS</span> <i class="bi bi-arrow-right-circle-fill"></i></a> -->
+
         </article>
         <article id="js-initiation-article">
           <h3>JavaScript initiation : <small>Première partie</small></h3>
            <iframe src="supports/javascript.pdf" title="JS initiation"></iframe>
            <h4>Exercices</h4>
             <ol>
-              <li>
+              <!-- <li>
                 <h6>Ouvrir une fênetre modale : menu</h6>
                 <p><b>Pour cet exercice vous aurez besoin des notions suivante : déclaration de variable, faire un évènement et modifier le DOM.</b></p>
-                 <p>En reprenant l'exercice précédent. En vue mobile : au clic sur le bouton "menu",
+                 <p>En reprenant l'exercice précédent. En vue mobile : au click sur le bouton "menu",
                  faites apparaitre le menu de la maquette ordinateur par dessus votre contenu.</p>
               </li>
               <li>
                 <h6>Ouvrir une fênetre modale : formulaire</h6>
                 <p><b>Pour cet exercice vous aurez besoin des notions suivante : déclaration de variable, faire un évènement et modifier le DOM.</b></p>
-                 <p>En reprenant la box des exercices sur le positionement et l'animation.
-                  Au clic, sur "contact" de votre menu, faite là apparaitre.
+                 <p>En reprenant la box des exercices sur le positionnement et l'animation.
+                  Au click, sur "contact" de votre menu, faite là apparaitre.
                   Il faudra également un bouton de fermeture, pour faire disparaitre cette fenêtre.
                   Comme dans l'exemple :</p>
                   <a class="cta dl" target="_blank" href="exercices/js/exercice-js1.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
@@ -300,6 +357,24 @@
                 <p>Reproduisez le site (en mobile first), avec ces fenêtres modal, en les construisant en JavaScript et non en HTML.
                   Selon les maquettes :</p>
                 <a class="cta dl" href="exercices/js/exercice-modale.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+              </li> -->
+              <li>
+                <h6>Compteur de click</h6>
+                <!-- <p><b>Pour cet exercice vous aurez besoin des notions suivante : déclaration de variable, faire un évènement et modifier le DOM.</b></p> -->
+                <p>
+                  Faire un bouton, au click sur ce bouton, on va augmenter la valeur d'un numéro qui indiquera le nombre de fois que ce bouton a été cliqué.
+                  Comme dans l'exemple :
+                </p>
+                <a class="cta dl" target="_blank" href="exercices/1-3-1-initiation-js.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+              </li>
+              <li>
+                <h6>Menu burger</h6>
+                <p>
+                  À l'aide du cours, ajoutez un menu burger à votre CV de l'exercice précédent.
+                  Au click sur le bouton, une fenêtre s'ouvre avec les liens de navigation qui redirigent vers les différentes sections de la page et le bouton pour fermer cette fenêtre.
+                  Comme dans l'exemple :
+                </p>
+                <a class="cta dl" target="_blank" href="exercices/1-3-2-initiation-js.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
               </li>
             </ol>
         </article>
@@ -309,18 +384,42 @@
            <h4>Exercices</h4>
            <ol>
              <li>
-               <h6>Galerie d'image</h6>
-               <p><b>Pour cet exercice, en plus des notions vues dans le cours précédent vous aurez besoin d'utiliser les boucles.</b></p>
-               <p>Reproduisez le site (en mobile first), avec sa galerie d'image.
-                 Au clic sur une image on ouvre une fenêtre modale pour l'afficher en grand.
-                 Selon les maquettes :</p>
-                 <a class="cta dl" href="exercices/js/exercice-johndoe.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+               <h6>Liste de nom</h6>
+               <p>En reprenant le site myFood, les "popular tags" doivent être créés à partir d'un tableau en javascript.
+                 Au click sur un tag, il est mis en valeur avec un fond noir et un texte plus grand.
+                 Comme dans l'exemple :</p>
+               <a class="cta dl" target="_blank" href="exercices/2-2-1-tableau-boucle.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
              </li>
              <li>
+               <h6>Fiche d'information</h6>
+               <p>En reprenant le site myFood, les articles doivent être créés à partir d'un objet en javascript.
+                 Ils comprennent donc une image, un titre et un texte descriptif. Comme dans l'exemple :</p>
+               <a class="cta dl" target="_blank" href="exercices/2-2-2-informations-objet.png"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+             </li>
+             <li>
+               <h6>Compteur de click</h6>
+               <p>En reprenant l'exercice du compteur de click, ajouté les conditions suivante :</p>
+                <ul>
+                  <li>Au dessus de 5 click, la couleur du texte et du bouton change pour être en bleu foncé.</li>
+                  <li>Entre 10 et 15 click, la couleur change pour être en violet et on affiche une image.</li>
+                  <li>Au dessus de 15 click, la couleur devient rouge et on affiche une autre image.</li>
+                  <li>Au 21ème click, un message "stop" est affiché et on ne peut plus cliquer.</li>
+                </ul>
+                <p>Comme dans l'exemple :</p>
+               <a class="cta dl" target="_blank" href="exercices/2-2-3-conditions.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+             </li>
+             <!-- <li>
+               <h6>Galerie d'image</h6>
+               <p>Reproduisez le site (en mobile first), avec sa galerie d'image.
+                 Au click sur une image on ouvre une fenêtre modale pour l'afficher en grand.
+                 Selon les maquettes :</p>
+                 <a class="cta dl" href="exercices/js/exercice-johndoe.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+             </li> -->
+             <!-- <li>
                <h6>Menu à onglet</h6>
                <p><b>Pour cet exercice, en plus des notions vues dans le cours précédent vous aurez besoin d'utiliser des boucles et des conditions.</b></p>
                <p>Reproduisez le site (en mobile first), avec son menu à onglet.
-                 Au clic sur un onglet du menu, on affiche le contenu qui correspond.
+                 Au click sur un onglet du menu, on affiche le contenu qui correspond.
                  Selon les maquettes :</p>
                  <a class="cta dl" href="exercices/js/exercice-cafe.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
              </li>
@@ -329,20 +428,29 @@
                <p><b>Pour cet exercice, en plus des notions vues dans le cours précédent vous aurez besoin d'utiliser les tableaux, les boucles et les fonctions.
                  Aidez-vous de la documentation fournie pour utiliser les méthodes liées aux tableaux.</b></p>
                <p>Avec un tableau, construire une liste d'élément donné.
-                 Au clic sur un élément de cette liste, retirez-le de la liste et ajoutez-le à un deuxième tableau.
+                 Au click sur un élément de cette liste, retirez-le de la liste et ajoutez-le à un deuxième tableau.
                  Sur ce deuxième tableau faite le même procédé. Comme dans l'exemple suivant :</p>
                  <a class="cta dl" target="_blank" href="exercices/js/exercice-array.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
                  <a class="cta dl" target="_blank" href="../documentations/js.php"><span>Voir la documentation</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
-             </li>
+             </li> -->
            </ol>
-           <h4>Quiz</h4>
-             <a class="cta link" href="quiz/js-initiation.html"><span>Commencer le quiz d'initiation JavaScript</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+           <!-- <h4>Quiz</h4>
+             <a class="cta link" href="quiz/js-initiation.html"><span>Commencer le quiz d'initiation JavaScript</span> <i class="bi bi-arrow-right-circle-fill"></i></a> -->
         </article>
         <article id="js-formulaire-article">
           <h3>JavaScript : <small>Vérification d'un formulaire</small></h3>
            <iframe src="supports/verif-form.pdf" title="JS initiation"></iframe>
            <h4>Exercices</h4>
-           <ol>
+           <p>Reprenez et faite la vérification du formulaire d'inscription de l'exercice précédent :</p>
+           <ul>
+               <li>Les champs "Nom", "Prénom" et "Code postal" doivent être contrôlés dynamiquement pour contenir les bonnes informations (code postal uniquement en chiffre, etc.).
+               Un message est affiché en cas d'erreur.</li>
+               <li>Au clique sur l'envoi du formulaire, on vérifie que la valeur des champs email et confirmation email sont identiques,
+               il en va de même pour le mot de passe.</li>
+              <li>Les champs obligatoires sont vérifiés en JavaScript et non avec l'attribut <code>required</code>.</li>
+           </ul>
+           <a class="cta dl" target="_blank" href="exercices/5-2-1-verification-form.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+           <!-- <ol>
              <li>
                <h6>Formulaire d'inscription</h6>
                <p>Reprenez et faite la vérification du formulaire d'inscription, vue dans un précédent exercice :<br>
@@ -362,7 +470,7 @@
                  Comme dans l'exemple suivant :</p>
                  <a class="cta dl" target="_blank" href="exercices/js/exercice-form.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
              </li>
-           </ol>
+           </ol> -->
         </article>
         <article id="bootstrap-article">
           <h3>Bootstrap</h3>
@@ -370,7 +478,7 @@
               <li>
                 <h6>Télécharger Bootstrap</h6>
                 <p>Dans un premier temps télécharger Bootstrap.</p>
-                <a class="cta dl" href="download/bootstrap-5.1.3-dist.zip"><span>Télécharger bootstrap</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+                <a class="cta dl" href="../assets/download/bootstrap-5.1.3-dist.zip"><span>Télécharger bootstrap</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
               </li>
           </ol>
           <iframe src="supports/bootstrap-intro.pdf" title="introduction à bootstrap"></iframe>
@@ -397,7 +505,7 @@
                 <p>Enfin, à l'aide de la documentation et des fichiers fournis, reproduisez la maquette de l'exercice pour vous exercer.</p>
                 <p>Vous devez uniquement vous servir des classes bootstrap (sans utiliser de CSS) afin de finir et compléter la page HTML présente dans le dossier.</p>
                 <p>Dans le fichier HTML fournis, les liaisons CSS et JS sont déjà faites et des indications sont mises en commentaire.</p>
-                <a class="cta dl" href="exercices/bootstrap/Code-phenix-Atelier-Vogue-main.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+                <a class="cta dl" href="exercices/3-1-1-bootstrap.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
                 <a class="cta link" href="../documentations/bootstrap.php"><span>Accéder à la documentation Bootstrap</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
               </li>
         </article>
@@ -408,18 +516,30 @@
            <ol>
              <li>
                <h6>Test de réactivité</h6>
-               <p>Au bout de 3 secondes, affichez un bouton qui au clic donne le temps de réaction <b>en secondes et millisecondes</b>, entre l'affichage du bouton et le clic.
+               <p>Au bout de 3 secondes, affichez un bouton qui au click donne le temps de réaction <b>en secondes et millisecondes</b>, entre l'affichage du bouton et le click.
                  Si le bouton n'est pas cliqué au bout de 3 secondes un message apparait.
                  Comme dans l'exemple suivant :</p>
-                 <a class="cta dl" target="_blank" href="exercices/js/exercice-temps1.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+                 <a class="cta dl" target="_blank" href="exercices/4-2-1-temps-reaction.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
              </li>
-             <li>
+             <!-- <li>
                <h6>Prise de rendez-vous</h6>
                <p><b>Certaines notions ne sont pas dans le cours. À vous de chercher la solution avec les supports mis à disposition.</b></p>
                <p>Récupérez la valeur d'un <code>input</code> de type date (celle-ci ne peut être inférieur à la date du jour)
                  et d'un <code>input</code> de type time. Affichez le temps restant <b>en jours</b> entre aujourd'hui et cette date.
                  Comme dans l'exemple suivant :</p>
                  <a class="cta dl" target="_blank" href="exercices/js/exercice-temps2.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+             </li> -->
+             <li>
+               <h6>Carousel</h6>
+               <p>En reprennant le site analytics, on va créer un carousel qui va remplacer la section "recent comments".</p>
+                 <ul>
+                   <li>Il contient trois slides, avec une image, un titre et du texte. </li>
+                   <li>Quand on affiche un slide suivant, le slide part vers la droite et le nouveau slide arrive de la gauche.</li>
+                   <li>Lorsqu'on affiche un slide précédent, le slide part vers la gauche et le nouveau slide arrive de la droite. </li>
+                   <li>Quand il n'y a plus de slide suivant ou précédent on retire le bouton qui correspond.</li>
+                </ul>
+                 <p>Comme dans l'exemple suivant :</p>
+                 <a class="cta dl" target="_blank" href="exercices/4-2-2-carousel-animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
              </li>
            </ol>
         </article>
@@ -430,8 +550,8 @@
             <ul>
               <li>Les slides sont des objets en JS et non en HTML.</li>
               <li>Chaque slide comporte une image, un texte descriptif de l'image et un lien.</li>
-              <li>Au clic sur le bouton précédent, ou suivant, on affiche le slide  qui correspond.</li>
-              <li>Un point est créé pour chaque slide, au clic sur celui-ci on affiche le slide qui correspond.</li>
+              <li>Au click sur le bouton précédent, ou suivant, on affiche le slide  qui correspond.</li>
+              <li>Un point est créé pour chaque slide, au click sur celui-ci on affiche le slide qui correspond.</li>
               <li>Quand on affiche un slide suivant, le slide part vers la gauche et le nouveau slide arrive de la droite.
                 Lorsqu'on affiche un slide précédent, le slide part vers la droite et le nouveau slide arrive de la gauche. </li>
             </ul>
@@ -504,7 +624,7 @@
                       <p>Un des deux membre du groupe va s'occuper de mettre en place le js pour ajouter un produit au panier :</p>
                       <ul>
                         <li>Au survol d'un produit on va afficher la possibilité d'ajouter le produit au panier.</li>
-                        <li>Au clic sur ce bouton on va afficher un message pour avertir que le produit est ajouté au panier.</li>
+                        <li>Au click sur ce bouton on va afficher un message pour avertir que le produit est ajouté au panier.</li>
                         <li>À côté du panier on va indiquer le nombre de produit qui sont dedans.</li>
                       </ul>
                       <a class="cta dl" target="_blank" href="exercices/git/add-to-cart.png"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
@@ -551,7 +671,8 @@
             <li>Utilisez Git pour la gestion de votre Portfolio afin de pouvoir faire des points de sauvegardes.</li>
           </ul>
 
-            <a class="cta dl" href="download/templates-portfolio.zip"><span>Télécharger des exemples de portfolio</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+            <a class="cta dl" href="../assets/download/templates-portfolio.zip"><span>Télécharger des exemples de portfolio</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+            <a class="cta dl" href="../assets/download/templates-cv.zip"><span>Télécharger des exemples de cv</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
             <a class="cta dl" target="_blank" href="../connaissances/UX/intervenant/Introduction au design - focus portfolio.pdf"><span>Voir des conseils en design UX</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
 
         </article>
@@ -597,14 +718,16 @@
         </article> -->
       </section>
     </main>
+    <?php include '../assets/structure/footer.php' ;?>
     <script type="text/javascript">
-        let articles = document.querySelectorAll("main article")
-        let links = document.querySelectorAll("aside li button")
+        let contentArticles = document.querySelectorAll("main article");
+        let links = document.querySelectorAll("aside li button");
+        let urlHash = document.location.hash.replace("#", "");
 
         for (var link of links){
           link.addEventListener('click', function(){
-
-            for (var article of articles){
+            window.scrollTo(0,0)
+            for (var article of contentArticles){
               let tab = this.id+"-article"
               article.classList.remove("active")
               if(article.id==tab){
@@ -615,7 +738,33 @@
               link.classList.remove("active")
             }
             this.classList.add("active")
+
+             urlHash=document.location.hash=this.id;
+             window.scrollTo(0,0)
           })
+        }
+
+        hashCheck();
+        window.addEventListener("hashchange", hashCheck)
+          function hashCheck(){
+            let activeSection = urlHash+"-article";
+            console.log(urlHash)
+
+            if(activeSection!="-article"){
+              for (var article of contentArticles){
+                article.classList.remove("active")
+                if(article.id==activeSection){
+                  article.classList.add("active")
+                }
+              }
+              for (var link of links){
+                link.classList.remove("active")
+                if(link.id==urlHash){
+                  link.classList.add("active")
+                }
+              }
+              window.scrollTo(0,0)
+            }
         }
     </script>
   </body>

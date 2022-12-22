@@ -21,6 +21,7 @@
       </aside>
       <section></section>
     </main>
+    <?php include '../assets/structure/footer.php' ;?>
     <script>
 
 
@@ -124,20 +125,6 @@
         type: ["Application"]
       },
       {
-        titre: "Caroussel en objet",
-        href:"#",
-        sujet: ["JS"],
-        difficulte:  ["moyen"],
-        type: ["Module"]
-      },
-      {
-        titre: "Prise de rendez-vous",
-        href:"#",
-        sujet: ["JS"],
-        difficulte:  ["moyen"],
-        type: ["Module"]
-      },
-      {
         titre: "Beverage",
         href:"site/beverage.zip",
         sujet: ["HTML/CSS"],
@@ -145,18 +132,60 @@
         type: ["Site web"]
       },
       {
-        titre: "Analitics",
-        href:"#",
+        titre: "John Doe",
+        href:"site/johndoe.zip",
+        sujet: ["HTML/CSS", "JS"],
+        difficulte:  ["moyen"],
+        type: ["Site web"]
+      },
+      {
+        titre: "Restaurant",
+        href:"site/restaurant.zip",
+        sujet: ["HTML/CSS", "JS"],
+        difficulte:  ["facile"],
+        type: ["Site web"]
+      },
+      {
+        titre: "Café",
+        href:"site/cafe.zip",
         sujet: ["HTML/CSS", "JS"],
         difficulte:  ["facile"],
         type: ["Site web"]
       },
       {
         titre: "Éclipse",
-        href:"#",
+        href:"animation/eclipse.gif",
         sujet: ["HTML/CSS"],
         difficulte:  ["facile"],
         type: ["Animation"]
+      },
+      {
+        titre: "Manipulation de tableaux",
+        href:"module/array.gif",
+        sujet: ["JS"],
+        difficulte:  ["Moyen"],
+        type: ["Module"]
+      },
+      {
+        titre: "Caroussel en objet",
+        href:"module/carousel.gif",
+        sujet: ["JS"],
+        difficulte:  ["moyen"],
+        type: ["Module"]
+      },
+      {
+        titre: "Système de notation/avis",
+        href:"module/notation.gif",
+        sujet: ["JS"],
+        difficulte:  ["moyen"],
+        type: ["HTML/CSS", "Module"]
+      },
+      {
+        titre: "Prise de rendez-vous",
+        href:"module/rdv.gif",
+        sujet: ["JS"],
+        difficulte:  ["moyen"],
+        type: ["Module"]
       }
     ]
 

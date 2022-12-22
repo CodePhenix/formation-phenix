@@ -11,7 +11,6 @@
   <body>
     <?php include 'assets/structure/header.php' ;?>
     <main>
-
         <a class="section" href="cours/index.php">
         <section>
           <div>
@@ -120,13 +119,14 @@
 
 
       <!-- <section id="alert">
-        <p><span>07/10/2022 : </span>
-          Nouveau contenu ajouté dans "<a href="connaissances/index.php#accessibilite">connaissances à avoir</a>".
+        <p><span>25/11/2022 : </span>
+          Nouveau contenu ajouté dans "<a href="connaissances/index.php#autre">connaissances à avoir</a>".
         </p>
-        <p>Nouvel outils à disposition
+         <p>Nouvel outils à disposition
            <a target="_blank" href="outils/contrast-ratio/index.htm">Contrast ratio</a>
         </p>
       </section> -->
     </main>
+    <?php include 'assets/structure/footer.php' ;?>
   </body>
 </html>

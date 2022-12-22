@@ -233,6 +233,30 @@ p{text-align: justify;}
   border:0;
 }
 
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  background: #393e46;
+  position: relative;
+  padding: 0% 8% 2%;
+  margin-top: 0;
+}
+footer::before {
+  content: '';
+  transform: rotate(-1deg);
+  background: #393e46;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: -50%;
+  height: 100%;
+}
+footer h2 {
+    	color: #fff;
+    	opacity: .2;
+}
+
 /* RESPONSIVE */
 @media screen and (min-width: 768px){
 /*    body{font-size: calc(.8em + 1vw)} */

@@ -2589,13 +2589,9 @@
             })()
 
             </script>
-
-
-
-
-
       </section>
       </main>
+      <?php include '../assets/structure/footer.php' ;?>
       <script src="../assets/js/doc.js" type="text/javascript"></script>
       <!-- Liaison au script Bootstap -->
       <script src="../assets/bootstrap/js/bootstrap.js" type="text/javascript"></script>

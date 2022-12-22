@@ -22,6 +22,7 @@
       </aside>
       <section></section>
     </main>
+    <?php include '../assets/structure/footer.php' ;?>
     <script>
 
     let aside=document.querySelector("aside");

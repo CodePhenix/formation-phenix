@@ -21,6 +21,7 @@
       </aside>
       <section></section>
     </main>
+    <?php include '../assets/structure/footer.php' ;?>
     <script>
 
 
@@ -210,7 +211,20 @@
         href:"accessibilite/accessibilite.pdf",
         sujet:  ["accessibilite"],
         intervenant : true
-        // new : true
+      },
+      {
+        titre: "Créer un univers graphique",
+        source: "CodePhenix",
+        href:"autre/codephenix/univers-graphique.pdf",
+        sujet:  ["UI", "marketing"],
+        intervenant : true,
+      },
+      {
+        titre: "Les noms de domaines",
+        source: "Afnic - Stéphane Bortzmeyer",
+        href:"web/code-phenix-noms-domaines.pdf",
+        sujet:  ["web"],
+        intervenant : true,
       }
     ]
 
@@ -260,6 +274,8 @@
             for (var art of article.sujet){
               if(sujets.includes(art)==false){
                 selectionArticle.push(article)
+                break;
+                console.log(selectionArticle)
               }
             }
           }else if(urlHash=="tout" || !urlHash){

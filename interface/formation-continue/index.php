@@ -57,6 +57,7 @@
           </article>
         </div>
     </main>
+    <?php include '../assets/structure/footer.php' ;?>
     <script>
     let body=document.querySelector("body");
     let section=document.querySelector("#section");
@@ -120,18 +121,17 @@
         titre: "threejs",
         source: "threejs",
         href:"threejs/docs/index.html"
+      },
+      {
+        titre: "React JS : Tutoriel",
+        source: "reactjs",
+        href:"reactjs/docs/getting-started.html"
+      },
+      {
+        titre: "React JS : Documentation",
+        source: "reactjs",
+        href:"reactjs/tutorial/tutorial.html"
       }
-      // ,
-      // {
-      //   titre: "React JS : Tutoriel",
-      //   source: "reactjs",
-      //   href:"reactjs/docs/getting-started.html"
-      // },
-      // {
-      //   titre: "React JS : Documentation",
-      //   source: "reactjs",
-      //   href:"reactjs/tutorial/tutorial.html"
-      // }
     ]
 
     construction();
