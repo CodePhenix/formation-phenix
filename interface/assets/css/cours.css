@@ -47,7 +47,7 @@ a.cta:hover{
 @media screen and (min-width: 768px){
   aside{
     position: sticky;
-    top: 0;
+    top: 5%;
   }
 }
 @media screen and (min-width: 1240px){
@@ -107,13 +107,12 @@ a.cta:hover{
   src: url('../fonts/baloo/Baloo-Regular.ttf');
 }
 .style2{ background-color: white;}
-.style2 header{position: fixed;height: 80px;width: 16%;border: 0;
-left: 2%;background: transparent; z-index:9999;}
-.style2 h1{width: 100%; text-align: left;color: white;}
+/* .style2 header{position: fixed;height: 80px;width: 16%;border: 0;left: 2%;background: transparent; z-index:9999;} */
+.style2 h1{width: 100%;color: white;}
 .style2 h1 a {color: white; font-family: 'komika';}
 .style2 main{display: block;}
-.style2 aside{position: fixed;top:0;width:100%;  height: 80px;background-color: #3f95ea;border-bottom: 5px #d6e9fc solid; z-index:999;}
-.style2 aside ol.nav{
+/* .style2 aside{position: fixed;top:0;width:100%;  height: 80px;background-color: #3f95ea;border-bottom: 5px #d6e9fc solid; z-index:999;} */
+/* .style2 aside ol.nav{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -125,29 +124,31 @@ left: 2%;background: transparent; z-index:9999;}
   align-items: flex-start;
   align-content: flex-start;
   color: white;
-}
-.style2 aside ol li {
+} */
+/* .style2 aside ol li {
     padding-bottom: 0;
     width: 22%;
     font-family: 'baloo';
-}
+} */
 .style2 .nav-pills .nav-link.active {
     color: white;
 }
 .style2 section{
-  padding: 2%;
+  padding: 0;
   width: 100%;
   margin:0;
-  margin-top: 80px;
+  margin-top: 2%;
 }
 .style2 article{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+  padding: 2%;
 }
 .style2 .tab-content > .active {display: flex;}
 .style2 article > * {
     width: 35%;
+    /* margin-left:63% */
 }
 .style2 #bootstrap > * {
     width: 100%;
@@ -156,9 +157,9 @@ left: 2%;background: transparent; z-index:9999;}
 .style2 iframe{
   width: 60%;
   position: absolute;
-left: 2%;
+  left: 2%;
   margin: 0;
-  height: 80%;
+  /* height: 80%; */
 }
 .style2 #back-to-top{display: none;}
 .style2 h3, .style2 h3 small{color: #3f95ea;font-weight:900; text-transform: uppercase; font-family: 'komika'; animation: paddingLeft 3s ease; text-shadow: 3px 3px #d6e9fc;}
@@ -171,3 +172,26 @@ left: 2%;
   from{padding-left:5%;}
   to{padding-left: 0;}
 }
+
+.style2 header{background-color: #3f95ea;}
+.style2 #git{display: none;}
+.style2 aside{position: fixed;
+right: 2%;
+top: 2%;
+z-index: 99999;
+text-align: right;
+cursor: pointer;
+width: 39%;}
+.style2 aside:before{  content: "MENU ☰";
+  color: #fff;
+  position: relative;
+  text-align: right;
+}
+.style2 aside ol.nav{display:none; padding: 0;background:#3f95ea;padding-right: 4%; }
+.style2 aside.show ol.nav{display:block; height: 100vh;}
+.style2 aside ol.nav li{background:#3f95ea;color:#fff; padding-bottom: 1%;}
+.style2 aside button.active{color: #fff;}
+.style2 article.active{display: flex;overflow-y: scroll;
+height: 80vh;}
+.style2 footer{display: none;}
+.style2 .cta{overflow: initial !important;}

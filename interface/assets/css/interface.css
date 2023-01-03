@@ -87,17 +87,6 @@ section i{color: white;font-size: 4em;}
   100%{bottom:-10em;}
 }
 
-footer{
-    padding: 10% 2% 2%;
-    margin-top: -10%;
-    z-index: -1;
-}
-footer::before {
-    top: -7%;
-    width: 100%;
-    right: auto;
-}
-
 /* RESPONSIVE */
 @media screen and (min-width: 768px){
   main{
@@ -118,9 +107,6 @@ footer::before {
   main{
     padding: 0 10%;
   }
-  section, a.section {
-    width: 31%%;
-  }
   section > div > div, a.section > div{padding: 3%;padding-top:36%;}
   @keyframes down {
     from {opacity: 0;padding-top:11%;}
@@ -140,7 +126,4 @@ footer::before {
   }
 
   #alert{padding: 2%;}
-  footer{
-    padding:10% 12% 2%;
-  }
 }

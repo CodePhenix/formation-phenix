@@ -15,6 +15,7 @@
      justify-content: flex-start;
      align-content: space-around;
      margin:0 auto;
+     min-height: auto;
     }
     </style>
   </head>
@@ -125,12 +126,12 @@
       {
         titre: "React JS : Tutoriel",
         source: "reactjs",
-        href:"reactjs/docs/getting-started.html"
+        href:"reactjs/tutorial/tutorial.html"
       },
       {
         titre: "React JS : Documentation",
         source: "reactjs",
-        href:"reactjs/tutorial/tutorial.html"
+        href:"reactjs/docs/getting-started.html"
       }
     ]
 
