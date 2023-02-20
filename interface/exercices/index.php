@@ -131,13 +131,13 @@
         difficulte:  ["facile"],
         type: ["Site web"]
       },
-      {
-        titre: "John Doe",
-        href:"site/johndoe.zip",
-        sujet: ["HTML/CSS", "JS"],
-        difficulte:  ["moyen"],
-        type: ["Site web"]
-      },
+      // {
+      //   titre: "John Doe",
+      //   href:"site/johndoe.zip",
+      //   sujet: ["HTML/CSS", "JS"],
+      //   difficulte:  ["moyen"],
+      //   type: ["Site web"]
+      // },
       {
         titre: "Restaurant",
         href:"site/restaurant.zip",
@@ -159,13 +159,13 @@
         difficulte:  ["facile"],
         type: ["Animation"]
       },
-      {
-        titre: "Manipulation de tableaux",
-        href:"module/array.gif",
-        sujet: ["JS"],
-        difficulte:  ["Moyen"],
-        type: ["Module"]
-      },
+      // {
+      //   titre: "Manipulation de tableaux",
+      //   href:"module/array.gif",
+      //   sujet: ["JS"],
+      //   difficulte:  ["moyen"],
+      //   type: ["Module"]
+      // },
       {
         titre: "Caroussel en objet",
         href:"module/carousel.gif",
@@ -176,9 +176,9 @@
       {
         titre: "Système de notation/avis",
         href:"module/notation.gif",
-        sujet: ["JS"],
+        sujet: ["HTML/CSS", "JS"],
         difficulte:  ["moyen"],
-        type: ["HTML/CSS", "Module"]
+        type: ["Module"]
       },
       {
         titre: "Prise de rendez-vous",

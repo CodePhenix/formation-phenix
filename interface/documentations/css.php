@@ -87,17 +87,23 @@
                   <h3>Bien débuter une CSS</h3>
                     <div class="bg-dark">
                     <code>
-                      <span class="balise">*</span>{margin: <span class="attribut">0</span>;padding: <span class="attribut">0</span>;}<br>
-                      <span class="balise">html</span>{scroll-behavior: smooth; font-size:  <span class="attribut">62.5%</span>;}<br>
-                      <span class="balise">body</span>{font-size:  <span class="function">calc</span>( <span class="attribut">1.4em</span>  <span class="var">+</span>  <span class="attribut">1vw</span>);}<br>
-                      <span class="balise">img</span>{max-width:  <span class="attribut">100%</span>;}<br>
+                      <span class="balise">*</span>{margin:<span class="attribut">0</span>; padding:<span class="attribut">0</span>; box-sizing:<span class="attribut">border-box</span>;}<br>
+                      <span class="balise">html</span>{scroll-behavior:smooth; font-size:<span class="attribut">62.5%</span>;}<br>
+                      <!-- <span class="balise">body</span>{font-size:<span class="function">calc</span>(<span class="attribut">1.4em</span>  <span class="var">+</span>  <span class="attribut">1vw</span>);}<br> -->
+
+                      <span class="balise">body</span>{font-size:<span class="attribut">1.6em</span> ;}<br>
+                      <span class="balise">img</span>{max-width:<span class="attribut">100%</span>; width:<span class="attribut">100%</span>; display:<span class="attribut">block</span>;}<br>
 
                       <span class="commentaire">/* RESPONSIVE */</span><br>
                       @<span class="var">media</span> <span class="attribut">screen</span> <span class="var">and</span> (min-width: <span class="attribut">768px</span>){<br>
                         <span class="commentaire">/* Tablettes */</span><br>
+                        <!-- <span class="balise">body</span>{font-size:<span class="function">calc</span>(<span class="attribut">1em</span>  <span class="var">+</span>  <span class="attribut">1vw</span>);}<br> -->
+
                       }<br>
                       @<span class="var">media</span> <span class="attribut">screen</span> <span class="var">and</span> (min-width: <span class="attribut">1024px</span>){<br>
                         <span class="commentaire">/* Ordinateurs */</span><br>
+                        <!-- <span class="balise">body</span>{font-size:<span class="function">calc</span>(<span class="attribut">.6em</span>  <span class="var">+</span>  <span class="attribut">1vw</span>);}<br>
+-->
                       }
                     </code>
                   </div>

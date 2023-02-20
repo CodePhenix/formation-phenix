@@ -120,13 +120,14 @@
             <p><b><u>Astuce pour bien réussir</u> : Utilisez la sémantique des balises, sectionnez votre page et utilisez la notion de parent/enfant.</b></p>
             <p>À l'aide du cours, reproduisez le CV selon la maquette ci-dessous : </p>
             <a class="cta dl" target="_blank" href="exercices/1-1-1-initiation-html.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+            <a class="cta dl" target="_blank" href="exercices/1-1-1-img.png"><span>Récupérer l'image</span> <i class="bi bi-image"></i></a>
         </article>
         <article id="css-initiation-article">
           <h3>CSS initiation</h3>
           <iframe src="supports/css.pdf" title="HTML initiation"></iframe>
           <h4>Demo CSS</h4>
             <a class="cta link zen-garden" href="#"><span>Changer la CSS</span> <i class="bibi bi-square-half"></i></a>
-          <h4>Exercice</h4>
+          <h4>Exercices</h4>
           <ol>
             <li>
               <h6>Mise en forme</h6>
@@ -186,7 +187,7 @@
                 Le header sera fixe dans la page, au click sur le menu burger, une fenêtre s'ouvre avec les liens de navigation et le bouton pour fermer cette fenêtre.
                 Selon les maquettes mobile :
               </p>
-              <a class="cta dl" href="exercices/2-1-1-positionnement.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+              <a class="cta dl" href="exercices/2-1-1-myfood-positionnement.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
             </li>
             <li>
               <h6>Flexfroggy</h6>
@@ -196,32 +197,47 @@
             <li>
               <h6>Faire un site à partir d'une maquette : Analytics</h6>
               <p>
-                Le header sera fixe dans la page, au click sur le menu burger, une fenêtre s'ouvre avec les liens de navigation et le bouton pour fermer cette fenêtre.
+                Le header sera fixe dans la page, au click sur le menu burger, une fenêtre s'ouvre avec les liens de navigation. Le bouton pour fermer cette fenêtre en sera pas géré pour le moment.
                 Selon les maquettes mobile :
               </p>
-              <a class="cta dl" href="exercices/2-1-3-positionnement.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+              <a class="cta dl" href="exercices/2-1-3-analytics-positionnement.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
             </li>
           </ol>
         </article>
         <article id="responsive-article">
           <h3>CSS : <small>Le responsive design</small></h3>
           <iframe src="supports/responsive.pdf" title="HTML responsive"></iframe>
-          <h4>Exercice</h4>
+          <h4>Exercices</h4>
           <ol>
+            <li>
+              <h6>Site responsive : Café</h6>
+              <p>
+                À partir de l'exercice du site Café, Adaptez-le pour les versions tablettes et ordinateur, selon la maquette :
+              </p>
+              <a class="cta dl" target="_blank" href="exercices/2-3-1-cafe-maquette-ordinateur.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+            </li>
             <li>
               <h6>Site responsive : MyFood</h6>
               <p>
                 À partir de l'exercice sur le positionnement du site myFood, Adaptez-le pour les versions tablettes et ordinateur, selon la maquette :
               </p>
-              <a class="cta dl" target="_blank" href="exercices/2-3-1-myfood-maquette-ordinateur.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+              <a class="cta dl" target="_blank" href="exercices/2-3-2-myfood-maquette-ordinateur.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
             </li>
             <li>
               <h6>Site responsive : Analitycs</h6>
               <p>
-                À partir de l'exercice sur le positionnement du site Analytics, Adaptez-le pour les versions tablettes et ordinateur, selon la maquette :
+                À partir de l'exercice sur le positionnement du site Analytics, en version mobile, au clic sur le bouton du menu si le menu est ouvert on va le fermer.
+                Adaptez-le pour les versions tablettes et ordinateur, selon la maquette :
               </p>
-              <a class="cta dl" target="_blank" href="exercices/2-3-2-analytics-maquette-ordinateur.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
+              <a class="cta dl" target="_blank" href="exercices/2-3-3-analytics-maquette-ordinateur.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
             </li>
+            <li>
+               <h6>Galerie d'image</h6>
+               <p>Reproduisez le site (en mobile first), avec sa galerie d'image.
+                 Au clic sur une image on ouvre une fenêtre modale pour l'afficher en grand.
+                 Selon les maquettes :</p>
+                 <a class="cta dl" href="exercices/2-3-4-johndoe-responsive.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+             </li>
           </ol>
           <h4>Connaissances</h4>
           <p>Pour aller plus loin vous pouvez vous renseigner avec les articles suivant :</p>
@@ -232,21 +248,30 @@
             <h3>CSS : <small>Les animations</small></h3>
             <iframe src="supports/animation.pdf" title="CSS animation"></iframe>
             <h4>Exercices</h4>
-            <h6>Animation des éléments d'un site : Analitycs</h6>
-            <p>En reprennant le site analytics, ajoutez les transitions et animations suivantes :</p>
-            <ul>
-              <li>Au click sur le menu, la navigation apparait de gauche à droite et un fond s'affiche progressivement.</li>
-              <li>Les barres de pourcentages sont animées, elles augmentent progressivement de zéro jusqu'au pourcentage indiqué, puis le numéro du pourcentage apparait.</li>
-              <li>En vue ordinateur seulement :
-                <ul>
-                  <li>Pour les encadrés de couleurs, on ne voit que l'icone, puis au survol de la souris apparaissent les informations (intitulé et chiffre).</li>
-                  <li>Le fond des tableaux devient gris foncé au survol de la souris.</li>
-                  <li>Sur le bouton "more countries", au survol de la souris le fond devient gris claire et l'icone part vers la droite.</li>
-                </ul>
+            <!-- <ol>
+              <li>
+                <h6>Menu au survol</h6>
+                <p>À partir de l'exercice du site Café, faites le menu à onglet au survol, uniquement en CSS. Comme dans l'exemple.</p>
+                <a class="cta dl" target="_blank" href="exercices/4-1-1-nav-hover.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
               </li>
-            </ul>
-            <p>Comme dans l'exemple :</p>
-            <a class="cta dl" target="_blank" href="exercices/4-1-1-nav-animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+              <li>-->
+                <h6>Animation des éléments d'un site : Analitycs</h6>
+                <p>En reprennant le site analytics, ajoutez les transitions et animations suivantes :</p>
+                <ul>
+                  <li>Au click sur le menu, la navigation apparait de gauche à droite et un fond s'affiche progressivement.</li>
+                  <li>Les barres de pourcentages sont animées, elles augmentent progressivement de zéro jusqu'au pourcentage indiqué, puis le numéro du pourcentage apparait.</li>
+                  <li>En vue ordinateur seulement :
+                    <ul>
+                      <li>Pour les encadrés de couleurs, on ne voit que l'icone, puis au survol de la souris apparaissent les informations (intitulé et chiffre).</li>
+                      <li>Le fond des tableaux devient gris foncé au survol de la souris.</li>
+                      <li>Sur le bouton "more countries", au survol de la souris le fond devient gris claire et l'icone part vers la droite.</li>
+                    </ul>
+                  <!-- </li>
+                </ul> -->
+                <p>Comme dans l'exemple :</p>
+                <a class="cta dl" target="_blank" href="exercices/4-1-1-nav-animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+              </li>
+            </ol>
         </article>
         <article id="validation1-article">
             <h3>Validation des connaissances : <small>HTML/CSS</small></h3>
@@ -301,21 +326,40 @@
              </li>
              <li>
                <h6>Fiche d'information</h6>
-               <p>En reprenant le site myFood, les articles doivent être créés à partir d'un objet en javascript.
+               <p>En reprenant le site myFood, les articles doivent être créés à partir d'objets en javascript.
                  Ils comprennent donc une image, un titre et un texte descriptif. Comme dans l'exemple :</p>
                <a class="cta dl" target="_blank" href="exercices/2-2-2-informations-objet.png"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
              </li>
+             <!-- <li>
+               <h6>Liste d'information</h6>
+               <p>En reprenant le site Analitycs, les éléments de la section "feeds" doivent être créés à partir d'objets en javascript.
+                 Comme dans l'exemple :</p>
+               <a class="cta dl" target="_blank" href="exercices/2-2-3-liste-objet.png"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+             </li> -->
              <li>
                <h6>Compteur de click</h6>
                <p>En reprenant l'exercice du compteur de click, ajouté les conditions suivante :</p>
                 <ul>
                   <li>Au dessus de 5 click, la couleur du texte et du bouton change pour être en bleu foncé.</li>
-                  <li>Entre 10 et 15 click, la couleur change pour être en violet et on affiche une image.</li>
-                  <li>Au dessus de 15 click, la couleur devient rouge et on affiche une autre image.</li>
+                  <li>Entre 10 et 15 click, la couleur change pour être en violet.</li>
+                  <li>Au dessus de 15 click, la couleur devient rouge.</li>
                   <li>Au 21ème click, un message "stop" est affiché et on ne peut plus cliquer.</li>
                 </ul>
                 <p>Comme dans l'exemple :</p>
-               <a class="cta dl" target="_blank" href="exercices/2-2-3-conditions.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+               <a class="cta dl" target="_blank" href="exercices/2-2-4-conditions.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+             </li>
+             <li>
+               <h6>Faire un site à partir d'une maquette : Café</h6>
+               <p>Faire le site avec son menu à onglet et son menu accordéon, Selon la maquette mobile : </p>
+                 <a class="cta dl" target="_blank" href="exercices/2-2-5-cafe-js.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+             </li>
+             <li>
+               <h6>Manipulation des tableaux</h6>
+               <p>Avec un tableau, construire une liste d'élément donné.
+                 Au clic sur un élément de cette liste, retirez-le de la liste et ajoutez-le à un deuxième tableau.
+                 Sur ce deuxième tableau faite le même procédé. Comme dans l'exemple suivant :</p>
+                 <a class="cta dl" target="_blank" href="exercices/2-2-6-array.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+                 <a class="cta dl" target="_blank" href="../documentations/js.php"><span>Voir la documentation</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
              </li>
            </ol>
         </article>
@@ -326,16 +370,28 @@
            <p>Pour vous aider avec les expressions regulières (ReGex) vous pouvez utiliser l'outil ci-dessous :</p>
            <a class="cta link" target="_blank" href="http://codephenix.com:8456/"><span>Utiliser l'outil ReGex</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
            <h4>Exercices</h4>
-           <p>Reprenez et faite la vérification du formulaire d'inscription de l'exercice précédent :</p>
-           <ul>
-               <li>Les champs "Nom", "Prénom" et "Code postal" doivent être contrôlés dynamiquement pour contenir les bonnes informations (code postal uniquement en chiffre, etc.).
-               Un message est affiché en cas d'erreur.</li>
-               <li>Au clique sur l'envoi du formulaire, on vérifie que la valeur des champs email et confirmation email sont identiques,
-               il en va de même pour le mot de passe.</li>
-              <li>Si tous les champs sont bien remplis, à l'envoi du formulaire on affiche un message de confirmation.</li>
-           </ul>
-           <p>Comme dans l'exemple :</p>
-           <a class="cta dl" target="_blank" href="exercices/5-2-1-verification-form.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+           <ol>
+             <li>
+               <h6>Formulaire d'inscription</h6>
+               <p>Reprenez et faite la vérification du formulaire d'inscription de l'exercice précédent :</p>
+               <ul>
+                   <li>Les champs "Nom", "Prénom" et "Code postal" doivent être contrôlés dynamiquement pour contenir les bonnes informations (code postal uniquement en chiffre, etc.).
+                   Un message est affiché en cas d'erreur.</li>
+                   <li>Au clique sur l'envoi du formulaire, on vérifie que la valeur des champs email et confirmation email sont identiques,
+                   il en va de même pour le mot de passe.</li>
+                  <li>Si tous les champs sont bien remplis, à l'envoi du formulaire on affiche un message de confirmation.</li>
+               </ul>
+               <p>Comme dans l'exemple :</p>
+               <a class="cta dl" target="_blank" href="exercices/5-2-1-verification-form.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+           </li>
+           <li>
+             <h6>Formulaire de reservation</h6>
+             <p>Réalisez le site (en mobile first) avec ses fenêtres modales et son formulaire de reservation.
+               Faites une vérification et un message à la validation du formulaire. Selon les maquettes :</p>
+             <a class="cta dl" href="exercices/5-2-2-restaurant-formulaire.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+           </li>
+         </ol>
+
         </article>
         <article id="bootstrap-article">
           <h3>Bootstrap</h3>
@@ -370,7 +426,7 @@
                 <p>Enfin, à l'aide de la documentation et des fichiers fournis, reproduisez la maquette de l'exercice pour vous exercer.</p>
                 <p>Vous devez uniquement vous servir des classes bootstrap (sans utiliser de CSS) afin de finir et compléter la page HTML présente dans le dossier.</p>
                 <p>Dans le fichier HTML fournis, les liaisons CSS et JS sont déjà faites et des indications sont mises en commentaire.</p>
-                <a class="cta dl" href="exercices/3-1-1-bootstrap.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+                <a class="cta dl" href="exercices/3-1-1-vogue-bootstrap.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
                 <a class="cta link" href="../documentations/bootstrap.php"><span>Accéder à la documentation Bootstrap</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
               </li>
         </article>
@@ -447,11 +503,11 @@
                     <li>Une fois la version mobile finalisée.</li>
                     <li>Une fois le responsive pour les différentes tailles d'écrans finalisé.</li>
                   </ul>
-                  <a class="cta dl" href="exercices/git/exercice-git-local.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+                  <a class="cta dl" href="exercices/6-2-1-git-local.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
                 </li>
                 <li>
                   <p>Apportez la modification suivante et faites un nouveau commit.</p>
-                  <a class="cta dl" target="_blank" href="exercices/git/exercice-git-local.png"><span>Voir la modification</span> <i class="bi bi-image"></i></a>
+                  <a class="cta dl" target="_blank" href="exercices/6-2-2-git-local.png"><span>Voir la modification</span> <i class="bi bi-image"></i></a>
                 </li>
                 <li>
                   <p>Maintenant que la modification est apportée, nous souhaitons revenir sur la version précédente (la version "maquette-ordinateur").
@@ -528,7 +584,7 @@
           </ul>
             <a class="cta dl" href="../assets/download/templates-portfolio.zip"><span>Télécharger des exemples de portfolio</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
             <a class="cta dl" href="../assets/download/templates-cv.zip"><span>Télécharger des exemples de cv</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
-            <a class="cta link" target="_blank" href="../connaissances/UX/intervenant/Introduction au design - focus portfolio.pdf"><span>Voir des conseils en design UX</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
+            <a class="cta link" target="_blank" href="../connaissances/UX/intervenant/Dev_UX.pdf"><span>Voir des conseils en design UX</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
         </article>
       </section>
     </main>
@@ -562,7 +618,6 @@
         window.addEventListener("hashchange", hashCheck)
           function hashCheck(){
             let activeSection = urlHash+"-article";
-            console.log(urlHash)
 
             if(activeSection!="-article"){
               for (var article of contentArticles){
