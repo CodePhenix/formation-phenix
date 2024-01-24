@@ -1,7 +1,7 @@
 ---
-name: Form HTML
+name: Form structure
 about: Création de formulaires
-title: "[FORM] HTML"
+title: "[FORM] Structure"
 labels: ""
 assignees:
 ---
