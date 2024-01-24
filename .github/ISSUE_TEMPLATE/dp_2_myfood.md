@@ -1,5 +1,5 @@
 ---
-name: DP jour 2
+name: DP MyFood
 about: Inscrire l'exercice My Food dans le dossier pro
 title: "[DP] My Food"
 labels: ""
@@ -8,9 +8,12 @@ assignees:
 
 ## Objectif
 
-A l'issue de votre formation, vous passerez devant un jury ...
+Félicitations, voilà venu le moment d'inscrire votre premier projet dans votre
+dossier professionnel ! Il vient présenter une partie de tout ce que vous avez appris depuis le début de la formation.
+Il n'y a pas si longtemps, vous ne connaissiez même pas la touche inspecter du navigateur et aujourd'hui vous lisez du HTML,
+bouffez du CSS et révez de Javascript !
 
-- lien du document
+L'objectif de cette tache consiste à inscrire l'exercice MyFood comme votre première "Activité-type" dans le DP.
 
 ## Cours associés
 
@@ -20,9 +23,10 @@ Aucun cours associé à cette tache
 
 Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
 
-- [ ] L'intégralité du document a été parcouru
-- [ ] J'ai compris comment ce dossier professionnel va être utilisé par le jury
-- [ ] J'ai rempli les informations administratives (Page 1 ?)
+- [ ] L'activité-type 1 a été complétée.
+- [ ] Pas de fautes d'orthographe (se faire relire par un tiers ou utiliser un correcteur automatique)
+- [ ] Toutes les phrases comportent une majuscule et un point.
+- [ ] Des captures d'écrans de votre site MyFood ont été ajoutées.
 
 ## Q&A
 
