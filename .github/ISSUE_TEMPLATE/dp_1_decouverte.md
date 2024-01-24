@@ -27,6 +27,9 @@ TODO lien vers document officiel du dossier pro ?
 
 Aucun cours associé à cette tache
 
+- https://imts.gitlab.io/cours-imts/03.documentation/redaction-dp/
+- https://www.dossierprofessionnel.fr/dp-10points (vidéo + texte)
+
 ## Definition of Done
 
 Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
