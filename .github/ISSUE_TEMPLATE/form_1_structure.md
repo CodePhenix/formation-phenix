@@ -23,7 +23,7 @@ IV. Formulaire -> 1/ Structure
 
 ## Definition of Done
 
-Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
 - [ ] Le formulaire reproduit précisemment les maquettes
 - [ ] Le formulaire est responsive
@@ -35,6 +35,6 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 
 ## Q&A
 
-Cette section sera complétée par votre formateur lors de la review des taches.
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

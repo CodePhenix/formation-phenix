@@ -32,7 +32,7 @@ Aucun cours associé à cette tache
 
 ## Definition of Done
 
-Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
 - [ ] J'ai lu l'intégralité du document
 - [ ] J'ai compris comment ce dossier professionnel va être utilisé par le jury
@@ -40,6 +40,6 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 
 ## Q&A
 
-Cette section sera complétée par votre formateur lors de la review des taches.
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

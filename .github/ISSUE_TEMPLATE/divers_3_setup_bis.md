@@ -32,7 +32,7 @@ Lorsque vous codez,
 
 ## Definition of Done
 
-Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
 - [ ] Le questionnaire ci-dessus a été complété
 - [ ] Les notions/accronymes suivants sont compris
@@ -43,4 +43,4 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 
 ## Q&A
 
-Cette section sera complétée par votre formateur lors de la review des taches.
+_Cette section sera complétée par votre formateur lors de la review des taches._
