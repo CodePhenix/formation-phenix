@@ -41,11 +41,7 @@ Au clique sur l'envoi du formulaire,
 
 Et bien sûr:
 
-- [ ] le code est commenté
-- [ ] les variables et noms de fonctions ont des noms respectables et porteurs de sens
-- [ ] 0 erreurs/warnings selon les standards du W3C
-- [ ] Pas de fautes d'orthographe
-- [ ] Les textes commencent tous par une majuscule
+SHORTCODE-CODE-QUALITY
 
 ## Q&A
 

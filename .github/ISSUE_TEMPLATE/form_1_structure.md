@@ -27,11 +27,8 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 
 - [ ] Le formulaire reproduit précisemment les maquettes
 - [ ] Le formulaire est responsive
-- [ ] 0 erreurs/warnings selon les standards du W3C
-- [ ] SEO: title, description et favicon ont été renseignés
-- [ ] Les `class`, `id` et `name` ont des noms respectables et porteurs de sens
-- [ ] Pas de fautes d'orthographe
-- [ ] Les textes commencent tous par une majuscule
+
+shortcode-code-quality
 
 ## Q&A
 
