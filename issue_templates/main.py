@@ -5,12 +5,13 @@ from pathlib import Path
 from typing import List
 import click
 from distutils.dir_util import copy_tree
+from dataclasses import dataclass
 
 
+@dataclass
 class Issue:
     title: str
     description: str
-    assignee_id: int
 
 
 class GitlabClient:
@@ -131,12 +132,24 @@ class IssueManager:
             )
         return
 
-    def create_all_issues(self, user_id: int):
+    def create_all_gitlab_issues(self, user_id: int):
         """
         Create issues from all issue templates available for the user
         """
         paths = self.get_all_templates_paths()
-        pass
+        success = 0
+        for path in paths:
+            issue_content = Path(path).read_text()
+            # TODO use regex to find title and description
+            title = path.name.replace(".md", "")
+            try:
+                self.gl_client.create_issue(user_id, Issue(title, issue_content))
+                print(f"Created issue {path.name}")
+                success += 1
+
+            except Exception as error:
+                print(f"Error while creating issue {path.name}: {error}")
+        print(f"=> Successfully created {success} issues.")
 
 
 @click.command()
@@ -164,4 +177,5 @@ if __name__ == "__main__":
     # client = GitlabClient()
     # test_user_id = 11092508
     # client.create_issue(test_user_id, "Description test")
-    manager.overwrite_vcs_issue_templates()
+    # manager.overwrite_vcs_issue_templates()
+    manager.create_all_gitlab_issues(11092508)
