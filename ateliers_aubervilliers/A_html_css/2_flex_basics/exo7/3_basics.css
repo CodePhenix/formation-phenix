@@ -1,0 +1,35 @@
+.d-flex {
+  display: flex;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.justify-right {
+  justify-content: flex-end;
+}
+.justify-space-around {
+  justify-content: space-around;
+}
+body {
+  background-color: darkcyan;
+  padding: 50px;
+}
+.moitie {
+  width: 50%;
+  height: 200px;
+  background-color: khaki;
+}
+.petit {
+  padding: 20px 50px;
+  background-color: pink;
+  height: fit-content;
+}
+#petit-bas {
+  position: relative;
+  top: 142px;
+}
+#grande {
+  height: 300px;
+  background-color: thistle;
+  margin-top: 50px;
+}

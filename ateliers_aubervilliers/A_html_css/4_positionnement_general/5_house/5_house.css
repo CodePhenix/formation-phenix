@@ -1,0 +1,56 @@
+body {
+    background-color: darkcyan;
+    padding: 50px;
+}
+#toit {
+    /* border: 1px solid gray; */
+    height: 200px;
+    width: 700px;
+}
+.tuile {
+    width: 120px;
+    height: 50px;
+    background-color: white;
+    position: relative;
+}
+#tuile-1 {
+    top: 150px;
+    right: 0px;
+}
+#tuile-2 {
+    top: 100px;
+}
+#tuile-3 {
+    top: 50px;
+}
+#tuile-4 {
+    top: 0px;
+}
+#tuile-5 {
+    top: 50px;
+}
+#tuile-6 {
+    top: 100px;
+}
+#tuile-7 {
+    top: 150px;
+}
+#home {
+    background-color: black;
+    width: 700px;
+    height: 315px;
+    padding-top: 60px;
+}
+.carreau {
+    background-color: white;
+    border: 1px solid gray;
+    width: 60px;
+    height: 50px;
+}
+#porte {
+    background-color: white;
+    border: 1px solid gray;
+    width: 100px;
+    height: 150px;
+    margin-top: 60px;
+}

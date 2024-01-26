@@ -1,0 +1,24 @@
+body {
+    background-color: darkcyan;
+    padding: 50px;
+}
+#immeuble {
+    background-color: gray;
+}
+#immeuble > div {
+    padding: 20px 0px;
+    border: 1px white solid;
+}
+.eteint div {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    margin: 0px 20px;
+
+}
+.allume div {
+    height: 50px;
+    width: 50px;
+    background-color: gold;
+    margin: 0px 20px;
+}

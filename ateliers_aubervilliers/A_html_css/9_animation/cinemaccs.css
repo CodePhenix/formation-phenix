@@ -1,0 +1,13 @@
+#parent {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+#logo {
+  animation: spin 10s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

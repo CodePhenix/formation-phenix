@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+}
+.d-flex {
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-right {
+    justify-content: right;
+}
+.justify-evenly {
+    justify-content: space-evenly;
+}
+.justify-right {
+    justify-content: right;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-space-around {
+    justify-content: space-around;
+}
+.align-center {
+    align-items: center;
+}

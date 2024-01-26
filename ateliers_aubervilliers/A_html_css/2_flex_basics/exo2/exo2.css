@@ -1,0 +1,28 @@
+.carre {
+  padding: 20px 30px;
+  color: white;
+}
+#d {
+  border: 3px solid blue;
+  height: 250px;
+}
+#premier {
+  display: flex;
+}
+#m {
+  background-color: red;
+}
+#s {
+  display: flex;
+  justify-content: right;
+}
+#ss {
+  background-color: red;
+}
+#mm {
+  display: flex;
+  justify-content: center;
+}
+#ls {
+  background-color: red;
+}

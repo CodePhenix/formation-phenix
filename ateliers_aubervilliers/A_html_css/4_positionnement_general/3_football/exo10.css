@@ -1,0 +1,50 @@
+#stade {
+    display: flex;
+    justify-content: center;
+}
+#cercle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border: solid 1px white;
+    border-radius: 50%;
+    position: absolute;
+    top: 70px;
+}
+#point {
+    width: 10px;
+    height: 10px;
+    border: solid 1px white;
+    border-radius: 50%;
+    background-color: white;
+   
+}
+.demiterrain {
+    display: flex;
+    align-items: center;
+    background-color: green;
+    border: solid 1px white;
+    width: 250px;
+    height: 200px;
+}
+.surface {
+    display: flex;
+    align-items: center;
+    border: solid 1px white;
+    width: 80px;
+    height: 100px;
+}
+#surface {
+    justify-content: right;
+}
+.but {
+    border: solid 1px white;
+    width: 30px;
+    height: 45px;
+}
+#but {
+    justify-content: right;
+}
+

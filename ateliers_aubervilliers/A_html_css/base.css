@@ -1,0 +1,12 @@
+.d-flex {
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-evenly {
+    justify-content: space-evenly;
+}
+.justify-space-around {
+    justify-content: space-around;
+}

@@ -1,0 +1,51 @@
+.little {
+    width: 200px;
+    height: 70px;
+    background-color: pink;
+}
+
+
+#navbar-1 {
+    background-color: greenyellow;
+    height: 100px;
+}
+#navbar-2 {
+    position: sticky;
+    top: 0px;
+    background-color: orange;
+    height: 100px;
+    z-index: 1000;
+}
+#navbar-2 div {
+    margin: 0px 20px;
+}
+
+
+#main {
+    height: 110vh;
+    background-color:darkcyan;
+}
+
+#main > div {
+    margin-top: 150px;
+    padding: 0px 40px;
+    width: 50%;
+    height: 400px;
+    background-color: antiquewhite;
+}
+#special-center {
+    top: -35px;
+    position: relative;
+}
+
+#plus {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    background-color:white;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    font-size: 67px;
+    text-align: center;
+}

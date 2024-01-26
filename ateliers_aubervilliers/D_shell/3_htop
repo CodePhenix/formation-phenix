@@ -1,0 +1,9 @@
+# HTOP
+
+1. Installer htop avec `sudo apt install htop`
+2. Lancer htop avec `htop`
+
+- Voir les CPUs
+- Voir la mémoire
+- Voir l'effet d'ouvrir GMAIL
+- Voir que l'on peut trier par %CPU ou %MEM les process

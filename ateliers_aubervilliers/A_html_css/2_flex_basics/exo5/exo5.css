@@ -1,0 +1,47 @@
+body {
+  margin: 0px;
+  color: white;
+}
+#daron {
+  display: flex;
+  justify-content: center;
+  background-color: green;
+}
+#fiston {
+  padding: 20px 30px;
+  margin: 10px 10px;
+  background-color: purple;
+}
+#dardar {
+  display: flex;
+  justify-content: right;
+  background-color: orange;
+}
+.fis {
+  padding: 20px 80px;
+  margin: 10px 10px;
+  background-color: purple;
+}
+#dar {
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+}
+#fi {
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.fifi {
+  padding: 10px 5px;
+  height: fit-content;
+  background-color: purple;
+}
+/* #fiss {
+  position: relative;
+  top: -30px;
+} */

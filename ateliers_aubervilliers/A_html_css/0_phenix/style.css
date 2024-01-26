@@ -1,0 +1,24 @@
+th,
+td {
+  border: 1px solid black;
+}
+.encart {
+  border: 1px solid red;
+  padding: 10px;
+  margin: 20px 0px;
+  background-color: beige;
+  color: black;
+}
+ul {
+  font-weight: bold;
+}
+ol {
+  font-weight: bold;
+  color: blue;
+}
+h2 {
+  color: gray;
+}
+em {
+  color: red;
+}

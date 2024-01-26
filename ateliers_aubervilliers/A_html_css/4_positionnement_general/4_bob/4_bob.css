@@ -1,0 +1,58 @@
+body {
+    background-color: darkcyan;
+    padding: 50px;
+}
+#face {
+    background-color: burlywood;
+    border: 4px dashed magenta;
+    width: 800px;
+    height: 700px;
+    padding-top: 60px;
+}
+.eye {
+    background-color: white;
+    border-radius: 100%;
+    border: 4px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+.pupille {
+    width: 50px;
+    height: 50px;
+    background-color: gold;
+    border: 1px yellow solid;
+    border-radius: 100%;
+}
+#pupille-left {
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+#pupille-right {
+    position: relative;
+    top: 10px;
+    right: 30px;
+}
+
+
+#nose {
+    width: 70px;
+    height: 70px;
+    background-color: greenyellow;
+    border-radius: 100%
+}
+
+#mouth {
+    margin-top: 100px;
+    background-color: palevioletred;
+    border-radius: 5px;
+    width: 600px;
+    height: 200px;
+}
+.teeth {
+    background-color: white;
+    margin: 0px 10px;
+    height: 80px;
+    width: 60px;
+}
