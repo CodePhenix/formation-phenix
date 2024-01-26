@@ -1,6 +1,6 @@
-<!-- This template will be used automatically to generate the content of the ## Code quality section of templates -->
+<!-- This template will be used automatically to generate the content of the CODE_QUALITY_SECTION -->
 
-Code standards:
+Code quality:
 
 - [ ] HTML: 0 erreurs/warnings selon les standards du W3C
 - [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe

@@ -41,7 +41,7 @@ Au clique sur l'envoi du formulaire,
 
 Et bien sûr:
 
-## Code quality
+<!-- CODE_QUALITY_SECTION -->
 
 ## Q&A
 
