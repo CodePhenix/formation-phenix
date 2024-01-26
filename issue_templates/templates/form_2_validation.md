@@ -41,7 +41,8 @@ Au clique sur l'envoi du formulaire,
 
 Et bien sûr:
 
-<!-- CODE_QUALITY_SECTION -->
+<!-- CODE_QUALITY_START -->
+<!-- CODE_QUALITY_END -->
 
 ## Q&A
 

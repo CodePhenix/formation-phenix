@@ -27,7 +27,8 @@ Pour **chacune** des maquettes:
 
 - [ ] La maquette est bien reproduite
 
-<!-- CODE_QUALITY_SECTION -->
+<!-- CODE_QUALITY_START -->
+<!-- CODE_QUALITY_END -->
 
 ## Q&A
 

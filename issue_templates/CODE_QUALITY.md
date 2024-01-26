@@ -1,5 +1,3 @@
-<!-- This template will be used automatically to generate the content of the CODE_QUALITY_SECTION -->
-
 Code quality:
 
 - [ ] HTML: 0 erreurs/warnings selon les standards du W3C

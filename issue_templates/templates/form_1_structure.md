@@ -28,7 +28,8 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] Le formulaire reproduit précisemment les maquettes
 - [ ] Le formulaire est responsive
 
-<!-- CODE_QUALITY_SECTION -->
+<!-- CODE_QUALITY_START -->
+<!-- CODE_QUALITY_END -->
 
 ## Q&A
 
