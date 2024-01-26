@@ -1,0 +1,24 @@
+.couche {
+  display: flex;
+  border-color: 3px solid rgb(92, 3, 73);
+  border: 3px solid rgb(92, 3, 73);
+  margin-bottom: 10px;
+}
+#couche-1 {
+  justify-content: center;
+}
+#couche-2 {
+  justify-content: space-around;
+}
+#couche-3 {
+  justify-content: space-between;
+}
+#couche-4 {
+  justify-content: space-between;
+}
+.gosse {
+  margin: 10px;
+  background-color: #1e9f9f;
+  padding: 25px 35px;
+  color: white;
+}

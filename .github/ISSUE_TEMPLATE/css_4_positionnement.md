@@ -13,6 +13,8 @@ Ces propriétés sont relativement simples mais demandent pas mal de pratique po
 C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
 vous feront réalisés des séries d'exercices pour pratiquer.
 
+![Maquette 1](./../../ateliers_aubervilliers/A_html_css/4_position/maquette.png)
+
 ## Cours associés
 
 II - 1/ Positionnement
@@ -24,9 +26,6 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 Pour **chacune** des maquettes:
 
 - [ ] La maquette est bien reproduite
-- [ ] Le formulaire est responsive
-- [ ] Les niveaux 27 à 29 ont été réalisés
-- [ ] BONUS: les niveaux 18 à 26 ont été réalisés
 
 SHORTCODE-CODE-QUALITY
 

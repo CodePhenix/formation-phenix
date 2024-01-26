@@ -1,0 +1,20 @@
+#papy {
+  border: 5px solid black;
+  background-color: gray;
+  margin: 100px;
+  padding: 50px;
+  width: fit-content;
+}
+.couche {
+  display: flex;
+}
+.fenetre {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
