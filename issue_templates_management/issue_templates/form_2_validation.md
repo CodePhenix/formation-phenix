@@ -41,7 +41,7 @@ Au clique sur l'envoi du formulaire,
 
 Et bien sûr:
 
-SHORTCODE-CODE-QUALITY
+## Code quality
 
 ## Q&A
 

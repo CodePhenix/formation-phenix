@@ -1,3 +1,5 @@
+<!-- This template will be used automatically to generate the content of the ## Code quality section of templates -->
+
 Code standards:
 
 - [ ] HTML: 0 erreurs/warnings selon les standards du W3C

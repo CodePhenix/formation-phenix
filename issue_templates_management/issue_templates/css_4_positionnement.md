@@ -13,9 +13,7 @@ Ces propriétés sont relativement simples mais demandent pas mal de pratique po
 C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
 vous feront réalisés des séries d'exercices pour pratiquer.
 
-![Maquette 1](./../../ateliers_aubervilliers/A_html_css/2_flex_2_intermediate/exo5/maquette.png)
-![Maquette 2](./../../ateliers_aubervilliers/A_html_css/2_flex_2_intermediate/exo7/maquette.png)
-![Maquette 2](./../../ateliers_aubervilliers/A_html_css/2_flex_2_intermediate/immeuble/maquette.png)
+![Maquette 1](./../../ateliers_aubervilliers/A_html_css/4_position/maquette.png)
 
 ## Cours associés
 
@@ -29,7 +27,7 @@ Pour **chacune** des maquettes:
 
 - [ ] La maquette est bien reproduite
 
-SHORTCODE-CODE-QUALITY
+## Code quality
 
 ## Q&A
 
