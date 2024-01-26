@@ -32,7 +32,7 @@ class GitlabClient:
         return self.gl.projects.list(visibility="private", get_all=True)
 
     def list_users(self):
-        return [11092508] # SofienM on GitLab.com
+        return [11092508]  # SofienM on GitLab.com
 
         # Only on self hosted
         return self.gl.users.list(get_all=True)
@@ -128,6 +128,7 @@ class IssueManager:
 def greet(name):
     click.echo(f"Hello, {name}!")
 
+
 # Gitlab
 # Click list all users on gitlab
 # Click list all gitlab projects => get promotion 5 project_id
@@ -145,5 +146,5 @@ if __name__ == "__main__":
     print(manager.project_root)
     # manager.overwrite_code_quality_section()
     client = GitlabClient()
-    test_user_id = 
+    test_user_id = 11092508
     client.create_issue(test_user_id, "Description test")
