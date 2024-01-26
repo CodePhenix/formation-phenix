@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 from typing import List
 import click
+from distutils.dir_util import copy_tree
 
 
 class Issue:
@@ -23,7 +24,7 @@ class GitlabClient:
         self.gl = gitlab.Gitlab(gl_url, private_token=os.environ["GITLAB_TOKEN"])
         self.gl.auth()
         if os.environ.get("GITLAB_PROJECT_ID") != "UNKNOWN":
-            self.project = self.gl.projects.get(id=self.repository_id)
+            self.project = self.gl.projects.get(id=os.environ["GITLAB_PROJECT_ID"])
 
         if os.environ["DEBUG"] == True:
             self.gl.enable_debug()
@@ -74,6 +75,7 @@ class IssueManager:
         return list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
 
     def overwrite_code_quality_section(self):
+        print("Overwriting CODE_QUALITY section in all templates.")
         templates_paths = self.get_all_templates_paths()
         code_quality_content = (
             self.CODE_QUALITY_START_CODE
@@ -110,16 +112,30 @@ class IssueManager:
         print(f"=> Successfully updated {success_count} files.")
         return
 
+    def _delete_folder_content(self, folder_path: Path):
+        files = folder_path.glob("*")
+        for file in files:
+            os.remove(file)
+
     def overwrite_vcs_issue_templates(self):
         """
         Overwrite issue templates in GitHub and GitLab folders.
         """
-        pass
+        self.overwrite_code_quality_section()
+        print("Overwriting issue templates in GitHub and GitLab folders.")
+        for vcs_path in [self.GITHUB_TEMPLATE_PATH, self.GITLAB_TEMPLATE_PATH]:
+            self._delete_folder_content(self.project_root / vcs_path)
+            copy_tree(
+                str(self.project_root / self.TEMPLATES_PATH),
+                str(self.project_root / vcs_path),
+            )
+        return
 
     def create_all_issues(self, user_id: int):
         """
         Create issues from all issue templates available for the user
         """
+        paths = self.get_all_templates_paths()
         pass
 
 
@@ -135,7 +151,7 @@ def greet(name):
 
 # Templates
 # Overwrite CODE_QUALITY section in all templates
-# Overwrite issue templates in GitHub and GitLab folders.
+# Overwrite issue templates in GitHub and GitLab folders. + WARNING
 
 
 # Click create all issues for one user
@@ -145,6 +161,7 @@ if __name__ == "__main__":
     manager = IssueManager()
     print(manager.project_root)
     # manager.overwrite_code_quality_section()
-    client = GitlabClient()
-    test_user_id = 11092508
-    client.create_issue(test_user_id, "Description test")
+    # client = GitlabClient()
+    # test_user_id = 11092508
+    # client.create_issue(test_user_id, "Description test")
+    manager.overwrite_vcs_issue_templates()
