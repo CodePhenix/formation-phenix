@@ -57,6 +57,7 @@ class IssueManager:
 
     TEMPLATES_PATH = "issue_templates/templates"
     CODE_QUALITY_CONTENT_PATH = "issue_templates/CODE_QUALITY.md"
+    ORDER_PATH = "issue_templates/ISSUES_ORDER.md"
     GITHUB_TEMPLATE_PATH = ".github/ISSUE_TEMPLATE"
     GITLAB_TEMPLATE_PATH = ".gitlab/issue_templates"
 
@@ -152,12 +153,6 @@ class IssueManager:
         print(f"=> Successfully created {success} issues.")
 
 
-@click.command()
-@click.option("--name", prompt="Enter your name", help="The name to greet.")
-def greet(name):
-    click.echo(f"Hello, {name}!")
-
-
 # Gitlab
 # Click list all users on gitlab
 # Click list all gitlab projects => get promotion 5 project_id
@@ -170,12 +165,44 @@ def greet(name):
 # Click create all issues for one user
 
 
-if __name__ == "__main__":
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+def overwrite_code_quality():
     manager = IssueManager()
-    print(manager.project_root)
-    # manager.overwrite_code_quality_section()
-    # client = GitlabClient()
-    # test_user_id = 11092508
-    # client.create_issue(test_user_id, "Description test")
-    # manager.overwrite_vcs_issue_templates()
-    manager.create_all_gitlab_issues(11092508)
+    manager.overwrite_code_quality_section()
+
+
+@cli.command()
+def overwrite_code_quality():
+    manager = IssueManager()
+    manager.overwrite_code_quality_section()
+
+
+@cli.command()
+def overwrite_vcs_issue_templates():
+    manager = IssueManager()
+    manager.overwrite_vcs_issue_templates()
+
+
+@cli.command()
+def list_all_gitlab_users():
+    GitlabClient().list_users()
+
+
+@cli.command()
+def list_repositories():
+    GitlabClient().list_repositories()
+
+
+@cli.command()
+def create_all_gitlab_issues():
+    manager = IssueManager()
+    # manager.create_all_gitlab_issues(11092508)
+
+
+if __name__ == "__main__":
+    cli()
