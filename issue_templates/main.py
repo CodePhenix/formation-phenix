@@ -141,10 +141,13 @@ class IssueManager:
         success = 0
         for path in paths:
             issue_content = Path(path).read_text()
-            # TODO use regex to find title and description
-            title = path.name.replace(".md", "")
+            title = re.search("title: (.*)", issue_content).group(1)
+            if not title:
+                print(f"Skipping issue {path.name} because title is not found.")
+                continue
+            description = re.sub("---(.|\n)*---", "", issue_content).strip()
             try:
-                self.gl_client.create_issue(user_id, Issue(title, issue_content))
+                self.gl_client.create_issue(user_id, Issue(title, description))
                 print(f"Created issue {path.name}")
                 success += 1
 
