@@ -14,7 +14,6 @@ Pour ce défi, vous allez reprendre le site MyFood. Les articles devront être c
 
 C'est le moment de montrer vos compétences en action ! 🌟
 
-
 Lien vers les maquettes: https://codephenix.fr/interface/cours/exercices/2-2-2-informations-objet.png
 
 ## Cours associés
@@ -26,9 +25,8 @@ Javascript / Dynamisme
 Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
 
 - [ ] La maquette est bien reproduite
-- [ ] Le tableau d’objet créé est correcte et bien structuré 
+- [ ] Le tableau d’objet créé est correcte et bien structuré
 - [ ] Tous les articles ont été créés en javascript comme demandé
-- [ ] 0 erreur dans la console
 
 <!-- CODE_QUALITY_START -->
 Code quality:
@@ -41,6 +39,7 @@ Code quality:
 - [ ] CSS: Aucun padding ni margin négatif
 - [ ] CSS: Le css comporte un "reset CSS"
 - [ ] JS: Le code est commenté
+- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
 - [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
 
 <!-- CODE_QUALITY_END -->
@@ -50,4 +49,3 @@ Code quality:
 _Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...
-

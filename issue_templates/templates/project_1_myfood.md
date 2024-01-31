@@ -44,6 +44,7 @@ Code quality:
 - [ ] CSS: Aucun padding ni margin négatif
 - [ ] CSS: Le css comporte un "reset CSS"
 - [ ] JS: Le code est commenté
+- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
 - [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
 
 <!-- CODE_QUALITY_END -->

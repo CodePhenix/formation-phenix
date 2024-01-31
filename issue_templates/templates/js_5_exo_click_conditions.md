@@ -19,8 +19,6 @@ Au 21ème clic, un message "stop" est affiché et il n'est plus possible de cliq
 
 À vous de jouer avec les conditions ! 🎮
 
-
-
 Lien vers les maquettes: https://codephenix.fr/interface/cours/exercices/2-2-3-conditions.gif
 
 ## Cours associés
@@ -33,8 +31,7 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 
 - [ ] La maquette est bien reproduite
 - [ ] Le click sur bouton est fonctionnel et permet de compter chaque click
-- [ ] Les conditions sont bien utilisés et respectent la consigne 
-- [ ] 0 erreur dans la console
+- [ ] Les conditions sont bien utilisés et respectent la consigne
 
 <!-- CODE_QUALITY_START -->
 Code quality:
@@ -47,6 +44,7 @@ Code quality:
 - [ ] CSS: Aucun padding ni margin négatif
 - [ ] CSS: Le css comporte un "reset CSS"
 - [ ] JS: Le code est commenté
+- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
 - [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
 
 <!-- CODE_QUALITY_END -->
@@ -56,5 +54,3 @@ Code quality:
 _Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...
-
-

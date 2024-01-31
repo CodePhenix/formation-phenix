@@ -14,8 +14,7 @@ Pour notre premier défi, nous allons créer quelque chose de vraiment cool : un
 
 Voici le topo : vous allez devoir concevoir un bouton. Chaque fois que ce bouton est cliqué, nous allons ajouter un à un numéro affiché, indiquant ainsi le nombre de fois que ce bouton a été pressé. Simple, n'est-ce pas ?
 
-
-Le but de cette mission est de mettre en pratique vos connaissances en HTML et CSS, et d'ajouter une touche de magie JavaScript pour pimenter le tout. Êtes-vous prêts à relever ce défi ? (Je compte sur vous pour répondre par un enthousiaste "Ouiiiiii" !) Alors, c'est parti ! 
+Le but de cette mission est de mettre en pratique vos connaissances en HTML et CSS, et d'ajouter une touche de magie JavaScript pour pimenter le tout. Êtes-vous prêts à relever ce défi ? (Je compte sur vous pour répondre par un enthousiaste "Ouiiiiii" !) Alors, c'est parti !
 
 Lien vers les maquettes: https://codephenix.fr/interface/cours/exercices/1-3-1-initiation-js.gif
 
@@ -29,7 +28,6 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 
 - [ ] La maquette est bien reproduite
 - [ ] Le click sur bouton est fonctionnel et permet de compter chaque click
-- [ ] Pas d’erreur dans la console
 
 <!-- CODE_QUALITY_START -->
 Code quality:
@@ -42,6 +40,7 @@ Code quality:
 - [ ] CSS: Aucun padding ni margin négatif
 - [ ] CSS: Le css comporte un "reset CSS"
 - [ ] JS: Le code est commenté
+- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
 - [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
 
 <!-- CODE_QUALITY_END -->
