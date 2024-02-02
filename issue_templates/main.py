@@ -34,9 +34,10 @@ class GitlabClient:
         return self.gl.projects.list(visibility="private", get_all=True)
 
     def list_users(self):
-        return [11092508]  # SofienM on GitLab.com
-
         # Only on self hosted
+        if os.environ["GITLAB_URL"] == "https://gitlab.com":
+            print("This command is only available on self-hosted GitLab.")
+            return
         return self.gl.users.list(get_all=True)
 
     def create_issue(self, user_id: int, issue: Issue):
@@ -76,7 +77,7 @@ class IssueManager:
     def get_all_templates_paths(self) -> List[Path]:
         return list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
 
-    def overwrite_code_quality_section(self):
+    def update_code_quality_section(self):
         print("Overwriting CODE_QUALITY section in all templates.")
         templates_paths = self.get_all_templates_paths()
         code_quality_content = (
@@ -123,7 +124,7 @@ class IssueManager:
         """
         Overwrite issue templates in GitHub and GitLab folders.
         """
-        self.overwrite_code_quality_section()
+        self.update_code_quality_section()
         print("Overwriting issue templates in GitHub and GitLab folders.")
         for vcs_path in [self.GITHUB_TEMPLATE_PATH, self.GITLAB_TEMPLATE_PATH]:
             self._delete_folder_content(self.project_root / vcs_path)
@@ -173,32 +174,49 @@ def cli():
     pass
 
 
-@cli.command()
-def overwrite_code_quality():
+@cli.group()
+def templates():
+    pass
+
+
+@templates.command()
+def update_code_quality():
     manager = IssueManager()
-    manager.overwrite_code_quality_section()
+    manager.update_code_quality_section()
 
 
-@cli.command()
+@templates.command()
 def overwrite_vcs_issue_templates():
     manager = IssueManager()
     manager.overwrite_vcs_issue_templates()
 
 
-@cli.command()
-def list_all_gitlab_users():
+@cli.group()
+def gl():
+    pass
+
+
+@gl.command()
+def list_users():
     GitlabClient().list_users()
 
 
-@cli.command()
+@gl.command()
 def list_repositories():
     GitlabClient().list_repositories()
 
 
-@cli.command()
-def create_all_gitlab_issues():
+@cli.group()
+def gh():
+    click.echo("NOT IMPLEMENTED YET")
+    pass
+
+
+@gl.command()
+@click.argument("user_id", type=int)
+def create_all_issues(user_id):
     manager = IssueManager()
-    manager.create_all_gitlab_issues(11092508)
+    manager.create_all_gitlab_issues(user_id)
 
 
 if __name__ == "__main__":
