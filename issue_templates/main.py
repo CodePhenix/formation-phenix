@@ -180,12 +180,6 @@ def overwrite_code_quality():
 
 
 @cli.command()
-def overwrite_code_quality():
-    manager = IssueManager()
-    manager.overwrite_code_quality_section()
-
-
-@cli.command()
 def overwrite_vcs_issue_templates():
     manager = IssueManager()
     manager.overwrite_vcs_issue_templates()
@@ -204,7 +198,7 @@ def list_repositories():
 @cli.command()
 def create_all_gitlab_issues():
     manager = IssueManager()
-    # manager.create_all_gitlab_issues(11092508)
+    manager.create_all_gitlab_issues(11092508)
 
 
 if __name__ == "__main__":
