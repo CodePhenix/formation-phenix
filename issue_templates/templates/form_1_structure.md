@@ -8,14 +8,11 @@ assignees:
 
 ## Objectif
 
-Dans la quasi totalité des sites, nous sommes amenés à un moment ou à un autre à recueillir les données de
-l'utilisateur. Les formulaires sont l'outil qui répond à ce besoin. Ils servent entre autres au SignUp (création de compte),
-au SignIn (connexion), aux formulaires de contact, aux formulaire de paiements ...
+In almost all websites, we are led at one point or another to collect user data. Forms are the tool that meets this need. They are used, among other things, for SignUp (account creation), SignIn (login), contact forms, payment forms, and more.
 
-L'objectif ici est de travailler la partie HTML des formulaires c'est à dire leur structure en reproduisant le
-formulaire fourni dans les maquettes.
+The goal here is to work on the HTML part of the forms, meaning their structure, by reproducing the form provided in the mockups.
 
-Lien vers les maquettes: https://codephenix.fr/interface/cours/exercices/5-1-1-formulaire.zip
+Mockups: https://codephenix.fr/interface/cours/exercices/5-1-1-formulaire.zip
 
 ## Cours associés
 
@@ -29,6 +26,7 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] Le formulaire est responsive
 
 <!-- CODE_QUALITY_START -->
+
 Code quality:
 
 - [ ] HTML: 0 erreurs/warnings selon les standards du W3C

@@ -77,7 +77,7 @@ class IssueManager:
     def get_all_templates_paths(self) -> List[Path]:
         return list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
 
-    def update_code_quality_section(self):
+    def render_code_quality_shortcode(self):
         print("Overwriting CODE_QUALITY section in all templates.")
         templates_paths = self.get_all_templates_paths()
         code_quality_content = (
@@ -124,7 +124,7 @@ class IssueManager:
         """
         Overwrite issue templates in GitHub and GitLab folders.
         """
-        self.update_code_quality_section()
+        self.render_code_quality_shortcode()
         print("Overwriting issue templates in GitHub and GitLab folders.")
         for vcs_path in [self.GITHUB_TEMPLATE_PATH, self.GITLAB_TEMPLATE_PATH]:
             self._delete_folder_content(self.project_root / vcs_path)
@@ -180,9 +180,9 @@ def templates():
 
 
 @templates.command()
-def update_code_quality():
+def render_code_quality_shortcode():
     manager = IssueManager()
-    manager.update_code_quality_section()
+    manager.render_code_quality_shortcode()
 
 
 @templates.command()

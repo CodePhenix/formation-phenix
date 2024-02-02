@@ -25,8 +25,6 @@ pip download --dest offline-packages -r requirements.txt
 - Activate pipenv env : `pipenv shell`
 - Install dependencies `pipenv install`
 
-Without pipenv find a way to install dependencies listed in `Pipfile`
-
 ## Script
 
 In the pipenv env, run `python main.py` to see the list of available commands
@@ -41,6 +39,6 @@ Use `--help` flag to get the documentation of each sub-command
 ### GitLab
 
 - Use the `list-repositories` command to find the id that you'll fill in
-  the .env as `PROJECT_ID`.
+  the .env as `PROJECT_ID`. Don't forget to restart your pipenv environment to load the new env variable.
 - Use the `list-users` command to find the users ids that you'll use in the `create-all-issues` command.
   Ex SofienM on Gitlab.com user is 11092508
