@@ -4,7 +4,21 @@ The goal of this python project is to handle issues_templates both for GitHub an
 
 ## Setup
 
-With pipenv
+### Offline installation
+
+```
+cd issue_templates
+pip install -r requirements.txt --find-links offline-packages --no-index
+```
+
+To update the packages
+
+```
+pip freeze > requirements.txt
+pip download --dest offline-packages -r requirements.txt
+```
+
+### Using pipenv
 
 - Create .env from .env.example : `cp .env.example .env`
 - Fill in all env variable but PROJECT_ID that will be found using the script
