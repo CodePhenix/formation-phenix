@@ -1,5 +1,7 @@
 import os
 import gitlab
+from github import Github, Auth
+
 import re
 from pathlib import Path
 from typing import List
@@ -14,7 +16,7 @@ class Issue:
     description: str
 
 
-class GitlabClient:
+class GitLabClient:
     """
     Class for interacting with GitLab API.
     - use list_repositories to find the GITLAB_PROJECT_ID and fill the env variable
@@ -40,17 +42,54 @@ class GitlabClient:
             return
         return self.gl.users.list(get_all=True)
 
-    def create_issue(self, user_id: int, issue: Issue):
+    def create_issue(self, user_id: int, issue: Issue, username=None):
         """
-        Create issues from all issue templates available for the user
+        Create the issue for the user
         """
         new_issue = {
             "title": issue.title,
-            "description": issue.description,
+            "body": issue.description,
             "assignee_id": user_id,
-            "assignee_ids": [user_id],
+            "assignees": [user_id],
         }
         self.project.issues.create(new_issue)
+
+
+class GitHubClient:
+    """
+    Class for interacting with Github API.
+    """
+
+    GITHUB_URL = "https://api.github.com"
+    GITHUB_REPOSITORY_ID = int(os.environ["GITHUB_REPOSITORY_ID"])
+
+    def __init__(self) -> None:
+        self.gh = Github(
+            base_url=self.GITHUB_URL, login_or_token=os.environ["GITHUB_TOKEN"]
+        )
+        self.repository = self.gh.get_repo(self.GITHUB_REPOSITORY_ID)
+        # auth = Auth.Token("access_token")
+        # g = Github(auth=auth)
+        # https://api.github.com/users/your_github_user_name
+
+    def __del__(self):
+        self.gh.close()
+
+    def get_user_id(self, username: str) -> int:
+        user = self.gh.get_user(username)
+        print(f"Found user {user.login} with id {user.id}")
+        return int(user.id)
+
+    def create_issue(self, user_id: int, issue: Issue, username=None):
+        """
+        Create the issue for the user
+        """
+        new_issue = {
+            "title": issue.title,
+            "body": issue.description,
+            "assignees": [username],
+        }
+        self.repository.create_issue(**new_issue)
 
 
 class IssueManager:
@@ -66,7 +105,6 @@ class IssueManager:
     CODE_QUALITY_END_CODE = "<!-- CODE_QUALITY_END -->"
 
     def __init__(self):
-        self.gl_client = GitlabClient()
         pass
 
     @property
@@ -189,7 +227,9 @@ class IssueManager:
             f"Applied new order as suffix for {idx +1 } templates names. {error_count} error(s) encountered."
         )
 
-    def create_all_gitlab_issues(self, user_id: int):
+    def _create_all_issues(
+        self, user_id: int, client: GitLabClient | GitHubClient, username=None
+    ):
         """
         Create issues from all issue templates available for the user
         """
@@ -203,13 +243,25 @@ class IssueManager:
                 continue
             description = re.sub("---(.|\n)*---", "", issue_content).strip()
             try:
-                self.gl_client.create_issue(user_id, Issue(title, description))
+                client.create_issue(
+                    user_id, Issue(title, description), username=username
+                )
                 print(f"Created issue {path.name}")
                 success += 1
 
             except Exception as error:
                 print(f"Error while creating issue {path.name}: {error}")
+            if success == 3:
+                return
         print(f"=> Successfully created {success} issues.")
+
+    def create_all_gitlab_issues(self, user_id: int):
+        gl_client = GitLabClient()
+        return self._create_all_issues(user_id, gl_client)
+
+    def create_all_github_issues(self, user_id: int, username: str):
+        gh_client = GitHubClient()
+        return self._create_all_issues(user_id, gh_client, username)
 
 
 @click.group()
@@ -263,12 +315,12 @@ def gl():
 
 @gl.command()
 def list_users():
-    GitlabClient().list_users()
+    GitLabClient().list_users()
 
 
 @gl.command()
 def list_repositories():
-    GitlabClient().list_repositories()
+    GitLabClient().list_repositories()
 
 
 @cli.group()
@@ -282,6 +334,30 @@ def gh():
 def create_all_issues(user_id):
     manager = IssueManager()
     manager.create_all_gitlab_issues(user_id)
+
+
+@cli.group()
+def gh():
+    pass
+
+
+@gh.command()
+@click.argument("username", type=str)
+def get_user_id(username):
+    return
+
+
+@gh.command()
+@click.argument("username", type=str)
+def create_all_issues(username):
+    user_id = GitHubClient().get_user_id(username)
+    if click.confirm(
+        f"Creating issues for user {username} with id {user_id}. Do you want to continue ?"
+    ):
+        manager = IssueManager()
+        manager.create_all_github_issues(user_id, username)
+    else:
+        click.echo("Aborted")
 
 
 if __name__ == "__main__":

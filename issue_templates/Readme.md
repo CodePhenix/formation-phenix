@@ -52,4 +52,4 @@ To help handle this
 - Use the `list-repositories` command to find the id that you'll fill in
   the .env as `PROJECT_ID`. Don't forget to restart your pipenv environment to load the new env variable.
 - Use the `list-users` command to find the users ids that you'll use in the `create-all-issues` command.
-  Ex SofienM on Gitlab.com user is 11092508
+  Ex SofienM on GitLab.com user is 11092508
