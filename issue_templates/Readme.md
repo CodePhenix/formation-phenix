@@ -36,6 +36,17 @@ There are three groups of commands
 
 Use `--help` flag to get the documentation of each sub-command
 
+### Templates
+
+**Order**
+
+Issues will be created in the order determined by the \_\_X suffix.
+To help handle this
+
+- first run `pull_current_issues_order` to gather the issues in ISSUES_ORDER.txt
+- reorganize issues as you wish (first line will be first issue and so on)
+- run `apply_new_issues_order` to update all issues templates names accordingly
+
 ### GitLab
 
 - Use the `list-repositories` command to find the id that you'll fill in

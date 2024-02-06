@@ -57,8 +57,8 @@ class IssueManager:
     """Class for managing issue templates in GitHub and GitLab."""
 
     TEMPLATES_PATH = "issue_templates/templates"
-    CODE_QUALITY_CONTENT_PATH = "issue_templates/CODE_QUALITY.md"
-    ORDER_PATH = "issue_templates/ISSUES_ORDER.md"
+    CODE_QUALITY_FILE = "issue_templates/CODE_QUALITY.md"
+    ORDER_FILE = "issue_templates/ISSUES_ORDER.txt"
     GITHUB_TEMPLATE_PATH = ".github/ISSUE_TEMPLATE"
     GITLAB_TEMPLATE_PATH = ".gitlab/issue_templates"
 
@@ -77,13 +77,23 @@ class IssueManager:
     def get_all_templates_paths(self) -> List[Path]:
         return list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
 
+    def get_all_templates_paths_ordered(self) -> List[Path]:
+        """
+        Get all issue templates ordered by their suffix `__n` and preordered
+        alphabetically.
+        """
+        paths = self.get_all_templates_paths()
+        paths = sorted(paths, key=lambda x: x.name)
+        paths = sorted(paths, key=self._extract_order_from_template_name)
+        return paths
+
     def render_code_quality_shortcode(self):
         print("Overwriting CODE_QUALITY section in all templates.")
         templates_paths = self.get_all_templates_paths()
         code_quality_content = (
             self.CODE_QUALITY_START_CODE
             + "\n"
-            + Path(self.project_root, self.CODE_QUALITY_CONTENT_PATH).read_text()
+            + Path(self.project_root, self.CODE_QUALITY_FILE).read_text()
             + "\n"
             + self.CODE_QUALITY_END_CODE
         )
@@ -91,7 +101,7 @@ class IssueManager:
         success_count = 0
         for path in templates_paths:
             try:
-                filedata = Path(path).read_text()
+                filedata = path.read_text()
                 if (
                     self.CODE_QUALITY_START_CODE in filedata
                     and self.CODE_QUALITY_END_CODE in filedata
@@ -134,14 +144,59 @@ class IssueManager:
             )
         return
 
+    def _extract_order_from_template_name(self, path: Path) -> int:
+        filename = path.stem
+        try:
+            order = int(filename.split("__")[1])
+        except IndexError:
+            order = 100
+        return order
+
+    def pull_current_issue_orders(self):
+        """
+        Get all issue templates and put it in ORDER_FILE file
+        in the order based on the suffix __<int> in their name
+        and alphabatically if no suffix
+        """
+        paths = self.get_all_templates_paths_ordered()
+        new_order_file_content = "\n".join([path.name for path in paths])
+        order_path = Path(self.project_root, self.ORDER_FILE)
+        order_path.write_text(new_order_file_content)
+        print(f"Pulled successfully {len(paths)} issue templates in {self.ORDER_FILE}")
+        return
+
+    def apply_new_issues_order(self):
+        current_issues_order = (
+            Path(self.project_root, self.ORDER_FILE).read_text().split("\n")
+        )
+        idx = 0
+        error_count = 0
+        for path_str in current_issues_order:
+            issue_file = Path(self.project_root, self.TEMPLATES_PATH, path_str)
+            if issue_file.is_file():
+                base_name = path_str.split(".")[0]
+                if "__" in base_name:
+                    base_name = base_name.split("__")[0]
+                new_path_str = f"{base_name}__{idx}.md"
+                issue_file.replace(
+                    Path(self.project_root, self.TEMPLATES_PATH, new_path_str)
+                )
+                idx += 1
+            else:
+                print(f"Error: couldn't find {issue_file}. Skipping.")
+                error_count += 1
+        print(
+            f"Applied new order as suffix for {idx +1 } templates names. {error_count} error(s) encountered."
+        )
+
     def create_all_gitlab_issues(self, user_id: int):
         """
         Create issues from all issue templates available for the user
         """
-        paths = self.get_all_templates_paths()
+        paths = self.get_all_templates_paths_ordered()
         success = 0
         for path in paths:
-            issue_content = Path(path).read_text()
+            issue_content = path.read_text()
             title = re.search("title: (.*)", issue_content).group(1)
             if not title:
                 print(f"Skipping issue {path.name} because title is not found.")
@@ -155,18 +210,6 @@ class IssueManager:
             except Exception as error:
                 print(f"Error while creating issue {path.name}: {error}")
         print(f"=> Successfully created {success} issues.")
-
-
-# Gitlab
-# Click list all users on gitlab
-# Click list all gitlab projects => get promotion 5 project_id
-
-# Templates
-# Overwrite CODE_QUALITY section in all templates
-# Overwrite issue templates in GitHub and GitLab folders. + WARNING
-
-
-# Click create all issues for one user
 
 
 @click.group()
@@ -189,6 +232,28 @@ def render_code_quality_shortcode():
 def overwrite_vcs_issue_templates():
     manager = IssueManager()
     manager.overwrite_vcs_issue_templates()
+
+
+@templates.command()
+def pull_current_issues_order():
+    manager = IssueManager()
+    if click.confirm(
+        f"This will override the current content of {manager.ORDER_FILE}. Do you want to continue ?"
+    ):
+        manager.pull_current_issue_orders()
+    else:
+        click.echo("Aborted")
+
+
+@templates.command()
+def apply_new_issues_order():
+    manager = IssueManager()
+    if click.confirm(
+        f"This will override the order suffix in issues templates names. Do you want to continue ?"
+    ):
+        manager.apply_new_issues_order()
+    else:
+        click.echo("Aborted")
 
 
 @cli.group()
