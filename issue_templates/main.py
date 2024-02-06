@@ -237,14 +237,18 @@ class IssueManager:
         success = 0
         for path in paths:
             issue_content = path.read_text()
+            issue_order = ""
+            if len(path.stem.split("__")) > 0:
+                issue_order = path.stem.split("__")[1]
             title = re.search("title: (.*)", issue_content).group(1)
             if not title:
                 print(f"Skipping issue {path.name} because title is not found.")
                 continue
+            full_title = f"{issue_order} - {title}"
             description = re.sub("---(.|\n)*---", "", issue_content).strip()
             try:
                 client.create_issue(
-                    user_id, Issue(title, description), username=username
+                    user_id, Issue(full_title, description), username=username
                 )
                 print(f"Created issue {path.name}")
                 success += 1
