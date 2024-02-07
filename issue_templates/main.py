@@ -255,8 +255,6 @@ class IssueManager:
 
             except Exception as error:
                 print(f"Error while creating issue {path.name}: {error}")
-            if success == 3:
-                return
         print(f"=> Successfully created {success} issues.")
 
     def create_all_gitlab_issues(self, user_id: int):

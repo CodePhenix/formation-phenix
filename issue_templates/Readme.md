@@ -53,3 +53,8 @@ To help handle this
   the .env as `PROJECT_ID`. Don't forget to restart your pipenv environment to load the new env variable.
 - Use the `list-users` command to find the users ids that you'll use in the `create-all-issues` command.
   Ex SofienM on GitLab.com user is 11092508
+
+### GitHub
+
+- Make sure the user is added in the CodePhenix organization
+- Use the `create-all-issues` with the GitHub username directly
