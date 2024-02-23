@@ -1,6 +1,7 @@
 import os
 import gitlab
 from github import Github, Auth
+from jinja2 import Environment, PackageLoader, select_autoescape
 
 import re
 from pathlib import Path
@@ -96,16 +97,26 @@ class IssueManager:
     """Class for managing issue templates in GitHub and GitLab."""
 
     TEMPLATES_PATH = "issue_templates/templates"
-    CODE_QUALITY_FILE = "issue_templates/CODE_QUALITY.md"
+    TEMPLATE_EXCEPTIONS = ["CODE_QUALITY.md"]
     ORDER_FILE = "issue_templates/ISSUES_ORDER.txt"
-    GITHUB_TEMPLATE_PATH = ".github/ISSUE_TEMPLATE"
-    GITLAB_TEMPLATE_PATH = ".gitlab/issue_templates"
-
-    CODE_QUALITY_START_CODE = "<!-- CODE_QUALITY_START -->"
-    CODE_QUALITY_END_CODE = "<!-- CODE_QUALITY_END -->"
+    GITHUB = {
+        "path": ".github/ISSUE_TEMPLATE",
+        "codephenix_url": "https://codephenix.fr/interface",
+        "repo_url": "https://github.com/CodePhenix/formation-phenix/tree/main",
+        "html_validator_url": "https://validator.w3.org/#validate_by_input",
+    }
+    GITLAB = {
+        "path": ".gitlab/issue_templates",
+        "codephenix_url": "https://codephenix.com",
+        "repo_url": "",
+        "html_validator_url": "",
+    }
 
     def __init__(self):
-        pass
+        self.jinja_env = Environment(
+            loader=PackageLoader("main"), autoescape=select_autoescape()
+        )
+        return
 
     @property
     def project_root(self) -> Path:
@@ -113,7 +124,8 @@ class IssueManager:
         return Path(__file__).parent.parent.resolve()
 
     def get_all_templates_paths(self) -> List[Path]:
-        return list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
+        all_files = list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
+        return [file for file in all_files if file.name not in self.TEMPLATE_EXCEPTIONS]
 
     def get_all_templates_paths_ordered(self) -> List[Path]:
         """
@@ -125,43 +137,13 @@ class IssueManager:
         paths = sorted(paths, key=self._extract_order_from_template_name)
         return paths
 
-    def render_code_quality_shortcode(self):
-        print("Overwriting CODE_QUALITY section in all templates.")
-        templates_paths = self.get_all_templates_paths()
-        code_quality_content = (
-            self.CODE_QUALITY_START_CODE
-            + "\n"
-            + Path(self.project_root, self.CODE_QUALITY_FILE).read_text()
-            + "\n"
-            + self.CODE_QUALITY_END_CODE
+    def render_template(self, path: Path, vcs_folder) -> str:
+        template = self.jinja_env.get_template(path.name)
+        return template.render(
+            codephenix_url=vcs_folder["codephenix_url"],
+            repo_url=vcs_folder["repo_url"],
+            html_validator_url=vcs_folder["html_validator_url"],
         )
-
-        success_count = 0
-        for path in templates_paths:
-            try:
-                filedata = path.read_text()
-                if (
-                    self.CODE_QUALITY_START_CODE in filedata
-                    and self.CODE_QUALITY_END_CODE in filedata
-                ):
-                    # Replace between start and end code with code quality content
-                    filedata = re.sub(
-                        f"{self.CODE_QUALITY_START_CODE}?(.*?){self.CODE_QUALITY_END_CODE}",
-                        code_quality_content,
-                        filedata,
-                        flags=re.DOTALL,
-                    )
-
-                    with open(path, "w") as file:
-                        file.write(filedata)
-                    print(f"Content updated for file {path.name}.")
-                    success_count += 1
-                else:
-                    print(f"Skipping {path.name}.")
-            except Exception as error:
-                print(f"Error while handling file {path.name}: {error}")
-        print(f"=> Successfully updated {success_count} files.")
-        return
 
     def _delete_folder_content(self, folder_path: Path):
         files = folder_path.glob("*")
@@ -172,14 +154,19 @@ class IssueManager:
         """
         Overwrite issue templates in GitHub and GitLab folders.
         """
-        self.render_code_quality_shortcode()
         print("Overwriting issue templates in GitHub and GitLab folders.")
-        for vcs_path in [self.GITHUB_TEMPLATE_PATH, self.GITLAB_TEMPLATE_PATH]:
-            self._delete_folder_content(self.project_root / vcs_path)
-            copy_tree(
-                str(self.project_root / self.TEMPLATES_PATH),
-                str(self.project_root / vcs_path),
-            )
+        for vcs_folder in [self.GITHUB, self.GITLAB]:
+            print("Overwriting", vcs_folder["path"])
+            self._delete_folder_content(self.project_root / vcs_folder["path"])
+            for path in self.get_all_templates_paths():
+                try:
+                    content = self.render_template(path, vcs_folder)
+                    new_path = Path(self.project_root, vcs_folder["path"], path.name)
+                    new_path.write_text(content)
+                    print(f"Created {new_path}")
+                except Exception as error:
+                    print(f"Error while creating {path.name}: {error}")
+                    continue
         return
 
     def _extract_order_from_template_name(self, path: Path) -> int:
@@ -228,7 +215,11 @@ class IssueManager:
         )
 
     def _create_all_issues(
-        self, user_id: int, client: GitLabClient | GitHubClient, username=None
+        self,
+        user_id: int,
+        client: GitLabClient | GitHubClient,
+        vcs_folder,
+        username=None,
     ):
         """
         Create issues from all issue templates available for the user
@@ -236,10 +227,8 @@ class IssueManager:
         paths = self.get_all_templates_paths_ordered()
         success = 0
         for path in paths:
-            issue_content = path.read_text()
-            issue_order = ""
-            if len(path.stem.split("__")) > 0:
-                issue_order = path.stem.split("__")[1]
+            issue_content = self.render_template(path, vcs_folder=vcs_folder)
+            issue_order = self._extract_order_from_template_name(path)
             title = re.search("title: (.*)", issue_content).group(1)
             if not title:
                 print(f"Skipping issue {path.name} because title is not found.")
@@ -259,11 +248,11 @@ class IssueManager:
 
     def create_all_gitlab_issues(self, user_id: int):
         gl_client = GitLabClient()
-        return self._create_all_issues(user_id, gl_client)
+        return self._create_all_issues(user_id, gl_client, self.GITLAB)
 
     def create_all_github_issues(self, user_id: int, username: str):
         gh_client = GitHubClient()
-        return self._create_all_issues(user_id, gh_client, username)
+        return self._create_all_issues(user_id, gh_client, self.GITHUB, username)
 
 
 @click.group()
@@ -274,12 +263,6 @@ def cli():
 @cli.group()
 def templates():
     pass
-
-
-@templates.command()
-def render_code_quality_shortcode():
-    manager = IssueManager()
-    manager.render_code_quality_shortcode()
 
 
 @templates.command()
@@ -343,10 +326,10 @@ def gh():
     pass
 
 
-@gh.command()
-@click.argument("username", type=str)
-def get_user_id(username):
-    return
+# @gh.command()
+# @click.argument("username", type=str)
+# def get_user_id(username):
+#     return
 
 
 @gh.command()

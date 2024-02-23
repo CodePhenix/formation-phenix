@@ -13,7 +13,7 @@ les unes par rapport aux autres. En l'utilisant vous avez accès à une série d
 `align-items`, `flex-wrap`, `flex-direction`
 
 Cet exercice va vous permettre de découvrir ces différentes propriétés et de vous exercer à les manier.
-https://codephenix.fr/interface/cours/exercices/flexfroggy/index.html
+{{ codephenix_url }}/cours/exercices/flexfroggy/index.html
 
 ## Cours associés
 

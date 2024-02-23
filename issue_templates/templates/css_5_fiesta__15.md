@@ -13,9 +13,9 @@ Ces propriétés sont relativement simples mais demandent pas mal de pratique po
 C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
 vous feront réalisés des séries d'exercices pour pratiquer.
 
-![Maquette 1](./../../ateliers_aubervilliers/A_html_css/4_fiesta/bob/maquette.png)
-![Maquette 2](./../../ateliers_aubervilliers/A_html_css/4_fiesta/football/maquette.png)
-![Maquette 3](./../../ateliers_aubervilliers/A_html_css/4_fiesta/house/maquette.png)
+![Maquette 1]({{ repo_url }}/ateliers_aubervilliers/A_html_css/4_fiesta/bob/maquette.png)
+![Maquette 2]({{ repo_url }}/ateliers_aubervilliers/A_html_css/4_fiesta/football/maquette.png)
+![Maquette 3]({{ repo_url }}/ateliers_aubervilliers/A_html_css/4_fiesta/house/maquette.png)
 
 ## Cours associés
 
@@ -29,21 +29,7 @@ Pour **chacune** des maquettes:
 
 - [ ] La maquette est bien reproduite
 
-<!-- CODE_QUALITY_START -->
-Code quality:
-
-- [ ] HTML: 0 erreurs/warnings selon les standards du W3C
-- [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
-- [ ] HTML: Les textes visibles commencent tous par une majuscule
-- [ ] HTML - SEO: title, description et favicon ont été renseignés
-- [ ] HTML - SEO: Si c'est pertinent, les balises sémantiques <header>, <footer>, <main>, <nav>, <section> ont été utilisées
-- [ ] CSS: Aucun padding ni margin négatif
-- [ ] CSS: Le css comporte un "reset CSS"
-- [ ] JS: Le code est commenté
-- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
-- [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
-
-<!-- CODE_QUALITY_END -->
+{% include 'CODE_QUALITY.md' %}
 
 ## Q&A
 

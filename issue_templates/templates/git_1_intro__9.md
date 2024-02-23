@@ -1,5 +1,5 @@
 ---
-name: Introduction Git 
+name: Introduction Git
 about: GIT
 title: "Initiation GIT"
 labels: ""
@@ -22,7 +22,6 @@ Et voilà ! Vous avez enregistré votre première modification avec Git. Mais at
 
 Alors, prêts à plonger dans l'univers fascinant de Git ? Allez, mettez votre casquette de développeur, armez-vous de courage et laissez Git vous guider vers de nouvelles horizons de création ! 🌟
 
-
 ## Cours associés
 
 Git / introduction
@@ -35,22 +34,7 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] Comment démarre-t-on un nouveau projet avec Git ?
 - [ ] Quelle étape précède le "commit" lors de l'enregistrement des modifications avec Git ?
 
-
-<!-- CODE_QUALITY_START -->
-Code quality:
-
-- [ ] HTML: 0 erreurs/warnings selon les standards du W3C
-- [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
-- [ ] HTML: Les textes visibles commencent tous par une majuscule
-- [ ] HTML - SEO: title, description et favicon ont été renseignés
-- [ ] HTML - SEO: Si c'est pertinent, les balises sémantiques <header>, <footer>, <main>, <nav>, <section> ont été utilisées
-- [ ] CSS: Aucun padding ni margin négatif
-- [ ] CSS: Le css comporte un "reset CSS"
-- [ ] JS: Le code est commenté
-- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
-- [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
-
-<!-- CODE_QUALITY_END -->
+{% include 'CODE_QUALITY.md' %}
 
 ## Q&A
 

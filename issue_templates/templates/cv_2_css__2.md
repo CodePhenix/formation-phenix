@@ -14,9 +14,7 @@ Pour cela, vous avez découvert le CSS. Pour rappel, son rôle est uniquement de
 
 Votre objectif est de mettre en forme le CV de l'exercice précédent selon la maquette ci-dessous. Amusez-vous bien ! 😄
 
-
-Lien vers les maquettes: https://codephenix.fr/interface/cours/exercices/1-2-1-initiation-css.png
-
+Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/1-2-1-initiation-css.png
 
 ## Cours associés
 
@@ -29,7 +27,6 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] La maquette est bien reproduite (pixel perfect)
 - [ ] Utilisation de bon sélecteur css
 - [ ] Respect pris en compte de l'héritage en CSS
-
 
 ## Q&A
 

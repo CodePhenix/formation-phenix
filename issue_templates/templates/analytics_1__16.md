@@ -1,5 +1,5 @@
 ---
-name:  ANALYTICS Project 
+name: ANALYTICS Project
 about: Exercise Web Integration
 title: ANALYTICS Project
 labels: ""
@@ -16,13 +16,11 @@ Objective: The header will be fixed on the page, and clicking on the burger menu
 
 Ready to take on this challenge? Then, on your keyboards, get set, go! 🍔
 
-
 ## Associated Courses
 
 Javascript Positioning
 
 ## Definition of Done: A task is considered completed when each of the sub-tasks in this section has been completed.
-
 
 _For each of the mockups:_
 
@@ -32,21 +30,7 @@ _For each of the mockups:_
 - [ ] The button to close this window is present
 - [ ] All navigation links are present
 
-<!-- CODE_QUALITY_START -->
-Code quality:
-
-- [ ] HTML: 0 erreurs/warnings selon les standards du W3C
-- [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
-- [ ] HTML: Les textes visibles commencent tous par une majuscule
-- [ ] HTML - SEO: title, description et favicon ont été renseignés
-- [ ] HTML - SEO: Si c'est pertinent, les balises sémantiques <header>, <footer>, <main>, <nav>, <section> ont été utilisées
-- [ ] CSS: Aucun padding ni margin négatif
-- [ ] CSS: Le css comporte un "reset CSS"
-- [ ] JS: Le code est commenté
-- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
-- [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
-
-<!-- CODE_QUALITY_END -->
+{% include 'CODE_QUALITY.md' %}
 
 ## Q&A
 

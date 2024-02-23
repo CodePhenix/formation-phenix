@@ -1,6 +1,6 @@
 Code quality:
 
-- [ ] HTML: 0 erreurs/warnings selon les standards du W3C
+- [ ] HTML: 0 erreurs/warnings selon les standards du [W3C]({{html_validator_url}})
 - [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
 - [ ] HTML: Les textes visibles commencent tous par une majuscule
 - [ ] HTML - SEO: title, description et favicon ont été renseignés

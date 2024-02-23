@@ -14,7 +14,7 @@ Vous souvenez-vous du CV que vous avez réalisé en HTML et CSS ? Je suis sûr q
 
 À l'aide du cours, ajoutez un menu burger à votre CV. Au clic sur le bouton, une fenêtre s'ouvre avec les liens de navigation redirigeant vers les différentes sections de la page, ainsi qu'un bouton pour refermer cette fenêtre.
 
-Lien vers les maquettes: https://codephenix.fr/interface/cours/exercices/1-3-2-initiation-js.gif
+Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/1-3-2-initiation-js.gif
 
 ## Cours associés
 
@@ -30,21 +30,7 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 - [ ] Les liens de navigations sont présents et fonctionnels
 - [ ] Aucun bugs de fonctionnement sur l’affichage
 
-<!-- CODE_QUALITY_START -->
-Code quality:
-
-- [ ] HTML: 0 erreurs/warnings selon les standards du W3C
-- [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
-- [ ] HTML: Les textes visibles commencent tous par une majuscule
-- [ ] HTML - SEO: title, description et favicon ont été renseignés
-- [ ] HTML - SEO: Si c'est pertinent, les balises sémantiques <header>, <footer>, <main>, <nav>, <section> ont été utilisées
-- [ ] CSS: Aucun padding ni margin négatif
-- [ ] CSS: Le css comporte un "reset CSS"
-- [ ] JS: Le code est commenté
-- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
-- [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
-
-<!-- CODE_QUALITY_END -->
+{% include 'CODE_QUALITY.md' %}
 
 ## Q&A
 

@@ -1,5 +1,5 @@
 ---
-name: Exo Projet MYFOOD 
+name: Exo Projet MYFOOD
 about: Exercice intégration
 title: "Exercice MYFOOD"
 labels: ""
@@ -16,8 +16,7 @@ Objectif : le header de votre site restera fixe en haut de la page. Mais lorsque
 
 Prêts à relever ce défi ? Alors, à vos claviers, prêts, partez ! 🍔
 
-
-Lien vers les maquettes: https://codephenix.fr/interface/cours/exercices/2-1-1-myfood-positionnement.zip
+Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/2-1-1-myfood-positionnement.zip
 
 ## Cours associés
 
@@ -27,27 +26,13 @@ Javascript / Positionnement
 
 _Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ]  La maquette est bien reproduite (pixel perfect)
-- [ ]  Le menu burger est fonctionnel avec le click
-- [ ]  Le header est bien fixe sur la page
-- [ ]  Le  bouton pour fermer cette fenêtre est bien présent
-- [ ]  Les liens de navigations sont tous présents
+- [ ] La maquette est bien reproduite (pixel perfect)
+- [ ] Le menu burger est fonctionnel avec le click
+- [ ] Le header est bien fixe sur la page
+- [ ] Le bouton pour fermer cette fenêtre est bien présent
+- [ ] Les liens de navigations sont tous présents
 
-<!-- CODE_QUALITY_START -->
-Code quality:
-
-- [ ] HTML: 0 erreurs/warnings selon les standards du W3C
-- [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
-- [ ] HTML: Les textes visibles commencent tous par une majuscule
-- [ ] HTML - SEO: title, description et favicon ont été renseignés
-- [ ] HTML - SEO: Si c'est pertinent, les balises sémantiques <header>, <footer>, <main>, <nav>, <section> ont été utilisées
-- [ ] CSS: Aucun padding ni margin négatif
-- [ ] CSS: Le css comporte un "reset CSS"
-- [ ] JS: Le code est commenté
-- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
-- [ ] Global: Les `class`, `id` et `name` et autres variables ont des noms respectables et porteurs de sens
-
-<!-- CODE_QUALITY_END -->
+{% include 'CODE_QUALITY.md' %}
 
 ## Q&A
 
