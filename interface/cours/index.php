@@ -113,18 +113,18 @@
             <article class="active" id="html-initiation-article">
                 <h3>HTML initiation</h3>
                 <iframe src="supports/html.pdf" title="HTML initiation"></iframe>
-                <h4>Exercice</h4>
+                <!-- <h4>Exercice</h4>
                 <p><b><u>Astuce pour bien réussir</u> : Utilisez la sémantique des balises, sectionnez votre page et utilisez la notion de parent/enfant.</b></p>
                 <p>À l'aide du cours, reproduisez le CV selon la maquette ci-dessous : </p>
                 <a class="cta dl" target="_blank" href="exercices/1-1-1-initiation-html.png"><span>Voir la maquette</span> <i class="bi bi-image"></i></a>
-                <a class="cta dl" target="_blank" href="exercices/1-1-1-img.png"><span>Récupérer l'image</span> <i class="bi bi-image"></i></a>
+                <a class="cta dl" target="_blank" href="exercices/1-1-1-img.png"><span>Récupérer l'image</span> <i class="bi bi-image"></i></a> -->
             </article>
             <article id="css-initiation-article">
                 <h3>CSS initiation</h3>
                 <iframe src="supports/css.pdf" title="HTML initiation"></iframe>
                 <h4>Demo CSS</h4>
                 <a class="cta link zen-garden" href="#"><span>Changer la CSS</span> <i class="bibi bi-square-half"></i></a>
-                <h4>Exercices</h4>
+                <!-- <h4>Exercices</h4>
                 <ol>
                     <li>
                         <h6>Mise en forme</h6>
@@ -140,7 +140,7 @@
                         <p><small style="color:red">Attention, le nom des balises dans cet exercice ne sont pas de vrai nom de balise.</small></p>
                         <a target="_blank" class="cta link" href="exercices/css-diner/index.html"><span>Commencer l'exercice</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
                     </li>
-                </ol>
+                </ol> -->
                 <script>
                     let zenGarden = document.querySelector('.zen-garden'),
                         body = document.querySelector('body');
@@ -164,9 +164,9 @@
             <article id="formulaires-article">
                 <h3>HTML : <small>Les formulaires</small></h3>
                 <iframe src="supports/formulaire.pdf" title="HTML les formulaires"></iframe>
-                <h4>Exercice</h4>
+                <!-- <h4>Exercice</h4>
                 <p>À partir des maquettes, réalisez un formulaire d'inscription.</p>
-                <a class="cta dl" href="exercices/5-1-1-formulaire.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+                <a class="cta dl" href="exercices/5-1-1-formulaire.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a> -->
             </article>
             <article id="positionnement-article">
                 <h3>CSS : <small>Le positionnement des éléments</small></h3>
@@ -175,7 +175,7 @@
                 <p>Voici une fiche mémo sur le <code>display flex;</code> vous pouvez l'enregistrer sur votre ordinateur.
                     Utilisez ce mémo pour vous aider à faire les exercices suivants.</p>
                 <a class="cta dl" target="_blank" href="supports/flexbox-memo.jpg"><span>Voir la fiche mémo</span> <i class="bi bi-image"></i></a>
-                <h4>Exercices</h4>
+                <!-- <h4>Exercices</h4>
                 <ol>
                     <li>
                         <h6>Faire un site à partir d'une maquette : MyFood</h6>
@@ -198,12 +198,12 @@
                         </p>
                         <a class="cta dl" href="exercices/2-1-3-analytics-positionnement.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
                     </li>
-                </ol>
+                </ol> -->
             </article>
             <article id="responsive-article">
                 <h3>CSS : <small>Le responsive design</small></h3>
                 <iframe src="supports/responsive.pdf" title="HTML responsive"></iframe>
-                <h4>Exercices</h4>
+                <!-- <h4>Exercices</h4>
                 <ol>
                     <li>
                         <h6>Site responsive : Café</h6>
@@ -234,7 +234,7 @@
                             Selon les maquettes :</p>
                         <a class="cta dl" href="exercices/2-3-4-johndoe-responsive.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
                     </li>
-                </ol>
+                </ol> -->
                 <h4>Connaissances</h4>
                 <p>Pour aller plus loin vous pouvez vous renseigner avec les articles suivant :</p>
                 <a class="cta link" target="_blank" href="../connaissances/UX/arquen/blog/ergonomie-ux-mobile-tablette/index.htm"><span>Les bases de l’Ergonomie</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
@@ -243,14 +243,14 @@
             <article id="css-animation-article">
                 <h3>CSS : <small>Les animations</small></h3>
                 <iframe src="supports/animation.pdf" title="CSS animation"></iframe>
-                <h4>Exercices</h4>
-                <!-- <ol>
-              <li>
-                <h6>Menu au survol</h6>
-                <p>À partir de l'exercice du site Café, faites le menu à onglet au survol, uniquement en CSS. Comme dans l'exemple.</p>
-                <a class="cta dl" target="_blank" href="exercices/4-1-1-nav-hover.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
-              </li>
-              <li>-->
+                <!-- <h4>Exercices</h4>
+                    <ol>
+                <li>
+                    <h6>Menu au survol</h6>
+                    <p>À partir de l'exercice du site Café, faites le menu à onglet au survol, uniquement en CSS. Comme dans l'exemple.</p>
+                    <a class="cta dl" target="_blank" href="exercices/4-1-1-nav-hover.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
+                </li>
+                <li>
                 <h6>Animation des éléments d'un site : Analitycs</h6>
                 <p>En reprennant le site analytics, ajoutez les transitions et animations suivantes :</p>
                 <ul>
@@ -262,16 +262,16 @@
                             <li>Le fond des tableaux devient gris foncé au survol de la souris.</li>
                             <li>Sur le bouton "more countries", au survol de la souris le fond devient gris claire et l'icone part vers la droite.</li>
                         </ul>
-                        <!-- </li>
-                </ul> -->
+                        </li>
+                </ul>
                         <p>Comme dans l'exemple :</p>
                         <a class="cta dl" target="_blank" href="exercices/4-1-1-nav-animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
                     </li>
-                    </ol>
+                    </ol> -->
             </article>
             <article id="validation1-article">
                 <h3>Validation des connaissances : <small>HTML/CSS</small></h3>
-                <h4>Exercices</h4>
+                <!-- <h4>Exercices</h4>
                 <p>Reproduisez le site, selon la maquette en prenant en compte les précisions suivantes :</p>
                 <ul>
                     <li>Le site doit être responsive (mobile first).</li>
@@ -282,12 +282,12 @@
                     <li>Sur le bouton "more countries", au survol de la souris le fond devient gris claire et l'icone part vers la droite.</li>
                 </ul>
                 <br>
-                <a class="cta dl" href="exercices/html-css/exercice-validation1.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
+                <a class="cta dl" href="exercices/html-css/exercice-validation1.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a> -->
             </article>
             <article id="js-initiation-article">
                 <h3>JavaScript initiation : <small>Première partie</small></h3>
                 <iframe src="supports/javascript.pdf" title="JS initiation"></iframe>
-                <h4>Exercices</h4>
+                <!-- <h4>Exercices</h4>
                 <ol>
                     <li>
                         <h6>Compteur de click</h6>
@@ -306,13 +306,13 @@
                         </p>
                         <a class="cta dl" target="_blank" href="exercices/1-3-2-initiation-js.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
                     </li>
-                </ol>
+                </ol> -->
             </article>
             <article id="js-initiation2-article">
                 <h3>JavaScript initiation : <small>Deuxième partie</small></h3>
                 <iframe src="supports/js2.pdf" title="JS initiation"></iframe>
                 <h4>Exercices</h4>
-                <ol>
+                <!-- <ol>
                     <li>
                         <h6>Liste de nom</h6>
                         <p>En reprenant le site myFood, les "popular tags" doivent être créés à partir d'un tableau en javascript.
@@ -326,12 +326,12 @@
                             Ils comprennent donc une image, un titre et un texte descriptif. Comme dans l'exemple :</p>
                         <a class="cta dl" target="_blank" href="exercices/2-2-2-informations-objet.png"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
                     </li>
-                    <!-- <li>
+                    <li>
                <h6>Liste d'information</h6>
                <p>En reprenant le site Analitycs, les éléments de la section "feeds" doivent être créés à partir d'objets en javascript.
                  Comme dans l'exemple :</p>
                <a class="cta dl" target="_blank" href="exercices/2-2-3-liste-objet.png"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
-             </li> -->
+             </li>
                     <li>
                         <h6>Compteur de click</h6>
                         <p>En reprenant l'exercice du compteur de click, ajouté les conditions suivante :</p>
@@ -357,7 +357,7 @@
                         <a class="cta dl" target="_blank" href="exercices/2-2-6-array.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
                         <a class="cta dl" target="_blank" href="../documentations/js.php"><span>Voir la documentation</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
                     </li>
-                </ol>
+                </ol> -->
             </article>
             <article id="js-formulaire-article">
                 <h3>JavaScript : <small>Vérification d'un formulaire</small></h3>
@@ -365,7 +365,7 @@
                 <h4>Outils</h4>
                 <p>Pour vous aider avec les expressions regulières (ReGex) vous pouvez utiliser l'outil ci-dessous :</p>
                 <a class="cta link" target="_blank" href="http://codephenix.com:8456/"><span>Utiliser l'outil ReGex</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
-                <h4>Exercices</h4>
+                <!-- <h4>Exercices</h4>
                 <ol>
                     <li>
                         <h6>Formulaire d'inscription</h6>
@@ -386,10 +386,10 @@
                             Faites une vérification et un message à la validation du formulaire. Selon les maquettes :</p>
                         <a class="cta dl" href="exercices/5-2-2-restaurant-formulaire.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
                     </li>
-                </ol>
+                </ol> -->
 
             </article>
-            <article id="bootstrap-article">
+            <!-- <article id="bootstrap-article">
                 <h3>Bootstrap</h3>
                 <ol>
                     <li>
@@ -425,11 +425,11 @@
                         <a class="cta dl" href="exercices/3-1-1-vogue-bootstrap.zip"><span>Télécharger l'exercice</span> <i class="bi bi-arrow-down-circle-fill"></i></a>
                         <a class="cta link" href="../documentations/bootstrap.php"><span>Accéder à la documentation Bootstrap</span> <i class="bi bi-arrow-right-circle-fill"></i></a>
                     </li>
-            </article>
+            </article> -->
             <article id="js-temps-article">
                 <h3>JavaScript : <small>Gestion du temps</small></h3>
                 <iframe src="supports/gestion-tps.pdf" title="JS Gestion du temps"></iframe>
-                <h4>Exercices</h4>
+                <!-- <h4>Exercices</h4>
                 <ol>
                     <li>
                         <h6>Test de réactivité</h6>
@@ -450,7 +450,7 @@
                         <p>Comme dans l'exemple suivant :</p>
                         <a class="cta dl" target="_blank" href="exercices/4-2-2-carousel-animation.gif"><span>Voir l'exemple</span> <i class="bi bi-image"></i></a>
                     </li>
-                </ol>
+                </ol> -->
             </article>
             <article id="validation2-article">
                 <h3>Validation des connaissances : <small>JavaScipt</small></h3>
