@@ -13,9 +13,9 @@ Ces propriétés sont relativement simples mais demandent pas mal de pratique po
 C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
 vous feront réalisés des séries d'exercices pour pratiquer.
 
-![Maquette 1]({{ repo_url }}/ateliers_aubervilliers/A_html_css/2_flex_3_difficile/exo8/maquette.png)
-![Maquette 2]({{ repo_url }}/ateliers_aubervilliers/A_html_css/2_flex_3_difficile/gamme_arbre_complexe.png)
-![Maquette 3]({{ repo_url }}/ateliers_aubervilliers/A_html_css/2_flex_3_difficile/gamme_carre_rond_carre.png)
+![Maquette 1]({{ codephenix_url }}/exercices/2_flex_difficile/exo8/maquette.png)
+![Maquette 2]({{ codephenix_url }}/exercices/2_flex_difficile/gamme_arbre_complexe.png)
+![Maquette 3]({{ codephenix_url }}/exercices/2_flex_difficile/gamme_carre_rond_carre.png)
 
 ## Cours associés
 

@@ -69,9 +69,6 @@ class GitHubClient:
             base_url=self.GITHUB_URL, login_or_token=os.environ["GITHUB_TOKEN"]
         )
         self.repository = self.gh.get_repo(self.GITHUB_REPOSITORY_ID)
-        # auth = Auth.Token("access_token")
-        # g = Github(auth=auth)
-        # https://api.github.com/users/your_github_user_name
 
     def __del__(self):
         self.gh.close()
@@ -102,13 +99,11 @@ class IssueManager:
     GITHUB = {
         "path": ".github/ISSUE_TEMPLATE",
         "codephenix_url": "https://codephenix.fr/interface",
-        "repo_url": "https://github.com/CodePhenix/formation-phenix/tree/main",
         "html_validator_url": "https://validator.w3.org/#validate_by_input",
     }
     GITLAB = {
         "path": ".gitlab/issue_templates",
         "codephenix_url": "https://codephenix.com",
-        "repo_url": "",
         "html_validator_url": "",
     }
 
@@ -244,6 +239,8 @@ class IssueManager:
 
             except Exception as error:
                 print(f"Error while creating issue {path.name}: {error}")
+
+            break
         print(f"=> Successfully created {success} issues.")
 
     def create_all_gitlab_issues(self, user_id: int):
