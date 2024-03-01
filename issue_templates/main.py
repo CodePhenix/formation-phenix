@@ -1,13 +1,12 @@
 import os
 import gitlab
-from github import Github, Auth
+from github import Github
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 import re
 from pathlib import Path
 from typing import List
 import click
-from distutils.dir_util import copy_tree
 from dataclasses import dataclass
 
 

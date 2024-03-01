@@ -8,6 +8,8 @@ click = "*"
 python-gitlab = "*"
 pygithub = "*"
 jinja2 = "*"
+pytest = "*"
+coverage = "*"
 
 [dev-packages]
 
