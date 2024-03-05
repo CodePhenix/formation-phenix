@@ -4,7 +4,6 @@ from issue_templates.main import IssueManager
 
 
 class TestIssueManager:
-
     def setUp(self, fake_filesystem):
         self.manager = IssueManager()
         self.root_test_path = Path(__file__).parent.parent.resolve()

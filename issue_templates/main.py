@@ -9,6 +9,8 @@ from typing import List
 import click
 from dataclasses import dataclass
 
+ALL = "ALL"
+
 
 @dataclass
 class Issue:
@@ -136,7 +138,6 @@ class IssueManager:
         template = self.jinja_env.get_template(path.name)
         return template.render(
             codephenix_url=vcs_folder["codephenix_url"],
-            repo_url=vcs_folder["repo_url"],
             html_validator_url=vcs_folder["html_validator_url"],
         )
 
@@ -209,11 +210,12 @@ class IssueManager:
             f"Applied new order as suffix for {idx +1 } templates names. {error_count} error(s) encountered."
         )
 
-    def _create_all_issues(
+    def _create_issues(
         self,
         user_id: int,
         client: GitLabClient | GitHubClient,
         vcs_folder,
+        range: tuple[int, int] | str,
         username=None,
     ):
         """
@@ -221,6 +223,7 @@ class IssueManager:
         """
         paths = self.get_all_templates_paths_ordered()
         success = 0
+        selected_path = paths if range == ALL else paths[range[0] : range[1]]
         for path in paths:
             issue_content = self.render_template(path, vcs_folder=vcs_folder)
             issue_order = self._extract_order_from_template_name(path)
@@ -243,13 +246,54 @@ class IssueManager:
             break
         print(f"=> Successfully created {success} issues.")
 
+    def create_gitlab_issues(self, user_id: int, str, range: tuple[int, int] | str):
+        gl_client = GitLabClient()
+        return self._create_issues(
+            user_id=user_id,
+            client=gl_client,
+            vcs_folder=self.GITLAB,
+            range=range,
+        )
+
+    def create_github_issues(
+        self, user_id: int, username: str, range: tuple[int, int] | str
+    ):
+        gh_client = GitHubClient()
+        return self._create_issues(
+            user_id=user_id,
+            client=gh_client,
+            vcs_folder=self.GITHUB,
+            range=range,
+            username=username,
+        )
+
     def create_all_gitlab_issues(self, user_id: int):
         gl_client = GitLabClient()
-        return self._create_all_issues(user_id, gl_client, self.GITLAB)
+        return self._create_issues(
+            user_id=user_id,
+            client=gl_client,
+            vcs_folder=self.GITLAB,
+            range=ALL,
+        )
 
     def create_all_github_issues(self, user_id: int, username: str):
         gh_client = GitHubClient()
-        return self._create_all_issues(user_id, gh_client, self.GITHUB, username)
+        return self._create_issues(
+            user_id=user_id,
+            client=gh_client,
+            vcs_folder=self.GITHUB,
+            range=ALL,
+            username=username,
+        )
+
+
+def parse_range(range: str) -> tuple[int, int]:
+    if re.match(r"\d+", range):
+        return (int(range), int(range))
+    if re.match(r"\d+-\d+", range):
+        start, end = range.split("-")
+        return (int(start), int(end))
+    raise ValueError("Invalid range format. Use 'start' or 'start-end' format only.")
 
 
 @click.group()
@@ -305,39 +349,51 @@ def list_repositories():
     GitLabClient().list_repositories()
 
 
-@cli.group()
-def gh():
-    click.echo("NOT IMPLEMENTED YET")
-    pass
-
-
 @gl.command()
 @click.argument("user_id", type=int)
-def create_all_issues(user_id):
+@click.argument("range", type=str)
+def create_issues(user_id, range):
     manager = IssueManager()
-    manager.create_all_gitlab_issues(user_id)
+    if range:
+        parsed_range = parse_range(range)
+        if click.confirm(
+            f"Issues from n°{parsed_range[0]} to n°{parsed_range[1]} will be created. Do you want to continue ?"
+        ):
+            manager.create_gitlab_issues(user_id=user_id, range=parsed_range)
+    else:
+        if click.confirm(
+            f"No range set, all issues will be created. Do you want to continue ?"
+        ):
+            manager.create_all_gitlab_issues(user_id)
 
 
 @cli.group()
 def gh():
     pass
-
-
-# @gh.command()
-# @click.argument("username", type=str)
-# def get_user_id(username):
-#     return
 
 
 @gh.command()
 @click.argument("username", type=str)
-def create_all_issues(username):
+@click.argument("range", type=str)
+def create_issues(username, range):
     user_id = GitHubClient().get_user_id(username)
     if click.confirm(
         f"Creating issues for user {username} with id {user_id}. Do you want to continue ?"
     ):
         manager = IssueManager()
-        manager.create_all_github_issues(user_id, username)
+        if range:
+            parsed_range = parse_range(range)
+            if click.confirm(
+                f"Issues from n°{parsed_range[0]} to n°{parsed_range[1]} will be created. Do you want to continue ?"
+            ):
+                manager.create_github_issues(
+                    user_id=user_id, username=username, range=parsed_range
+                )
+        else:
+            if click.confirm(
+                f"No range set, all issues will be created. Do you want to continue ?"
+            ):
+                manager.create_all_github_issues(user_id, username)
     else:
         click.echo("Aborted")
 
