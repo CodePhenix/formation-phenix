@@ -14,7 +14,7 @@ Comme vous l'avez sûrement constaté, on peut faire beaucoup avec les `id` et l
 c'est à dire de nouveaux sélecteurs et surtout de voir comment on peut combiner ces sélecteurs entre eux pour éviter d'avoir à écrire des dizaines voir des centaines de class et d'id dans nos sites.
 
 Cet exercice va vous permettre de découvrir ces différentes propriétés et de vous exercer à les manier.
-{{ codephenix_url }}/cours/exercices/flexfroggy/index.html
+{{ codephenix_url }}/cours/exercices/css-diner/index.html
 
 ## Cours associés
 

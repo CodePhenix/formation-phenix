@@ -1,7 +1,7 @@
 ---
 name: Gamme d'exos flexbox - Basiques
 about: Exercice sur les flexbox CSS
-title: "[CSS] Flexbox - Basiques"
+title: "[CSS] Flexbox - Difficile"
 labels: ""
 assignees:
 ---
@@ -29,7 +29,9 @@ Pour **chacune** des maquettes:
 
 - [ ] La maquette est bien reproduite
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

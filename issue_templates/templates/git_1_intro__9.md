@@ -34,7 +34,9 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] Comment démarre-t-on un nouveau projet avec Git ?
 - [ ] Quelle étape précède le "commit" lors de l'enregistrement des modifications avec Git ?
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

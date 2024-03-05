@@ -32,7 +32,9 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] Le bouton pour fermer cette fenêtre est bien présent
 - [ ] Les liens de navigations sont tous présents
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

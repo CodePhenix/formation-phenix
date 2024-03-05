@@ -30,7 +30,9 @@ _For each of the mockups:_
 - [ ] The button to close this window is present
 - [ ] All navigation links are present
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

@@ -41,7 +41,9 @@ Au clique sur l'envoi du formulaire,
 
 Et bien sûr:
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

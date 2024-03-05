@@ -93,7 +93,7 @@ class IssueManager:
     """Class for managing issue templates in GitHub and GitLab."""
 
     TEMPLATES_PATH = "issue_templates/templates"
-    TEMPLATE_EXCEPTIONS = ["CODE_QUALITY.md"]
+    # TEMPLATE_EXCEPTIONS = ["common/CODE_QUALITY.md"]
     ORDER_FILE = "issue_templates/ISSUES_ORDER.txt"
     GITHUB = {
         "path": ".github/ISSUE_TEMPLATE",
@@ -119,7 +119,8 @@ class IssueManager:
 
     def get_all_templates_paths(self) -> List[Path]:
         all_files = list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
-        return [file for file in all_files if file.name not in self.TEMPLATE_EXCEPTIONS]
+        return all_files
+        # return [file for file in all_files if file.name not in self.TEMPLATE_EXCEPTIONS]
 
     def get_all_templates_paths_ordered(self) -> List[Path]:
         """

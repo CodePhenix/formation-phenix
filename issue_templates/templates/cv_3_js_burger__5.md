@@ -30,7 +30,9 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 - [ ] Les liens de navigations sont présents et fonctionnels
 - [ ] Aucun bugs de fonctionnement sur l’affichage
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

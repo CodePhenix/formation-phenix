@@ -26,7 +26,9 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 - [ ] Le tableau javascript a bien été créé
 - [ ] Le click sur un tags permet de le mettre en avant comme demandé
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

@@ -29,7 +29,9 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 - [ ] La maquette est bien reproduite
 - [ ] Le click sur bouton est fonctionnel et permet de compter chaque click
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

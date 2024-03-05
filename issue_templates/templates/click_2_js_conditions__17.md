@@ -33,7 +33,9 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 - [ ] Le click sur bouton est fonctionnel et permet de compter chaque click
 - [ ] Les conditions sont bien utilisés et respectent la consigne
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

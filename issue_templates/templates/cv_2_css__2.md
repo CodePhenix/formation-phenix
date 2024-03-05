@@ -28,6 +28,10 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] Utilisation de bon sélecteur css
 - [ ] Respect pris en compte de l'héritage en CSS
 
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
+
 ## Q&A
 
 _Cette section sera complétée par votre formateur lors de la review des taches._

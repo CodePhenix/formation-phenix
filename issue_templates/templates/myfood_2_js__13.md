@@ -28,7 +28,9 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 - [ ] Le tableau d’objet créé est correcte et bien structuré
 - [ ] Tous les articles ont été créés en javascript comme demandé
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

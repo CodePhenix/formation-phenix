@@ -27,7 +27,9 @@ Une tache est considérée comme complétée lorsque chacune des sous-taches de 
 - [ ] La maquette est bien reproduite
 - [ ] La consigne de fonctionnement est bien est bien respecté et correcte
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

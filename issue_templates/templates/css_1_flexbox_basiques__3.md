@@ -30,7 +30,9 @@ Pour **chacune** des maquettes:
 
 - [ ] La maquette est bien reproduite
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 

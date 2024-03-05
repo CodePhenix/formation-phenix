@@ -10,6 +10,7 @@ pygithub = "*"
 jinja2 = "*"
 pytest = "*"
 coverage = "*"
+pyfakefs = "*"
 
 [dev-packages]
 

@@ -30,7 +30,9 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 - [ ] Utilisation des balises de structures (h1 … hn)
 - [ ] Utilisation des balises listes (ul, ol, li)
 
-{% include 'CODE_QUALITY.md' %}
+{% include 'common/CODE_QUALITY.md' %}
+
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 
