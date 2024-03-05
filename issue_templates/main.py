@@ -223,8 +223,8 @@ class IssueManager:
         """
         paths = self.get_all_templates_paths_ordered()
         success = 0
-        selected_path = paths if range == ALL else paths[range[0] : range[1]]
-        for path in paths:
+        selected_paths = paths if range == ALL else paths[range[0] : range[1] + 1]
+        for path in selected_paths:
             issue_content = self.render_template(path, vcs_folder=vcs_folder)
             issue_order = self._extract_order_from_template_name(path)
             title = re.search("title: (.*)", issue_content).group(1)
@@ -246,7 +246,7 @@ class IssueManager:
             break
         print(f"=> Successfully created {success} issues.")
 
-    def create_gitlab_issues(self, user_id: int, str, range: tuple[int, int] | str):
+    def create_gitlab_issues(self, user_id: int, range: tuple[int, int] | str):
         gl_client = GitLabClient()
         return self._create_issues(
             user_id=user_id,
@@ -288,12 +288,14 @@ class IssueManager:
 
 
 def parse_range(range: str) -> tuple[int, int]:
-    if re.match(r"\d+", range):
-        return (int(range), int(range))
     if re.match(r"\d+-\d+", range):
         start, end = range.split("-")
         return (int(start), int(end))
-    raise ValueError("Invalid range format. Use 'start' or 'start-end' format only.")
+    if re.match(r"^\d+$", range):
+        return (int(range), int(range))
+    raise ValueError(
+        "Invalid range format. Use 'specific_id' or 'start-end' format only."
+    )
 
 
 @click.group()
@@ -351,7 +353,7 @@ def list_repositories():
 
 @gl.command()
 @click.argument("user_id", type=int)
-@click.argument("range", type=str)
+@click.argument("range", type=str, required=False)
 def create_issues(user_id, range):
     manager = IssueManager()
     if range:
@@ -374,8 +376,9 @@ def gh():
 
 @gh.command()
 @click.argument("username", type=str)
-@click.argument("range", type=str)
+@click.argument("range", type=str, required=False)
 def create_issues(username, range):
+    print("username", username)
     user_id = GitHubClient().get_user_id(username)
     if click.confirm(
         f"Creating issues for user {username} with id {user_id}. Do you want to continue ?"

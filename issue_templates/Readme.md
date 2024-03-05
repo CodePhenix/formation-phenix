@@ -58,3 +58,17 @@ To help handle this
 
 - Make sure the user is added in the CodePhenix organization
 - Use the `create-all-issues` with the GitHub username directly
+
+### Creating issues
+
+** Range **
+
+- No range set will create all issues
+- `10` will create issue n°10
+- `2-10` will create issue n°2 to n°10 included
+
+Exemple:
+
+```
+python main.py gh create-issues SofienM 1-5
+```
