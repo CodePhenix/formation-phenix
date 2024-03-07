@@ -8,3 +8,4 @@ Pour cela voici un petit florilège des phrases/choses à éviter:
 - "J'comprends pas" sans donner de contexte
 - "... du coup j'ai tout supprimé et j'ai tout recommencé"
 - "J'ai dit à l'ordi de le faire mais il ne le fait pas"
+- dire "JAVA" au lieu de "Javascript": ca n'a rien à voir !!!!!!!!!!!
