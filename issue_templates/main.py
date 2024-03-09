@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import List
 import click
 from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass
@@ -154,21 +155,22 @@ class IssueManager:
         "html_validator_url": "",
     }
 
-    def __init__(self):
-        self.jinja_env = Environment(
-            loader=PackageLoader("main"), autoescape=select_autoescape()
-        )
+    def __init__(self, project_root: Optional[Path] = None) -> None:
+        """
+        Initialize the Jinja environment.
+        If project_root is not provided, it will be set to the parent folder of the file.
+        The project_root argument is only used for testing purposes.
+        """
+        self.jinja_env = Environment(autoescape=select_autoescape())
+        if project_root:
+            self.project_root = project_root
+        else:
+            self.project_root = Path(__file__).parent.parent.resolve()
         return
-
-    @property
-    def project_root(self) -> Path:
-        # """Returns project root folder."""
-        return Path(__file__).parent.parent.resolve()
 
     def get_all_templates_paths(self) -> List[Path]:
         all_files = list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
         return all_files
-        # return [file for file in all_files if file.name not in self.TEMPLATE_EXCEPTIONS]
 
     def get_all_templates_paths_ordered(self) -> List[Path]:
         """
@@ -211,7 +213,8 @@ class IssueManager:
                     continue
         return
 
-    def _extract_order_from_template_name(self, path: Path) -> int:
+    @classmethod
+    def _extract_order_from_template_name(cls, path: Path) -> int:
         filename = path.stem
         try:
             order = int(filename.split("__")[1])

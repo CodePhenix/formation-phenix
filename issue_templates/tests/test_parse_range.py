@@ -63,9 +63,9 @@ def test_init_range_no_all(input, expected):
         AND its is_all property be False
     """
     range = Range(input)
+    assert range.is_all is False
     assert range.start == expected[0]
     assert range.end == expected[1]
-    assert range.is_all is False
 
 
 def test_init_range_all():

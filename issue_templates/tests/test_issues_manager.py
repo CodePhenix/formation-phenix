@@ -3,27 +3,87 @@ from pathlib import Path
 from issue_templates.main import IssueManager
 
 
-# class TestIssueManager:
-#     def setUp(self, fake_filesystem):
-#         self.manager = IssueManager()
-#         self.root_test_path = Path(__file__).parent.parent.resolve()
+class TestIssueManager:
+    """
+    We use pyfakefs to be able to test the state of the filesystem
+    when modifying issues orders
+    Initial state of the filesystem:
+        ./issue_templates/fake_0__0.md
+        ./issue_templates/fake_1__1.md
+        ./issue_templates/fake_new.md
+    """
 
-#         fake_filesystem.create_file("issue_templates/bug.md")
-#         fake_filesystem.create_file("common/bug.md")
+    INITIAL_FAKE_FILES = [
+        ("./issue_templates/fake_0__0.md", "fake_0"),
+        ("./issue_templates/fake_1__1.md", "fake_1"),
+        ("./issue_templates/fake_new.md", "fake_new"),
+    ]
 
-#     def test_setUp(self, fake_filesystem):
-#         self.setUp(fake_filesystem)
-#         assert Path("issue_templates/bug.md").exists()
-#         assert Path("common/bug.md").exists()
+    def _fake_issue_content(self, name: str, content: str):
+        return f"""
+            ---
+            name: {name}
+            about:
+            title: {name}
+            labels: ""
+            assignees:
+            ---
 
-#     # def test_something(self):
-#     #     assert manager.project_root is not None
+            {content}
+        """
 
-#     # def test_something_else(self):
-#     #     path = Path("issue_templates")
-#     #     assert manager._extract_order_from_template_name(path) is not None
+    def test__fake_issue_content(self):
+        """
+        GIVEN a name and a content
+        WHEN calling the method
+        THEN it should return a string with the right format
+        """
+        name = "fake_name"
+        content = "fake_content"
+        expected = """
+            ---
+            name: fake_name
+            about:
+            title: fake_name
+            labels: ""
+            assignees:
+            ---
 
-#     def test_get_all_templates(self, fake_filesystem):
-#         self.setUp(fake_filesystem)
-#         print("--------Manager--------", self.manager.get_all_templates_paths())
-#         assert self.manager.get_all_templates() is not None
+            fake_content
+        """
+        assert self._fake_issue_content(name, content) == expected
+
+    def setUp(self, fake_filesystem):
+        root_test_path = Path(__file__).parent.parent.resolve()
+        self.manager = IssueManager(project_root=root_test_path)
+
+        for file in self.INITIAL_FAKE_FILES:
+            fake_filesystem.create_file(
+                file[0], contents=self._fake_issue_content(file[1], "fake_content")
+            )
+
+    def test_setUp(self, fake_filesystem):
+        """
+        GIVEN -
+        WHEN setting up the tests
+        THEN the files should be created
+            AND the manager should be initialized
+            with the right project root
+        """
+        self.setUp(fake_filesystem)
+        for file in self.INITIAL_FAKE_FILES:
+            assert Path(file[0]).exists()
+            assert Path(file[0]).read_text() == self._fake_issue_content(
+                file[1], "fake_content"
+            )
+
+        assert self.manager.project_root == Path(__file__).parent.parent.resolve()
+
+    # def test_something_else(self):
+    #     path = Path("issue_templates")
+    #     assert manager._extract_order_from_template_name(path) is not None
+
+    # def test_get_all_templates(self, fake_filesystem):
+    #     self.setUp(fake_filesystem)
+    #     print("--------Manager--------", self.manager.get_all_templates_paths())
+    #     assert self.manager.get_all_templates() is not None
