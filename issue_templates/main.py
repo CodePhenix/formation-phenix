@@ -9,13 +9,59 @@ from typing import List
 import click
 from dataclasses import dataclass
 
-ALL = "ALL"
-
 
 @dataclass
 class Issue:
     title: str
     description: str
+
+
+class Range:
+    """
+    Class representing a range of tickets
+    Internally it either the "ALL" keyword or a tuple (start, end)
+    It can be inited through three formats:
+    - "ALL" keyword
+    - "<int>" for one specific ticket, it is parsed into (<int>, <int>)
+    - "<int_a>-<int_b>", it is parsed into (<int_a>, <int_b>)
+    """
+
+    ALL = "ALL"
+    _is_all = False
+    _range = ()
+
+    def __init__(self, range: str):
+        if range == self.ALL:
+            self._is_all = True
+        else:
+            self._range = self._parse_range(range)
+
+    @classmethod
+    def _parse_range(cls, range: str) -> tuple[int, int]:
+        if re.match(r"\d+-\d+", range):
+            start, end = range.split("-")
+            return (int(start), int(end))
+        if re.match(r"^\d+$", range):
+            return (int(range), int(range))
+        raise ValueError(
+            "Invalid range format. Use 'specific_id' or 'start-end' format only."
+        )
+
+    @property
+    def is_all(self):
+        return self._is_all
+
+    @property
+    def start(self):
+        if self.is_all:
+            raise ValueError("Using (start, end) format with ALL range doesn't work.")
+        return self._range[0]
+
+    @property
+    def end(self):
+        if self.is_all:
+            raise ValueError("Using (start, end) format with ALL range doesn't work.")
+        return self._range[1]
 
 
 class GitLabClient:
@@ -215,7 +261,7 @@ class IssueManager:
         user_id: int,
         client: GitLabClient | GitHubClient,
         vcs_folder,
-        range: tuple[int, int] | str,
+        range: Range,
         username=None,
     ):
         """
@@ -223,7 +269,7 @@ class IssueManager:
         """
         paths = self.get_all_templates_paths_ordered()
         success = 0
-        selected_paths = paths if range == ALL else paths[range[0] : range[1] + 1]
+        selected_paths = paths if range.is_all else paths[range.start : range.end + 1]
         for path in selected_paths:
             issue_content = self.render_template(path, vcs_folder=vcs_folder)
             issue_order = self._extract_order_from_template_name(path)
@@ -246,7 +292,7 @@ class IssueManager:
             break
         print(f"=> Successfully created {success} issues.")
 
-    def create_gitlab_issues(self, user_id: int, range: tuple[int, int] | str):
+    def create_gitlab_issues(self, user_id: int, range: Range):
         gl_client = GitLabClient()
         return self._create_issues(
             user_id=user_id,
@@ -255,9 +301,7 @@ class IssueManager:
             range=range,
         )
 
-    def create_github_issues(
-        self, user_id: int, username: str, range: tuple[int, int] | str
-    ):
+    def create_github_issues(self, user_id: int, username: str, range: Range):
         gh_client = GitHubClient()
         return self._create_issues(
             user_id=user_id,
@@ -273,7 +317,7 @@ class IssueManager:
             user_id=user_id,
             client=gl_client,
             vcs_folder=self.GITLAB,
-            range=ALL,
+            range=Range("ALL"),
         )
 
     def create_all_github_issues(self, user_id: int, username: str):
@@ -282,20 +326,9 @@ class IssueManager:
             user_id=user_id,
             client=gh_client,
             vcs_folder=self.GITHUB,
-            range=ALL,
+            range=Range("ALL"),
             username=username,
         )
-
-
-def parse_range(range: str) -> tuple[int, int]:
-    if re.match(r"\d+-\d+", range):
-        start, end = range.split("-")
-        return (int(start), int(end))
-    if re.match(r"^\d+$", range):
-        return (int(range), int(range))
-    raise ValueError(
-        "Invalid range format. Use 'specific_id' or 'start-end' format only."
-    )
 
 
 @click.group()
@@ -357,9 +390,9 @@ def list_repositories():
 def create_issues(user_id, range):
     manager = IssueManager()
     if range:
-        parsed_range = parse_range(range)
+        parsed_range = Range(range)
         if click.confirm(
-            f"Issues from n°{parsed_range[0]} to n°{parsed_range[1]} will be created. Do you want to continue ?"
+            f"Issues from n°{parsed_range.start} to n°{parsed_range.end} will be created. Do you want to continue ?"
         ):
             manager.create_gitlab_issues(user_id=user_id, range=parsed_range)
     else:
@@ -385,9 +418,9 @@ def create_issues(username, range):
     ):
         manager = IssueManager()
         if range:
-            parsed_range = parse_range(range)
+            parsed_range = Range(range)
             if click.confirm(
-                f"Issues from n°{parsed_range[0]} to n°{parsed_range[1]} will be created. Do you want to continue ?"
+                f"Issues from n°{parsed_range.start} to n°{parsed_range.end} will be created. Do you want to continue ?"
             ):
                 manager.create_github_issues(
                     user_id=user_id, username=username, range=parsed_range
