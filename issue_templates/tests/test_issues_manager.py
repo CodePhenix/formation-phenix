@@ -14,9 +14,9 @@ class TestIssueManager:
     """
 
     INITIAL_FAKE_FILES = [
-        ("./issue_templates/fake_0__0.md", "fake_0"),
-        ("./issue_templates/fake_1__1.md", "fake_1"),
-        ("./issue_templates/fake_new.md", "fake_new"),
+        (f"./{IssueManager.TEMPLATES_PATH}/fake_0__0.md", "fake_0"),
+        # ("./issue_templates/fake_1__1.md", "fake_1"),
+        # ("./issue_templates/fake_new.md", "fake_new"),
     ]
 
     def _fake_issue_content(self, name: str, content: str):
@@ -54,7 +54,7 @@ class TestIssueManager:
         assert self._fake_issue_content(name, content) == expected
 
     def setUp(self, fake_filesystem):
-        root_test_path = Path(__file__).parent.parent.resolve()
+        root_test_path = Path(__file__).parent.resolve()
         self.manager = IssueManager(project_root=root_test_path)
 
         for file in self.INITIAL_FAKE_FILES:
@@ -78,6 +78,18 @@ class TestIssueManager:
             )
 
         assert self.manager.project_root == Path(__file__).parent.parent.resolve()
+
+    # def test_get_all_templates_paths(self, fake_filesystem):
+    #     """
+    #     GIVEN a filesystem with some issue templates
+    #     WHEN calling the method
+    #     THEN it should return the right paths
+    #     """
+    #     self.setUp(fake_filesystem)
+    #     expected = [Path(path[0]) for path in self.INITIAL_FAKE_FILES]
+    #     current_paths = self.manager.get_current_paths()
+    #     assert current_paths == expected, current_paths
+    #     # assert self.manager.get_all_templates_paths() == expected
 
     # def test_something_else(self):
     #     path = Path("issue_templates")

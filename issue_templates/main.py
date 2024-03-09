@@ -168,6 +168,10 @@ class IssueManager:
             self.project_root = Path(__file__).parent.parent.resolve()
         return
 
+    # def get_current_paths(self):
+    #     lala = os.listdir(self.project_root)
+    #     return lala
+
     def get_all_templates_paths(self) -> List[Path]:
         all_files = list(self.project_root.glob(f"{self.TEMPLATES_PATH}/*.md"))
         return all_files
