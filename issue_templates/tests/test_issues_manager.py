@@ -239,18 +239,19 @@ class TestIssueManager:
         ]
         assert current_paths == [Path(path) for path in expected_paths_ordered]
 
-    # def test_overwrite_vcs_issue_templates(self, fake_filesystem):
-    #     """
-    #     GIVEN a vcs and a path
-    #     WHEN calling the method
-    #     THEN it should overwrite the issue template
-    #     """
-    #     self.setUp(fake_filesystem)
-    #     self.manager.overwrite_vcs_issue_templates()
-    #     for vcs in ALL_VCS:
-    #         assert Path(vcs.path).exists()
-
-    #         # for file in self.INITIAL_FAKE_FILES:
-    #         #     assert vcs.get_file(file.path).content == file.compute_issue_content(
-    #         #         "fake_content"
-    #         #     )
+    @pytest.mark.parametrize(
+        "path, expected_order",
+        [
+            ("fake_0__0.md", 0),
+            ("fake_1__1.md", 1),
+            ("fake_new_A.md", 100),
+        ],
+    )
+    def test_extract_order_from_template_name(self, path, expected_order):
+        """
+        GIVEN a path
+        WHEN calling the method
+        THEN it should return the right order
+        """
+        path = Path(path)
+        assert IssueManager._extract_order_from_template_name(path) == expected_order
