@@ -9,6 +9,10 @@ class FakeFile:
     path: str
     name: str
 
+    @property
+    def file_name(self):
+        return self.path.split("/")[-1]
+
     def compute_issue_content(self, content: str):
         return f"""
             ---
@@ -24,7 +28,7 @@ class FakeFile:
 
 
 class TestFakeFile:
-    def test__fake_issue_content(self):
+    def test_compute_issue_content(self):
         """
         GIVEN a name and a content
         WHEN calling the method
@@ -45,6 +49,24 @@ class TestFakeFile:
         """
         assert fake.compute_issue_content(content) == expected
 
+    @pytest.mark.parametrize(
+        "path, expected",
+        [
+            ("lala/toto/hello.md", "hello.md"),
+            ("hello.md", "hello.md"),
+            ("lala/toto/hello", "hello"),
+            ("hello", "hello"),
+        ],
+    )
+    def test_file_name(self, path, expected):
+        """
+        GIVEN a FakeFile
+        WHEN calling the propery
+        THEN it should be the last part of the path
+        """
+        fake = FakeFile(path=path, name="fake_name")
+        assert fake.file_name == expected
+
 
 class TestIssueManager:
     """
@@ -57,17 +79,21 @@ class TestIssueManager:
     """
 
     INITIAL_FAKE_FILES = [
-        FakeFile(f"./{IssueManager.TEMPLATES_PATH}/fake_0__0.md", "fake_0"),
-        FakeFile("./issue_templates/fake_1__1.md", "fake_1"),
-        FakeFile("./issue_templates/fake_new.md", "fake_new"),
+        FakeFile(
+            f"/{IssueManager.TEMPLATES_PATH}/fake_3__3.md", "fake_3"
+        ),  # created first to test the order
+        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_0__0.md", "fake_0"),
+        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_1__1.md", "fake_1"),
+        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_new_B.md", "fake_new_A"),
+        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_new_A.md", "fake_new_B"),
     ]
 
     def setUp(self, fake_filesystem):
         """
         Initialize the manager with root projetct as issue_templates/tests
         """
-        root_test_path = Path(__file__).parent.resolve()
-        self.manager = IssueManager(project_root=root_test_path)
+        # root_test_path = Path(__file__).parent.resolve()
+        self.manager = IssueManager(project_root=Path("/"))
 
         for file in self.INITIAL_FAKE_FILES:
             fake_filesystem.create_file(
@@ -90,23 +116,36 @@ class TestIssueManager:
                 "fake_content"
             )
 
-        assert self.manager.project_root == Path(__file__).parent.resolve()
+        assert self.manager.project_root == Path("/")
 
-    # def test_get_all_templates_paths(self, fake_filesystem):
-    #     """
-    #     GIVEN a filesystem with some issue templates
-    #     WHEN calling the method
-    #     THEN it should return the right paths
-    #     """
-    #     self.setUp(fake_filesystem)
-    #     expected = [Path(path[0]) for path in self.INITIAL_FAKE_FILES]
-    #     current_paths = self.manager.get_current_paths()
-    #     assert current_paths == expected, current_paths
-    #     # assert self.manager.get_all_templates_paths() == expected
+    def test_get_all_templates_paths(self, fake_filesystem):
+        """
+        GIVEN a filesystem with some issue templates
+        WHEN calling the method
+        THEN it should return the right paths
+        """
+        self.setUp(fake_filesystem)
+        current_paths = self.manager.get_all_templates_paths()
+        expected = [Path(file.path) for file in self.INITIAL_FAKE_FILES]
+        assert current_paths == expected, current_paths
 
-    # def test_something_else(self):
-    #     path = Path("issue_templates")
-    #     assert manager._extract_order_from_template_name(path) is not None
+    def test_get_all_templates_paths_ordered(self, fake_filesystem):
+        """
+        GIVEN a filesystem with some issue templates
+        WHEN calling the method
+        THEN it should return the right paths ordered
+        """
+        self.setUp(fake_filesystem)
+        current_paths = self.manager.get_all_templates_paths_ordered()
+        expected_paths_ordered = [
+            f"/{IssueManager.TEMPLATES_PATH}/fake_0__0.md",
+            f"/{IssueManager.TEMPLATES_PATH}/fake_1__1.md",
+            f"/{IssueManager.TEMPLATES_PATH}/fake_3__3.md",
+            f"/{IssueManager.TEMPLATES_PATH}/fake_new_A.md",
+            f"/{IssueManager.TEMPLATES_PATH}/fake_new_B.md",
+        ]
+        expected = [Path(path) for path in expected_paths_ordered]
+        assert current_paths == expected, current_paths
 
     # def test_get_all_templates(self, fake_filesystem):
     #     self.setUp(fake_filesystem)
