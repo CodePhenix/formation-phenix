@@ -42,9 +42,8 @@ def test_init_range_with_error(input):
     WHEN initializing a Range
     THEN it should raise an exception
     """
-    with pytest.raises(Exception) as error:
+    with pytest.raises(ValueError):
         Range(input)
-        assert type(error) == ValueError
 
 
 @pytest.mark.parametrize(
@@ -78,10 +77,8 @@ def test_init_range_all():
     """
     range = Range("ALL")
     assert range.is_all is True
-    with pytest.raises(Exception) as error:
+    with pytest.raises(ValueError):
         _ = range.start
-        assert type(error) == ValueError
 
-    with pytest.raises(Exception) as error:
+    with pytest.raises(ValueError):
         _ = range.end
-        assert type(error) == ValueError

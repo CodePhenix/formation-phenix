@@ -1,2 +1,12 @@
 
-# coverage run pytest && coverage report -m
+test: ## Run tests
+	pytest
+.PHONY: test
+
+test-coverage: ## Execute tests coverage
+	coverage run -m pytest && coverage report -m
+.PHONY: test-coverage
+
+help:
+	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+.PHONY: help

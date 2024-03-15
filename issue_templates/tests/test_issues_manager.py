@@ -146,8 +146,3 @@ class TestIssueManager:
         ]
         expected = [Path(path) for path in expected_paths_ordered]
         assert current_paths == expected, current_paths
-
-    # def test_get_all_templates(self, fake_filesystem):
-    #     self.setUp(fake_filesystem)
-    #     print("--------Manager--------", self.manager.get_all_templates_paths())
-    #     assert self.manager.get_all_templates() is not None
