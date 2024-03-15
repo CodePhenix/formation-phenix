@@ -232,7 +232,7 @@ class IssueManager:
             order = 100
         return order
 
-    def pull_current_issue_orders(self):
+    def pull_current_issue_orders(self) -> None:
         """
         Get all issue templates and put it in ORDER_FILE file
         in the order based on the suffix __<int> in their name
@@ -245,7 +245,7 @@ class IssueManager:
         print(f"Pulled successfully {len(paths)} issue templates in {self.ORDER_FILE}")
         return
 
-    def apply_new_issues_order(self):
+    def apply_new_issues_order(self) -> None:
         current_issues_order = (
             Path(self.project_root, self.ORDER_FILE).read_text().split("\n")
         )
