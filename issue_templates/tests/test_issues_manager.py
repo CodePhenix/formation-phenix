@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from issue_templates.main import IssueManager
+from issue_templates.main import IssueManager, VCS
 from dataclasses import dataclass
 
 
@@ -73,9 +73,10 @@ class TestIssueManager:
     We use pyfakefs to be able to test the state of the filesystem
     when modifying issues orders
     Initial state of the filesystem:
-        ./issue_templates/fake_0__0.md
-        ./issue_templates/fake_1__1.md
-        ./issue_templates/fake_new.md
+        /issue_templates/templates/fake_0__0.md
+        /issue_templates/templates/fake_1__1.md
+        /issue_templates/templates/*.md
+        /tmp
     """
 
     INITIAL_FAKE_FILES = [
@@ -146,3 +147,46 @@ class TestIssueManager:
         ]
         expected = [Path(path) for path in expected_paths_ordered]
         assert current_paths == expected, current_paths
+
+    # def test_render_template(self, fake_filesystem):
+    #     """
+    #     GIVEN a path and a vcs
+    #     WHEN calling the method
+    #     THEN it should return the right content
+    #     """
+    #     self.setUp(fake_filesystem)
+    #     fakeFile = self.INITIAL_FAKE_FILES[1]
+    #     path = Path("fake_0__0.md")
+    #     vcs = VCS(
+    #         path="fake_path",
+    #         codephenix_url="fake_codephenix_url",
+    #         html_validator_url="fake_html_validator_url",
+    #     )
+    #     expected = """
+    #         ---
+    #         name: fake_0
+    #         about:
+    #         title: fake_0
+    #         labels: ""
+    #         assignees:
+    #         ---
+
+    #         fake_content
+    #     """
+    #     assert self.manager.jinja_env is not None
+    #     assert self.manager.render_template(Path(fakeFile.path), vcs) == expected
+
+    def test_delete_template(self, fake_filesystem):
+        """
+        GIVEN the initial state of the filesystem
+        WHEN deleting the templates folder
+        THEN the files should be deleted
+        """
+        self.setUp(fake_filesystem)
+        folder_path = Path(IssueManager.TEMPLATES_PATH)
+
+        assert Path(self.INITIAL_FAKE_FILES[0].path).exists()
+
+        self.manager._delete_folder_content(folder_path)
+
+        assert not Path(self.INITIAL_FAKE_FILES[0].path).exists()

@@ -17,6 +17,26 @@ class Issue:
     description: str
 
 
+@dataclass
+class VCS:
+    path: str
+    codephenix_url: str
+    html_validator_url: str
+
+
+GITHUB = VCS(
+    path=".github/ISSUE_TEMPLATE",
+    codephenix_url="https://codephenix.fr/interface",
+    html_validator_url="https://validator.w3.org/#validate_by_input",
+)
+GITLAB = VCS(
+    path=".gitlab/issue_templates",
+    codephenix_url="https://codephenix.com",
+    html_validator_url="",
+)
+ALL_VCS = [GITHUB, GITLAB]
+
+
 class Range:
     """
     Class representing a range of tickets
@@ -144,16 +164,6 @@ class IssueManager:
     TEMPLATES_PATH = "issue_templates/templates"
     # TEMPLATE_EXCEPTIONS = ["common/CODE_QUALITY.md"]
     ORDER_FILE = "issue_templates/ISSUES_ORDER.txt"
-    GITHUB = {
-        "path": ".github/ISSUE_TEMPLATE",
-        "codephenix_url": "https://codephenix.fr/interface",
-        "html_validator_url": "https://validator.w3.org/#validate_by_input",
-    }
-    GITLAB = {
-        "path": ".gitlab/issue_templates",
-        "codephenix_url": "https://codephenix.com",
-        "html_validator_url": "",
-    }
 
     def __init__(self, project_root: Optional[Path] = None) -> None:
         """
@@ -182,11 +192,11 @@ class IssueManager:
         paths = sorted(paths, key=self._extract_order_from_template_name)
         return paths
 
-    def render_template(self, path: Path, vcs_folder) -> str:
+    def render_template(self, path: Path, vcs: VCS) -> str:
         template = self.jinja_env.get_template(path.name)
         return template.render(
-            codephenix_url=vcs_folder["codephenix_url"],
-            html_validator_url=vcs_folder["html_validator_url"],
+            codephenix_url=vcs.codephenix_url,
+            html_validator_url=vcs.html_validator_url,
         )
 
     def _delete_folder_content(self, folder_path: Path):
@@ -199,13 +209,13 @@ class IssueManager:
         Overwrite issue templates in GitHub and GitLab folders.
         """
         print("Overwriting issue templates in GitHub and GitLab folders.")
-        for vcs_folder in [self.GITHUB, self.GITLAB]:
-            print("Overwriting", vcs_folder["path"])
-            self._delete_folder_content(self.project_root / vcs_folder["path"])
+        for vcs in ALL_VCS:
+            print("Overwriting", vcs.path)
+            self._delete_folder_content(self.project_root / vcs.path)
             for path in self.get_all_templates_paths():
                 try:
-                    content = self.render_template(path, vcs_folder)
-                    new_path = Path(self.project_root, vcs_folder["path"], path.name)
+                    content = self.render_template(path, vcs)
+                    new_path = Path(self.project_root, vcs.path, path.name)
                     new_path.write_text(content)
                     print(f"Created {new_path}")
                 except Exception as error:
@@ -263,7 +273,7 @@ class IssueManager:
         self,
         user_id: int,
         client: GitLabClient | GitHubClient,
-        vcs_folder,
+        vcs: VCS,
         range: Range,
         username=None,
     ):
@@ -274,7 +284,7 @@ class IssueManager:
         success = 0
         selected_paths = paths if range.is_all else paths[range.start : range.end + 1]
         for path in selected_paths:
-            issue_content = self.render_template(path, vcs_folder=vcs_folder)
+            issue_content = self.render_template(path, vcs=vcs)
             issue_order = self._extract_order_from_template_name(path)
             title = re.search("title: (.*)", issue_content).group(1)
             if not title:
@@ -300,7 +310,7 @@ class IssueManager:
         return self._create_issues(
             user_id=user_id,
             client=gl_client,
-            vcs_folder=self.GITLAB,
+            vcs=GITLAB,
             range=range,
         )
 
@@ -309,7 +319,7 @@ class IssueManager:
         return self._create_issues(
             user_id=user_id,
             client=gh_client,
-            vcs_folder=self.GITHUB,
+            vcs=GITHUB,
             range=range,
             username=username,
         )
@@ -319,7 +329,7 @@ class IssueManager:
         return self._create_issues(
             user_id=user_id,
             client=gl_client,
-            vcs_folder=self.GITLAB,
+            vcs=GITLAB,
             range=Range("ALL"),
         )
 
@@ -328,7 +338,7 @@ class IssueManager:
         return self._create_issues(
             user_id=user_id,
             client=gh_client,
-            vcs_folder=self.GITHUB,
+            vcs=GITHUB,
             range=Range("ALL"),
             username=username,
         )
