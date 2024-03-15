@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from issue_templates.main import IssueManager, VCS
+from issue_templates.main import IssueManager, VCS, ALL_VCS
 from dataclasses import dataclass
 
 
@@ -238,3 +238,19 @@ class TestIssueManager:
             f"/{IssueManager.TEMPLATES_PATH}/fake_1__4.md",
         ]
         assert current_paths == [Path(path) for path in expected_paths_ordered]
+
+    # def test_overwrite_vcs_issue_templates(self, fake_filesystem):
+    #     """
+    #     GIVEN a vcs and a path
+    #     WHEN calling the method
+    #     THEN it should overwrite the issue template
+    #     """
+    #     self.setUp(fake_filesystem)
+    #     self.manager.overwrite_vcs_issue_templates()
+    #     for vcs in ALL_VCS:
+    #         assert Path(vcs.path).exists()
+
+    #         # for file in self.INITIAL_FAKE_FILES:
+    #         #     assert vcs.get_file(file.path).content == file.compute_issue_content(
+    #         #         "fake_content"
+    #         #     )
