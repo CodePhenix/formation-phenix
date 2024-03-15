@@ -1,6 +1,49 @@
 import pytest
 from pathlib import Path
 from issue_templates.main import IssueManager
+from dataclasses import dataclass
+
+
+@dataclass
+class FakeFile:
+    path: str
+    name: str
+
+    def compute_issue_content(self, content: str):
+        return f"""
+            ---
+            name: {self.name}
+            about:
+            title: {self.name}
+            labels: ""
+            assignees:
+            ---
+
+            {content}
+        """
+
+
+class TestFakeFile:
+    def test__fake_issue_content(self):
+        """
+        GIVEN a name and a content
+        WHEN calling the method
+        THEN it should return a string with the right format
+        """
+        content = "fake_content"
+        fake = FakeFile("fake_path", "fake_name")
+        expected = """
+            ---
+            name: fake_name
+            about:
+            title: fake_name
+            labels: ""
+            assignees:
+            ---
+
+            fake_content
+        """
+        assert fake.compute_issue_content(content) == expected
 
 
 class TestIssueManager:
@@ -14,52 +57,22 @@ class TestIssueManager:
     """
 
     INITIAL_FAKE_FILES = [
-        (f"./{IssueManager.TEMPLATES_PATH}/fake_0__0.md", "fake_0"),
-        # ("./issue_templates/fake_1__1.md", "fake_1"),
-        # ("./issue_templates/fake_new.md", "fake_new"),
+        FakeFile(f"./{IssueManager.TEMPLATES_PATH}/fake_0__0.md", "fake_0"),
+        FakeFile("./issue_templates/fake_1__1.md", "fake_1"),
+        FakeFile("./issue_templates/fake_new.md", "fake_new"),
     ]
 
-    def _fake_issue_content(self, name: str, content: str):
-        return f"""
-            ---
-            name: {name}
-            about:
-            title: {name}
-            labels: ""
-            assignees:
-            ---
-
-            {content}
-        """
-
-    def test__fake_issue_content(self):
-        """
-        GIVEN a name and a content
-        WHEN calling the method
-        THEN it should return a string with the right format
-        """
-        name = "fake_name"
-        content = "fake_content"
-        expected = """
-            ---
-            name: fake_name
-            about:
-            title: fake_name
-            labels: ""
-            assignees:
-            ---
-
-            fake_content
-        """
-        assert self._fake_issue_content(name, content) == expected
-
     def setUp(self, fake_filesystem):
+        """
+        Initialize the manager with root projetct as issue_templates/tests
+        """
         root_test_path = Path(__file__).parent.resolve()
         self.manager = IssueManager(project_root=root_test_path)
 
         for file in self.INITIAL_FAKE_FILES:
             fake_filesystem.create_file(
-                file[0], contents=self._fake_issue_content(file[1], "fake_content")
+                file.path,
+                contents=file.compute_issue_content("fake_content"),
             )
 
     def test_setUp(self, fake_filesystem):
@@ -72,12 +85,12 @@ class TestIssueManager:
         """
         self.setUp(fake_filesystem)
         for file in self.INITIAL_FAKE_FILES:
-            assert Path(file[0]).exists()
-            assert Path(file[0]).read_text() == self._fake_issue_content(
-                file[1], "fake_content"
+            assert Path(file.path).exists()
+            assert Path(file.path).read_text() == file.compute_issue_content(
+                "fake_content"
             )
 
-        assert self.manager.project_root == Path(__file__).parent.parent.resolve()
+        assert self.manager.project_root == Path(__file__).parent.resolve()
 
     # def test_get_all_templates_paths(self, fake_filesystem):
     #     """
