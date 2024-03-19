@@ -117,7 +117,7 @@ class GitLabClient:
         """
         new_issue = {
             "title": issue.title,
-            "body": issue.description,
+            "description": issue.description,
             "assignee_id": user_id,
             "assignees": [user_id],
         }
