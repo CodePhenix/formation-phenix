@@ -1,6 +1,7 @@
 import pytest
+from jinja2 import Environment, select_autoescape, PackageLoader
 from pathlib import Path
-from issue_templates.main import IssueManager, VCS, ALL_VCS
+from issue_templates.src import IssueManager
 from dataclasses import dataclass
 
 
@@ -94,7 +95,8 @@ class TestIssueManager:
         Initialize the manager with root projetct as issue_templates/tests
         """
         # root_test_path = Path(__file__).parent.resolve()
-        self.manager = IssueManager(project_root=Path("/"))
+        jinja_env = Environment(autoescape=select_autoescape())
+        self.manager = IssueManager(jinja_env=jinja_env, project_root=Path("/"))
 
         for file in self.INITIAL_FAKE_FILES:
             fake_filesystem.create_file(

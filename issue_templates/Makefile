@@ -1,6 +1,6 @@
 
 test: ## Run tests
-	pytest
+	python -m pytest
 .PHONY: test
 
 test-coverage: ## Execute tests coverage
