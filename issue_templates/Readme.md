@@ -65,7 +65,7 @@ To help handle this
 
 - No range set will create all issues
 - `10` will create issue n°10
-- `2-10` will create issue n°2 to n°10 included
+- `2-10` will create issue n°2 to n°10 included (starting with n°0 )
 
 Exemple:
 
