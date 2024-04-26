@@ -163,7 +163,6 @@ class IssueManager:
             except Exception as error:
                 print(f"Error while creating issue {path.name}: {error}")
 
-            break
         print(f"=> Successfully created {success} issues.")
 
     def create_gitlab_issues(self, user_id: int, range: Range):

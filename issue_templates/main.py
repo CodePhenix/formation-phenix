@@ -91,7 +91,6 @@ def gh():
 @click.argument("username", type=str)
 @click.argument("range", type=str, required=False)
 def create_issues(username, range):
-    print("username", username)
     user_id = GitHubClient().get_user_id(username)
     if click.confirm(
         f"Creating issues for user {username} with id {user_id}. Do you want to continue ?"
