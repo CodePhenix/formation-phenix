@@ -31,3 +31,4 @@ divers_3_setup_bis__29.md
 divers_4_module_rdv__30.md
 projet_4_gestion_projet__31.md
 projet_5_rgpd_404_500__32.md
+projet_6_presentation_soutenance__33.md
