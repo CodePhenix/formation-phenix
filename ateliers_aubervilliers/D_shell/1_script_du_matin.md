@@ -69,6 +69,6 @@ Le matin ce n'est pas très pratique de devoir se rendre dans le dossier pour po
 Nous allons donc créer un alias pour pouvoir lancer directement notre commande. Pour ceci:
 
 1. Ouvrir à l'aide de `nano` le fichier `~/.bashrc`
-2. Ajouter à la fin la ligne suivante `alias matin="./<chemin vers votre repo>/matin.sh"`
+2. Ajouter à la fin la ligne suivante `alias matin="/<chemin vers votre repo>/matin.sh"`
 3. Recharger votre terminal via `source ~/.bashrc` ou en réouvrant un nouveau terminal
 4. Testez votre nouvelle commande `matin`
