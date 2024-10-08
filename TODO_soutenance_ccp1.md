@@ -28,12 +28,14 @@ Préparation soutenance
 
 - [ ] Réviser glossaire
 - [ ] Réviser liste des questions
+- [ ] Entretien final
 - [ ] Choisir et avoir mis une fois la tenue du jour J
 - [ ] S'entrainer à faire sa présentation en 20'
 - [ ] Les maquettes correspondent au site final !
 - [ ] Les tickets GitHub sont bien remplis et rangés
 - [ ] Mettre mode clair
-- [ ] Lire REV2 et le comprendre
+- [ ] Lire RC (page 17 à 23 pour le CCP1)
+- [ ] Regarder https://www.candidattitreprofessionnel.fr/les-etapes-de-la-certification/
 - [ ] Vérifier que open office est bien installé
 
 ### Le jour J
