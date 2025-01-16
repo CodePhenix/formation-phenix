@@ -10,8 +10,14 @@
 
 ### Proche jour J
 
-- [ ] Envoyer dossier projet (veille)
+- [ ] Envoyer dossier projet (veille midi)
 - [ ] Envoyer résumé projet (5 jours avant)
+
+### Jour J
+
+- [ ] ECF imprimés
+- [ ] Dossier projet imprimés (reliés)
+- [ ] Dossier professionnel imprimés (reliés)
 
 ## Apprenant.e
 
@@ -20,7 +26,7 @@
 Administratif
 
 - [ ] Dossier projet (20 pages minimum, hors sommaire, police 12)
-- [ ] Résumé projet
+- [ ] Résumé projet (1 page, logo, nom, prénom, nom du projet + slogan, un paragraphe pour présenter + technos)
 - [ ] Dossier professionnel (numéroté)
 - [ ] Slides
 
@@ -42,6 +48,8 @@ Préparation soutenance
 - [ ] Vérifier que open office est bien installé
 - [ ] Ordi chargé
 - [ ] Mdp de google ? et backup en clé usb
+
+## Déroulement le jour J
 
 - [ ] 30' questionnaire professionnel (Anlais)
 - [ ] 20' présentation (slides + maquettes + site + code)
