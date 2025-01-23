@@ -25,9 +25,9 @@ N'hésite pas à jeter un coup d'oeil aux sites des deux associations:
 ## Tâches à faire
 
 - [ ] Donner à ton formateur ton adresse mail pro
-- [ ] Créer un compte sur le site Github.com
-- [ ] Donner à ton formateur ton pseudo Github
+- [ ] Créer un compte sur le site Github.com et donner à ton formateur ton pseudo Github
 - [ ] Installer le logiciel de messagerie Slack
+- [ ] Mettre sur Slack une image/photo de profil
 - [ ] Installer le logiciel VSCode
 - [ ] Sur Firefox, installer l'extension "Ublock Origin" (bloqueur de publicité)
 - [ ] Mettre un fond d'écran personalisé sur ton ordinateur
@@ -35,3 +35,9 @@ N'hésite pas à jeter un coup d'oeil aux sites des deux associations:
 - [ ] S'abonner (si tu le veux bien) aux pages l'Ilôt et CodePhenix sur LinkedIn
 - [ ] S'abonner (si tu le veux bien) à la newsletter de CodePhenix sur le site codephenix.fr
 - [ ] Faire le tour de tes nouveaux collègues pour les saluer et qu'ils/elles te présentent leur travail
+
+## Tâches à faire côté formateur
+
+- [ ] Ajouter l'apprenant sur Slack
+- [ ] Ajouter l'apprenant à l'organisation Github
+- [ ] Créer les tickets
