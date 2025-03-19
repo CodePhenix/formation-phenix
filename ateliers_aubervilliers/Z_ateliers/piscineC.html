@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="42.css" type="text/css" />
+    <title>42 Intermediate C Exam Review</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <center>
+      <a href="exam-review.php">Piscine C Exam Review</a><br />
+      <a href="http://nigal.freeshell.org/42/exam-solutions/" target="_blank"
+        >Piscine C Exam Review Solutions</a
+      ><br /><br />
+      <a href="exam-review-intermediate.php">C Intermediate Exam Review</a
+      ><br />
+    </center>
+    <h1>42 Intermediate C Exam Review:</h1>
+
+    <pre>
+ 
+======================================./level00-count_of_2.txt=========================================
+Assignment name  : count_of_2
+Expected files   : count_of_2.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+Implement a function which counts, for a given integer n, the number of 2s
+that appear in all the numbers between 0 and n (inclusive).
+Your function must be declared as follows:
+int    count_of_2(int n);
+If n <= 1, the function returns 0;
+Examples:
+input  = 25
+output =  9
+because there are 9 2s in (2, 12, 20, 21, 22, 23, 24 and 25)
+Note:
+the number 22 counts as 2 because it has two 2s, number 202 count as 2, number 22022 count as 4 etc
+==========================================================================================
+
+
+
+
+======================================./level00-equation.txt=========================================
+Assignment name  : equation
+Expected files   : equation.c
+Allowed functions: printf
+-------------------------------------------------------------------------------
+The goal of this exercise is to find all possible answers to the following
+equation :
+
+	AB + CA = n
+
+where A, B, and C are individual digits [0-9] and n is an integer.
+Note that here AB is not the product of A and B. It is merely a two digit number
+with A being the first digit (tens place) and B the second digit (ones place).
+
+Implement a function that, given an integer n, prints on the standard
+output all the possible values of A, B, C for which the equation is true.
+
+Your function must be declared as follows:
+
+void    equation(int n);
+
+If a solution could not be found, nothing is printed.
+Examples:
+For the value n = 42, the output would be :
+$> ./equation 42
+A = 0, B = 2, C = 4
+A = 1, B = 1, C = 3
+A = 2, B = 0, C = 2
+A = 3, B = 9, C = 0
+$>
+For the value n = 111, the output would be :
+$> ./equation 111
+A = 2, B = 9, C = 8
+A = 3, B = 8, C = 7
+A = 4, B = 7, C = 6
+A = 5, B = 6, C = 5
+A = 6, B = 5, C = 4
+A = 7, B = 4, C = 3
+A = 8, B = 3, C = 2
+A = 9, B = 2, C = 1
+$>
+For the value n = 0, the output would be :
+$> ./equation 0 | cat -e
+A = 0, B = 0, C = 0$
+$>
+
+Note:
+- The displayed output will always be sorted in ascending order beginning with A, then B and then C.
+(as shown in the examples above)
+==========================================================================================
+
+
+
+
+======================================./level00-find_pivot.txt=========================================
+Assignment name  : find_pivot
+Expected files   : find_pivot.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+ALERT: OPTIMIZED SOLUTION REQUIRED.
+Given an array of integers and its size passed as parameters,
+create a function able to return the pivot index of this array.
+The pivot index is the index where the sum of the numbers on the left
+is equal to the sum of the numbers on the right.
+The function must be declared as follows:
+    int find_pivot(int *arr, int n);
+If there is no pivot present, return -1.
+Considerations:
+- Be careful: the naive solution won't work on our big input, you have to
+find an optimized solution which will run in O(n) time (where n is the
+</pre
+    >
+  </body>
+</html>
