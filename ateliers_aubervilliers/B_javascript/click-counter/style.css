@@ -1,0 +1,34 @@
+body {
+    font-family: helvetica;
+    font-weight: bold;
+    background: #52d3aa;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    color: #fff;
+    border: none !important;
+    border: 2px solid transparent !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;font-size: 18px;
+    line-height: 1.33333;
+    border-radius: 6px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.btn:hover{
+    background: rgba(0, 0, 0, 0.4);
+}
+
+p {
+    text-align: center;
+} 

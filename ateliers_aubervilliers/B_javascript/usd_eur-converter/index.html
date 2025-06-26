@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <div>
+                <label for="src-amount">Convertir</label>
+                <input type="number" name="src-amount" id="src-amount">
+            </div>
+            <div>
+                <select name="result-amount" id="result-amount">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <label for="result-amount">en</label>
+            <div>
+                <select name="result-amount" id="result-amount">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="submit">
+            <button class="btn">Convertir</button>
+        </div>
+    </form>
+    <div class="submit">
+        Resultat : <span class="result"><span class="currency"></span></span>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
