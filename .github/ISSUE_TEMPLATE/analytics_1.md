@@ -11,6 +11,9 @@ assignees:
 Now that you've mastered flexbox like a pro, it's time to take it up a notch with a concrete project that will bring it all to life.
 
 For this second project, you'll create a website based on a mockup: ANALYTICS.
+Mockups:
+
+- https://codephenix.fr/interface/cours/exercices/2-1-3-analytics-positionnement.zip
 
 Objective: The header will be fixed on the page, and clicking on the burger menu will open a window with navigation links. The button to close this window will not be implemented at this time. Following the mobile mockups.
 
@@ -20,7 +23,7 @@ Ready to take on this challenge? Then, on your keyboards, get set, go! 🍔
 
 Javascript Positioning
 
-## Definition of Done: A task is considered completed when each of the sub-tasks in this section has been completed.
+## Definition of Done:
 
 _For each of the mockups:_
 

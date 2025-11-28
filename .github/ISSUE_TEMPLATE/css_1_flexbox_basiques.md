@@ -1,38 +1,38 @@
 ---
-name: ANALYTICS Project
-about: Exercise Web Integration
-title: ANALYTICS Project
+name: Gamme d'exos flexbox - Basiques
+about: Exercice sur les flexbox CSS
+title: "[CSS] Flexbox - Basiques"
 labels: ""
 assignees:
 ---
 
 ## Objectif
 
-Now that you've mastered flexbox like a pro, it's time to take it up a notch with a concrete project that will bring it all to life.
+En CSS l'essentiel du positionnement ce gère avec les propriétés flexbox (`display: flex;`, `justify-content`, `align-items`, `flex-direction` ...).
+Ces propriétés sont relativement simples mais demandent pas mal de pratique pour être bien comprises et maitrisées.
+C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
+vous feront réalisés des séries d'exercices pour pratiquer.
 
-For this second project, you'll create a website based on a mockup: ANALYTICS.
+![Maquette 1](https://codephenix.fr/interface/exercices/2_flex_basics/exo1/maquette.png)
+![Maquette 2](https://codephenix.fr/interface/exercices/2_flex_basics/exo2/maquette.png)
+![Maquette 3](https://codephenix.fr/interface/exercices/2_flex_basics/exo3/maquette.png)
+![Maquette 4](https://codephenix.fr/interface/exercices/2_flex_basics/exo4/maquette.png)
 
-Objective: The header will be fixed on the page, and clicking on the burger menu will open a window with navigation links. The button to close this window will not be implemented at this time. Following the mobile mockups.
+## Cours associés
 
-Ready to take on this challenge? Then, on your keyboards, get set, go! 🍔
+II - 1/ Positionnement
 
-## Associated Courses
+## Definition of Done
 
-Javascript Positioning
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-## Definition of Done: A task is considered completed when each of the sub-tasks in this section has been completed.
+Pour **chacune** des maquettes:
 
-_For each of the mockups:_
-
-- [ ] The mockup is accurately reproduced (pixel perfect)
-- [ ] The burger menu is functional when clicked
-- [ ] The header is properly fixed on the page
-- [ ] The button to close this window is present
-- [ ] All navigation links are present
+- [ ] La maquette est bien reproduite
 
 ## Code quality:
 
-- [ ] HTML: 0 erreurs/warnings selon les standards du [W3C]()
+- [ ] HTML: 0 erreurs/warnings selon les standards du [W3C](https://validator.w3.org/#validate_by_input)
 - [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
 - [ ] HTML: Les textes visibles commencent tous par une majuscule
 - [ ] HTML: La langue du document est renseignée
@@ -85,6 +85,4 @@ Pour cela voici un petit florilège des phrases/choses à éviter:
 
 ## Q&A
 
-_This section will be completed by your trainer during the task review._
-
-- [ ] ...
+_Cette section sera complétée par votre formateur lors de la review des taches._
