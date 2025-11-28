@@ -41,12 +41,20 @@ class IssueManager:
 
     def get_all_templates_paths_ordered(self) -> List[Path]:
         """
-        Get all issue templates ordered by their suffix `__n` and preordered
-        alphabetically.
+        Get all issue templates that are mentionned in ISSUES_ORDER.txt and in the order they are mentionned.
         """
-        paths = self.get_all_templates_paths()
-        paths = sorted(paths, key=lambda x: x.name)
-        paths = sorted(paths, key=self._extract_order_from_template_name)
+        paths = []
+        issues_order_filenames = (
+            Path(self.project_root, self.ORDER_FILE).read_text().split("\n")
+        )
+        for path_str in issues_order_filenames:
+            issue_file = Path(self.project_root, self.TEMPLATES_PATH, path_str)
+            if issue_file.is_file():
+                paths.append(issue_file)
+            else:
+                print(
+                    f"Error: couldn't find {path_str} that is mentionned in {self.ORDER_FILE}. Skipping."
+                )
         return paths
 
     def render_template(self, path: Path, vcs: VCS) -> str:
@@ -84,52 +92,6 @@ class IssueManager:
                     continue
         return
 
-    @classmethod
-    def _extract_order_from_template_name(cls, path: Path) -> int:
-        filename = path.stem
-        try:
-            order = int(filename.split("__")[1])
-        except IndexError:
-            order = 100
-        return order
-
-    def pull_current_issue_orders(self) -> None:
-        """
-        Get all issue templates and put it in ORDER_FILE file
-        in the order based on the suffix __<int> in their name
-        and alphabatically if no suffix
-        """
-        paths = self.get_all_templates_paths_ordered()
-        new_order_file_content = "\n".join([path.name for path in paths])
-        order_path = Path(self.project_root, self.ORDER_FILE)
-        order_path.write_text(new_order_file_content)
-        print(f"Pulled successfully {len(paths)} issue templates in {self.ORDER_FILE}")
-        return
-
-    def apply_new_issues_order(self) -> None:
-        current_issues_order = (
-            Path(self.project_root, self.ORDER_FILE).read_text().split("\n")
-        )
-        idx = 0
-        error_count = 0
-        for path_str in current_issues_order:
-            issue_file = Path(self.project_root, self.TEMPLATES_PATH, path_str)
-            if issue_file.is_file():
-                base_name = path_str.split(".")[0]
-                if "__" in base_name:
-                    base_name = base_name.split("__")[0]
-                new_path_str = f"{base_name}__{idx}.md"
-                issue_file.replace(
-                    Path(self.project_root, self.TEMPLATES_PATH, new_path_str)
-                )
-                idx += 1
-            else:
-                print(f"Error: couldn't find {issue_file}. Skipping.")
-                error_count += 1
-        print(
-            f"Applied new order as suffix for {idx +1 } templates names. {error_count} error(s) encountered."
-        )
-
     def _create_issues(
         self,
         user_id: int,
@@ -144,14 +106,15 @@ class IssueManager:
         paths = self.get_all_templates_paths_ordered()
         success = 0
         selected_paths = paths if range.is_all else paths[range.start : range.end + 1]
+        idx = 0
         for path in selected_paths:
+            idx += 1
             issue_content = self.render_template(path, vcs=vcs)
-            issue_order = self._extract_order_from_template_name(path)
             title = re.search("title: (.*)", issue_content).group(1)
             if not title:
                 print(f"Skipping issue {path.name} because title is not found.")
                 continue
-            full_title = f"{issue_order} - {title}"
+            full_title = f"{idx} - {title}"
             description = re.sub("---(.|\n)*---", "", issue_content).strip()
             try:
                 client.create_issue(

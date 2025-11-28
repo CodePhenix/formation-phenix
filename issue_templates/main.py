@@ -31,23 +31,11 @@ def overwrite_vcs_issue_templates():
 
 
 @templates.command()
-def pull_current_issues_order():
-    if click.confirm(
-        f"This will override the current content of {manager.ORDER_FILE}. Do you want to continue ?"
-    ):
-        manager.pull_current_issue_orders()
-    else:
-        click.echo("Aborted")
-
-
-@templates.command()
-def apply_new_issues_order():
-    if click.confirm(
-        f"This will override the order suffix in issues templates names. Do you want to continue ?"
-    ):
-        manager.apply_new_issues_order()
-    else:
-        click.echo("Aborted")
+def print_issues_ordered():
+    idx = 0
+    for path in manager.get_all_templates_paths_ordered():
+        print(f"{idx}: {path}")
+        idx += 1
 
 
 @cli.group()
@@ -71,9 +59,13 @@ def list_repositories():
 def create_issues(user_id, range):
     if range:
         parsed_range = Range(range)
-        if click.confirm(
-            f"Issues from n°{parsed_range.start} to n°{parsed_range.end} will be created. Do you want to continue ?"
-        ):
+        paths = manager.get_all_templates_paths_ordered()
+        print(
+            f"Issues from n°{parsed_range.start} to n°{parsed_range.end} will be created:"
+        )
+        for path in paths[parsed_range.start : parsed_range.end + 1]:
+            print(f"{path.name}")
+        if click.confirm(f"Do you want to continue ?"):
             manager.create_gitlab_issues(user_id=user_id, range=parsed_range)
     else:
         if click.confirm(
@@ -92,24 +84,25 @@ def gh():
 @click.argument("range", type=str, required=False)
 def create_issues(username, range):
     user_id = GitHubClient().get_user_id(username)
-    if click.confirm(
-        f"Creating issues for user {username} with id {user_id}. Do you want to continue ?"
-    ):
-        if range:
-            parsed_range = Range(range)
-            if click.confirm(
-                f"Issues from n°{parsed_range.start} to n°{parsed_range.end} will be created. Do you want to continue ?"
-            ):
-                manager.create_github_issues(
-                    user_id=user_id, username=username, range=parsed_range
-                )
-        else:
-            if click.confirm(
-                f"No range set, all issues will be created. Do you want to continue ?"
-            ):
-                manager.create_all_github_issues(user_id, username)
+    if range:
+        parsed_range = Range(range)
+        paths = manager.get_all_templates_paths_ordered()
+        print(
+            f"Issues from n°{parsed_range.start} to n°{parsed_range.end} will be created:"
+        )
+        idx = parsed_range.start
+        for path in paths[parsed_range.start : parsed_range.end + 1]:
+            print(f"{idx}: {path.name}")
+            idx += 1
+        if click.confirm(f"Do you want to continue ?"):
+            manager.create_github_issues(
+                user_id=user_id, username=username, range=parsed_range
+            )
     else:
-        click.echo("Aborted")
+        if click.confirm(
+            f"No range set, all issues will be created. Do you want to continue ?"
+        ):
+            manager.create_all_github_issues(user_id, username)
 
 
 if __name__ == "__main__":
