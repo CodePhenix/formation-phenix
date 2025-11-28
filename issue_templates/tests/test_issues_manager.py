@@ -74,18 +74,18 @@ class TestIssueManager:
     We use pyfakefs to be able to test the state of the filesystem
     when modifying issues orders
     Initial state of the filesystem:
-        /issue_templates/templates/fake_0__0.md
-        /issue_templates/templates/fake_1__1.md
+        /issue_templates/templates/fake_0.md
+        /issue_templates/templates/fake_1.md
         /issue_templates/templates/*.md
         /tmp
     """
 
     INITIAL_FAKE_FILES = [
         FakeFile(
-            f"/{IssueManager.TEMPLATES_PATH}/fake_3__3.md", "fake_3"
+            f"/{IssueManager.TEMPLATES_PATH}/fake_3.md", "fake_3"
         ),  # created first to test the order
-        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_0__0.md", "fake_0"),
-        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_1__1.md", "fake_1"),
+        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_0.md", "fake_0"),
+        FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_1.md", "fake_1"),
         FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_new_B.md", "fake_new_A"),
         FakeFile(f"/{IssueManager.TEMPLATES_PATH}/fake_new_A.md", "fake_new_B"),
     ]
@@ -139,16 +139,22 @@ class TestIssueManager:
         THEN it should return the right paths ordered
         """
         self.setUp(fake_filesystem)
-        current_paths = self.manager.get_all_templates_paths_ordered()
+        order = [
+            "fake_new_B.md",
+            "fake_3.md",
+            "fake_0.md",
+            "fake_new_A.md",
+        ]
+        fake_filesystem.create_file(IssueManager.ORDER_FILE, contents="\n".join(order))
+        ordered_paths = self.manager.get_all_templates_paths_ordered()
         expected_paths_ordered = [
-            f"/{IssueManager.TEMPLATES_PATH}/fake_0__0.md",
-            f"/{IssueManager.TEMPLATES_PATH}/fake_1__1.md",
-            f"/{IssueManager.TEMPLATES_PATH}/fake_3__3.md",
-            f"/{IssueManager.TEMPLATES_PATH}/fake_new_A.md",
             f"/{IssueManager.TEMPLATES_PATH}/fake_new_B.md",
+            f"/{IssueManager.TEMPLATES_PATH}/fake_3.md",
+            f"/{IssueManager.TEMPLATES_PATH}/fake_0.md",
+            f"/{IssueManager.TEMPLATES_PATH}/fake_new_A.md",
         ]
         expected = [Path(path) for path in expected_paths_ordered]
-        assert current_paths == expected, current_paths
+        assert ordered_paths == expected, ordered_paths
 
     # def test_render_template(self, fake_filesystem):
     #     """
@@ -158,7 +164,7 @@ class TestIssueManager:
     #     """
     #     self.setUp(fake_filesystem)
     #     fakeFile = self.INITIAL_FAKE_FILES[1]
-    #     path = Path("fake_0__0.md")
+    #     path = Path("fake_0.md")
     #     vcs = VCS(
     #         path="fake_path",
     #         codephenix_url="fake_codephenix_url",
@@ -192,68 +198,3 @@ class TestIssueManager:
         self.manager._delete_folder_content(folder_path)
 
         assert not Path(self.INITIAL_FAKE_FILES[0].path).exists()
-
-    def test_pull_current_issue_order(self, fake_filesystem):
-        """
-        GIVEN the initial state of the filesystem
-        WHEN calling the method
-        THEN it should pull the orders in the ORDER_FILE
-        """
-        self.setUp(fake_filesystem)
-        self.manager.pull_current_issue_orders()
-
-        assert Path(IssueManager.ORDER_FILE).exists()
-        expected_order = [
-            "fake_0__0.md",
-            "fake_1__1.md",
-            "fake_3__3.md",
-            "fake_new_A.md",
-            "fake_new_B.md",
-        ]
-        assert Path(IssueManager.ORDER_FILE).read_text() == "\n".join(expected_order)
-
-    def test_apply_new_issues_order(self, fake_filesystem):
-        """
-        GIVEN the new issues order in ORDER_FILE
-        WHEN calling the method
-        THEN it should apply the new order to the filesystem
-        """
-        self.setUp(fake_filesystem)
-        new_order = [
-            "fake_new_B.md",
-            "fake_3__3.md",
-            "fake_0__0.md",
-            "fake_new_A.md",
-            "fake_1__1.md",
-        ]
-        fake_filesystem.create_file(
-            IssueManager.ORDER_FILE, contents="\n".join(new_order)
-        )
-        self.manager.apply_new_issues_order()
-
-        current_paths = self.manager.get_all_templates_paths_ordered()
-        expected_paths_ordered = [
-            f"/{IssueManager.TEMPLATES_PATH}/fake_new_B__0.md",
-            f"/{IssueManager.TEMPLATES_PATH}/fake_3__1.md",
-            f"/{IssueManager.TEMPLATES_PATH}/fake_0__2.md",
-            f"/{IssueManager.TEMPLATES_PATH}/fake_new_A__3.md",
-            f"/{IssueManager.TEMPLATES_PATH}/fake_1__4.md",
-        ]
-        assert current_paths == [Path(path) for path in expected_paths_ordered]
-
-    @pytest.mark.parametrize(
-        "path, expected_order",
-        [
-            ("fake_0__0.md", 0),
-            ("fake_1__1.md", 1),
-            ("fake_new_A.md", 100),
-        ],
-    )
-    def test_extract_order_from_template_name(self, path, expected_order):
-        """
-        GIVEN a path
-        WHEN calling the method
-        THEN it should return the right order
-        """
-        path = Path(path)
-        assert IssueManager._extract_order_from_template_name(path) == expected_order
