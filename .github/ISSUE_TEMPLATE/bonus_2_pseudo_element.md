@@ -1,6 +1,6 @@
 ---
 name: Exo Nommer variables
-about: GÃ©nÃ©ral
+about: Général
 title: "Exo nommage de variables"
 labels: ""
 assignees:
@@ -8,9 +8,9 @@ assignees:
 
 ## Objectif
 
-Les pseudos Ã©lÃ©ments en CSS permettent d'ajouter du contenu dans le HTML depuis le CSS. Ils sont trÃ¨s utiles pour ajouter des Ã©lÃ©ments dÃ©coratifs ou des Ã©lÃ©ments de structure.
-Le but de cette activitÃ© est de travailler cela de faÃ§on ciblÃ©e.
-A partir du HTML fourni, vous devez reproduire la maquette fournie en utilisant les pseudos Ã©lÃ©ments `::before` et `::after` SANS TOUCHER AU HTML, uniquement avec du CSS.
+Les pseudos éléments en CSS permettent d'ajouter du contenu dans le HTML depuis le CSS. Ils sont très utiles pour ajouter des éléments décoratifs ou des éléments de structure.
+Le but de cette activité est de travailler cela de façon ciblée.
+A partir du HTML fourni, vous devez reproduire la maquette fournie en utilisant les pseudos éléments `::before` et `::after` SANS TOUCHER AU HTML, uniquement avec du CSS.
 
 ```html
 <!DOCTYPE html>
@@ -37,6 +37,6 @@ Lien vers les maquettes: https://codephenix.fr/interface/exercices/bonus/titre_s
 
 ## Definition of Done
 
-Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es.
+Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
 
 - [ ] La maquette est reproduite uniquement en utilisant du CSS

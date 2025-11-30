@@ -8,26 +8,26 @@ assignees:
 
 ## Objectif
 
-FÃ©licitations, voilÃ  venu le moment d'inscrire votre premier projet dans votre
-dossier professionnel ! Il vient prÃ©senter une partie de tout ce que vous avez appris depuis le dÃ©but de la formation.
-Il n'y a pas si longtemps, vous ne connaissiez mÃªme pas la touche inspecter du navigateur et aujourd'hui vous lisez du HTML,
-bouffez du CSS et rÃ©vez de Javascript !
+Félicitations, voilà venu le moment d'inscrire votre premier projet dans votre
+dossier professionnel ! Il vient présenter une partie de tout ce que vous avez appris depuis le début de la formation.
+Il n'y a pas si longtemps, vous ne connaissiez même pas la touche inspecter du navigateur et aujourd'hui vous lisez du HTML,
+bouffez du CSS et révez de Javascript !
 
-L'objectif de cette tache consiste Ã  inscrire l'exercice MyFood comme votre premiÃ¨re "ActivitÃ©-type" dans le DP.
+L'objectif de cette tache consiste à inscrire l'exercice MyFood comme votre première "Activité-type" dans le DP.
 
-## Cours associÃ©s
+## Cours associés
 
-Aucun cours associÃ© Ã  cette tache
+Aucun cours associé à cette tache
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] L'activitÃ©-type 1 a Ã©tÃ© complÃ©tÃ©e.
+- [ ] L'activité-type 1 a été complétée.
 - [ ] Pas de fautes d'orthographe (se faire relire par un tiers ou utiliser un correcteur automatique)
 - [ ] Toutes les phrases comportent une majuscule et un point.
-- [ ] Des captures d'Ã©crans de votre site MyFood ont Ã©tÃ© ajoutÃ©es.
+- [ ] Des captures d'écrans de votre site MyFood ont été ajoutées.
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._

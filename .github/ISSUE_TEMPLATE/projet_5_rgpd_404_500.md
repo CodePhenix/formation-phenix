@@ -8,33 +8,33 @@ assignees:
 
 ## Objectif
 
-Imaginez-vous en train de naviguer sur un site web pour effectuer un achat ou rechercher des informations importantes. Soudain, vous rencontrez un message d'erreur "404 - Page non trouvÃ©e" ou pire encore, "500 - Erreur interne du serveur". Ces erreurs peuvent Ãªtre frustrantes pour les utilisateurs, mais elles soulÃ¨vent Ã©galement des questions de conformitÃ© lÃ©gale, notamment en ce qui concerne le RÃ¨glement GÃ©nÃ©ral sur la Protection des DonnÃ©es (RGPD).
+Imaginez-vous en train de naviguer sur un site web pour effectuer un achat ou rechercher des informations importantes. Soudain, vous rencontrez un message d'erreur "404 - Page non trouvée" ou pire encore, "500 - Erreur interne du serveur". Ces erreurs peuvent être frustrantes pour les utilisateurs, mais elles soulèvent également des questions de conformité légale, notamment en ce qui concerne le Règlement Général sur la Protection des Données (RGPD).
 
 
-1. **RGPD :** Le RGPD est une rÃ©glementation europÃ©enne visant Ã  renforcer la protection des donnÃ©es personnelles des individus. Il impose des obligations strictes aux entreprises qui collectent, traitent et stockent des donnÃ©es personnelles, y compris sur leurs sites web exemple (formulaire de contact, newsletter etc). 
+1. **RGPD :** Le RGPD est une réglementation européenne visant à renforcer la protection des données personnelles des individus. Il impose des obligations strictes aux entreprises qui collectent, traitent et stockent des données personnelles, y compris sur leurs sites web exemple (formulaire de contact, newsletter etc). 
 
-2. **Erreur 404 - Page Non TrouvÃ©e :**  L'erreur 404 survient lorsque l'utilisateur tente d'accÃ©der Ã  une page qui n'existe pas ou dont l'URL a Ã©tÃ© modifiÃ©e. Outre le problÃ¨me de navigation pour l'utilisateur, une page d'erreur 404 peut Ã©galement entraÃ®ner des problÃ¨mes de rÃ©fÃ©rencement et de confidentialitÃ© si elle contient des liens vers des donnÃ©es sensibles ou des informations.
+2. **Erreur 404 - Page Non Trouvée :**  L'erreur 404 survient lorsque l'utilisateur tente d'accéder à une page qui n'existe pas ou dont l'URL a été modifiée. Outre le problème de navigation pour l'utilisateur, une page d'erreur 404 peut également entraîner des problèmes de référencement et de confidentialité si elle contient des liens vers des données sensibles ou des informations.
 
-3. **Erreur 500 - Erreur Interne du Serveur :** L'erreur 500 est plus grave car elle indique un problÃ¨me au niveau du serveur, empÃªchant l'accÃ¨s Ã  tout ou partie du site web. Outre les inconvÃ©nients pour les utilisateurs, une erreur 500 peut Ã©galement entraÃ®ner des violations potentielles du RGPD si elle compromet la sÃ©curitÃ© des donnÃ©es stockÃ©es sur le serveur.
+3. **Erreur 500 - Erreur Interne du Serveur :** L'erreur 500 est plus grave car elle indique un problème au niveau du serveur, empêchant l'accès à tout ou partie du site web. Outre les inconvénients pour les utilisateurs, une erreur 500 peut également entraîner des violations potentielles du RGPD si elle compromet la sécurité des données stockées sur le serveur.
 
 
 
-## Cours associÃ©s
+## Cours associés
 
 
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Qu'est-ce que le RGPD et quelles sont ses principales exigences en matiÃ¨re de protection des donnÃ©es ?
-- [ ] Quelles mesures peuvent Ãªtre prises pour prÃ©venir les erreurs 404 et 500 sur un site web et garantir la conformitÃ© au RGPD ?
-- [ ] En cas d'erreur 404 ou 500 sur un site web traitant des donnÃ©es personnelles, quelles actions doivent Ãªtre prises pour minimiser les risques pour la conformitÃ© au RGPD et la sÃ©curitÃ© des donnÃ©es des utilisateurs ?
+- [ ] Qu'est-ce que le RGPD et quelles sont ses principales exigences en matière de protection des données ?
+- [ ] Quelles mesures peuvent être prises pour prévenir les erreurs 404 et 500 sur un site web et garantir la conformité au RGPD ?
+- [ ] En cas d'erreur 404 ou 500 sur un site web traitant des données personnelles, quelles actions doivent être prises pour minimiser les risques pour la conformité au RGPD et la sécurité des données des utilisateurs ?
 
 
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

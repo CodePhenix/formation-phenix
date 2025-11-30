@@ -1,6 +1,6 @@
 ---
 name: Charte Graphique
-about: Introduction Ã  la Charte Graphique
+about: Introduction à la Charte Graphique
 title: "Charte Graphique"
 labels: ""
 assignees:
@@ -8,46 +8,46 @@ assignees:
 
 ## Objectif
 
-Plongeons dans l'essence mÃªme de la charte graphique, un vÃ©ritable guide qui sculpte l'identitÃ© visuelle d'une marque, d'un projet ou d'une entreprise. Imaginez-la comme le code gÃ©nÃ©tique de votre image de marque, dÃ©finissant chaque dÃ©tail visuel pour transmettre un message clair et cohÃ©rent.
+Plongeons dans l'essence même de la charte graphique, un véritable guide qui sculpte l'identité visuelle d'une marque, d'un projet ou d'une entreprise. Imaginez-la comme le code génétique de votre image de marque, définissant chaque détail visuel pour transmettre un message clair et cohérent.
 
-Dans cet univers visuel complexe, chaque Ã©lÃ©ment joue un rÃ´le crucial pour vÃ©hiculer l'image et les valeurs de la marque de maniÃ¨re efficace et cohÃ©rente.
-
-
-1. **Logo :** Le logo est l'Ã©lÃ©ment central de toute charte graphique. Il incarne l'essence mÃªme de la marque et doit Ãªtre conÃ§u avec soin pour Ãªtre mÃ©morable, reconnaissable et adaptable Ã  diffÃ©rents formats et contextes.
-
-2. **Couleurs :** Le choix des couleurs n'est pas anodin. Chaque couleur transmet des Ã©motions et des messages spÃ©cifiques. La charte graphique dÃ©finit donc une palette de couleurs cohÃ©rente et harmonieuse, ainsi que leur utilisation appropriÃ©e dans diffÃ©rents contextes.
-
-3. **Typographie :** Les polices de caractÃ¨res utilisÃ©es dans la communication visuelle d'une marque contribuent Ã  son identitÃ©. La charte graphique spÃ©cifie les polices Ã  utiliser pour le logo, les titres, les paragraphes, etc., afin de maintenir une cohÃ©rence visuelle.
-
-4. **Images et Illustrations :**  Les images et illustrations jouent un rÃ´le important dans la communication visuelle. La charte graphique peut dÃ©finir des directives concernant le style, la rÃ©solution et l'utilisation des images pour garantir une apparence uniforme et professionnelle.
-
-5. **Mise en Page :** La maniÃ¨re dont les Ã©lÃ©ments visuels sont disposÃ©s sur une page ou un Ã©cran est essentielle pour la lisibilitÃ© et l'impact visuel. La charte graphique peut inclure des directives sur la structure, la hiÃ©rarchie visuelle et l'utilisation de l'espace blanc pour une mise en page efficace.
-
-6. **Iconographie :** Les icÃ´nes et les symboles sont des Ã©lÃ©ments visuels importants pour la navigation et la communication. La charte graphique peut dÃ©finir un ensemble d'icÃ´nes cohÃ©rentes pour une utilisation sur les diffÃ©rents supports.
-
-7. **Ton et Style :** La charte graphique peut Ã©galement dÃ©finir le ton et le style de la communication visuelle, en spÃ©cifiant par exemple un langage visuel formel ou dÃ©contractÃ©, moderne ou traditionnel, selon l'image de marque de l'entreprise.
+Dans cet univers visuel complexe, chaque élément joue un rôle crucial pour véhiculer l'image et les valeurs de la marque de manière efficace et cohérente.
 
 
-En rÃ©sumÃ©, la charte graphique est un document essentiel qui guide l'utilisation cohÃ©rente des Ã©lÃ©ments visuels pour renforcer l'identitÃ© et la reconnaissance d'une marque. En respectant ces directives, vous pouvez crÃ©er une expÃ©rience visuelle unifiÃ©e et mÃ©morable pour votre public cible.
+1. **Logo :** Le logo est l'élément central de toute charte graphique. Il incarne l'essence même de la marque et doit être conçu avec soin pour être mémorable, reconnaissable et adaptable à différents formats et contextes.
+
+2. **Couleurs :** Le choix des couleurs n'est pas anodin. Chaque couleur transmet des émotions et des messages spécifiques. La charte graphique définit donc une palette de couleurs cohérente et harmonieuse, ainsi que leur utilisation appropriée dans différents contextes.
+
+3. **Typographie :** Les polices de caractères utilisées dans la communication visuelle d'une marque contribuent à son identité. La charte graphique spécifie les polices à utiliser pour le logo, les titres, les paragraphes, etc., afin de maintenir une cohérence visuelle.
+
+4. **Images et Illustrations :**  Les images et illustrations jouent un rôle important dans la communication visuelle. La charte graphique peut définir des directives concernant le style, la résolution et l'utilisation des images pour garantir une apparence uniforme et professionnelle.
+
+5. **Mise en Page :** La manière dont les éléments visuels sont disposés sur une page ou un écran est essentielle pour la lisibilité et l'impact visuel. La charte graphique peut inclure des directives sur la structure, la hiérarchie visuelle et l'utilisation de l'espace blanc pour une mise en page efficace.
+
+6. **Iconographie :** Les icônes et les symboles sont des éléments visuels importants pour la navigation et la communication. La charte graphique peut définir un ensemble d'icônes cohérentes pour une utilisation sur les différents supports.
+
+7. **Ton et Style :** La charte graphique peut également définir le ton et le style de la communication visuelle, en spécifiant par exemple un langage visuel formel ou décontracté, moderne ou traditionnel, selon l'image de marque de l'entreprise.
 
 
-## Cours associÃ©s
+En résumé, la charte graphique est un document essentiel qui guide l'utilisation cohérente des éléments visuels pour renforcer l'identité et la reconnaissance d'une marque. En respectant ces directives, vous pouvez créer une expérience visuelle unifiée et mémorable pour votre public cible.
+
+
+## Cours associés
 
 https://codephenix.fr/interface/connaissances/index.php#UX
 
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Qu'est-ce qu'une charte graphique et en quoi est-elle cruciale pour la cohÃ©rence visuelle d'un projet ?
-- [ ] Quels sont les diffÃ©rents Ã©lÃ©ments inclus dans une charte graphique et comment fonctionnent-ils ensemble pour crÃ©er une identitÃ© visuelle unifiÃ©e ?
-- [ ] Comment choisir les couleurs appropriÃ©es pour reprÃ©senter votre marque et comment les intÃ©grer harmonieusement dans votre design ?
-- [ ] Quel rÃ´le joue la typographie dans la crÃ©ation de la personnalitÃ© visuelle d'une marque et comment choisir les polices de caractÃ¨res qui correspondent le mieux Ã  votre identitÃ© ?
+- [ ] Qu'est-ce qu'une charte graphique et en quoi est-elle cruciale pour la cohérence visuelle d'un projet ?
+- [ ] Quels sont les différents éléments inclus dans une charte graphique et comment fonctionnent-ils ensemble pour créer une identité visuelle unifiée ?
+- [ ] Comment choisir les couleurs appropriées pour représenter votre marque et comment les intégrer harmonieusement dans votre design ?
+- [ ] Quel rôle joue la typographie dans la création de la personnalité visuelle d'une marque et comment choisir les polices de caractères qui correspondent le mieux à votre identité ?
 
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

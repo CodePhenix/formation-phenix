@@ -1,6 +1,6 @@
 ---
 name: CSS Diner
-about: Exercice sur les sÃ©lecteurs CSS
+about: Exercice sur les sélecteurs CSS
 title: "[CSS] Diner"
 labels: ""
 assignees:
@@ -8,24 +8,24 @@ assignees:
 
 ## Objectif
 
-Au fond, si l'on prend un peu de recul, le CSS c'est d'un cÃ´tÃ© des sÃ©lecteurs, de l'autre des propriÃ©tÃ©s. Notre objectif ici est de travailler la partie sÃ©lecteurs.
+Au fond, si l'on prend un peu de recul, le CSS c'est d'un côté des sélecteurs, de l'autre des propriétés. Notre objectif ici est de travailler la partie sélecteurs.
 
-Comme vous l'avez sÃ»rement constatÃ©, on peut faire beaucoup avec les `id` et les `class`. Le but de cet exercice est de vous donner de nouvelles billes
-c'est Ã  dire de nouveaux sÃ©lecteurs et surtout de voir comment on peut combiner ces sÃ©lecteurs entre eux pour Ã©viter d'avoir Ã  Ã©crire des dizaines voir des centaines de class et d'id dans nos sites.
+Comme vous l'avez sûrement constaté, on peut faire beaucoup avec les `id` et les `class`. Le but de cet exercice est de vous donner de nouvelles billes
+c'est à dire de nouveaux sélecteurs et surtout de voir comment on peut combiner ces sélecteurs entre eux pour éviter d'avoir à écrire des dizaines voir des centaines de class et d'id dans nos sites.
 
-Cet exercice va vous permettre de dÃ©couvrir ces diffÃ©rentes propriÃ©tÃ©s et de vous exercer Ã  les manier.
+Cet exercice va vous permettre de découvrir ces différentes propriétés et de vous exercer à les manier.
 https://codephenix.fr/interface/cours/exercices/css-diner/index.html
 
-## Cours associÃ©s
+## Cours associés
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Les niveaux 1 Ã  17 ont Ã©tÃ© rÃ©alisÃ©s
-- [ ] Les niveaux 27 Ã  29 ont Ã©tÃ© rÃ©alisÃ©s
-- [ ] BONUS: les niveaux 18 Ã  26 ont Ã©tÃ© rÃ©alisÃ©s
+- [ ] Les niveaux 1 à 17 ont été réalisés
+- [ ] Les niveaux 27 à 29 ont été réalisés
+- [ ] BONUS: les niveaux 18 à 26 ont été réalisés
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._

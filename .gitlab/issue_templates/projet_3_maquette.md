@@ -1,6 +1,6 @@
 ---
 name: Maquette
-about: CrÃ©ation de Maquette pour un Projet
+about: Création de Maquette pour un Projet
 title: "Maquette"
 labels: ""
 assignees:
@@ -8,41 +8,41 @@ assignees:
 
 ## Objectif
 
-Imaginez que vous Ãªtes un architecte en train de concevoir les plans d'une maison. Avant de commencer la construction, vous avez besoin de maquettes dÃ©taillÃ©es pour visualiser chaque piÃ¨ce, chaque mur, chaque fenÃªtre. De la mÃªme maniÃ¨re, dans le domaine du dÃ©veloppement de projets, la crÃ©ation de maquettes est une Ã©tape essentielle pour concevoir et communiquer efficacement le design d'un site web, d'une application ou de tout autre projet numÃ©rique.
+Imaginez que vous êtes un architecte en train de concevoir les plans d'une maison. Avant de commencer la construction, vous avez besoin de maquettes détaillées pour visualiser chaque pièce, chaque mur, chaque fenêtre. De la même manière, dans le domaine du développement de projets, la création de maquettes est une étape essentielle pour concevoir et communiquer efficacement le design d'un site web, d'une application ou de tout autre projet numérique.
 
 
-1. **Comprendre les Besoins et les Objectifs :** La premiÃ¨re Ã©tape consiste Ã  comprendre les besoins et les objectifs du projet. Quel est le public cible ? Quels sont les principaux objectifs de l'interface utilisateur ? Quelles fonctionnalitÃ©s doivent Ãªtre mises en avant ?
+1. **Comprendre les Besoins et les Objectifs :** La première étape consiste à comprendre les besoins et les objectifs du projet. Quel est le public cible ? Quels sont les principaux objectifs de l'interface utilisateur ? Quelles fonctionnalités doivent être mises en avant ?
 
-2. **Identifier les Ã‰lÃ©ments Essentiels :** Ensuite, identifiez les Ã©lÃ©ments essentiels de l'interface utilisateur, tels que le logo, la navigation, les boutons d'action, les formulaires, les images et le contenu. Ce sont ces Ã©lÃ©ments qui seront reprÃ©sentÃ©s dans la maquette.
+2. **Identifier les Éléments Essentiels :** Ensuite, identifiez les éléments essentiels de l'interface utilisateur, tels que le logo, la navigation, les boutons d'action, les formulaires, les images et le contenu. Ce sont ces éléments qui seront représentés dans la maquette.
 
-3. **Choisir l'Outil de CrÃ©ation :** Il existe de nombreux outils disponibles pour crÃ©er des maquettes, tels que Sketch, Adobe XD, Figma, etc. Choisissez celui qui convient le mieux Ã  vos besoins et Ã  votre workflow.
+3. **Choisir l'Outil de Création :** Il existe de nombreux outils disponibles pour créer des maquettes, tels que Sketch, Adobe XD, Figma, etc. Choisissez celui qui convient le mieux à vos besoins et à votre workflow.
 
-4. **Structurer la Maquette :** Commencez par dÃ©finir la structure gÃ©nÃ©rale de la maquette en plaÃ§ant les diffÃ©rents Ã©lÃ©ments sur la page. Utilisez des grilles et des lignes directrices pour assurer une mise en page cohÃ©rente et Ã©quilibrÃ©e.
+4. **Structurer la Maquette :** Commencez par définir la structure générale de la maquette en plaçant les différents éléments sur la page. Utilisez des grilles et des lignes directrices pour assurer une mise en page cohérente et équilibrée.
 
-5. **Ajouter les DÃ©tails :** Une fois la structure en place, ajoutez les dÃ©tails visuels tels que les couleurs, les typographies, les images et les icÃ´nes. Veillez Ã  respecter les principes de design et Ã  maintenir la cohÃ©rence avec la marque du projet.
+5. **Ajouter les Détails :** Une fois la structure en place, ajoutez les détails visuels tels que les couleurs, les typographies, les images et les icônes. Veillez à respecter les principes de design et à maintenir la cohérence avec la marque du projet.
 
-6. **Tester et ItÃ©rer :** Une fois la maquette terminÃ©e, partagez-la avec les parties prenantes et recueillez leurs retours. Utilisez ces commentaires pour itÃ©rer et amÃ©liorer la maquette jusqu'Ã  ce qu'elle rÃ©ponde pleinement aux besoins du projet.
-
-
+6. **Tester et Itérer :** Une fois la maquette terminée, partagez-la avec les parties prenantes et recueillez leurs retours. Utilisez ces commentaires pour itérer et améliorer la maquette jusqu'à ce qu'elle réponde pleinement aux besoins du projet.
 
 
-## Cours associÃ©s
+
+
+## Cours associés
 
 https://codephenix.fr/interface/connaissances/index.php#UX
 
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Quels sont les Ã©lÃ©ments essentiels Ã  prendre en compte lors de la crÃ©ation d'une maquette pour un projet ?
-- [ ] Pourquoi est-il important de comprendre les besoins et les objectifs du projet avant de commencer la crÃ©ation de la maquette ?
-- [ ] Quels sont les outils couramment utilisÃ©s pour crÃ©er des maquettes et comment choisir celui qui convient le mieux Ã  un projet spÃ©cifique ?
-- [ ] Quels sont les avantages de l'utilisation de grilles et de lignes directrices lors de la crÃ©ation d'une maquette ?
-- [ ] Pourquoi est-il crucial de tester et d'itÃ©rer une maquette avant de passer Ã  la phase de dÃ©veloppement ?
+- [ ] Quels sont les éléments essentiels à prendre en compte lors de la création d'une maquette pour un projet ?
+- [ ] Pourquoi est-il important de comprendre les besoins et les objectifs du projet avant de commencer la création de la maquette ?
+- [ ] Quels sont les outils couramment utilisés pour créer des maquettes et comment choisir celui qui convient le mieux à un projet spécifique ?
+- [ ] Quels sont les avantages de l'utilisation de grilles et de lignes directrices lors de la création d'une maquette ?
+- [ ] Pourquoi est-il crucial de tester et d'itérer une maquette avant de passer à la phase de développement ?
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

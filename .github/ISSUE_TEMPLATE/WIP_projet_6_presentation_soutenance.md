@@ -1,7 +1,7 @@
 ---
-name: PrÃ©sentation soutenance
+name: Présentation soutenance
 about:
-title: "PrÃ©sentation"
+title: "Présentation"
 labels: ""
 assignees:
 ---
@@ -13,24 +13,24 @@ https://www.banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/Download.aspx?i=a
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
 Le dossier de projet respecte ce plan type :
 
-- [ ] Liste des compÃ©tences du rÃ©fÃ©rentiel qui sont couvertes par le projet
-- [ ] RÃ©sumÃ© du projet en franÃ§ais d'une longueur dâ€™environ 10 Ã  15 lignes soit 120 Ã  200 mots, ou environ 800 caractÃ¨res espaces non compris
-- [ ] Cahier des charges, expression des besoins, ou spÃ©cifications fonctionnelles du projet
-- [ ] SpÃ©cifications techniques du projet, Ã©laborÃ©es par le candidat, y compris pour la sÃ©curitÃ© et le web mobile
-- [ ] RÃ©alisations du candidat comportant les extraits de code les plus significatifs et en les argumentant, y compris pour la sÃ©curitÃ© et le web mobile
-- [ ] PrÃ©sentation du jeu dâ€™essai Ã©laborÃ© par le candidat de la fonctionnalitÃ© la plus reprÃ©sentative (donnÃ©es en entrÃ©e, donnÃ©es attendues, donnÃ©es
+- [ ] Liste des compétences du référentiel qui sont couvertes par le projet
+- [ ] Résumé du projet en français d'une longueur d’environ 10 à 15 lignes soit 120 à 200 mots, ou environ 800 caractères espaces non compris
+- [ ] Cahier des charges, expression des besoins, ou spécifications fonctionnelles du projet
+- [ ] Spécifications techniques du projet, élaborées par le candidat, y compris pour la sécurité et le web mobile
+- [ ] Réalisations du candidat comportant les extraits de code les plus significatifs et en les argumentant, y compris pour la sécurité et le web mobile
+- [ ] Présentation du jeu d’essai élaboré par le candidat de la fonctionnalité la plus représentative (données en entrée, données attendues, données
       o [ ] tenues)
-- [ ] Description de la veille, effectuÃ©e par le candidat durant le projet, sur les vulnÃ©rabilitÃ©s de sÃ©curitÃ©
-- [ ] Description dâ€™une situation de travail ayant nÃ©cessitÃ© une recherche, effectuÃ©e par le candidat durant le projet, Ã  partir de site anglophone
-- [ ] Extrait du site anglophone, utilisÃ© dans le cadre de la recherche dÃ©crite prÃ©cÃ©demment, accompagnÃ© de la traduction en franÃ§ais effectuÃ©e par le
+- [ ] Description de la veille, effectuée par le candidat durant le projet, sur les vulnérabilités de sécurité
+- [ ] Description d’une situation de travail ayant nécessité une recherche, effectuée par le candidat durant le projet, à partir de site anglophone
+- [ ] Extrait du site anglophone, utilisé dans le cadre de la recherche décrite précédemment, accompagné de la traduction en français effectuée par le
       candidat sans traducteur automatique (environ 750 signes).
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

@@ -1,5 +1,6 @@
 cv_1_html.md
 cv_2_css.md
+exo_ctrl_maj_f.md
 css_1_flexbox_basiques.md
 git_1_intro.md
 divers_2_froggy.md
@@ -8,10 +9,14 @@ divers_1_diner.md
 cv_3_js_burger.md
 css_2_flexbox_intermediaire.md
 click_1_css_js.md
+exo_js_dom.md
+exo_dark_theme.md
 click_2_js_conditions.md
+exo_js_fruit.md
 divers_3_setup_bis.md
 css_3_flexbox_difficult.md
 css_5_fiesta.md
+exo_object_array_pizza.md
 form_1_structure.md
 form_2_validation.md
 dp_4_formulaire.md

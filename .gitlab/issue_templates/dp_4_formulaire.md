@@ -9,24 +9,24 @@ assignees:
 ## Objectif
 
 [Musique nostalgique]
-Comme le temps passe vite, il y Ã  peine quelques mois vous n'aviez jamais entendu parlÃ© de dossier pro ni d'activitÃ© type
-et aujourd'hui vous allez vous atteler Ã  remplir la troisiÃ¨me et derniÃ¨re !
+Comme le temps passe vite, il y à peine quelques mois vous n'aviez jamais entendu parlé de dossier pro ni d'activité type
+et aujourd'hui vous allez vous atteler à remplir la troisième et dernière !
 
-Il s'agit comme vous l'aurez sans doute deviner d'inscrire le travail que vous avez rÃ©alisÃ© recemment sur la gestion de formulaires
+Il s'agit comme vous l'aurez sans doute deviner d'inscrire le travail que vous avez réalisé recemment sur la gestion de formulaires
 
-## Cours associÃ©s
+## Cours associés
 
-Aucun cours associÃ© Ã  cette tache
+Aucun cours associé à cette tache
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] L'activitÃ©-type 3 a Ã©tÃ© complÃ©tÃ©e.
+- [ ] L'activité-type 3 a été complétée.
 - [ ] Pas de fautes d'orthographe (se faire relire par un tiers ou utiliser un correcteur automatique)
 - [ ] Toutes les phrases comportent une majuscule et un point.
-- [ ] Des captures d'Ã©crans de votre site MyFood ont Ã©tÃ© ajoutÃ©es.
+- [ ] Des captures d'écrans de votre site MyFood ont été ajoutées.
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._

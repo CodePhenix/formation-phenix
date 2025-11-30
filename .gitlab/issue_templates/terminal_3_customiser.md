@@ -8,10 +8,10 @@ assignees:
 
 ## Objectif
 
-Ouvrez votre terminal, puis Ã  la souris, faites un clic sur "PrÃ©fÃ©rences" puis "Profils". Choisissez un profil (ou crÃ©ez-en un nouveau) et personnalisez-le en modifiant au moins les couleurs.
+Ouvrez votre terminal, puis à la souris, faites un clic sur "Préférences" puis "Profils". Choisissez un profil (ou créez-en un nouveau) et personnalisez-le en modifiant au moins les couleurs.
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Lorsque je lance un terminal, les nouvelles couleurs sont appliquÃ©es.
+- [ ] Lorsque je lance un terminal, les nouvelles couleurs sont appliquées.

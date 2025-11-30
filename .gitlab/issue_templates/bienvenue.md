@@ -10,34 +10,34 @@ assignees:
 
 Bienvenue chez Etap'Web.
 Le but de ce premier ticket est de te guider dans ton installation et ta prise en main de ton ordinateur.
-Pour chaque t√¢che √† r√©aliser, n'h√©site pas √† demander √† Google, ChatGPT ou ton ou ta voisin(e) puis √† ton formateur.
+Pour chaque t‚che ‡ rÈaliser, n'hÈsite pas ‡ demander ‡ Google, ChatGPT ou ton ou ta voisin(e) puis ‡ ton formateur.
 
 ## A propos d'Etap'Web
 
-Etap'Web est n√© en 2022 de la volont√© de former des personnes √† la programmation web.
-L'agence web est le fruit d'un partenariat entre l'association l'Il√¥t grosse association experte notamment en insertion professionnelle et l'association CodePhenix
-qui apporte son savoir faire de formation technique. Ainsi, tous les salari√©s de l'agence sont des membres de l'Il√¥t √† part l'encadrant technique qui lui vient de CodePhenix.
-N'h√©site pas √† jeter un coup d'oeil aux sites des deux associations:
+Etap'Web est nÈ en 2022 de la volontÈ de former des personnes ‡ la programmation web.
+L'agence web est le fruit d'un partenariat entre l'association l'IlÙt grosse association experte notamment en insertion professionnelle et l'association CodePhenix
+qui apporte son savoir faire de formation technique. Ainsi, tous les salariÈs de l'agence sont des membres de l'IlÙt ‡ part l'encadrant technique qui lui vient de CodePhenix.
+N'hÈsite pas ‡ jeter un coup d'oeil aux sites des deux associations:
 
 - https://www.ilot.asso.fr/
 - https://codephenix.fr
 
-## T√¢ches √† faire
+## T‚ches ‡ faire
 
-- [ ] Donner √† ton formateur ton adresse mail pro
-- [ ] Cr√©er un compte sur le site Github.com et donner √† ton formateur ton pseudo Github
+- [ ] Donner ‡ ton formateur ton adresse mail pro
+- [ ] CrÈer un compte sur le site Github.com et donner ‡ ton formateur ton pseudo Github
 - [ ] Installer le logiciel de messagerie Slack
 - [ ] Mettre sur Slack une image/photo de profil
 - [ ] Installer le logiciel VSCode
-- [ ] Sur Firefox, installer l'extension "Ublock Origin" (bloqueur de publicit√©)
-- [ ] Mettre un fond d'√©cran personalis√© sur ton ordinateur
-- [ ] Echanger les num√©ros de t√©l√©phone avec ton formateur pour les urgences ou pr√©venir des √©ventuels retards/absences
-- [ ] S'abonner (si tu le veux bien) aux pages l'Il√¥t et CodePhenix sur LinkedIn
-- [ ] S'abonner (si tu le veux bien) √† la newsletter de CodePhenix sur le site codephenix.fr
-- [ ] Faire le tour de tes nouveaux coll√®gues pour les saluer et qu'ils/elles te pr√©sentent leur travail
+- [ ] Sur Firefox, installer l'extension "Ublock Origin" (bloqueur de publicitÈ)
+- [ ] Mettre un fond d'Ècran personalisÈ sur ton ordinateur
+- [ ] Echanger les numÈros de tÈlÈphone avec ton formateur pour les urgences ou prÈvenir des Èventuels retards/absences
+- [ ] S'abonner (si tu le veux bien) aux pages l'IlÙt et CodePhenix sur LinkedIn
+- [ ] S'abonner (si tu le veux bien) ‡ la newsletter de CodePhenix sur le site codephenix.fr
+- [ ] Faire le tour de tes nouveaux collËgues pour les saluer et qu'ils/elles te prÈsentent leur travail
 
-## T√¢ches √† faire c√¥t√© formateur
+## T‚ches ‡ faire cÙtÈ formateur
 
 - [ ] Ajouter l'apprenant sur Slack
-- [ ] Ajouter l'apprenant √† l'organisation Github
-- [ ] Cr√©er les tickets
+- [ ] Ajouter l'apprenant ‡ l'organisation Github
+- [ ] CrÈer les tickets
