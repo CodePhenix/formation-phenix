@@ -8,21 +8,21 @@ assignees:
 
 ## Objectif
 
-Et oui, c'est dÃ©jÃ  le moment d'inscrire votre seconde activitÃ©-type dans le DP. Il s'agit cette fois de l'exo Analytics
+Et oui, c'est déjà le moment d'inscrire votre seconde activité-type dans le DP. Il s'agit cette fois de l'exo Analytics
 
-## Cours associÃ©s
+## Cours associés
 
-Aucun cours associÃ© Ã  cette tache
+Aucun cours associé à cette tache
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] L'activitÃ©-type 2 a Ã©tÃ© complÃ©tÃ©e.
+- [ ] L'activité-type 2 a été complétée.
 - [ ] Pas de fautes d'orthographe (se faire relire par un tiers ou utiliser un correcteur automatique)
 - [ ] Toutes les phrases comportent une majuscule et un point.
-- [ ] Des captures d'Ã©crans de votre site MyFood ont Ã©tÃ© ajoutÃ©es.
+- [ ] Des captures d'écrans de votre site MyFood ont été ajoutées.
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._

@@ -80,7 +80,7 @@ class IssueManager:
             for path in self.get_all_templates_paths():
                 content = self.render_template(path, vcs)
                 new_path = Path(self.project_root, vcs.path, path.name)
-                new_path.write_text(content)
+                new_path.write_text(content, encoding="utf-8")
                 print(f"Created {new_path}")
                 try:
                     content = self.render_template(path, vcs)

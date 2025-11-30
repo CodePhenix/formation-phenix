@@ -1,6 +1,6 @@
 ---
 name: Gestion_projet
-about: Interlude sur les Bases de la Gestion de Projet dans le DÃ©veloppement Web
+about: Interlude sur les Bases de la Gestion de Projet dans le Développement Web
 title: "Gestion de Projet"
 labels: ""
 assignees:
@@ -8,41 +8,41 @@ assignees:
 
 ## Objectif
 
-La gestion de projet est une pierre angulaire du dÃ©veloppement web rÃ©ussi. C'est un processus qui vise Ã  planifier, organiser, diriger et contrÃ´ler les ressources pour atteindre des objectifs spÃ©cifiques dans les dÃ©lais impartis. Voici quelques bases essentielles Ã  connaÃ®tre :
+La gestion de projet est une pierre angulaire du développement web réussi. C'est un processus qui vise à planifier, organiser, diriger et contrôler les ressources pour atteindre des objectifs spécifiques dans les délais impartis. Voici quelques bases essentielles à connaître :
 
 
 
-1. **DÃ©finition des objectifs et du pÃ©rimÃ¨tre :** Avant de commencer un projet, il est crucial de dÃ©finir clairement ses objectifs et son pÃ©rimÃ¨tre. Quels sont les rÃ©sultats attendus ? Quels sont les dÃ©lais et les ressources disponibles ?
+1. **Définition des objectifs et du périmètre :** Avant de commencer un projet, il est crucial de définir clairement ses objectifs et son périmètre. Quels sont les résultats attendus ? Quels sont les délais et les ressources disponibles ?
 
-2. **Planification :** La planification implique l'identification des tÃ¢ches Ã  accomplir, l'estimation des ressources nÃ©cessaires et l'Ã©tablissement d'un calendrier rÃ©aliste. Un plan de projet dÃ©taillÃ© est essentiel pour guider le travail.
+2. **Planification :** La planification implique l'identification des tâches à accomplir, l'estimation des ressources nécessaires et l'établissement d'un calendrier réaliste. Un plan de projet détaillé est essentiel pour guider le travail.
 
-3. **Allocation des ressources :** Cela implique de rÃ©partir les ressources humaines, matÃ©rielles et financiÃ¨res de maniÃ¨re efficace pour atteindre les objectifs du projet. Une bonne gestion des ressources garantit une utilisation optimale des moyens disponibles.
+3. **Allocation des ressources :** Cela implique de répartir les ressources humaines, matérielles et financières de manière efficace pour atteindre les objectifs du projet. Une bonne gestion des ressources garantit une utilisation optimale des moyens disponibles.
 
-4. **Suivi et contrÃ´le :** Tout au long du projet, il est important de surveiller l'avancement, de comparer les rÃ©sultats aux plans initiaux et d'identifier les Ã©carts Ã©ventuels. Des ajustements peuvent Ãªtre nÃ©cessaires pour maintenir le projet sur la bonne voie.
+4. **Suivi et contrôle :** Tout au long du projet, il est important de surveiller l'avancement, de comparer les résultats aux plans initiaux et d'identifier les écarts éventuels. Des ajustements peuvent être nécessaires pour maintenir le projet sur la bonne voie.
 
-5. **Communication et collaboration :** La communication efficace entre les membres de l'Ã©quipe et les parties prenantes est essentielle pour assurer la comprÃ©hension des objectifs, le partage des informations et la rÃ©solution des problÃ¨mes. La collaboration favorise Ã©galement un environnement de travail positif et productif.
+5. **Communication et collaboration :** La communication efficace entre les membres de l'équipe et les parties prenantes est essentielle pour assurer la compréhension des objectifs, le partage des informations et la résolution des problèmes. La collaboration favorise également un environnement de travail positif et productif.
 
-Maintenant, testons votre comprÃ©hension des bases de la gestion de projet avec ces 5 questions essentielles :
+Maintenant, testons votre compréhension des bases de la gestion de projet avec ces 5 questions essentielles :
 
 
 
-## Cours associÃ©s
+## Cours associés
 
-Aucun cours associÃ© Ã  cette tache
+Aucun cours associé à cette tache
 
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Qu'est-ce que la gestion de projet et pourquoi est-elle importante dans le dÃ©veloppement web ?
-- [ ] Quels sont les Ã©lÃ©ments clÃ©s Ã  dÃ©finir avant de commencer un projet ?
-- [ ] Quelles sont les Ã©tapes de la planification d'un projet web ?
-- [ ] Pourquoi est-il important de suivre et de contrÃ´ler rÃ©guliÃ¨rement l'avancement d'un projet ?
-- [ ] Comment la communication et la collaboration contribuent-elles au succÃ¨s d'un projet de dÃ©veloppement web ?
+- [ ] Qu'est-ce que la gestion de projet et pourquoi est-elle importante dans le développement web ?
+- [ ] Quels sont les éléments clés à définir avant de commencer un projet ?
+- [ ] Quelles sont les étapes de la planification d'un projet web ?
+- [ ] Pourquoi est-il important de suivre et de contrôler régulièrement l'avancement d'un projet ?
+- [ ] Comment la communication et la collaboration contribuent-elles au succès d'un projet de développement web ?
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

@@ -8,23 +8,23 @@ assignees:
 
 ## Objectif
 
-La propriÃ©tÃ© `display: flex` est notre meilleure amie pour tout ce qui concerne le positionnement des balises
-les unes par rapport aux autres. En l'utilisant vous avez accÃ¨s Ã  une sÃ©rie d'autres propriÃ©tÃ©s `justify-content`,
+La propriété `display: flex` est notre meilleure amie pour tout ce qui concerne le positionnement des balises
+les unes par rapport aux autres. En l'utilisant vous avez accès à une série d'autres propriétés `justify-content`,
 `align-items`, `flex-wrap`, `flex-direction`
 
-Cet exercice va vous permettre de dÃ©couvrir ces diffÃ©rentes propriÃ©tÃ©s et de vous exercer Ã  les manier.
+Cet exercice va vous permettre de découvrir ces différentes propriétés et de vous exercer à les manier.
 https://codephenix.fr/interface/cours/exercices/flexfroggy/index.html
 
-## Cours associÃ©s
+## Cours associés
 
 II - 1/ Positionnement
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Les niveaux 1 Ã  24 ont Ã©tÃ© complÃ©tÃ©s
+- [ ] Les niveaux 1 à 24 ont été complétés
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._

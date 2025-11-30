@@ -1,7 +1,7 @@
 ---
-name: PrÃ©sentation soutenance
+name: Présentation soutenance
 about:
-title: "PrÃ©sentation"
+title: "Présentation"
 labels: ""
 assignees:
 ---
@@ -13,41 +13,41 @@ https://www.banque.di.afpa.fr/EspaceEmployeursCandidatsActeurs/Download.aspx?i=a
 
 Conseils pour le jour J:
 
-- mettre chrono sur son tÃ©lÃ©phone
-- bien vÃ©rifier que vous avez chargeur et souris
-- mettre VSCODE en thÃ¨me clair (ca passe mieux au rÃ©troprojecteur)
-- avoir les slides et le code du projet sur une clÃ© usb (au cas oÃ¹ l'ordi meurt)
+- mettre chrono sur son téléphone
+- bien vérifier que vous avez chargeur et souris
+- mettre VSCODE en thème clair (ca passe mieux au rétroprojecteur)
+- avoir les slides et le code du projet sur une clé usb (au cas où l'ordi meurt)
 
 Etat d'esprit le jour J:
 
-- Vous vous prÃ©sentez en tant que professionnel(le) du mÃ©tier qui montre savoir gÃ©rer un projet web de A Ã  Z.
-- Pas de "Je suis dÃ©solÃ©" Ã  tout bout de champs
-- Pas de "je pense que " Ã  tout bout de champs. Si vous savez, dites le.
-- Pas de "j'ai eu des difficultÃ©s sur ce bout lÃ  du code". Ce qui compte c'est que vous l'ayez fait et que ca fonctionne.
+- Vous vous présentez en tant que professionnel(le) du métier qui montre savoir gérer un projet web de A à Z.
+- Pas de "Je suis désolé" à tout bout de champs
+- Pas de "je pense que " à tout bout de champs. Si vous savez, dites le.
+- Pas de "j'ai eu des difficultés sur ce bout là du code". Ce qui compte c'est que vous l'ayez fait et que ca fonctionne.
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
-Le candidat prÃ©sente son projet Ã  lâ€™aide dâ€™un support de prÃ©sentation rÃ©alisÃ© en amont de la session dâ€™examen, et selon ce canevas :
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
+Le candidat présente son projet à l’aide d’un support de présentation réalisé en amont de la session d’examen, et selon ce canevas :
 
-- [ ] PrÃ©sentation de lâ€™entreprise et/ou du service et contexte du projet (cahier des charges, environnement humain et technique)
+- [ ] Présentation de l’entreprise et/ou du service et contexte du projet (cahier des charges, environnement humain et technique)
 - [ ] Conception et codage des composants front-end
-- [ ] PrÃ©sentation des Ã©lÃ©ments les plus significatifs de lâ€™interface de lâ€™application
-- [ ] PrÃ©sentation du jeu dâ€™essai de la fonctionnalitÃ© la plus reprÃ©sentative (donnÃ©es en entrÃ©e, donnÃ©es attendues, donnÃ©es obtenues) et analyse des
-      Ã© [ ] arts Ã©ventuels
-- [ ] Exemple illustrÃ© de la veille effectuÃ©e Ã  partir de site anglophone
-- [ ] SynthÃ¨se et conclusion (satisfactions et difficultÃ©s rencontrÃ©es)
-      Cette prÃ©sentation inclut, au choix du candidat, une illustration ou une dÃ©monstration de lâ€™interface de lâ€™application. Une combinaison des deux est
-      possible. Leur durÃ©e cumulÃ©e dans la prÃ©sentation ne doit pas excÃ©der 10 minutes.
+- [ ] Présentation des éléments les plus significatifs de l’interface de l’application
+- [ ] Présentation du jeu d’essai de la fonctionnalité la plus représentative (données en entrée, données attendues, données obtenues) et analyse des
+      é [ ] arts éventuels
+- [ ] Exemple illustré de la veille effectuée à partir de site anglophone
+- [ ] Synthèse et conclusion (satisfactions et difficultés rencontrées)
+      Cette présentation inclut, au choix du candidat, une illustration ou une démonstration de l’interface de l’application. Une combinaison des deux est
+      possible. Leur durée cumulée dans la présentation ne doit pas excéder 10 minutes.
 
-Vos slides sont prÃªtes avec notamment
+Vos slides sont prêtes avec notamment
 
-- [ ] NumÃ©ros de slides
+- [ ] Numéros de slides
 - [ ] Aucune faute d'orthographe
-- [ ] Majuscules en dÃ©but de phrases et titres
+- [ ] Majuscules en début de phrases et titres
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

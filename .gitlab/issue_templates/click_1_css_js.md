@@ -8,23 +8,23 @@ assignees:
 
 ## Objectif
 
-Eh oui, le moment tant attendu est enfin arrivÃ© : nous plongeons dans le merveilleux monde du JavaScript ! PrÃ©parez-vous Ã  vivre une aventure palpitante oÃ¹ le code devient magie.
+Eh oui, le moment tant attendu est enfin arrivé : nous plongeons dans le merveilleux monde du JavaScript ! Préparez-vous à vivre une aventure palpitante où le code devient magie.
 
-Pour notre premier dÃ©fi, nous allons crÃ©er quelque chose de vraiment cool : un compteur de clics. Mais ne vous inquiÃ©tez pas, c'est plus facile que de compter les Ã©toiles dans le ciel !
+Pour notre premier défi, nous allons créer quelque chose de vraiment cool : un compteur de clics. Mais ne vous inquiétez pas, c'est plus facile que de compter les étoiles dans le ciel !
 
-Voici le topo : vous allez devoir concevoir un bouton. Chaque fois que ce bouton est cliquÃ©, nous allons ajouter un Ã  un numÃ©ro affichÃ©, indiquant ainsi le nombre de fois que ce bouton a Ã©tÃ© pressÃ©. Simple, n'est-ce pas ?
+Voici le topo : vous allez devoir concevoir un bouton. Chaque fois que ce bouton est cliqué, nous allons ajouter un à un numéro affiché, indiquant ainsi le nombre de fois que ce bouton a été pressé. Simple, n'est-ce pas ?
 
-Le but de cette mission est de mettre en pratique vos connaissances en HTML et CSS, et d'ajouter une touche de magie JavaScript pour pimenter le tout. ÃŠtes-vous prÃªts Ã  relever ce dÃ©fi ? (Je compte sur vous pour rÃ©pondre par un enthousiaste "Ouiiiiii" !) Alors, c'est parti !
+Le but de cette mission est de mettre en pratique vos connaissances en HTML et CSS, et d'ajouter une touche de magie JavaScript pour pimenter le tout. Êtes-vous prêts à relever ce défi ? (Je compte sur vous pour répondre par un enthousiaste "Ouiiiiii" !) Alors, c'est parti !
 
 Lien vers les maquettes: https://codephenix.com/cours/exercices/1-3-1-initiation-js.gif
 
-## Cours associÃ©s
+## Cours associés
 
 Javascript / initiation
 
 ## Definition of Done
 
-Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es.
+Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
 
 - [ ] La maquette est bien reproduite
 - [ ] Le click sur bouton est fonctionnel et permet de compter chaque click
@@ -34,24 +34,24 @@ Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de 
 - [ ] HTML: 0 erreurs/warnings selon les standards du [W3C]()
 - [ ] HTML: Les textes visibles ne comportent pas de fautes d'orthographe
 - [ ] HTML: Les textes visibles commencent tous par une majuscule
-- [ ] HTML: La langue du document est renseignÃ©e
-- [ ] HTML - SEO: title, description et favicon ont Ã©tÃ© renseignÃ©s
-- [ ] HTML - SEO: Si c'est pertinent, les balises sÃ©mantiques <header>, <footer>, <main>, <nav>, <section> ont Ã©tÃ© utilisÃ©es
-- [ ] CSS: Aucun padding ni margin nÃ©gatif sauf exception dÃ»ment documentÃ©e
-- [ ] CSS: Aucun padding ni margin supÃ©rieur Ã  50px sauf exception dÃ»ment documentÃ©e
+- [ ] HTML: La langue du document est renseignée
+- [ ] HTML - SEO: title, description et favicon ont été renseignés
+- [ ] HTML - SEO: Si c'est pertinent, les balises sémantiques <header>, <footer>, <main>, <nav>, <section> ont été utilisées
+- [ ] CSS: Aucun padding ni margin négatif sauf exception dûment documentée
+- [ ] CSS: Aucun padding ni margin supérieur à 50px sauf exception dûment documentée
 - [ ] CSS: Le css comporte un "reset CSS" (cf plus bas)
-- [ ] CSS: Tous les Ã©lements cliquables (liens, boutons, autres) ont un cursor de type pointer
+- [ ] CSS: Tous les élements cliquables (liens, boutons, autres) ont un cursor de type pointer
 - [ ] CSS: Les `class`, `id` et autres attributs ont des noms respectables et porteurs de sens (pas de `aa` ou `toto` ou `texte2`)
-- [ ] JS: Le code est commentÃ©
+- [ ] JS: Le code est commenté
 - [ ] JS: Pas d'erreur ni de logs inutiles dans la console
 - [ ] JS: Les variables ont des noms respectables et porteurs de sens
 
 ## Code quality ++ (Bonus)
 
-- [ ] HTML - SEO: Description et preview image pour Facebook, Linkedin et Twitter sont renseignÃ©es
-- [ ] CSS: Les couleurs principales du site sont renseignÃ©es dans des variables CSS (ex: `color: var(--main-blue)`)
-- [ ] CSS: Les noms de `class` et `id` sont en "hyphens-case" c'est Ã  dire avec des tirets. Bon ex: "btn-submit", mauvais "btnSubmit" ou "btn_submit"
-- [ ] JS: Les noms de variables sont en "camel-case" c'est Ã  dire avec des majuscules. Bon ex: "btnSubmit", mauvais "btn_submit"
+- [ ] HTML - SEO: Description et preview image pour Facebook, Linkedin et Twitter sont renseignées
+- [ ] CSS: Les couleurs principales du site sont renseignées dans des variables CSS (ex: `color: var(--main-blue)`)
+- [ ] CSS: Les noms de `class` et `id` sont en "hyphens-case" c'est à dire avec des tirets. Bon ex: "btn-submit", mauvais "btnSubmit" ou "btn_submit"
+- [ ] JS: Les noms de variables sont en "camel-case" c'est à dire avec des majuscules. Bon ex: "btnSubmit", mauvais "btn_submit"
 
 NB: Reset CSS de Codephenix
 
@@ -72,18 +72,18 @@ li {
 
 ## Bonnes pratiques de communication
 
-Vous Ãªtes en phase d'apprentissage et s'il est crucial que vous dÃ©veloppiez votre autonomie en essayant et en cherchant
-par vous mÃªme il est tout de mÃªme courant pour un dÃ©veloppeur de demander de l'aide.
-Pour cela voici un petit florilÃ¨ge des phrases/choses Ã  Ã©viter:
+Vous êtes en phase d'apprentissage et s'il est crucial que vous développiez votre autonomie en essayant et en cherchant
+par vous même il est tout de même courant pour un développeur de demander de l'aide.
+Pour cela voici un petit florilège des phrases/choses à éviter:
 
-- dire "Ca marche pas" sans expliquer prÃ©cisÃ©ment ce qui ne marche pas
+- dire "Ca marche pas" sans expliquer précisément ce qui ne marche pas
 - "J'comprends pas" sans donner de contexte
-- "... du coup j'ai tout supprimÃ© et j'ai tout recommencÃ©"
-- "J'ai dit Ã  l'ordi de le faire mais il ne le fait pas"
-- dire "JAVA" au lieu de "Javascript": ca n'a rien Ã  voir !!!!!!!!!!!
+- "... du coup j'ai tout supprimé et j'ai tout recommencé"
+- "J'ai dit à l'ordi de le faire mais il ne le fait pas"
+- dire "JAVA" au lieu de "Javascript": ca n'a rien à voir !!!!!!!!!!!
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...

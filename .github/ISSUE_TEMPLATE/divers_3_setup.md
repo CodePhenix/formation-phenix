@@ -8,28 +8,28 @@ assignees:
 
 ## Objectif
 
-De la mÃªme maniÃ¨re qu'un charpentier doit connaÃ®tre les outils dont il a besoin, il est
-important que vous sachiez comment l'on nomme les diffÃ©rents outils informatiques dont vous vous servez pour
+De la même manière qu'un charpentier doit connaître les outils dont il a besoin, il est
+important que vous sachiez comment l'on nomme les différents outils informatiques dont vous vous servez pour
 coder.
 
-L'objectif ici est de complÃ©ter le questionnaire suivant et de prendre le temps de comprendre et d'apprendre les diffÃ©rents
-accronymes utilisÃ©s.
+L'objectif ici est de compléter le questionnaire suivant et de prendre le temps de comprendre et d'apprendre les différents
+accronymes utilisés.
 
 Lorsque vous codez,
 
 - de quel OS vous servez-vous ?
 - de quel navigateur vous servez-vous ?
-- de quel moteur de recherche vous serviriez-vous si vous aviez accÃ¨s Ã  internet ?
+- de quel moteur de recherche vous serviriez-vous si vous aviez accès à internet ?
 - de quel IDE vous servez-vous ?
 - de quel VCS vous servez-vous ?
 
-## Cours associÃ©s
+## Cours associés
 
 ## Definition of Done
 
-_Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de cette section ont Ã©tÃ© complÃ©tÃ©es._
+_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Le questionnaire ci-dessus a Ã©tÃ© complÃ©tÃ©
+- [ ] Le questionnaire ci-dessus a été complété
 - [ ] Les notions/accronymes suivants sont compris
   - [ ] Navigateur
   - [ ] Moteur de recherche
@@ -38,4 +38,4 @@ _Une tache est considÃ©rÃ©e comme complÃ©tÃ©e lorsque chacune des sous-taches de
 
 ## Q&A
 
-_Cette section sera complÃ©tÃ©e par votre formateur lors de la review des taches._
+_Cette section sera complétée par votre formateur lors de la review des taches._
