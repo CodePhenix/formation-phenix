@@ -29,7 +29,7 @@ def templates():
 def print_issues_ordered():
     idx = 0
     for path in manager.get_all_templates_paths_ordered():
-        print(f"{idx}: {path}")
+        print(f"{idx}: {path.name}")
         idx += 1
 
 
