@@ -78,7 +78,7 @@ class IssueManager:
         paths = self.get_all_templates_paths_ordered()
         success = 0
         selected_paths = paths if range.is_all else paths[range.start : range.end + 1]
-        idx = 0
+        idx = range.start - 1 if not range.is_all else 0
         for path in selected_paths:
             idx += 1
             issue_content = self.render_template(path, vcs=vcs)
