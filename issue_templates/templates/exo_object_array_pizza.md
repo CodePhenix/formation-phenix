@@ -8,14 +8,19 @@ assignees:
 
 ## Objectif
 
-[*lien vers l'exercice*](https://codephenix.fr/interface/exercices/new_exo_JS/exo-object-array-pizza.zip)
+[_lien vers l'exercice_](https://codephenix.fr/interface/exercices/new_exo_JS/exo-object-array-pizza.zip)
 
 Dans cet exercice, nous allons manipuler différents types de données en JavaScript, pour les réinjecter dans le DOM : les objets et les tableaux (dont les tableaux d'objets).
 
 Un objet peut comporter plusieurs propriétés, qui peuvent être des string, des number, des boolean... Voici sa syntaxe :
 
 ```js
-const person = {firstname: "Mike", age: 23, password: "1234abc", isConnected: true}
+const person = {
+  firstname: "Mike",
+  age: 23,
+  password: "1234abc",
+  isConnected: true,
+};
 ```
 
 Pour aller chercher la valeur d'une des propriétés de l'objet, on écrit `nomDeLObjet.nomDeLaPropriété`
@@ -29,20 +34,20 @@ const fruitsArray = ["pomme", "banane", "fraise"];
 ou encore :
 
 ```js
-const grades = [14, 9, 12, 16]
+const grades = [14, 9, 12, 16];
 ```
 
 ou même un tableau d'objets :
 
 ```js
 const peopleArray = [
-    {firstname: "Mike", age: 23, password: "1234abc"},
-    {firstname: "Jane", age: 54, password: "Ab@Jc48Ff"},
-    {firstname: "John", age: 7, password: "@j0hnY"},
-    {firstname: "Bill", age: 48, password: "b!iLL"},
-    {firstname: "Fred", age: 65, password: "freddy65"},
-    {firstname: "Jill", age: 34, password: "593351"}
-]
+  { firstname: "Mike", age: 23, password: "1234abc" },
+  { firstname: "Jane", age: 54, password: "Ab@Jc48Ff" },
+  { firstname: "John", age: 7, password: "@j0hnY" },
+  { firstname: "Bill", age: 48, password: "b!iLL" },
+  { firstname: "Fred", age: 65, password: "freddy65" },
+  { firstname: "Jill", age: 34, password: "593351" },
+];
 ```
 
 Dans les tableaux, chaque valeur a un index, c'est à dire son emplacement dans le tableau ; on commence par 0, puis 1, puis 2, etc
@@ -59,72 +64,55 @@ Pour chaque étape, coder sous les indications `========== DEBUT DE L'ETAPE [...
 
 ### Etape 1 : Sélectionner la div 'pizza-objet'
 
->Astuce : utilisez une méthode JavaScript commençant par query... et finissant par ...tor
-
----
+> Astuce : utilisez une méthode JavaScript commençant par query... et finissant par ...tor
 
 ### Etape 2 : Afficher dans cette div le texte contenant : `nomdelapizza : descriptiondelapizza — prixdelapizza €`
 
 **Pour cela, il faudra uniquement utiliser les valeurs des propriétés de l'objet onePizza**
 
->Astuce : la propriété JS commence par text... et finit par ...tent
+> Astuce : la propriété JS commence par text... et finit par ...tent
 
----
-
-### Etape 3 : Sélectionner la div 'prix-array' 
+### Etape 3 : Sélectionner la div 'prix-array'
 
 Cette div va contenir les prix des pizzas.
 
->Astuce : utilisez une méthode JavaScript commençant par query... et finissant par ...tor
-
----
+> Astuce : utilisez une méthode JavaScript commençant par query... et finissant par ...tor
 
 ### Etape 4 : Boucle sur le tableau des prix
 
 Pour chaque prix du tableau, on doit :
+
 - créer un <p> et le nommer avec une constante
 - ajouter du texte à cette constante : le prix 'price' suivi de "€"
 - ajouter cette constante/paragraphe dans la div 'prix-array'
 
----
-
 ### Etape 5 : Sélectionner le paragraphe 'prix-moyen'
 
->Astuce : utilisez une méthode JavaScript commençant par query... et finissant par ...tor
-
----
+> Astuce : utilisez une méthode JavaScript commençant par query... et finissant par ...tor
 
 ### Etape 6 : Afficher le prix moyen calculé 'averagePrice' dans le paragraphe 'prix-moyen'
 
->Astuce : la propriété JS commence par text... et finit par ...tent
-
----
+> Astuce : la propriété JS commence par text... et finit par ...tent
 
 ### Etape 7 : Créer une <div> et la nommer avec une constante 'card'
 
->Astuce : utilisez une méthode JavaScript commençant par crea... et finissant par ...ent
-
----
+> Astuce : utilisez une méthode JavaScript commençant par crea... et finissant par ...ent
 
 ### Etape 8 : Ajouter la classe "pizza-card" à cette constante/div
 
->Astuce : ajouter se dit 'add' en anglais...
-
----
+> Astuce : ajouter se dit 'add' en anglais...
 
 ### Etape 9 : Condition
 
 Si la pizza est une calzone, donc que sa propriété isCalzone est égale à 'true' → ajouter la classe "calzone" à cette constante/div.
 
----
-
 ### Etape 10 : Afficher la const/div 'card' dans le container 'menuPizzasContainer'
 
->Astuce : utilisez une méthode JavaScript commençant par app... et finissant par ...ild
+> Astuce : utilisez une méthode JavaScript commençant par app... et finissant par ...ild
 
 ## Cours associés
 
-I - 3/ JS --- II - 1/ Dynamisme JS
+I - 3/ JS - II - 1/ Dynamisme JS
 
 ## Definition of Done:
 

@@ -8,7 +8,7 @@ assignees:
 
 ## Objectif
 
-[*lien vers l'exercice*](https://codephenix.fr/interface/exercices/new_exo_JS/exo-js-dom.zip)
+[_lien vers l'exercice_](https://codephenix.fr/interface/exercices/new_exo_JS/exo-js-dom.zip)
 
 Le DOM (Document Object Model) est la représentation du fichier HTML par le navigateur.
 
@@ -26,35 +26,30 @@ Pour chaque étape, coder sous les indications `========== DEBUT DE L'ETAPE [...
 
 Utiliser querySelector pour sélectionner le bouton 'toggle-btn' et la div 'box', en leur assignant des constantes.
 
----
-
 ### Etape 2 : Ajouter un écouteur d’événement au bouton 'toggle-btn'
 
 Quand on clique dessus, il doit :
-- ajouter OU retirer la classe 'color-change' à la boîte
->Astuce : Utiliser classList.toggle
 
----
+- ajouter OU retirer la classe 'color-change' à la boîte
+  > Astuce : Utiliser classList.toggle
 
 ### Etape 3 : Sélectionner les autres boutons
 
 Utiliser querySelector pour sélectionner les boutons 'move-btn-left' et 'move-btn-right', en leur assignant des constantes.
 
----
-
 ### Etape 4 : Ajouter un autre écouteur d’événement pour les boutons 'move-btn-left' et 'move-btn-right'
 
 Quand on clique sur le bouton gauche, il doit :
+
 - supprimer la classe 'move-right'
 - ajouter la classe 'move-left'
 - changer le texte dans la boîte pour afficher "Déplacée à gauche"
 
 Quand on clique sur le bouton droit, il doit :
+
 - supprimer la classe 'move-left'
 - ajouter la classe 'move-right'
 - changer le texte dans la boîte pour afficher "Déplacée à droite"
-
----
 
 ### Etape 5 Bonus : Ajouter un écouteur d’événement au bouton secret
 
@@ -65,6 +60,7 @@ Pour qu'il apparaisse, utiliser la formule : `nom-de-la-constante-du-bouton-secr
 Créer une classe dans le fichier CSS, la nommer comme vous préférez
 
 Quand on clique sur le bouton secret :
+
 - la boîte doit revenir au centre
 - on doit pouvoir ajouter OU retirer à la boîte la classe que vous avez créé dans le fichier CSS
 - le texte de la boîte est changé en "Transformation !"
@@ -73,7 +69,7 @@ Dans votre fichier CSS, faites-en sorte que cette classe arrondissent les angles
 
 ## Cours associés
 
-I - 3/ JS --- II - 1/ Dynamisme JS
+I - 3/ JS - II - 1/ Dynamisme JS
 
 ## Definition of Done:
 
