@@ -1,7 +1,7 @@
 ---
 name: Exo Clicks Conditions
 about: Javascript exercice
-title: "Exo Clicks Conditions"
+title: Exo Clicks Conditions
 labels: ""
 assignees:
 ---

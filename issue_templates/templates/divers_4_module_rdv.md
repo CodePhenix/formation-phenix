@@ -1,7 +1,7 @@
 ---
 name: Exo Module Prise de rdv
 about: Javascript exercice
-title: "Exo Module Prise de rdv"
+title: Exo Module Prise de rdv
 labels: ""
 assignees:
 ---

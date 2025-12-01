@@ -1,7 +1,7 @@
 ---
 name: [Terminal] zsh
 about:
-title: "[Terminal] zsh"
+title: [Terminal] zsh
 labels:
 assignees:
 ---

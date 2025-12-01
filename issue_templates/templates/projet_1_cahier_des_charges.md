@@ -1,7 +1,7 @@
 ---
 name: Cahier des Charges
 about: Intro Cahier des Charges
-title: "Cahier des Charges"
+title: Cahier des Charges
 labels: ""
 assignees:
 ---

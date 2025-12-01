@@ -1,7 +1,7 @@
 ---
 name: Exo Populars tags
 about: Javascript exercice
-title: "Exo Populars tags"
+title: Exo Populars tags
 labels: ""
 assignees:
 ---

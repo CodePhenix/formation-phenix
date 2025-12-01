@@ -1,7 +1,7 @@
 ---
 name: Gestion_projet
 about: Interlude sur les Bases de la Gestion de Projet dans le Développement Web
-title: "Gestion de Projet"
+title: Gestion de Projet
 labels: ""
 assignees:
 ---
@@ -9,8 +9,6 @@ assignees:
 ## Objectif
 
 La gestion de projet est une pierre angulaire du développement web réussi. C'est un processus qui vise à planifier, organiser, diriger et contrôler les ressources pour atteindre des objectifs spécifiques dans les délais impartis. Voici quelques bases essentielles à connaître :
-
-
 
 1. **Définition des objectifs et du périmètre :** Avant de commencer un projet, il est crucial de définir clairement ses objectifs et son périmètre. Quels sont les résultats attendus ? Quels sont les délais et les ressources disponibles ?
 
@@ -24,12 +22,9 @@ La gestion de projet est une pierre angulaire du développement web réussi. C'e
 
 Maintenant, testons votre compréhension des bases de la gestion de projet avec ces 5 questions essentielles :
 
-
-
 ## Cours associés
 
 Aucun cours associé à cette tache
-
 
 ## Definition of Done
 

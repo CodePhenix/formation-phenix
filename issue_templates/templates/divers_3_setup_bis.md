@@ -1,7 +1,7 @@
 ---
 name: Questionnaire setup 2
 about: Questionnaire sur le setup 2
-title: "[Outils] questionnaire 2"
+title: [Outils] questionnaire 2
 labels: ""
 assignees:
 ---

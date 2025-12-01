@@ -1,7 +1,7 @@
 ---
 name: DP découverte
 about: Se familiariser avec le dossier professionnel et remplir la partie purement administrative
-title: "[DP] Découverte"
+title: [DP] Découverte
 labels: ""
 assignees:
 ---

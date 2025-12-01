@@ -1,7 +1,7 @@
 ---
 name: [Terminal] ls cd
 about:
-title: "[Terminal] ls cd"
+title: [Terminal] ls cd
 labels:
 assignees:
 ---

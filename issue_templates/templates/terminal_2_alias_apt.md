@@ -1,7 +1,7 @@
 ---
 name: [Terminal] Alias 2 (apt)
 about:
-title: "[Terminal] Alias 2 (apt)"
+title: [Terminal] Alias 2 (apt)
 labels:
 assignees:
 ---

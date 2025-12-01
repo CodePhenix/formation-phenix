@@ -1,7 +1,7 @@
 ---
 name: Exo Menu burger CV
 about: Javascript exercice
-title: "Exo Menu burger CV"
+title: Exo Menu burger CV
 labels: ""
 assignees:
 ---

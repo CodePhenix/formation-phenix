@@ -1,7 +1,7 @@
 ---
 name: Exo Projet MYFOOD
 about: Exercice intégration
-title: "Exercice MYFOOD"
+title: Exercice MYFOOD
 labels: ""
 assignees:
 ---

@@ -1,7 +1,7 @@
 ---
 name: CSS Froggy
 about: Exercice sur les flexbox
-title: "[CSS] CSS Froggy"
+title: [CSS] CSS Froggy
 labels: ""
 assignees:
 ---

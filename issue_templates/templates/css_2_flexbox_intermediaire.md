@@ -1,7 +1,7 @@
 ---
 name: Gamme d'exos flexbox - Basiques
 about: Exercice sur les flexbox CSS
-title: "[CSS] Flexbox - Intermediaire"
+title: [CSS] Flexbox - Intermediaire
 labels: ""
 assignees:
 ---

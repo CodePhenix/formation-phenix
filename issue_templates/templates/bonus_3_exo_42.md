@@ -1,7 +1,7 @@
 ---
 name: Exo fusée 42
 about: Général
-title: "Exo fusée 42"
+title: Exo fusée 42
 labels: ""
 assignees:
 ---

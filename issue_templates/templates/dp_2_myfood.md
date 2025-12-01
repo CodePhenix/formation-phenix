@@ -1,7 +1,7 @@
 ---
 name: DP MyFood
 about: Inscrire l'exercice My Food dans le dossier pro
-title: "[DP] My Food"
+title: [DP] My Food
 labels: ""
 assignees:
 ---

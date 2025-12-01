@@ -1,7 +1,7 @@
 ---
 name: Bienvenue
 about: Bienvenue
-title: "Bienvenue"
+title: Bienvenue
 labels: ""
 assignees:
 ---

@@ -1,7 +1,7 @@
 ---
 name: Form validation
 about: Validation de formulaires
-title: "[FORM] Validation"
+title: [FORM] Validation
 labels: ""
 assignees:
 ---

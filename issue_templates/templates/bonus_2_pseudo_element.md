@@ -1,7 +1,7 @@
 ---
 name: Exo Nommer variables
 about: Général
-title: "Exo nommage de variables"
+title: Exo nommage de variables
 labels: ""
 assignees:
 ---
