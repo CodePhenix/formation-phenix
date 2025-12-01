@@ -64,34 +64,6 @@ class IssueManager:
             html_validator_url=vcs.html_validator_url,
         )
 
-    def _delete_folder_content(self, folder_path: Path):
-        files = folder_path.glob("*")
-        for file in files:
-            os.remove(file)
-
-    def overwrite_vcs_issue_templates(self):
-        """
-        Overwrite issue templates in GitHub and GitLab folders.
-        """
-        print("Overwriting issue templates in GitHub and GitLab folders.")
-        for vcs in ALL_VCS:
-            print("Overwriting", vcs.path)
-            self._delete_folder_content(self.project_root / vcs.path)
-            for path in self.get_all_templates_paths():
-                content = self.render_template(path, vcs)
-                new_path = Path(self.project_root, vcs.path, path.name)
-                new_path.write_text(content, encoding="utf-8")
-                print(f"Created {new_path}")
-                try:
-                    content = self.render_template(path, vcs)
-                    new_path = Path(self.project_root, vcs.path, path.name)
-                    new_path.write_text(content)
-                    print(f"Created {new_path}")
-                except Exception as error:
-                    print(f"Error while creating {path.name}: {error}")
-                    continue
-        return
-
     def _create_issues(
         self,
         user_id: int,
