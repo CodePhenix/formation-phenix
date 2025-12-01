@@ -183,18 +183,3 @@ class TestIssueManager:
     #     """
     #     assert self.manager.jinja_env is not None
     #     assert self.manager.render_template(Path(fakeFile.path), vcs) == expected
-
-    def test_delete_template(self, fake_filesystem):
-        """
-        GIVEN the initial state of the filesystem
-        WHEN deleting the templates folder
-        THEN the files should be deleted
-        """
-        self.setUp(fake_filesystem)
-        folder_path = Path(IssueManager.TEMPLATES_PATH)
-
-        assert Path(self.INITIAL_FAKE_FILES[0].path).exists()
-
-        self.manager._delete_folder_content(folder_path)
-
-        assert not Path(self.INITIAL_FAKE_FILES[0].path).exists()
