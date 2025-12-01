@@ -1,7 +1,7 @@
 ---
 name: Exo clicks
 about: Javascript exercice
-title: "Exo clicks"
+title: Exo clicks
 labels: ""
 assignees:
 ---

@@ -1,7 +1,7 @@
 ---
 name: Maquette
 about: Création de Maquette pour un Projet
-title: "Maquette"
+title: Maquette
 labels: ""
 assignees:
 ---
@@ -9,7 +9,6 @@ assignees:
 ## Objectif
 
 Imaginez que vous êtes un architecte en train de concevoir les plans d'une maison. Avant de commencer la construction, vous avez besoin de maquettes détaillées pour visualiser chaque pièce, chaque mur, chaque fenêtre. De la même manière, dans le domaine du développement de projets, la création de maquettes est une étape essentielle pour concevoir et communiquer efficacement le design d'un site web, d'une application ou de tout autre projet numérique.
-
 
 1. **Comprendre les Besoins et les Objectifs :** La première étape consiste à comprendre les besoins et les objectifs du projet. Quel est le public cible ? Quels sont les principaux objectifs de l'interface utilisateur ? Quelles fonctionnalités doivent être mises en avant ?
 
@@ -23,13 +22,9 @@ Imaginez que vous êtes un architecte en train de concevoir les plans d'une mais
 
 6. **Tester et Itérer :** Une fois la maquette terminée, partagez-la avec les parties prenantes et recueillez leurs retours. Utilisez ces commentaires pour itérer et améliorer la maquette jusqu'à ce qu'elle réponde pleinement aux besoins du projet.
 
-
-
-
 ## Cours associés
 
 https://codephenix.fr/interface/connaissances/index.php#UX
-
 
 ## Definition of Done
 

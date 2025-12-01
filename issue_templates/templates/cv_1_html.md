@@ -1,7 +1,7 @@
 ---
 name: CV HTML Exercice
 about: Intro balises HTML
-title: "CV HTML Exercice"
+title: CV HTML Exercice
 labels: ""
 assignees:
 ---

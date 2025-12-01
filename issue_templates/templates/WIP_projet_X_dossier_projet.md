@@ -1,7 +1,7 @@
 ---
 name: Présentation soutenance
 about:
-title: "Présentation"
+title: Présentation
 labels: ""
 assignees:
 ---

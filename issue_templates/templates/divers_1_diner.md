@@ -1,7 +1,7 @@
 ---
 name: CSS Diner
 about: Exercice sur les sélecteurs CSS
-title: "[CSS] Diner"
+title: [CSS] Diner
 labels: ""
 assignees:
 ---

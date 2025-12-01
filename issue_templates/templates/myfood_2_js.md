@@ -1,7 +1,7 @@
 ---
 name: Exo MYFOOD Full JS
 about: Javascript exercice
-title: "Exo MYFOOD Full JS"
+title: Exo MYFOOD Full JS
 labels: ""
 assignees:
 ---

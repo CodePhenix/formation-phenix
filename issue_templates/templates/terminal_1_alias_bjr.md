@@ -1,7 +1,7 @@
 ---
 name: [Terminal] Alias 1 (bjr)
 about:
-title: "[Terminal] Alias 1 (bjr)"
+title: [Terminal] Alias 1 (bjr)
 labels:
 assignees:
 ---

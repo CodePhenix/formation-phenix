@@ -1,7 +1,7 @@
 ---
 name: DP Analytics
 about: Inscrire l'exercice Analytics dans le dossier pro
-title: "[DP] Analytics"
+title: [DP] Analytics
 labels: ""
 assignees:
 ---

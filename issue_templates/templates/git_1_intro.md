@@ -1,7 +1,7 @@
 ---
 name: Introduction Git
 about: GIT
-title: "Initiation GIT"
+title: Initiation GIT
 labels: ""
 assignees:
 ---

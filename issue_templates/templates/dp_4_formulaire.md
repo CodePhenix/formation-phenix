@@ -1,7 +1,7 @@
 ---
 name: DP Formulaire
 about: Inscrire l'exercice dans le dossier pro
-title: "[DP] Formulaire"
+title: [DP] Formulaire
 labels: ""
 assignees:
 ---

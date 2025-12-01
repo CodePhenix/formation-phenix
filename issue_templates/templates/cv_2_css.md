@@ -1,7 +1,7 @@
 ---
 name: CV CSS Exercice
 about: Mise en forme CSS
-title: "CV CSS Exercice"
+title: CV CSS Exercice
 labels: ""
 assignees:
 ---
