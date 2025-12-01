@@ -15,6 +15,7 @@ exo_dark_theme.md
 click_2_js_conditions.md
 exo_js_fruit.md
 divers_3_setup_bis.md
+bonus_3_exo_42.md
 form_1_structure.md
 form_2_validation.md
 css_3_flexbox_difficult.md
