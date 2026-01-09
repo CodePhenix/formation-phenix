@@ -1,14 +1,14 @@
 ---
-name: Exo Ctrl+maj+f / Ctrl+maj+h
+name: Exo Ctrl+f / Ctrl+h
 about: Training Exercice command find and replace
-title: Exo Ctrl+maj+f / Ctrl+maj+h
+title: Exo Ctrl+f / Ctrl+h
 labels: ""
 assignees:
 ---
 
 ## Objectif
 
-[_lien vers l'exercice_](https://codephenix.fr/interface/exercices/new_exo_command/exo-ctrl-maj-f.zip)
+[_lien vers l'exercice_](https://codephenix.fr/interface/exercices/new_exo_command/exo-ctrl-f.zip)
 
 Ouh là, un ancien collègue nous a laissé son projet web avant de partir en vacances, et rien ne marche : quand on ouvre le fichier `index.html` dans notre navigateur et qu'on clique sur le bouton `Débloquer`, rien ne se passe !
 
@@ -30,9 +30,9 @@ Il va falloir aller chercher dans les fichiers de documentation où sont enregis
 
 _Rappelez-vous :_
 
-**Dans VSCode et dans SublimeText (vos éditeurs de code/texte), le raccourci clavier `ctrl+maj+f` permet de chercher un mot**
+**Dans VSCode et dans SublimeText (vos éditeurs de code/texte), le raccourci clavier `ctrl+f` permet de chercher un mot**
 
-**Le raccourci clavier `ctrl+maj+h` permet de remplacer un mot : vous pouvez remplacer un à un tous les mots ou tout remplacer d'un coup**
+**Le raccourci clavier `ctrl+h` permet de remplacer un mot : vous pouvez remplacer un à un tous les mots ou tout remplacer d'un coup**
 
 Pour ça, suivez les étapes :
 
@@ -48,7 +48,7 @@ Copiez-le bien avec le raccourci clavier `ctrl+c` !
 
 Là aussi, il y en a du texte... Une fois le mot de passe en votre possession, vous allez pouvoir filtrer tous les dossiers pour aller chercher le bon dossier contenant tous les noms corrects des id/classes/fonctions/constantes.
 
-> Astuce : Une fois `ctrl+maj+f` tapée, utilisez le raccourci clavier `ctrl+v` pour coller votre mot de passe, c'est plus rapide qu'avec la souris !
+> Astuce : Une fois `ctrl+f` tapée, utilisez le raccourci clavier `ctrl+v` pour coller votre mot de passe, c'est plus rapide qu'avec la souris !
 
 ### Etape 3 : Ouvrir le fichier `script.js`
 
