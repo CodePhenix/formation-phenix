@@ -12,6 +12,10 @@ assignees:
 
 Nous allons créer un programme pour lancer des dés, de manière aléatoire.
 
+Pas de soucis si l'étape bonus n'est pas faite, elle est facultative, l'idée est que vous soyez plus à l'aise avec les fonctions et leur appel après cet exercice, ainsi qu'avec la manipulation du DOM et l'utilisation des boucle for.
+
+**Courage !**
+
 ## Instructions
 
 TOUT ECRIRE DANS LE FICHIER `script.js`.
@@ -21,10 +25,10 @@ TOUT ECRIRE DANS LE FICHIER `script.js`.
 ## Etape 1 : Commençons par créer un dé
 
 On va créer un dé en JavaScript :
-- Dans `script.js`, créons tout d'abord une `div` (Astuce : la méthode permettant ça commence par *crea* et finit par *ment*) que l'on place dans une constante.
-- On va ajouter une classe `dice` à cette constante (Astuce : utiliser la méthode *add* d'une certaine propriété commençant par *class* et finissant par *ist*...) :
+- Dans `script.js`, créons tout d'abord une `div` (Astuce : la méthode à utiliser s'appelle `document.createElement()`) que l'on place dans une constante.
+- On va ajouter une classe `dice` à cette constante (Astuce : utiliser la méthode `add` de la propriété `classList()`) :
   - _Ca tombe bien_ ! Tous les styles (y compris `.dice`) sont déjà _définis_ dans `style.css` pour dimensionner et appliquer une image d'arrière-plan à l'élément qui porte cette classe.
-  - _Tiens d'ailleurs_ ! L'image appliquée en arrière plan est ce qu'on appelle un **sprite** : c'est une image comportant en fait plusieurs images. On n'affichera qu'une partie de l'image en arrière plan. Et jouant sur la position de l'arrière-plan, on affichera telle ou telle portion de l'image (en partie 2). Les sprites, c'est très pratique pour ne charger qu'une seule image au lieu de plusieurs et améliorer ainsi l'expérience utilisateur.
+  - _Tiens d'ailleurs_ ! L'image appliquée en arrière plan est ce qu'on appelle un **sprite** : c'est une image comportant en fait plusieurs images. *Pour y voir plus clair, consulter le petit guide dans `images/dice-sprite.png`*
 - On n'a plus qu'à insérer la constante de la `div` créée dans le DOM en JavaScript. Pour ça, il faudrait l'ajouter dans le container qui possède l'id `player` :
   - il faut aller chercher ce container,
   - l'afficher en lui imposant une nouvelle classe (la classe ne sera plus 'hidden' mais '**board**' : pour cela, on n'utilise non pas la propriété classList (avec les méthodes add, contains, remove ou toggle) mais la propriété `className` qui remplace toutes les classes ajoutées jusque là)
@@ -77,7 +81,7 @@ On va donc définir une constante qui sera égale à la formule définie plus ha
 - On va se servir du nombre obtenu dans dicePosition pour modifier la position de l'arrière plan du dé :
   - Sous la création de la div de l'étape 1, on va ajouter à cette div (appelée ici 'diceDiv') un nouveau style (qui sera le visuel de la face du dé) : `diceDiv.style.backgroundPosition = "-" + dicePosition + "px 0";`
 
->Pour info chaque face de dé fait exactement 100px de large sur le sprite de l'image des dés. Notre image de base est l'image du dé à 1 si on ne déplace par le `background-position` donc si le dé donne le résultat de 3, on doit déplacer l'image contenant toutes les faces du dé de -200px (de 200px vers la gauche). Si le dé donne 6, on déplace l'image de -500px, etc. (c'est pour ça qu'on a gardé en mémoire la constante dicePosition).
+>Pour info chaque face de dé fait exactement 100px de large sur le sprite de l'image des dés. Notre image de base est l'image du dé à 1 si on ne déplace par le `background-position` donc si le dé donne le résultat de 3, on doit déplacer l'image contenant toutes les faces du dé de -200px (de 200px vers la gauche). Si le dé donne 6, on déplace l'image de -500px, etc. (c'est pour ça qu'on a gardé en mémoire la constante dicePosition). *N'hésitez pas à vous reporter au petit guide dans `images/dice-sprite.png`*
 
 <details>
 <summary>Checkpoint : lorsque cette étape est validée, la page pourrait bien ressembler à ça :</summary>
@@ -116,7 +120,7 @@ On aimerait bien pouvoir lancer le nombre de dés que l'on souhaite (par exemple
   - la variable du nombre de dés (dans l'étape 3, elle a été déclarée comme étant fixe pour le moment) doit être égale à la valeur du curseur = comme cette dernière est une chaîne de caractères il faut la transformer en Number grâce à la fonction `Number()`.
 - Enfin, il va falloir gérer les conséquences du clic sur le bouton permettant de lancer le ou les dé(s) :
   - il faut aller chercher la `div` du 'player' (son espace de jeu, dans lequel on créé les dés),
-  - le vider (Astuce : on utilise la propriété commençant par `inner` et finissant par `ML`...)
+  - le vider (Astuce : on utilise la propriété `innerHTML`),
   - et déplacer la fin de l'étape 3 avec la boucle for dans cet addEventListener.
 
 <details>
@@ -189,9 +193,3 @@ Pour cela voici un petit florilège des phrases/choses à éviter:
 _Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...
-
-### Le mot de la fin ?
-
-Pas de soucis si l'étape bonus n'est pas faite, elle est facultative, l'idée est que vous soyez plus à l'aise avec les fonctions et leur appel après cet exercice, ainsi qu'avec la manipulation du DOM et l'utilisation des boucle for.
-
-**Courage !**

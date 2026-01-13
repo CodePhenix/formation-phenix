@@ -20,6 +20,8 @@ Tout ce qu'il reste à faire, c'est aller chercher ces questions et leurs répon
 
 Suivez les instructions pas à pas, ça va le faire !
 
+**N'oubliez pas de vérifier en permanence dans votre navigateur quand vous apportez des modifications. L'étape bonus 7 est assez complexe, vous n'êtes pas obligés de la terminer maintenant !**
+
 ## Instructions
 
 **NE PAS TOUCHER AU FICHIER `index.html` NI A `style.css`, CODER SEULEMENT DANS `script.js` !**
@@ -222,7 +224,3 @@ Pour cela voici un petit florilège des phrases/choses à éviter:
 _Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...
-
-### Le mot de la fin ?
-
-**N'oubliez pas de vérifier en permanence dans votre navigateur quand vous apportez des modifications. L'étape bonus 7 est assez complexe, vous n'êtes pas obligés de la terminer maintenant !**
