@@ -19,9 +19,11 @@ bonus_3_exo_42.md
 form_1_structure.md
 form_2_validation.md
 css_3_flexbox_difficult.md
+exo_dice_roller.md
 css_5_fiesta.md
 exo_object_array_pizza.md
 dp_4_formulaire.md
+exo_js_json_quiz.md
 terminal_0_cd_ls.md
 terminal_1_alias_bjr.md
 terminal_2_alias_apt.md
