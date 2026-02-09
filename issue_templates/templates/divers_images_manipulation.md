@@ -25,8 +25,8 @@ Pour se faire, il faut avoir en tête que pour chaque manipulation, il existe **
 
 Liens vers les images:
 
-- Image 1: {{ codephenix_url }}/cours/exercices/manipulation-images/image-1.png
-- Image 1-bis: {{ codephenix_url }}/cours/exercices/manipulation-images/image-1-bis.png
-- Image 2: {{ codephenix_url }}/cours/exercices/manipulation-images/image-2.jpg
-- Image 3: {{ codephenix_url }}/cours/exercices/manipulation-images/image-3.png
-- Image 4: {{ codephenix_url }}/cours/exercices/manipulation-images/image-4.jpeg
+- Image 1: {{ codephenix_url }}/exercices/manipulation-images/image-1.png
+- Image 1-bis: {{ codephenix_url }}/exercices/manipulation-images/image-1-bis.png
+- Image 2: {{ codephenix_url }}/exercices/manipulation-images/image-2.jpg
+- Image 3: {{ codephenix_url }}/exercices/manipulation-images/image-3.png
+- Image 4: {{ codephenix_url }}/exercices/manipulation-images/image-4.jpeg
