@@ -1,7 +1,7 @@
 ---
-name: Form structure
-about: Création de formulaires
-title: [FORM] Structure
+name: Manipulation d'images
+about: Manipulation d'images
+title: Manipulation d'images
 labels: ""
 assignees:
 ---
