@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SELECTOR */
+.red{
+    color: red;
+}
+/* Cible le enième (ici 2ème élément de la liste */
+.blue:nth-of-type(2){
+    color: green;
+}
+
+.blue{
+    color: blue
+}
+
+#orange{
+    color: orange;
+}
+
+/* WIDTH */
+
+#sec2{
+    display: flex;
+}
+
+
+#art1{
+    background: red;
+    width: 50vw;
+    height: 20vh;
+    display: flex;
+}
+
+#art2{
+    background: silver;
+    width: 50vw;
+    height: 20vh;
+    display: flex;
+}
+
+#block1{
+    background-color: gold;
+    
+}
+#block2{
+    background-color: purple;
+    width: 30%;
+    height: 10%;
+}
+
+#block3{
+    background-color: green;
+    width: 40%;
+    height: 10%;
+
+}
+#block4{
+    background-color: red;
+    width: 50%;
+    height: 10%;
+
+}
+
+/* WIDTH COMPAR */
+
+/* Le parent est tronqué à 90vw (90% de la largeur de l'écran) */
+#container-dif-w{
+    width: 90vw;
+    height: 50vh;
+}
+
+/* Prendra toujours la même largeur indépendament de l'écran (non adaptatif) */
+#dif-width1{
+    width: 820px;
+    height: 20px;
+    background-color: red;
+}
+
+/* Prendra x% de la largeur du parent (s'adapte à écran) */
+#dif-width2{
+    width: 60%;
+    height: 10%;
+    background-color: goldenrod;
+}
+
+/* Prendra xx% de la largeur de l'écran/page (s'adapte à l'écran */
+#dif-width3{
+    width: 60vw;
+    height: 20px;
+    background-color: rosybrown;
+}

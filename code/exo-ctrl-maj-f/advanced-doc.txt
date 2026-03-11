@@ -1,0 +1,544 @@
+Attention : en HTML et CSS, les IDs sont en kebab-case !
+En JavaScript, les noms de variables et de fonctions doivent être en camelCase !
+
+Dossier SHADOW-01
+ID du bouton : click-btn
+ID du conteneur principal : mainContainerBox
+ID du résultat : ResultBox
+Nom de la fonction JS à utiliser : run_click
+Nom de la constante : temp_message_holder
+
+Dossier MIRROR-02
+ID du bouton : activate_button
+ID du conteneur principal : container-main
+ID du résultat : output-zone
+Nom de la fonction JS à utiliser : mirrorAction
+Nom de la constante : mirror_message
+
+Dossier VECTOR-03
+ID du bouton : run-vector
+ID du conteneur principal : vectorMain
+ID du résultat : vectorResult
+Nom de la fonction JS à utiliser : vector_run
+Nom de la constante : VectorMessage
+
+Dossier GAMMA-04
+ID du bouton : gamma-btn
+ID du conteneur principal : gamma_container
+ID du résultat : GammaResult
+Nom de la fonction JS à utiliser : gamma_runner
+Nom de la constante : gammaMessageContainer
+
+Dossier ORBIT-05
+ID du bouton : orbit-button
+ID du conteneur principal : orbitMain
+ID du résultat : orbit_result
+Nom de la fonction JS à utiliser : orbit-launch
+Nom de la constante : ORBIT_OUTPUT_MESSAGE
+
+Dossier CRYSTAL-06
+ID du bouton : crystal_btn
+ID du conteneur principal : main-crystal
+ID du résultat : CrystalZone
+Nom de la fonction JS à utiliser : runCrystal
+Nom de la constante : crystal_result_box
+
+Dossier PHOTON-07
+ID du bouton : photon-button
+ID du conteneur principal : photonMainContainer
+ID du résultat : photonOutput
+Nom de la fonction JS à utiliser : photon_trigger
+Nom de la constante : photonMessageContainer
+
+Dossier MATRIX-08
+ID du bouton : matrix-btn
+ID du conteneur principal : matrix-container
+ID du résultat : MatrixResult
+Nom de la fonction JS à utiliser : matrixLaunch
+Nom de la constante : matrix_message_zone
+
+Dossier NUCLEUS-09
+ID du bouton : nucleus-button
+ID du conteneur principal : nucleusContainer
+ID du résultat : nucleus-result
+Nom de la fonction JS à utiliser : run_nucleus_event
+Nom de la constante : NucleusMsg
+
+Dossier SIGNAL-10
+ID du bouton : signal-btn
+ID du conteneur principal : main_signal_container
+ID du résultat : SignalOutput
+Nom de la fonction JS à utiliser : signalHandler
+Nom de la constante : signal_output_box
+
+Dossier PROXY-11
+ID du bouton : pxy-btn
+ID du conteneur principal : proxyMain
+ID du résultat : proxyResult
+Nom de la fonction JS à utiliser : proxy_run
+Nom de la constante : proxyMessage
+
+Dossier RANDOM-12
+ID du bouton : random-btn
+ID du conteneur principal : rndContainer
+ID du résultat : rnd-output
+Nom de la fonction JS à utiliser : rndAction
+Nom de la constante : rnd_message_container
+
+Dossier TENSOR-13
+ID du bouton : tensor-button
+ID du conteneur principal : tensor_main
+ID du résultat : TensorBox
+Nom de la fonction JS à utiliser : runTensor
+Nom de la constante : tensorMessage
+
+Dossier MODULE-14
+ID du bouton : module-unlock-btn
+ID du conteneur principal : moduleContainer
+ID du résultat : success-result
+Nom de la fonction JS à utiliser : moduleRunner
+Nom de la constante : module_success_msg_holder
+
+Dossier DELTA-15
+ID du bouton : delta_button
+ID du conteneur principal : delta-main
+ID du résultat : deltaOutput
+Nom de la fonction JS à utiliser : delta_exec
+Nom de la constante : DELTA_MESSAGE
+
+Dossier CARBON-16
+ID du bouton : carbon-btn
+ID du conteneur principal : carbonContainerMain
+ID du résultat : carbonResult
+Nom de la fonction JS à utiliser : carbon-runner
+Nom de la constante : carbonMsg
+
+Dossier NEBULA-17
+ID du bouton : nebula-button
+ID du conteneur principal : nebula_container
+ID du résultat : neb-output
+Nom de la fonction JS à utiliser : nebulaAction
+Nom de la constante : nebula_message
+
+Dossier PYTHON-18
+ID du bouton : python-btn
+ID du conteneur principal : pythonContainer
+ID du résultat : pyResult
+Nom de la fonction JS à utiliser : handle_python
+Nom de la constante : PyMessage
+
+Dossier COBALT-19
+ID du bouton : cobalt-button
+ID du conteneur principal : cob-main
+ID du résultat : cobaltOutput
+Nom de la fonction JS à utiliser : cobalt_exec
+Nom de la constante : cobalt_msg
+
+Dossier VORTEX-20
+ID du bouton : vortex-btn
+ID du conteneur principal : vortexMain
+ID du résultat : vortexResult
+Nom de la fonction JS à utiliser : vortexHandler
+Nom de la constante : vortex_message_container
+
+Dossier SPECTRE-21
+ID du bouton : spectre-button
+ID du conteneur principal : spectre_main
+ID du résultat : spectreOut
+Nom de la fonction JS à utiliser : spectre-run
+Nom de la constante : SpectreMessage
+
+Dossier FUSION-22
+ID du bouton : fusion_btn
+ID du conteneur principal : fusionContainer
+ID du résultat : fusion-result
+Nom de la fonction JS à utiliser : fusionAction
+Nom de la constante : fusionMessage
+
+Dossier COSMIC-23
+ID du bouton : cosmic-btn
+ID du conteneur principal : cosmicContainer
+ID du résultat : cosmicResult
+Nom de la fonction JS à utiliser : cosmic-run
+Nom de la constante : COSMIC_MSG_BOX
+
+Dossier NOVA-24
+ID du bouton : unlock-nova-button
+ID du conteneur principal : novaMain
+ID du résultat : NovaResult
+Nom de la fonction JS à utiliser : nova_exec
+Nom de la constante : novaMessage
+
+Dossier TITAN-25
+ID du bouton : titan-btn
+ID du conteneur principal : titan_container
+ID du résultat : titanOutput
+Nom de la fonction JS à utiliser : titanTrigger
+Nom de la constante : titan_message_holder
+
+Dossier REACTOR-26
+ID du bouton : reactor-btn
+ID du conteneur principal : reactor-main
+ID du résultat : reactorResult
+Nom de la fonction JS à utiliser : reactorAction
+Nom de la constante : reactor_msg
+
+Dossier VECTORIAL-27
+ID du bouton : vectorial-button
+ID du conteneur principal : vectorialContainer
+ID du résultat : vectorialOutput
+Nom de la fonction JS à utiliser : vectorial_run
+Nom de la constante : vecMessage
+
+Dossier ASTRAL-28
+ID du bouton : astral-btn
+ID du conteneur principal : astr_container
+ID du résultat : astral-result
+Nom de la fonction JS à utiliser : astralHandler
+Nom de la constante : astralMessageContainer
+
+Dossier SATURN-29
+ID du bouton : saturn-button
+ID du conteneur principal : saturnMain
+ID du résultat : saturnResult
+Nom de la fonction JS à utiliser : saturn_exec
+Nom de la constante : saturnBox
+
+Dossier OMEGA-30
+ID du bouton : omega-btn
+ID du conteneur principal : omega_container
+ID du résultat : omegaOutput
+Nom de la fonction JS à utiliser : omega_run
+Nom de la constante : omegaMsg
+
+Dossier QUANTUM-31
+ID du bouton : quantum-button
+ID du conteneur principal : qntContainer
+ID du résultat : qntResult
+Nom de la fonction JS à utiliser : quantum_exec
+Nom de la constante : quantumMsg
+
+Dossier RADON-32
+ID du bouton : unlock-Btn
+ID du conteneur principal : radonContainer
+ID du résultat : radon-result
+Nom de la fonction JS à utiliser : Run
+Nom de la constante : radon_message
+
+Dossier FALCON-33
+ID du bouton : falcon-button
+ID du conteneur principal : falconContainer
+ID du résultat : falconOut
+Nom de la fonction JS à utiliser : falcon_handler
+Nom de la constante : falconMessage
+
+Dossier SPHINX-34
+ID du bouton : unlock-button
+ID du conteneur principal : main_container
+ID du résultat : sphinxResult
+Nom de la fonction JS à utiliser : sphinx_exec_unlock
+Nom de la constante : sphinx_msg_box_success
+
+Dossier TURBO-35
+ID du bouton : turbo-button
+ID du conteneur principal : turbo_container
+ID du résultat : turboOut
+Nom de la fonction JS à utiliser : turbo_run
+Nom de la constante : turboMessage
+
+Dossier HYDRA-36
+ID du bouton : hydra-btn
+ID du conteneur principal : hydraContainer
+ID du résultat : hydraResult
+Nom de la fonction JS à utiliser : hydra_action
+Nom de la constante : hydraMsg
+
+Dossier ATLAS-37
+ID du bouton : atlas-button
+ID du conteneur principal : atlas_main
+ID du résultat : atlasOutput
+Nom de la fonction JS à utiliser : atlas_exec
+Nom de la constante : atlas_message_container
+
+Dossier POLARIS-38
+ID du bouton : polaris-btn
+ID du conteneur principal : polarisContainer
+ID du résultat : polarisResult
+Nom de la fonction JS à utiliser : polarisAction
+Nom de la constante : polaris_msg
+
+Dossier NEON-39
+ID du bouton : neon-button
+ID du conteneur principal : neonContainer
+ID du résultat : neon-result
+Nom de la fonction JS à utiliser : neon_trigger
+Nom de la constante : neonMessageBox
+
+Dossier METRIC-40
+ID du bouton : metric-btn
+ID du conteneur principal : metricContainer
+ID du résultat : metricResult
+Nom de la fonction JS à utiliser : metric_run
+Nom de la constante : metric_message
+
+Dossier ORBITAL-41
+ID du bouton : orbital-btn
+ID du conteneur principal : orbitalMain
+ID du résultat : orbitalResult
+Nom de la fonction JS à utiliser : orbitalAction
+Nom de la constante : orbital_msg_container
+
+Dossier ACCESS-42
+ID du bouton : unlockButton
+ID du conteneur principal : main-container
+ID du résultat : result
+Nom de la fonction JS à utiliser : handleUnlock
+Nom de la constante : successMessageContainer
+
+Dossier PARSEC-43
+ID du bouton : unLock-button
+ID du conteneur principal : parsecContainer
+ID du résultat : result_output
+Nom de la fonction JS à utiliser : parsec_run
+Nom de la constante : parsecMessageContainer
+
+Dossier QUARK-44
+ID du bouton : quark-btn
+ID du conteneur principal : quarkMain
+ID du résultat : quarkResult
+Nom de la fonction JS à utiliser : quarkExec
+Nom de la constante : quark_message
+
+Dossier RIFT-45
+ID du bouton : rift-button
+ID du conteneur principal : riftContainer
+ID du résultat : rift_output
+Nom de la fonction JS à utiliser : riftAction
+Nom de la constante : riftMsg
+
+Dossier SONIC-46
+ID du bouton : sonic-btn
+ID du conteneur principal : sonicMain
+ID du résultat : sonicResult
+Nom de la fonction JS à utiliser : sonic_run
+Nom de la constante : sonicMessage
+
+Dossier TURBINE-47
+ID du bouton : turbine-button
+ID du conteneur principal : turbineContainer
+ID du résultat : turbine_output
+Nom de la fonction JS à utiliser : turbineExec
+Nom de la constante : turbineMsg
+
+Dossier ULTRA-48
+ID du bouton : ultra-btn
+ID du conteneur principal : ultraMain
+ID du résultat : ultraResult
+Nom de la fonction JS à utiliser : ultra_run
+Nom de la constante : ultra_message
+
+Dossier VORTEX-49
+ID du bouton : vortex-button
+ID du conteneur principal : vortexContainer
+ID du résultat : vortex_output
+Nom de la fonction JS à utiliser : vortexAction
+Nom de la constante : vortexMsg
+
+Dossier WARP-50
+ID du bouton : warp-btn
+ID du conteneur principal : warpMain
+ID du résultat : warpResult
+Nom de la fonction JS à utiliser : warp_run
+Nom de la constante : warpMessage
+
+Dossier XENON-51
+ID du bouton : xenon-button
+ID du conteneur principal : xenonContainer
+ID du résultat : xenon_output
+Nom de la fonction JS à utiliser : xenonExec
+Nom de la constante : xenonMsg
+
+Dossier YOTTA-52
+ID du bouton : yotta-btn
+ID du conteneur principal : yottaMain
+ID du résultat : yottaResult
+Nom de la fonction JS à utiliser : yotta_run
+Nom de la constante : yottaMessage
+
+Dossier ZEPHYR-53
+ID du bouton : zephyr-button
+ID du conteneur principal : zephyrContainer
+ID du résultat : zephyr_output
+Nom de la fonction JS à utiliser : zephyrExec
+Nom de la constante : zephyrMsg
+
+Dossier ANDROMEDA-54
+ID du bouton : andromeda-btn
+ID du conteneur principal : andromedaMain
+ID du résultat : andromedaResult
+Nom de la fonction JS à utiliser : andromeda_run
+Nom de la constante : andromedaMessage
+
+Dossier BOREAL-55
+ID du bouton : boreal-button
+ID du conteneur principal : borealContainer
+ID du résultat : boreal_output
+Nom de la fonction JS à utiliser : borealExec
+Nom de la constante : success-borealMsg
+
+Dossier CORTANA-56
+ID du bouton : cortana-btn
+ID du conteneur principal : Main
+ID du résultat : coronaResult
+Nom de la fonction JS à utiliser : cortana_run
+Nom de la constante : cortanaMessage
+
+Dossier DYNAMO-57
+ID du bouton : dynamo-button
+ID du conteneur principal : dynamoContainer
+ID du résultat : dynamo_output
+Nom de la fonction JS à utiliser : dynamoAction
+Nom de la constante : dynamoMsg
+
+Dossier ELIXIR-58
+ID du bouton : elixir-btn
+ID du conteneur principal : elixirMain
+ID du résultat : elixirResult
+Nom de la fonction JS à utiliser : elixir_run
+Nom de la constante : elixirMessage
+
+Dossier FROST-59
+ID du bouton : frost-button
+ID du conteneur principal : frostContainer
+ID du résultat : frost_output
+Nom de la fonction JS à utiliser : frostExec
+Nom de la constante : frostMessage
+
+Dossier GLIDER-60
+ID du bouton : glider-btn
+ID du conteneur principal : gliderMain
+ID du résultat : gliderResult
+Nom de la fonction JS à utiliser : glider_run
+Nom de la constante : gliderMsg
+
+Dossier HALO-61
+ID du bouton : halo-button
+ID du conteneur principal : haloContainer
+ID du résultat : halo_output
+Nom de la fonction JS à utiliser : haloAction
+Nom de la constante : haloMessage
+
+Dossier INFERNO-62
+ID du bouton : inferno-btn
+ID du conteneur principal : infernoMain
+ID du résultat : infernoResult
+Nom de la fonction JS à utiliser : inferno_run
+Nom de la constante : infernoMsg
+
+Dossier JETSTREAM-63
+ID du bouton : jetstream-button
+ID du conteneur principal : jetstreamContainer
+ID du résultat : jetstream_output
+Nom de la fonction JS à utiliser : jetstreamExec
+Nom de la constante : jetstreamMsg
+
+Dossier KRONOS-64
+ID du bouton : kronos-btn
+ID du conteneur principal : kronosMain
+ID du résultat : kronosResult
+Nom de la fonction JS à utiliser : kronos_run
+Nom de la constante : kronosMessage
+
+Dossier LANTERN-65
+ID du bouton : lantern-button
+ID du conteneur principal : lanternContainer
+ID du résultat : lantern_output
+Nom de la fonction JS à utiliser : lanternExec
+Nom de la constante : lanternMsg
+
+Dossier MONOLITH-66
+ID du bouton : monolith-btn
+ID du conteneur principal : monolithMain
+ID du résultat : monolithResult
+Nom de la fonction JS à utiliser : monolith_run
+Nom de la constante : monolithMessage
+
+Dossier NIMBUS-67
+ID du bouton : nimbus-button
+ID du conteneur principal : nimbusContainer
+ID du résultat : nimbus_output
+Nom de la fonction JS à utiliser : nimbusAction
+Nom de la constante : nimbusMsg
+
+Dossier ONYX-68
+ID du bouton : onyx-btn
+ID du conteneur principal : onyxMain
+ID du résultat : onyxResult
+Nom de la fonction JS à utiliser : onyx_run
+Nom de la constante : onyxMessage
+
+Dossier PULSAR-69
+ID du bouton : pulsar-button
+ID du conteneur principal : pulsarContainer
+ID du résultat : pulsar_output
+Nom de la fonction JS à utiliser : pulsarExec
+Nom de la constante : pulsarMsg
+
+Dossier QUARTZ-70
+ID du bouton : quartz-btn
+ID du conteneur principal : quartzMain
+ID du résultat : quartzResult
+Nom de la fonction JS à utiliser : quartz_run
+Nom de la constante : quartzMessage
+
+Dossier RADIANT-71
+ID du bouton : radiant-button
+ID du conteneur principal : radiantContainer
+ID du résultat : radiant_output
+Nom de la fonction JS à utiliser : radiantAction
+Nom de la constante : radiantMsg
+
+Dossier STARLIGHT-72
+ID du bouton : starlight-btn
+ID du conteneur principal : starlightMain
+ID du résultat : starlightResult
+Nom de la fonction JS à utiliser : starlight_run
+Nom de la constante : starlightMessage
+
+Dossier TITANIUM-73
+ID du bouton : titanium-button
+ID du conteneur principal : titaniumContainer
+ID du résultat : titanium_output
+Nom de la fonction JS à utiliser : titaniumExec
+Nom de la constante : titaniumMsg
+
+Dossier UMBRA-74
+ID du bouton : umbra-btn
+ID du conteneur principal : umbraMain
+ID du résultat : umbraResult
+Nom de la fonction JS à utiliser : umbra_run
+Nom de la constante : umbraMessage
+
+Dossier VISION-75
+ID du bouton : vision-button
+ID du conteneur principal : visionContainer
+ID du résultat : vision_output
+Nom de la fonction JS à utiliser : visionExec
+Nom de la constante : vision_message
+
+Dossier WINDOW-76
+ID du bouton : window-btn
+ID du conteneur principal : windowMain
+ID du résultat : windowResult
+Nom de la fonction JS à utiliser : window_run
+Nom de la constante : windowMessage
+
+Dossier PASSWORD-77
+ID du bouton : unlock-button
+ID du conteneur principal : mainContainer
+ID du résultat : Result
+Nom de la fonction JS à utiliser : handle_unlock
+Nom de la constante : success_message_container
+
+
+

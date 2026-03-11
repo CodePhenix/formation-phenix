@@ -1,0 +1,19 @@
+h1 {
+    color: white;
+}
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid purple;
+    background-color: rgb(5, 47, 82);
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+label {
+    color: white;
+    margin-bottom: 10px;
+}

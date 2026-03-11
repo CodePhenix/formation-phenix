@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: blue;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style-type: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;}
+
+#monTexte {
+font-size: 25px;
+color: black;
+margin: 20px 25px 20px 25px ;
+background-color: antiquewhite;
+}
+
+#monBouton {
+    padding: 20px 40px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+.coordonnees {
+  margin-top: 45px;
+ display: flex;
+ justify-content: space-evenly;
+}
+
+input {
+  color: chocolate;
+  background-color: burlywood;
+}

@@ -1,0 +1,88 @@
+/* NE PAS TOUCHER AU CSS ! */
+
+:root {
+    --bg-locked: #0f0f0f;
+    --bg-unlocked: #0d1f0d;
+    --text-locked: #e74c3c;
+    --text-unlocked: #b8ffb8;
+    --accent: #c0392b;
+    --accent-unlocked: #3cff3c;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+    background-color: var(--bg-locked);
+    color: var(--text-locked);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border: 2px solid var(--accent);
+    padding: 10px 20px;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    user-select: none;
+}
+
+#unlock-button {
+    background: transparent;
+    border: 2px solid var(--accent);
+    padding: 10px 25px;
+    color: var(--text-locked);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#unlock-button:hover {
+    background-color: var(--accent);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 70, 70, 0.6);
+}
+
+#result {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+body.unlocked {
+    background-color: var(--bg-unlocked);
+    color: var(--text-unlocked);
+}
+
+body.unlocked h1 {
+    border-color: var(--accent-unlocked);
+    box-shadow: 0 0 20px rgba(60, 255, 60, 0.5);
+    color: var(--accent-unlocked);
+}
+
+body.unlocked #result {
+    color: var(--accent-unlocked);
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(60, 255, 60, 0.5);
+}
+
+img.show-img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.2);
+}
