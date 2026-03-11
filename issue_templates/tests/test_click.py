@@ -30,19 +30,6 @@ class TestClick:
             "  templates"
         )
 
-    def test_cli_templates(self):
-        """
-        GIVEN -
-        WHEN running one cli templates command
-        THEN it should return the confirm message
-        """
-        self.setUp()
-        result = self.runner.invoke(cli, ["templates", "apply-new-issues-order"])
-        assert result.exit_code == 0
-        assert result.output.replace("\n", "") == (
-            "This will override the order suffix in issues templates names. Do you want to continue ? [y/N]: Aborted"
-        )
-
     def test_cli_github(self):
         """
         GIVEN -

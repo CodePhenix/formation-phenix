@@ -40,12 +40,9 @@ Use `--help` flag to get the documentation of each sub-command
 
 **Order**
 
-Issues will be created in the order determined by the \_\_X suffix.
 To help handle this
 
-- first run `pull_current_issues_order` to gather the issues in ISSUES_ORDER.txt
-- reorganize issues as you wish (first line will be first issue and so on)
-- run `apply_new_issues_order` to update all issues templates names accordingly
+- organize issues as you wish in ISSUES_ORDER.txt
 
 ### GitLab
 
