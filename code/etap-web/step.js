@@ -1,5 +1,62 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Création de l'overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'modal-overlay';
+    document.body.appendChild(overlay);
+
+    // 2. Éléments Noam
+    const triggerNoam = document.getElementById('trigger-noam'); 
+    const modalNoam = document.getElementById('modal-noam-descriptif'); 
+    // On cible spécifiquement le bouton X de la grande carte Noam
+    const closeBtnNoam = modalNoam ? modalNoam.querySelector('.close-preview') : null;
+
+    const closeNoam = () => {
+        if(modalNoam) modalNoam.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (triggerNoam && modalNoam) {
+        triggerNoam.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            modalNoam.classList.add('active'); 
+            overlay.classList.add('active');   
+            document.body.style.overflow = 'hidden'; 
+        });
+    }
+
+    // Fermeture de la grande carte
+    if (closeBtnNoam) {
+        closeBtnNoam.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeNoam();
+        });
+    }
+    overlay.addEventListener('click', closeNoam);
+
+    // 3. Gestion des autres logos (Grille)
+    const autresLogos = document.querySelectorAll(".logos-etap:not(#trigger-noam)");
+    autresLogos.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // IMPORTANT : Si on clique sur le bouton fermer (X) d'une petite carte
+            if (e.target.closest('.close-preview')) {
+                this.classList.remove('active');
+                e.stopPropagation();
+                return;
+            } 
+            
+            // Sinon, si la carte n'est pas active, on l'ouvre
+            if (!this.classList.contains('active')) {
+                e.preventDefault(); 
+                autresLogos.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+});
+
+/*document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Cible la carte descriptive par son nouvel ID
     const triggerNoam = document.querySelector('.logos-etap'); 
@@ -54,7 +111,7 @@ if (closeBtnNoam) {
 });
 
 // Fermer si on clique sur le voile noir (en dehors de la carte)
-overlay.addEventListener('click', closeNoam);
+overlay.addEventListener('click', closeNoam);*/
 
 
 /*var logos = document.querySelectorAll(".logos-etap")

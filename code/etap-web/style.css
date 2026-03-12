@@ -1,24 +1,24 @@
 
 
-/*Code Temporaire*/
+/*Code Temporaire
 .container {
-    /* --- On change ces lignes pour le centrage --- */
-    position: fixed;         /* Fixé par rapport à l'écran */
-    top: 50%;               /* 50% du haut */
-    left: 50%;              /* 50% de la gauche */
-    transform: translate(-50%, -50%); /* Centrage parfait */
-    z-index: 1000;          /* Passe au-dessus de tout */
-    display: none;          /* Caché par défaut au chargement */
+    /* --- On change ces lignes pour le centrage --- 
+    position: fixed;         /* Fixé par rapport à l'écran 
+    top: 50%;               /* 50% du haut 
+    left: 50%;              /* 50% de la gauche 
+    transform: translate(-50%, -50%); /* Centrage parfait 
+    z-index: 1000;          /* Passe au-dessus de tout 
+    display: none;          /* Caché par défaut au chargement 
 
-    /* --- On garde tes styles intacts --- */
+    /* --- On garde tes styles intacts --- 
     background-color: #051120;
     border-radius: 15px;
     max-width: 450px;
-    width: 90%;             /* Sécurité pour le mobile */
+    width: 90%;             /* Sécurité pour le mobile 
     padding: 25px;
     color: white;
     font-family: 'Inter', sans-serif;
-    display: flex;          /* Attention : le JS devra gérer le passage de 'none' à 'flex' */
+    display: flex;          /* Attention : le JS devra gérer le passage de 'none' à 'flex' 
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
@@ -42,6 +42,7 @@
 }
 
 .realisation {
+    color: white;
     font-weight: bold;
     font-size: 1.1rem;
     margin: 0;
@@ -75,12 +76,14 @@
 .preview-link {
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 13px;
     word-break: break-all; /* Évite que l'URL dépasse sur mobile */
     opacity: 0.9;
     white-space: nowrap;       /* Empêche le texte de passer à la ligne */
     display: inline-block;     /* Permet au navigateur de calculer correctement la largeur */
-    max-width: 100%;           /* S'assure que le lien ne dépasse pas de la carte bleue */
+    max-width: 180px;           /* S'assure que le lien ne dépasse pas de la carte bleue */
+overflow: hidden;
+text-overflow: ellipsis;
 
 }
 
@@ -89,26 +92,35 @@
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Aligne les deux éléments au début (gauche) */
-    gap: 50px;                   /* Définit l'espace exact entre les deux */
+    gap: 15px;                   /* Définit l'espace exact entre les deux */
     margin-top: 15px;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-.bouton-devis {
-   
-    background: #75B3CF;
-    border: none;
-    border-radius: 5px;
-    padding: 0px 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 30px;
+
+
+
+
+.vector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px; /* Assure un espace minimum */
 }
 
-.bouton-devis:hover {
-    border-radius: 2px solid #FF0000;
+.vector img {
+    display: block !important;
+    width: 40px;       /* Force une largeur */
+    height: auto;      /* Garde les proportions */
+    visibility: visible;
+    opacity: 1;
 }
 
+/*.vector img{
+    height: 16px;
+    width: auto;
+}*/
 
 #text-devis {
     /* Supprimez top et left pour laisser la Flexbox aligner l'élément */
@@ -141,12 +153,14 @@
     /* Tes styles actuels */
     background-color: #051120;
     border-radius: 15px;
-    max-width: 400px;
+    max-width: 450px;
     width: 90%;
     padding: 25px;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* La classe que le JS va ajouter au clic */
@@ -219,7 +233,7 @@
 }
 
 
-/* Bouton Fermer (X) */
+/* Bouton Fermer (X) 
 .close-preview {
     font-size: 30px;
     position: absolute;
@@ -232,14 +246,34 @@
     width: 37.92px;
     height: 37.79px;
     cursor: pointer;
-    z-index: 25; /* Doit être au-dessus du lien*/ 
+    z-index: 25; /* Doit être au-dessus du lien
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.2s;
 
+}*/
+
+.close-preview {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: gray;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex !important; /* Force l'affichage */
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    z-index: 2000; /* Doit être au-dessus de tout */
+    line-height: 1;
 }
+
 
 .close-preview:hover {
     background: #004d40;
@@ -277,12 +311,20 @@
 
 .preview-link {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     /* Ajoutez vos styles de couleur ici */
     color: white;
-    margin-top: 25px;
-    margin-left: 25px;
+    margin-top: 0px;
+    margin-left: 5px;
     
+}
+
+.preview-link .bouton-devis {
+    transform: translateY(-5px);
+}
+
+.vector {
+    transform: translateY(0);
 }
 
 
@@ -305,7 +347,12 @@ left: 558px;
 opacity: 1;
 border-radius: 5px;
 background: #75B3CF;
-
+    border-radius: 5px;
+    padding: 0px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    /*transition: 0.3s;*/
+    margin-top: 0px;
 }
 
 
@@ -339,11 +386,11 @@ background: #75B3CF;
     width: 100%;
     height: 100%;
     background-color: #071627;
-    display: none; /* On utilise uniquement display pour le contrôle */
+    display: none; /* On utilise uniquement display pour le contrôle*/ 
     flex-direction: column;
     justify-content: flex-end;
     z-index: 20;
-    border-radius: 12px; /* Pour matcher avec le parent */
+    border-radius: 12px; /* Pour matcher avec le parent*/ 
 
 }
 
@@ -411,8 +458,8 @@ background: #75B3CF;
 
 .plus-infos{
     font-size: 35px;
-    color: white
-    text-shadow -1px -1px #004d40;
+    color: white;
+    text-shadow: -1px -1px #004d40;
 }
 
 /* Le parent doit être en relative */
@@ -485,7 +532,7 @@ height: 50px;
     background-color: #000000;
     min-width: 50px;
     max-width: 73%;
-    margin-right: px;
+    margin-right: 0px;
 }
 
 /* --- Overlay pour le fond sombre --- */
