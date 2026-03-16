@@ -22,6 +22,19 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+}*/
+
+#background {
+    max-width: 1200px; /* Ou la largeur que tu as actuellement */
+    margin-left: auto;
+    margin-right: auto;
+    /* Optionnel : assuré qu'il n'y a pas un float: left qui traîne */
+    float: none; 
+}
+
+.container {
+    position: fixed;
+    overflow: visible !important;
 }
 
 /* Classe que le JavaScript ajoutera au clic */
@@ -111,19 +124,16 @@ text-overflow: ellipsis;
 
 .vector img {
     display: block !important;
-    width: 40px;       /* Force une largeur */
+    width: 30px;       /* Force une largeur */
     height: auto;      /* Garde les proportions */
     visibility: visible;
     opacity: 1;
 }
 
-/*.vector img{
-    height: 16px;
-    width: auto;
-}*/
+
 
 #text-devis {
-    /* Supprimez top et left pour laisser la Flexbox aligner l'élément */
+    /* Supprime top et left pour laisser la Flexbox aligner l'élément */
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 10px;
@@ -134,7 +144,7 @@ text-overflow: ellipsis;
     display: inline-block;
     white-space: nowrap; 
     
-    /* Si vous voulez une taille fixe spécifique */
+    /* taille fixe spécifique */
     width: auto; /* Laisse le texte respirer */
     opacity: 1;
     color: #000000;
@@ -233,32 +243,12 @@ text-overflow: ellipsis;
 }
 
 
-/* Bouton Fermer (X) 
-.close-preview {
-    font-size: 30px;
-    position: absolute;
-    top: 0px;
-    right: -40px;
-    background: gray;
-    color: white;
-    border: 0.23px solid #FF0000;
-    border-radius: 10px;
-    width: 37.92px;
-    height: 37.79px;
-    cursor: pointer;
-    z-index: 25; /* Doit être au-dessus du lien
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
-
-}*/
+/* Bouton Fermer (X) */
 
 .close-preview {
     position: absolute;
-    top: 0px;
-    right: 15px;
+    top: -25px;
+    right: -31px;
     width: 30px;
     height: 30px;
     background: gray;
@@ -272,6 +262,16 @@ text-overflow: ellipsis;
     font-size: 30px;
     z-index: 2000; /* Doit être au-dessus de tout */
     line-height: 1;
+    box-shadow: 
+        0px 0px 0px 0px rgba(0, 0, 0, 0.4),      /* Base plus sombre */
+        0.21px 0.31px 0.88px 0px rgba(0, 0, 0, 0.35),
+        0.93px 1.35px 1.61px 0px rgba(0, 0, 0, 0.3),
+        2.07px 2.95px 2.18px 0px rgba(0, 0, 0, 0.2),
+        3.68px 5.29px 2.59px 0px rgba(0, 0, 0, 0.1),
+        5.81px 8.24px 2.85px 0px rgba(0, 0, 0, 0.05);
+
+background: #0000001F;
+
 }
 
 
@@ -310,8 +310,9 @@ text-overflow: ellipsis;
 }
 
 .preview-link {
+    font-weight: bold;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     /* Ajoutez vos styles de couleur ici */
     color: white;
     margin-top: 0px;
@@ -361,7 +362,7 @@ background: #75B3CF;
     /* Supprimez top et left pour laisser la Flexbox aligner l'élément */
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 100%;
     letter-spacing: 0.1em; /* Correspond à 10% */
     
