@@ -1,35 +1,12 @@
-
-
-/*Code Temporaire
-.container {
-    /* --- On change ces lignes pour le centrage --- 
-    position: fixed;         /* Fixé par rapport à l'écran 
-    top: 50%;               /* 50% du haut 
-    left: 50%;              /* 50% de la gauche 
-    transform: translate(-50%, -50%); /* Centrage parfait 
-    z-index: 1000;          /* Passe au-dessus de tout 
-    display: none;          /* Caché par défaut au chargement 
-
-    /* --- On garde tes styles intacts --- 
-    background-color: #051120;
-    border-radius: 15px;
-    max-width: 450px;
-    width: 90%;             /* Sécurité pour le mobile 
-    padding: 25px;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    display: flex;          /* Attention : le JS devra gérer le passage de 'none' à 'flex' 
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}*/
-
 #background {
     max-width: 1200px; /* Ou la largeur que tu as actuellement */
     margin-left: auto;
     margin-right: auto;
     /* Optionnel : assuré qu'il n'y a pas un float: left qui traîne */
     float: none; 
+      margin-top: 0px;
+    padding: 60px 20px 60px 20px;
+    font-family: sans-serif;
 }
 
 .container {
@@ -97,7 +74,18 @@
     max-width: 180px;           /* S'assure que le lien ne dépasse pas de la carte bleue */
 overflow: hidden;
 text-overflow: ellipsis;
-
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+      font-weight: bold;
+    text-decoration: none;
+    font-size: 13px;
+    color: white;
+    margin-top: 0px;
+    margin-left: 5px;
+    
+    
 }
 
 .footer-row {
@@ -112,14 +100,13 @@ text-overflow: ellipsis;
 }
 
 
-
-
-
 .vector {
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 20px; /* Assure un espace minimum */
+        transform: translateY(0);
+
 }
 
 .vector img {
@@ -136,7 +123,7 @@ text-overflow: ellipsis;
     /* Supprime top et left pour laisser la Flexbox aligner l'élément */
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 100%;
     letter-spacing: 0.1em; /* Correspond à 10% */
     
@@ -148,6 +135,7 @@ text-overflow: ellipsis;
     width: auto; /* Laisse le texte respirer */
     opacity: 1;
     color: #000000;
+
 }
 
 
@@ -173,21 +161,6 @@ text-overflow: ellipsis;
     box-sizing: border-box;
 }
 
-/* La classe que le JS va ajouter au clic */
-.container.active {
-    display: flex !important;
-}
-
-
-
-
-
-/* --- Configuration de la Grille --- */
-#background {
-    margin-top: 0px;
-    padding: 60px 20px 60px 20px;
-    font-family: sans-serif;
-}
 
 #logo-grid {
     max-width: 1000px;
@@ -231,17 +204,6 @@ text-overflow: ellipsis;
     opacity: 0;
     transform: scale(0.8);
 }
-
-
-
-/* Lien de la carte */
-.preview-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-}
-
 
 /* Bouton Fermer (X) */
 
@@ -288,7 +250,7 @@ background: #0000001F;
 }
 
 
-
+/* Le conteneur de tes textes (lien, flèche, bouton) */
 .preview-website-link {
     display: flex;
     flex-direction: row;         /* Aligne de gauche à droite normalement */
@@ -298,6 +260,10 @@ background: #0000001F;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+        opacity: 0;
+    transform: translateY(10px); /* Petit effet de remontée */
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s; /* Le "0.3s" est le délai */
+    
 }
 
 .preview-logo-link {
@@ -309,25 +275,9 @@ background: #0000001F;
     
 }
 
-.preview-link {
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 13px;
-    /* Ajoutez vos styles de couleur ici */
-    color: white;
-    margin-top: 0px;
-    margin-left: 5px;
-    
-}
-
 .preview-link .bouton-devis {
     transform: translateY(-5px);
 }
-
-.vector {
-    transform: translateY(0);
-}
-
 
 #backlight {
     padding: 5px;
@@ -355,28 +305,6 @@ background: #75B3CF;
     /*transition: 0.3s;*/
     margin-top: 0px;
 }
-
-
-
-#text-devis {
-    /* Supprimez top et left pour laisser la Flexbox aligner l'élément */
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 100%;
-    letter-spacing: 0.1em; /* Correspond à 10% */
-    
-    /* Pour forcer la ligne unique sans impacter le parent */
-    display: inline-block;
-    white-space: nowrap; 
-    
-    /* Si vous voulez une taille fixe spécifique */
-    width: auto; /* Laisse le texte respirer */
-    opacity: 1;
-    color: #000000;
-
-}
-
 
 
 /* --- Conteneur de la Carte (Caché par défaut) --- */
@@ -441,14 +369,6 @@ background: #75B3CF;
 }
 
 
-
-/* Le conteneur de tes textes (lien, flèche, bouton) */
-.preview-website-link {
-    opacity: 0;
-    transform: translateY(10px); /* Petit effet de remontée */
-    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s; /* Le "0.3s" est le délai */
-}
-
 /* Quand le parent est actif, on affiche les textes après le délai */
 .logos-etap.active .preview-website-link {
     opacity: 1;
@@ -457,7 +377,7 @@ background: #75B3CF;
 
 
 
-.plus-infos{
+.plus-infos.bouton-devis{
     font-size: 35px;
     color: white;
     text-shadow: -1px -1px #004d40;
@@ -467,7 +387,7 @@ background: #75B3CF;
 .logos-etap {
     position: relative;
     overflow: hidden;
-    width: 300px; /* À ajuster selon tes besoins */
+    width: 300px; 
     height: 200px;
 }
 
