@@ -1,5 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #00968FCC;
+    font-family: 'Inter', sans-serif;
+}
+
+
 #background {
-    max-width: 1200px; /* Ou la largeur que tu as actuellement */
+   /* max-width: 1230px; /* Ou la largeur que tu as actuellement */
     margin-left: auto;
     margin-right: auto;
     /* Optionnel : assuré qu'il n'y a pas un float: left qui traîne */
@@ -7,6 +15,17 @@
       margin-top: 0px;
     padding: 60px 20px 60px 20px;
     font-family: sans-serif;
+
+}
+#background {
+    max-width: 1230px; 
+    margin-left: auto;
+    margin-right: auto;
+    float: none; 
+    margin-top: 0px;
+    padding: 60px 20px;
+    font-family: sans-serif;
+    /* Supprime ou change la ligne ci-dessous si elle bloque le gris du body */
 }
 
 .container {
@@ -183,6 +202,8 @@ text-overflow: ellipsis;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     padding: 45px;
+    box-shadow: 0px 4px 4px 0px #000000;
+
 }
 
 /* Effet survol bleu ciel (uniquement si non actif) */
