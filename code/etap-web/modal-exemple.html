@@ -1,0 +1,80 @@
+<html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', fn, false);
+    
+    function fn() {
+        // on récupère l'ensemble des éléments sur lesquels on va devoir agir
+
+        // les logos pour toi, ici les éléments avec la classe modal-toggle 
+        let modalToggles = document.getElementsByClassName('modal-toggle');
+        // le titre de la modale (pour toi par exemple l'img de la modale)
+        let modalTitle = document.getElementById('mtitle');
+        // la description de la modale (pour toi par exemple l'url)
+        let modalBody = document.getElementById('mdesc');
+        // la modale en elle-même 
+        let modal = document.getElementById('myModal');
+        // le bouton de fermeture de la modale
+        let closeBtn = document.getElementById('close-btn');
+
+        // quand on clique sur le bouton de fermeture on cache la modale
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        })
+
+        // pour tous les éléments donc pour toi pour tous les logos on ajoute l'action au clic
+        Array.prototype.forEach.call(modalToggles, (elt) => {
+            // ici ajout de la fonction
+            elt.addEventListener('click', function() {
+                // on remplace la valeur du titre par celle qui est dans data-title 
+                // (pour toi ce serait pae exemple remplacer la valeur de src dans ton image par celle de data-img-url)
+                modalTitle.innerHTML = elt.getAttribute('data-title');
+                // pareil pour la description donc pour toi par exemple pour le href du lien et le texte du lien 
+                modalBody.innerHTML = elt.getAttribute('data-content');
+                // etc. pour toi
+                // on affiche la modale 
+                modal.style.display = 'block';
+            })
+        });
+    }
+</script>
+
+<body>
+    <section class="section section-b">
+        <div class="container">
+            <h2>Same modal different content</h2>
+            <div class="grid-container">
+                <!-- ton premier element donc pour toi ton premier logo, ici la class modal-toggle -->
+                <div  class="grid-box grid-box-a modal-toggle" data-title="First" data-content="First content." >
+                    <h4>First</h4>
+                </div>
+                <!-- ton deuxième element donc pour toi ton deuxième logo, ici la class modal-toggle -->
+                <div class="grid-box grid-box-b modal-toggle" data-title="Second" data-content="Second content.">
+                    <h4>Second</h4>
+                </div>
+                <!-- pour toi ici ça continue avec tous les logos -->    
+            </div>
+
+            <!-- le html de la modale à partir de là qui est de base dans ton css en display none -->
+            <div class="modal" id="myModal" tabindex="-1" role="dialog" style="display:none;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- ici le js va changer la valeur pour le titre -->
+                            <h5 class="modal-title" id="mtitle">Modal title</h5>
+                        </div>
+                        <!-- ici le js va changer la valeur pour la description -->
+                        <div class="modal-body" id="mdesc" >
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- ici tu as le bouton pour fermer -->
+                            <button id="close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

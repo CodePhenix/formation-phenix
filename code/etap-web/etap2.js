@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. SÉLECTION DES ÉLÉMENTS
     const toutesLesCartes = document.querySelectorAll('.logos-etap');
-    const modalNoam = document.getElementById('modal-noam-descriptif');
+    const modal = document.getElementById('modal-descriptif');
 
     // 3. FONCTION UNIQUE DE FERMETURE
     // Cette fonction nettoie toutes les classes 'active' d'un coup
     const fermerTout = () => {
         toutesLesCartes.forEach(c => c.classList.remove('active'));
-        if (modalNoam) modalNoam.classList.remove('active');
+        if (modal) modal.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = ''; // Réactive le scroll
     };
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // CAS A : C'est la modale Noam (détecté par data-type="modal")
             if (this.dataset.type === 'modal') {
-                if (modalNoam) {
-                    modalNoam.classList.add('active');
+                if (modal) {
+                    modal.classList.add('active');
                     overlay.classList.add('active');
                     document.body.style.overflow = 'hidden'; // Bloque le scroll
                 }
@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', fermerTout);
 
     // 6. FERMETURE DE LA MODALE NOAM (BOUTON X INTERNE)
-    const closeBtnNoam = modalNoam ? modalNoam.querySelector('.close-preview') : null;
-    if (closeBtnNoam) {
-        closeBtnNoam.addEventListener('click', (e) => {
+    const closeBtnModal = modal ? modal.querySelector('.close-preview') : null;
+    if (closeBtnModal) {
+        closeBtnModal.addEventListener('click', (e) => {
             e.stopPropagation();
             fermerTout();
         });
