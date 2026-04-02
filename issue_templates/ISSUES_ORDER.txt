@@ -27,6 +27,7 @@ terminal_5_series_ls_cd.md
 exo_ctrl_maj_f.md
 exo_dark_theme.md
 css_3_flexbox_difficult.md
+exo_animations.md
 exo_js_dom.md
 exo_js_fruit.md
 exo_dice_roller.md
