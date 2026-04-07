@@ -81,3 +81,11 @@ exo3
 ```
 
 - 1-bis: pour vérifier, dans le dossier exo3, lancez la commande `tree .`
+
+### Bonus 1
+
+Utilisation de la commande `code` qui permet de lancer vscode directement en ligne de commandes
+
+- 1/ A l'aide de `ls` et `cd`, déplacez vous dans l'un de vos dossiers de code, par exemple votre dossier `formation`
+- 2/ Lancer la commande `code .` (bien mettre le ".")
+- 3/ Tadaa ! VSCode s'ouvre tout seul directement dans le bon dossier !
