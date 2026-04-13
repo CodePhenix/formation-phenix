@@ -28,6 +28,7 @@ form_3_mot_de_passe_fort.md
 exo_ctrl_maj_f.md
 exo_dark_theme.md
 css_3_flexbox_difficult.md
+css_grid.md
 animations_1.md
 animations_2.md
 exo_js_dom.md
