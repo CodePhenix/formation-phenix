@@ -37,6 +37,7 @@ exo_dice_roller.md
 css_5_fiesta.md
 exo_object_array_pizza.md
 dp_4_formulaire.md
+js_poo.md
 exo_js_json_quiz.md
 css_4_positionnement.md
 dp_2_myfood.md
