@@ -8,10 +8,9 @@ assignees:
 
 ## Objectif
 
-Félicitations, voilà venu le moment d'inscrire votre premier projet dans votre
-dossier professionnel ! Il vient présenter une partie de tout ce que vous avez appris depuis le début de la formation.
-Il n'y a pas si longtemps, vous ne connaissiez même pas la touche inspecter du navigateur et aujourd'hui vous lisez du HTML,
-bouffez du CSS et révez de Javascript !
+Félicitations, voilà venu le moment d'inscrire votre premier projet dans votre dossier professionnel ! Il vient présenter une partie de tout ce que vous avez appris depuis le début de la formation.
+
+Il n'y a pas si longtemps, vous ne connaissiez même pas la touche inspecter du navigateur et aujourd'hui vous lisez du HTML, bouffez du CSS et révez de Javascript !
 
 L'objectif de cette tache consiste à inscrire l'exercice MyFood comme votre première "Activité-type" dans le DP.
 

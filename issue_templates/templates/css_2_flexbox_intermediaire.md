@@ -8,26 +8,25 @@ assignees:
 
 ## Objectif
 
-En CSS l'essentiel du positionnement ce gère avec les propriétés flexbox (`display: flex;`, `justify-content`, `align-items`, `flex-direction` ...).
-Ces propriétés sont relativement simples mais demandent pas mal de pratique pour être bien comprises et maitrisées.
-C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
-vous feront réalisés des séries d'exercices pour pratiquer.
+En CSS l'essentiel du positionnement se gère avec les propriétés flexbox (`display: flex;`, `justify-content`, `align-items`, `flex-direction` ...).
 
-![Maquette 1]({{ codephenix_url }}/exercices/2_flex_intermediate/exo5/maquette.png)
-![Maquette 2]({{ codephenix_url }}/exercices/2_flex_intermediate/exo7/maquette.png)
-![Maquette 2]({{ codephenix_url }}/exercices/2_flex_intermediate/immeuble/maquette.png)
+Ces propriétés sont relativement simples mais demandent pas mal de pratique pour être bien comprises et maitrisées.
+
+C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces tâches vous feront réaliser des séries d'exercices pour pratiquer.
+
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-intermediate/flex-intermediate-maquette-exo5.png
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-intermediate/flex-intermediate-maquette-exo7.png
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-intermediate/flex-intermediate-maquette-immeuble.png
 
 ## Cours associés
 
-II - 1/ Positionnement
+II - 1/ Positionnement : {{ codephenix_url }}/cours/index.php#positionnement
 
 ## Definition of Done
 
-_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
-
-Pour **chacune** des maquettes:
-
-- [ ] La maquette est bien reproduite
+- [ ] La maquette 5 est bien reproduite
+- [ ] La maquette 7 est bien reproduite
+- [ ] La maquette immeuble est bien reproduite
 
 {% include 'common/CODE_QUALITY.md' %}
 

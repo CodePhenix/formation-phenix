@@ -9,8 +9,8 @@ assignees:
 ## Objectif
 
 [Musique nostalgique]
-Comme le temps passe vite, il y à peine quelques mois vous n'aviez jamais entendu parlé de dossier pro ni d'activité type
-et aujourd'hui vous allez vous atteler à remplir la troisième et dernière !
+
+Comme le temps passe vite, il y a à peine quelques mois vous n'aviez jamais entendu parlé de dossier pro ni d'activité type et aujourd'hui vous allez vous atteler à remplir la troisième et dernière !
 
 Il s'agit comme vous l'aurez sans doute deviner d'inscrire le travail que vous avez réalisé recemment sur la gestion de formulaires
 

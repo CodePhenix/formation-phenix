@@ -1,6 +1,6 @@
 ---
 name: Exo Clicks Conditions
-about: Javascript exercice
+about: Javascript exercice click conditions
 title: Exo Clicks Conditions
 labels: ""
 assignees:
@@ -12,22 +12,20 @@ Vous vous souvenez des conditions en JavaScript ? Eh bien, l'heure est venue pou
 
 Pour ce challenge vous allez reprendre l'exercice du compteur de clics et ajouter les conditions suivantes :
 
-Au-dessus de 5 clics, la couleur du texte et du bouton change pour être en bleu foncé.
-Entre 10 et 15 clics, la couleur change pour être en violet et une image est affichée.
-Au-dessus de 15 clics, la couleur devient rouge et une autre image est affichée.
-Au 21ème clic, un message "stop" est affiché et il n'est plus possible de cliquer.
+- Au-dessus de 5 clics, la couleur du texte et du bouton change pour être en bleu foncé.
+- Entre 10 et 15 clics, la couleur change pour être en violet et une image est affichée.
+- Au-dessus de 15 clics, la couleur devient rouge et une autre image est affichée.
+- Au 21ème clic, un message "stop" est affiché et il n'est plus possible de cliquer.
 
-À vous de jouer avec les conditions ! 🎮
+À vous de jouer avec les conditions !
 
 Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/2-2-3-conditions.gif
 
 ## Cours associés
 
-Javascript / Dynamisme
+- II - 2/ Dynamisme JS : {{ codephenix_url }}/cours/index.php#js-initiation2
 
 ## Definition of Done
-
-Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées.
 
 - [ ] La maquette est bien reproduite
 - [ ] Le click sur bouton est fonctionnel et permet de compter chaque click

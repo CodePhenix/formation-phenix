@@ -7,8 +7,7 @@ assignees:
 
 ## Contexte
 
-Il est très important de prendre en compte l'accessibilité de votre site quand vous codez. En gros, il faut le coder
-de telle manière à ce que les personnes mal-voyantes puissent quand même naviguer sur votre site.
+Il est très important de prendre en compte l'accessibilité de votre site quand vous codez. En gros, il faut le coder de telle manière à ce que les personnes mal-voyantes puissent quand même naviguer sur votre site.
 
 #### Bonnes pratiques
 

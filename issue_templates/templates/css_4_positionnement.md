@@ -9,15 +9,16 @@ assignees:
 ## Objectif
 
 En CSS l'essentiel du positionnement ce gère avec les propriétés flexbox (`display: flex;`, `justify-content`, `align-items`, `flex-direction` ...).
-Ces propriétés sont relativement simples mais demandent pas mal de pratique pour être bien comprises et maitrisées.
-C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
-vous feront réalisés des séries d'exercices pour pratiquer.
 
-![Maquette 1]({{ codephenix_url }}/exercices/4_position/maquette.png)
+Ces propriétés sont relativement simples mais demandent pas mal de pratique pour être bien comprises et maitrisées.
+
+C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches vous feront réaliser des séries d'exercices pour pratiquer :
+
+- {{ codephenix_url }}/exercices/position/position-maquette.png
 
 ## Cours associés
 
-II - 1/ Positionnement
+II - 1/ Positionnement : {{ codephenix_url }}/cours/index.php#positionnement
 
 ## Definition of Done
 

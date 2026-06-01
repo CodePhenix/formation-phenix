@@ -8,23 +8,19 @@ assignees:
 
 ## Objectif
 
-Après cette première semaine d'introduction au cours HTML, je suis sûre que vous avez hâte de mettre vos connaissances en œuvre et de créer votre première page web.
+Après cette introduction au cours HTML, je suis sûr que vous avez hâte de mettre vos connaissances en œuvre et de créer votre première page web.
 
 Quoi de mieux qu'un exercice pratique pour concrétiser tout cela ?
 
 Pour ce premier exercice, vous allez reproduire un CV selon la maquette fournie dans le cours.
 
-Allez, on avance, let's gooo !
-
 Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/1-1-1-initiation-html.png
 
 ## Cours associés
 
-HTML / Initiation
+- I - 1/ HTML : {{ codephenix_url }}/cours/index.php#html-initiation
 
 ## Definition of Done
-
-_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
 - [ ] La maquette est bien reproduite (pixel perfect)
 - [ ] Utilisation des balises de structures (h1 … hn)
@@ -39,3 +35,4 @@ _Une tache est considérée comme complétée lorsque chacune des sous-taches de
 _Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...
+

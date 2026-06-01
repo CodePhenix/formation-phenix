@@ -14,17 +14,16 @@ Pour notre première aventure, vous allez créer un site à partir d'une maquett
 
 Objectif : le header de votre site restera fixe en haut de la page. Mais lorsque vous cliquez sur le menu burger, une fenêtre magique s'ouvre, révélant les précieux liens de navigation ainsi qu'un bouton discret pour refermer cette fenêtre. Tout cela dans le respect des maquettes mobiles.
 
-Prêts à relever ce défi ? Alors, à vos claviers, prêts, partez ! 🍔
+Prêts à relever ce défi ? Alors, à vos claviers, prêts, partez !
 
 Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/2-1-1-myfood-positionnement.zip
 
 ## Cours associés
 
-Javascript / Positionnement
+- I - 1/ HTML : {{ codephenix_url }}/cours/index.php#html-initiation
+- II - 1/ Positionnement CSS : {{ codephenix_url }}/cours/index.php#positionnement
 
 ## Definition of Done
-
-_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
 - [ ] La maquette est bien reproduite (pixel perfect)
 - [ ] Le menu burger est fonctionnel avec le click

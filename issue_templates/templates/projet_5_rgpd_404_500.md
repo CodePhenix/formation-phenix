@@ -16,8 +16,6 @@ Imaginez-vous en train de naviguer sur un site web pour effectuer un achat ou re
 
 3. **Erreur 500 - Erreur Interne du Serveur :** L'erreur 500 est plus grave car elle indique un problème au niveau du serveur, empêchant l'accès à tout ou partie du site web. Outre les inconvénients pour les utilisateurs, une erreur 500 peut également entraîner des violations potentielles du RGPD si elle compromet la sécurité des données stockées sur le serveur.
 
-## Cours associés
-
 ## Definition of Done
 
 _Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
