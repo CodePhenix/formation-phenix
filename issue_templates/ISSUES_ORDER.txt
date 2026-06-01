@@ -3,7 +3,7 @@ cv_1_html.md
 cv_2_css.md
 divers_1_diner.md
 cv_3_js_burger.md
-divers_5_ctrl_f
+divers_5_ctrl_f.md
 js_dom.md
 divers_2_froggy.md
 divers_3_setup.md
@@ -29,7 +29,7 @@ click_2_js_conditions.md
 js_if_fruit.md
 myfood_2_js.md
 js_object_array_pizza.md
-myfood_3_js_popular_tags
+myfood_3_js_popular_tags.md
 anglais_2.md
 css_js_dark_theme.md
 analytics.md
@@ -63,4 +63,4 @@ projet_4_gestion_projet.md
 projet_5_rgpd_404_500.md
 projet_6_dossier_projet.md
 projet_7_presentation_soutenance.md
-projet_8_revisions
+projet_8_revisions.md
