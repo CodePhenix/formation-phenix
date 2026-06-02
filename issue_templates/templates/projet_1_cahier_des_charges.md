@@ -26,8 +26,6 @@ Imaginez-vous en train de construire une maison. Avant de poser la première pie
 
 En résumé, un cahier des charges bien élaboré est la pierre angulaire de tout projet réussi. Il aligne les attentes, définit les paramètres et fournit une feuille de route claire pour guider l'équipe vers le succès. En investissant du temps et des ressources dans l'élaboration d'un cahier des charges solide, vous augmentez considérablement les chances de livrer un produit de qualité, dans les délais et le budget impartis.
 
-## Cours associés
-
 ## Definition of Done
 
 _Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._

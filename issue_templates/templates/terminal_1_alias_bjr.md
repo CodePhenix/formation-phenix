@@ -19,7 +19,7 @@ Créer un alias qui me dit "Bonjour".
 
 ```
 $ bjr
-Bonjour Sofien ! Je te souhaite une excellente journée !
+Bonjour Amine ! Je te souhaite une excellente journée !
 ```
 
 Pour cela il faut créer un alias dans le fichier de configuration du terminal `.bashrc` ou `.zshrc`:
@@ -33,13 +33,13 @@ nano ~/.bashrc
 
 Ensuite, ajoutez la ligne suivante à la fin du fichier pour créer l'alias `bjr` :
 
-```alias bjr='echo "Bonjour Sofien ! Je te souhaite une excellente journée !"'
+```alias bjr='echo "Bonjour Amine ! Je te souhaite une excellente journée !"'
 
 
 ## Definition of Done
 
 _Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] Lorsque je lance `bjr` dans le terminal, cela affiche "Bonjour Sofien ! Je te souhaite une excellente journée !"
+- [ ] Lorsque je lance `bjr` dans le terminal, cela affiche "Bonjour Amine ! Je te souhaite une excellente journée !"
 - [ ] Lorsque je lance `bsr` dans le terminal, cela affiche "Bonne soirée !"
 ```

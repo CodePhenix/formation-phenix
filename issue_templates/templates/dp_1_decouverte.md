@@ -9,23 +9,22 @@ assignees:
 ## Objectif
 
 A l'issue de votre formation, il vous faudra présenter un dossier professionnel complet à votre jury.
-Ce dossier a pour but de montrer comment vous avez travaillé et acquis les différentes compétences professionnelles
-requises pour le CCP1 du titre DWWM (Développeur Web et Web Mobile) au travers de projets que vous présenterez.
-Ainsi tout au long de la formation, lorsque vous aurez terminé un projet intermédiaire, vous viendrez l'inscrire dans le
-DP. Vous pouvez le voir comme une forme de livre de bord qui vous accompagnera pendant les prochains mois et auquel vous reviendrez
-régulièrement pour y ajouter vos nouvelles avancées.
+
+Ce dossier a pour but de montrer comment vous avez travaillé et acquis les différentes compétences professionnelles requises pour le CCP1 du titre DWWM (Développeur Web et Web Mobile) au travers de projets que vous présenterez.
+
+Ainsi tout au long de la formation, lorsque vous aurez terminé un projet intermédiaire, vous viendrez l'inscrire dans le DP. Vous pouvez le voir comme une forme de livre de bord qui vous accompagnera pendant les prochains mois et auquel vous reviendrez régulièrement pour y ajouter vos nouvelles avancées.
 
 Pour cette première tache, l'objectif est double:
 
 - vous familiariser avec le document en le lisant une première fois
 - compléter les premières pages avec vos informations personnelles
 
-TODO lien vers word vide ?
-TODO lien vers document officiel du dossier pro ?
+**Vous pouvez télécharger les dossiers zippés contenant le fichier REAC officiel donnant le détail des Compétences Professionnelles à acquérir et les trames officielles de dossiers professionnels pour les certifications frontend et fullstack ici :**
+
+- frontend : {{ codephenix_url }}/assets/download/documents-dp-front.zip
+- fullstack : {{ codephenix_url }}/assets/download/documents-dp-fullstack.zip
 
 ## Cours associés
-
-Aucun cours associé à cette tache
 
 - https://imts.gitlab.io/cours-imts/03.documentation/redaction-dp/
 - https://www.dossierprofessionnel.fr/dp-10points (vidéo + texte)

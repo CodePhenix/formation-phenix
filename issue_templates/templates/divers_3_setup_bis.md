@@ -8,10 +8,6 @@ assignees:
 
 ## Objectif
 
-De la même manière qu'un charpentier doit connaître les outils dont il a besoin, il est
-important que vous sachiez comment l'on nomme les différents outils informatiques dont vous vous servez pour
-coder.
-
 L'objectif ici est de compléter un questionnaire un peu plus détaillé que le précédent sur le sujet
 et de réviser (ou de redécouvrir) les différentes notions/outils.
 
@@ -28,7 +24,9 @@ Lorsque vous codez,
 - par qui est-il développé ?
 - de quel VCS vous servez-vous ?
 
-## Cours associés
+De plus, voici un guide mémo qui vous accompagnera tout au long de la formation, qu'il vous faudra lire partie par partie (pas tout d'un coup bien sûr), pour commencer à vous habituer aux termes techniques de la formation :
+
+Lire le guide : {{ codephenix_url }}/cours/supports/guide-memo.pdf
 
 ## Definition of Done
 

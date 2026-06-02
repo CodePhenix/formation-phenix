@@ -8,8 +8,6 @@ assignees:
 
 ## Objectif
 
-[_lien vers l'exercice_](https://codephenix.fr/interface/exercices/new_exo_JS/exo-js-quiz.zip)
-
 Aujourd'hui, l'objectif va être de réaliser un quiz interactif : selon les réponses de l'utiilisateur derrière son écran, il faudra les garder en mémoire pour afficher le score final à la fin du quiz.
 
 Pour ça, on a déjà tout prévu dans un fichier **JSON** contenant les questions, leurs réponses, et si les réponses sont justes ou fausses (vous pouvez déjà aller regarder comment est stockée la donnée dans ce fichier, intitulé `quiz.json`).
@@ -20,9 +18,11 @@ Tout ce qu'il reste à faire, c'est aller chercher ces questions et leurs répon
 
 Suivez les instructions pas à pas, ça va le faire !
 
-**N'oubliez pas de vérifier en permanence dans votre navigateur quand vous apportez des modifications. L'étape bonus 7 est assez complexe, vous n'êtes pas obligés de la terminer maintenant !**
-
 ## Instructions
+
+Télécharger le dossier zippé de cet exercice ici : {{ codephenix_url }}/cours/exercices/exo-js-quiz.zip
+
+Dézipper le dossier et le placer dans un dossier 'exercices'.
 
 **NE PAS TOUCHER AU FICHIER `index.html` NI A `style.css`, CODER SEULEMENT DANS `script.js` !**
 
@@ -78,7 +78,6 @@ Créer les constantes qui viennent récupérer tous les éléments du DOM
 Afficher correctement la question actuelle à l'écran
 
 >Coder sous chaque commentaire comportant les deux étoiles comme ceci : `**`
-
 
 ### Etape 3
 
@@ -191,11 +190,9 @@ Dans la fonction `goNextQuestion()`, il faut :
 
 ## Cours associés
 
-I - 3/ JS
-
-II - 1/ Dynamisme JS
-
-III - 2/ Gestion du temps
+- I - 3/ JS : {{ codephenix_url }}/cours/index.php#js-initiation
+- II - 2/ Dynamisme JS : {{ codephenix_url }}/cours/index.php#js-initiation2
+- III - 2/ Gestion du temps JS : {{ codephenix_url }}/cours/index.php#js-temps
 
 ## Definition of Done:
 
@@ -207,20 +204,16 @@ III - 2/ Gestion du temps
 - [ ] Etape 6 Bonus terminée !
 - [ ] Etape 7 Bonus terminée !
 
-## Bonnes pratiques de communication
+{% include 'common/CODE_QUALITY.md' %}
 
-Vous êtes en phase d'apprentissage et s'il est crucial que vous développiez votre autonomie en essayant et en cherchant par vous même il est tout de même courant pour un développeur de demander de l'aide.
-
-Pour cela voici un petit florilège des phrases/choses à éviter:
-
-- Dire "Ca marche pas" sans expliquer précisément ce qui ne marche pas
-- "J'comprends pas" sans donner de contexte
-- "... du coup j'ai tout supprimé et j'ai tout recommencé"
-- "J'ai dit à l'ordi de le faire mais il ne le fait pas"
-- Dire "JAVA" au lieu de "Javascript": ca n'a rien à voir !
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 
 _Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...
+
+### Le mot de la fin ?
+
+**N'oubliez pas de vérifier en permanence dans votre navigateur quand vous apportez des modifications. L'étape bonus 7 est assez complexe, vous n'êtes pas obligés de la terminer maintenant !**

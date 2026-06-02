@@ -8,15 +8,13 @@ assignees:
 
 ## Objectif
 
-[_lien vers l'exercice_](https://codephenix.fr/interface/exercices/new_exo_JS/exo-dice-roller.zip)
-
 Nous allons créer un programme pour lancer des dés, de manière aléatoire.
 
-Pas de soucis si l'étape bonus n'est pas faite, elle est facultative, l'idée est que vous soyez plus à l'aise avec les fonctions et leur appel après cet exercice, ainsi qu'avec la manipulation du DOM et l'utilisation des boucle for.
-
-**Courage !**
-
 ## Instructions
+
+Télécharger le dossier zippé de cet exercice ici : {{ codephenix_url }}/cours/exercices/exo-dice-roller.zip
+
+Dézipper le dossier et le placer dans un dossier 'exercices'.
 
 TOUT ECRIRE DANS LE FICHIER `script.js`.
 
@@ -28,7 +26,13 @@ On va créer un dé en JavaScript :
 - Dans `script.js`, créons tout d'abord une `div` (Astuce : la méthode à utiliser s'appelle `document.createElement()`) que l'on place dans une constante.
 - On va ajouter une classe `dice` à cette constante (Astuce : utiliser la méthode `add` de la propriété `classList()`) :
   - _Ca tombe bien_ ! Tous les styles (y compris `.dice`) sont déjà _définis_ dans `style.css` pour dimensionner et appliquer une image d'arrière-plan à l'élément qui porte cette classe.
-  - _Tiens d'ailleurs_ ! L'image appliquée en arrière plan est ce qu'on appelle un **sprite** : c'est une image comportant en fait plusieurs images. *Pour y voir plus clair, consulter le petit guide dans `images/dice-sprite.png`*
+  - _Tiens d'ailleurs_ ! L'image appliquée en arrière plan est ce qu'on appelle un **sprite** : c'est une image comportant en fait plusieurs images. 
+    <details>
+    <summary>Pour y voir plus clair, consulter le petit guide ici : </summary>
+
+    {{ codephenix_url }}/cours/exercices/screenshots/diceroller-guide.png
+
+    </details>
 - On n'a plus qu'à insérer la constante de la `div` créée dans le DOM en JavaScript. Pour ça, il faudrait l'ajouter dans le container qui possède l'id `player` :
   - il faut aller chercher ce container,
   - l'afficher en lui imposant une nouvelle classe (la classe ne sera plus 'hidden' mais '**board**' : pour cela, on n'utilise non pas la propriété classList (avec les méthodes add, contains, remove ou toggle) mais la propriété `className` qui remplace toutes les classes ajoutées jusque là)
@@ -37,7 +41,7 @@ On va créer un dé en JavaScript :
 <details>
 <summary>Checkpoint : lorsque cette étape est validée, la page pourrait bien ressembler à ça :</summary>
 
-![Etape 1](screenshots/etape1.png)
+{{ codephenix_url }}/cours/exercices/screenshots/diceroller-etape1.png
 
 </details>
 
@@ -81,14 +85,21 @@ On va donc définir une constante qui sera égale à la formule définie plus ha
 - On va se servir du nombre obtenu dans dicePosition pour modifier la position de l'arrière plan du dé :
   - Sous la création de la div de l'étape 1, on va ajouter à cette div (appelée ici 'diceDiv') un nouveau style (qui sera le visuel de la face du dé) : `diceDiv.style.backgroundPosition = "-" + dicePosition + "px 0";`
 
->Pour info chaque face de dé fait exactement 100px de large sur le sprite de l'image des dés. Notre image de base est l'image du dé à 1 si on ne déplace par le `background-position` donc si le dé donne le résultat de 3, on doit déplacer l'image contenant toutes les faces du dé de -200px (de 200px vers la gauche). Si le dé donne 6, on déplace l'image de -500px, etc. (c'est pour ça qu'on a gardé en mémoire la constante dicePosition). *N'hésitez pas à vous reporter au petit guide dans `images/dice-sprite.png`*
+>Pour info chaque face de dé fait exactement 100px de large sur le sprite de l'image des dés. Notre image de base est l'image du dé à 1 si on ne déplace par le `background-position` donc si le dé donne le résultat de 3, on doit déplacer l'image contenant toutes les faces du dé de -200px (de 200px vers la gauche). Si le dé donne 6, on déplace l'image de -500px, etc. (c'est pour ça qu'on a gardé en mémoire la constante dicePosition).
+
+<details>
+<summary>N'hésitez pas à vous reporter au petit guide : </summary>
+
+{{ codephenix_url }}/cours/exercices/screenshots/diceroller-guide.png
+
+</details>
 
 <details>
 <summary>Checkpoint : lorsque cette étape est validée, la page pourrait bien ressembler à ça :</summary>
 
 3 ou un autre chiffre compris entre 1 et 6, de manière aléatoire : rafraichir la page plusieurs fois pour vérifier
 
-![Etape 2](screenshots/etape2.png)
+{{ codephenix_url }}/cours/exercices/screenshots/diceroller-etape2.png
 
 </details>
 
@@ -105,7 +116,7 @@ Chouette on y est presque ! Maintenant, il faudrait lancer plusieurs dés.
 
 Si vous avez décidé de définir votre variable du nombre de dés à 4 :
 
-![Etape 3](screenshots/etape3.png)
+{{ codephenix_url }}/cours/exercices/screenshots/diceroller-etape3.png
 
 </details>
 
@@ -128,7 +139,7 @@ On aimerait bien pouvoir lancer le nombre de dés que l'on souhaite (par exemple
 
 Si vous avez décidé de définir votre variable du nombre de dés à 7 :
 
-![Etape 4](screenshots/etape4.png)
+{{ codephenix_url }}/cours/exercices/screenshots/diceroller-etape4.png
 
 </details>
 
@@ -154,7 +165,7 @@ Parce qu'on va modifier la fonction maintenant ; à la place de la sélection du
 <details>
 <summary>Checkpoint : lorsque cette étape est validée, la page pourrait bien ressembler à ça :</summary>
 
-![Etape 5](screenshots/etapebonus.png)
+{{ codephenix_url }}/cours/exercices/screenshots/diceroller-etapebonus.png
 
 </details>
 
@@ -162,34 +173,25 @@ Parce qu'on va modifier la fonction maintenant ; à la place de la sélection du
 
 ## Cours associés
 
-I - 3/ JS
-
-II - 1/ Dynamisme JS
+- I - 3/ JS : {{ codephenix_url }}/cours/index.php#js-initiation
+- II - 2/ Dynamisme JS : {{ codephenix_url }}/cours/index.php#js-initiation2
 
 ## Definition of Done:
 
 - [ ] Toutes les étapes sont terminées.
 
-## Code quality:
+{% include 'common/CODE_QUALITY.md' %}
 
-- [ ] JS: Le code est commenté si besoin
-- [ ] JS: Pas d'erreur ni de logs inutiles dans la console
-- [ ] JS: Les variables ont des noms respectables et porteurs de sens
-
-## Bonnes pratiques de communication
-
-Vous êtes en phase d'apprentissage et s'il est crucial que vous développiez votre autonomie en essayant et en cherchant par vous même il est tout de même courant pour un développeur de demander de l'aide.
-
-Pour cela voici un petit florilège des phrases/choses à éviter:
-
-- Dire "Ca marche pas" sans expliquer précisément ce qui ne marche pas
-- "J'comprends pas" sans donner de contexte
-- "... du coup j'ai tout supprimé et j'ai tout recommencé"
-- "J'ai dit à l'ordi de le faire mais il ne le fait pas"
-- Dire "JAVA" au lieu de "Javascript": ca n'a rien à voir !
+{% include 'common/ATTITUDE.md' %}
 
 ## Q&A
 
 _Cette section sera complétée par votre formateur lors de la review des taches._
 
 - [ ] ...
+
+### Le mot de la fin ?
+
+Pas de soucis si l'étape bonus n'est pas faite, elle est facultative, l'idée est que vous soyez plus à l'aise avec les fonctions et leur appel après cet exercice, ainsi qu'avec la manipulation du DOM et l'utilisation des boucle for.
+
+**Courage !**

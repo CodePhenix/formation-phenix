@@ -16,7 +16,7 @@ Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/2-2-1-tableau-bouc
 
 ## Cours associés
 
-Javascript / Dynamisme
+- II - 2/ Dynamisme JS : {{ codephenix_url }}/cours/index.php#js-initiation2
 
 ## Definition of Done
 

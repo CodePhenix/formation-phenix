@@ -8,26 +8,25 @@ assignees:
 
 ## Objectif
 
-En CSS l'essentiel du positionnement ce gère avec les propriétés flexbox (`display: flex;`, `justify-content`, `align-items`, `flex-direction` ...).
-Ces propriétés sont relativement simples mais demandent pas mal de pratique pour être bien comprises et maitrisées.
-C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces taches
-vous feront réalisés des séries d'exercices pour pratiquer.
+En CSS l'essentiel du positionnement se gère avec les propriétés flexbox (`display: flex;`, `justify-content`, `align-items`, `flex-direction` ...).
 
-![Maquette 1]({{ codephenix_url }}/exercices/2_flex_difficile/exo8/maquette.png)
-![Maquette 2]({{ codephenix_url }}/exercices/2_flex_difficile/gamme_arbre_complexe.png)
-![Maquette 3]({{ codephenix_url }}/exercices/2_flex_difficile/gamme_carre_rond_carre.png)
+Ces propriétés sont relativement simples mais demandent pas mal de pratique pour être bien comprises et maitrisées.
+
+C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces tâches vous feront réaliser des séries d'exercices pour pratiquer.
+
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-difficult/flex-difficult-maquette-exo8.png
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-difficult/flex-difficult-maquette-gamme-arbre.png
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-difficult/flex-difficult-maquette-gamme-carre-rond.png
 
 ## Cours associés
 
-II - 1/ Positionnement
+II - 1/ Positionnement : {{ codephenix_url }}/cours/index.php#positionnement
 
 ## Definition of Done
 
-_Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
-
-Pour **chacune** des maquettes:
-
-- [ ] La maquette est bien reproduite
+- [ ] La maquette 8 est bien reproduite
+- [ ] La maquette arbre est bien reproduite
+- [ ] La maquette carré-rond est bien reproduite
 
 {% include 'common/CODE_QUALITY.md' %}
 
