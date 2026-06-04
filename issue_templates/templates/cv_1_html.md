@@ -14,7 +14,9 @@ Quoi de mieux qu'un exercice pratique pour concrétiser tout cela ?
 
 Pour ce premier exercice, vous allez reproduire un CV selon la maquette fournie dans le cours.
 
-Lien vers les maquettes: {{ codephenix_url }}/cours/exercices/1-1-1-initiation-html.png
+Lien vers la maquette: {{ codephenix_url }}/cours/exercices/1-1-1-initiation-html.png
+
+Lien vers l'image : {{ codephenix_url }}/cours/exercices/1-1-1-img.png
 
 ## Cours associés
 

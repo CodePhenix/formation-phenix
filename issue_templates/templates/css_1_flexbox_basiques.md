@@ -15,9 +15,9 @@ Ces propriétés sont relativement simples mais demandent pas mal de pratique po
 C'est l'objectif de ces gammes d'exercices. Un peu dans l'esprit d'un musicien qui doit réviser ses gammes, ces tâches vous feront réaliser des séries d'exercices pour pratiquer.
 
 - Lien vers la maquette: {{ codephenix_url }}/exercices/flex-basics/flex-basics-maquette-exo1.png
-- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-basics/flex-basics-maquette-exo1.png
-- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-basics/flex-basics-maquette-exo1.png
-- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-basics/flex-basics-maquette-exo1.png
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-basics/flex-basics-maquette-exo2.png
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-basics/flex-basics-maquette-exo3.png
+- Lien vers la maquette: {{ codephenix_url }}/exercices/flex-basics/flex-basics-maquette-exo4.png
 
 ## Cours associés
 

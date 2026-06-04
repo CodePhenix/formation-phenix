@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Exercice Demo Git Commands CodePhenix training">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="LPO">
+
+    <title>Commandes GIT</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Simulateur Git Avancé avec Niveaux</h1>
+
+        <!-- Panneau local -->
+        <div id="container">
+            <!-- Panneau terminal et branches locales -->
+            <div id="left-panel">
+                <div id="terminal">
+                    <div id="terminal-output"></div>
+                    <input type="text" autocomplete="off" id="terminal-input"
+                        placeholder="Tapez vos commandes git ici..." autofocus>
+                </div>
+                <div id="local-branches-container">
+                    <h2>Branches locales</h2>
+                    <div id="branches"></div>
+                </div>
+            </div>
+
+            <!-- Panneau local projet cloné -->
+            <div id="right-panel">
+                <h2>Projet cloné</h2>
+                <p>ProjetPhenix</p>
+                <div id="project-tree"></div>
+                <button id="modify-btn">Modifier le fichier</button>
+
+                <h3 id="local-remote-compare">Aide pour statut local/remote</h3>
+                <div id="status-container"></div>
+
+            </div>
+        </div>
+
+        <!-- Panneau GitHub/GitLab -->
+        <div id="github-panel">
+            <h2>
+                Interface GitHub/GitLab simulée<br>
+                <p>ProjetPhenix</p>
+                <small id="repo-url">Aucun dépôt chargé</small>
+                <button id="copy-url-btn">📋 Copier l'URL</button>
+            </h2>
+
+            <button id="accept-pr"></button>
+
+            <div id="remote-branches-container">
+                <h3>Branches :</h3>
+                <div id="remote-branches-buttons"></div>
+            </div>
+
+            <div id="remote-branches-buttons-compare-container"></div>
+
+            <div id="remote-branches-tocompare-container"></div>
+
+            <div id="delete-container">
+                <button id="delete-current-branch-btn"></button>
+                <p id="delete-current-branch-msg"></p>
+            </div>
+
+            <div id="remote-branch-details">
+                <div>
+                    <h3>Arborescence distante</h3>
+                    <div id="remote-project-tree"></div>
+                </div>
+
+                <div>
+                    <h3>Commits</h3>
+                    <div id="remote-commits"></div>
+
+                    <h3>Status</h3>
+                    <div id="remote-status"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fin de partie -->
+        <div id="end-game">
+            <h2>Félicitations, vous avez terminé le jeu !</h2>
+        </div>
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

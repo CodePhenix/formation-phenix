@@ -186,6 +186,27 @@
         sujet: ["JS"],
         difficulte:  ["moyen"],
         type: ["Module"]
+      },
+      {
+        titre: "Simulation Git",
+        href:"git-simulation/index.html",
+        sujet: ["git"],
+        difficulte:  ["moyen"],
+        type: ["Mini-jeu"]
+      },
+      {
+        titre: "Terminus (en français)",
+        href:"terminus/Terminus-FR/Web/index.html",
+        sujet: ["Terminal"],
+        difficulte:  ["facile"],
+        type: ["Mini-jeu"]
+      },
+      {
+        titre: "Terminus (en anglais)",
+        href:"terminus/Terminus-EN/Web/index.html",
+        sujet: ["Terminal"],
+        difficulte:  ["facile"],
+        type: ["Mini-jeu"]
       }
     ]
 

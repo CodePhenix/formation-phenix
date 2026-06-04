@@ -1,0 +1,232 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+    font-family: monospace;
+    background-color: #1e1e1e;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #fff;
+}
+
+button, select {
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Panneaux locaux gauche et droite */
+#container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Panneau gauche terminal et branche */
+#left-panel { 
+    flex: 1;
+}
+
+/* Terminal */
+#terminal {
+    border: 1px solid #555;
+    padding: 10px;
+    background-color: #111;
+}
+
+#terminal-output {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 5px;
+}
+
+#terminal-input {
+    width: 100%;
+    padding: 5px;
+    background-color: #222;
+    color: white;
+    border: none;
+}
+
+/* Branches */
+#local-branches-container {
+    display: none;
+}
+
+.branch {
+    margin: 5px 0;
+    font-weight: bold;
+    color: white;
+}
+
+.branch.main { color: #ff7700; }
+.branch.dev { color: #00d42e; }
+.branch.feature { color: #ff3c84; }
+
+.branch.current { color: #ffff00 !important; }
+
+/* Panneau droite dossier cloné local */
+#right-panel { 
+    flex: 1;
+    border-left: 1px solid #555;
+    padding-left: 10px;
+    display: none;
+}
+
+#modify-btn {
+    display: none;
+}
+
+#local-remote-compare {
+    margin-top: 20px;
+}
+
+.local-branch {
+    margin: 5px 0;
+}
+
+/* Panneau Github/Gitlab */
+#github-panel {
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+h2 small {
+    color: #bbb;
+    font-size: 0.8em;
+}
+
+#repo-url {
+    opacity: 0.7;
+}
+
+/* GitHub Panel */
+#remote-branches-container {
+    margin: 6px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #00ccff12;
+}
+
+#remote-branches-container h3 {
+    margin-bottom: 5px;
+}
+
+#remote-branches-tocompare-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.remote-branch {
+    margin: 5px 0;
+}
+
+.remote-branch-btn {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.remote-branch-btn.active {
+    background: #0080ff;
+}
+
+#remote-branches-buttons-compare-container {
+    margin: 7px 15px;
+}
+
+#remote-branches-buttons-compare-container button {
+    background-color: #666;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+
+#remote-branches-buttons-compare-container button.active {
+    background-color: #750707;
+}
+
+#delete-container {
+    display: flex;
+    align-items: center;
+}
+
+#delete-current-branch-btn {
+    display: none;
+    margin: 15px 0;
+}
+
+#delete-current-branch-msg {
+    display: none;
+    color: #ff7700;
+    margin-left: 15px;
+}
+
+/* Arborescence projet */
+#remote-branch-details {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+#remote-project-tree {
+    margin: 5px 0;
+}
+
+.file, .folder {
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.folder::before { content: "📁 "; }
+.file::before { content: "📄 "; }
+
+#accept-pr {
+    margin: 20px 0;
+    background-color: #444;
+    color: white;
+    border: 5px solid #555;
+    width: 50%;
+    display: none;
+}
+
+/* Fin du jeu */
+#end-game {
+    display: none;
+}
+
+#end-game h2{
+    color: yellow;
+}
+
+@media screen and (max-width: 600px) {
+    #container, #remote-branch-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin: 20px 0;
+    }
+
+    #remote-branches-buttons{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
