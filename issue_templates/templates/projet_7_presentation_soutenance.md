@@ -8,10 +8,39 @@ assignees:
 
 ## Objectif
 
-**Vous pouvez télécharger les dossiers zippés contenant plusieurs tickets détaillant chaque étape de la construction de votre dossier de projet dont la création du support de soutenance pour les certifications frontend et fullstack ici :**
+Assurez-vous de réaliser une présentation validant toutes ces étapes :
+- [ ] La présentation est sous format de diapositives (Powerpoint, Canva, Libre Office Impress, ...), entre 7 à 15 slides
+- [ ] Elle doit comporter :
+    - une présentation rapide de soi, puis du projet
+    - une courte parenthèse sur l'historique de la période de projet en fin de formation (quelle a été l'organisation de travail)
+    - l'expression des besoins du projet pour définir les objectifs et les limites du projet
+    - le cahier des charges (rapidement : la cible principale, quelques user-stories, les contraintes techniques),
+    - quelques zonings, wireframes et maquettes ainsi que des indications d'UX et d'UI (polices utilisées, palette de couleurs)
+    - les fonctionnalités attendues
+    - l'environnement technique
+    - les réalisations permettant la mise en œuvre des compétences (captures d'écran d'une partie du code : **prendre les éléments de code les plus significatifs en thème light, ceux qui sont les plus complexes**
+    - une slide prévue pour faire la transition avec la démonstration en direct du code
+    - une synthèse (pourquoi pas les prochaines étapes du projet, un objectif professionnel après la certification, et une conclusion (satisfactions et difficultés rencontrées)
+- [ ] Pas de phrases entières, que des titres et bullet-points
+- [ ] Numéroter les slides (pour s'y retrouver, et savoir quoi dire à telle ou telle slide)
+- [ ] Définir des transitions entre chaque slide
 
-- frontend : {{ codephenix_url }}/assets/download/dossier-projet-front.zip
-- fullstack : {{ codephenix_url }}/assets/download/dossier-projet-fullstack.zip
+Pour vous aider durant la présentation, vous pourrez également avoir avec vous un petit guide sous format papier :
+- [ ] Que ce soit écrit à la main ou à l'ordi puis imprimé, peu importe.
+- [ ] Il complète ce qui est dit pendant l'oral, en s'appuyant sur ce qu'il y a d'écrit sur les slides de la présentation
+- [ ] Il doit donc être plus fourni, avec des mots écrits assez gros pour guider pendant l'oral
+- [ ] Rajouter pour chaque petit texte le numéro des slides approprié pour s'aider à se repérer
+- [ ] Ne pas mettre tout ce qui est dit à l'oral, c'est une aide supplémentaire à la présentation powerpoint, mais ça ne doit pas reprendre mot pour mot chacune des phrases.
+
+Vous aurez également un résumé à écrire pour présenter votre projet au jury en amont :
+- [ ] Le résumé du projet est en français d'une longueur d'environ 20 lignes soit 200 à 250 mots, ou environ 1200 caractères espaces non compris (il doit passer sur une page)
+- [ ] Il comprend :
+    - une introduction (d'où vient l'idée, pourquoi ce projet)
+    - l'objectif de l'application
+    - les principales fonctionnalités de l'application
+    - les technologies front utilisées pour l'application
+
+## Conseils
 
 Conseils pour le jour J:
 

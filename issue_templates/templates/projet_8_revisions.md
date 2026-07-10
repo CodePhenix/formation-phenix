@@ -13,6 +13,8 @@ assignees:
 - frontend : {{ codephenix_url }}/assets/download/todo-front.zip
 - fullstack : {{ codephenix_url }}/assets/download/todo-fullstack.zip
 
+Dedans, vous trouverez également le fichier *details-rendu-doc.pdf* qui vous aidera à bien vérifier si vous avez bien finalisé tous les documents à rendre avant le passage à l'oral.
+
 ## Definition of Done
 
 _Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
