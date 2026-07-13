@@ -79,7 +79,7 @@
         }
       },
       {
-        nom: "20db",
+        nom: "20-db",
         cat:"retro",
         format: "otf",
         graisse: {
@@ -106,7 +106,7 @@
       }
     },
     {
-      nom: "airstream",
+      nom: "Airstream",
       cat:"retro",
       format: "otf",
       graisse: {

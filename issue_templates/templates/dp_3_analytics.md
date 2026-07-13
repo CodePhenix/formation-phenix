@@ -8,7 +8,7 @@ assignees:
 
 ## Objectif
 
-Et oui, c'est déjà le moment d'inscrire votre seconde activité-type dans le DP. Il s'agit cette fois de l'exo Analytics
+Et oui, c'est déjà le moment d'inscrire votre seconde activité-type dans le DP. Il s'agit cette fois de l'exo Analytics.
 
 ## Cours associés
 
@@ -18,10 +18,11 @@ Aucun cours associé à cette tache
 
 _Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] L'activité-type 2 a été complétée.
+- [ ] L'activité-type 3 a été complétée.
+- [ ] L'activité-type 4 a été complétée.
 - [ ] Pas de fautes d'orthographe (se faire relire par un tiers ou utiliser un correcteur automatique)
 - [ ] Toutes les phrases comportent une majuscule et un point.
-- [ ] Des captures d'écrans de votre site MyFood ont été ajoutées.
+- [ ] Des captures d'écrans de votre site Analytics ont été ajoutées.
 
 ## Q&A
 

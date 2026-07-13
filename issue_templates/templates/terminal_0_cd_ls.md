@@ -52,7 +52,7 @@ Maitriser les commandes de base dans le terminal.
 8/ Commande rm
 
 - [ ] Tapez la commande `rm nom_du_fichier.txt` pour supprimer le fichier texte.
-- [ ] Tapez la commande `ls` pour vérifier que le fichier a bien été supprim
+- [ ] Tapez la commande `ls` pour vérifier que le fichier a bien été supprimmé.
 
 ## Exercice
 

@@ -225,6 +225,69 @@
         href:"web/code-phenix-noms-domaines.pdf",
         sujet:  ["web"],
         intervenant : true,
+      },
+      {
+        titre: "Le SEO en 2026",
+        source: "CodePhenix",
+        href:"SEO/cours-SEO-2026.pdf",
+        sujet:  ["SEO"],
+        intervenant : true
+      },
+      {
+        titre: "Sécurité, accessibilité, éco-conception et obligations légales",
+        source: "CodePhenix",
+        href:"accessibilite/secu-accessibilite.zip",
+        sujet:  ["Sécurité", "Eco-conception", "accessibilite"],
+        intervenant : true
+      },
+      {
+        titre: "Comment construire un fichier markdown ?",
+        source: "CodePhenix",
+        href:"autre/markdown-howto.zip",
+        sujet:  ["Markdown"],
+        intervenant : true
+      },
+      {
+        titre: "Savoir utiliser les commandes Git",
+        source: "CodePhenix",
+        href:"autre/cours-git-howto.pdf",
+        sujet:  ["Git"],
+        intervenant : true
+      },
+      {
+        titre: "Savoir utiliser le terminal",
+        source: "CodePhenix",
+        href:"autre/cours-terminal.pdf",
+        sujet:  ["Terminal"],
+        intervenant : true
+      },
+      {
+        titre: "Les attributs ARIA",
+        source: "CodePhenix",
+        href:"accessibilite/cours-aria.pdf",
+        sujet:  ["accessibilite"],
+        intervenant : true
+      },
+      {
+        titre: "Quelques bases d'anglais pour développeur",
+        source: "CodePhenix",
+        href:"autre/cours-anglais.pdf",
+        sujet:  ["Anglais"],
+        intervenant : true
+      },
+      {
+        titre: "Peer review",
+        source: "CodePhenix",
+        href:"autre/cours-peer-review.pdf",
+        sujet:  ["Peer-review", "Git"],
+        intervenant : true
+      },
+      {
+        titre: "Le (ou les) serveur(s)",
+        source: "CodePhenix",
+        href:"web/cours-serveur-intro.pdf",
+        sujet:  ["web"],
+        intervenant : true
       }
     ]
 

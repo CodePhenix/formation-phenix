@@ -10,9 +10,9 @@ assignees:
 
 [Musique nostalgique]
 
-Comme le temps passe vite, il y a à peine quelques mois vous n'aviez jamais entendu parlé de dossier pro ni d'activité type et aujourd'hui vous allez vous atteler à remplir la troisième et dernière !
+Comme le temps passe vite, il y a à peine quelques mois vous n'aviez jamais entendu parlé de dossier pro ni d'activité type et aujourd'hui vous allez vous atteler à remplir la quatrième et dernière !
 
-Il s'agit comme vous l'aurez sans doute deviner d'inscrire le travail que vous avez réalisé recemment sur la gestion de formulaires
+Il s'agit comme vous l'aurez sans doute deviner d'inscrire le travail que vous avez réalisé recemment sur la gestion de formulaires.
 
 ## Cours associés
 
@@ -22,10 +22,10 @@ Aucun cours associé à cette tache
 
 _Une tache est considérée comme complétée lorsque chacune des sous-taches de cette section ont été complétées._
 
-- [ ] L'activité-type 3 a été complétée.
+- [ ] L'activité-type 4 a été complétée.
 - [ ] Pas de fautes d'orthographe (se faire relire par un tiers ou utiliser un correcteur automatique)
 - [ ] Toutes les phrases comportent une majuscule et un point.
-- [ ] Des captures d'écrans de votre site MyFood ont été ajoutées.
+- [ ] Des captures d'écrans de votre formulaire ont été ajoutées.
 
 ## Q&A
 

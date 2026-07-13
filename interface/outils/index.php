@@ -44,7 +44,7 @@
       {
         titre: "ReGex",
         source: "Regular expression 101",
-        href:"http://codephenix.com:8456",
+        href:"https://regex101.com",
         sujet: ["front-end"]
       },
       {
@@ -57,13 +57,6 @@
         titre: "Polices d'écriture",
         source: "CodePhenix",
         href:"typo.php",
-        design: true
-      },
-      {
-        titre: "Banque à idées",
-        source: "",
-        href:"http://codephenix.com:8500",
-        front: true,
         design: true
       },
       {

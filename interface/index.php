@@ -34,7 +34,6 @@
                 <li><a href="documentations/js.php">JavaScript</a></li>
                 <li><a href="documentations/bootstrap.php">Bootstrap</a></li>
                 <li><a href="documentations/git.php">Git</a></li>
-                <li><a href="http://codephenix.com:9292" target="_blank">Devdocs</a></li>
               </ul>
               </div>
             </div>
